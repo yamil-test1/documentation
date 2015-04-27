@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Middleware Services - Islandora</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Islandora</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../..">Islandora</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../camel/sync/README">Islandora-Sync</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../drupal/islandora/README">Islandora (Drupal module)</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../install/README">Vagrant</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../contributing/contributing">How to contribute</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../technical_design">Technical Design</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Middleware Services</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../migration">Migration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../docs-build">How to build documenation</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../technical_design">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../migration">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/Islandora-labs/islandora">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#middleware-services">Middleware Services</a></li>
+        
+    
+        <li class="main "><a href="#collection-service">Collection Service</a></li>
+        
+            <li><a href="#endpoint-httplocalhost8080islandoraservicescollection">Endpoint: http://localhost:8080/islandora/services/collection/</a></li>
+        
+            <li><a href="#actions">Actions:</a></li>
+        
+    
+        <li class="main "><a href="#object-service">Object Service</a></li>
+        
+            <li><a href="#endpoint-httplocalhost8080islandoraservicesobject">Endpoint: http://localhost:8080/islandora/services/object/</a></li>
+        
+            <li><a href="#actions_1">Actions:</a></li>
+        
+    
+        <li class="main "><a href="#file-services">File Services</a></li>
+        
+            <li><a href="#general-convention">General Convention</a></li>
+        
+            <li><a href="#example-services">Example Services</a></li>
+        
+            <li><a href="#derivative-services">Derivative Services</a></li>
+        
+            <li><a href="#general-convention_1">General Convention</a></li>
+        
+            <li><a href="#example-services_1">Example Services</a></li>
+        
+    
+        <li class="main "><a href="#ingest-services">Ingest Services</a></li>
+        
+            <li><a href="#general-convention_2">General Convention</a></li>
+        
+            <li><a href="#example-services_2">Example Services</a></li>
+        
+    
+        <li class="main "><a href="#zip-ingest-services">Zip Ingest Services</a></li>
+        
+            <li><a href="#general-convention_3">General Convention</a></li>
+        
+            <li><a href="#example-services_3">Example services</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="middleware-services">Middleware Services</h1>
+<p>Islandora middleware services utilize the Fedora 4 REST API and the Drupal Services module to create an API for the majority of interactions between the two systems.  The Drupal node id will be used to identify pcdm:Objects (and pcdm:Files thereof) when using these services.  The breakdown of services is as follows:
+- There will be a services to provide CRUD operations for pcdm:Collections, pcdm:Objects and pcdm:Files.<br />
+- There will be a service to provide advanced creational capabilities based on content model.  For example:
+  - POST a tiff to create a large image object and set the tiff as the OBJ datatream.
+  - POST a zip file containing book pages Islandora Book Batch format to create an entire book object (with pages and derivatives processed asynchronously, of course).
+- There will be services per derivative type to perform operations based on the node ID of the parent.
+  - PATCH to generate a new thumbnail for the object with node id 1.</p>
+<h1 id="collection-service">Collection Service</h1>
+<p>Used for manipulating pcdm:Collections.  Essentially wraps the Fedora 4 API requests for manipulating a Container identified by Drupal node id. </p>
+<h4 id="endpoint-httplocalhost8080islandoraservicescollection">Endpoint: http://localhost:8080/islandora/services/collection/</h4>
+<h4 id="actions">Actions:</h4>
+<h5 id="get-httplocalhost8080islandoraservicescollectionid">GET http://localhost:8080/islandora/services/collection/{id}</h5>
+<p>Retrieves metadata from Fedora for the pcdm:Collection associated with the provided Drupal node id.</p>
+<h5 id="post-httplocalhost8080islandoraservicescollection">POST http://localhost:8080/islandora/services/collection/</h5>
+<p>Creates a pcdm:Collection in Fedora and a node in Drupal, associating the newly minted path and node id.  The fedora:hasParent can optionally be supplied in POST data to provide Fedora with a location to create the new object.</p>
+<h5 id="put-httplocalhost8080islandoraservicescollectionid">PUT http://localhost:8080/islandora/services/collection/{id}</h5>
+<p>Updates metadata in Fedora for the pcdm:Collection associated with the provided Drupal node id.  Additionally updates all applicable fields in the Drupal node.</p>
+<h5 id="patch-httplocalhost8080islandoraservicescollectionid">PATCH http://localhost:8080/islandora/services/collection/{id}</h5>
+<p>Partially updates metadata in Feodra for the pcdm:Collection associated with the provided Drupal node id.  Additionally updates all applicable fields in the Drupal node.</p>
+<h5 id="delete-httplocalhost8080islandoraservicescollectionid">DELETE http://localhost:8080/islandora/services/collection/{id}</h5>
+<p>Deletes the pcdm:Collection in Fedora associated with provided Drupal node id.  Also deletes the Drupal node itself.</p>
+<h1 id="object-service">Object Service</h1>
+<p>Used for manipulating pcdm:Objects.  Essentially wraps the Fedora 4 API requests for manipulating a Container identified by Drupal node id. </p>
+<h4 id="endpoint-httplocalhost8080islandoraservicesobject">Endpoint: http://localhost:8080/islandora/services/object/</h4>
+<h4 id="actions_1">Actions:</h4>
+<h5 id="get-httplocalhost8080islandoraservicesobjectid">GET http://localhost:8080/islandora/services/object/{id}</h5>
+<p>Retrieves metadata from Fedora for the pcdm:Object associated with the provided Drupal node id.</p>
+<h5 id="post-httplocalhost8080islandoraservicesobject">POST http://localhost:8080/islandora/services/object/</h5>
+<p>Creates a pcdm:Object in Fedora and a node in Drupal, associating the newly minted path and node id.  Will require the content model to be provided as rdf:type in POST data so the Drupal node can be created.  The fedora:hasParent can optionally be supplied in POST data to provide Fedora with a location to create the new object.</p>
+<h5 id="put-httplocalhost8080islandoraservicesobjectid">PUT http://localhost:8080/islandora/services/object/{id}</h5>
+<p>Updates metadata in Fedora for the pcdm:Object associated with the provided Drupal node id.  Additionally updates all applicable fields in the Drupal node.</p>
+<h5 id="patch-httplocalhost8080islandoraservicesobjectid">PATCH http://localhost:8080/islandora/services/object/{id}</h5>
+<p>Partially updates metadata in Feodra for the pcdm:Object associated with the provided Drupal node id.  Additionally updates all applicable fields in the Drupal node.</p>
+<h5 id="delete-httplocalhost8080islandoraservicesobjectid">DELETE http://localhost:8080/islandora/services/object/{id}</h5>
+<p>Deletes the pcdm:Object in Fedora associated with provided Drupal node id.  Also deletes the Drupal node itself.</p>
+<h1 id="file-services">File Services</h1>
+<p>Used for manipulating pcdm:Files associated with a pcdm:Object or pcdm:Collection.  They will essentially wrap the Fedora 4 API requests for manipulating a NonRDFSourceDescription identified by dcterms:title (obj, mods, dc, etc...) and its parent's Drupal node id.  There will be seperate implementations for each applicable dcterms:title, though each service will abide by a common conventions and behavior.  This allows implementations to vary independently based on file type (technical metadata, descriptive metadata, archival binary), while allowing for new services to be easily added over time.</p>
+<h2 id="general-convention">General Convention</h2>
+<h4 id="endpoint-httplocalhost8080islandoraservicesfiledctermstitleid">Endpoint: http://localhost:8080/islandora/services/file/{dcterms:title}/{id}/</h4>
+<h4 id="actions_2">Actions:</h4>
+<h5 id="get-httplocalhost8080islandoraservicesfiledctermstitleid">GET http://localhost:8080/islandora/services/file/{dcterms:title}/{id}/</h5>
+<p>Retrieves the pcdm:Files content belonging to the pcdm:Object or pcdm:Collection.  The pcdm:File is identified by dcterms:title and its parents Drupal node id.</p>
+<h5 id="post-httplocalhost8080islandoraservicesfiledctermstitleid">POST http://localhost:8080/islandora/services/file/{dcterms:title}/{id}/</h5>
+<p>Adds a pcdm:File to the pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The file's content will be set using the POST content, and the provided dcterms:title will be given to the newly created pcdm:File.  If the Drupal node has applicable field(s) pertaining to this file, they will be updated as well.</p>
+<h5 id="put-httplocalhost8080islandoraservicesfiledctermstitleid">PUT http://localhost:8080/islandora/services/file/{dcterms:title}/{id}/</h5>
+<p>Updates the pcdm:File with dcterms:title owned by the pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The file's content will be set using the PUT content. If the Drupal node has applicable field(s) pertaining to this file, they will be updated as well.</p>
+<h5 id="delete-httplocalhost8080islandoraservicesfiledctermstitleid">DELETE http://localhost:8080/islandora/services/file/{dcterms:title}/{id}/</h5>
+<p>Deletes the pcdm:File with dcterms:title owned by the pcdm:Object or pcdm:Collection identified by the provided Drupal node id. If the Drupal node has applicable field(s) pertaining to this file, their content will be deleted as well.</p>
+<h2 id="example-services">Example Services</h2>
+<p>Some example services would include:
+- http://localhost:8080/islandora/services/file/obj/{id}/
+- http://localhost:8080/islandora/services/file/dc/{id}/
+- http://localhost:8080/islandora/services/file/mods/{id}/
+- http://localhost:8080/islandora/services/file/fits/{id}/</p>
+<p>Implementations would differ in the sense that perhaps xml metadata would be transformed to RDF differently and different Drupal fields would have to be updated.  Accept headers could be different, etc... </p>
+<h2 id="derivative-services">Derivative Services</h2>
+<p>Derivatives (while generally dealt with through Islandora Sync) may need to be dealt with manually, so services will be provided to handle all the common derivatives types an Islandora installation may require.  Much like the file services, a general convention on naming and behavior will be enforced, but seperate implementations will be provided.  This will allow for maximum flexibility and encourage new services to be easily added and contributed. </p>
+<h2 id="general-convention_1">General Convention</h2>
+<h4 id="endpoint-httplocalhost8080islandoraservicesderivativetypeid">Endpoint: http://localhost:8080/islandora/services/derivative/{type}/{id}/</h4>
+<h4 id="actions_3">Actions:</h4>
+<h5 id="get-httplocalhost8080islandoraservicesderivativetypeid">GET http://localhost:8080/islandora/services/derivative/{type}/{id}/</h5>
+<p>Retrieves the derivative belonging to the pcdm:Object or pcdm:Collection.  The derivative is identified by its type and its parents Drupal node id.</p>
+<h5 id="post-httplocalhost8080islandoraservicesderivativetypeid">POST http://localhost:8080/islandora/services/derivative/{type}/{id}/</h5>
+<p>Adds a derivative to the pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The derivative's content will be set using the POST content.  The result will reside in either Fedora or Drupal, depending on the derivative.</p>
+<h5 id="put-httplocalhost8080islandoraservicesderivativetypeid">PUT http://localhost:8080/islandora/services/derivative/{type}/{id}/</h5>
+<p>Updates the derviative for a pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The derivative's content will be set using the PUT content. The result will reside in either Fedora or Drupal, depending on the derivative.</p>
+<h5 id="patch-httplocalhost8080islandoraservicesderivativetypeid">PATCH http://localhost:8080/islandora/services/derivative/{type}/{id}/</h5>
+<p>Asynchronously regenerates the derivative for a pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The result will reside in either Fedora or Drupal, depending on the derivative.</p>
+<h5 id="delete-httplocalhost8080islandoraservicesderivativetypeid">DELETE http://localhost:8080/islandora/services/derivative/{type}/{id}/</h5>
+<p>Deletes the derivative for the pcdm:Object or pcdm:Collection identified by the provided Drupal node id.  The derivative will be removed from either Fedora or Drupal, depending on the derivative.</p>
+<h2 id="example-services_1">Example Services</h2>
+<p>Some example services would include:
+- http://localhost:8080/islandora/services/derivative/tn/{id}/
+- http://localhost:8080/islandora/services/derivative/medium_size/{id}/
+- http://localhost:8080/islandora/services/derivative/jp2/{id}/
+- http://localhost:8080/islandora/services/derivative/techmd/{id}/
+- http://localhost:8080/islandora/services/derivative/mp3/{id}/
+- http://localhost:8080/islandora/services/derivative/mp4/{id}/
+- http://localhost:8080/islandora/services/derivative/mkv/{id}/</p>
+<p>Implementations would differ in the sense that different derivatives will be created from varying sources using varying programs.  Also, display derivatives should reside in Drupal (TN, JP2, etc...) while technical metadata should reside in Fedora.  Within Drupal, different derivatives will reside as different field types.</p>
+<h1 id="ingest-services">Ingest Services</h1>
+<p>Several services will exist to encapsulate the process of constructing a fully-formed pcdm:Object based on content model in an Islandora repository within a single transaction.  They will accept multipart/form-data and use the information to construct the pcdm:Object with RDF metadata and any additionally provided files (obj, mods, dc, etc...).  </p>
+<h2 id="general-convention_2">General Convention</h2>
+<h4 id="endpoint-httplocalhost8080islandoraservicesingestcontent_model">Endpoint: http://localhost:8080/islandora/services/ingest/{content_model}/</h4>
+<h4 id="actions_4">Actions:</h4>
+<h5 id="post-httplocalhost8080islandoraservicesingestcontent_model">POST http://localhost:8080/islandora/services/ingest/{content_model}/</h5>
+<p>Accepts multipart/form-data requests and uses the provided metadata and files to completely construct an object of the specified content-model.</p>
+<h2 id="example-services_2">Example Services</h2>
+<p>Some example services would include:
+- http://localhost:8080/islandora/services/ingest/basic_image/
+- http://localhost:8080/islandora/services/ingest/large_image/
+- http://localhost:8080/islandora/services/ingest/audio/
+- http://localhost:8080/islandora/services/ingest/video/</p>
+<h1 id="zip-ingest-services">Zip Ingest Services</h1>
+<p>Instead of multipart/form-data reqeusts, application/zip requests can be accepted to construct a pcdm:Object based on content model.  While this is convienent for basic object types, it's required for more complicated content models such as Book, Newspaper, and Compound.  Message bodies are assumed to be in Islandora Zip Importer format.</p>
+<h2 id="general-convention_3">General Convention</h2>
+<h4 id="endpoint-httplocalhost8080islandoraserviceszipingestcontent_model">Endpoint: http://localhost:8080/islandora/services/zip/ingest/{content_model}/</h4>
+<h4 id="actions_5">Actions:</h4>
+<h5 id="post-httplocalhost8080islandoraserviceszipingestcontent_model">POST http://localhost:8080/islandora/services/zip/ingest/{content_model}/</h5>
+<p>Accepts a zip file, extracts its contents, and uses it to completely construct an object of the specified content-model.</p>
+<h2 id="example-services_3">Example services</h2>
+<p>All of the Ingest Services above, plus:
+- http://localhost:8080/islandora/services/zip/ingest/book/
+- http://localhost:8080/islandora/services/zip/ingest/newspaper/
+- http://localhost:8080/islandora/services/zip/ingest/compound/</p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Migration - Islandora</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Islandora</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../..">Islandora</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../camel/sync/README">Islandora-Sync</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../drupal/islandora/README">Islandora (Drupal module)</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../install/README">Vagrant</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../contributing/contributing">How to contribute</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../technical_design">Technical Design</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../services">Middleware Services</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Migration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../docs-build">How to build documenation</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../services">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../docs-build">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/Islandora-labs/islandora">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#fcrepo3-object-properties-to-fcrepo4">fcrepo3 Object properties to fcrepo4</a></li>
+        
+    
+        <li class="main "><a href="#fcrepo3-datastream-properties-to-fcrepo4">fcrepo3 Datastream properties to fcrepo4</a></li>
+        
+    
+        <li class="main "><a href="#fcrepo3-rels-ext-to-fcrepo4-mapping">fcrepo3 RELS-EXT to fcrepo4 Mapping</a></li>
+        
+    
+        <li class="main "><a href="#audit-log-migration">Audit log migration</a></li>
+        
+    
+        <li class="main "><a href="#diagrams">Diagrams</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="fcrepo3-object-properties-to-fcrepo4">fcrepo3 Object properties to fcrepo4</h2>
+<table>
+<thead>
+<tr>
+<th>fcrepo 3</th>
+<th>fcrepo4</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>dcterms:identifier</td>
+<td>yul:328697</td>
+</tr>
+<tr>
+<td>state</td>
+<td>objState*</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>label</td>
+<td>dcterms:title</td>
+<td>Elvis Presley</td>
+</tr>
+<tr>
+<td>createDate</td>
+<td>fedora:created*</td>
+<td>2015-03-16T20:11:06.683Z</td>
+</tr>
+<tr>
+<td>lastModifiedDate</td>
+<td>fedora:lastModified*</td>
+<td>2015-03-16T20:11:06.683Z</td>
+</tr>
+<tr>
+<td>ownerId</td>
+<td>fedora:createdBy*</td>
+<td>nruest</td>
+</tr>
+</tbody>
+</table>
+<p>*immutable</p>
+<p>Notes:</p>
+<ul>
+<li>Penn State (<a href="https://github.com/projecthydra-labs/fedora-migrate">fedora-migrate</a>)</li>
+<li>createDate -&gt; dc:dateSubmitted</li>
+<li>lastModifiedDate -&gt; dc:dateModified</li>
+<li>createDate -&gt; premis:hasDateCreatedByApplication</li>
+<li>fedora:lastModified -&gt; premis:hasEventDateTime + hasEventType == <a href="http://id.loc.gov/vocabulary/preservation/eventType/mig.html">migration</a></li>
+<li>ownerId -&gt; premis:hasAgentName + premis:hasAgentNote == <a href="http://id.loc.gov/vocabulary/preservation/eventType/mig.html">migration</a></li>
+<li>Can we nest the combined events, or do they have to flat?</li>
+</ul>
+<h2 id="fcrepo3-datastream-properties-to-fcrepo4">fcrepo3 Datastream properties to fcrepo4</h2>
+<table>
+<thead>
+<tr>
+<th>fcrepo3</th>
+<th>fcrepo4</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DSID</td>
+<td>dcterms:identifier</td>
+<td>OBJ</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>dcterms:title</td>
+<td>ASC19109.tif</td>
+</tr>
+<tr>
+<td>MIME Type</td>
+<td>fedora:mimeType*</td>
+<td>image/tiff</td>
+</tr>
+<tr>
+<td>State</td>
+<td>objState</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Created</td>
+<td>fedora:created*</td>
+<td>2015-03-16T20:11:06.683Z</td>
+</tr>
+<tr>
+<td></td>
+<td>fedora:lastModified*</td>
+<td></td>
+</tr>
+<tr>
+<td>Versionable</td>
+<td>fedora:hasVersions*</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Format URI</td>
+<td>premis:formatDesignation</td>
+<td>info:pronom/fmt/156</td>
+</tr>
+<tr>
+<td>Alternate IDs</td>
+<td>dcterms:identifier</td>
+<td></td>
+</tr>
+<tr>
+<td>Access URL</td>
+<td>dcterms:identifier</td>
+<td></td>
+</tr>
+<tr>
+<td>Checksum</td>
+<td>premis:hasMessageDigestAlgorithm + premis:hasMessageDigest</td>
+<td>SHA1, c91342b705b15cb4f6ac5362cc6a47d9425aec86</td>
+</tr>
+</tbody>
+</table>
+<p>*immutable</p>
+<p>Notes:</p>
+<ul>
+<li>Do we have a use for or need to migrate State?</li>
+<li>Discuss fcrepo4 versioning</li>
+<li>Discuss whether or not we need:</li>
+<li>Alternate IDs</li>
+<li>Access URL</li>
+</ul>
+<h2 id="fcrepo3-rels-ext-to-fcrepo4-mapping">fcrepo3 RELS-EXT to fcrepo4 Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>fcrepo3</th>
+<th>Example</th>
+<th>fcrepo4</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fedora:isMemberOfCollection</td>
+<td>rdf:resource="info:fedora/yul:F0433"</td>
+<td>fedora:hasParent</td>
+<td></td>
+</tr>
+<tr>
+<td>fedora-model:hasModel</td>
+<td>rdf:resource="info:fedora/islandora:sp_large_image_cmodel"</td>
+<td>rdf:type</td>
+<td>islandora:largeImage</td>
+</tr>
+<tr>
+<td>islandora:inheritXacmlFrom</td>
+<td>rdf:resource="info:fedora/yul:F0433"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:hasLanguage</td>
+<td>fra</td>
+<td>dcterms:language</td>
+<td>fra</td>
+</tr>
+<tr>
+<td>islandora:isPageOf</td>
+<td>rdf:resource="info:fedora/yul:336566"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isSequenceNumber</td>
+<td>213</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isPageNumber</td>
+<td>213</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isSection</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fedora:isConstituentOf</td>
+<td>rdf:resource="info:fedora/yul:271119"</td>
+<td>fedora:hasParent</td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isSequenceNumberOfyul_271119</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:dateIssued</td>
+<td>1945-10-31</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isSequenceNumber</td>
+<td>2023</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isMemberOf</td>
+<td>islandora:sp_large_image_cmodel</td>
+<td>fedora:hasParent</td>
+<td></td>
+</tr>
+<tr>
+<td>fedora:isAnnotationOf</td>
+<td>rdf:resource="info:fedora/islandora:96</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:targetedBy</td>
+<td>admin</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isAnnotationType</td>
+<td>my type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:hasURN</td>
+<td>urn:uuid:C691142D-FCC0-0001-F6B3-1390128014A5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:targets</td>
+<td>info:fedora/islandora:96</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isViewableByUser</td>
+<td>nruest</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isViewableByRole</td>
+<td>islandora creator</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isManageableByUser</td>
+<td>nruest</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>islandora:isManageableByRole</td>
+<td>islandora administrator</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Samples</strong></p>
+<p>Large Image object</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:fedora=&quot;info:fedora/fedora-system:def/relations-external#&quot; xmlns:fedora-model=&quot;info:fedora/fedora-system:def/model#&quot; xmlns:islandora=&quot;http://islandora.ca/ontology/relsext#&quot;&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/yul:328697&quot;&gt;
+    &lt;fedora:isMemberOfCollection rdf:resource=&quot;info:fedora/yul:F0433&quot;&gt;&lt;/fedora:isMemberOfCollection&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:sp_large_image_cmodel&quot;&gt;&lt;/fedora-model:hasModel&gt;
+    &lt;islandora:inheritXacmlFrom rdf:resource=&quot;info:fedora/yul:F0433&quot;&gt;&lt;/islandora:inheritXacmlFrom&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<p>Page object</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:fedora=&quot;info:fedora/fedora-system:def/relations-external#&quot; xmlns:fedora-model=&quot;info:fedora/fedora-system:def/model#&quot; xmlns:islandora=&quot;http://islandora.ca/ontology/relsext#&quot;&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/yul:336779&quot;&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:pageCModel&quot;&gt;&lt;/fedora-model:hasModel&gt;
+    &lt;islandora:hasLanguage&gt;fra&lt;/islandora:hasLanguage&gt;
+    &lt;islandora:isPageOf rdf:resource=&quot;info:fedora/yul:336566&quot;&gt;&lt;/islandora:isPageOf&gt;
+    &lt;islandora:isSequenceNumber&gt;213&lt;/islandora:isSequenceNumber&gt;
+    &lt;islandora:isPageNumber&gt;213&lt;/islandora:isPageNumber&gt;
+    &lt;islandora:isSection&gt;1&lt;/islandora:isSection&gt;
+    &lt;fedora:isMemberOf rdf:resource=&quot;info:fedora/yul:336566&quot;&gt;&lt;/fedora:isMemberOf&gt;
+    &lt;islandora:inheritXacmlFrom rdf:resource=&quot;info:fedora/yul:336566&quot;&gt;&lt;/islandora:inheritXacmlFrom&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<p>Compound object (child)</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF xmlns:fedora=&quot;info:fedora/fedora-system:def/relations-external#&quot; xmlns:fedora-model=&quot;info:fedora/fedora-system:def/model#&quot; xmlns:islandora=&quot;http://islandora.ca/ontology/relsext#&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/yul:271117&quot;&gt;
+    &lt;fedora:isMemberOfCollection rdf:resource=&quot;info:fedora/yul:F0375&quot;&gt;&lt;/fedora:isMemberOfCollection&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:sp_large_image_cmodel&quot;&gt;&lt;/fedora-model:hasModel&gt;
+    &lt;islandora:inheritXacmlFrom rdf:resource=&quot;info:fedora/yul:F0375&quot;&gt;&lt;/islandora:inheritXacmlFrom&gt;
+    &lt;fedora:isConstituentOf rdf:resource=&quot;info:fedora/yul:271119&quot;&gt;&lt;/fedora:isConstituentOf&gt;
+    &lt;islandora:isSequenceNumberOfyul_271119&gt;1&lt;/islandora:isSequenceNumberOfyul_271119&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<p>Newspaper object</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/uofm:1243378&quot;&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:newspaperCModel&quot;/&gt;
+    &lt;fedora:isMemberOfCollection rdf:resource=&quot;info:fedora/uofm:libraries&quot;/&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<p>Newspaper issue object</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/uofm:1351347&quot;&gt;
+    &lt;fedora:isMemberOf rdf:resource=&quot;info:fedora/uofm:1243378&quot;/&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:newspaperIssueCModel&quot;/&gt;
+    &lt;islandora:dateIssued&gt;1945-10-31&lt;/islandora:dateIssued&gt;
+    &lt;islandora:isSequenceNumber&gt;2023&lt;/islandora:isSequenceNumber&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<p>Newspaper page object</p>
+<hr />
+<pre><code class="xml">&lt;rdf:RDF&gt;
+  &lt;rdf:Description rdf:about=&quot;info:fedora/uofm:1351348&quot;&gt;
+    &lt;fedora-model:hasModel rdf:resource=&quot;info:fedora/islandora:newspaperPageCModel&quot;/&gt;
+    &lt;fedora:isMemberOf rdf:resource=&quot;info:fedora/uofm:1351347&quot;/&gt;
+    &lt;islandora:isPageOf rdf:resource=&quot;info:fedora/uofm:1351347&quot;/&gt;
+    &lt;islandora:isSequenceNumber&gt;1&lt;/islandora:isSequenceNumber&gt;
+    &lt;islandora:isPageNumber&gt;1&lt;/islandora:isPageNumber&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre>
+
+<h2 id="audit-log-migration">Audit log migration</h2>
+<p><strong>auditTrail mapping</strong></p>
+<table>
+<thead>
+<tr>
+<th>fcrepo3 event</th>
+<th>fcrepo4 Event Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addDatastream</td>
+<td>premis:create</td>
+</tr>
+<tr>
+<td>modifyDatastreamByReference</td>
+<td>audit:contentModification/metadataModification</td>
+</tr>
+<tr>
+<td>modifyObject</td>
+<td>audit:resourceModification</td>
+</tr>
+<tr>
+<td>modifyObject (checksum validation)</td>
+<td>premis:validation</td>
+</tr>
+<tr>
+<td>modifyDatastreamByValue</td>
+<td>audit:contentModification/metadataModification</td>
+</tr>
+<tr>
+<td>purgeDatastream</td>
+<td>audit:contentRemoval</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<p>We could create a mapping of DSIDs, and if the DSID is DC/MODS/RELS-EXT (or any other metadata datastream), then we can use <code>audit:metadataModification</code>. If the DSID is not an identified metadata DSID, then we could use <code>audit:contentModification</code>. If we don't want to map the DSID types, we could just use <code>resourceModification</code> for <code>modifyDatastreamByReference</code> or <code>modifyDatastreamByValue</code>.</p>
+<p><strong>Examples</strong>:</p>
+<p>addDatastream</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC1&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;addDatastream&lt;/audit:action&gt;
+&lt;audit:componentID&gt;TECHMD_FITS&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;joanna&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2013-06-21T14:54:27.396Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;Copied datastream from yul:61282.&lt;/audit:justification&gt;
+&lt;/audit:record&gt;
+</code></pre>
+
+<p>modifyDatastreamByReference</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC4&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;modifyDatastreamByReference&lt;/audit:action&gt;
+&lt;audit:componentID&gt;TN&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;fedoraAdmin&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2013-06-22T05:14:34.443Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;&lt;/audit:justification&gt;
+&lt;/audit:record&gt;
+</code></pre>
+
+<p>modifyObject</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC5&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;modifyObject&lt;/audit:action&gt;
+&lt;audit:componentID&gt;&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;joanna&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2013-07-02T14:31:59.699Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;&lt;/audit:justification&gt;
+&lt;/audit:record&gt;
+</code></pre>
+
+<p>modifyObject (checksum validation)</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC23&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;modifyObject&lt;/audit:action&gt;
+&lt;audit:componentID&gt;&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;anonymous&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2014-01-22T21:07:43.502Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;PREMIS:file=yul:96031+FULL_TEXT+FULL_TEXT.0; PREMIS:eventType=fixity check; PREMIS:eventOutcome=SHA-1 checksum validated.&lt;/audit:justification&gt;
+&lt;/audit:record&gt;
+</code></pre>
+
+<p>modifyDatastreamByValue</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC16&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;modifyDatastreamByValue&lt;/audit:action&gt;
+&lt;audit:componentID&gt;RELS-EXT&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;nruest&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2013-11-27T15:42:08.823Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;&lt;/audit:justification&gt;
+&lt;/audit:record&gt;
+</code></pre>
+
+<p>purgeDatastream</p>
+<pre><code class="xml">&lt;audit:record ID=&quot;AUDREC15&quot;&gt;
+&lt;audit:process type=&quot;Fedora API-M&quot;/&gt;
+&lt;audit:action&gt;purgeDatastream&lt;/audit:action&gt;
+&lt;audit:componentID&gt;MKV&lt;/audit:componentID&gt;
+&lt;audit:responsibility&gt;fedoraAdmin&lt;/audit:responsibility&gt;
+&lt;audit:date&gt;2015-04-08T14:37:54.963Z&lt;/audit:date&gt;
+&lt;audit:justification&gt;Purged datastream (ID=MKV), versions ranging from the beginning of time to the end of time.  This resulted in the permanent removal of 1 datastream version(s) (2015-02-19T21:01:56.235Z) and all associated audit records.&lt;/audit:justification&gt;
+</code></pre>
+
+<h2 id="diagrams">Diagrams</h2>
+<p>Example Islandora Solution Pack Large Image object Fedora 4 Modeling</p>
+<p><img alt="Islandora Solution Pack Large Image object Fedora 4 Modeling" src="https://raw.githubusercontent.com/wiki/Islandora-Labs/islandora/images/Islandora-SP-Large-Image-Fedora4.jpg" /></p>
+<p>Example Islandora, PCDM, and Fedora 4 structure</p>
+<p><img alt="Islandora, PCDM, and Fedora 4 structure" src="https://raw.githubusercontent.com/wiki/Islandora-Labs/islandora/images/Islandora-PCDM-Fedora4.jpg" /></p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
