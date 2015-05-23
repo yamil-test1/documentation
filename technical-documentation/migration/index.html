@@ -189,42 +189,33 @@
 </tr>
 <tr>
 <td>state</td>
-<td>objState*</td>
+<td>fedoraaccess:objState</td>
 <td>Active</td>
 </tr>
 <tr>
 <td>label</td>
-<td>dcterms:title</td>
+<td>fedora3model:label†</td>
 <td>Elvis Presley</td>
 </tr>
 <tr>
 <td>createDate</td>
-<td>fedora:created*</td>
+<td>premis:hasDateCreatedByApplication</td>
 <td>2015-03-16T20:11:06.683Z</td>
 </tr>
 <tr>
 <td>lastModifiedDate</td>
-<td>fedora:lastModified*</td>
+<td>metadataModification</td>
 <td>2015-03-16T20:11:06.683Z</td>
 </tr>
 <tr>
 <td>ownerId</td>
-<td>fedora:createdBy*</td>
+<td>fedora3model:ownerId†</td>
 <td>nruest</td>
 </tr>
 </tbody>
 </table>
-<p>*immutable</p>
-<p>Notes:</p>
-<ul>
-<li>Penn State (<a href="https://github.com/projecthydra-labs/fedora-migrate">fedora-migrate</a>)</li>
-<li>createDate -&gt; dc:dateSubmitted</li>
-<li>lastModifiedDate -&gt; dc:dateModified</li>
-<li>createDate -&gt; premis:hasDateCreatedByApplication</li>
-<li>fedora:lastModified -&gt; premis:hasEventDateTime + hasEventType == <a href="http://id.loc.gov/vocabulary/preservation/eventType/mig.html">migration</a></li>
-<li>ownerId -&gt; premis:hasAgentName + premis:hasAgentNote == <a href="http://id.loc.gov/vocabulary/preservation/eventType/mig.html">migration</a></li>
-<li>Can we nest the combined events, or do they have to flat?</li>
-</ul>
+<p>† The <code>fedora3model</code> namespace is not a published namespace. It is a representation of the fcrepo3 namespace <code>info:fedora/fedora-system:def/model</code>. <br />
+‡ Not yet implemented</p>
 <h2 id="fcrepo3-datastream-properties-to-fcrepo4">fcrepo3 Datastream properties to fcrepo4</h2>
 <table>
 <thead>
@@ -242,65 +233,53 @@
 </tr>
 <tr>
 <td>Label</td>
-<td>dcterms:title</td>
+<td>dcterms:title‡</td>
 <td>ASC19109.tif</td>
 </tr>
 <tr>
 <td>MIME Type</td>
-<td>fedora:mimeType*</td>
+<td>ebucore:hasMimeType†</td>
 <td>image/tiff</td>
 </tr>
 <tr>
 <td>State</td>
-<td>objState</td>
+<td>fedoraaccess:objState</td>
 <td>Active</td>
 </tr>
 <tr>
 <td>Created</td>
-<td>fedora:created*</td>
+<td>premis:hasDateCreatedByApplication</td>
 <td>2015-03-16T20:11:06.683Z</td>
 </tr>
 <tr>
-<td></td>
-<td>fedora:lastModified*</td>
-<td></td>
-</tr>
-<tr>
 <td>Versionable</td>
-<td>fedora:hasVersions*</td>
+<td>fedora:hasVersions‡</td>
 <td>true</td>
 </tr>
 <tr>
 <td>Format URI</td>
-<td>premis:formatDesignation</td>
+<td>premis:formatDesignation‡</td>
 <td>info:pronom/fmt/156</td>
 </tr>
 <tr>
 <td>Alternate IDs</td>
-<td>dcterms:identifier</td>
+<td>dcterms:identifier‡</td>
 <td></td>
 </tr>
 <tr>
 <td>Access URL</td>
-<td>dcterms:identifier</td>
+<td>dcterms:identifier‡</td>
 <td></td>
 </tr>
 <tr>
 <td>Checksum</td>
-<td>premis:hasMessageDigestAlgorithm + premis:hasMessageDigest</td>
+<td>premis:hasMessageDigestAlgorithm + premis:hasMessageDigest‡</td>
 <td>SHA1, c91342b705b15cb4f6ac5362cc6a47d9425aec86</td>
 </tr>
 </tbody>
 </table>
-<p>*immutable</p>
-<p>Notes:</p>
-<ul>
-<li>Do we have a use for or need to migrate State?</li>
-<li>Discuss fcrepo4 versioning</li>
-<li>Discuss whether or not we need:</li>
-<li>Alternate IDs</li>
-<li>Access URL</li>
-</ul>
+<p>† The <code>fedora3model</code> namespace is not a published namespace. It is a representation of the fcrepo3 namespace <code>info:fedora/fedora-system:def/model</code>. <br />
+‡ Not yet implemented</p>
 <h2 id="fcrepo3-rels-ext-to-fcrepo4-mapping">fcrepo3 RELS-EXT to fcrepo4 Mapping</h2>
 <table>
 <thead>
@@ -534,32 +513,32 @@
 <tbody>
 <tr>
 <td>addDatastream</td>
-<td>premis:create</td>
+<td>premis:create‡</td>
 </tr>
 <tr>
 <td>modifyDatastreamByReference</td>
-<td>audit:contentModification/metadataModification</td>
+<td>audit:contentModification/metadataModification‡</td>
 </tr>
 <tr>
 <td>modifyObject</td>
-<td>audit:resourceModification</td>
+<td>audit:resourceModification‡</td>
 </tr>
 <tr>
 <td>modifyObject (checksum validation)</td>
-<td>premis:validation</td>
+<td>premis:validation‡</td>
 </tr>
 <tr>
 <td>modifyDatastreamByValue</td>
-<td>audit:contentModification/metadataModification</td>
+<td>audit:contentModification/metadataModification‡</td>
 </tr>
 <tr>
 <td>purgeDatastream</td>
-<td>audit:contentRemoval</td>
+<td>audit:contentRemoval‡</td>
 </tr>
 </tbody>
 </table>
-<p>Notes:</p>
-<p>We could create a mapping of DSIDs, and if the DSID is DC/MODS/RELS-EXT (or any other metadata datastream), then we can use <code>audit:metadataModification</code>. If the DSID is not an identified metadata DSID, then we could use <code>audit:contentModification</code>. If we don't want to map the DSID types, we could just use <code>resourceModification</code> for <code>modifyDatastreamByReference</code> or <code>modifyDatastreamByValue</code>.</p>
+<p>† The <code>fedora3model</code> namespace is not a published namespace. It is a representation of the fcrepo3 namespace <code>info:fedora/fedora-system:def/model</code>. <br />
+‡ Not yet implemented</p>
 <p><strong>Examples</strong>:</p>
 <p>addDatastream</p>
 <pre><code class="xml">&lt;audit:record ID=&quot;AUDREC1&quot;&gt;
@@ -627,9 +606,7 @@
 </code></pre>
 
 <h2 id="diagrams">Diagrams</h2>
-<p>Example Islandora Solution Pack Large Image object Fedora 4 Modeling</p>
-<p><img alt="Islandora Solution Pack Large Image object Fedora 4 Modeling" src="https://raw.githubusercontent.com/wiki/Islandora-Labs/islandora/images/Islandora-SP-Large-Image-Fedora4.jpg" /></p>
-<p>Example Islandora, PCDM, and Fedora 4 structure</p>
+<p>Example Islandora (Large Image Object), PCDM, and Fedora 4 structure</p>
 <p><img alt="Islandora, PCDM, and Fedora 4 structure" src="https://raw.githubusercontent.com/wiki/Islandora-Labs/islandora/images/Islandora-PCDM-Fedora4.jpg" /></p>
 </div>
         </div>
