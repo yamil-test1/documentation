@@ -100,11 +100,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../technical_design">Technical Design</a>
+                            <a href="../architecture">Architecture</a>
                         </li>
                     
                         <li >
                             <a href="../services">Middleware Services</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../commands">Commands</a>
                         </li>
                     
                         <li class="active">
@@ -125,7 +129,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../services">
+                    <a rel="next" href="../commands">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -273,8 +277,8 @@
 </tr>
 <tr>
 <td>Checksum</td>
-<td>premis:hasMessageDigestAlgorithm + premis:hasMessageDigest‡</td>
-<td>SHA1, c91342b705b15cb4f6ac5362cc6a47d9425aec86</td>
+<td>cryptofunc:<em>hashalgorithm</em>‡</td>
+<td>cryptofunc:sha1 "c91342b705b15cb4f6ac5362cc6a47d9425aec86"</td>
 </tr>
 </tbody>
 </table>
@@ -513,7 +517,7 @@
 <tbody>
 <tr>
 <td>addDatastream</td>
-<td>premis:create‡</td>
+<td>premis:ing‡</td>
 </tr>
 <tr>
 <td>modifyDatastreamByReference</td>

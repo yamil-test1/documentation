@@ -100,11 +100,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../technical-documentation/technical_design">Technical Design</a>
+                            <a href="../../technical-documentation/architecture">Architecture</a>
                         </li>
                     
                         <li >
                             <a href="../../technical-documentation/services">Middleware Services</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../technical-documentation/commands">Commands</a>
                         </li>
                     
                         <li >
@@ -161,6 +165,8 @@
     
         <li class="main "><a href="#use">Use</a></li>
         
+            <li><a href="#build-variables">Build Variables</a></li>
+        
     
         <li class="main "><a href="#connect">Connect</a></li>
         
@@ -186,7 +192,11 @@
 <li><code>cd islandora/install</code></li>
 <li><code>vagrant up</code></li>
 </ol>
-<p>Optionally, if you want to install the vim configuration for Java development, use <code>VIM=true vagrant up</code>.  It practically doubles the amount of time to spin up the VM, so only do so if you’re sure you want to develop directly on the VM using vim.  The script merely checks to see if the shell variable has been set, so it’s value can be anything.  That is, <code>VIM=sandwiches vagrant up</code> will still trigger the vim configuration install.  So if you don’t want it, don’t set it.</p>
+<h3 id="build-variables">Build Variables</h3>
+<ul>
+<li>VIM : If you want to install the vim configuration for Java development, use <code>VIM=true vagrant up</code>. It practically doubles the amount of time to spin up the VM, so only do so if you’re sure you want to develop directly on the VM using vim.</li>
+<li>TRIPLESTORE : If you would like to use Fuskei, it is the default. <code>vagrant up</code> will use it. If you would like to use BlazeGraph, use <code>TRIPLESTORE=blazegraph vagrant up</code>.</li>
+</ul>
 <h2 id="connect">Connect</h2>
 <p>You can connect to the machine via the browser at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
 <p>The default Drupal login details are:</p>
@@ -220,9 +230,10 @@
 <li>Tomcat 7.0.52</li>
 <li>Solr 4.10.3</li>
 <li>Camel 2.14.1</li>
-<li>Fedora 4.1.1</li>
-<li>Fedora Camel Component 4.1.1</li>
+<li>Fedora 4.2.0</li>
+<li>Fedora Camel Component 4.2.0</li>
 <li>Fuseki 2.0</li>
+<li>BlazeGraph 1.5.1</li>
 <li>Sync 0.0.0</li>
 <li>Islandora 7.x-2.x</li>
 <li>PHP 5.5.9 </li>

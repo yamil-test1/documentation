@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>How to build documenation - Islandora</title>
+        <title>Architecture - Islandora</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -99,8 +99,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../architecture">Architecture</a>
+                        <li class="active">
+                            <a href=".">Architecture</a>
                         </li>
                     
                         <li >
@@ -115,8 +115,8 @@
                             <a href="../migration">Migration</a>
                         </li>
                     
-                        <li class="active">
-                            <a href=".">How to build documenation</a>
+                        <li >
+                            <a href="../docs-build">How to build documenation</a>
                         </li>
                     
                     </ul>
@@ -129,12 +129,12 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../migration">
+                    <a rel="next" href="../../contributing/contributing">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../services">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -157,26 +157,53 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#introduction">Introduction</a></li>
+        <li class="main active"><a href="#architecture">Architecture</a></li>
         
-            <li><a href="#build-and-deploy-documentation">Build and Deploy documentation</a></li>
+            <li><a href="#overview">Overview</a></li>
+        
+            <li><a href="#scalability">Scalability</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="introduction">Introduction</h1>
-<p>This documentation is built using <a href="http://www.mkdocs.org/">mkdocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/docs"><code>docs</code></a> directory in the repository. The organization of the documenation is controlled by the <a href="https://github.com/Islandora-Labs/islandora/blob/7.x-2.x/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
-<h2 id="build-and-deploy-documentation">Build and Deploy documentation</h2>
-<p>Documentation is build by running to the following command in the root of the repository:</p>
-<p><code>mkdocs build --clean</code></p>
-<p>This command will create a static <code>site</code> folder in the root of the repository. </p>
-<p>You can preview any changes you have made to the documentation by running the following command:</p>
-<p><code>mkdocs serve</code></p>
-<p>And then visiting http://localhost:8111 in your browser.</p>
-<p>To deploy documenation to GitHub Pages, issue the following command:</p>
-<p><code>mkdocs gh-deploy --clean</code></p>
+<h1 id="architecture">Architecture</h1>
+<h2 id="overview">Overview</h2>
+<p>Islandora 7.x-2.x is a large and comprehensive technology stack that encompasses a Fedora 4 repository, a Drupal CMS, and an Apache Camel based middleware layer to integrate the two along with all of the other complementary technologies required for digital asset management and preservation (full text search engine, triplestore, command line tools, etc...).  Here is a (somewhat) exhaustive list of the technologies in an Islandora stack:
+- Fedora 4 (deployed in a servlet container such as Tomcat or Jetty)
+- Drupal 7 (deployed in an Apache 2 web server), which includes:
+    - A relational database such as MySQL or PostgreSQL
+    - Several third-party Drupal modules from drupal.org
+    - Several Islandora Drupal modules
+    - Several javascript viewers for rendering content (pdf.js, video.js, etc...)
+- Apache Solr (deployed in either an OSGi or servlet container)
+- Blazegraph (or the triple store of your choice, most likely deployed in a servlet container)
+- Apache Camel based middleware (all deployed in an OSGi container), which includes:
+    - Islandora Sync - Asynchronous and event driven software to generate derivatives and align Drupal fields with Fedora RDF
+    - Islandora Services - RESTful web services exposed through the OSGi container that accept Drupal information and manipulate Fedora resources
+    - Fcrepo Camel Toolbox - Indexes Fedora content in the triplestore
+- Islandora Commands - A command-line PHP script utilized by Services and Sync to provide processing capabilities beyond what can be done in a Blueprint xml file
+- Several command line tools for derivative generation:
+    - imagemagick - For image manipulation
+    - tesseract - For OCR generation
+    - ffmpeg - For video processing
+    - lame - For audio processing
+    - fits - For technical metadata generation
+    - and much much more as functionality requires....</p>
+<p>Here's an image representing the various components of the stack and how they interoperate:</p>
+<h2 id="scalability">Scalability</h2>
+<p>One of the main goals with the 7.x-2.x project is to allow for horizontal scalability, and the architecture of the stack has been designed with this in mind.  No assumptions are made requiring any of the components to be on the same machine, so it can all be split apart onto multiple resources.  Most of the components also provide some sort of horizontal scalability through sharding, replication, or both.  If desired, the following components can be clustered through configuration and their respective installation procedures:
+- Fedora 4
+    - Fedora 4 sits on top of Modeshape, which provides both replication and sharding capabilities.  See https://docs.jboss.org/author/display/MODE/Clustering
+- Apache Solr
+    - Solr indices can be sharded to allow for distributed searching. See https://cwiki.apache.org/confluence/display/solr/Distributed+Search+with+Index+Sharding
+- Blazegraph
+    - Blazegraph was chosen as the ‘default’ triplestore for Islandora because it is well known to provide both sharding and replication capabilities.  See https://wiki.blazegraph.com/wiki/index.php/HAJournalServer and  https://wiki.blazegraph.com/wiki/index.php/ClusterSetupGuide
+- Drupal
+    - The Drupal front end can be scaled out by having multiple Apache webservers behind a load balancer
+    - Scaling the relational database (while difficult) is possible, though typical vertical scaling is the first approach taken</p>
+<p>While not yet implemented, it will be possible to scale the Camel based middleware both the web services and the sync based listeners through the use of Camel’s load balancer design pattern.  See https://camel.apache.org/load-balancer.html</p>
 </div>
         </div>
 
