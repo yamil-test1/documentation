@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>Vagrant - Islandora</title>
+        <title>Islandora namespace predicates - Islandora</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -69,12 +69,12 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href=".">Vagrant</a>
+                        <li >
+                            <a href="../../install/README">Vagrant</a>
                         </li>
                     
                     </ul>
@@ -124,20 +124,20 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../migration/migration">Migration</a>
+                            <a href="../migration">Migration</a>
                         </li>
                     
                         <li >
-                            <a href="../../migration/fedora-namespace-predicates">Fedora namespace predicates</a>
+                            <a href="../fedora-namespace-predicates">Fedora namespace predicates</a>
                         </li>
                     
-                        <li >
-                            <a href="../../migration/islandora-namespace-predicates">Islandora namespace predicates</a>
+                        <li class="active">
+                            <a href=".">Islandora namespace predicates</a>
                         </li>
                     
                     </ul>
@@ -150,12 +150,12 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../../drupal/islandora/README">
+                    <a rel="next" href="../fedora-namespace-predicates">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../../contributing/contributing">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -178,87 +178,85 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#introduction">Introduction</a></li>
+        <li class="main active"><a href="#islandora-namespace-rels-ext-predicates">Islandora namespace RELS-EXT predicates</a></li>
+        
+            <li><a href="#book">Book</a></li>
+        
+            <li><a href="#image-annotation">Image Annotation</a></li>
         
     
-        <li class="main "><a href="#requirements">Requirements</a></li>
+        <li class="main "><a href="#ocr">OCR</a></li>
+        
+            <li><a href="#book-batch">Book Batch</a></li>
         
     
-        <li class="main "><a href="#use">Use</a></li>
-        
-            <li><a href="#build-variables">Build Variables</a></li>
+        <li class="main "><a href="#newspaper">Newspaper</a></li>
         
     
-        <li class="main "><a href="#connect">Connect</a></li>
+        <li class="main "><a href="#xacml">XACML</a></li>
         
-    
-        <li class="main "><a href="#environment">Environment</a></li>
+            <li><a href="#paged-content">Paged Content</a></li>
+        
+            <li><a href="#compound">Compound</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="introduction">Introduction</h2>
-<p>The is a development environment virtual machine for the Islandora and Fedora 4 project. It should work on any operating system that supports VirtualBox and Vagrant.</p>
-<p>N.B. This virtual machine <strong>should not</strong> be used in production.</p>
-<h2 id="requirements">Requirements</h2>
-<ol>
-<li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
-<li><a href="http://www.vagrantup.com/">Vagrant</a></li>
-</ol>
-<h2 id="use">Use</h2>
-<ol>
-<li><code>git clone https://github.com/islandora-labs/islandora</code></li>
-<li><code>cd islandora/install</code></li>
-<li><code>vagrant up</code></li>
-</ol>
-<h3 id="build-variables">Build Variables</h3>
+<h1 id="islandora-namespace-rels-ext-predicates">Islandora namespace RELS-EXT predicates</h1>
+<p><code>$ grep -R "ISLANDORA_RELS_EXT_URI" Islandora-7.x</code></p>
+<h2 id="book">Book</h2>
 <ul>
-<li>VIM : If you want to install the vim configuration for Java development, use <code>VIM=true vagrant up</code>. It practically doubles the amount of time to spin up the VM, so only do so if you’re sure you want to develop directly on the VM using vim.</li>
-<li>TRIPLESTORE : If you would like to use Fuskei, it is the default. <code>vagrant up</code> will use it. If you would like to use BlazeGraph, use <code>TRIPLESTORE=blazegraph vagrant up</code>.</li>
+<li>isPageOf</li>
+<li>isSequenceNumber</li>
+<li>isPageNumber</li>
+<li>isSection</li>
 </ul>
-<h2 id="connect">Connect</h2>
-<p>You can connect to the machine via the browser at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
-<p>The default Drupal login details are:</p>
+<h2 id="image-annotation">Image Annotation</h2>
 <ul>
-<li>username: admin</li>
-<li>password: islandora</li>
+<li>targetedBy</li>
+<li>targets</li>
+<li>hasColor</li>
+<li>hasURN</li>
+<li>strokeWidth</li>
+<li>isEntity</li>
+<li>isAnnotationType</li>
 </ul>
-<p>MySQL:</p>
+<h1 id="ocr">OCR</h1>
 <ul>
-<li>username: root</li>
-<li>password: islandora</li>
+<li>hasLanguage</li>
+<li>generate_ocr</li>
 </ul>
-<p>The Fedora 4 REST API can be accessed at <a href="http://localhost:8080/fcrepo/rest">http://localhost:8080/fcrepo/rest</a>.  It currently has authentication disabled.</p>
-<p>Tomcat Manager:</p>
+<h2 id="book-batch">Book Batch</h2>
 <ul>
-<li>username: islandora</li>
-<li>password: islandora</li>
+<li>book-batched</li>
+<li>email-admin-when-ingested</li>
 </ul>
-<p>You can connect to the machine via ssh: <code>ssh -p 2222 vagrant@localhost</code></p>
-<p>The default VM login details are:</p>
+<h1 id="newspaper">Newspaper</h1>
 <ul>
-<li>username: vagrant</li>
-<li>password: vagrant</li>
+<li>isPageOf</li>
+<li>isSequenceNumber</li>
+<li>dateIssued</li>
 </ul>
-<h2 id="environment">Environment</h2>
+<h1 id="xacml">XACML</h1>
 <ul>
-<li>Ubuntu 14.04</li>
-<li>Drupal 7.37</li>
-<li>MySQL 5.5.41</li>
-<li>Apache 2.26</li>
-<li>Tomcat 7.0.52</li>
-<li>Solr 4.10.3</li>
-<li>Camel 2.14.1</li>
-<li>Fedora 4.2.0</li>
-<li>Fedora Camel Component 4.2.0</li>
-<li>Fuseki 2.0</li>
-<li>BlazeGraph 1.5.1</li>
-<li>Sync 0.0.0</li>
-<li>Islandora 7.x-2.x</li>
-<li>PHP 5.5.9 </li>
-<li>Java 7 (OpenJDK)</li>
+<li>isViewableByRole</li>
+<li>isManageableByRole</li>
+<li>isViewableByUser</li>
+<li>isManageableByUser</li>
+</ul>
+<h2 id="paged-content">Paged Content</h2>
+<ul>
+<li>hasLanguage</li>
+<li>isPageOf</li>
+<li>isSequenceNumber</li>
+<li>isPageNumber</li>
+<li>isSection</li>
+</ul>
+<h2 id="compound">Compound</h2>
+<ul>
+<li>isSequenceNumberOf$escaped_pid</li>
 </ul>
 </div>
         </div>

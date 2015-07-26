@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Hacking on Islandora - Islandora</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Islandora</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../..">Islandora</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../camel/sync/README">Islandora-Sync</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../drupal/islandora/README">Islandora (Drupal module)</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../install/README">Vagrant</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../contributing">How to contribute</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Hacking on Islandora</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../technical-documentation/architecture">Architecture</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../technical-documentation/services">Middleware Services</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../technical-documentation/commands">Commands</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../technical-documentation/docs-build">How to build documenation</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../migration/migration">Migration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../migration/fedora-namespace-predicates">Fedora namespace predicates</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../migration/islandora-namespace-predicates">Islandora namespace predicates</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../contributing">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../technical-documentation/architecture">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/Islandora-labs/islandora">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#hacking-on-islandora">Hacking on Islandora</a></li>
+        
+            <li><a href="#logging-in-to-your-development-environment">Logging in to your development environment</a></li>
+        
+            <li><a href="#port-forwarding">Port Forwarding</a></li>
+        
+            <li><a href="#important-locations">Important locations</a></li>
+        
+            <li><a href="#shared-folders">Shared folders</a></li>
+        
+            <li><a href="#compiling-camel-bundles">Compiling Camel Bundles</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="hacking-on-islandora">Hacking on Islandora</h1>
+<p>One of the goals of the 7.x-2.x project is to lower the barrier to entry for working on and with Islandora.  A shared, consistent environment amongst developers is one of the best ways to do this.  To get started hacking on Islandora with your very own development environment, all you need to do follow these steps:</p>
+<ol>
+<li>Install <a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li>Install <a href="https://www.vagrantup.com/">Vagrant</a></li>
+<li>Fork <a href="https://github.com/Islandora-Labs/islandora">Islandora 7.x-2.x</a> and clone it onto your machine using the 7.x-2.x branch</li>
+</ol>
+<pre><code class="bash">~ $ git clone -b 7.x-2.x https://github.com/your_github_name/islandora.git
+</code></pre>
+
+<p>OR
+If you're already a developer and have previously forked and cloned Islandora, just add the 7.x-2.x branch from Islandora-Labs to your existing checkout:</p>
+<pre><code class="bash">~ $ cd /path/to/islandora
+/path/to/islandora $ git remote add labs https://github.com/Islandora-Labs/islandora.git
+/path/to/islandora $ git fetch labs
+/path/to/islandora $ git checkout 7.x-2.x
+</code></pre>
+
+<ol>
+<li>Navigate into the <code>install</code> directory of your 7.x-2.x checkout</li>
+</ol>
+<pre><code class="bash">~ $ cd /path/to/islandora/install
+</code></pre>
+
+<ol>
+<li>Build your vm using <code>vagrant up</code></li>
+</ol>
+<pre><code class="bash">/path/to/islandora/install $ vagrant up
+</code></pre>
+
+<p>Sit back and relax as your development environment is created for you!  In a few minutes you’ll have a brand new Islandora install that you can use and abuse as much as you’d like.  If you ever ruin your environment (trust me, it’ll happen), you can always destroy it and bring up a new one at any time.</p>
+<pre><code class="bash">~ $ cd /path/to/islandora/install
+/path/to/islandora/install $ vagrant destroy
+/path/to/islandora/install $ vagrant up
+</code></pre>
+
+<h2 id="logging-in-to-your-development-environment">Logging in to your development environment</h2>
+<p>You can ssh into your development environment at any time by doing the following:</p>
+<pre><code class="bash">~ $ cd /path/to/islandora/install
+/path/to/islandora/install $ vagrant ssh
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-45-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 1.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Fri Jul 17 13:51:38 2015 from 10.0.2.2
+vagrant@islandora:~$
+</code></pre>
+
+<p>You'll be logged in as the vagrant user, with your github repo in your home directory.</p>
+<h2 id="port-forwarding">Port Forwarding</h2>
+<p>Many ports are forwarded from your virtual machine to your personal computer, so care must be taken that there are no conflicts. Here's a list of all the ports that get forwarded:
+- Apache: 80 -&gt; 8000
+- Tomcat: 8080 -&gt; 8080
+- Karaf: 8181 -&gt; 8181
+- MySQL: 3306 -&gt; 3306</p>
+<p>At any point in time, you can edit how the ports are forwarded by clicking on the Port Forwarding button in your virtual machine's Network settings in Virtualbox.</p>
+<p><img alt="port-settings" src="https://raw.githubusercontent.com/wiki/Islandora-Labs/islandora/images/vm-ports.png" /></p>
+<p>You can also edit the section of the Vagrantfile that controls the default port forwarding, which looks something like this:</p>
+<pre><code class="ruby">  config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
+  config.vm.network :forwarded_port, guest: 8181, host: 8181 # Karaf
+  config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL
+  config.vm.network :forwarded_port, guest: 5432, host: 5432 # PostgreSQL
+  config.vm.network :forwarded_port, guest: 80, host: 8000 # Apache
+</code></pre>
+
+<h2 id="important-locations">Important locations</h2>
+<ul>
+<li>Drupal: <code>/var/www/html/drupal</code></li>
+<li>Apache Logs: <code>/var/log/apache2/error.log</code></li>
+<li>Tomcat: <code>/var/lib/tomcat7</code><ul>
+<li>Logs: <code>/var/log/tomcat7</code></li>
+<li>Fedora 4: <code>/var/lib/tomcat7/webapps/fcrepo</code></li>
+<li>Solr: <code>/var/lib/tomcat7/webapps/solr</code></li>
+<li>BlazeGraph: <code>/var/lib/tomcat7/webapps/bigdata</code></li>
+<li>FcrepoCamelToolbox: <code>/var/lib/tomcat7/webapps/fcrepo-camel-toolbox</code></li>
+</ul>
+</li>
+<li>Karaf: <code>/opt/karaf</code><ul>
+<li>Logs: <code>/opt/karaf/data/log</code></li>
+<li>Configuration: <code>/opt/karaf/etc</code></li>
+</ul>
+</li>
+<li>Islandora: <code>/home/vagrant/islandora</code></li>
+</ul>
+<h2 id="shared-folders">Shared folders</h2>
+<p>By default, the vagrant environment uses a shared folder between your computer and the virtual machine it has created.  This folder points to your Islandora github repo on your computer and is available at <code>~/islandora</code> (<code>/home/vagrant/islandora</code>) on the virtual machine.  On top of that, in Drupal, <code>sites/all/modules/islandora</code> is a symlink pointing to <code>~/islandora/drupal</code>.  This has a few profound consequences:
+- You can use the IDE you're comfortable with on your own machine, without the need to scp/rsync code over to the development environment
+- Changes to Drupal module code are automatically reflected on your Drupal site since that code is symlinked (although you may need to be ssh'd in to <code>drush cc all</code> on occassion)
+- When testing the Vagrant install after adding changes, the code from your fork and your branch on your computer is used to generate the virtual machine</p>
+<h2 id="compiling-camel-bundles">Compiling Camel Bundles</h2>
+<p>Despite being nothing but Blueprint xml files, Camel projects still have to be compiled using Maven.  The <code>install</code> directive is the default, so all one has to do is navigate to the appropriate directory and issue a <code>mvn</code> in the command line.  For example, to compile the collection service:</p>
+<pre><code class="bash">~ $ cd /path/to/islandora/camel/services/collection-service
+/path/to/islandora/camel/serices/collection-service $ mvn
+</code></pre>
+
+<p>The only caveat here is that this is best done on the virtual machine itself.  While your virtual machine was being built, it's Karaf installation was set to monitor the vagrant user's Maven repository for changes, and autodeploy in response to <code>mvn install</code>.  So while you can always run Maven from your own machine, it will get installed in your personal Maven repository on your machine.  So to take advantage of the auto-redeploy capabilities of Karaf, you need to do this as the vagrant user.</p>
+<p>If for any reason, you have to shutdown or restart Karaf, it will cease to monitor the vagrant user's Maven repository.  In order to turn this back on, you'll have to issue the appropriate commands to get monitoring working again.  The easiest way to do this is to re-run the karaf script the install process uses to set up monitoring by executing <code>/opt/karaf/bin/client &lt; ~/islandora/install/karaf/monitor.script</code>.</p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
