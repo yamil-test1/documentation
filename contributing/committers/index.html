@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>How to build documenation - Islandora</title>
+	<title>Committers - Islandora</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -84,20 +84,20 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../contributing/contributing/">How to contribute</a>
+                            <a href="../contributing/">How to contribute</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Committers</a>
                         </li>
                     
                         <li >
-                            <a href="../../contributing/committers/">Committers</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../contributing/hacking-on-islandora/">Hacking on Islandora</a>
+                            <a href="../hacking-on-islandora/">Hacking on Islandora</a>
                         </li>
                     
                     </ul>
@@ -105,24 +105,24 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../architecture/">Architecture</a>
+                            <a href="../../technical-documentation/architecture/">Architecture</a>
                         </li>
                     
                         <li >
-                            <a href="../services/">Middleware Services</a>
+                            <a href="../../technical-documentation/services/">Middleware Services</a>
                         </li>
                     
                         <li >
-                            <a href="../commands/">Commands</a>
+                            <a href="../../technical-documentation/commands/">Commands</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="./">How to build documenation</a>
+                        <li >
+                            <a href="../../technical-documentation/docs-build/">How to build documenation</a>
                         </li>
                     
                     </ul>
@@ -155,12 +155,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../commands/">
+                    <a rel="next" href="../contributing/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../../migration/migration/">
+                    <a rel="prev" href="../hacking-on-islandora/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -183,26 +183,96 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#introduction">Introduction</a></li>
+        <li class="main active"><a href="#islandora-committers-7x-2x">Islandora Committers (7.x-2.x)</a></li>
         
-            <li><a href="#build-and-deploy-documentation">Build and Deploy documentation</a></li>
+            <li><a href="#rights">Rights</a></li>
+        
+            <li><a href="#responsibilities">Responsibilities</a></li>
+        
+            <li><a href="#committers">Committers</a></li>
+        
+            <li><a href="#guidelines-for-assessing-new-candidates-for-committership">Guidelines for assessing new candidates for committership</a></li>
+        
+            <li><a href="#new-committer-process">New Committer Process</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="introduction">Introduction</h1>
-<p>This documentation is built using <a href="http://www.mkdocs.org/">mkdocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora-Labs/islandora/tree/7.x-2.x/docs"><code>docs</code></a> directory in the repository. The organization of the documenation is controlled by the <a href="https://github.com/Islandora-Labs/islandora/blob/7.x-2.x/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
-<h2 id="build-and-deploy-documentation">Build and Deploy documentation</h2>
-<p>Documentation is build by running to the following command in the root of the repository:</p>
-<p><code>mkdocs build --clean</code></p>
-<p>This command will create a static <code>site</code> folder in the root of the repository. </p>
-<p>You can preview any changes you have made to the documentation by running the following command:</p>
-<p><code>mkdocs serve</code></p>
-<p>And then visiting http://localhost:8111 in your browser.</p>
-<p>To deploy documenation to GitHub Pages, issue the following command:</p>
-<p><code>mkdocs gh-deploy --clean</code></p></div>
+<h1 id="islandora-committers-7x-2x">Islandora Committers (7.x-2.x)</h1>
+<p>Islandora is open source and released under GPLv3. The software and associated documentation is developed collectively by a community of contributors and committers. All interested community members are encouraged to contribute to the project. Contributors who demonstrate sustained engagement with the project through quality participation in meetings, mailing lists, documentation and code updates can be nominated by existing committers to also become a committers. It should be emphasized that committers need not be limited to software developers. Community members with skills in documentation and testing, for example, can also be committers.</p>
+<h2 id="rights">Rights</h2>
+<p>Committers share the following rights:</p>
+<ul>
+<li>Write access to the codebase</li>
+<li>Nomination privileges of new committers</li>
+<li>Release management privileges</li>
+<li>Binding votes on procedural, code modification, and release issues</li>
+<li>Access to the private committers mailing list</li>
+</ul>
+<h2 id="responsibilities">Responsibilities</h2>
+<p>Committers share the following responsibilities:</p>
+<ul>
+<li>Monitor and respond to project mailing lists</li>
+<li>Attend project and technical meetings</li>
+<li>Monitor and vet bug-tracker issues</li>
+<li>Review and commit code contributions</li>
+<li>Ensure code contributions are properly licensed</li>
+<li>Guide and mentor new committers</li>
+</ul>
+<h2 id="committers">Committers</h2>
+<p>The following is an alphabetized list of the current Islandora committers:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Danny Lamb</td>
+<td>discoverygarden inc.</td>
+</tr>
+<tr>
+<td>Nick Ruest</td>
+<td>York University</td>
+</tr>
+<tr>
+<td>Jared Whiklo</td>
+<td>University of Manitoba</td>
+</tr>
+</tbody>
+</table>
+<h2 id="guidelines-for-assessing-new-candidates-for-committership">Guidelines for assessing new candidates for committership</h2>
+<p>When a contributor is nominated to become a committer, the following guidelines should be used by existing committers to evaluate the nominee's suitability.</p>
+<h3 id="ability-to-work-cooperatively-with-peers">Ability to work cooperatively with peers</h3>
+<p>How do we evaluate? By the interactions they have through mail. By how they respond to criticism. By how they participate in decision-making process.</p>
+<h3 id="ability-to-be-a-mentor">Ability to be a mentor</h3>
+<p>How do we evaluate? By the interactions they have through mail. By how clear they are and how willing they are to point at appropriate background materials (or even create them).</p>
+<h3 id="community">Community</h3>
+<p>How do we evaluate? By the interactions they have through mail. Do they help to answer questions raised on the mailing list; do they show a helpful attitude and respect for other's ideas.</p>
+<h3 id="committment">Committment</h3>
+<p>How do we evaluate? By time, by sticking through tough issues, by helping on not-so-fun tasks as well.</p>
+<h4 id="personal-skillability">Personal skill/ability</h4>
+<p>How do we evaluate? A solid general understanding of the project. Quality of discussion in mail. Patches (where applicable) easy to apply with only a cursory review.</p>
+<h2 id="new-committer-process">New Committer Process</h2>
+<p>This section describes the process for handling the voting of a new committer.</p>
+<p>Summary:</p>
+<ol>
+<li>Call a vote (<a href="https://gist.github.com/ruebot/7a360c8c22ec0d7f75ac">templates/committerVote.txt</a>)</li>
+<li>Close a vote (<a href="https://gist.github.com/ruebot/5193094fedbfc38ed873">templates/closeCommitterVote.txt</a>)</li>
+<li>Invite the new committer (<a href="https://gist.github.com/ruebot/4644cad37e3fecaeffda">templates/committerInvite.txt</a>), if no CLA is on file (<a href="https://gist.github.com/ruebot/0b677f0ee4326a857748">templates/committerInviteCLA.txt</a>)</li>
+</ol>
+<p>If they accept, then do:</p>
+<ol>
+<li>Add to Committer team of GitHub Islandora organization</li>
+<li>Add to Committer team of GitHub Islandora-Labs organization</li>
+<li>Add to islandora-committers google-group</li>
+<li>Add to committers wiki page: Islandora Committers </li>
+<li>Announce the new committer (<a href="https://gist.github.com/ruebot/ce97f18d7a7711564a1e">template/committerAnnounce.txt</a>)</li>
+</ol></div>
         </div>
 
 	<footer class="col-md-12">
