@@ -211,11 +211,36 @@
 <li><a href="http://www.vagrantup.com/">Vagrant</a></li>
 </ol>
 <h2 id="use">Use</h2>
+<p>VirtualBox:</p>
 <ol>
 <li><code>git clone https://github.com/islandora-labs/islandora</code></li>
 <li><code>cd islandora/install</code></li>
 <li><code>vagrant up</code></li>
 </ol>
+<p>DigitalOcean:</p>
+<ol>
+<li><code>git clone https://github.com/islandora-labs/islandora</code></li>
+<li><code>cd islandora/install</code></li>
+<li><code>vagrant plugin install vagrant-digitalocean</code></li>
+<li>Set the following environment variables:</li>
+<li><code>DIGITALOCEAN_TOKEN</code> -- Your DigitalOcean API token</li>
+<li><code>DIGITALOCEAN_KEYNAME</code> -- Your DigitalOcean ssh key name</li>
+<li><code>DIGITALOCEAN_KEYPATH</code> -- Path to your ssh keys that you've setup with DigitalOcean</li>
+<li><code>vagrant up --provider=digital_ocean</code></li>
+</ol>
+<p>Amazon:</p>
+<ol>
+<li><code>git clone https://github.com/islandora-labs/islandora</code></li>
+<li><code>cd islandora/install</code></li>
+<li><code>vagrant plugin install vagrant-aws</code></li>
+<li>Set the following environment variables:</li>
+<li><code>AWS_KEY</code></li>
+<li><code>AWS_SECRET</code></li>
+<li><code>AWS_KEYNAME</code></li>
+<li><code>AWS_KEYPATH</code></li>
+<li><code>vagrant up --provider=aws</code></li>
+</ol>
+<p>N.B. You may not be able to connect to your AWS instance depending on VPC settings.</p>
 <h2 id="connect">Connect</h2>
 <p>You can connect to the machine via the browser at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
 <p>The default Drupal login details are:</p>
