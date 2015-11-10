@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Fedora namespace predicates - Islandora</title>
+	<title>Adding an object to a collection in Islandora 7.x-2.x - Islandora</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -105,28 +105,28 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../user-documentation/2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
+                            <a href="../2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-documentation/creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
+                            <a href="../creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Adding an object to a collection in Islandora 7.x-2.x</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
+                            <a href="../editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
                         </li>
                     
                         <li >
-                            <a href="../../user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
+                            <a href="../form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
                         </li>
                     
                     </ul>
@@ -159,20 +159,20 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../migration/">Migration</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Fedora namespace predicates</a>
+                            <a href="../../migration/migration/">Migration</a>
                         </li>
                     
                         <li >
-                            <a href="../islandora-namespace-predicates/">Islandora namespace predicates</a>
+                            <a href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
                         </li>
                     
                     </ul>
@@ -184,12 +184,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../migration/">
+                    <a rel="next" href="../creating-collections-in-islandora-7.x-2.x/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../islandora-namespace-predicates/">
+                    <a rel="prev" href="../editing-basic-image-form-in-islandora-7.x-2.x/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -212,35 +212,42 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#fedora-3x-namespace-rels-ext-predicates">Fedora 3.x namespace RELS-EXT predicates</a></li>
+        <li class="main active"><a href="#adding-an-object-to-a-collection-in-islandora-7x-2x">Adding an object to a collection in Islandora 7.x-2.x</a></li>
         
-            <li><a href="#islandora">Islandora</a></li>
+            <li><a href="#adding-instead-of-ingesting">Adding instead of Ingesting</a></li>
         
-            <li><a href="#image-annotation">Image Annotation</a></li>
-        
-            <li><a href="#compound">Compound</a></li>
+            <li><a href="#adding-a-basic-image-content-type-to-an-existing-collection">Adding a Basic Image content type to an existing collection.</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="fedora-3x-namespace-rels-ext-predicates">Fedora 3.x namespace RELS-EXT predicates</h1>
-<p><code>$ grep -R "FEDORA_RELS_EXT_URI" Islandora-7.x</code></p>
-<h2 id="islandora">Islandora</h2>
-<ul>
-<li>isMemberOfCollection</li>
-<li>isMemberOf</li>
-</ul>
-<h2 id="image-annotation">Image Annotation</h2>
-<ul>
-<li>isAnnotationOf</li>
-</ul>
-<h2 id="compound">Compound</h2>
-<ul>
-<li>isConstituentOf</li>
-<li>isPartOf</li>
-</ul></div>
+<h1 id="adding-an-object-to-a-collection-in-islandora-7x-2x">Adding an object to a collection in Islandora 7.x-2.x</h1>
+<h2 id="adding-instead-of-ingesting"><code>Adding</code> instead of <code>Ingesting</code></h2>
+<p>I am going to start using Drupal terminology where it makes sense. Once you've got a collection node created, you can associate some content with it.  This will be important when we want to create collection views.</p>
+<h2 id="adding-a-basic-image-content-type-to-an-existing-collection">Adding a <code>Basic Image</code> content type to an existing collection.</h2>
+<p>The <code>Basic Image</code> content type provides the user with the option to upload a gif, jpg, or png image to Fedora along with descriptive metadata. Similar to other Drupal content types there are only a few steps to add a <code>Basic Image</code>.</p>
+<ol>
+<li>Select <code>Add content</code> from the admin menu or the Navigation block, then select  Basic Image from the list of content types.</li>
+</ol>
+<p><img alt="Add content - Basic Image" src="https://lh3.googleusercontent.com/OO4G5LhE67PKbTa4XQMGSg-QQI5P-I6AQgqGDHBTCeE=s500" title="Add content - Basic Image" /></p>
+<ol>
+<li>Fill in the fields in the associated metadata form. Ensure you include:</li>
+<li>the title of your image</li>
+<li>choose the image file to upload</li>
+<li>select the parent collection you want your image to be a member of. </li>
+</ol>
+<p><img alt="Basic Image - Add file and metadata" src="https://lh3.googleusercontent.com/NOQNXSN8aExOpPNBM0qpb-IwHKxYebrWhJOEFz6bbKQ=s500" title="Basic Image - Add file and metadata" /></p>
+<ol>
+<li>
+<p>Select <code>Save</code> to create a new <code>Basic Image</code>.</p>
+</li>
+<li>
+<p>Your new <code>Basic Image</code> displayed in Drupal.</p>
+</li>
+</ol>
+<p><img alt="Basic Image in Drupal" src="https://lh3.googleusercontent.com/58TK31sFQbp6SHbFxtbYm3HOKsxODCSqOlAfd5J7JG8=s500" title="Basic Image in Drupal" /></p></div>
         </div>
 
 	<footer class="col-md-12">
