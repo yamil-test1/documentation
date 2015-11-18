@@ -1,227 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding a Drupal Taxonomy in Islandora 7.x-2.x - Islandora 7.x-2.x</title>
+  
 
-	<title>Adding a Drupal Taxonomy in Islandora 7.x-2.x - Islandora</title>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../css/base.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Adding a Drupal Taxonomy in Islandora 7.x-2.x";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">Islandora</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../..">Islandora</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../camel/sync/README/">Islandora-Sync</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../install/README/">Vagrant</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../contributing/contributing/">How to contribute</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../contributing/committers/">Committers</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../contributing/hacking-on-islandora/">Hacking on Islandora</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../technical-documentation/architecture/">Architecture</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/services/">Middleware Services</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/commands/">Commands</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/docs-build/">How to build documenation</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../migration/migration/">Migration</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../editing-basic-image-form-in-islandora-7.x-2.x/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../../technical-documentation/architecture/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/Islandora-labs/islandora">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Islandora 7.x-2.x</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#creating-a-taxonomy-you-can-use-in-your-islandora-content-type">Creating a Taxonomy you can use in your Islandora Content Type</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
         
-            <li><a href="#taxonomies">Taxonomies</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Islandora 7.x-2.x</a>
         
-    
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../camel/sync/README/">Islandora-Sync</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
+        
+    </li>
+
+        
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
 
-<h1 id="creating-a-taxonomy-you-can-use-in-your-islandora-content-type">Creating a Taxonomy you can use in your Islandora Content Type</h1>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/README/">Installation (Vagrant)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/contributing/">How to contribute</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/committers/">Committers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/hacking-on-islandora/">Hacking on Islandora</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>User Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#creating-a-taxonomy-you-can-use-in-your-islandora-content-type">Creating a Taxonomy you can use in your Islandora Content Type</a></li>
+                
+                    <li><a class="toctree-l4" href="#taxonomies">Taxonomies</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Technical Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/architecture/">Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/services/">Middleware Services</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/commands/">Commands</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/docs-build/">How to build documenation</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Migration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/migration/">Migration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Islandora 7.x-2.x</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Documentation &raquo;</li>
+        
+      
+    
+    <li>Adding a Drupal Taxonomy in Islandora 7.x-2.x</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Islandora-CLAW/CLAW" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="creating-a-taxonomy-you-can-use-in-your-islandora-content-type">Creating a Taxonomy you can use in your Islandora Content Type</h1>
 <h2 id="taxonomies">Taxonomies</h2>
 <h3 id="drupal-vs-islandora-xml-forms">Drupal vs Islandora XML Forms</h3>
 <p>Taxonomies and the ability to incorporate them into Islandora XML Forms have been something the community has mostly worked around.  Drupal's taxonomy module allows the user to create a standard set of terms that can be leveraged in a content type.  The select field type in Islandora XML Forms becomes unmanageable when you had more than 10 items (it was easier to add the items in plain XML, than it was to add them through the XML Forms interface).  Drupal taxonomies will hopefully simplify the standardization, maintenance and use of vocabularies within the Islandora framework.</p>
@@ -231,32 +289,61 @@
 <p>The goal of this task is to create a taxonomy that can be used as a field with the field type of <code>Term Reference</code> and uses the <code>Select</code> Widget.  <code>Term Reference</code> will draw on our DCMI Type taxonomy.</p>
 <p><strong>Create a new Taxonomy</strong></p>
 <ol>
-<li>To create a new taxonomy, select <code>Structure &gt; Taxonomy &gt; Add taxonomy</code>. I'm going to call my taxonomy <code>DCMI Type</code>.</li>
+<li>To create a new taxonomy, select <code>Structure &gt; Taxonomy &gt; Add taxonomy</code>. I'm going to call my taxonomy <code>DCMI Type</code>.
+    <img alt="Add a new taxonomy" src="https://lh3.googleusercontent.com/_wAZTJPbWsVt8EebdvlX7xkQbujV-8QJsVGeZqmPqQQ=s700" title="Add a new taxonomy" /></li>
+<li>The next thing you'll want to do is select <code>+Add term</code> to add terms to your taxonomy. The DCMI has <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#H7">provided a list</a> with definitions.
+   <img alt="Add Taxonomy Term" src="https://lh3.googleusercontent.com/hz_Ybz9XmbYBM8a5QaTaCcXykt-SH88VBUX3ubuQxhc=s700" title="Add Taxonomy Term" /></li>
+<li>Keep adding terms until you've captured the terms and save your taxonomy.
+   <img alt="DCMI Taxonomy" src="https://lh3.googleusercontent.com/hYY0ldThWXSMQyaG6aiPY00fpy031H1Hd7ReWJNAvPY=s700" title="DCMI Taxonomy" /></li>
 </ol>
-<p><img alt="Add a new taxonomy" src="https://lh3.googleusercontent.com/_wAZTJPbWsVt8EebdvlX7xkQbujV-8QJsVGeZqmPqQQ=s700" title="Add a new taxonomy" /></p>
-<ol>
-<li>The next thing you'll want to do is select <code>+Add term</code> to add terms to your taxonomy. The DCMI has <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#H7">provided a list</a> with definitions.</li>
-</ol>
-<p><img alt="Add Taxonomy Term" src="https://lh3.googleusercontent.com/hz_Ybz9XmbYBM8a5QaTaCcXykt-SH88VBUX3ubuQxhc=s700" title="Add Taxonomy Term" /></p>
-<ol>
-<li>Keep adding terms until you've captured the terms and save your taxonomy.</li>
-</ol>
-<p><img alt="DCMI Taxonomy" src="https://lh3.googleusercontent.com/hYY0ldThWXSMQyaG6aiPY00fpy031H1Hd7ReWJNAvPY=s700" title="DCMI Taxonomy" /></p>
 <p>See <a href="../editing-basic-image-form-in-islandora-7.x-2.x/">Editing an Ingest form</a> to see how we create a new field in the Basic Image content type.</p>
 <hr />
-<p><sup>1</sup> http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary/</p></div>
+<p><sup>1</sup> http://dublincore.org/documents/2000/07/11/dcmi-type-vocabulary/</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../technical-documentation/architecture/" class="btn btn-neutral float-right" title="Architecture"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../editing-basic-image-form-in-islandora-7.x-2.x/" class="btn btn-neutral" title="Editing the Basic Image Form in Islandora 7.x-2.x"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
+      </div>
 
-	<footer class="col-md-12">
-		<hr>
-		
-		<center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-	</footer>
+    </section>
 
+  </div>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../editing-basic-image-form-in-islandora-7.x-2.x/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../technical-documentation/architecture/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>

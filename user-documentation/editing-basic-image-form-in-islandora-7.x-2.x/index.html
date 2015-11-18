@@ -1,231 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Editing the Basic Image Form in Islandora 7.x-2.x - Islandora 7.x-2.x</title>
+  
 
-	<title>Editing the Basic Image Form in Islandora 7.x-2.x - Islandora</title>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../css/base.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Editing the Basic Image Form in Islandora 7.x-2.x";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">Islandora</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../..">Islandora</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../camel/sync/README/">Islandora-Sync</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../install/README/">Vagrant</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../contributing/contributing/">How to contribute</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../contributing/committers/">Committers</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../contributing/hacking-on-islandora/">Hacking on Islandora</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Editing the Basic Image Form in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../technical-documentation/architecture/">Architecture</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/services/">Middleware Services</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/commands/">Commands</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/docs-build/">How to build documenation</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../migration/migration/">Migration</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../adding-object-to-collection-in-islandora-7.x-2.x/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../form-field-select-taxonomy-in-islandora-7.x-2.x/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/Islandora-labs/islandora">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Islandora 7.x-2.x</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#editing-the-basic-image-form">Editing the Basic Image Form</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
         
-            <li><a href="#goodbye-islandora-xml-forms-hello-drupal-field-ui">Goodbye Islandora XML Forms ... Hello Drupal Field UI</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Islandora 7.x-2.x</a>
         
-            <li><a href="#drupal-field-ui">Drupal Field UI</a></li>
+    </li>
+
         
-            <li><a href="#editing-the-basic-image-content-type">Editing the Basic Image Content Type</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../camel/sync/README/">Islandora-Sync</a>
         
-    
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
+        
+    </li>
+
+        
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
 
-<h1 id="editing-the-basic-image-form">Editing the <code>Basic Image</code> Form</h1>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/README/">Installation (Vagrant)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/contributing/">How to contribute</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/committers/">Committers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/hacking-on-islandora/">Hacking on Islandora</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>User Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Editing the Basic Image Form in Islandora 7.x-2.x</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#editing-the-basic-image-form">Editing the Basic Image Form</a></li>
+                
+                    <li><a class="toctree-l4" href="#goodbye-islandora-xml-forms-hello-drupal-field-ui">Goodbye Islandora XML Forms ... Hello Drupal Field UI</a></li>
+                
+                    <li><a class="toctree-l4" href="#drupal-field-ui">Drupal Field UI</a></li>
+                
+                    <li><a class="toctree-l4" href="#editing-the-basic-image-content-type">Editing the Basic Image Content Type</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Technical Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/architecture/">Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/services/">Middleware Services</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/commands/">Commands</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/docs-build/">How to build documenation</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Migration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/migration/">Migration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Islandora 7.x-2.x</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Documentation &raquo;</li>
+        
+      
+    
+    <li>Editing the Basic Image Form in Islandora 7.x-2.x</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Islandora-CLAW/CLAW" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="editing-the-basic-image-form">Editing the Basic Image Form</h1>
 <h2 id="goodbye-islandora-xml-forms-hello-drupal-field-ui">Goodbye Islandora XML Forms ... Hello Drupal Field UI</h2>
 <p>Those Islandorians that have used (and love) the XML Form Builder will notice a substantial difference in how forms are constructed and <a href="#">how the fields are displayed</a>. The full functionality of the XML Form Builder is not replicated in the 7.x-2.x version of Islandora yet, so help the community with working that out.</p>
 <h2 id="drupal-field-ui">Drupal Field UI</h2>
@@ -255,10 +313,10 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Basic Image Content Type Fields" src="https://lh3.googleusercontent.com/KNYo8ZcId9on25asEj-fXGJb7QyGlpGzl29khZBlze8=s700" title="Basic Image Form" />
-Screenshot of Basic Image Fields</p>
+<p><img alt="Basic Image Content Type Fields" src="https://lh3.googleusercontent.com/KNYo8ZcId9on25asEj-fXGJb7QyGlpGzl29khZBlze8=s700" title="Basic Image Form" /></p>
+<p><em>Screenshot of Basic Image Fields</em></p>
 <p>Depending on the Widget selected, you will define further properties for the field you've created.</p>
-<h2 id="editing-the-basic-image-content-type">Editing the <code>Basic Image</code> Content Type</h2>
+<h2 id="editing-the-basic-image-content-type">Editing the Basic Image Content Type</h2>
 <h3 id="rearranging-fields">Rearranging fields</h3>
 <p>The Drupal Field UI allows you to easily rearrange fields in the order you wish to present them to the user. In the screenshot above you'll note that I've dragged the DC Title field to the top of the list of fields. Don't forget to <code>Save</code> your changes.</p>
 <h3 id="editing-an-existing-field">Editing an existing field</h3>
@@ -271,29 +329,31 @@ Screenshot of Basic Image Fields</p>
 <li>permissions for the field (who can edit and/or view it)</li>
 <li>rdf mapping for the field</li>
 </ul>
-<p><img alt="Field Edit Tab" src="https://lh3.googleusercontent.com/b9mrNy6Sb7I0mFb03AsgHUq27vmtF6uVVP8qz9DdoTA=s700" title="Field Edit Tab" />
-Field Edit Tab</p>
+<p><img alt="Field Edit Tab" src="https://lh3.googleusercontent.com/b9mrNy6Sb7I0mFb03AsgHUq27vmtF6uVVP8qz9DdoTA=s700" title="Field Edit Tab" /></p>
+<p><em>Field Edit Tab</em></p>
 <p>If your field has existing data (eg. you created content using the content type already), then the changes you can apply to the field are somewhat limited.</p>
 <p>The Field Settings tab for the DC Title field warns the user that it can't be changed because data already exists in that field. That's why planning your fields and defining their properties is so important.</p>
-<p><img alt="Field Settings" src="https://lh3.googleusercontent.com/p5EQBfo3Rrm0BmEeFab-kSTDVtCw6GJnLwNoOmzPTW8=s700" title="Field Settings" />
-Field Settings Tab</p>
+<p><img alt="Field Settings" src="https://lh3.googleusercontent.com/p5EQBfo3Rrm0BmEeFab-kSTDVtCw6GJnLwNoOmzPTW8=s700" title="Field Settings" /></p>
+<p><em>Field Settings Tab</em></p>
 <p>Depending on the field type selected, different widgets may be displayed.</p>
-<p><img alt="Field Widget" src="https://lh3.googleusercontent.com/KjaUMYWwE6gtk_pzoeElXyeswZiR1y4k98kBkGpWpUU=s700" title="Field Widget" />
-Field Widget Tab</p>
+<p><img alt="Field Widget" src="https://lh3.googleusercontent.com/KjaUMYWwE6gtk_pzoeElXyeswZiR1y4k98kBkGpWpUU=s700" title="Field Widget" /></p>
+<p><em>Field Widget Tab</em></p>
 <h3 id="adding-a-new-field">Adding a new field</h3>
 <h4 id="adding-a-simple-select-field">Adding a simple select field</h4>
-<p>One of the ways to improve the user experience, data quality, and faceted displays with forms is to provide select or autocomplete options for your users.  As an example, the goal of these steps is to add a select field to your content type.
- 1. Create a new field called Image Type, with a Field Type of List (Text) and a Widget of Select List.</p>
-<p><img alt="Add a field called Image Type" src="https://lh3.googleusercontent.com/IjqJMVoRnAqg3cHSWFHW1NXEOlIXMu9RLL-T96H_T8U=s700" title="Image Type Field" /></p>
+<p>One of the ways to improve the user experience, data quality, and faceted displays with forms is to provide select or autocomplete options for your users.  As an example, the goal of these steps is to add a select field to your content type.</p>
 <ol>
-<li>We'll need some terms for our Image Type field. Whenever possible it is best to use a standard vocabulary (and if it is linked data friendly even better). As an example we'll use the Library of Congress' <a href="http://id.loc.gov/vocabulary/resourceTypes/img.html">Resource Types vocabulary for Still Image</a> to provide three terms for our select list: Drawing, Photograph, and Print. These are added as key value pairs - eg. Drawing|Drawing.</li>
-</ol>
-<p><img alt="Key Value Pair List of Terms" src="https://lh3.googleusercontent.com/ynX8GW75IPcoDdF8NFXyR-_V82T3gO-R-bIUd4tR9A4=s700" title="Key Value Pair List of Terms" /></p>
-<ol>
-<li>After you've added your terms, you can define other properties of the field like its label, help text, whether it is required or not, etc.</li>
-</ol>
-<p><img alt="Select Field Properties" src="https://lh3.googleusercontent.com/nqeEDqgE_zpA3tQM3v6KrfMVHCQoUow67rMdS2jisgg=s700" title="Select Field Properties" /></p>
-<ol>
+<li>
+<p>Create a new field called Image Type, with a Field Type of List (Text) and a Widget of Select List.
+    <img alt="Add a field called Image Type" src="https://lh3.googleusercontent.com/IjqJMVoRnAqg3cHSWFHW1NXEOlIXMu9RLL-T96H_T8U=s700" title="Image Type Field" /></p>
+</li>
+<li>
+<p>We'll need some terms for our Image Type field. Whenever possible it is best to use a standard vocabulary (and if it is linked data friendly even better). As an example we'll use the Library of Congress' <a href="http://id.loc.gov/vocabulary/resourceTypes/img.html">Resource Types vocabulary for Still Image</a> to provide three terms for our select list: Drawing, Photograph, and Print. These are added as key value pairs - eg. Drawing|Drawing.
+    <img alt="Key Value Pair List of Terms" src="https://lh3.googleusercontent.com/ynX8GW75IPcoDdF8NFXyR-_V82T3gO-R-bIUd4tR9A4=s700" title="Key Value Pair List of Terms" /></p>
+</li>
+<li>
+<p>After you've added your terms, you can define other properties of the field like its label, help text, whether it is required or not, etc.
+    <img alt="Select Field Properties" src="https://lh3.googleusercontent.com/nqeEDqgE_zpA3tQM3v6KrfMVHCQoUow67rMdS2jisgg=s700" title="Select Field Properties" /></p>
+</li>
 <li>
 <p><strong>TO DO</strong> Map to RDF.</p>
 </li>
@@ -304,37 +364,70 @@ Field Widget Tab</p>
 <h4 id="adding-a-select-field-using-a-drupal-taxonomy">Adding a select field using a Drupal taxonomy</h4>
 <p>To add a select field using a Drupal taxonomy you first need to <a href="../form-field-select-taxonomy-in-islandora-7.x-2.x/">Add a Drupal Taxonomy</a>. A taxonomy is useful when you have many terms or when you want to provide search/displays based on a controlled vocabulary. The purpose of these steps are to add a new field called DCMI Type that uses a Field Type of Term Reference and that term reference uses a taxonomy, DCMI Type, to provide a list of checkboxes for the user to select. By default Image is checked.</p>
 <ol>
-<li>Add a new field.</li>
-</ol>
-<p><img alt="Add a field that uses term reference." src="https://lh3.googleusercontent.com/uvcp3RQ9JS1uRxbhiMKqkDIIgENIENZQE3IhUk_1otc=s700" title="Add a field that uses term reference." /></p>
-<ol>
-<li>Edit field properties - add some help text, since this is the Basic Image content type select StillImage as the default value for the field. The field could potentially have multiple values (eg. Image and StillImage)</li>
-</ol>
-<p><img alt="Edit Field Properties" src="https://lh3.googleusercontent.com/7IAAiq56QREr8weAINmRZrnLKfs8bep88uFBkWy1bnA=s700" title="Edit Field Properties" /></p>
-<ol>
-<li>Select the field widget Check boxes / radio buttons.</li>
-</ol>
-<p><img alt="Select the field widget - checkboxes" src="https://lh3.googleusercontent.com/NoS_Tgpz3RuThNr6h-bavN6ZY5mrH9iNQsTInR869OQ=s700" title="Select the field widget - checkboxes." /></p>
-<ol>
+<li>
+<p>Add a new field.
+    <img alt="Add a field that uses term reference." src="https://lh3.googleusercontent.com/uvcp3RQ9JS1uRxbhiMKqkDIIgENIENZQE3IhUk_1otc=s700" title="Add a field that uses term reference." /></p>
+</li>
+<li>
+<p>Edit field properties - add some help text, since this is the Basic Image content type select StillImage as the default value for the field. The field could potentially have multiple values (eg. Image and StillImage)
+    <img alt="Edit Field Properties" src="https://lh3.googleusercontent.com/7IAAiq56QREr8weAINmRZrnLKfs8bep88uFBkWy1bnA=s700" title="Edit Field Properties" /></p>
+</li>
+<li>
+<p>Select the field widget Check boxes / radio buttons.
+    <img alt="Select the field widget - checkboxes" src="https://lh3.googleusercontent.com/NoS_Tgpz3RuThNr6h-bavN6ZY5mrH9iNQsTInR869OQ=s700" title="Select the field widget - checkboxes." /></p>
+</li>
 <li>
 <p>Save your field.</p>
 </li>
 <li>
 <p>Move it to an appropriate spot in your content type.</p>
 </li>
-</ol></div>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../form-field-select-taxonomy-in-islandora-7.x-2.x/" class="btn btn-neutral float-right" title="Adding a Drupal Taxonomy in Islandora 7.x-2.x"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../adding-object-to-collection-in-islandora-7.x-2.x/" class="btn btn-neutral" title="Adding an object to a collection in Islandora 7.x-2.x"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
+      </div>
 
-	<footer class="col-md-12">
-		<hr>
-		
-		<center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-	</footer>
+    </section>
 
+  </div>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../adding-object-to-collection-in-islandora-7.x-2.x/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../form-field-select-taxonomy-in-islandora-7.x-2.x/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>

@@ -1,229 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to contribute - Islandora 7.x-2.x</title>
+  
 
-	<title>How to contribute - Islandora</title>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../css/base.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to contribute";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">Islandora</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../..">Islandora</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../camel/sync/README/">Islandora-Sync</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../install/README/">Vagrant</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li class="active">
-                            <a href="./">How to contribute</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../committers/">Committers</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../hacking-on-islandora/">Hacking on Islandora</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../user-documentation/2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-documentation/creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../technical-documentation/architecture/">Architecture</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/services/">Middleware Services</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/commands/">Commands</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../technical-documentation/docs-build/">How to build documenation</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../migration/migration/">Migration</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../../install/README/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../committers/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/Islandora-labs/islandora">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Islandora 7.x-2.x</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#welcome">Welcome!</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
         
-            <li><a href="#workflows">Workflows</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Islandora 7.x-2.x</a>
         
-            <li><a href="#license-agreements">License Agreements</a></li>
+    </li>
+
         
-    
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../camel/sync/README/">Islandora-Sync</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/islandora/README/">Islandora (Drupal module)</a>
+        
+    </li>
+
+        
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
 
-<h1 id="welcome">Welcome!</h1>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/README/">Installation (Vagrant)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">How to contribute</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#welcome">Welcome!</a></li>
+                
+                    <li><a class="toctree-l4" href="#workflows">Workflows</a></li>
+                
+                    <li><a class="toctree-l4" href="#license-agreements">License Agreements</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../committers/">Committers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../hacking-on-islandora/">Hacking on Islandora</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>User Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-documentation/2xfor1x/">Islandora 2.x for Islandora 1.x Users</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-documentation/creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora 7.x-2.x</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Technical Documentation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/architecture/">Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/services/">Middleware Services</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/commands/">Commands</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../technical-documentation/docs-build/">How to build documenation</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Migration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/migration/">Migration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Islandora 7.x-2.x</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Contributing &raquo;</li>
+        
+      
+    
+    <li>How to contribute</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Islandora-CLAW/CLAW" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome">Welcome!</h1>
 <p>If you are reading this document then you are interested in contributing to the Islandora and Fedora 4 project. All contributions are welcome: use-cases, documentation, code, patches, bug reports, feature requests, etc. You do not need to be a programmer to speak up!</p>
 <h2 id="workflows">Workflows</h2>
 <p>For the time being, the community around this project is centred at the <a href="https://github.com/Islandora/Islandora-Fedora4-Interest-Group">Islandora Foundation, Fedora 4 Interest Group</a>. The group meets on the fourth Friday of each month at 1PM EST. The meetings usually happen via Skype, and meeting announcements/agendas are posted to the <a href="https://groups.google.com/forum/#!forum/islandora">Islandora community list</a> and the <a href="https://groups.google.com/forum/#!forum/islandora-dev">Islandora developers list</a>. You can view meeting agendas and minutes <a href="https://github.com/islandora-interest-groups/Islandora-Fedora4-Interest-Group/tree/master/meetings">here</a>.</p>
@@ -273,19 +331,52 @@ need to:</p>
 </ol>
 <p>You may want to read <a href="https://help.github.com/articles/syncing-a-fork">Syncing a fork</a> for instructions on how to keep your fork up to date with the latest changes of the upstream (official) <code>islandora</code> repository.</p>
 <h2 id="license-agreements">License Agreements</h2>
-<p>The Islandora Foundation requires that contributors complete a <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or be covered by a <a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. The signed copy of the license agreement should be sent to <a href="mailto:community@islandora.ca?Subject=Contributor%20License%20Agreement" target="_top">community@islandora.ca</a>. This license is for your protection as a contributor as well as the protection of the Foundation and its users; it does not change your rights to use your own contributions for any other purpose.</p></div>
+<p>The Islandora Foundation requires that contributors complete a <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or be covered by a <a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. The signed copy of the license agreement should be sent to <a href="mailto:community@islandora.ca?Subject=Contributor%20License%20Agreement" target="_top">community@islandora.ca</a>. This license is for your protection as a contributor as well as the protection of the Foundation and its users; it does not change your rights to use your own contributions for any other purpose.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../committers/" class="btn btn-neutral float-right" title="Committers"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../install/README/" class="btn btn-neutral" title="Installation (Vagrant)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
+      </div>
 
-	<footer class="col-md-12">
-		<hr>
-		
-		<center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-	</footer>
+    </section>
 
+  </div>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../install/README/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../committers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>
