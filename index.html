@@ -1,386 +1,599 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Documentation for Islandora CLAW">   
-    <link rel="shortcut icon" href="./img/favicon.ico">
-
-    <title>Islandora CLAW</title>
-
-    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="./css/base.css" rel="stylesheet">
-    <link href="./css/cinder.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.css">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-    <script>
-    WebFont.load({
-        google: {
-            families: ['Open Sans', 'PT Sans']
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Islandora CLAW - Documentation for Islandora CLAW</title>
+      
+      
+        <meta name="description" content="Documentation for Islandora CLAW">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Islandora CLAW">
+    <meta property="og:image" content="None/./">
+    <meta name="apple-mobile-web-app-title" content="Islandora CLAW">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('./assets/fonts/icon.eot?52m981');
+      	src: url('./assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('./assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('./assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('./assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="./assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
         }
-    });
-    </script>
-
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
     
-</head>
-
-<body class="homepage" >
-
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-
-            <!-- Main title -->
-            <a class="navbar-brand" href=".">Islandora CLAW</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                
-                
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li class="active">
-    <a href=".">Islandora CLAW</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="camel/sync/README/">Islandora-Sync</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="drupal/islandora/README/">Islandora (Drupal module)</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contributing <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="contributing/contributing/">How to contribute</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="contributing/committers/">Committers</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="contributing/hacking-on-islandora/">Hacking on Islandora</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Documentation <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="user-documentation/2xfor1x/">Islandora CLAW for Islandora 1.x Users</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="user-documentation/creating-collections-in-islandora-7.x-2.x/">Creating Collections in Islandora CLAW</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/">Adding an object to a collection in Islandora CLAW</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/">Editing the Basic Image Form in Islandora CLAW</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/">Adding a Drupal Taxonomy in Islandora CLAW</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technical Documentation <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="technical-documentation/architecture/">Architecture</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="install/README/">Installation (Vagrant)</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="technical-documentation/services/">Middleware Services</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="technical-documentation/commands/">Commands</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="technical-documentation/docs-build/">How to build documenation</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Migration <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="migration/migration/">Migration</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="migration/fedora-namespace-predicates/">Fedora namespace predicates</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="migration/islandora-namespace-predicates/">Islandora namespace predicates</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                </ul>
-            
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
-                    <li class="disabled">
-                        <a rel="next" >
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="camel/sync/README/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                
-                
-                    <li>
-                        <a href="https://github.com/Islandora-CLAW/CLAW">
-                            
-                                <i class="fa fa-github"></i>
-                            
-                            GitHub
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
+    
+    <script src="./assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
     </div>
-</div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                About <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Islandora CLAW
+      </div>
+    </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/Islandora-CLAW/CLAW" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Islandora CLAW
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          Islandora-CLAW/CLAW
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/Islandora-CLAW/CLAW/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/Islandora-CLAW/CLAW/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <span class="section">About</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="Islandora CLAW" href=".">
+      Islandora CLAW
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Introduction" href="#introduction">
+                Introduction
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Repository Structure" href="#repository-structure">
+                Repository Structure
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Sponsors" href="#sponsors">
+                Sponsors
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Maintainers" href="#maintainers">
+                Maintainers
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Development" href="#development">
+                Development
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
 
-    <div class="container">
+      
         
-        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
+  <li>
+    <a class="" title="Introduction to Islandora CLAW" href="user-documentation/intro-to-claw/">
+      Introduction to Islandora CLAW
+    </a>
     
-        <li class="first-level active"><a href="#about-islandora-claw">About Islandora CLAW</a></li>
+  </li>
+
+      
         
-            <li class="second-level"><a href="#about-this-guide">About this guide</a></li>
-            
-        
-            <li class="second-level"><a href="#installation">Installation</a></li>
-            
-        
-            <li class="second-level"><a href="#contributing">Contributing</a></li>
-            
-        
-            <li class="second-level"><a href="#sponsors">Sponsors</a></li>
-            
-        
-            <li class="second-level"><a href="#maintainers">Maintainers</a></li>
-            
-        
-            <li class="second-level"><a href="#licensing">Licensing</a></li>
-            
-        
+  <li>
+    <a class="" title="Alpaca" href="alpaca/README/">
+      Alpaca
+    </a>
     
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Chullo" href="chullo/README/">
+      Chullo
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Crayfish" href="crayfish/README/">
+      Crayfish
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="PDX" href="pdx/README/">
+      PDX
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Islandora (Drupal module)" href="islandora/README/">
+      Islandora (Drupal module)
+    </a>
+    
+  </li>
+
+      
     </ul>
-</div></div>
-        <div class="col-md-9" role="main">
+  </li>
 
-<h1 id="about-islandora-claw">About Islandora CLAW</h1>
-<p><a href="http://islandora.ca">Islandora</a> is an open-source software framework designed to help institutions and organizations and their audiences collaboratively manage, and discover digital assets using a best-practices framework.  Islandora was originally developed by the University of Prince Edward Island's Robertson Library, but is now implemented and contributed to by an ever-growing international community.</p>
-<p>Islandora consists of:</p>
+          
+            
+  <li>
+    <span class="section">Installation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Installation (Vagrant)" href="install/README/">
+      Installation (Vagrant)
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Contributing</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="How to contribute" href="contributing/CONTRIBUTING/">
+      How to contribute
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Committers" href="contributing/committers/">
+      Committers
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Hacking on Islandora" href="contributing/hacking-on-islandora/">
+      Hacking on Islandora
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">User Documentation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Islandora CLAW for Islandora 1.x Users" href="user-documentation/2xfor1x/">
+      Islandora CLAW for Islandora 1.x Users
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Creating Collections in Islandora CLAW" href="user-documentation/creating-collections-in-islandora-7.x-2.x/">
+      Creating Collections in Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Adding an object to a collection in Islandora CLAW" href="user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/">
+      Adding an object to a collection in Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Editing the Basic Image Form in Islandora CLAW" href="user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/">
+      Editing the Basic Image Form in Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Adding a Drupal Taxonomy in Islandora CLAW" href="user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/">
+      Adding a Drupal Taxonomy in Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Technical Documentation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Architecture" href="technical-documentation/architecture/">
+      Architecture
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Middleware Services" href="technical-documentation/services/">
+      Middleware Services
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Commands" href="technical-documentation/commands/">
+      Commands
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="How to build documenation" href="technical-documentation/docs-build/">
+      How to build documenation
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Semantic Versioning Policy" href="technical-documentation/versioning/">
+      Semantic Versioning Policy
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Migration</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Migration" href="migration/migration/">
+      Migration
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Fedora namespace predicates" href="migration/fedora-namespace-predicates/">
+      Fedora namespace predicates
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Islandora namespace predicates" href="migration/islandora-namespace-predicates/">
+      Islandora namespace predicates
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="islandora-claw"><img alt="Islandora CLAW" src="https://camo.githubusercontent.com/738dd7cbd90a3ef06b9bb55a4cf5ed385a048fd4/687474703a2f2f69736c616e646f72612e63612f73697465732f64656661756c742f66696c65732f696d616765732f6c6f6273746572434c41572e706e67" /> Islandora CLAW</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Islandora CLAW is the next generation of Islandora. Still in development, this major upgrade will be compatible with <a href="https://wiki.duraspace.org/display/FF/Fedora+Repository+Home">Fedora 4</a>.</p>
+<p>For more details, please check out the following resources:</p>
 <ul>
-<li><a href="camel/sync/README/">Sync</a> - Event driven middleware based on Apache Camel that synchronizes a Fedora 4 JCR with a Drupal CMS.</li>
-<li><a href="drupal/islandora/README/">Islandora</a> - Fedora 4 Repository module</li>
-<li><a href="install/README/">Install</a> - The is a development environment virtual machine for Islandora CLAW. It should work on any operating system that supports VirtualBox and Vagrant.</li>
+<li><a href="https://github.com/Islandora-CLAW/CLAW/wiki#islandora-7x-2x-tech-calls">Weekly Tech Calls</a></li>
+<li><a href="https://github.com/Islandora-CLAW/CLAW/wiki/2015">2015</a></li>
+<li><a href="https://github.com/Islandora-CLAW/CLAW/wiki/2016">2016</a></li>
+<li>CLAW Lessons - webinars on how to develop CLAW </li>
+<li>Week 01: <a href="http://connect.scholarsportal.info/p1yw6tqj5ri/?launcher=false&amp;fcsContent=true&amp;pbMode=normal">Intro to Fedora 4.x</a></li>
+<li>Week 02: <a href="http://connect.scholarsportal.info/p4vgnyej4yc/?launcher=false&amp;fcsContent=true&amp;pbMode=normal">Hands-on Creating Fedora 4.x Resources</a></li>
+<li>Week 03: <a href="http://connect.scholarsportal.info/p1m4snlupg1/?launcher=false&amp;fcsContent=true&amp;pbMode=normal">Data Flow in the CLAW</a></li>
+<li>Week 04: <a href="http://connect.scholarsportal.info/p1gtdr1tmgs/?launcher=false&amp;fcsContent=true&amp;pbMode=normal&amp;smartPause=false">Intro Drupal side of CLAW and some Camel</a></li>
+<li>Week 05: <a href="http://connect.scholarsportal.info/p2sbci2pf75/">Microservices 101 (Part 1)</a></li>
+<li>Week 06: <a href="http://connect.scholarsportal.info/p7e7gqilgzg/">Microservices 101 (Part 2)</a></li>
+<li>Week 07: <a href="http://connect.scholarsportal.info/p45l482w49w/">Drupal is Dead. Long Live Drupal (Drupal 8)</a></li>
+<li>Week 08: <a href="http://connect.scholarsportal.info/p5b25a6ptqs/">Data Modeling in Claw, Migration to FCRepo 4, Derivatives</a></li>
+<li>Week 09: <a href="http://connect.scholarsportal.info/p70dsdwogbr/">How to get involved and contribute!</a></li>
 </ul>
-<h2 id="about-this-guide">About this guide</h2>
-<p>The Technical documentation will help you understand:</p>
+<h2 id="repository-structure">Repository Structure</h2>
 <ul>
-<li>Islandora CLAW architecture</li>
-<li>Middleware services</li>
-<li>IslandoraCommand</li>
+<li><a href="https://github.com/islandora-claw/Alpaca">Alpaca</a>: Event driven middleware based on Apache Camel that synchronizes a Fedora 4 with Drupal.  </li>
+<li><a href="https://github.com/Islandora-CLAW/Chullo">Chullo</a>: A PHP client for Fedora 4 built using Guzzle and EasyRdf. </li>
+<li><a href="https://github.com/Islandora-CLAW/Crayfish">Crayfish</a>: Top level container for the various Islandora CLAW microservices, lovingly known as Crayfish.</li>
+<li><a href="./docs">docs</a>: Documentation!</li>
+<li><a href="./install">install</a>: Bleeding edge development environment</li>
+<li><a href="https://github.com/Islandora-CLAW/islandora">islandora</a>: Islandora CLAW Drupal modules </li>
+<li><a href="https://github.com/Islandora-CLAW/pdx">PDX</a>: Top level container for the various <a href="http://pcdm.org/">PCDM</a> specific Islandora CLAW microservices. </li>
 </ul>
-<p>The <a href="technical-documentation/docs-build/">How to build documentation</a> provides and overview on how the documentation is created, built, and deployed.</p>
-<p>The <a href="migration/migration/">Migration</a> provides and overview of Fedora 3 -&gt; Fedora 4 mappings, along with lists of Fedora and Islandora namespace predicates that are in use in a standard Islandora installation.</p>
-<h2 id="installation">Installation</h2>
-<p>The <a href="install/README/">installation section</a> provides and overview on how to create a virtual development environment.</p>
-<h2 id="contributing">Contributing</h2>
-<p>If you would like to contribute, please get involved by attending our weekly <a href="https://github.com/Islandora-CLAW/CLAW/wiki#islandora-7x-2x-tech-calls">Tech Call</a>, and check out the <a href="contributing/contributing/">contributing section</a>. We love to hear from you!</p>
-<p>If you would like to contribute code to the project, you will need to be covered by an Islandora Foundation <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or <a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. Please see the <a href="http://islandora.ca/resources/contributors">Contributors</a> page on Islandora.ca for more information.</p>
+<p>Note: the <a href="https://github.com/Islandora-CLAW/claw-ansible">Ansible</a> and <a href="https://github.com/Islandora-CLAW?utf8=%E2%9C%93&amp;query=docker">Docker</a> repositories are early, experimental provisioning tools for the CLAW stack. For context see <a href="https://github.com/Islandora-CLAW/CLAW/issues/182">this</a>. Development is focused on the vagrant / bash environment referenced above, which is the recommended starting point for working with CLAW.</p>
 <h2 id="sponsors">Sponsors</h2>
 <ul>
-<li>Discoverygarden</li>
+<li>UPEI</li>
+<li>discoverygarden inc.</li>
 <li>LYRASIS</li>
-<li>York University</li>
 <li>McMaster University</li>
-<li>University of Prince Edward Island</li>
-<li>University of Manitoba</li>
 <li>University of Limerick</li>
+<li>York University</li>
+<li>University of Manitoba</li>
 <li>Simon Fraser University</li>
 <li>PALS</li>
+<li>American Philosophical Society</li>
+<li>Common Media Inc.</li>
 </ul>
 <h2 id="maintainers">Maintainers</h2>
 <ul>
 <li><a href="https://github.com/ruebot">Nick Ruest</a></li>
-<li><a href="https://github.com/daniel-dgi/">Daniel Lamb</a></li>
+<li><a href="https://github.com/dannylamb/">Daniel Lamb</a></li>
+<li><a href="https://github.com/whikloj">Jared Whiklo</a></li>
+<li><a href="https://github.com/DiegoPino">Diego Pino</a></li>
 </ul>
-<h2 id="licensing">Licensing</h2>
-<p>Islandora is licensed under the GNU General Public License, Version 3. See <a href="https://github.com/Islandora-Labs/islandora/blob/7.x-2.x/LICENSE">LICENSE</a> for the full license text.</p></div>
-        
+<h2 id="development">Development</h2>
+<p>If you would like to contribute, please get involved by attending our weekly <a href="https://github.com/Islandora-CLAW/CLAW/wiki">Tech Call</a>. We love to hear from you!</p>
+<p>If you would like to contribute code to the project, you need to be covered by an Islandora Foundation <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or <a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. Please see the <a href="http://islandora.ca/resources/contributors">Contributors</a> pages on Islandora.ca for more information.</p>
+          <aside class="copyright" role="note">
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
     </div>
-
-    <footer class="col-md-12 text-center">
-        <hr>
-        <p>
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
-    </footer>
-
-    <script src="./js/jquery-1.10.2.min.js"></script>
-    <script src="./js/bootstrap-3.0.3.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script>
-    var base_url = '.';
-    </script>
-    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-    <script src="./js/base.js"></script>
-
-    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        From here you can search these documents. Enter your search terms below.
-                    </p>
-                    <form role="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                        </div>
-                    </form>
-                    <div id="mkdocs-search-results"></div>
-                </div>
-                <div class="modal-footer">
-                </div>
+    <div class="next">
+      
+        <a href="user-documentation/intro-to-claw/" title="Introduction to Islandora CLAW">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Introduction to Islandora CLAW
+              </div>
             </div>
-        </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
     </div>
+  </nav>
 
-    </body>
-
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '.';
+      var repo_id  = 'Islandora-CLAW/CLAW';
+    </script>
+    <script src="./assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2016-04-06 18:13:11.036898
--->
