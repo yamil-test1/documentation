@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Minimum Viable Product - Islandora CLAW</title>
+      
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Islandora CLAW">
+    <meta property="og:image" content="None/../../">
+    <meta name="apple-mobile-web-app-title" content="Islandora CLAW">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+      <style>
+        body, input {
+          font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Technical Documentation <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Minimum Viable Product
+      </div>
+    </div>
+    
+      
+      <div class="button button-twitter" role="button" aria-label="Twitter">
+        <a href="https://twitter.com/islandora" title="@islandora on Twitter" target="_blank" class="toggle-button icon icon-twitter"></a>
+      </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/Islandora-CLAW/CLAW" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Islandora CLAW
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          Islandora-CLAW/CLAW
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/Islandora-CLAW/CLAW/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/Islandora-CLAW/CLAW/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <span class="section">User Documentation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Introduction to Islandora CLAW" href="../../user-documentation/intro-to-claw/">
+      Introduction to Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Islandora CLAW for 1.x Users" href="../../user-documentation/2xfor1x/">
+      Islandora CLAW for 1.x Users
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Technical Documentation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="Minimum Viable Product" href="./">
+      Minimum Viable Product
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Motivation" href="#motivation">
+                Motivation
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="High Level Features" href="#high-level-features">
+                High Level Features
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Architecture" href="#architecture">
+                Architecture
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Request Flows" href="#request-flows">
+                Request Flows
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Content Modeling in Fedora" href="#content-modeling-in-fedora">
+                Content Modeling in Fedora
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Drupal 8" href="#drupal-8_1">
+                Drupal 8
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="How to build documenation" href="../../technical-documentation/docs-build/">
+      How to build documenation
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Semantic Versioning Policy" href="../../technical-documentation/versioning/">
+      Semantic Versioning Policy
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Components</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Islandora CLAW" href="../..">
+      Islandora CLAW
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Alpaca" href="../../alpaca/README/">
+      Alpaca
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Chullo" href="../../chullo/README/">
+      Chullo
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Crayfish" href="../../crayfish/README/">
+      Crayfish
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="PDX" href="../../pdx/README/">
+      PDX
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Islandora (Drupal module)" href="../../islandora/README/">
+      Islandora (Drupal module)
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Installation</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Installation (Vagrant)" href="../../install/README/">
+      Installation (Vagrant)
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Contributing</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="How to contribute" href="../../contributing/CONTRIBUTING/">
+      How to contribute
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Committers" href="../../contributing/committers/">
+      Committers
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Hacking on Islandora" href="../../contributing/hacking-on-islandora/">
+      Hacking on Islandora
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Migration</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Migration" href="../../migration/migration/">
+      Migration
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Fedora namespace predicates" href="../../migration/fedora-namespace-predicates/">
+      Fedora namespace predicates
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Islandora namespace predicates" href="../../migration/islandora-namespace-predicates/">
+      Islandora namespace predicates
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+              
+              <li>
+                <a href="https://twitter.com/islandora" target="_blank" title="@islandora on Twitter">
+                  @islandora on Twitter
+                </a>
+              </li>
+            
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="islandora-claw-mvp">Islandora CLAW MVP</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Islandora CLAW project is currently transitioning from a prototype into a competitive product, and has had a requirements change from integration with Drupal 7 to Drupal 8. In order to aid in that transition, we are defining the minimum viable product. This will defend against scope creep, give clearly defined goals for community members to work towards, and present the point at which the CLAW team feels the software is ready to be tested out in small installations.</p>
+<p>Needless to say, since this is a minimum product, a lot of parts of the previous prototype are either going to get replaced by an existing project to ease the maintenance load, or be removed altogether until time and resources allow other development.</p>
+<h2 id="high-level-features">High Level Features</h2>
+<p>These are what are considered the minimum requirements for a functional Islandora CLAW that is worthy of a 1.0.0 release.</p>
+<ul>
+<li>Content modeled in Drupal as Entities using <a href="https://github.com/duraspace/pcdm/wiki">PCDM</a> 1.0</li>
+<li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API exposed for Drupal Entities</li>
+<li>Support for collections, images, books, and pages</li>
+<li>The ability to control metadata mappings between Drupal and <a href="https://www.w3.org/RDF/">RDF</a></li>
+<li>Provide RDF based default descriptive metadata profile in Drupal</li>
+<li>The ability to export/import <a href="http://json-ld.org/">JSON-LD</a></li>
+<li>Automatic backup of Drupal content in Fedora 4</li>
+<li>Ability to restore/bootstrap a Drupal site from a properly structured Fedora 4 repository</li>
+<li>The ability to index and search resources with Apache Solr</li>
+<li>The ability to restrict access to collections and/or individual resources across all representations (Drupal, Fedora, Solr, etc…)</li>
+<li>Asynchronous derivative generation</li>
+<li><a href="https://www.vagrantup.com/">Vagrant</a> environment for development purposes, which will serve as a starting point for more complicated, distributed installs</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="overview">Overview</h3>
+<p>Islandora is composed of four broad categories of technologies. On one end, there is the administrative interface, which users and other clients will interact with. On the other is a repository, which will hold binary data and RDF triples. In between the two are connectors, which are small pieces of software that react to events from either administrative interface or the repository. These connectors will utilize microservices -- small utilities exposed as web services either internally or out on the internet at large.</p>
+<p><img alt="High Level Diagram of Islandora CLAW" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/masterhttps://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image11.png" /></p>
+<h3 id="administrative-interface">Administrative Interface</h3>
+<h4 id="drupal-8">Drupal 8</h4>
+<p><a href="https://www.drupal.org/8">Drupal 8</a> provides a content management system (CMS for short) that allows end users the ability to create, edit, publish, and present digital content. Clients will interact with Drupal 8 via a browser or through a http client (such as <a href="https://curl.haxx.se/">cURL</a>) in order to manipulate digital content. With each write operation, messages will be emitted to an event stream for processing by connectors.</p>
+<h4 id="sql-db">SQL DB</h4>
+<p>Drupal 8 requires a <a href="http://www.mysql.com/">MySQL</a> (or drop-in replacement) or <a href="https://www.postgresql.org/">Postgres</a> database.</p>
+<h4 id="search-engine">Search Engine</h4>
+<p>Existing Drupal 8 modules for <a href="https://lucene.apache.org/solr/">Apache Solr</a> or <a href="https://www.elastic.co/">Elastic Search</a> will be utilized to provide full text search.</p>
+<h3 id="microservices">Microservices</h3>
+<p>A microservice is a small web service with functionality related to a single problem, even if it exposes just a single function. It can be deployed and configured independently of any other service, even having its own database if necessary. It can even be something that we don’t directly maintain or control ourselves.</p>
+<h4 id="id-mapping-service">ID Mapping Service</h4>
+<p>Identifiers between Fedora and Drupal need to be aligned so we can trace our way from one end of the system to the other.  Implementing it as a microservice decouples this functionality from the rest of the codebase, allowing it to change or be pluggable with different mapping functions. It will utilize its own database. The ID indexing connector will be its primary client, updating the registry of IDs in response to repository events.</p>
+<h4 id="image-conversion-service">Image Conversion Service</h4>
+<p>Image conversion is a common operation in a content repository. Thumbnails, lower resolution copies for everyday access, and JP2s for use with IIIF image servers need to be generated when preservation masters are added or updated. This can be easily implemented by exposing ImageMagick’s convert command as a microservice.</p>
+<h4 id="text-extraction-service">Text Extraction Service</h4>
+<p>Text extraction on PDFs or images of written text can be utilized to provide searching capabilities on content of a book or document.   Ghostscript can be used on text based PDF’s. Images will require an OCR utility like <a href="https://github.com/tesseract-ocr/tesseract/wiki">Tesseract</a>.</p>
+<h4 id="fits-web-service">FITS Web Service</h4>
+<p>The <a href="http://projects.iq.harvard.edu/fits/downloads#fits-servlet">FITS web service</a> is an already existing project that extracts technical metadata and produces FITS xml files.</p>
+<h3 id="repository">Repository</h3>
+<h4 id="fedora">Fedora</h4>
+<p><a href="https://wiki.duraspace.org/display/FF/Fedora+Repository+Home">Fedora 4</a> houses binary content along with RDF triples for metadata about repository content. It also conforms to the <a href="https://www.w3.org/TR/ldp-primer/">LDP</a> specification, allowing for manipulation of relationships through HTTP operations.</p>
+<h4 id="api-x">API-X</h4>
+<p><a href="https://wiki.duraspace.org/display/FF/Design+-+API+Extension+Architecture">API-X</a> allows Islandora to extend the Fedora 4 API.  Microservices are registered in API-X and then ‘bound’ to repository content. A proxy sitting in front of Fedora exposes microservices as functions on repository content, which all HTTP requests must be routed through.  </p>
+<p>For example, suppose Islandora is running the FITS web service described above.  Then let’s say we ‘bind’ it to all binaries in Fedora, with an identifier of ‘fits’. If we have a binary file at <a href="http://example.org/fcrepo/rest/binaries/example">http://fedora-host.com/fcrepo/rest/binaries/example</a>, then instead of writing code to retreive the content and forward it to our FITS service, we simply visit the proxy at <a href="http://apix-host.com/fcrepo/rest/binaries/example/fits">http://apix-host.com/fcrepo/rest/binaries/example/fits</a>. </p>
+<p>Since services can be described, and that information is made available to interested clients, other applications can make informed decisions about what services are available for particular resources.</p>
+<h4 id="triplestore">Triplestore</h4>
+<p>RDF content is indexed in a <a href="https://www.w3.org/TR/rdf-sparql-query/">SPARQL</a> 1.1 compliant triplestore.</p>
+<h3 id="connectors">Connectors</h3>
+<p>Connectors are small programs that listen to the event streams of either the Fedora repository or Drupal. In response to events, they perform actions, often bridging two pieces of technology together (like indexing a triplestore, hence ‘connectors’). <a href="http://camel.apache.org/">Apache Camel</a> is a natural fit for these types of programs.</p>
+<p>Connectors will often delegate larger chunks of work to microservices, either bound to content through API-X or used stand-alone. They are primarily concerned with guaranteeing that events are responded to in a <a href="https://www.youtube.com/watch?v=6dVNdFwqeKs">idempotent</a> fashion.  Due to the nature of asynchronous messaging, certain guarantees, such as timeliness of delivery, cannot be made.  So connectors may need to retry a couple of times, or know to ignore a message that’s delivered late or applied twice.  This is why it’s important that operations are idempotent.</p>
+<h4 id="id-indexer">ID Indexer</h4>
+<p>A connector will listen to Fedora events and index unique IDs contained in RDF using the ID Mapping microservice. The predicate used to notate unique IDs can be controlled through configuration. </p>
+<h4 id="triplestore-indexer">Triplestore Indexer</h4>
+<p>A connector will listen to Fedora events and index RDF in a SPARQL 1.1 triplestore. This is provided by the Fedora community as part of the <a href="https://github.com/fcrepo4-exts/fcrepo-camel-toolbox/tree/master/fcrepo-indexing-triplestore">fcrepo-camel-toolbox</a> project.</p>
+<h4 id="salmon-formerly-sync">Salmon (formerly Sync)</h4>
+<p><a href="https://github.com/Islandora-CLAW/Salmon">Salmon</a> is a sub-project that provides two connectors for keeping information between Fedora and Drupal in sync. One, which indexes content in Fedora from Drupal events, is always running. The other, which indexes content in Drupal based on state in Fedora, is manually triggered through a re-indexing process like other fcrepo-camel-toolbox connectors.</p>
+<h4 id="alpaca">Alpaca</h4>
+<p><a href="https://github.com/Islandora-CLAW/Alpaca">Alpaca</a> responds to creation and update events for binary files and creates derivative files based on the microservices it finds available for that type of binary in API-X. Derivatives are then ingested into Drupal, with Salmon making sure they get flushed back to Fedora.</p>
+<h2 id="request-flows">Request Flows</h2>
+<p>Here are the proposed flows for all the different types of requests you can make against repository objects.</p>
+<h3 id="read-a-resource">Read a Resource</h3>
+<p>Suppose a client views a resource in Islandora through their browser. A request is made to Drupal, which looks up the resource in an SQL database, and its representation is returned to the user.</p>
+<p><img alt="Read a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/masterhttps://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image00.png" /></p>
+<h3 id="create-a-resource">Create a Resource</h3>
+<p>Suppose a client submits a form to create a new Resource, or provides a json-ld or binary representation to an entity REST endpoint. The supplied representation is used to create an entity in Drupal. In response to the entity being saved, an event is emitted with supplied representation as the body. The response is then sent back to the client. If using a browser, the client should be redirected to the newly created resource.  </p>
+<p><img alt="Create a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
+<p>Meanwhile, Salmon will receive the creation event, and ingest the supplied representation in Fedora. Fedora will then emit a creation event.  </p>
+<p><img alt="Emit a creation event" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image02.png" /></p>
+<p>The ID Mapping connector will react, retrieving the Fedora representation and extracting an ID out of the RDF. That ID will be indexed in the ID Mapping microservice.</p>
+<p><img alt="ID indexed in the ID Mapping microservice" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image07.png" /></p>
+<p>The triple store connector will also react, retrieving RDF and indexing it in the triple store.</p>
+<p><img alt="Retrieving RDF and indexing it in the triple store" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
+<p>If the node created was a preservation master, then Alpaca will respond by inspecting the list of derivative generation services bound as extensions on the preservation master in API-X. Each will be invoked, with the new resource getting ingested into Drupal.  </p>
+<p><img alt="New resource ingested into Drupal" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image10.png" /></p>
+<p>The process repeats itself again, with new events being emitted for the new entities getting created in Drupal. Salmon responds and ingests the derivatives into Fedora.</p>
+<p><img alt="Salmon responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image02.png" /></p>
+<p>Fedora emits the creation events, but since none are a preservation master, Alpaca does not respond and the cycle is broken.</p>
+<p><img alt="Alpaca does not respond and the cycle is broken" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image08.png" /></p>
+<h3 id="update-a-resource">Update a Resource</h3>
+<p>Suppose a client submits a form to update a new Resource, or provides a json-ld or binary representation to an entity REST endpoint.  In response to the entity being saved, an event is emitted with supplied representation as the body. The response is then sent back to the client.</p>
+<p><img alt="Update a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
+<p>Meanwhile, Salmon will receive the update event, and apply it against the representation in Fedora. Fedora will then emit an update event.  </p>
+<p><img alt="Fedora will emit an update event" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image04.png" /></p>
+<p>The triple store connector will also react, retrieving RDF and indexing it in the triple store.</p>
+<p><img alt="Triple store connector reacts" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
+<p>If a binary of a presentation master was updated, then Alpaca will respond by inspecting the list of derivative generation services bound as extensions on the preservation master in API-X. Each will be invoked, with the new resource overwriting its predecessor in Drupal.</p>
+<p><img alt="New resource overwriting its processor in Drupal" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image09.png" /></p>
+<p>The process repeats itself again, with new events being emitted for the derivative entities getting updated in Drupal. Salmon responds and ingests the derivatives into Fedora.</p>
+<p><img alt="Salmon responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
+<p>Fedora emits the creation events, but since none are a preservation master, Alpaca does not respond and the cycle is broken.</p>
+<p><img alt="Alpaca does not respond and the cycle is broken" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
+<h3 id="delete-a-resource">Delete a Resource</h3>
+<p>Suppose a client deletes a resource through the browser or API. In response to the entity being deleted, an event is emitted. The response is then sent back to the client.</p>
+<p><img alt="Delete a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image08.png" /></p>
+<p>Meanwhile, Salmon will receive the delete event, and remove the corresponding resource in Fedora.</p>
+<p><img alt="Salmon receives the event and deletes the corresponding resource in Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image04.png" /></p>
+<p>The ID Mapping connector will respond to the delete event by removing the resource’s entry.</p>
+<p><img alt="ID Mapping connector responds to the delete event by removing the resource’s entry" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image05.png" /></p>
+<p>The triple store connector will also respond, deleting all triples with subject of the resource.</p>
+<p><img alt="The triple store connector responds, deleting all triples with subject of the resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image13.png" /></p>
+<h2 id="content-modeling-in-fedora">Content Modeling in Fedora</h2>
+<p>Descriptive metadata will be RDF properties, and a default dcterms descriptive metadata application profile will be created.</p>
+<p>Technical metadata will be RDF properties, and follow the Hydra/Islandora led <a href="https://wiki.duraspace.org/display/hydra/Technical+Metadata+Application+Profile">technical metadata application profile</a>.</p>
+<p>Here are Turtle snippets representing the default collection, object, and file types.</p>
+<h4 id="collection">Collection</h4>
+<pre><code>&lt;&gt;  a pcdm:Collection   .
+dc:title “Collection Title” .
+    dc:description “Collection description” .
+    … other descriptive metadata …
+</code></pre>
+
+<h4 id="image">Image</h4>
+<pre><code>&lt;&gt;  a pcdm:Object, schema:ImageObject .
+    pcdm:memberOf &lt;someCollection&gt;
+    dc:title “Image Title” .
+    dc:description “Image description” .
+    … other descriptive metadata …
+</code></pre>
+
+<h4 id="image-preservation-master-file">Image Preservation Master File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:PreservationMasterFile .
+    pcdm:fileOf &lt;someImage&gt;
+    ebucore:hasMimeType “image/jpeg”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="image-service-file">Image Service File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:ServiceFile .
+    pcdm:fileOf &lt;someImage&gt;
+    ebucore:hasMimeType “image/jpeg”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="image-thumbnail-file">Image Thumbnail File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:ThumbnailImage .
+    pcdm:fileOf &lt;someImage&gt;
+    ebucore:hasMimeType “image/png”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="book">Book</h4>
+<pre><code>&lt;&gt;  a pcdm:Object, schema:Book .
+    pcdm:memberOf &lt;someCollection&gt;
+iana:first &lt;firstPageProxy&gt;
+iana:last &lt;lastPageProxy&gt;
+    dc:title “Book Title” .
+    dc:description “Book description” .
+    … other descriptive metadata …
+</code></pre>
+
+<h4 id="page">Page</h4>
+<pre><code>&lt;&gt;  a pcdm:Object, schema:ImageObject .
+    pcdm:memberOf &lt;someBook&gt;
+    dc:title “Page Title” .
+    dc:description “Page description” .
+    … other descriptive metadata …
+</code></pre>
+
+<h4 id="page-proxy">Page Proxy</h4>
+<pre><code>&lt;&gt;  a ore:Proxy
+    ore:proxyFor &lt;somePage&gt;
+    ore:proxyIn &lt;someBook&gt;
+    iana:prev &lt;prevPageProxy&gt;
+    iana:next &lt;nextPageProxy&gt;
+</code></pre>
+
+<h4 id="page-preservation-master-file">Page Preservation Master File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:PreservationMasterFile .
+    pcdm:fileOf &lt;somePage&gt;
+    ebucore:hasMimeType “image/tiff”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="page-intermediate-file">Page Intermediate File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:IntermediateFile .
+    pcdm:fileOf &lt;somePage&gt;
+    ebucore:hasMimeType “image/jp2”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="page-service-file">Page Service File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:ServiceFile .
+    pcdm:fileOf &lt;somePage&gt;
+    ebucore:hasMimeType “image/jpeg”
+    … other technical metadata …
+</code></pre>
+
+<h4 id="page-thumbnail-file">Page Thumbnail File</h4>
+<pre><code>&lt;&gt;  a pcdmuse:ThumbnailImage .
+    pcdm:fileOf &lt;somePage&gt;
+    ebucore:hasMimeType “image/png”
+    … other technical metadata …
+</code></pre>
+
+<h2 id="drupal-8_1">Drupal 8</h2>
+<p>Objects will be modeled using <a href="https://www.drupal.org/node/2143503">content entities</a> in Drupal 8. The content entities store their metadata as Drupal fields, which are mapped to RDF using an <a href="https://www.drupal.org/developing/api/rdf">rdf mapping</a>. An RDF mapping not only allows metadata to be transformed into json-ld, but it also controls which properties from Drupal get preserved in Fedora.</p>
+<p>Files will be modeled using <a href="https://www.drupal.org/project/media_entity">media entities</a>. Media entities attempt to provide the base storage component for the Drupal 8. They can model any type of media, including local files, YouTube
+videos, Tweets, Instagram photos, etc…</p>
+<p>Ingests and edits can be done for an entire graph of entities using <a href="https://www.drupal.org/project/inline_entity_form">inline entity forms</a>. Although flushing back to Fedora happens at the per-Resource level, using inline entity forms makes the <a href="https://en.wikipedia.org/wiki/Named_graph">named graph</a> the default unit of work for a repository architect.</p>
+<p>Here’s an example of what an ingest form could look like using inline entity forms:</p>
+<p><img alt="Example ingest form" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image06.jpg" /></p>
+<p>Here’s a list of the entities required to meet our goals. Each of these entities must have basic RESTful CRUD operations exposed for clients.</p>
+<ul>
+<li>RdfResource</li>
+<li>NonRdfResource</li>
+<li>Proxy</li>
+<li>Object</li>
+<li>File</li>
+<li>Collection</li>
+<li>Image</li>
+<li>Page</li>
+<li>Book</li>
+</ul>
+<p>Individual entities and named graphs can be imported and exported in <a href="http://json-ld.org/">json-ld format</a> using <a href="https://www.w3.org/TR/json-ld/#dfn-context">json-ld contexts</a>.</p>
+          <aside class="copyright" role="note">
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../../user-documentation/2xfor1x/" title="Islandora CLAW for 1.x Users">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Islandora CLAW for 1.x Users
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../technical-documentation/docs-build/" title="How to build documenation">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                How to build documenation
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = 'Islandora-CLAW/CLAW';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>

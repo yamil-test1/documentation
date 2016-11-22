@@ -4,44 +4,14 @@
     
         
     <url>
-     <loc>None/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/user-documentation/intro-to-claw/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-documentation/intro-to-claw/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/alpaca/README/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/chullo/README/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/crayfish/README/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/pdx/README/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/islandora/README/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/user-documentation/2xfor1x/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -50,8 +20,20 @@
     
         
     <url>
-     <loc>None/install/README/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/mvp/mvp_doc/</loc>
+     <lastmod>2016-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/technical-documentation/docs-build/</loc>
+     <lastmod>2016-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/technical-documentation/versioning/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -60,54 +42,38 @@
     
         
     <url>
-     <loc>None/contributing/CONTRIBUTING/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contributing/committers/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/alpaca/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contributing/hacking-on-islandora/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/user-documentation/2xfor1x/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/chullo/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-documentation/creating-collections-in-islandora-7.x-2.x/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/crayfish/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-documentation/adding-object-to-collection-in-islandora-7.x-2.x/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/pdx/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/user-documentation/editing-basic-image-form-in-islandora-7.x-2.x/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/user-documentation/form-field-select-taxonomy-in-islandora-7.x-2.x/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/islandora/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -116,32 +82,8 @@
     
         
     <url>
-     <loc>None/technical-documentation/architecture/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/technical-documentation/services/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/technical-documentation/commands/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/technical-documentation/docs-build/</loc>
-     <lastmod>2016-08-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/technical-documentation/versioning/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/install/README/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -150,20 +92,42 @@
     
         
     <url>
-     <loc>None/migration/migration/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/contributing/CONTRIBUTING/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/migration/fedora-namespace-predicates/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/contributing/committers/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/migration/islandora-namespace-predicates/</loc>
-     <lastmod>2016-08-09</lastmod>
+     <loc>/contributing/hacking-on-islandora/</loc>
+     <lastmod>2016-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/migration/migration/</loc>
+     <lastmod>2016-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/fedora-namespace-predicates/</loc>
+     <lastmod>2016-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/islandora-namespace-predicates/</loc>
+     <lastmod>2016-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
