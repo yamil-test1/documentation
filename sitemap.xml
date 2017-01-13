@@ -5,13 +5,13 @@
         
     <url>
      <loc>/user-documentation/intro-to-claw/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/user-documentation/2xfor1x/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/mvp/mvp_doc/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/technical-documentation/docs-build/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/technical-documentation/versioning/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,37 +43,19 @@
         
     <url>
      <loc>/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/alpaca/README/</loc>
-     <lastmod>2016-11-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/chullo/README/</loc>
-     <lastmod>2016-11-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/crayfish/README/</loc>
-     <lastmod>2016-11-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/pdx/README/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/islandora/README/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -83,7 +65,7 @@
         
     <url>
      <loc>/install/README/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -93,19 +75,19 @@
         
     <url>
      <loc>/contributing/CONTRIBUTING/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/contributing/committers/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/contributing/hacking-on-islandora/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -115,19 +97,19 @@
         
     <url>
      <loc>/migration/migration/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/migration/fedora-namespace-predicates/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/migration/islandora-namespace-predicates/</loc>
-     <lastmod>2016-11-22</lastmod>
+     <lastmod>2017-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
