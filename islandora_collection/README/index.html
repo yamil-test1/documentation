@@ -17,7 +17,7 @@
     
     
       
-        <title>Hacking on Islandora - Islandora CLAW</title>
+        <title>Islandora Collection - Islandora CLAW</title>
       
     
     
@@ -79,11 +79,15 @@
             
               
                 <span class="md-header-nav__parent">
-                  Contributing
+                  Components
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Drupal modules
                 </span>
               
             
-            Hacking on Islandora
+            Islandora Collection
           
         </span>
       </div>
@@ -279,7 +283,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Components
@@ -317,7 +321,7 @@
           
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
       Drupal modules
@@ -344,9 +348,60 @@
           
   <li class="md-nav__item">
     
-      <a href="../../islandora_collection/README/" title="Islandora Collection" class="md-nav__link">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
         Islandora Collection
-      </a>
+      </label>
+    
+    <a href="./" title="Islandora Collection" class="md-nav__link md-nav__link--active">
+      Islandora Collection
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainers" title="Maintainers" class="md-nav__link">
+    Maintainers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" title="Development" class="md-nav__link">
+    Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -408,7 +463,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Contributing
@@ -424,7 +479,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../CONTRIBUTING/" title="How to contribute" class="md-nav__link">
+      <a href="../../contributing/CONTRIBUTING/" title="How to contribute" class="md-nav__link">
         How to contribute
       </a>
     
@@ -435,7 +490,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../committers/" title="Committers" class="md-nav__link">
+      <a href="../../contributing/committers/" title="Committers" class="md-nav__link">
         Committers
       </a>
     
@@ -446,67 +501,9 @@
           
   <li class="md-nav__item">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <a href="../../contributing/hacking-on-islandora/" title="Hacking on Islandora" class="md-nav__link">
         Hacking on Islandora
-      </label>
-    
-    <a href="./" title="Hacking on Islandora" class="md-nav__link md-nav__link--active">
-      Hacking on Islandora
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#logging-in-to-your-development-environment" title="Logging in to your development environment" class="md-nav__link">
-    Logging in to your development environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#port-forwarding" title="Port Forwarding" class="md-nav__link">
-    Port Forwarding
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#important-locations" title="Important locations" class="md-nav__link">
-    Important locations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shared-folders" title="Shared folders" class="md-nav__link">
-    Shared folders
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compiling-camel-bundles" title="Compiling Camel Bundles" class="md-nav__link">
-    Compiling Camel Bundles
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+      </a>
     
   </li>
 
@@ -591,36 +588,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#logging-in-to-your-development-environment" title="Logging in to your development environment" class="md-nav__link">
-    Logging in to your development environment
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#port-forwarding" title="Port Forwarding" class="md-nav__link">
-    Port Forwarding
+  <a href="#maintainers" title="Maintainers" class="md-nav__link">
+    Maintainers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-locations" title="Important locations" class="md-nav__link">
-    Important locations
+  <a href="#development" title="Development" class="md-nav__link">
+    Development
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shared-folders" title="Shared folders" class="md-nav__link">
-    Shared folders
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compiling-camel-bundles" title="Compiling Camel Bundles" class="md-nav__link">
-    Compiling Camel Bundles
+  <a href="#license" title="License" class="md-nav__link">
+    License
   </a>
   
 </li>
@@ -636,114 +626,28 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
                
-                 <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/contributing/hacking-on-islandora.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
+                 <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/islandora_collection/README.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
                
               
                 
-                <h1 id="hacking-on-islandora-claw">Hacking on Islandora CLAW</h1>
-<p>One of the goals of the Islandora CLAW project is to lower the barrier to entry for working on and with Islandora. A shared, consistent environment amongst developers is one of the best ways to do this. To get started hacking on Islandora CLAW with your very own development environment, all you need to do follow these steps:</p>
-<ol>
-<li>Install <a href="https://www.virtualbox.org/">VirtualBox</a></li>
-<li>Install <a href="https://www.vagrantup.com/">Vagrant</a></li>
-<li>Fork <a href="https://github.com/Islandora-CLAW/CLAW">Islandora CLAW</a> and clone it onto your machine using the master branch</li>
-</ol>
-<pre><code class="bash">~ $ git clone -b master https://github.com/your_github_name/islandora.git
-</code></pre>
-
-<p>OR
-If you're already a developer and have previously forked and cloned Islandora CLAW, just add the master branch from Islandora-CLAW to your existing checkout:</p>
-<pre><code class="bash">~ $ cd /path/to/islandora
-/path/to/CLAW $ git remote add claw https://github.com/Islandora-CLAW/CLAW.git
-/path/to/CLAW $ git fetch claw
-/path/to/CLAW $ git checkout master
-</code></pre>
-
-<ol>
-<li>Navigate into the <code>install</code> directory of your master checkout</li>
-</ol>
-<pre><code class="bash">~ $ cd /path/to/CLAW/install
-</code></pre>
-
-<ol>
-<li>Build your vm using <code>vagrant up</code></li>
-</ol>
-<pre><code class="bash">/path/to/CLAW/install $ vagrant up
-</code></pre>
-
-<p>Sit back and relax as your development environment is created for you! In a few minutes you’ll have a brand new Islandora CLAW install that you can use and abuse as much as you’d like. If you ever ruin your environment (trust me, it’ll happen), you can always destroy it and bring up a new one at any time.</p>
-<pre><code class="bash">~ $ cd /path/to/CLAW/install
-/path/to/CLAW/install $ vagrant destroy
-/path/to/CLAW/install $ vagrant up
-</code></pre>
-
-<h2 id="logging-in-to-your-development-environment">Logging in to your development environment</h2>
-<p>You can ssh into your development environment at any time by doing the following:</p>
-<pre><code class="bash">~ $ cd /path/to/islandora/install
-/path/to/islandora/install $ vagrant ssh
-Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-45-generic x86_64)
-
- * Documentation:  https://help.ubuntu.com/
-
- System information disabled due to load higher than 1.0
-
-  Get cloud support with Ubuntu Advantage Cloud Guest:
-    http://www.ubuntu.com/business/services/cloud
-
-
-Last login: Fri Jul 17 13:51:38 2015 from 10.0.2.2
-vagrant@islandora:~$
-</code></pre>
-
-<p>You'll be logged in as the vagrant user, with your github repo in your home directory.</p>
-<h2 id="port-forwarding">Port Forwarding</h2>
-<p>Many ports are forwarded from your virtual machine to your personal computer, so care must be taken that there are no conflicts. Here's a list of all the ports that get forwarded:
-- Apache: 80 -&gt; 8000
-- Tomcat: 8080 -&gt; 8080
-- Karaf: 8181 -&gt; 8181
-- MySQL: 3306 -&gt; 3306</p>
-<p>At any point in time, you can edit how the ports are forwarded by clicking on the Port Forwarding button in your virtual machine's Network settings in Virtualbox.</p>
-<p>You can also edit the section of the Vagrantfile that controls the default port forwarding, which looks something like this:</p>
-<pre><code class="ruby">  config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
-  config.vm.network :forwarded_port, guest: 8181, host: 8181 # Karaf
-  config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL
-  config.vm.network :forwarded_port, guest: 5432, host: 5432 # PostgreSQL
-  config.vm.network :forwarded_port, guest: 80, host: 8000 # Apache
-</code></pre>
-
-<h2 id="important-locations">Important locations</h2>
+                <h1 id="islandora-collection">Islandora Collection</h1>
+<p><a href="https://travis-ci.org/Islandora-CLAW/islandora_collection"><img alt="Build Status" src="https://travis-ci.org/Islandora-CLAW/islandora_collection.png?branch=8.x-1.x" /></a>
+<a href="./CONTRIBUTING.md"><img alt="Contribution Guidelines" src="http://img.shields.io/badge/CONTRIBUTING-Guidelines-blue.svg" /></a>
+<a href="../LICENSE"><img alt="LICENSE" src="https://img.shields.io/badge/license-GPLv2-blue.svg?style=flat-square" /></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Islandora Collection module for Drupal 8.2.x</p>
+<h2 id="maintainers">Maintainers</h2>
+<p>Current maintainers:</p>
 <ul>
-<li>Drupal: <code>/var/www/html/drupal</code></li>
-<li>Apache Logs: <code>/var/log/apache2/error.log</code></li>
-<li>Tomcat: <code>/var/lib/tomcat7</code><ul>
-<li>Logs: <code>/var/log/tomcat7</code></li>
-<li>Fedora 4: <code>/var/lib/tomcat7/webapps/fcrepo</code></li>
-<li>Solr: <code>/var/lib/tomcat7/webapps/solr</code></li>
-<li>BlazeGraph: <code>/var/lib/tomcat7/webapps/bigdata</code></li>
-<li>FcrepoCamelToolbox: <code>/var/lib/tomcat7/webapps/fcrepo-camel-toolbox</code></li>
+<li><a href="https://github.com/dannylamb">Danny Lamb</a></li>
+<li><a href="https://github.com/diegopino">Diego Pino</a></li>
+<li><a href="https://github.com/whikloj">Jared Whiklo</a></li>
 </ul>
-</li>
-<li>Karaf: <code>/opt/karaf</code><ul>
-<li>Logs: <code>/opt/karaf/data/log</code></li>
-<li>Configuration: <code>/opt/karaf/etc</code></li>
-</ul>
-</li>
-<li>CLAW: <code>/home/vagrant/CLAW</code></li>
-</ul>
-<h2 id="shared-folders">Shared folders</h2>
-<p>By default, the vagrant environment uses a shared folder between your computer and the virtual machine it has created. This folder points to your Islandora CLAW github repo on your computer and is available at <code>~/CLAW</code> (<code>/home/vagrant/CLAW</code>) on the virtual machine. On top of that, in Drupal, <code>sites/all/modules/islandora</code> is a symlink pointing to <code>~/CLAW/islandora</code>.  This has a few profound consequences:</p>
-<ul>
-<li>You can use the IDE you're comfortable with on your own machine, without the need to scp/rsync code over to the development environment</li>
-<li>Changes to Drupal module code are automatically reflected on your Drupal site since that code is symlinked (although you may need to be ssh'd in to <code>drush cc all</code> on occassion)</li>
-<li>When testing the Vagrant install after adding changes, the code from your fork and your branch on your computer is used to generate the virtual machine</li>
-</ul>
-<h2 id="compiling-camel-bundles">Compiling Camel Bundles</h2>
-<p>Despite being nothing but Blueprint xml files, Camel projects still have to be compiled using Maven. The <code>install</code> directive is the default, so all one has to do is navigate to the appropriate directory and issue a <code>mvn</code> in the command line.  For example, to compile the collection service:</p>
-<pre><code class="bash">~ $ cd /path/to/CLAW/Alpaca/services/collection-service
-/path/to/CLAW/Alpaca/serices/collection-service $ mvn
-</code></pre>
-
-<p>The only caveat here is that this is best done on the virtual machine itself. While your virtual machine was being built, it's Karaf installation was set to monitor the vagrant user's Maven repository for changes, and autodeploy in response to <code>mvn install</code>. So while you can always run Maven from your own machine, it will get installed in your personal Maven repository on your machine. So to take advantage of the auto-redeploy capabilities of Karaf, you need to do this as the vagrant user.</p>
-<p>If for any reason, you have to shutdown or restart Karaf, it will cease to monitor the vagrant user's Maven repository. In order to turn this back on, you'll have to issue the appropriate commands to get monitoring working again. The easiest way to do this is to re-run the karaf script the install process uses to set up monitoring by executing <code>/opt/karaf/bin/client &lt; ~/islandora/install/karaf/monitor.script</code>.</p>
+<h2 id="development">Development</h2>
+<p>If you would like to contribute, please get involved by attending our weekly <a href="https://github.com/Islandora-CLAW/CLAW/wiki">Tech Call</a>. We love to hear from you!</p>
+<p>If you would like to contribute code to the project, you need to be covered by an Islandora Foundation <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or <a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. Please see the <a href="http://islandora.ca/resources/contributors">Contributors</a> pages on Islandora.ca for more information.</p>
+<h2 id="license">License</h2>
+<p><a href="http://www.gnu.org/licenses/gpl-2.0.txt">GPLv2</a></p>
               
             </article>
           </div>
@@ -756,7 +660,7 @@ vagrant@islandora:~$
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../committers/" title="Committers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../islandora/README/" title="Islandora" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -765,19 +669,19 @@ vagrant@islandora:~$
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Committers
+                Islandora
               </span>
             </div>
           </a>
         
         
-          <a href="../../migration/migration/" title="Migration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../islandora_image/README/" title="Islandora Image" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Migration
+                Islandora Image
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
