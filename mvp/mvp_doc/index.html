@@ -425,8 +425,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#salmon-formerly-sync" title="Salmon (formerly Sync)" class="md-nav__link">
-    Salmon (formerly Sync)
+  <a href="#sync" title="Sync" class="md-nav__link">
+    Sync
   </a>
   
 </li>
@@ -615,8 +615,8 @@
           
   <li class="md-nav__item">
     
-      <a href="../../technical-documentation/versioning/" title="Semantic Versioning Policy" class="md-nav__link">
-        Semantic Versioning Policy
+      <a href="../../technical-documentation/versioning/" title="Versioning Policy" class="md-nav__link">
+        Versioning Policy
       </a>
     
   </li>
@@ -1045,8 +1045,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#salmon-formerly-sync" title="Salmon (formerly Sync)" class="md-nav__link">
-    Salmon (formerly Sync)
+  <a href="#sync" title="Sync" class="md-nav__link">
+    Sync
   </a>
   
 </li>
@@ -1285,10 +1285,10 @@
 <p>A connector will listen to Fedora events and index unique IDs contained in RDF using the ID Mapping microservice. The predicate used to notate unique IDs can be controlled through configuration. </p>
 <h4 id="triplestore-indexer">Triplestore Indexer</h4>
 <p>A connector will listen to Fedora events and index RDF in a SPARQL 1.1 triplestore. This is provided by the Fedora community as part of the <a href="https://github.com/fcrepo4-exts/fcrepo-camel-toolbox/tree/master/fcrepo-indexing-triplestore">fcrepo-camel-toolbox</a> project.</p>
-<h4 id="salmon-formerly-sync">Salmon (formerly Sync)</h4>
-<p><a href="https://github.com/Islandora-CLAW/Salmon">Salmon</a> is a sub-project that provides two connectors for keeping information between Fedora and Drupal in sync. One, which indexes content in Fedora from Drupal events, is always running. The other, which indexes content in Drupal based on state in Fedora, is manually triggered through a re-indexing process like other fcrepo-camel-toolbox connectors.</p>
+<h4 id="sync">Sync</h4>
+<p>A sub-project of <a href="https://github.com/Islandora-CLAW/Alpaca">Alpaca</a> that provides two connectors for keeping information between Fedora and Drupal in sync. One, which indexes content in Fedora from Drupal events, is always running. The other, which indexes content in Drupal based on state in Fedora, is manually triggered through a re-indexing process like other fcrepo-camel-toolbox connectors.</p>
 <h4 id="alpaca">Alpaca</h4>
-<p><a href="https://github.com/Islandora-CLAW/Alpaca">Alpaca</a> responds to creation and update events for binary files and creates derivative files based on the microservices it finds available for that type of binary in API-X. Derivatives are then ingested into Drupal, with Salmon making sure they get flushed back to Fedora.</p>
+<p><a href="https://github.com/Islandora-CLAW/Alpaca">Alpaca</a> responds to creation and update events for binary files and creates derivative files based on the microservices it finds available for that type of binary in API-X. Derivatives are then ingested into Drupal, with Sync making sure they get flushed back to Fedora.</p>
 <h2 id="request-flows">Request Flows</h2>
 <p>Here are the proposed flows for all the different types of requests you can make against repository objects.</p>
 <h3 id="read-a-resource">Read a Resource</h3>
@@ -1297,7 +1297,7 @@
 <h3 id="create-a-resource">Create a Resource</h3>
 <p>Suppose a client submits a form to create a new Resource, or provides a json-ld or binary representation to an entity REST endpoint. The supplied representation is used to create an entity in Drupal. In response to the entity being saved, an event is emitted with supplied representation as the body. The response is then sent back to the client. If using a browser, the client should be redirected to the newly created resource.  </p>
 <p><img alt="Create a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
-<p>Meanwhile, Salmon will receive the creation event, and ingest the supplied representation in Fedora. Fedora will then emit a creation event.  </p>
+<p>Meanwhile, Sync will receive the creation event, and ingest the supplied representation in Fedora. Fedora will then emit a creation event.  </p>
 <p><img alt="Emit a creation event" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image02.png" /></p>
 <p>The ID Mapping connector will react, retrieving the Fedora representation and extracting an ID out of the RDF. That ID will be indexed in the ID Mapping microservice.</p>
 <p><img alt="ID indexed in the ID Mapping microservice" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image07.png" /></p>
@@ -1305,28 +1305,28 @@
 <p><img alt="Retrieving RDF and indexing it in the triple store" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
 <p>If the node created was a preservation master, then Alpaca will respond by inspecting the list of derivative generation services bound as extensions on the preservation master in API-X. Each will be invoked, with the new resource getting ingested into Drupal.  </p>
 <p><img alt="New resource ingested into Drupal" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image10.png" /></p>
-<p>The process repeats itself again, with new events being emitted for the new entities getting created in Drupal. Salmon responds and ingests the derivatives into Fedora.</p>
-<p><img alt="Salmon responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image02.png" /></p>
+<p>The process repeats itself again, with new events being emitted for the new entities getting created in Drupal. Sync responds and ingests the derivatives into Fedora.</p>
+<p><img alt="Sync responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image02.png" /></p>
 <p>Fedora emits the creation events, but since none are a preservation master, Alpaca does not respond and the cycle is broken.</p>
 <p><img alt="Alpaca does not respond and the cycle is broken" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image08.png" /></p>
 <h3 id="update-a-resource">Update a Resource</h3>
 <p>Suppose a client submits a form to update a new Resource, or provides a json-ld or binary representation to an entity REST endpoint.  In response to the entity being saved, an event is emitted with supplied representation as the body. The response is then sent back to the client.</p>
 <p><img alt="Update a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
-<p>Meanwhile, Salmon will receive the update event, and apply it against the representation in Fedora. Fedora will then emit an update event.  </p>
+<p>Meanwhile, Sync will receive the update event, and apply it against the representation in Fedora. Fedora will then emit an update event.  </p>
 <p><img alt="Fedora will emit an update event" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image04.png" /></p>
 <p>The triple store connector will also react, retrieving RDF and indexing it in the triple store.</p>
 <p><img alt="Triple store connector reacts" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
 <p>If a binary of a presentation master was updated, then Alpaca will respond by inspecting the list of derivative generation services bound as extensions on the preservation master in API-X. Each will be invoked, with the new resource overwriting its predecessor in Drupal.</p>
 <p><img alt="New resource overwriting its processor in Drupal" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image09.png" /></p>
-<p>The process repeats itself again, with new events being emitted for the derivative entities getting updated in Drupal. Salmon responds and ingests the derivatives into Fedora.</p>
-<p><img alt="Salmon responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
+<p>The process repeats itself again, with new events being emitted for the derivative entities getting updated in Drupal. Sync responds and ingests the derivatives into Fedora.</p>
+<p><img alt="Sync responds and ingests derivatives into Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image01.png" /></p>
 <p>Fedora emits the creation events, but since none are a preservation master, Alpaca does not respond and the cycle is broken.</p>
 <p><img alt="Alpaca does not respond and the cycle is broken" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image03.png" /></p>
 <h3 id="delete-a-resource">Delete a Resource</h3>
 <p>Suppose a client deletes a resource through the browser or API. In response to the entity being deleted, an event is emitted. The response is then sent back to the client.</p>
 <p><img alt="Delete a Resource" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image08.png" /></p>
-<p>Meanwhile, Salmon will receive the delete event, and remove the corresponding resource in Fedora.</p>
-<p><img alt="Salmon receives the event and deletes the corresponding resource in Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image04.png" /></p>
+<p>Meanwhile, Sync will receive the delete event, and remove the corresponding resource in Fedora.</p>
+<p><img alt="Sync receives the event and deletes the corresponding resource in Fedora" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image04.png" /></p>
 <p>The ID Mapping connector will respond to the delete event by removing the resource’s entry.</p>
 <p><img alt="ID Mapping connector responds to the delete event by removing the resource’s entry" src="https://raw.githubusercontent.com/Islandora-CLAW/CLAW/master/docs/assets/image05.png" /></p>
 <p>The triple store connector will also respond, deleting all triples with subject of the resource.</p>

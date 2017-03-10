@@ -17,7 +17,7 @@
     
     
       
-        <title>Semantic Versioning Policy - Islandora CLAW</title>
+        <title>Versioning Policy - Islandora CLAW</title>
       
     
     
@@ -83,7 +83,7 @@
                 </span>
               
             
-            Semantic Versioning Policy
+            Versioning Policy
           
         </span>
       </div>
@@ -269,11 +269,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Semantic Versioning Policy
+        Versioning Policy
       </label>
     
-    <a href="./" title="Semantic Versioning Policy" class="md-nav__link md-nav__link--active">
-      Semantic Versioning Policy
+    <a href="./" title="Versioning Policy" class="md-nav__link md-nav__link--active">
+      Versioning Policy
     </a>
     
       
@@ -290,6 +290,26 @@
   <a href="#components" title="Components" class="md-nav__link">
     Components
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" title="Semantic Versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drupal-contrib-versioning" title="Drupal Contrib Versioning" class="md-nav__link">
+    Drupal Contrib Versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -567,6 +587,26 @@
     Components
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" title="Semantic Versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drupal-contrib-versioning" title="Drupal Contrib Versioning" class="md-nav__link">
+    Drupal Contrib Versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -585,38 +625,31 @@
               
                 
                 <h1 id="versioning-policy">Versioning Policy</h1>
-<p>Islandora CLAW uses <a href="http://semver.org/">semantic versioning</a>.</p>
+<p>Islandora CLAW uses <a href="http://semver.org/">semantic versioning</a>, except for Drupal modules.</p>
+<h2 id="components">Components</h2>
+<h3 id="semantic-versioning"><a href="http://semver.org/">Semantic Versioning</a></h3>
 <p><strong>Major version</strong> . <strong>Minor version</strong> . <strong>Patch</strong></p>
 <ul>
 <li><strong>Major version</strong>; Major changes, and breaks the API</li>
 <li><strong>Minor version</strong>; New features, and does not break the API</li>
 <li><strong>Patch</strong>; Bug fixes, and never breaks backward compatability</li>
 </ul>
-<h2 id="components">Components</h2>
+<p>Example: 1.2.3</p>
 <ul>
 <li><a href="https://github.com/Islandora-CLAW/alpaca">Alpaca</a></li>
-<li><a href="https://github.com/Islandora-CLAW/chullo">Chullo</a></li>
 <li><a href="https://github.com/Islandora-CLAW/CLAW">CLAW</a></li>
-<li><a href="https://github.com/Islandora-CLAW/crayfish">Crayfish</a></li>
-<li><a href="https://github.com/Islandora-CLAW/pdx">PDX</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker">claw-docker</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-all-in-one">claw-docker-all-in-one</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-base">claw-base</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-blazegraph">claw-blazegraph</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-drupal">claw-drupal</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-fedora">claw-fedora</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-islandora">claw-islandora</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-islandora-karaf-components">claw-islandora-karaf-components</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-karaf">claw-karaf</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-mariadb">claw-mariadb</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-maven">claw-maven</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-open-jdk">claw-open-jdk</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-oracle-jdk">claw-oracle-jdk</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-solr">claw-solr</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-docker-tomcat">claw-tomcat</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw-ansible">claw-ansible</a></li>
-<li><a href="https://github.com/Islandora-CLAW/claw_install_profile">claw_install_profile</a></li>
-<li><a href="https://github.com/Islandora-CLAW/islandora">Islandora</a></li>
+<li><a href="https://github.com/Islandora-CLAW/claw_vagrant">claw_vagrant</a></li>
+<li><a href="https://github.com/Islandora-CLAW/Syn">Syn</a></li>
+</ul>
+<h3 id="drupal-contrib-versioning"><a href="https://www.drupal.org/docs/8/choosing-a-drupal-version/what-do-version-numbers-mean-on-contributed-modules-and-themes">Drupal Contrib Versioning</a></h3>
+<p><strong>Core Compatibility</strong> - <strong>Major</strong> . <strong>PatchLevel[-Extra]</strong></p>
+<p>Example: 8.x-1.1</p>
+<ul>
+<li><a href="https://github.com/Islandora-CLAW/claw-jsonld">claw-jsonld</a></li>
+<li><a href="https://github.com/Islandora-CLAW/drupal-project">drupal-project</a></li>
+<li><a href="https://github.com/Islandora-CLAW/islandora">islandora</a></li>
+<li><a href="https://github.com/Islandora-CLAW/islandora_collection">islandora collection</a></li>
+<li><a href="https://github.com/Islandora-CLAW/islandora_image">islandora image</a></li>
 </ul>
               
             </article>
