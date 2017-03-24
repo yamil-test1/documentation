@@ -13,18 +13,18 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.3.0">
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
     
     
       
-        <title>Islandora CLAW for 1.x Users - Islandora CLAW</title>
+        <title>Syncing Drupal Project - Islandora CLAW</title>
       
     
     
       <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-1d1da4857d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
       
@@ -65,7 +65,7 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <a href="../intro-to-claw/" title="Islandora CLAW" class="md-logo md-header-nav__button">
+          <a href="../../user-documentation/intro-to-claw/" title="Islandora CLAW" class="md-logo md-header-nav__button">
             <img src="../../assets/claw.png" width="24" height="24">
           </a>
         
@@ -79,11 +79,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  User Documentation
+                  Technical Documentation
                 </span>
               
             
-            Islandora CLAW for 1.x Users
+            Syncing Drupal Project
           
         </span>
       </div>
@@ -100,7 +100,12 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result"></div>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
     </div>
   </div>
@@ -184,12 +189,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       User Documentation
@@ -207,7 +210,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../intro-to-claw/" title="Introduction to Islandora CLAW" class="md-nav__link">
+    <a href="../../user-documentation/intro-to-claw/" title="Introduction to Islandora CLAW" class="md-nav__link">
       Introduction to Islandora CLAW
     </a>
   </li>
@@ -217,87 +220,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Islandora CLAW for 1.x Users
-      </label>
-    
-    <a href="./" title="Islandora CLAW for 1.x Users" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../user-documentation/CLAWfor1x/" title="Islandora CLAW for 1.x Users" class="md-nav__link">
       Islandora CLAW for 1.x Users
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fedora" title="Fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#repository-structure" title="Repository Structure" class="md-nav__link">
-    Repository Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#object-structure" title="Object Structure" class="md-nav__link">
-    Object Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datastreams" title="Datastreams" class="md-nav__link">
-    Datastreams
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pids" title="PIDs" class="md-nav__link">
-    PIDs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -310,10 +237,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Technical Documentation
@@ -343,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/docs-build/" title="How to build documenation" class="md-nav__link">
+    <a href="../docs-build/" title="How to build documenation" class="md-nav__link">
       How to build documenation
     </a>
   </li>
@@ -353,9 +282,30 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Syncing Drupal Project" class="md-nav__link md-nav__link--active">
+      Syncing Drupal Project
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/versioning/" title="Versioning Policy" class="md-nav__link">
+    <a href="../versioning/" title="Versioning Policy" class="md-nav__link">
       Versioning Policy
     </a>
   </li>
@@ -647,60 +597,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fedora" title="Fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#repository-structure" title="Repository Structure" class="md-nav__link">
-    Repository Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#object-structure" title="Object Structure" class="md-nav__link">
-    Object Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datastreams" title="Datastreams" class="md-nav__link">
-    Datastreams
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pids" title="PIDs" class="md-nav__link">
-    PIDs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -711,39 +607,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/user-documentation/2xfor1x.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/drupal-project.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                <h1 id="whats-different-between-islandora-1x-and-islandora-claw">What's Different Between Islandora 1.x and Islandora CLAW</h1>
-<p>In the most basic terms, Islandora CLAW is the version of Islandora that works with <a href="https://wiki.duraspace.org/display/FEDORA4x/Fedora+4.x+Documentation">Fedora 4</a>. Because Fedora 4 is a vastly different platform than Fedora 3, so too is Islandora CLAW a major departure from what came before. Switching to CLAW represents not just a typical upgrade with improvements, features, and bug fixes, but rather a major shift in how objects are stored and managed. </p>
-<p>Moving from Islandora 7.x-1.x to CLAW requires a migration of objects, which you can learn about <a href="../../migration/migration/">here</a>. It also requires some adjustments in how you think about your objects and their relationships, and how to manage them in Islandora, which we will cover below.</p>
-<p>You can also check out some of the documentation provided by the Fedora project:
-<em> <a href="https://wiki.duraspace.org/display/FEDORA4x/Concept+Mapping+-+Fedora+3+to+4">Concept Mapping - Fedora 3 to 4</a>
-</em> <a href="https://wiki.duraspace.org/display/FEDORA4x/The+Fedora+4+object+model">The Fedora 4 object model</a>
-<em> <a href="https://wiki.duraspace.org/display/FF/Fedora+3+to+4+Upgration">Fedora 3 to 4 Upgration</a>
-</em> <a href="https://wiki.duraspace.org/display/FEDORA4x/LDP-PCDM-F4+In+Action">LDP-PCDM-F4 In Action</a></p>
-<h2 id="fedora">Fedora</h2>
-<h3 id="repository-structure">Repository Structure</h3>
-<p>Fedora 3 stored all objects at the top level of the repository, although presentation of the objects could mimic a directory structure by having objects 'in' collections and collections 'in' other collections. This image is a helpful oversimplification:</p>
-<p><img alt="image" src="https://cloud.githubusercontent.com/assets/2371345/10912108/525c2a0e-821e-11e5-9c5b-d853b62f1e5a.png" /></p>
-<p>Fedora 4 differs considerably in that there is an innate tree hierarchy to the repository rather than a flat structure. Put less simply, "a Fedora 4 repository consists of a directed acyclic graph of resources where edges represent a parent-child relation" (<a href="https://wiki.duraspace.org/display/FEDORA4x/The+Fedora+4+object+model">Fedora 4</a>).</p>
-<h3 id="object-structure">Object Structure</h3>
-<p>Fedora 3 objects are FOXML (Fedora Object eXtensible Markup Language) documents, with three elements:</p>
-<ul>
-<li><code>Digital Object Identifier</code>: A unique, persistent identifier for the digital object. Also knowns as the PID.</li>
-<li><code>System Properties</code>: A set of system-defined descriptive properties that is necessary to manage and track the object in the repository.</li>
-<li><code>Datastream(s)</code>: The element in a Fedora digital object that represents a content item.</li>
-</ul>
-<p>In Fedora 4 , what we would have called <code>objects</code> are now referred to as <code>resources</code> and are not composed of XML; instead, they are stored in ModeShape as nodes with RDF properties. They can contain the following elements:</p>
-<ul>
-<li><code>Resource</code>: Roughly equivalent to a Fedora 3 object - a conceptual representation of a thing that can contain files or other containers.</li>
-<li><code>Non-RDF Source</code>: Roughly equivalent to a datastream. A Non-RDF Source (or binary) is simply a bitstream (e.g. JPG, PDF, XML, MP3, etc.).</li>
-</ul>
-<h3 id="datastreams">Datastreams</h3>
-<p>In Islandora CLAW, RDF datastreams (RELS-EXT and RELS-INT) are stored as RDF in Fedora. Binary datastreams (files, images) are files or <code>nonRdfResources</code> (see <a href="https://github.com/duraspace/pcdm/wiki">PCDM</a>). Descriptive metadata datastreams (MODS, DC, DwC, PBCore, etc) are will be stored as RDF.</p>
-<h4 id="pids">PIDs</h4>
-<p>Every object in a Fedora 3 repository had a Persistent Identifier following the pattern <code>namespace:pid</code>. Fedora 4 resources do not have PIDs. Instead, since Fedora 4 is an LDP server, their identifiers are fundamentally their URIs. The PIDs of objects migrated from a Fedora 3 repository can still be stored in Fedora 4, as additional properties on the new Fedora 4 resource.</p>
-<p>Since resources are stored as <code>nodes</code> on the Drupal side of Islandora CLAW, they also have Drupal UUIDs.</p>
+                <h1 id="introduction">Introduction</h1>
+<p>Islandora CLAW makes use of <a href="https://github.com/drupal-composer/drupal-project">drupal-project</a>, a composer template for Drupal projects. We augment it with Islandora CLAW specific changes, and need to occassionaly pull in upstream changes. The process below outlines how we will do it in a consistent manner.</p>
+<h1 id="pull-in-upstream-changes">Pull in upstream changes</h1>
+<ol>
+<li>Clone a fork of our fork to your or your institions GitHub organization:
+<br />  <code>git clone fork</code></li>
+<li>Add the drupal-composer repository as a remote:
+<br /> <code>git remote add upstream https://github.com/drupal-composer/drupal-project.git</code></li>
+<li>Fetch everything:
+<br /> <code>git fetch --all</code></li>
+<li>Create a branch to pull in changes that is based off the Islandora-CLAW 8.x-1.x branch: 
+<br /> <code>git checkout -b sync-upstream</code></li>
+<li>Rebase upstream changes:
+<br /> <code>git rebase upstream/8.x</code> (fix any merge conflicts, and then <code>git rebase --continue</code>)</li>
+<li>Push to your fork:
+<br /> <code>git push origin sync-upstream</code></li>
+<li>Create pull request</li>
+</ol>
                 
                   
                 
@@ -762,7 +646,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../intro-to-claw/" title="Introduction to Islandora CLAW" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docs-build/" title="How to build documenation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -771,19 +655,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction to Islandora CLAW
+                How to build documenation
               </span>
             </div>
           </a>
         
         
-          <a href="../../mvp/mvp_doc/" title="Minimum Viable Product" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../versioning/" title="Versioning Policy" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Minimum Viable Product
+                Versioning Policy
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -821,7 +705,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
       <script>app.initialize({url:{base:"../.."}})</script>
       
     

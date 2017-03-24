@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.3.0">
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
     
     
       
@@ -24,7 +24,7 @@
       <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-1d1da4857d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
       
@@ -100,7 +100,12 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result"></div>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
     </div>
   </div>
@@ -378,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../2xfor1x/" title="Islandora CLAW for 1.x Users" class="md-nav__link">
+    <a href="../CLAWfor1x/" title="Islandora CLAW for 1.x Users" class="md-nav__link">
       Islandora CLAW for 1.x Users
     </a>
   </li>
@@ -428,6 +433,18 @@
   <li class="md-nav__item">
     <a href="../../technical-documentation/docs-build/" title="How to build documenation" class="md-nav__link">
       How to build documenation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/drupal-project/" title="Syncing Drupal Project" class="md-nav__link">
+      Syncing Drupal Project
     </a>
   </li>
 
@@ -881,14 +898,14 @@
                 
                 
                 <h1 id="intro-to-islandora-claw">Intro to Islandora CLAW</h1>
-<p>Islandora CLAW is the project name for development of Islandora to work with Fedora 4, also known as Islandora 7.x-2.x. To fully understand Islandora CLAW, it is best to start by looking at its contrasts to the previous version of Islandora, known as 7.x-1.x. </p>
+<p>Islandora CLAW is the project name for development of Islandora to work with Fedora 4. To fully understand Islandora CLAW, it is best to start by looking at its contrasts to the previous version of Islandora, known as 7.x-1.x.</p>
 <p>Islandora 7.x-1.x works as a bridge between Drupal 7.x and Fedora 3. Put simply, Islandora 7.x-1.x is middleware between Fedora 3 and Drupal 7.x, sometimes expressed as a hamburger:</p>
 <h2 id="islandora-7x-1x-with-fedora-3">Islandora 7.x-1.x (with Fedora 3)</h2>
 <p><img alt="image" src="../../assets/hamburger.png" /></p>
-<p>Islandora CLAW (or Islandora 7.x-2.x) does more than simply replace that base layer with Fedora 4. It is a total re-architecting of the interaction between the various pieces. Rather than a hamburger, Islandora CLAW is a chimera:</p>
+<p>Islandora CLAW does more than simply replace that base layer with Fedora 4. It is a total re-architecting of the interaction between the various pieces. Rather than a hamburger, Islandora CLAW is a chimera:</p>
 <h2 id="islandora-claw-with-fedora-4">Islandora CLAW (with Fedora 4)</h2>
 <p><img alt="image" src="../../assets/claw-chimera.png" /></p>
-<p>Or, for a diagram that doesn't involve food or animals: </p>
+<p>Or, for a diagram that doesn't involve food or animals:</p>
 <p><img alt="image" src="../../assets/claw-diagram.png" /></p>
 <p>This new structure has several advantages:</p>
 <ul>
@@ -915,17 +932,17 @@
 <h3 id="fedora">Fedora</h3>
 <p>The primary motive for moving to Islandora CLAW is to stay current with the repository layer of our ecosystem. Moving to Fedora 4 is vital for the long-term utility of the project.</p>
 <ul>
-<li>Fedora 3 is End-of-Life and has not been supported since 2015. This means that there will be no improvements, bug fixes, or security patches released for the software, drastically increasing individual maintenance needs for adopters. </li>
+<li>Fedora 3 is End-of-Life and has not been supported since 2015. This means that there will be no improvements, bug fixes, or security patches released for the software, drastically increasing individual maintenance needs for adopters.</li>
 <li>Fedora 3 experiences significant slowdown when repositories reach a large (millions) number of objects. Fedora 4 is much more scalable, and is specifically engineered to be horizontally scalable in ways that Fedora 3 cannot.</li>
 </ul>
 <h3 id="drupal">Drupal</h3>
-<p><a href="https://www.drupal.org/8">Drupal 8</a> has been officially released and development has begun on Drupal 9. Official Drupal policy will see Drupal 7 become unsupported when Drupal 9 is released, putting it in the same precarious territory as Fedora 3. </p>
+<p><a href="https://www.drupal.org/8">Drupal 8</a> has been officially released and development has begun on Drupal 9. Official Drupal policy will see Drupal 7 become unsupported when Drupal 9 is released, putting it in the same precarious territory as Fedora 3.</p>
 <p>The initial phases of Islandora CLAW development worked with Drupal 7 as a front-end, but Islandora CLAW has been architected with a pivot to Drupal 8 in mind from its very inception. As of June, 2016, Islandora CLAW development has pivoted fully to Drupal 8, ensuring that when the Islandora Community is ready to make the move, there will be a version of Islandora that functions with the latest and best-supported versions of both our front-end and repository layers by pairing Drupal 8 with Fedora 4.</p>
 <h3 id="community-driven-design">Community-Driven Design</h3>
 <p>The Islandora community has grown significantly since the project began, both in terms of users and contributors. For the first time, we are in a position to have a truly community-driven development process, in which any Islandora user can participate at whatever level fits their interests and abilities. Islandora CLAW has worked with the broader Islandora community to solicit use-cases, put forward prospectuses and project plans for review and editing, and has been developed with a mix of funding from Islandora Foundation members and volunteer developers working on sprints.</p>
 <p>Islandora CLAW is developed <em>by</em> the Islandora community, <em>for</em> the Islandora community. As a member of the Islandora community, you can help to steer the direction it takes.</p>
 <h3 id="linked-data">Linked Data</h3>
-<p>Linked Data is a big concept. A <a href="https://www.w3.org/DesignIssues/LinkedData.html">definition by Tim Bernes-Lee</a> from 2006 articulates the basic idea in the context of the "Semantic Web":   </p>
+<p>Linked Data is a big concept. A <a href="https://www.w3.org/DesignIssues/LinkedData.html">definition by Tim Bernes-Lee</a> from 2006 articulates the basic idea in the context of the "Semantic Web":</p>
 <blockquote>
 <p>It is about making links, so that a person or machine can explore the web of data. With linked data, when you have some of it, you can find other, related, data.</p>
 <p>Like the web of hypertext, the web of data is constructed with documents on the web. However, unlike the web of hypertext, where links are relationships anchors in hypertext documents written in HTML, for data they links between arbitrary things described by RDF. The URIs identify any kind of object or concept. But for HTML or RDF, the same expectations apply to make the web grow:</p>
@@ -966,7 +983,7 @@ operation on:</p>
 <li>Turtle</li>
 <li>N-Triples</li>
 </ul>
-<p>Working with RDF is not entirely new in the Islandora/Fedora context, as RELS-EXT and RELS-INT have always been RDF/XML. Related objects can be included in RDF, so it functions as a graph you can traverse in order to discover more information. </p>
+<p>Working with RDF is not entirely new in the Islandora/Fedora context, as RELS-EXT and RELS-INT have always been RDF/XML. Related objects can be included in RDF, so it functions as a graph you can traverse in order to discover more information.</p>
 <h4 id="example-dublin-core-as-xml-and-rdf-using-the-dc-namespace">Example: Dublin Core as XML and RDF using the dc namespace</h4>
 <p>Dublin Core XML you store with the resource.</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
@@ -1011,7 +1028,7 @@ operation on:</p>
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="../2xfor1x/" title="Islandora CLAW for 1.x Users" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../CLAWfor1x/" title="Islandora CLAW for 1.x Users" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1055,7 +1072,7 @@ operation on:</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
       <script>app.initialize({url:{base:"../.."}})</script>
       
     
