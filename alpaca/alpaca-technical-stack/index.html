@@ -17,7 +17,7 @@
     
     
       
-        <title>How to build documenation - Islandora CLAW</title>
+        <title>Alpaca Technical Stack - Islandora CLAW</title>
       
     
     
@@ -83,7 +83,7 @@
                 </span>
               
             
-            How to build documenation
+            Alpaca Technical Stack
           
         </span>
       </div>
@@ -271,6 +271,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/docs-build/" title="How to build documenation" class="md-nav__link">
+      How to build documenation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/drupal-project/" title="Syncing Drupal Project" class="md-nav__link">
+      Syncing Drupal Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/versioning/" title="Versioning Policy" class="md-nav__link">
+      Versioning Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -282,11 +318,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        How to build documenation
+        Alpaca Technical Stack
       </label>
     
-    <a href="./" title="How to build documenation" class="md-nav__link md-nav__link--active">
-      How to build documenation
+    <a href="./" title="Alpaca Technical Stack" class="md-nav__link md-nav__link--active">
+      Alpaca Technical Stack
     </a>
     
       
@@ -300,15 +336,116 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#osgi" title="OSGi" class="md-nav__link">
+    OSGi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-and-deploy-documentation" title="Build and Deploy documentation" class="md-nav__link">
-    Build and Deploy documentation
+  <a href="#karaf" title="Karaf" class="md-nav__link">
+    Karaf
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karaf-bundle-hello-world" title="Karaf - Bundle - Hello World" class="md-nav__link">
+    Karaf - Bundle - Hello World
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#karaf-features-hello-world" title="Karaf - Features - Hello World" class="md-nav__link">
+    Karaf - Features - Hello World
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradle" title="Gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-camel" title="Apache Camel" class="md-nav__link">
+    Apache Camel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpaca-apache-camel-helloworld" title="Alpaca - Apache Camel HelloWorld" class="md-nav__link">
+    Alpaca - Apache Camel HelloWorld
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-projectbundle-under-alpaca" title="Creating a project/bundle under Alpaca" class="md-nav__link">
+    Creating a project/bundle under Alpaca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-bundle" title="Building the bundle" class="md-nav__link">
+    Building the bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-bundle" title="Deploying the bundle" class="md-nav__link">
+    Deploying the bundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-activemq" title="Apache ActiveMQ" class="md-nav__link">
+    Apache ActiveMQ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-activemq" title="Installing ActiveMQ" class="md-nav__link">
+    Installing ActiveMQ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -319,42 +456,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../drupal-project/" title="Syncing Drupal Project" class="md-nav__link">
-      Syncing Drupal Project
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../versioning/" title="Versioning Policy" class="md-nav__link">
-      Versioning Policy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../alpaca/alpaca-technical-stack/" title="Alpaca Technical Stack" class="md-nav__link">
-      Alpaca Technical Stack
-    </a>
   </li>
 
         
@@ -400,7 +501,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../alpaca/README/" title="Alpaca" class="md-nav__link">
+    <a href="../README/" title="Alpaca" class="md-nav__link">
       Alpaca
     </a>
   </li>
@@ -648,15 +749,116 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#osgi" title="OSGi" class="md-nav__link">
+    OSGi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-and-deploy-documentation" title="Build and Deploy documentation" class="md-nav__link">
-    Build and Deploy documentation
+  <a href="#karaf" title="Karaf" class="md-nav__link">
+    Karaf
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karaf-bundle-hello-world" title="Karaf - Bundle - Hello World" class="md-nav__link">
+    Karaf - Bundle - Hello World
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#karaf-features-hello-world" title="Karaf - Features - Hello World" class="md-nav__link">
+    Karaf - Features - Hello World
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradle" title="Gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-camel" title="Apache Camel" class="md-nav__link">
+    Apache Camel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpaca-apache-camel-helloworld" title="Alpaca - Apache Camel HelloWorld" class="md-nav__link">
+    Alpaca - Apache Camel HelloWorld
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-projectbundle-under-alpaca" title="Creating a project/bundle under Alpaca" class="md-nav__link">
+    Creating a project/bundle under Alpaca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-bundle" title="Building the bundle" class="md-nav__link">
+    Building the bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-bundle" title="Deploying the bundle" class="md-nav__link">
+    Deploying the bundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-activemq" title="Apache ActiveMQ" class="md-nav__link">
+    Apache ActiveMQ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-activemq" title="Installing ActiveMQ" class="md-nav__link">
+    Installing ActiveMQ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -675,28 +877,206 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/docs-build.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/alpaca/alpaca-technical-stack.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                <h1 id="introduction">Introduction</h1>
-<p>This documentation is built using <a href="http://www.mkdocs.org/">mkdocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora-CLAW/CLAW/tree/master/docs"><code>docs</code></a> directory in the repository. The organization of the documentation is controlled by the <a href="https://github.com/Islandora-CLAW/CLAW/blob/master/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>You will need to have <code>mkdocs</code> installed locally, as well as the mkdocs theme.</p>
-<p>Install <code>mkdocs</code>:</p>
-<p><code>sudo -H pip install mkdocs</code></p>
-<p>Install material theme:</p>
-<p><code>sudo -H pip install mkdocs-material</code></p>
-<h2 id="build-and-deploy-documentation">Build and Deploy documentation</h2>
-<p>Make sure you have all the submodules:</p>
-<p><code>git submodule update --init --recursive</code></p>
-<p>Documentation is build by running to the following command in the root of the repository:</p>
-<p><code>mkdocs build --clean</code></p>
-<p>This command will create a static <code>site</code> folder in the root of the repository.</p>
-<p>You can preview any changes you have made to the documentation by running the following command:</p>
-<p><code>mkdocs serve</code></p>
-<p>And then visiting http://localhost:8111 in your browser.</p>
-<p>To deploy documenation to GitHub Pages, issue the following command:</p>
-<p><code>mkdocs gh-deploy --clean</code></p>
+                <h1 id="alpaca-technical-stack">Alpaca Technical Stack</h1>
+<p>Alpaca contains several OSGI modules or bundles. They are grouped together as features and deployed to Karaf container.</p>
+<h2 id="osgi"><a href="https://www.osgi.org/developer/architecture/">OSGi</a></h2>
+<p>OSGi is a specification to develop and deploy modular Java applications. It allows for dynamic deployment (hot deployment) and dependency management. </p>
+<p>The base unit of resources is called a bundle. Bundle is similar to a jar file, with additional information to be processed as an OSGi component. Several bundles can be grouped together into a Feature and installed together. OSGi bundles can be run on containers implementing the OSGi specification. Apache Karaf is one such container</p>
+<h2 id="karaf"><a href="https://karaf.apache.org/manual/latest/overview.html">Karaf</a></h2>
+<p>Apache Karaf is a container that can be used to deploy an array of applications such servlets, Apache Camel components, jars etc. </p>
+<h3 id="karaf-bundle-hello-world">Karaf - Bundle - Hello World</h3>
+<p>Download a bundle to the <a href="https://github.com/Islandora-CLAW/claw_vagrant">CLAW vagrant</a> (ex to <code>/home/ubuntu</code> directory). An example hello world bundle is <a href="https://github.com/moghaddam/developmentor/blob/master/helloworld/target/helloworld-1.0.0.jar">here</a>. </p>
+<p>In Islandora CLAW vagrant, you can login to Karaf using ssh. The password is karaf. You can also use the client here: <code>/opt/karaf/bin/client</code>. Karaf client allows the use of linux commands such as <code>grep</code> in addition to Karaf commands.  </p>
+<pre><code>ssh -p 8101 karaf@localhost
+</code></pre>
+
+<p>Install the bundle:</p>
+<pre><code>karaf@root()&gt; bundle
+karaf@root(bundle)&gt; install file:///home/ubuntu/helloworld-1.0.0.jar
+Bundle ID: 242
+</code></pre>
+
+<p>The installation will return a bundle id. You can issue the list command to verify that bundle is on the list. Initially it will have <em>Installed</em> status.</p>
+<p>As per OSGi specification, before a bundle can be started, it has to be Resolved. To resolve, issue the following command.  </p>
+<pre><code>karaf@root(bundle)&gt; resolve 242
+</code></pre>
+
+<p>You can start and stop the bundle as below.</p>
+<pre><code>karaf@root(bundle)&gt; start 242
+Hello World!
+karaf@root(bundle)&gt; stop 242
+Goodbye World!
+karaf@root(bundle)&gt; 
+</code></pre>
+
+<h3 id="karaf-features-hello-world">Karaf - Features - Hello World</h3>
+<p>Karaf Features allows for bundles to be grouped, managed and deployed together. Features can be nested as well. Feature files of frameworks such as Apache Camel or Apache ActiveMQ can be used to deploy those services.  </p>
+<p>A simple Features file is as below.  </p>
+<pre><code>&lt;features&gt;
+  &lt;feature name='greeter_server' version='1.0'&gt;
+    &lt;bundle&gt;file:///home/ubuntu/helloworld-1.0.0.jar&lt;/bundle&gt;
+    &lt;bundle&gt;file:///home/ubuntu/helloworld2-1.0.0.jar&lt;/bundle&gt;
+  &lt;/feature&gt;
+&lt;/features&gt;
+</code></pre>
+
+<p>You can add the features to Karaf as below:</p>
+<pre><code>karaf@root()&gt; feature:repo-add file:///home/ubuntu/features.xml
+</code></pre>
+
+<p>You can install the feature's bundles as below.  </p>
+<pre><code>karaf@root(feature)&gt; install greeter_server
+Hello World 2 !
+Hello World!
+</code></pre>
+
+<p>Uninstalling the feature.</p>
+<pre><code>karaf@root(feature)&gt; uninstall greeter_server
+Goodbye World 2 !
+Goodbye World!
+
+</code></pre>
+
+<h2 id="gradle"><a href="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Gradle</a></h2>
+<p>Gradle is used by Alpaca as a build and package management tool. It is similar to <a href="https://maven.apache.org/">Maven</a>.  </p>
+<h2 id="apache-camel"><a href="http://camel.apache.org/book-getting-started.html">Apache Camel</a></h2>
+<p>Apache Camel is an integration framework that aids in implementing integration patterns.  </p>
+<h3 id="alpaca-apache-camel-helloworld">Alpaca - Apache Camel HelloWorld</h3>
+<p>Maven has camel-archetype-blueprint which can be used to create apache-camel OSGi bundle project structure.  </p>
+<h4 id="creating-a-projectbundle-under-alpaca">Creating a project/bundle under Alpaca</h4>
+<pre><code>mvn archetype:generate -DarchetypeGroupId=org.apache.camel.archetypes -DarchetypeArtifactId=camel-archetype-blueprint -DarchetypeVersion=2.9.0 -DarchetypeRepository=https://repository.apache.org/content/groups/snapshots-g
+</code></pre>
+
+<p>However, it is easier to copy the structure of an existing project such as <a href="https://github.com/Islandora-CLAW/Alpaca/tree/master/islandora-connector-broadcast">islandora-connector-broadcast</a>.</p>
+<pre><code>cp -R islandora-connector-broadcast/ islandora-connector-helloworld
+
+</code></pre>
+
+<p>Open the project in your IDE. In Eclipse, you can go to File | Open Projects from File System and navigate the new folder.  </p>
+<p>We need to rename the configuration, java and build files to reflect the helloworld project.  </p>
+<ul>
+<li><code>src/main/cfg/ca.islandora.alpaca.connector.helloworld.cfg</code></li>
+<li><code>src/main/java/ca/islandora/alpaca/connector/helloworld</code></li>
+<li><code>src/main/java/ca/islandora/alpaca/connector/helloworld/HelloworldRouter.java</code></li>
+</ul>
+<p>Also change the content of the above file to log Hello World</p>
+<pre><code>package ca.islandora.alpaca.connector.helloworld;
+
+import static org.apache.camel.LoggingLevel.INFO;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class HelloworldRouter extends RouteBuilder {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloworldRouter.class);
+
+    /**
+     * Configure the message route workflow.
+     */
+    public void configure() throws Exception {
+
+        // Hello World.
+        from(&quot;timer:foo?period=5000&quot;).log(INFO, LOGGER, &quot;Hello World&quot;);
+    }
+}
+
+</code></pre>
+
+<ul>
+<li><code>src/main/resource/OSGI-INF/blueprint/blueprint.xml</code> - Change the content of this file to reflect Helloworld package.  </li>
+<li><code>src/build.gradle</code></li>
+</ul>
+<pre><code>apply plugin: 'osgi'
+
+description = 'Islandora CLAW HelloWorld'
+
+dependencies {
+    compile group: 'org.apache.camel', name: 'camel-core', version: camelVersion
+    compile group: 'org.apache.camel', name: 'camel-blueprint', version: camelVersion
+    compile group: 'org.apache.activemq', name: 'activemq-camel', version: activemqVersion
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    testCompile group: 'org.apache.camel', name: 'camel-test-blueprint', version: camelVersion
+}
+
+jar {
+    manifest {
+        description project.description
+        docURL project.docURL
+        vendor project.vendor
+        license project.license
+
+        instruction 'Import-Package', 'org.apache.activemq.camel.component,' +
+                            &quot;org.apache.camel;version=\&quot;${camelVersionRange}\&quot;,&quot; +
+                            defaultOsgiImports
+        instruction 'Export-Package', 'ca.islandora.alpaca.connector.helloworld'
+    }
+}
+
+artifacts {
+    archives (file('build/cfg/main/ca.islandora.alpaca.connector.helloworld.cfg')) {
+        classifier 'configuration'
+        type 'cfg'
+    }
+}
+</code></pre>
+
+<h4 id="building-the-bundle">Building the bundle</h4>
+<p>To build this project, we have to update the Alpaca build settings. Include and add the project in <code>Alpaca/settings.gradle</code>.</p>
+<pre><code>include ':islandora-connector-helloworld'
+project(':islandora-connector-helloworld').projectDir = &quot;$rootDir/islandora-connector-helloworld&quot; as File
+</code></pre>
+
+<p>Normally, we would also have to update the <code>karaf/src/main/resources/features.xml</code> file to include this bundle. However, we will be deploying the bundle directly into Karaf's Hot deployment directory. Thus, not needed at this time.</p>
+<p>To build it from command line in Linux.</p>
+<pre><code>ubuntu:~/workspace/Alpaca$ sudo gradle w build
+</code></pre>
+
+<h4 id="deploying-the-bundle">Deploying the bundle</h4>
+<ul>
+<li>Upload the bundle to the Apache Karaf deploy directory: <code>/opt/apache-karaf-4.0.5/deploy</code></li>
+<li>Login to Karaf. You can also use the Karaf client here: <code>/opt/karaf/bin/client</code>.</li>
+</ul>
+<pre><code>ssh -p 8101 karaf@localhost
+</code></pre>
+
+<ul>
+<li>Verify that bundle is deployed</li>
+</ul>
+<pre><code>bundle:list
+</code></pre>
+
+<ul>
+<li>See the log to confirm that the bundle is working.</li>
+</ul>
+<pre><code>log:tail
+</code></pre>
+
+<p>You should see a message like below:</p>
+<pre><code>2017-02-24 21:30:17,973 | INFO  | 12 - timer://foo | HelloworldRouter                 | 186 - ca.islandora.alpaca.islandora-connector-helloworld - 0.2.1.SNAPSHOT | Hello World
+</code></pre>
+
+<h2 id="apache-activemq"><a href="http://activemq.apache.org/getting-started.html">Apache ActiveMQ</a></h2>
+<p>Apache ActiveMQ is a JMS compliant Messaging Queue. Messaging client can make use of JMS to send messages.</p>
+<h3 id="installing-activemq">Installing ActiveMQ</h3>
+<p>Installing ActiveMQ is relatively easy. Download the latest stable release <a href="http://activemq.apache.org/download.html">here</a>. Go to the <code>activemq_install_dir/bin</code>. Start the ActiveMQ by using the activemq script or batch file and start command.</p>
+<pre><code>$ cd activemq_install_dir/bin
+$ ./activemq start
+</code></pre>
+
+<p>When ActiveMQ gets started, go to http://localhost:8161/admin/. You can login using admin:admin.</p>
+<p>Note that ActiveMQ in CLAW vagrant does not have a UI.  </p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://www.theserverside.com/news/1363825/OSGi-for-Beginners">OSGI for Beginners</a></li>
+<li><a href="http://www.javaindeed.com/playing-with-apache-karaf-console/">Playing with Apache Karaf Console</a></li>
+<li><a href="https://karaf.apache.org/manual/latest/quick-start.html">Karaf Quick Start</a></li>
+<li><a href="http://tech.lalitbhatt.net/2014/08/activemq-introduction.html">ActiveMQ Introduction</a></li>
+</ul>
                 
                   
                 
@@ -715,7 +1095,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../mvp/mvp_doc/" title="Minimum Viable Product" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../technical-documentation/versioning/" title="Versioning Policy" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -724,19 +1104,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Minimum Viable Product
+                Versioning Policy
               </span>
             </div>
           </a>
         
         
-          <a href="../drupal-project/" title="Syncing Drupal Project" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../.." title="Islandora CLAW" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Syncing Drupal Project
+                Islandora CLAW
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

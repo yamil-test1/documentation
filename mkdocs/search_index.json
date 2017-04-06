@@ -401,6 +401,81 @@
             "title": "Drupal Contrib Versioning"
         }, 
         {
+            "location": "/alpaca/alpaca-technical-stack/", 
+            "text": "Alpaca Technical Stack\n\n\nAlpaca contains several OSGI modules or bundles. They are grouped together as features and deployed to Karaf container.\n\n\nOSGi\n\n\nOSGi is a specification to develop and deploy modular Java applications. It allows for dynamic deployment (hot deployment) and dependency management. \n\n\nThe base unit of resources is called a bundle. Bundle is similar to a jar file, with additional information to be processed as an OSGi component. Several bundles can be grouped together into a Feature and installed together. OSGi bundles can be run on containers implementing the OSGi specification. Apache Karaf is one such container\n\n\nKaraf\n\n\nApache Karaf is a container that can be used to deploy an array of applications such servlets, Apache Camel components, jars etc. \n\n\nKaraf - Bundle - Hello World\n\n\nDownload a bundle to the \nCLAW vagrant\n (ex to \n/home/ubuntu\n directory). An example hello world bundle is \nhere\n. \n\n\nIn Islandora CLAW vagrant, you can login to Karaf using ssh. The password is karaf. You can also use the client here: \n/opt/karaf/bin/client\n. Karaf client allows the use of linux commands such as \ngrep\n in addition to Karaf commands.  \n\n\nssh -p 8101 karaf@localhost\n\n\n\n\nInstall the bundle:\n\n\nkaraf@root()\n bundle\nkaraf@root(bundle)\n install file:///home/ubuntu/helloworld-1.0.0.jar\nBundle ID: 242\n\n\n\n\nThe installation will return a bundle id. You can issue the list command to verify that bundle is on the list. Initially it will have \nInstalled\n status.\n\n\nAs per OSGi specification, before a bundle can be started, it has to be Resolved. To resolve, issue the following command.  \n\n\nkaraf@root(bundle)\n resolve 242\n\n\n\n\nYou can start and stop the bundle as below.\n\n\nkaraf@root(bundle)\n start 242\nHello World!\nkaraf@root(bundle)\n stop 242\nGoodbye World!\nkaraf@root(bundle)\n \n\n\n\n\nKaraf - Features - Hello World\n\n\nKaraf Features allows for bundles to be grouped, managed and deployed together. Features can be nested as well. Feature files of frameworks such as Apache Camel or Apache ActiveMQ can be used to deploy those services.  \n\n\nA simple Features file is as below.  \n\n\nfeatures\n\n  \nfeature name='greeter_server' version='1.0'\n\n    \nbundle\nfile:///home/ubuntu/helloworld-1.0.0.jar\n/bundle\n\n    \nbundle\nfile:///home/ubuntu/helloworld2-1.0.0.jar\n/bundle\n\n  \n/feature\n\n\n/features\n\n\n\n\n\nYou can add the features to Karaf as below:\n\n\nkaraf@root()\n feature:repo-add file:///home/ubuntu/features.xml\n\n\n\n\nYou can install the feature's bundles as below.  \n\n\nkaraf@root(feature)\n install greeter_server\nHello World 2 !\nHello World!\n\n\n\n\nUninstalling the feature.\n\n\nkaraf@root(feature)\n uninstall greeter_server\nGoodbye World 2 !\nGoodbye World!\n\n\n\n\n\nGradle\n\n\nGradle is used by Alpaca as a build and package management tool. It is similar to \nMaven\n.  \n\n\nApache Camel\n\n\nApache Camel is an integration framework that aids in implementing integration patterns.  \n\n\nAlpaca - Apache Camel HelloWorld\n\n\nMaven has camel-archetype-blueprint which can be used to create apache-camel OSGi bundle project structure.  \n\n\nCreating a project/bundle under Alpaca\n\n\nmvn archetype:generate -DarchetypeGroupId=org.apache.camel.archetypes -DarchetypeArtifactId=camel-archetype-blueprint -DarchetypeVersion=2.9.0 -DarchetypeRepository=https://repository.apache.org/content/groups/snapshots-g\n\n\n\n\nHowever, it is easier to copy the structure of an existing project such as \nislandora-connector-broadcast\n.\n\n\ncp -R islandora-connector-broadcast/ islandora-connector-helloworld\n\n\n\n\n\nOpen the project in your IDE. In Eclipse, you can go to File | Open Projects from File System and navigate the new folder.  \n\n\nWe need to rename the configuration, java and build files to reflect the helloworld project.  \n\n\n\n\nsrc/main/cfg/ca.islandora.alpaca.connector.helloworld.cfg\n\n\nsrc/main/java/ca/islandora/alpaca/connector/helloworld\n\n\nsrc/main/java/ca/islandora/alpaca/connector/helloworld/HelloworldRouter.java\n\n\n\n\nAlso change the content of the above file to log Hello World\n\n\npackage ca.islandora.alpaca.connector.helloworld;\n\nimport static org.apache.camel.LoggingLevel.INFO;\n\nimport org.apache.camel.builder.RouteBuilder;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\npublic class HelloworldRouter extends RouteBuilder {\n\n    private static final Logger LOGGER = LoggerFactory.getLogger(HelloworldRouter.class);\n\n    /**\n     * Configure the message route workflow.\n     */\n    public void configure() throws Exception {\n\n        // Hello World.\n        from(\ntimer:foo?period=5000\n).log(INFO, LOGGER, \nHello World\n);\n    }\n}\n\n\n\n\n\n\n\nsrc/main/resource/OSGI-INF/blueprint/blueprint.xml\n - Change the content of this file to reflect Helloworld package.  \n\n\nsrc/build.gradle\n\n\n\n\napply plugin: 'osgi'\n\ndescription = 'Islandora CLAW HelloWorld'\n\ndependencies {\n    compile group: 'org.apache.camel', name: 'camel-core', version: camelVersion\n    compile group: 'org.apache.camel', name: 'camel-blueprint', version: camelVersion\n    compile group: 'org.apache.activemq', name: 'activemq-camel', version: activemqVersion\n    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion\n    testCompile group: 'org.apache.camel', name: 'camel-test-blueprint', version: camelVersion\n}\n\njar {\n    manifest {\n        description project.description\n        docURL project.docURL\n        vendor project.vendor\n        license project.license\n\n        instruction 'Import-Package', 'org.apache.activemq.camel.component,' +\n                            \norg.apache.camel;version=\\\n${camelVersionRange}\\\n,\n +\n                            defaultOsgiImports\n        instruction 'Export-Package', 'ca.islandora.alpaca.connector.helloworld'\n    }\n}\n\nartifacts {\n    archives (file('build/cfg/main/ca.islandora.alpaca.connector.helloworld.cfg')) {\n        classifier 'configuration'\n        type 'cfg'\n    }\n}\n\n\n\n\nBuilding the bundle\n\n\nTo build this project, we have to update the Alpaca build settings. Include and add the project in \nAlpaca/settings.gradle\n.\n\n\ninclude ':islandora-connector-helloworld'\nproject(':islandora-connector-helloworld').projectDir = \n$rootDir/islandora-connector-helloworld\n as File\n\n\n\n\nNormally, we would also have to update the \nkaraf/src/main/resources/features.xml\n file to include this bundle. However, we will be deploying the bundle directly into Karaf's Hot deployment directory. Thus, not needed at this time.\n\n\nTo build it from command line in Linux.\n\n\nubuntu:~/workspace/Alpaca$ sudo gradle w build\n\n\n\n\nDeploying the bundle\n\n\n\n\nUpload the bundle to the Apache Karaf deploy directory: \n/opt/apache-karaf-4.0.5/deploy\n\n\nLogin to Karaf. You can also use the Karaf client here: \n/opt/karaf/bin/client\n.\n\n\n\n\nssh -p 8101 karaf@localhost\n\n\n\n\n\n\nVerify that bundle is deployed\n\n\n\n\nbundle:list\n\n\n\n\n\n\nSee the log to confirm that the bundle is working.\n\n\n\n\nlog:tail\n\n\n\n\nYou should see a message like below:\n\n\n2017-02-24 21:30:17,973 | INFO  | 12 - timer://foo | HelloworldRouter                 | 186 - ca.islandora.alpaca.islandora-connector-helloworld - 0.2.1.SNAPSHOT | Hello World\n\n\n\n\nApache ActiveMQ\n\n\nApache ActiveMQ is a JMS compliant Messaging Queue. Messaging client can make use of JMS to send messages.\n\n\nInstalling ActiveMQ\n\n\nInstalling ActiveMQ is relatively easy. Download the latest stable release \nhere\n. Go to the \nactivemq_install_dir/bin\n. Start the ActiveMQ by using the activemq script or batch file and start command.\n\n\n$ cd activemq_install_dir/bin\n$ ./activemq start\n\n\n\n\nWhen ActiveMQ gets started, go to http://localhost:8161/admin/. You can login using admin:admin.\n\n\nNote that ActiveMQ in CLAW vagrant does not have a UI.  \n\n\nReferences\n\n\n\n\nOSGI for Beginners\n\n\nPlaying with Apache Karaf Console\n\n\nKaraf Quick Start\n\n\nActiveMQ Introduction", 
+            "title": "Alpaca Technical Stack"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#alpaca-technical-stack", 
+            "text": "Alpaca contains several OSGI modules or bundles. They are grouped together as features and deployed to Karaf container.", 
+            "title": "Alpaca Technical Stack"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#osgi", 
+            "text": "OSGi is a specification to develop and deploy modular Java applications. It allows for dynamic deployment (hot deployment) and dependency management.   The base unit of resources is called a bundle. Bundle is similar to a jar file, with additional information to be processed as an OSGi component. Several bundles can be grouped together into a Feature and installed together. OSGi bundles can be run on containers implementing the OSGi specification. Apache Karaf is one such container", 
+            "title": "OSGi"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#karaf", 
+            "text": "Apache Karaf is a container that can be used to deploy an array of applications such servlets, Apache Camel components, jars etc.", 
+            "title": "Karaf"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#karaf-bundle-hello-world", 
+            "text": "Download a bundle to the  CLAW vagrant  (ex to  /home/ubuntu  directory). An example hello world bundle is  here .   In Islandora CLAW vagrant, you can login to Karaf using ssh. The password is karaf. You can also use the client here:  /opt/karaf/bin/client . Karaf client allows the use of linux commands such as  grep  in addition to Karaf commands.    ssh -p 8101 karaf@localhost  Install the bundle:  karaf@root()  bundle\nkaraf@root(bundle)  install file:///home/ubuntu/helloworld-1.0.0.jar\nBundle ID: 242  The installation will return a bundle id. You can issue the list command to verify that bundle is on the list. Initially it will have  Installed  status.  As per OSGi specification, before a bundle can be started, it has to be Resolved. To resolve, issue the following command.    karaf@root(bundle)  resolve 242  You can start and stop the bundle as below.  karaf@root(bundle)  start 242\nHello World!\nkaraf@root(bundle)  stop 242\nGoodbye World!\nkaraf@root(bundle)", 
+            "title": "Karaf - Bundle - Hello World"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#karaf-features-hello-world", 
+            "text": "Karaf Features allows for bundles to be grouped, managed and deployed together. Features can be nested as well. Feature files of frameworks such as Apache Camel or Apache ActiveMQ can be used to deploy those services.    A simple Features file is as below.    features \n   feature name='greeter_server' version='1.0' \n     bundle file:///home/ubuntu/helloworld-1.0.0.jar /bundle \n     bundle file:///home/ubuntu/helloworld2-1.0.0.jar /bundle \n   /feature  /features   You can add the features to Karaf as below:  karaf@root()  feature:repo-add file:///home/ubuntu/features.xml  You can install the feature's bundles as below.    karaf@root(feature)  install greeter_server\nHello World 2 !\nHello World!  Uninstalling the feature.  karaf@root(feature)  uninstall greeter_server\nGoodbye World 2 !\nGoodbye World!", 
+            "title": "Karaf - Features - Hello World"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#gradle", 
+            "text": "Gradle is used by Alpaca as a build and package management tool. It is similar to  Maven .", 
+            "title": "Gradle"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#apache-camel", 
+            "text": "Apache Camel is an integration framework that aids in implementing integration patterns.", 
+            "title": "Apache Camel"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#alpaca-apache-camel-helloworld", 
+            "text": "Maven has camel-archetype-blueprint which can be used to create apache-camel OSGi bundle project structure.", 
+            "title": "Alpaca - Apache Camel HelloWorld"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#creating-a-projectbundle-under-alpaca", 
+            "text": "mvn archetype:generate -DarchetypeGroupId=org.apache.camel.archetypes -DarchetypeArtifactId=camel-archetype-blueprint -DarchetypeVersion=2.9.0 -DarchetypeRepository=https://repository.apache.org/content/groups/snapshots-g  However, it is easier to copy the structure of an existing project such as  islandora-connector-broadcast .  cp -R islandora-connector-broadcast/ islandora-connector-helloworld  Open the project in your IDE. In Eclipse, you can go to File | Open Projects from File System and navigate the new folder.    We need to rename the configuration, java and build files to reflect the helloworld project.     src/main/cfg/ca.islandora.alpaca.connector.helloworld.cfg  src/main/java/ca/islandora/alpaca/connector/helloworld  src/main/java/ca/islandora/alpaca/connector/helloworld/HelloworldRouter.java   Also change the content of the above file to log Hello World  package ca.islandora.alpaca.connector.helloworld;\n\nimport static org.apache.camel.LoggingLevel.INFO;\n\nimport org.apache.camel.builder.RouteBuilder;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\npublic class HelloworldRouter extends RouteBuilder {\n\n    private static final Logger LOGGER = LoggerFactory.getLogger(HelloworldRouter.class);\n\n    /**\n     * Configure the message route workflow.\n     */\n    public void configure() throws Exception {\n\n        // Hello World.\n        from( timer:foo?period=5000 ).log(INFO, LOGGER,  Hello World );\n    }\n}   src/main/resource/OSGI-INF/blueprint/blueprint.xml  - Change the content of this file to reflect Helloworld package.    src/build.gradle   apply plugin: 'osgi'\n\ndescription = 'Islandora CLAW HelloWorld'\n\ndependencies {\n    compile group: 'org.apache.camel', name: 'camel-core', version: camelVersion\n    compile group: 'org.apache.camel', name: 'camel-blueprint', version: camelVersion\n    compile group: 'org.apache.activemq', name: 'activemq-camel', version: activemqVersion\n    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion\n    testCompile group: 'org.apache.camel', name: 'camel-test-blueprint', version: camelVersion\n}\n\njar {\n    manifest {\n        description project.description\n        docURL project.docURL\n        vendor project.vendor\n        license project.license\n\n        instruction 'Import-Package', 'org.apache.activemq.camel.component,' +\n                             org.apache.camel;version=\\ ${camelVersionRange}\\ ,  +\n                            defaultOsgiImports\n        instruction 'Export-Package', 'ca.islandora.alpaca.connector.helloworld'\n    }\n}\n\nartifacts {\n    archives (file('build/cfg/main/ca.islandora.alpaca.connector.helloworld.cfg')) {\n        classifier 'configuration'\n        type 'cfg'\n    }\n}", 
+            "title": "Creating a project/bundle under Alpaca"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#building-the-bundle", 
+            "text": "To build this project, we have to update the Alpaca build settings. Include and add the project in  Alpaca/settings.gradle .  include ':islandora-connector-helloworld'\nproject(':islandora-connector-helloworld').projectDir =  $rootDir/islandora-connector-helloworld  as File  Normally, we would also have to update the  karaf/src/main/resources/features.xml  file to include this bundle. However, we will be deploying the bundle directly into Karaf's Hot deployment directory. Thus, not needed at this time.  To build it from command line in Linux.  ubuntu:~/workspace/Alpaca$ sudo gradle w build", 
+            "title": "Building the bundle"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#deploying-the-bundle", 
+            "text": "Upload the bundle to the Apache Karaf deploy directory:  /opt/apache-karaf-4.0.5/deploy  Login to Karaf. You can also use the Karaf client here:  /opt/karaf/bin/client .   ssh -p 8101 karaf@localhost   Verify that bundle is deployed   bundle:list   See the log to confirm that the bundle is working.   log:tail  You should see a message like below:  2017-02-24 21:30:17,973 | INFO  | 12 - timer://foo | HelloworldRouter                 | 186 - ca.islandora.alpaca.islandora-connector-helloworld - 0.2.1.SNAPSHOT | Hello World", 
+            "title": "Deploying the bundle"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#apache-activemq", 
+            "text": "Apache ActiveMQ is a JMS compliant Messaging Queue. Messaging client can make use of JMS to send messages.", 
+            "title": "Apache ActiveMQ"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#installing-activemq", 
+            "text": "Installing ActiveMQ is relatively easy. Download the latest stable release  here . Go to the  activemq_install_dir/bin . Start the ActiveMQ by using the activemq script or batch file and start command.  $ cd activemq_install_dir/bin\n$ ./activemq start  When ActiveMQ gets started, go to http://localhost:8161/admin/. You can login using admin:admin.  Note that ActiveMQ in CLAW vagrant does not have a UI.", 
+            "title": "Installing ActiveMQ"
+        }, 
+        {
+            "location": "/alpaca/alpaca-technical-stack/#references", 
+            "text": "OSGI for Beginners  Playing with Apache Karaf Console  Karaf Quick Start  ActiveMQ Introduction", 
+            "title": "References"
+        }, 
+        {
             "location": "/", 
             "text": "Islandora CLAW\n\n\nIntroduction\n\n\nIslandora CLAW is the next generation of Islandora. Still in development, this major upgrade will be compatible with \nFedora 4\n.\n\n\nFor more details, please check out the following resources:\n\n\n\n\nWeekly Tech Calls\n\n\n2015\n\n\n2016\n\n\n2017\n\n\nContributing\n\n\n\n\nRepository Structure\n\n\n\n\nAlpaca\n: Event driven middleware based on Apache Camel that synchronizes a Fedora 4 with Drupal.\n\n\ndocs\n: Documentation!\n\n\nclaw_install\n: Bleeding edge development environment\n\n\nislandora\n: Islandora CLAW Drupal core module\n\n\nislandora_collection\n: Islandora CLAW Drupal collection module\n\n\nislandora_image\n: Islandora CLAW Drupal image module\n\n\n\n\nNote\n: the \nAnsible\n and \nDocker\n repositories were early experimental provisioning tools for the CLAW stack, and are currently \nnot\n supported. For context see \nthis\n. Development is focused on \nclaw_vagrant\n, which is the recommended starting point for working with CLAW.\n\n\nSponsors\n\n\n\n\nUPEI\n\n\ndiscoverygarden inc.\n\n\nLYRASIS\n\n\nMcMaster University\n\n\nUniversity of Limerick\n\n\nYork University\n\n\nUniversity of Manitoba\n\n\nSimon Fraser University\n\n\nPALS\n\n\nAmerican Philosophical Society\n\n\nCommon Media Inc.\n\n\n\n\nMaintainers\n\n\n\n\nNick Ruest\n\n\nDaniel Lamb\n\n\nJared Whiklo\n\n\nDiego Pino\n\n\n\n\nDevelopment\n\n\nIf you would like to contribute, please get involved by attending our weekly \nTech Call\n. We love to hear from you!\n\n\nIf you would like to contribute code to the project, you need to be covered by an Islandora Foundation \nContributor License Agreement\n or \nCorporate Contributor Licencse Agreement\n. Please see the \nContributors\n pages on Islandora.ca for more information.\n\n\nIf you want to pull down the submodules for development, don't forget to run \ngit submodule update --init --recursive\n after cloning.", 
             "title": "Islandora CLAW"
@@ -567,12 +642,17 @@
         }, 
         {
             "location": "/install/README/", 
-            "text": "Introduction\n\n\nThe is a development environment virtual machine for the Islandora and Fedora 4 project. It should work on any operating system that supports VirtualBox and Vagrant.\n\n\nN.B. This virtual machine \nshould not\n be used in production.\n\n\nRequirements\n\n\n\n\nVirtualBox\n\n\nVagrant\n 1.8.5+\n\n\ngit\n\n\n\n\nVariables\n\n\nSystem Resources\n\n\nBy default the virtual machine that is built uses 2GB of RAM. Your host machine will need to be able to support the additional memory use. You can override the CPU and RAM allocation by creating \nISLANDORA_VAGRANT_CPUS\n and \nISLANDORA_VAGRANT_MEMORY\n environment variables and setting the values. For example, on an Ubuntu host you could add to \n~/.bashrc\n:\n\n\nexport ISLANDORA_VAGRANT_CPUS=4\nexport ISLANDORA_VAGRANT_MEMORY=4096\n\n\n\n\nHostname and Description\n\n\nIf you use a DNS or host file management plugin with Vagrant, you may want to set a specific hostname for the virtual machine. You can do that with the \nISLANDORA_VAGRANT_HOSTNAME\n variable.  The \nISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION\n variables can be used to track the VM build. For example:\n\n\nexport ISLANDORA_VAGRANT_HOSTNAME=\nislandora-deux\n\nexport ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION=\nIslandora CLAW\n\n\n\n\n\nUse\n\n\nVirtualBox:\n\n\n\n\ngit clone https://github.com/Islandora-CLAW/CLAW\n\n\ncd CLAW\n\n\ngit submodule update --init --recursive\n\n\ncd install\n\n\nVisit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it \nhere\n\n\nvagrant up\n\n\n\n\nDigitalOcean:\n\n\n\n\ngit clone https://github.com/Islandora-CLAW/CLAW\n\n\ncd CLAW\n\n\ngit submodule update --init --recursive\n\n\ncd install\n\n\nvagrant plugin install vagrant-digitalocean\n\n\nSet the following environment variables:\n\n\nDIGITALOCEAN_TOKEN\n -- Your DigitalOcean API token\n\n\nDIGITALOCEAN_KEYNAME\n -- Your DigitalOcean ssh key name\n\n\nDIGITALOCEAN_KEYPATH\n -- Path to your ssh keys that you've setup with DigitalOcean\n\n\nVisit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it \nhere\n\n\nvagrant up --provider=digital_ocean\n\n\n\n\nConnect\n\n\nYou can connect to the machine via the browser at \nhttp://localhost:8000\n.\n\n\nThe default Drupal login details are:\n\n\n\n\nusername: admin\n\n\npassword: islandora\n\n\n\n\nMySQL:\n\n\n\n\nusername: root\n\n\npassword: islandora\n\n\n\n\nThe Fedora 4 REST API can be accessed at \nhttp://localhost:8080/fcrepo/rest\n.  It currently has authentication disabled.\n\n\nTomcat Manager:\n\n\n\n\nusername: islandora\n\n\npassword: islandora\n\n\n\n\nYou can connect to the machine via ssh: \nssh -p 2222 vagrant@localhost\n\n\nThe default VM login details are:\n\n\n\n\nusername: vagrant\n\n\npassword: vagrant\n\n\n\n\nEnvironment\n\n\n\n\nUbuntu 16.04.1\n\n\nDrupal 8.1.10\n\n\nMySQL 5.7.15\n\n\nApache 2.4.18\n\n\nTomcat 7.0.68.0\n\n\nSolr 6.2.1\n\n\nCamel 2.15.1\n\n\nFedora 4.6.0\n\n\nFedora Camel Component 4.4.0\n\n\nBlazeGraph 1.5.1\n\n\nKaraf 4.0.5\n\n\nAlpaca 0.0.1-SNAPSHOT\n\n\nIslandora 8.x-1.x\n\n\nLoris HEAD\n\n\nPHP 7.0.8\n\n\nJava 8 (Oracle)\n\n\n\n\nWindows Troubleshooting\n\n\nIf you receive errors involving \n\\r\n (end of line) you have two options:\n\n\n\n\nClone down the current development branch using \n--single-branch\n.\n\n\n\n\ngit clone --single-branch --branch sprint-002 git@github.com:Islandora-CLAW/CLAW.git \noptional directory name\n\n  A benifit to this approach is that files created or edited on a Windows environment will be pushed back to your fork with appropriate \nLF\n endings.\n\n\n\n\nModify your global \n.gitconfig\n file to disable the Windows behavior of \nautocrlf\n entirely.\n\n\n\n\nEdit the global \n.gitconfig\n file, find the line:\n  \nautocrlf = true\n\n  and change it to\n  \nautocrlf = false\n\n  Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.", 
+            "text": "Islandora CLAW Vagrant\n\n\n\n\n\n\nIntroduction\n\n\nThe is a development environment virtual machine for Islandora CLAW. It should work on any operating system that supports VirtualBox and Vagrant.\n\n\nN.B. This virtual machine \nshould not\n be used in production.\n\n\nRequirements\n\n\n\n\nVirtualBox\n\n\nVagrant\n 1.8.5+\n\n\ngit\n\n\n\n\nVariables\n\n\nSystem Resources\n\n\nBy default the virtual machine that is built uses 3GB of RAM. Your host machine will need to be able to support the additional memory use. You can override the CPU and RAM allocation by creating \nISLANDORA_VAGRANT_CPUS\n and \nISLANDORA_VAGRANT_MEMORY\n environment variables and setting the values. For example, on an Ubuntu host you could add to \n~/.bashrc\n:\n\n\nexport ISLANDORA_VAGRANT_CPUS=4\nexport ISLANDORA_VAGRANT_MEMORY=4096\n\n\n\n\nHostname and Description\n\n\nIf you use a DNS or host file management plugin with Vagrant, you may want to set a specific hostname for the virtual machine. You can do that with the \nISLANDORA_VAGRANT_HOSTNAME\n variable.  The \nISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION\n variables can be used to track the VM build. For example:\n\n\nexport ISLANDORA_VAGRANT_HOSTNAME=\nclaw\n\nexport ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION=\nIslandora CLAW\n\n\n\n\n\nUse\n\n\nVirtualBox:\n\n\n\n\ngit clone https://github.com/Islandora-CLAW/claw_vagrant\n\n\ncd claw_vagrant\n\n\nvagrant up\n\n\n\n\nConnect\n\n\nYou can connect to the machine via the browser at \nhttp://localhost:8000\n.\n\n\nDrupal\n\n\nThe default Drupal login details are:\n\n\n\n\nusername: admin\n\n\npassword: islandora\n\n\n\n\nMySQL\n\n\n\n\nusername: root\n\n\npassword: islandora\n\n\n\n\nFedora4\n\n\nThe Fedora 4 REST API can be accessed at \nhttp://localhost:8080/fcrepo/rest\n. \n\n\nAuthentication is done via \nSyn\n using \nJWT\n tokens.\n\n\nTomcat Manager\n\n\n\n\nusername: islandora\n\n\npassword: islandora\n\n\n\n\nSSH\n\n\nYou can connect to the machine via ssh:\n\n\n\n\nvagrant ssh\n\n\nssh -p 2222 ubuntu@localhost\n\n\n\n\nVM\n\n\nThe default VM login details are:\n\n\n\n\nusername: ubuntu\n\n\npassword: ubuntu\n\n\n\n\nCantaloupe\n\n\nYou can access the Canataloupe admin interface at: http://localhost:8080/cantaloupe/admin\n\n\n\n\nusername: admin\n\n\npassword: islandora\n\n\n\n\nYou can access the IIIF interface at: http://localhost:8080/cantaloupe/iiif/2/\n\n\nEnvironment\n\n\n\n\nUbuntu 16.04.2\n\n\nDrupal 8.2.7\n\n\nMySQL 5.7.15\n\n\nApache 2.4.18\n\n\nTomcat 8.0.32.0\n\n\nSolr 6.2.1\n\n\nCamel 2.18.1\n\n\nFedora 4.7.2\n\n\nFedora Camel Component 4.5.0\n\n\nBlazeGraph 2.4.1\n\n\nKaraf 4.0.8\n\n\nAlpaca 0.3.1-SNAPSHOT\n\n\nIslandora 8.x-1.x\n\n\nPHP 7.0.15\n\n\nJava 8 (Oracle)\n\n\nCantaloupe IIIF Server v3.3\n\n\n\n\nWindows Troubleshooting\n\n\nIf you receive errors involving \n\\r\n (end of line) you have two options:\n\n\n\n\nClone the project using \n--single-branch\n.\n\n\n\n\ngit clone --single-branch git@github.com:Islandora-CLAW/claw_vagrant.git\n\n  A benifit to this approach is that files created or edited on a Windows environment will be pushed back to your fork with appropriate \nLF\n endings.\n\n\n\n\nModify your global \n.gitconfig\n file to disable the Windows behavior of \nautocrlf\n entirely.\n\n\n\n\nEdit the global \n.gitconfig\n file, find the line:\n  \nautocrlf = true\n\n  and change it to\n  \nautocrlf = false\n\n  Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.\n\n\nSponsors\n\n\n\n\nUPEI\n\n\ndiscoverygarden inc.\n\n\nLYRASIS\n\n\nMcMaster University\n\n\nUniversity of Limerick\n\n\nYork University\n\n\nUniversity of Manitoba\n\n\nSimon Fraser University\n\n\nPALS\n\n\nAmerican Philosophical Society\n\n\nCommon Media Inc.\n\n\n\n\nMaintainers\n\n\n\n\nNick Ruest\n\n\n\n\nDevelopment\n\n\nIf you would like to contribute, please get involved by attending our weekly \nTech Call\n. We love to hear from you!\n\n\nIf you would like to contribute code to the project, you need to be covered by an Islandora Foundation \nContributor License Agreement\n or \nCorporate Contributor Licencse Agreement\n. Please see the \nContributors\n pages on Islandora.ca for more information.", 
             "title": "Installation (Vagrant)"
         }, 
         {
+            "location": "/install/README/#islandora-claw-vagrant", 
+            "text": "", 
+            "title": "Islandora CLAW Vagrant"
+        }, 
+        {
             "location": "/install/README/#introduction", 
-            "text": "The is a development environment virtual machine for the Islandora and Fedora 4 project. It should work on any operating system that supports VirtualBox and Vagrant.  N.B. This virtual machine  should not  be used in production.", 
+            "text": "The is a development environment virtual machine for Islandora CLAW. It should work on any operating system that supports VirtualBox and Vagrant.  N.B. This virtual machine  should not  be used in production.", 
             "title": "Introduction"
         }, 
         {
@@ -587,33 +667,83 @@
         }, 
         {
             "location": "/install/README/#system-resources", 
-            "text": "By default the virtual machine that is built uses 2GB of RAM. Your host machine will need to be able to support the additional memory use. You can override the CPU and RAM allocation by creating  ISLANDORA_VAGRANT_CPUS  and  ISLANDORA_VAGRANT_MEMORY  environment variables and setting the values. For example, on an Ubuntu host you could add to  ~/.bashrc :  export ISLANDORA_VAGRANT_CPUS=4\nexport ISLANDORA_VAGRANT_MEMORY=4096", 
+            "text": "By default the virtual machine that is built uses 3GB of RAM. Your host machine will need to be able to support the additional memory use. You can override the CPU and RAM allocation by creating  ISLANDORA_VAGRANT_CPUS  and  ISLANDORA_VAGRANT_MEMORY  environment variables and setting the values. For example, on an Ubuntu host you could add to  ~/.bashrc :  export ISLANDORA_VAGRANT_CPUS=4\nexport ISLANDORA_VAGRANT_MEMORY=4096", 
             "title": "System Resources"
         }, 
         {
             "location": "/install/README/#hostname-and-description", 
-            "text": "If you use a DNS or host file management plugin with Vagrant, you may want to set a specific hostname for the virtual machine. You can do that with the  ISLANDORA_VAGRANT_HOSTNAME  variable.  The  ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION  variables can be used to track the VM build. For example:  export ISLANDORA_VAGRANT_HOSTNAME= islandora-deux \nexport ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION= Islandora CLAW", 
+            "text": "If you use a DNS or host file management plugin with Vagrant, you may want to set a specific hostname for the virtual machine. You can do that with the  ISLANDORA_VAGRANT_HOSTNAME  variable.  The  ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION  variables can be used to track the VM build. For example:  export ISLANDORA_VAGRANT_HOSTNAME= claw \nexport ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION= Islandora CLAW", 
             "title": "Hostname and Description"
         }, 
         {
             "location": "/install/README/#use", 
-            "text": "VirtualBox:   git clone https://github.com/Islandora-CLAW/CLAW  cd CLAW  git submodule update --init --recursive  cd install  Visit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it  here  vagrant up   DigitalOcean:   git clone https://github.com/Islandora-CLAW/CLAW  cd CLAW  git submodule update --init --recursive  cd install  vagrant plugin install vagrant-digitalocean  Set the following environment variables:  DIGITALOCEAN_TOKEN  -- Your DigitalOcean API token  DIGITALOCEAN_KEYNAME  -- Your DigitalOcean ssh key name  DIGITALOCEAN_KEYPATH  -- Path to your ssh keys that you've setup with DigitalOcean  Visit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it  here  vagrant up --provider=digital_ocean", 
+            "text": "VirtualBox:   git clone https://github.com/Islandora-CLAW/claw_vagrant  cd claw_vagrant  vagrant up", 
             "title": "Use"
         }, 
         {
             "location": "/install/README/#connect", 
-            "text": "You can connect to the machine via the browser at  http://localhost:8000 .  The default Drupal login details are:   username: admin  password: islandora   MySQL:   username: root  password: islandora   The Fedora 4 REST API can be accessed at  http://localhost:8080/fcrepo/rest .  It currently has authentication disabled.  Tomcat Manager:   username: islandora  password: islandora   You can connect to the machine via ssh:  ssh -p 2222 vagrant@localhost  The default VM login details are:   username: vagrant  password: vagrant", 
+            "text": "You can connect to the machine via the browser at  http://localhost:8000 .", 
             "title": "Connect"
         }, 
         {
+            "location": "/install/README/#drupal", 
+            "text": "The default Drupal login details are:   username: admin  password: islandora", 
+            "title": "Drupal"
+        }, 
+        {
+            "location": "/install/README/#mysql", 
+            "text": "username: root  password: islandora", 
+            "title": "MySQL"
+        }, 
+        {
+            "location": "/install/README/#fedora4", 
+            "text": "The Fedora 4 REST API can be accessed at  http://localhost:8080/fcrepo/rest .   Authentication is done via  Syn  using  JWT  tokens.", 
+            "title": "Fedora4"
+        }, 
+        {
+            "location": "/install/README/#tomcat-manager", 
+            "text": "username: islandora  password: islandora", 
+            "title": "Tomcat Manager"
+        }, 
+        {
+            "location": "/install/README/#ssh", 
+            "text": "You can connect to the machine via ssh:   vagrant ssh  ssh -p 2222 ubuntu@localhost", 
+            "title": "SSH"
+        }, 
+        {
+            "location": "/install/README/#vm", 
+            "text": "The default VM login details are:   username: ubuntu  password: ubuntu", 
+            "title": "VM"
+        }, 
+        {
+            "location": "/install/README/#cantaloupe", 
+            "text": "You can access the Canataloupe admin interface at: http://localhost:8080/cantaloupe/admin   username: admin  password: islandora   You can access the IIIF interface at: http://localhost:8080/cantaloupe/iiif/2/", 
+            "title": "Cantaloupe"
+        }, 
+        {
             "location": "/install/README/#environment", 
-            "text": "Ubuntu 16.04.1  Drupal 8.1.10  MySQL 5.7.15  Apache 2.4.18  Tomcat 7.0.68.0  Solr 6.2.1  Camel 2.15.1  Fedora 4.6.0  Fedora Camel Component 4.4.0  BlazeGraph 1.5.1  Karaf 4.0.5  Alpaca 0.0.1-SNAPSHOT  Islandora 8.x-1.x  Loris HEAD  PHP 7.0.8  Java 8 (Oracle)", 
+            "text": "Ubuntu 16.04.2  Drupal 8.2.7  MySQL 5.7.15  Apache 2.4.18  Tomcat 8.0.32.0  Solr 6.2.1  Camel 2.18.1  Fedora 4.7.2  Fedora Camel Component 4.5.0  BlazeGraph 2.4.1  Karaf 4.0.8  Alpaca 0.3.1-SNAPSHOT  Islandora 8.x-1.x  PHP 7.0.15  Java 8 (Oracle)  Cantaloupe IIIF Server v3.3", 
             "title": "Environment"
         }, 
         {
             "location": "/install/README/#windows-troubleshooting", 
-            "text": "If you receive errors involving  \\r  (end of line) you have two options:   Clone down the current development branch using  --single-branch .   git clone --single-branch --branch sprint-002 git@github.com:Islandora-CLAW/CLAW.git  optional directory name \n  A benifit to this approach is that files created or edited on a Windows environment will be pushed back to your fork with appropriate  LF  endings.   Modify your global  .gitconfig  file to disable the Windows behavior of  autocrlf  entirely.   Edit the global  .gitconfig  file, find the line:\n   autocrlf = true \n  and change it to\n   autocrlf = false \n  Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.", 
+            "text": "If you receive errors involving  \\r  (end of line) you have two options:   Clone the project using  --single-branch .   git clone --single-branch git@github.com:Islandora-CLAW/claw_vagrant.git \n  A benifit to this approach is that files created or edited on a Windows environment will be pushed back to your fork with appropriate  LF  endings.   Modify your global  .gitconfig  file to disable the Windows behavior of  autocrlf  entirely.   Edit the global  .gitconfig  file, find the line:\n   autocrlf = true \n  and change it to\n   autocrlf = false \n  Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.", 
             "title": "Windows Troubleshooting"
+        }, 
+        {
+            "location": "/install/README/#sponsors", 
+            "text": "UPEI  discoverygarden inc.  LYRASIS  McMaster University  University of Limerick  York University  University of Manitoba  Simon Fraser University  PALS  American Philosophical Society  Common Media Inc.", 
+            "title": "Sponsors"
+        }, 
+        {
+            "location": "/install/README/#maintainers", 
+            "text": "Nick Ruest", 
+            "title": "Maintainers"
+        }, 
+        {
+            "location": "/install/README/#development", 
+            "text": "If you would like to contribute, please get involved by attending our weekly  Tech Call . We love to hear from you!  If you would like to contribute code to the project, you need to be covered by an Islandora Foundation  Contributor License Agreement  or  Corporate Contributor Licencse Agreement . Please see the  Contributors  pages on Islandora.ca for more information.", 
+            "title": "Development"
         }, 
         {
             "location": "/contributing/CONTRIBUTING/", 
