@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.2">
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
     
     
       
@@ -24,7 +24,7 @@
       <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-e71521a2a2.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
       
@@ -95,9 +95,8 @@
   <div class="md-search__overlay"></div>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -756,7 +755,7 @@
 <h3 id="repository-structure">Repository Structure</h3>
 <p>Fedora 3 stored all objects at the top level of the repository, although presentation of the objects could mimic a directory structure by having objects 'in' collections and collections 'in' other collections. This image is a helpful oversimplification:</p>
 <p><img alt="image" src="https://cloud.githubusercontent.com/assets/2371345/10912108/525c2a0e-821e-11e5-9c5b-d853b62f1e5a.png" /></p>
-<p>Fedora 4 differs considerably in that there is an innate tree hierarchy to the repository rather than a flat structure. Put less simply, "a Fedora 4 repository consists of a directed acyclic graph of resources where edges represent a parent-child relation" (<a href="https://wiki.duraspace.org/display/FEDORA4x/The+Fedora+4+object+model">Fedora 4</a>).</p>
+<p>Fedora 4 differs considerably in that there is an innate tree hierarchy to the repository rather than a flat structure. Put less simply, "<a href="https://wiki.duraspace.org/display/FEDORA4x/The+Fedora+4+object+model">a Fedora 4 repository consists of a directed acyclic graph of resources where edges represent a parent-child relation</a>".</p>
 <h3 id="object-structure">Object Structure</h3>
 <p>Fedora 3 objects are FOXML (Fedora Object eXtensible Markup Language) documents, with three elements:</p>
 <ul>
@@ -770,9 +769,9 @@
 <li><code>Non-RDF Source</code>: Roughly equivalent to a datastream. A Non-RDF Source (or binary) is simply a bitstream (e.g. JPG, PDF, XML, MP3, etc.).</li>
 </ul>
 <h3 id="datastreams">Datastreams</h3>
-<p>In Islandora CLAW, RDF datastreams (RELS-EXT and RELS-INT) are stored as RDF in Fedora. Binary datastreams (files, images) are files or <code>nonRdfResources</code> (see <a href="https://github.com/duraspace/pcdm/wiki">PCDM</a>). Descriptive metadata datastreams (MODS, DC, DwC, PBCore, etc) are will be stored as RDF.</p>
+<p>In Islandora CLAW, RDF datastreams (RELS-EXT and RELS-INT) are stored as RDF in Fedora. Binary datastreams are files or <code>nonRdfResources</code> (see <a href="https://github.com/duraspace/pcdm/wiki">PCDM</a>). Descriptive metadata datastreams (MODS, DC, DwC, PBCore, etc) are stored as RDF; <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-rdf-source"><code>RDFSource</code></a>.</p>
 <h4 id="pids">PIDs</h4>
-<p>Every object in a Fedora 3 repository had a Persistent Identifier following the pattern <code>namespace:pid</code>. Fedora 4 resources do not have PIDs. Instead, since Fedora 4 is an LDP server, their identifiers are fundamentally their URIs. The PIDs of objects migrated from a Fedora 3 repository can still be stored in Fedora 4, as additional properties on the new Fedora 4 resource.</p>
+<p>Every object in a Fedora 3 repository had a Persistent Identifier following the pattern <code>namespace:pid</code>. Fedora 4 resources do not have PIDs. Instead, since Fedora 4 is an <a href="https://www.w3.org/ns/ldp">LDP server</a>, their identifiers are fundamentally their URIs. The PIDs of objects migrated from a Fedora 3 repository can still be stored in Fedora 4, as additional properties on the new Fedora 4 resource.</p>
 <p>Since resources are stored as <code>nodes</code> on the Drupal side of Islandora CLAW, they also have Drupal UUIDs.</p>
                 
                   
@@ -851,7 +850,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
       <script>app.initialize({url:{base:"../.."}})</script>
       
     

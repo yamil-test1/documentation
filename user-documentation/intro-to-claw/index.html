@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.2">
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
     
     
       
@@ -24,7 +24,7 @@
       <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-e71521a2a2.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
       
@@ -95,9 +95,8 @@
   <div class="md-search__overlay"></div>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -292,13 +291,6 @@
           <li class="md-nav__item">
   <a href="#islandora" title="Islandora" class="md-nav__link">
     Islandora
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdx" title="PDX" class="md-nav__link">
-    PDX
   </a>
   
 </li>
@@ -820,13 +812,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#pdx" title="PDX" class="md-nav__link">
-    PDX
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -929,7 +914,7 @@
 </ul>
 <h2 id="ecosystem">Ecosystem</h2>
 <h4 id="alpaca"><a href="https://github.com/Islandora-CLAW/Alpaca">Alpaca</a></h4>
-<p>Event driven middleware based on Apache Camel that synchronizes Fedora 4 with Drupal.</p>
+<p>The plumbing for Islandora's asynchronous workflows.  It handles reading from and writing to message queues, with appropriate retry rules and error handling.</p>
 <h4 id="chullo"><a href="https://github.com/Islandora-CLAW/chullo">Chullo</a></h4>
 <p>A PHP client for Fedora 4 built using Guzzle and EasyRdf.</p>
 <h4 id="claw"><a href="https://github.com/Islandora-CLAW/CLAW">CLAW</a></h4>
@@ -938,8 +923,6 @@
 <p>Top level container for the various Islandora CLAW microservices.</p>
 <h4 id="islandora"><a href="https://github.com/Islandora-CLAW/islandora">Islandora</a></h4>
 <p>The Drupal modules associated with CLAW. Work is underway to have this as a project on <a href="https://www.drupal.org/">drupal.org</a>.</p>
-<h4 id="pdx"><a href="https://github.com/Islandora-CLAW/pdx">PDX</a></h4>
-<p>Top level container for the various PCDM specific Islandora CLAW microservices.</p>
 <h2 id="why-switch">Why Switch?</h2>
 <p>Islandora 7.x-1.x is a tried and tested product with a vibrant user and contributor community and many tools and add-ons available to customize and expand its uses. Islandora CLAW is a major departure, representing a great deal of work both in development of the software, and to migrate and upgrade existing Islandora sites. So why make the change?</p>
 <h3 id="fedora">Fedora</h3>
@@ -974,8 +957,7 @@
 </li>
 </ol>
 </blockquote>
-<p>LDP is an official W3C recommendation. According to <a href="https://www.w3.org/TR/ldp/">their spec</a>, Linked Data Platform (LDP) defines a set of rules for HTTP operations on web resources, some based on RDF, to provide an architecture for read-write Linked Data on the web. Put more simply: An LDP server is a web server that lets you manage relationships in RDF by creating URLs you can perform CRUD (Create Read Update Delete)
-operation on:</p>
+<p>LDP is an official W3C recommendation. According to <a href="https://www.w3.org/TR/ldp/">the spec</a>, Linked Data Platform (LDP) defines a set of rules for HTTP operations on web resources, some based on RDF, to provide an architecture for read-write Linked Data on the web. Put more simply: An LDP server is a web server that lets you manage relationships in RDF by creating URLs you can perform CRUD (Create Read Update Delete) operation on:</p>
 <ul>
 <li><code>http://my_url/some_resource</code></li>
 <li><code>http://my_url/some_resource/children</code></li>
@@ -1085,7 +1067,7 @@ operation on:</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
       <script>app.initialize({url:{base:"../.."}})</script>
       
     
