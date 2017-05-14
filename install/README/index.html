@@ -365,15 +365,63 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../chullo/README/" title="Chullo" class="md-nav__link">
+      Chullo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish/README/" title="Crayfish" class="md-nav__link">
+      Crayfish
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish-commons/README/" title="Crayfish-Commons" class="md-nav__link">
+      Crayfish-Commons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../syn/README/" title="Syn" class="md-nav__link">
+      Syn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
     
-    <label class="md-nav__link" for="nav-3-3">
+    <label class="md-nav__link" for="nav-3-7">
       Drupal modules
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
+      <label class="md-nav__title" for="nav-3-7">
         Drupal modules
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -411,6 +459,18 @@
   <li class="md-nav__item">
     <a href="../../islandora_image/README/" title="Islandora Image" class="md-nav__link">
       Islandora Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jsonld/README/" title="jsonld" class="md-nav__link">
+      jsonld
     </a>
   </li>
 
@@ -579,6 +639,13 @@
           <li class="md-nav__item">
   <a href="#cantaloupe" title="Cantaloupe" class="md-nav__link">
     Cantaloupe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwt" title="JWT" class="md-nav__link">
+    JWT
   </a>
   
 </li>
@@ -882,6 +949,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jwt" title="JWT" class="md-nav__link">
+    JWT
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1011,6 +1085,13 @@ export ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION=&quot;Islandora CLAW&quot;
 <li>password: islandora</li>
 </ul>
 <p>You can access the IIIF interface at: http://localhost:8080/cantaloupe/iiif/2/</p>
+<h3 id="jwt">JWT</h3>
+<p>CLAW uses JWT for authentication across the stack. Crayfish microservices, Fedora, and Drupal all use them. 
+Crayfish and Fedora have been set up to use a master token of <code>islandora</code> to make testing easier.  To use it, just set
+the following header in HTTP requests:</p>
+<ul>
+<li><code>Authorization: Bearer islandora</code></li>
+</ul>
 <h2 id="environment">Environment</h2>
 <ul>
 <li>Ubuntu 16.04.2</li>
@@ -1084,7 +1165,7 @@ export ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION=&quot;Islandora CLAW&quot;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../islandora_image/README/" title="Islandora Image" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../jsonld/README/" title="jsonld" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1093,7 +1174,7 @@ export ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION=&quot;Islandora CLAW&quot;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Islandora Image
+                jsonld
               </span>
             </div>
           </a>

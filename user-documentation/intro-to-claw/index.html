@@ -519,15 +519,63 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../chullo/README/" title="Chullo" class="md-nav__link">
+      Chullo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish/README/" title="Crayfish" class="md-nav__link">
+      Crayfish
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish-commons/README/" title="Crayfish-Commons" class="md-nav__link">
+      Crayfish-Commons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../syn/README/" title="Syn" class="md-nav__link">
+      Syn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
     
-    <label class="md-nav__link" for="nav-3-3">
+    <label class="md-nav__link" for="nav-3-7">
       Drupal modules
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
+      <label class="md-nav__title" for="nav-3-7">
         Drupal modules
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -565,6 +613,18 @@
   <li class="md-nav__item">
     <a href="../../islandora_image/README/" title="Islandora Image" class="md-nav__link">
       Islandora Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jsonld/README/" title="jsonld" class="md-nav__link">
+      jsonld
     </a>
   </li>
 
@@ -897,14 +957,12 @@
                 
                 <h1 id="intro-to-islandora-claw">Intro to Islandora CLAW</h1>
 <p>Islandora CLAW is the project name for development of Islandora to work with Fedora 4. To fully understand Islandora CLAW, it is best to start by looking at its contrasts to the previous version of Islandora, known as 7.x-1.x.</p>
-<p>Islandora 7.x-1.x works as a bridge between Drupal 7.x and Fedora 3. Put simply, Islandora 7.x-1.x is middleware between Fedora 3 and Drupal 7.x, sometimes expressed as a hamburger:</p>
 <h2 id="islandora-7x-1x-with-fedora-3">Islandora 7.x-1.x (with Fedora 3)</h2>
+<p>Islandora 7.x-1.x is "middleware", it allows Drupal 7.x to talk to a Fedora 3 server instead of Drupal's database. This is sometimes expressed as a hamburger:</p>
 <p><img alt="image" src="../../assets/hamburger.png" /></p>
-<p>Islandora CLAW does more than simply replace that base layer with Fedora 4. It is a total re-architecting of the interaction between the various pieces. Rather than a hamburger, Islandora CLAW is a chimera:</p>
 <h2 id="islandora-claw-with-fedora-4">Islandora CLAW (with Fedora 4)</h2>
+<p>Islandora CLAW does more than simply replace that base layer with Fedora 4. It is a total re-architecting of the interaction between the various pieces, acting as middleware for not only Drupal 8.x and Fedora 4, but also Solr, Blazegraph, and any <a href="https://en.wikipedia.org/wiki/Microservices">microservices</a> added to the stack. Islandora CLAW achieves this by implementing a system of "plumbing" using Apache Camel to pass messages between all the different parts of the stack to keep them in sync with each other. Rather than a hamburger, Islandora CLAW is a <a href="https://en.wikipedia.org/wiki/Chimera_(mythology)">chimera</a>:</p>
 <p><img alt="image" src="../../assets/claw-chimera.png" /></p>
-<p>Or, for a diagram that doesn't involve food or animals:</p>
-<p><img alt="image" src="../../assets/claw-diagram.png" /></p>
 <p>This new structure has several advantages:</p>
 <ul>
 <li>Parcelling out the various services and dependencies allows for more horizontal scalability</li>

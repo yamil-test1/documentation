@@ -443,15 +443,63 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../chullo/README/" title="Chullo" class="md-nav__link">
+      Chullo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish/README/" title="Crayfish" class="md-nav__link">
+      Crayfish
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../crayfish-commons/README/" title="Crayfish-Commons" class="md-nav__link">
+      Crayfish-Commons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../syn/README/" title="Syn" class="md-nav__link">
+      Syn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
     
-    <label class="md-nav__link" for="nav-3-3">
+    <label class="md-nav__link" for="nav-3-7">
       Drupal modules
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
+      <label class="md-nav__title" for="nav-3-7">
         Drupal modules
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -489,6 +537,18 @@
   <li class="md-nav__item">
     <a href="../../islandora_image/README/" title="Islandora Image" class="md-nav__link">
       Islandora Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jsonld/README/" title="jsonld" class="md-nav__link">
+      jsonld
     </a>
   </li>
 
@@ -763,13 +823,12 @@
 <li><code>System Properties</code>: A set of system-defined descriptive properties that is necessary to manage and track the object in the repository.</li>
 <li><code>Datastream(s)</code>: The element in a Fedora digital object that represents a content item.</li>
 </ul>
-<p>In Fedora 4 , what we would have called <code>objects</code> are now referred to as <code>resources</code> and are not composed of XML; instead, they are stored in ModeShape as nodes with RDF properties. They can contain the following elements:</p>
-<ul>
-<li><code>Resource</code>: Roughly equivalent to a Fedora 3 object - a conceptual representation of a thing that can contain files or other containers.</li>
-<li><code>Non-RDF Source</code>: Roughly equivalent to a datastream. A Non-RDF Source (or binary) is simply a bitstream (e.g. JPG, PDF, XML, MP3, etc.).</li>
-</ul>
+<p>In Fedora 4 , what we would have called <code>objects</code> are now referred to as <a href="https://www.w3.org/TR/ld-glossary/#resource"><code>Resources</code></a> (and <em>everything</em> in Fedora 4 is a <code>Resource</code>). Instead of being composed of XML as they were in Fedora 3, they are stored in <a href="http://modeshape.jboss.org/">ModeShape</a> as nodes with RDF properties. <code>Resources</code> come in two flavors: <a href="https://www.w3.org/TR/ldp/#ldpr-resource"><code>RDF Sources</code></a>, which are <code>Resources</code> having only RDF data, and <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-non-rdf-source"><code>Non-RDF Sources</code></a>, which are <code>Resources</code> that are binary files (HTML, PDFs, images, audio, video, etc). The terms [<code>RDF Source</code>] and [<code>Non-RDF Source</code>] both come from the <a href="https://www.w3.org/">W3C's</a> <a href="https://www.w3.org/TR/ldp/">Linked Data Platform</a> specification, which also defines the idea of <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container">Linked Data Platform Containers</a>, or <code>LDPCs</code>. An <code>LDPC</code> is an <code>RDF Source</code> that functions as a collection of <code>Resources</code>, similar to the way Islandora 7.x-1.x compound objects exist only as a way to tie together its children. An <code>LDPC</code> may contain <code>Non-RDF Sources</code>, as well as other <code>RDF Sources</code> acting as <code>LDPCs</code>; you can have a container of containers just like how Islandora 7.x-1.x can have a collection of collections.</p>
+<p>CLAW makes use of the <a href="https://github.com/duraspace/pcdm/wiki">Portland Common Data Model (PCDM)</a> as a layer of abstraction over <code>LDPCs</code> to make containment simpler to understand for users; a <code>pcdm:Collection</code> may contain other <code>pcdm:Collections</code> or <code>pcdm:Objects</code> (similar to an Islandora 7.x-1.x collection content model), and a <code>pcdm:Object</code> may contain other <code>pcdm:Objects</code> (similar to the way an Islandora 7.x-1.x compound object has child objects) or <code>pcdm:Files</code> (similar to the way Islandora 7.x-1.x objects have datastreams).</p>
 <h3 id="datastreams">Datastreams</h3>
-<p>In Islandora CLAW, RDF datastreams (RELS-EXT and RELS-INT) are stored as RDF in Fedora. Binary datastreams are files or <code>nonRdfResources</code> (see <a href="https://github.com/duraspace/pcdm/wiki">PCDM</a>). Descriptive metadata datastreams (MODS, DC, DwC, PBCore, etc) are stored as RDF; <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-rdf-source"><code>RDFSource</code></a>.</p>
+<p>In Islandora 7.x-1.x, every object has a specific content model which defined what datastreams it could have and which were absolutely required. Some of these Islandora 7.x-1.x datastreams contained metadata about the object while others contained binary files (JPG, PDF, MP3, PNG, TIFF, etc). In Islandora CLAW, all metadata about a resource is stored as RDF attributes directly on the resource itself, whether that resource is a <code>pcdm:Collection</code>, <code>pcdm:Object</code> or a <code>pcdm:File</code>, so we no longer need to separate metadata by type (RELS-EXT, RELS-INT, MODS, DC, PREMIS, etc) and store it in binary files as we did in Islandora 7.x-1.x. </p>
+<p>Binary files, such as JPGs, PNGs, MP3s, and PDFs, are handled via <code>pcdm:Files</code> which are contained by a parent <code>pcdm:Object</code>, similar to how an Islandora 7.x-1.x cmodel may hold a PDF or JPG as a datastream. Unlike Islandora 7.x-1.x, these binary files can actually have their own technical metadata attached them. This is because <code>pcdm:Collections</code>, <code>pcdm:Objects</code> and even <code>pcdm:Files</code> are all <code>RDF Sources</code> containing only RDF data, with <code>pcdm:Files</code> having links to the URL of the <code>Non-RDF Source</code> (binary file) they represent as part of their RDF data in addition to whatever other metadata you may want about the file. Using this system, a <code>pcdm:Object</code> can contain as many <code>pcdm:Files</code> as necessary, and each <code>pcdm:File</code> can have separate metadata about itself and its relationship to other <code>pcdm:Files</code> attached to the parent <code>pcdm:Object</code>, serving the same purpose RELS-INT datastreams served in Islandora 7.x-1.x.</p>
+<p>Note that you <em>can</em> use a <code>pcdm:File</code> to represent a file of metadata, such as MODS, DC, or PBCore, in case you would like to preserve a copy of an object's legacy metadata when migrating into Fedora 4. These metadata files will be treated like any other binary file in Islandora CLAW, and will not be indexed or editable through the GUI.</p>
 <h4 id="pids">PIDs</h4>
 <p>Every object in a Fedora 3 repository had a Persistent Identifier following the pattern <code>namespace:pid</code>. Fedora 4 resources do not have PIDs. Instead, since Fedora 4 is an <a href="https://www.w3.org/ns/ldp">LDP server</a>, their identifiers are fundamentally their URIs. The PIDs of objects migrated from a Fedora 3 repository can still be stored in Fedora 4, as additional properties on the new Fedora 4 resource.</p>
 <p>Since resources are stored as <code>nodes</code> on the Drupal side of Islandora CLAW, they also have Drupal UUIDs.</p>

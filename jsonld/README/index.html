@@ -17,7 +17,7 @@
     
     
       
-        <title>How to build documenation - Islandora CLAW</title>
+        <title>jsonld - Islandora CLAW</title>
       
     
     
@@ -79,11 +79,15 @@
             
               
                 <span class="md-header-nav__parent">
-                  Technical Documentation
+                  Components
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Drupal modules
                 </span>
               
             
-            How to build documenation
+            jsonld
           
         </span>
       </div>
@@ -237,12 +241,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Technical Documentation
@@ -270,54 +272,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        How to build documenation
-      </label>
-    
-    <a href="./" title="How to build documenation" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/docs-build/" title="How to build documenation" class="md-nav__link">
       How to build documenation
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-and-deploy-documentation" title="Build and Deploy documentation" class="md-nav__link">
-    Build and Deploy documentation
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -327,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../drupal-project/" title="Syncing Drupal Project" class="md-nav__link">
+    <a href="../../technical-documentation/drupal-project/" title="Syncing Drupal Project" class="md-nav__link">
       Syncing Drupal Project
     </a>
   </li>
@@ -339,7 +298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../versioning/" title="Versioning Policy" class="md-nav__link">
+    <a href="../../technical-documentation/versioning/" title="Versioning Policy" class="md-nav__link">
       Versioning Policy
     </a>
   </li>
@@ -366,10 +325,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Components
@@ -457,10 +418,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" checked>
     
     <label class="md-nav__link" for="nav-3-7">
       Drupal modules
@@ -512,11 +475,68 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../jsonld/README/" title="jsonld" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        jsonld
+      </label>
+    
+    <a href="./" title="jsonld" class="md-nav__link md-nav__link--active">
       jsonld
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainers" title="Maintainers" class="md-nav__link">
+    Maintainers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" title="Development" class="md-nav__link">
+    Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -707,15 +727,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-and-deploy-documentation" title="Build and Deploy documentation" class="md-nav__link">
-    Build and Deploy documentation
+  <a href="#maintainers" title="Maintainers" class="md-nav__link">
+    Maintainers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" title="Development" class="md-nav__link">
+    Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
   </a>
   
 </li>
@@ -734,28 +768,33 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/docs-build.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/jsonld/README.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                <h1 id="introduction">Introduction</h1>
-<p>This documentation is built using <a href="http://www.mkdocs.org/">mkdocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora-CLAW/CLAW/tree/master/docs"><code>docs</code></a> directory in the repository. The organization of the documentation is controlled by the <a href="https://github.com/Islandora-CLAW/CLAW/blob/master/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>You will need to have <code>mkdocs</code> installed locally, as well as the mkdocs theme.</p>
-<p>Install <code>mkdocs</code>:</p>
-<p><code>sudo -H pip install mkdocs</code></p>
-<p>Install material theme:</p>
-<p><code>sudo -H pip install mkdocs-material</code></p>
-<h2 id="build-and-deploy-documentation">Build and Deploy documentation</h2>
-<p>Make sure you have all the submodules:</p>
-<p><code>git submodule update --init --recursive</code></p>
-<p>Documentation is build by running to the following command in the root of the repository:</p>
-<p><code>mkdocs build --clean</code></p>
-<p>This command will create a static <code>site</code> folder in the root of the repository.</p>
-<p>You can preview any changes you have made to the documentation by running the following command:</p>
-<p><code>mkdocs serve</code></p>
-<p>And then visiting http://localhost:8111 in your browser.</p>
-<p>To deploy documenation to GitHub Pages, issue the following command:</p>
-<p><code>mkdocs gh-deploy --clean</code></p>
+                <h1 id="jsonld"><img alt="CLAW-JSON-LD" src="https://cloud.githubusercontent.com/assets/2371345/24964530/f054bddc-1f77-11e7-8b54-d04bb7b2281c.png" /> JSONLD</h1>
+<p><a href="https://travis-ci.org/Islandora-CLAW/jsonld"><img alt="Build Status" src="https://travis-ci.org/Islandora-CLAW/jsonld.png?branch=8.x-1.x" /></a>
+<a href="./CONTRIBUTING.md"><img alt="Contribution Guidelines" src="http://img.shields.io/badge/CONTRIBUTING-Guidelines-blue.svg" /></a>
+<a href="../LICENSE"><img alt="LICENSE" src="https://img.shields.io/badge/license-GPLv2-blue.svg?style=flat-square" /></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>JSON-LD Serializer for Drupal 8 and Islandora CLAW.</p>
+<p>This module adds a simple Drupal entity to JSON-LD 
+<code>normalizer/serializer/unserializer</code> service provider and a few supporting 
+classes. It depends on RDF module and existing fields to rdf properties 
+mappings to do it's job.</p>
+<h2 id="maintainers">Maintainers</h2>
+<p>Current maintainers:</p>
+<ul>
+<li><a href="https://github.com/diegopino">Diego Pino</a></li>
+</ul>
+<h2 id="development">Development</h2>
+<p>If you would like to contribute, please get involved by attending our weekly 
+<a href="https://github.com/Islandora-CLAW/CLAW/wiki">Tech Call</a>. We love to hear from you!</p>
+<p>If you would like to contribute code to the project, you need to be covered by 
+an Islandora Foundation <a href="http://islandora.ca/sites/default/files/islandora_cla.pdf">Contributor License Agreement</a> or 
+<a href="http://islandora.ca/sites/default/files/islandora_ccla.pdf">Corporate Contributor Licencse Agreement</a>. Please see the <a href="http://islandora.ca/resources/contributors">Contributors</a>
+ pages on Islandora.ca for more information.</p>
+<h2 id="license">License</h2>
+<p><a href="http://www.gnu.org/licenses/gpl-2.0.txt">GPLv2</a></p>
                 
                   
                 
@@ -774,7 +813,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../mvp/mvp_doc/" title="Minimum Viable Product" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../islandora_image/README/" title="Islandora Image" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -783,19 +822,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Minimum Viable Product
+                Islandora Image
               </span>
             </div>
           </a>
         
         
-          <a href="../drupal-project/" title="Syncing Drupal Project" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../install/README/" title="Installation (Vagrant)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Syncing Drupal Project
+                Installation (Vagrant)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
