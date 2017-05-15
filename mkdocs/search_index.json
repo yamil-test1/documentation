@@ -372,7 +372,7 @@
         }, 
         {
             "location": "/technical-documentation/versioning/", 
-            "text": "Versioning Policy\n\n\nIslandora CLAW uses \nsemantic versioning\n, except for Drupal modules.\n\n\nComponents\n\n\nSemantic Versioning\n\n\nMajor version\n . \nMinor version\n . \nPatch\n\n\n\n\nMajor version\n; Major changes, and breaks the API\n\n\nMinor version\n; New features, and does not break the API\n\n\nPatch\n; Bug fixes, and never breaks backward compatability\n\n\n\n\nExample: 1.2.3\n\n\n\n\nAlpaca\n\n\nCLAW\n\n\nclaw_vagrant\n\n\nSyn\n\n\n\n\nDrupal Contrib Versioning\n\n\nCore Compatibility\n - \nMajor\n . \nPatchLevel[-Extra]\n\n\nExample: 8.x-1.1\n\n\n\n\nclaw-jsonld\n\n\ndrupal-project\n\n\nislandora\n\n\nislandora collection\n\n\nislandora image", 
+            "text": "Versioning Policy\n\n\nIslandora CLAW uses \nsemantic versioning\n, except for Drupal modules.\n\n\nComponents\n\n\nSemantic Versioning\n\n\nMajor version\n . \nMinor version\n . \nPatch\n\n\n\n\nMajor version\n; Major changes, and breaks the API\n\n\nMinor version\n; New features, and does not break the API\n\n\nPatch\n; Bug fixes, and never breaks backward compatability\n\n\n\n\nExample: 1.2.3\n\n\n\n\nAlpaca\n\n\nChullo\n\n\nCLAW\n\n\nclaw_vagrant\n\n\nCrayfish\n\n\nCrayfish Commons\n\n\nSyn\n\n\n\n\nDrupal Contrib Versioning\n\n\nCore Compatibility\n - \nMajor\n . \nPatchLevel[-Extra]\n\n\nExample: 8.x-1.1\n\n\n\n\ndrupal-project\n\n\nislandora\n\n\nislandora collection\n\n\nislandora image\n\n\njsonld", 
             "title": "Versioning Policy"
         }, 
         {
@@ -387,12 +387,12 @@
         }, 
         {
             "location": "/technical-documentation/versioning/#semantic-versioning", 
-            "text": "Major version  .  Minor version  .  Patch   Major version ; Major changes, and breaks the API  Minor version ; New features, and does not break the API  Patch ; Bug fixes, and never breaks backward compatability   Example: 1.2.3   Alpaca  CLAW  claw_vagrant  Syn", 
+            "text": "Major version  .  Minor version  .  Patch   Major version ; Major changes, and breaks the API  Minor version ; New features, and does not break the API  Patch ; Bug fixes, and never breaks backward compatability   Example: 1.2.3   Alpaca  Chullo  CLAW  claw_vagrant  Crayfish  Crayfish Commons  Syn", 
             "title": "Semantic Versioning"
         }, 
         {
             "location": "/technical-documentation/versioning/#drupal-contrib-versioning", 
-            "text": "Core Compatibility  -  Major  .  PatchLevel[-Extra]  Example: 8.x-1.1   claw-jsonld  drupal-project  islandora  islandora collection  islandora image", 
+            "text": "Core Compatibility  -  Major  .  PatchLevel[-Extra]  Example: 8.x-1.1   drupal-project  islandora  islandora collection  islandora image  jsonld", 
             "title": "Drupal Contrib Versioning"
         }, 
         {
