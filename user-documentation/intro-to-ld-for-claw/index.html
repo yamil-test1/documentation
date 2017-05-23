@@ -692,66 +692,80 @@
                 <h1 id="introduction-to-linked-data-for-claw">Introduction to Linked Data for CLAW</h1>
 <p>The purpose of this page is to provide a guided reading list to anyone who wants to get up to speed on the basics of linked data within the Islandora community. Those who make their way through the readings will be able to talk competently about linked data and better understand the design decisions made in Islandora CLAW. The list starts with the fundamentals of linked data (RDF, SPARQL, serializations and ontologies) and moves toward more advanced topics specific to the use cases of a Fedora 4 based digital repository system.</p>
 <h1 id="basics-of-linked-data">Basics of Linked Data</h1>
-<p>This section seeks to give the reader a foundational understanding of what linked data is, why it is useful, and a very superficial understanding of how it works.
-- <a href="https://www.w3.org/DesignIssues/LinkedData.html">Tim Berners-Lee’s description of Linked Data</a>
-- <a href="https://www.youtube.com/watch?v=4x_xzT5eF5Q">Manu Sporny's "What is Linked Data?" YouTube Video</a>
-- <a href="https://en.wikipedia.org/wiki/Linked_data">Wikipedia article on Linked Data</a>
-- <a href="https://en.wikipedia.org/wiki/Semantic_Web">Wikipedia article on Semantic Web</a>
-- <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Wikipedia article on URIs</a>
-- <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">Wikipedia article on the W3C</a>
-- <a href="https://www.w3.org/standards/semanticweb/data">W3C’s description of Linked Data</a>
-- <a href="https://www.w3.org/TR/ld-glossary/">W3C’s Linked Data Glossary</a>
-- <a href="https://www.w3.org/TR/webarch/">W3C’s Architecture of the World Wide Web</a></p>
+<p>This section seeks to give the reader a foundational understanding of what linked data is, why it is useful, and a very superficial understanding of how it works.</p>
+<ul>
+<li><a href="https://www.w3.org/DesignIssues/LinkedData.html">Tim Berners-Lee’s description of Linked Data</a></li>
+<li><a href="https://www.youtube.com/watch?v=4x_xzT5eF5Q">Manu Sporny's "What is Linked Data?" YouTube Video</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Linked_data">Wikipedia article on Linked Data</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semantic_Web">Wikipedia article on Semantic Web</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Wikipedia article on URIs</a></li>
+<li><a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">Wikipedia article on the W3C</a></li>
+<li><a href="https://www.w3.org/standards/semanticweb/data">W3C’s description of Linked Data</a></li>
+<li><a href="https://www.w3.org/TR/ld-glossary/">W3C’s Linked Data Glossary</a></li>
+<li><a href="https://www.w3.org/TR/webarch/">W3C’s Architecture of the World Wide Web</a></li>
+</ul>
 <h1 id="understanding-rdf">Understanding RDF</h1>
-<p>This section is all about RDF, the Resource Description Framework, which defines the way linked data is structured.
-- <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">Wikipedia article on RDF</a>
-- <a href="http://www.dlib.org/dlib/may98/miller/05miller.html">D-Lib’s Intro to RDF</a>
-- <a href="https://www.w3.org/TR/rdf11-primer/">W3C’s RDF 1.1 Primer</a>
-- <a href="https://www.w3.org/TR/rdf11-concepts/">W3C’s RDF 1.1 Concepts</a></p>
+<p>This section is all about RDF, the Resource Description Framework, which defines the way linked data is structured.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">Wikipedia article on RDF</a></li>
+<li><a href="http://www.dlib.org/dlib/may98/miller/05miller.html">D-Lib’s Intro to RDF</a></li>
+<li><a href="https://www.w3.org/TR/rdf11-primer/">W3C’s RDF 1.1 Primer</a></li>
+<li><a href="https://www.w3.org/TR/rdf11-concepts/">W3C’s RDF 1.1 Concepts</a></li>
+</ul>
 <h1 id="querying-linked-data-with-sparql">Querying Linked Data with SPARQL</h1>
-<p>This section takes a look at SPARQL, the query language that allows you to ask linked data very specific questions. The queryable nature of linked data is one of the things that makes it so special. Try some SPARQL queries on DBpedia's endpoint to get some hands-on experience.
-- <a href="https://en.wikipedia.org/wiki/SPARQL">Wikipedia article on SPARQL</a>
-- <a href="https://www.w3.org/TR/sparql11-overview/">W3C’s SPARQL 1.1 Overview</a>
-- <a href="https://www.w3.org/TR/sparql11-query/">W3C’s SPARQL 1.1 Query Language</a>
-- <a href="https://dbpedia.org/sparql">DBpedia's SPARQL Endpoint</a></p>
+<p>This section takes a look at SPARQL, the query language that allows you to ask linked data very specific questions. The queryable nature of linked data is one of the things that makes it so special. Try some SPARQL queries on DBpedia's endpoint to get some hands-on experience.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SPARQL">Wikipedia article on SPARQL</a></li>
+<li><a href="https://www.w3.org/TR/sparql11-overview/">W3C’s SPARQL 1.1 Overview</a></li>
+<li><a href="https://www.w3.org/TR/sparql11-query/">W3C’s SPARQL 1.1 Query Language</a></li>
+<li><a href="https://dbpedia.org/sparql">DBpedia's SPARQL Endpoint</a></li>
+</ul>
 <h1 id="rdf-serialization-formats">RDF Serialization Formats</h1>
-<p>RDF data can be translated into many different formats. RDF/XML is the original way that RDF data was shared, but there are much more human-friendly serialization formats like Turtle which is great for beginners. JSON-LD is the easiest format for applications to use, and is the serialization format that CLAW uses internally. Make sure to check out the <a href="http://json-ld.org/playground/">JSON-LD Playground</a> for an interactive learning experience.
-- <a href="https://en.wikipedia.org/wiki/Serialization">Wikipedia article on Serialization</a>
-- <a href="https://www.w3.org/TR/REC-rdf-syntax/">W3C’s RDF/XML Syntax Specification</a>
-- <a href="https://www.w3.org/TR/turtle/">W3C’s RDF 1.1 Turtle</a>
-- <a href="https://www.w3.org/TR/json-ld/">W3C’s JSON-LD 1.0</a>
-- <a href="http://json-ld.org/">JSON-LD Website</a>
-- <a href="http://json-ld.org/playground/">JSON-LD Playground</a></p>
+<p>RDF data can be translated into many different formats. RDF/XML is the original way that RDF data was shared, but there are much more human-friendly serialization formats like Turtle which is great for beginners. JSON-LD is the easiest format for applications to use, and is the serialization format that CLAW uses internally. Make sure to check out the <a href="http://json-ld.org/playground/">JSON-LD Playground</a> for an interactive learning experience.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Serialization">Wikipedia article on Serialization</a></li>
+<li><a href="https://www.w3.org/TR/REC-rdf-syntax/">W3C’s RDF/XML Syntax Specification</a></li>
+<li><a href="https://www.w3.org/TR/turtle/">W3C’s RDF 1.1 Turtle</a></li>
+<li><a href="https://www.w3.org/TR/json-ld/">W3C’s JSON-LD 1.0</a></li>
+<li><a href="http://json-ld.org/">JSON-LD Website</a></li>
+<li><a href="http://json-ld.org/playground/">JSON-LD Playground</a></li>
+</ul>
 <h1 id="ontology-vocabulary-basics">Ontology &amp; Vocabulary Basics</h1>
-<p>Ontologies &amp; vocabularies are created by communities of people to describe things, and once created, anyone can use an ontology or vocabulary to describe their resources. This section goes over some of the more popular ontologies &amp; vocabularies in use.
-- <a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">Wikipedia article on Ontologies</a>
-- <a href="https://www.w3.org/standards/semanticweb/ontology">W3C’s description of Ontologies/Vocabularies (sameish thing)</a>
-- <a href="https://en.wikipedia.org/wiki/FOAF_(ontology)">Wikipedia article on Friend of a Friend (FOAF) ontology</a>
-- <a href="http://xmlns.com/foaf/spec/">FOAF 0.99 Vocabulary Specification</a>
-- <a href="http://sioc-project.org/">Socially Interconnected Online Communities Ontology (SIOC)</a>
-- <a href="http://dublincore.org/documents/dc-rdf/">Dublin Core in RDF</a></p>
+<p>Ontologies &amp; vocabularies are created by communities of people to describe things, and once created, anyone can use an ontology or vocabulary to describe their resources. This section goes over some of the more popular ontologies &amp; vocabularies in use.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">Wikipedia article on Ontologies</a></li>
+<li><a href="https://www.w3.org/standards/semanticweb/ontology">W3C’s description of Ontologies/Vocabularies (sameish thing)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/FOAF_(ontology)">Wikipedia article on Friend of a Friend (FOAF) ontology</a></li>
+<li><a href="http://xmlns.com/foaf/spec/">FOAF 0.99 Vocabulary Specification</a></li>
+<li><a href="http://sioc-project.org/">Socially Interconnected Online Communities Ontology (SIOC)</a></li>
+<li><a href="http://dublincore.org/documents/dc-rdf/">Dublin Core in RDF</a></li>
+</ul>
 <h1 id="building-ontologies">Building Ontologies</h1>
-<p>One isn't limited to the ontologies &amp; vocabularies that already exist in the world, anyone is free to create their own. This section goes over ontologies that exist to help those trying to create their own ontologies.
-- <a href="https://en.wikipedia.org/wiki/RDF_Schema">Wikipedia article on RDF Schema (RDFS)</a>
-- <a href="https://www.w3.org/TR/rdf-schema/">W3C’s RDF Schema (RDFS) 1.1</a>
-- <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">Wikipedia article on Simple Knowledge Organization System (SKOS)</a>
-- <a href="http://www.ala.org/alcts/resources/z687/skos">ALA’s SKOS: A Guide for Information Professionals</a>
-- <a href="https://en.wikipedia.org/wiki/Web_Ontology_Language">Wikipedia article on Web Ontology Language (OWL)</a>
-- <a href="https://www.w3.org/TR/owl2-primer/">W3C’s OWL 2 Primer</a>
-- <a href="https://www.w3.org/TR/owl2-quick-reference/">W3C’s OWL 2 Quick Reference</a></p>
+<p>One isn't limited to the ontologies &amp; vocabularies that already exist in the world, anyone is free to create their own. This section goes over ontologies that exist to help those trying to create their own ontologies.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/RDF_Schema">Wikipedia article on RDF Schema (RDFS)</a></li>
+<li><a href="https://www.w3.org/TR/rdf-schema/">W3C’s RDF Schema (RDFS) 1.1</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">Wikipedia article on Simple Knowledge Organization System (SKOS)</a></li>
+<li><a href="http://www.ala.org/alcts/resources/z687/skos">ALA’s SKOS: A Guide for Information Professionals</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_Ontology_Language">Wikipedia article on Web Ontology Language (OWL)</a></li>
+<li><a href="https://www.w3.org/TR/owl2-primer/">W3C’s OWL 2 Primer</a></li>
+<li><a href="https://www.w3.org/TR/owl2-quick-reference/">W3C’s OWL 2 Quick Reference</a></li>
+</ul>
 <h1 id="repository-specific-ontologies">Repository-Specific Ontologies</h1>
-<p>Most ontologies are very specific to certain use cases, and digital repository systems are no different. This section covers ontologies that are of specific interest to users of CLAW, or any Fedora 4 based digital repository system.
-- <a href="http://www.loc.gov/standards/mods/modsrdf/v1/">MODS RDF Namespace Document</a>
-- <a href="https://www.loc.gov/standards/mods/modsrdf/primer.html">MODS RDF Ontology Primer</a>
-- <a href="https://www.loc.gov/standards/mods/modsrdf/primer-2.html">MODS RDF Ontology Primer 2: MODS XML to RDF Conversion</a>
-- <a href="http://id.loc.gov/ontologies/premis.html">PREMIS RDF Namespace Document</a>
-- <a href="https://www.w3.org/TR/ldp-primer/">Linked Data Platform (LDP) 1.0 Primer</a>
-- <a href="https://www.w3.org/TR/ldp/">LDP 1.0 Specification</a>
-- <a href="https://github.com/duraspace/pcdm/wiki">Portland Common Data Model (PCDM) wiki)</a>
-- <a href="http://pcdm.org/">PCDM ontologies list</a>
-- <a href="http://pcdm.org/2016/04/18/models">PCDM Models ontology (defines Collections, Objects &amp; Files)</a> 
-- <a href="http://fedora.info/">Fedora ontologies</a>
-- <a href="https://github.com/Islandora-CLAW/CLAWntology">CLAWntology</a></p>
+<p>Most ontologies are very specific to certain use cases, and digital repository systems are no different. This section covers ontologies that are of specific interest to users of CLAW, or any Fedora 4 based digital repository system.</p>
+<ul>
+<li><a href="http://www.loc.gov/standards/mods/modsrdf/v1/">MODS RDF Namespace Document</a></li>
+<li><a href="https://www.loc.gov/standards/mods/modsrdf/primer.html">MODS RDF Ontology Primer</a></li>
+<li><a href="https://www.loc.gov/standards/mods/modsrdf/primer-2.html">MODS RDF Ontology Primer 2: MODS XML to RDF Conversion</a></li>
+<li><a href="http://id.loc.gov/ontologies/premis.html">PREMIS RDF Namespace Document</a></li>
+<li><a href="https://www.w3.org/TR/ldp-primer/">Linked Data Platform (LDP) 1.0 Primer</a></li>
+<li><a href="https://www.w3.org/TR/ldp/">LDP 1.0 Specification</a></li>
+<li><a href="https://github.com/duraspace/pcdm/wiki">Portland Common Data Model (PCDM) wiki)</a></li>
+<li><a href="http://pcdm.org/">PCDM ontologies list</a></li>
+<li><a href="http://pcdm.org/2016/04/18/models">PCDM Models ontology (defines Collections, Objects &amp; Files)</a> </li>
+<li><a href="http://fedora.info/">Fedora ontologies</a></li>
+<li><a href="https://github.com/Islandora-CLAW/CLAWntology">CLAWntology</a></li>
+</ul>
                 
                   
                 
