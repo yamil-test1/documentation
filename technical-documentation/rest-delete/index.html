@@ -1,0 +1,1091 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Islandora CLAW">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>DELETE - Islandora CLAW</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Islandora CLAW" class="md-logo md-header-nav__button">
+            <img src="../../assets/claw.png" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  REST Documentation
+                </span>
+              
+            
+            DELETE
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/Islandora-CLAW/CLAW" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../assets/claw.png">
+      </i>
+    
+    Islandora CLAW
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Islandora-CLAW/CLAW" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      User Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/user-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/objects/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/datastreams/" title="Media" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/creating-an-object/" title="Make an Image" class="md-nav__link">
+      Make an Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/metadata/" title="Metadata" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/searching/" title="Searching" class="md-nav__link">
+      Searching
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/context/" title="Context" class="md-nav__link">
+      Context
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/create_update_views/" title="Views" class="md-nav__link">
+      Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/users/" title="Users" class="md-nav__link">
+      Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/placing-blocks/" title="Blocks" class="md-nav__link">
+      Blocks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      REST Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        REST Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using-rest-endpoints/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest-get/" title="GET" class="md-nav__link">
+      GET
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest-create/" title="POST/PUT" class="md-nav__link">
+      POST/PUT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest-patch/" title="PATCH" class="md-nav__link">
+      PATCH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        DELETE
+      </label>
+    
+    <a href="./" title="DELETE" class="md-nav__link md-nav__link--active">
+      DELETE
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorization" title="Authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-nodes" title="Content (Nodes)" class="md-nav__link">
+    Content (Nodes)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media" title="Media" class="md-nav__link">
+    Media
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" title="Files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest-signposting/" title="Signposting" class="md-nav__link">
+      Signposting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Developer Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Developer Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-enable-drupal-modules/" title="Installing Modules" class="md-nav__link">
+      Installing Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../running-automated-tests/" title="Running Tests" class="md-nav__link">
+      Running Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flysystem/" title="Flysystem" class="md-nav__link">
+      Flysystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../versioning/" title="Versioning Policy" class="md-nav__link">
+      Versioning Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docs-build/" title="Documentation Style Guide" class="md-nav__link">
+      Documentation Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docs-build/" title="How to Build Documentation" class="md-nav__link">
+      How to Build Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Migration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Migration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migrate-csv/" title="CSV" class="md-nav__link">
+      CSV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migrate-7x/" title="Islandora 7" class="md-nav__link">
+      Islandora 7
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/CONTRIBUTING/" title="How to contribute" class="md-nav__link">
+      How to contribute
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/committers/" title="Committers" class="md-nav__link">
+      Committers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorization" title="Authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-nodes" title="Content (Nodes)" class="md-nav__link">
+    Content (Nodes)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media" title="Media" class="md-nav__link">
+    Media
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" title="Files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/rest-delete.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                
+                
+                <h1 id="removing-resources-media-and-files-delete-requests">Removing resources, media and files - DELETE Requests</h1>
+<p>Deleting is as easy as <a href="../rest-get/">getting</a> resources and more difficult than <a href="../rest-create/">creating</a> resources.</p>
+<p>If you can perform a GET request then you have the information required to perform a DELETE request.</p>
+<p>Check out the examples below.</p>
+<ul>
+<li><a href="#authorization">Authorization</a></li>
+<li><a href="#content-nodes">Content</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#files">Files</a></li>
+</ul>
+<h2 id="authorization">Authorization</h2>
+<p>If you have restricted access to view your content, you will need to use one of the configured authorization methods to access your content, media and/or files.</p>
+<p>These are defined under <a href="../using-rest-endpoints/#authorization">Authorization</a> on the overview.</p>
+<h2 id="content-nodes">Content (Nodes)</h2>
+<p>You will need your <em>node id</em>, you can find more information in the <a href="../rest-get/#content-nodes">GET</a> documentation.</p>
+<p>A delete is simply the same request as a <code>GET</code> but sending a <code>DELETE</code> http verb.</p>
+<p>Our example node has a <em>node id</em> of 2</p>
+<pre><code>&gt; curl -i -u admin:islandora -X GET 'http://localhost:8000/node/2?_format=json'
+
+HTTP/1.1 200 OK
+Date: Fri, 15 Mar 2019 15:02:00 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+Link: &lt;http://localhost:8000/node/2&gt;; rel=&quot;canonical&quot;
+Link: &lt;http://localhost:8000/node/2/delete&gt;; rel=&quot;https://drupal.org/link-relations/delete-form&quot;
+Link: &lt;http://localhost:8000/admin/content/node/delete?node=2&gt;; rel=&quot;https://drupal.org/link-relations/delete-multiple-form&quot;
+Link: &lt;http://localhost:8000/node/2/edit&gt;; rel=&quot;edit-form&quot;
+Link: &lt;http://localhost:8000/node/2/revisions&gt;; rel=&quot;version-history&quot;
+Link: &lt;http://localhost:8000/node/2&gt;; rel=&quot;https://drupal.org/link-relations/revision&quot;
+Link: &lt;http://localhost:8000/node?node=2&gt;; rel=&quot;https://drupal.org/link-relations/create&quot;
+Link: &lt;http://purl.org/dc/dcmitype/Collection&gt;; rel=&quot;tag&quot;; title=&quot;Collection&quot;
+Link: &lt;http://localhost:8000/node/2?_format=jsonld&gt;; rel=&quot;alternate&quot;; type=&quot;application/ld+json&quot;
+X-Drupal-Dynamic-Cache: MISS
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 1564
+Content-Type: application/json
+
+{&quot;nid&quot;:[{&quot;value&quot;:2}],&quot;uuid&quot;:[{&quot;value&quot;:&quot;413135a6-0bd1-4d6b-8bcb-059cf7784d83&quot;}],&quot;vid&quot;:[{&quot;value&quot;:2}],&quot;langcode&quot;:[{&quot;value&quot;:&quot;en&quot;}],&quot;type&quot;:[{&quot;target_id&quot;:&quot;islandora_object&quot;,&quot;target_type&quot;:&quot;node_type&quot;,&quot;target_uuid&quot;:&quot;62189bec-3ef3-4196-b847-b17e5ce61fd5&quot;}],&quot;revision_timestamp&quot;:[{&quot;value&quot;:&quot;2019-03-05T18:04:43+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;revision_uid&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;user&quot;,&quot;target_uuid&quot;:&quot;46a47057-de2d-4ce2-87ae-dbe4551209b8&quot;,&quot;url&quot;:&quot;\/user\/1&quot;}],&quot;revision_log&quot;:[],&quot;status&quot;:[{&quot;value&quot;:true}],&quot;title&quot;:[{&quot;value&quot;:&quot;Created a collection with POST&quot;}],&quot;uid&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;user&quot;,&quot;target_uuid&quot;:&quot;46a47057-de2d-4ce2-87ae-dbe4551209b8&quot;,&quot;url&quot;:&quot;\/user\/1&quot;}],&quot;created&quot;:[{&quot;value&quot;:&quot;2019-03-05T18:04:43+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;changed&quot;:[{&quot;value&quot;:&quot;2019-03-05T18:04:43+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;promote&quot;:[{&quot;value&quot;:true}],&quot;sticky&quot;:[{&quot;value&quot;:false}],&quot;default_langcode&quot;:[{&quot;value&quot;:true}],&quot;revision_translation_affected&quot;:[{&quot;value&quot;:true}],&quot;content_translation_source&quot;:[{&quot;value&quot;:&quot;und&quot;}],&quot;content_translation_outdated&quot;:[{&quot;value&quot;:false}],&quot;field_access_terms&quot;:[],&quot;field_alternative_title&quot;:[],&quot;field_description&quot;:[],&quot;field_display_hints&quot;:[],&quot;field_edtf_date&quot;:[],&quot;field_edtf_date_created&quot;:[],&quot;field_edtf_date_issued&quot;:[],&quot;field_extent&quot;:[{&quot;value&quot;:&quot;1 item&quot;}],&quot;field_identifier&quot;:[],&quot;field_linked_agent&quot;:[],&quot;field_member_of&quot;:[],&quot;field_model&quot;:[{&quot;target_id&quot;:23,&quot;target_type&quot;:&quot;taxonomy_term&quot;,&quot;target_uuid&quot;:&quot;6a3b293d-4617-417b-99d2-23d75b57f7c2&quot;,&quot;url&quot;:&quot;\/taxonomy\/term\/23&quot;}],&quot;field_pid&quot;:[],&quot;field_resource_type&quot;:[],&quot;field_rights&quot;:[],&quot;field_subject&quot;:[]}%
+</code></pre>
+
+<p>Then we switch <code>GET</code> to <code>DELETE</code></p>
+<pre><code>&gt; curl -i -u admin:islandora -X DELETE 'http://localhost:8000/node/2?_format=json'
+
+HTTP/1.1 204 No Content
+Date: Fri, 15 Mar 2019 15:02:30 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Type: text/html; charset=UTF-8
+</code></pre>
+
+<p>All subsequent requests to the above URI will return a <code>404 Not Found</code> status code.</p>
+<pre><code>&gt; curl -i -u admin:islandora -X GET 'http://localhost:8000/node/2?_format=json'
+
+HTTP/1.1 404 Not Found
+Date: Fri, 15 Mar 2019 15:12:58 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 149
+Content-Type: application/json
+
+{&quot;message&quot;:&quot;The \u0022node\u0022 parameter was not converted for the path \u0022\/node\/{node}\u0022 (route name: \u0022rest.entity.node.GET\u0022)&quot;}
+</code></pre>
+
+<h2 id="media">Media</h2>
+<p>You will need a media id as used in <a href="../rest-get/#media">GET</a> documentation.</p>
+<p>A delete is simply the same request as a <code>GET</code> but sending a <code>DELETE</code> http verb.</p>
+<p>With a media id of 1 for our example, I'll perform a <code>GET</code></p>
+<pre><code>&gt; curl -i -u admin:islandora -X GET 'http://localhost:8000/media/1?_format=json' 
+
+HTTP/1.1 200 OK
+Date: Fri, 15 Mar 2019 14:53:54 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+Link: &lt;http://localhost:8000/media/add&gt;; rel=&quot;https://drupal.org/link-relations/add-page&quot;
+Link: &lt;http://localhost:8000/media/add/image&gt;; rel=&quot;https://drupal.org/link-relations/add-form&quot;
+Link: &lt;http://localhost:8000/media/1&gt;; rel=&quot;canonical&quot;
+Link: &lt;http://localhost:8000/admin/content/media&gt;; rel=&quot;collection&quot;
+Link: &lt;http://localhost:8000/media/1/delete&gt;; rel=&quot;https://drupal.org/link-relations/delete-form&quot;
+Link: &lt;http://localhost:8000/media/delete?media=1&gt;; rel=&quot;https://drupal.org/link-relations/delete-multiple-form&quot;
+Link: &lt;http://localhost:8000/media/1/edit&gt;; rel=&quot;edit-form&quot;
+Link: &lt;http://localhost:8000/media/1&gt;; rel=&quot;https://drupal.org/link-relations/revision&quot;
+Link: &lt;http://localhost:8000/node/1&gt;; rel=&quot;related&quot;; title=&quot;Media of&quot;
+Link: &lt;http://pcdm.org/use#OriginalFile&gt;; rel=&quot;tag&quot;; title=&quot;Original File&quot;
+Link: &lt;http://localhost:8000/media/1?_format=jsonld&gt;; rel=&quot;alternate&quot;; type=&quot;application/ld+json&quot;
+Link: &lt;http://localhost:8000/media/1/source&gt;; rel=&quot;edit-media&quot;
+Link: &lt;http://localhost:8000/_flysystem/fedora/2019-03/Louis_Riel.jpg&gt;; rel=&quot;describes&quot;; type=&quot;image/jpeg&quot;
+X-Drupal-Dynamic-Cache: HIT
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 1937
+Content-Type: application/json
+
+{&quot;mid&quot;:[{&quot;value&quot;:1}],&quot;uuid&quot;:[{&quot;value&quot;:&quot;d8893926-ddb7-4125-b2da-30428af0fe3d&quot;}],&quot;vid&quot;:[{&quot;value&quot;:1}],&quot;langcode&quot;:[{&quot;value&quot;:&quot;en&quot;}],&quot;bundle&quot;:[{&quot;target_id&quot;:&quot;image&quot;,&quot;target_type&quot;:&quot;media_type&quot;,&quot;target_uuid&quot;:&quot;3860e653-201b-4509-89dd-628c446d81cb&quot;}],&quot;revision_created&quot;:[{&quot;value&quot;:&quot;2019-03-01T19:43:46+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;revision_user&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;user&quot;,&quot;target_uuid&quot;:&quot;46a47057-de2d-4ce2-87ae-dbe4551209b8&quot;,&quot;url&quot;:&quot;\/user\/1&quot;}],&quot;revision_log_message&quot;:[],&quot;status&quot;:[{&quot;value&quot;:true}],&quot;name&quot;:[{&quot;value&quot;:&quot;An image&quot;}],&quot;thumbnail&quot;:[{&quot;target_id&quot;:2,&quot;alt&quot;:&quot;A portrait of Louis Riel&quot;,&quot;title&quot;:null,&quot;width&quot;:800,&quot;height&quot;:1333,&quot;target_type&quot;:&quot;file&quot;,&quot;target_uuid&quot;:&quot;b0625129-c592-463a-93c3-3eff7cd3567e&quot;,&quot;url&quot;:&quot;http:\/\/localhost:8000\/_flysystem\/fedora\/2019-03\/Louis_Riel.jpg&quot;}],&quot;uid&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;user&quot;,&quot;target_uuid&quot;:&quot;46a47057-de2d-4ce2-87ae-dbe4551209b8&quot;,&quot;url&quot;:&quot;\/user\/1&quot;}],&quot;created&quot;:[{&quot;value&quot;:&quot;2019-03-01T19:43:22+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;changed&quot;:[{&quot;value&quot;:&quot;2019-03-01T19:43:46+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;default_langcode&quot;:[{&quot;value&quot;:true}],&quot;revision_translation_affected&quot;:[{&quot;value&quot;:true}],&quot;content_translation_source&quot;:[{&quot;value&quot;:&quot;und&quot;}],&quot;content_translation_outdated&quot;:[{&quot;value&quot;:false}],&quot;field_access_terms&quot;:[],&quot;field_file_size&quot;:[{&quot;value&quot;:166613}],&quot;field_height&quot;:[{&quot;value&quot;:1333}],&quot;field_media_image&quot;:[{&quot;target_id&quot;:2,&quot;alt&quot;:&quot;A portrait of Louis Riel&quot;,&quot;title&quot;:&quot;&quot;,&quot;width&quot;:800,&quot;height&quot;:1333,&quot;target_type&quot;:&quot;file&quot;,&quot;target_uuid&quot;:&quot;b0625129-c592-463a-93c3-3eff7cd3567e&quot;,&quot;url&quot;:&quot;http:\/\/localhost:8000\/_flysystem\/fedora\/2019-03\/Louis_Riel.jpg&quot;}],&quot;field_media_of&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;node&quot;,&quot;target_uuid&quot;:&quot;8322e36e-f8ec-4fd9-919d-52aed7b17a52&quot;,&quot;url&quot;:&quot;\/node\/1&quot;}],&quot;field_media_use&quot;:[{&quot;target_id&quot;:16,&quot;target_type&quot;:&quot;taxonomy_term&quot;,&quot;target_uuid&quot;:&quot;08e01ff9-eb72-42f5-ae3a-8b21ba0c0bc3&quot;,&quot;url&quot;:&quot;\/taxonomy\/term\/16&quot;}],&quot;field_mime_type&quot;:[{&quot;value&quot;:&quot;image\/jpeg&quot;}],&quot;field_width&quot;:[{&quot;value&quot;:800}]}
+</code></pre>
+
+<p>Then we replace <code>GET</code> with <code>DELETE</code>.</p>
+<pre><code>&gt; curl -i -u admin:islandora -X DELETE 'http://localhost:8000/media/1?_format=json'
+
+HTTP/1.1 204 No Content
+Date: Fri, 15 Mar 2019 14:54:55 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Type: text/html; charset=UTF-8
+</code></pre>
+
+<p>Subsequent requests to the media return <code>404 Not Found</code> statuses.</p>
+<pre><code>&gt; curl -i -u admin:islandora -X GET 'http://localhost:8000/media/1?_format=json'
+
+HTTP/1.1 404 Not Found
+Date: Fri, 15 Mar 2019 15:13:45 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 153
+Content-Type: application/json
+
+{&quot;message&quot;:&quot;The \u0022media\u0022 parameter was not converted for the path \u0022\/media\/{media}\u0022 (route name: \u0022rest.entity.media.GET\u0022)&quot;}
+</code></pre>
+
+<h2 id="files">Files</h2>
+<p>You'll need the file id, there is more information at the top of the <a href="../rest-get/#files">GET requests for files</a> documentation.</p>
+<p>A delete is simply the same request as a <code>GET</code> but sending a <code>DELETE</code> http verb.</p>
+<p>With a file id of 2 for our example, I can perform a test <code>GET</code></p>
+<pre><code>&gt; curl -i -u admin:islandora 'http://localhost:8000/entity/file/2?_format=json'
+
+HTTP/1.1 200 OK
+Date: Fri, 15 Mar 2019 14:40:40 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-Drupal-Dynamic-Cache: MISS
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 617
+Content-Type: application/json
+
+{&quot;fid&quot;:[{&quot;value&quot;:2}],&quot;uuid&quot;:[{&quot;value&quot;:&quot;b0625129-c592-463a-93c3-3eff7cd3567e&quot;}],&quot;langcode&quot;:[{&quot;value&quot;:&quot;en&quot;}],&quot;uid&quot;:[{&quot;target_id&quot;:1,&quot;target_type&quot;:&quot;user&quot;,&quot;target_uuid&quot;:&quot;46a47057-de2d-4ce2-87ae-dbe4551209b8&quot;,&quot;url&quot;:&quot;\/user\/1&quot;}],&quot;filename&quot;:[{&quot;value&quot;:&quot;Louis_Riel.jpg&quot;}],&quot;uri&quot;:[{&quot;value&quot;:&quot;fedora:\/\/2019-03\/Louis_Riel.jpg&quot;,&quot;url&quot;:&quot;\/_flysystem\/fedora\/2019-03\/Louis_Riel.jpg&quot;}],&quot;filemime&quot;:[{&quot;value&quot;:&quot;image\/jpeg&quot;}],&quot;filesize&quot;:[{&quot;value&quot;:166613}],&quot;status&quot;:[{&quot;value&quot;:true}],&quot;created&quot;:[{&quot;value&quot;:&quot;2019-03-01T19:43:35+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}],&quot;changed&quot;:[{&quot;value&quot;:&quot;2019-03-01T19:43:46+00:00&quot;,&quot;format&quot;:&quot;Y-m-d\\TH:i:sP&quot;}]}
+</code></pre>
+
+<p>If this is the correct file, I can delete it.</p>
+<pre><code>&gt; curl -i -u admin:islandora -X DELETE 'http://localhost:8000/entity/file/2?_format=json'
+
+HTTP/1.1 204 No Content
+Date: Fri, 15 Mar 2019 14:43:22 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Type: text/html; charset=UTF-8
+</code></pre>
+
+<p>Subsequent requests to the URI now return a <code>404 Not Found</code> status.</p>
+<pre><code>&gt; curl -i -u admin:islandora 'http://localhost:8000/entity/file/2?_format=json'
+
+HTTP/1.1 404 Not Found
+Date: Fri, 15 Mar 2019 14:43:33 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: PHP/7.1.26-1+ubuntu16.04.1+deb.sury.org+1
+Cache-Control: must-revalidate, no-cache, private
+X-UA-Compatible: IE=edge
+Content-language: en
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: 
+X-Generator: Drupal 8 (https://www.drupal.org)
+Content-Length: 157
+Content-Type: application/json
+
+{&quot;message&quot;:&quot;The \u0022file\u0022 parameter was not converted for the path \u0022\/entity\/file\/{file}\u0022 (route name: \u0022rest.entity.file.GET\u0022)&quot;}
+</code></pre>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../rest-patch/" title="PATCH" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                PATCH
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../rest-signposting/" title="Signposting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Signposting
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://twitter.com/islandora" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

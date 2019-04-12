@@ -1,163 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/installation/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/user-intro/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/objects/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/datastreams/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/creating-an-object/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/collections/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/metadata/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/searching/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/context/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/create_update_views/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/users/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/user-documentation/placing-blocks/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/using-rest-endpoints/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/rest-get/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/rest-create/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/rest-patch/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/rest-delete/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/rest-signposting/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/install-enable-drupal-modules/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/running-automated-tests/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/flysystem/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/versioning/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/docs-build/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/docs-build/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/migrate-csv/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/technical-documentation/migrate-7x/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/contributing/CONTRIBUTING/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
+     <loc>/contributing/committers/</loc>
+     <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>None</loc>
-     <lastmod>2019-02-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+        
+    
+
 </urlset>
