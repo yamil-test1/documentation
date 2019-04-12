@@ -2,27 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Islandora CLAW\n\n\nSummary\n\n\nIslandora\n is an open-source repository framework, that combines a Drupal front-end\nwith a Fedora repository. It is a solution for institutions who want an extremely flexible and configurable preservation repository without creating a lot of custom code.\n\n\nIslandora CLAW integrates \nDrupal\n (currently, Drupal 8) and Duraspace's \nFedora Repository\n project (currently, Fedora 5). Islandora CLAW is currently in beta. (todo: release section?)\n\n\nIslandora CLAW allows you to create nodes, media, files, and taxonomy terms in Drupal, which are converted to RDF\nand pushed into a Fedora repository. It allows you to configure derivatives, automatic processes that transform files to other types for display or preservation, or extract additional metadata.\n\n\nInstallation\n\n\nIslandora CLAW is installed through an Ansible Playbook called \nclaw-playbook\n.\nWith Git, Vagrant, and Ansible installed, you can spin up a local development environment with\n\n\ngit clone https://github.com/Islandora-Devops/claw-playbook\ncd claw-playbook\nvagrant up\n\n\n\n\nSee the Installation section for more information.", 
+            "text": "Islandora\n is an open-source repository framework, that combines a Drupal front-end\nwith a Fedora repository. It is a solution for institutions who want an extremely flexible and configurable preservation repository without creating a lot of custom code.\n\n\nIslandora CLAW integrates \nDrupal\n (currently, Drupal 8) and Duraspace's \nFedora Repository\n project (currently, Fedora 5). Islandora CLAW is currently in beta. (todo: release section?)\n\n\nIslandora CLAW allows you to create nodes, media, files, and taxonomy terms in Drupal, which are converted to RDF\nand pushed into a Fedora repository. It allows you to configure derivatives, automatic processes that transform files to other types for display or preservation, or extract additional metadata.", 
             "title": "Summary"
-        }, 
-        {
-            "location": "/#islandora-claw", 
-            "text": "", 
-            "title": "Islandora CLAW"
-        }, 
-        {
-            "location": "/#summary", 
-            "text": "Islandora  is an open-source repository framework, that combines a Drupal front-end\nwith a Fedora repository. It is a solution for institutions who want an extremely flexible and configurable preservation repository without creating a lot of custom code.  Islandora CLAW integrates  Drupal  (currently, Drupal 8) and Duraspace's  Fedora Repository  project (currently, Fedora 5). Islandora CLAW is currently in beta. (todo: release section?)  Islandora CLAW allows you to create nodes, media, files, and taxonomy terms in Drupal, which are converted to RDF\nand pushed into a Fedora repository. It allows you to configure derivatives, automatic processes that transform files to other types for display or preservation, or extract additional metadata.", 
-            "title": "Summary"
-        }, 
-        {
-            "location": "/#installation", 
-            "text": "Islandora CLAW is installed through an Ansible Playbook called  claw-playbook .\nWith Git, Vagrant, and Ansible installed, you can spin up a local development environment with  git clone https://github.com/Islandora-Devops/claw-playbook\ncd claw-playbook\nvagrant up  See the Installation section for more information.", 
-            "title": "Installation"
         }, 
         {
             "location": "/installation/", 
-            "text": "For full installation instructions, check out the README for our Ansible playbook, \nclaw-playbook\n.", 
+            "text": "Islandora 8 is installed through an Ansible Playbook called \nclaw-playbook\n.\nWith Git, Vagrant, and Ansible installed, you can spin up a local development environment with\n\n\ngit clone https://github.com/Islandora-Devops/claw-playbook\ncd claw-playbook\nvagrant up\n\n\n\n\nSee the claw-playbook README for more information.", 
             "title": "Installation"
         }, 
         {

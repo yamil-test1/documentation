@@ -192,46 +192,10 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Summary
-      </label>
     
     <a href="." title="Summary" class="md-nav__link md-nav__link--active">
       Summary
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" title="Summary" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -718,29 +682,6 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" title="Summary" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -755,22 +696,13 @@
                   <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                <h1 id="islandora-claw">Islandora CLAW</h1>
-<h2 id="summary">Summary</h2>
-<p><a href="https://islandora.ca">Islandora</a> is an open-source repository framework, that combines a Drupal front-end
+                  <h1>Summary</h1>
+                
+                <p><a href="https://islandora.ca">Islandora</a> is an open-source repository framework, that combines a Drupal front-end
 with a Fedora repository. It is a solution for institutions who want an extremely flexible and configurable preservation repository without creating a lot of custom code.</p>
 <p>Islandora CLAW integrates <a href="https://www.drupal.org/">Drupal</a> (currently, Drupal 8) and Duraspace's <a href="https://wiki.duraspace.org/display/FF/Fedora+Repository+Home">Fedora Repository</a> project (currently, Fedora 5). Islandora CLAW is currently in beta. (todo: release section?)</p>
 <p>Islandora CLAW allows you to create nodes, media, files, and taxonomy terms in Drupal, which are converted to RDF
 and pushed into a Fedora repository. It allows you to configure derivatives, automatic processes that transform files to other types for display or preservation, or extract additional metadata.</p>
-<h2 id="installation">Installation</h2>
-<p>Islandora CLAW is installed through an Ansible Playbook called <a href="https://github.com/Islandora-Devops/claw-playbook">claw-playbook</a>.
-With Git, Vagrant, and Ansible installed, you can spin up a local development environment with</p>
-<pre><code class="bash">git clone https://github.com/Islandora-Devops/claw-playbook
-cd claw-playbook
-vagrant up
-</code></pre>
-
-<p>See the Installation section for more information.</p>
                 
                   
                 
