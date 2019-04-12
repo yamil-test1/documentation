@@ -56,6 +56,12 @@
     </url>
         
     <url>
+     <loc>/user-documentation/content_types/</loc>
+     <lastmod>2019-04-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/user-documentation/searching/</loc>
      <lastmod>2019-04-12</lastmod>
      <changefreq>daily</changefreq>
