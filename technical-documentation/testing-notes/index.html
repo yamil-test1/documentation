@@ -17,7 +17,7 @@
     
     
       
-        <title>Islandora 7 - Islandora CLAW</title>
+        <title>Testing Notes - Islandora CLAW</title>
       
     
     
@@ -79,11 +79,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Migration
+                  Developer Documentation
                 </span>
               
             
-            Islandora 7
+            Testing Notes
           
         </span>
       </div>
@@ -501,10 +501,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Developer Documentation
@@ -592,11 +594,91 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../testing-notes/" title="Testing Notes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Testing Notes
+      </label>
+    
+    <a href="./" title="Testing Notes" class="md-nav__link md-nav__link--active">
       Testing Notes
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-look-up-a-gemini-entry-for-a-node" title="How to look up a Gemini entry for a node?" class="md-nav__link">
+    How to look up a Gemini entry for a node?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-look-up-a-file-metadata-in-fedora" title="How to look up a file metadata in Fedora?" class="md-nav__link">
+    How to look up a file metadata in Fedora?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-search-for-a-object-in-the-solr" title="How do I search for a object in the Solr?" class="md-nav__link">
+    How do I search for a object in the Solr?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-tripestore-queries" title="Sample Tripestore queries" class="md-nav__link">
+    Sample Tripestore queries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-all-triples-with-given-object-as-the-subject" title="Find all triples with given object as the subject" class="md-nav__link">
+    Find all triples with given object as the subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-objects-in-a-collection" title="Getting objects in a collection" class="md-nav__link">
+    Getting objects in a collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-all-mediafiles-belonging-to-a-node" title="Find all media/files belonging to a node" class="md-nav__link">
+    Find all media/files belonging to a node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -609,12 +691,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Migration
@@ -642,18 +722,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="Islandora 7" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../migrate-7x/" title="Islandora 7" class="md-nav__link">
       Islandora 7
     </a>
-    
   </li>
 
         
@@ -725,6 +798,68 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-look-up-a-gemini-entry-for-a-node" title="How to look up a Gemini entry for a node?" class="md-nav__link">
+    How to look up a Gemini entry for a node?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-look-up-a-file-metadata-in-fedora" title="How to look up a file metadata in Fedora?" class="md-nav__link">
+    How to look up a file metadata in Fedora?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-search-for-a-object-in-the-solr" title="How do I search for a object in the Solr?" class="md-nav__link">
+    How do I search for a object in the Solr?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-tripestore-queries" title="Sample Tripestore queries" class="md-nav__link">
+    Sample Tripestore queries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-all-triples-with-given-object-as-the-subject" title="Find all triples with given object as the subject" class="md-nav__link">
+    Find all triples with given object as the subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-objects-in-a-collection" title="Getting objects in a collection" class="md-nav__link">
+    Getting objects in a collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-all-mediafiles-belonging-to-a-node" title="Find all media/files belonging to a node" class="md-nav__link">
+    Find all media/files belonging to a node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -735,14 +870,63 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/migrate-7x.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/testing-notes.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>Islandora 7</h1>
+                  <h1>Testing Notes</h1>
                 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fEDzfSPjKEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h2 id="how-to-look-up-a-gemini-entry-for-a-node">How to look up a Gemini entry for a node?</h2>
+<p>Gemini is a service that maps Drupal URIs to their corresponding Fedora URIs. Each entry is keyed on the UUID assigned by Drupal. </p>
+<p>To get the UUID of a node, taxonomy term, or media entity (see Note below) in Drupal, you can look in the Devel tab or in the JSON representation, e.g.: <code>http://localhost:8000/node/2?_format=json</code>.  </p>
+<p>Then, you can look up the entry for that UUID using the Gemini service. It's a REST interface, so you can use a REST client such as POSTman, or a command-line tool such as <code>curl</code>: </p>
+<pre><code>curl -H &quot;Authorization:Bearer islandora&quot; http://localhost:8000/gemini/[uuid_value]
+</code></pre>
 
-<p>For tools to migrate into Islandora 8 from an existing Islandora 7 instance, please see <a href="https://github.com/Islandora-devops/migrate_7x_claw">migrate_7x_claw</a></p>
+<p>Alternatively, you can login to your SQL database, choose the gemini database, and issue the following query:</p>
+<p><code>select * from Gemini where uuid="uuid_value";</code></p>
+<p>Note: Media objects for files in Fedora aren't indexed in Gemini because they are not reliable. See <a href="https://github.com/Islandora-CLAW/CLAW/issues/1079">Github Issue #1079</a>.</p>
+<h2 id="how-to-look-up-a-file-metadata-in-fedora">How to look up a file metadata in Fedora?</h2>
+<p>Files in Fedora have the file URI in Gemini. However, Media for files in Fedora aren't indexed in Gemini because they are not reliable. To look up file metadata, go to <code>file_uri + /fcr:metadata</code>.</p>
+<h2 id="how-do-i-search-for-a-object-in-the-solr">How do I search for a object in the Solr?</h2>
+<ul>
+<li>Go to <code>http://localhost:8983/solr/#/CLAW/query</code></li>
+<li>Issue a solr query.</li>
+</ul>
+<p>Example</p>
+<pre><code>ss_search_api_id:&quot;entity:node/4:en&quot;
+</code></pre>
+
+<h2 id="sample-tripestore-queries">Sample Tripestore queries</h2>
+<ul>
+<li>Go to <code>http://localhost:8080/bigdata/#query</code></li>
+<li>Under namespaces (<code>http://localhost:8080/bigdata/#namespaces</code>), make sure <code>islandora</code> is selected.  </li>
+</ul>
+<h3 id="find-all-triples-with-given-object-as-the-subject">Find all triples with given object as the subject</h3>
+<pre><code>select ?p ?o  where { &lt;drupal_url&gt; ?p ?o }
+</code></pre>
+
+<p>Example:</p>
+<pre><code>select ?p ?o  where { &lt;http://localhost:8000/media/8?_format=jsonld&gt; ?p ?o }
+</code></pre>
+
+<h3 id="getting-objects-in-a-collection">Getting objects in a collection</h3>
+<pre><code>select ?s where { ?s &lt;http://pcdm.org/models#memberOf&gt; &lt;drual_url_of_the_collection?_format=jsonld&gt; }
+</code></pre>
+
+<p>Example:</p>
+<pre><code>select ?s where { ?s &lt;http://pcdm.org/models#memberOf&gt; &lt;http://localhost:8000/node/7?_format=jsonld&gt; }
+</code></pre>
+
+<h3 id="find-all-mediafiles-belonging-to-a-node">Find all media/files belonging to a node</h3>
+<pre><code>select ?s where { ?s &lt;http://pcdm.org/models#fileOf&gt; &lt;drupal_url_of_the_object?_format=jsonld&gt; }
+</code></pre>
+
+<p>Example:</p>
+<pre><code>select ?s where { ?s &lt;http://pcdm.org/models#fileOf&gt; &lt;http://localhost:8000/node/4?_format=jsonld&gt; }
+</code></pre>
+
+<p>Files in Fedora have their file URIs in Gemini. To see file metadata in Fedora, go to <code>file_uri + /fcr:metadata</code>. </p>
+<p>For more information about the Gemini service, see the <a href="https://github.com/Islandora-CLAW/Crayfish/tree/master/Gemini">Gemini README</a>.</p>
                 
                   
                 
@@ -761,7 +945,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../migrate-csv/" title="CSV" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docs-build/" title="How to Build Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -770,19 +954,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CSV
+                How to Build Documentation
               </span>
             </div>
           </a>
         
         
-          <a href="../../contributing/CONTRIBUTING/" title="How to contribute" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../migrate-csv/" title="CSV" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How to contribute
+                CSV
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

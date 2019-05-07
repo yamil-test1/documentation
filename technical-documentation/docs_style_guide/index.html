@@ -17,7 +17,7 @@
     
     
       
-        <title>Islandora 7 - Islandora CLAW</title>
+        <title>Documentation Style Guide - Islandora CLAW</title>
       
     
     
@@ -79,11 +79,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Migration
+                  Developer Documentation
                 </span>
               
             
-            Islandora 7
+            Documentation Style Guide
           
         </span>
       </div>
@@ -501,10 +501,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Developer Documentation
@@ -568,11 +570,54 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Documentation Style Guide
+      </label>
+    
+    <a href="./" title="Documentation Style Guide" class="md-nav__link md-nav__link--active">
       Documentation Style Guide
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dos" title="Do's" class="md-nav__link">
+    Do's
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donts" title="Don'ts" class="md-nav__link">
+    Don'ts
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -609,12 +654,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Migration
@@ -642,18 +685,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="Islandora 7" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../migrate-7x/" title="Islandora 7" class="md-nav__link">
       Islandora 7
     </a>
-    
   </li>
 
         
@@ -724,6 +760,29 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dos" title="Do's" class="md-nav__link">
+    Do's
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donts" title="Don'ts" class="md-nav__link">
+    Don'ts
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -735,14 +794,23 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/migrate-7x.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/Islandora-CLAW/CLAW/edit/master/docs/technical-documentation/docs_style_guide.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>Islandora 7</h1>
-                
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fEDzfSPjKEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<p>For tools to migrate into Islandora 8 from an existing Islandora 7 instance, please see <a href="https://github.com/Islandora-devops/migrate_7x_claw">migrate_7x_claw</a></p>
+                <h1 id="documentation-style-guide">Documentation Style Guide</h1>
+<h2 id="dos">Do's</h2>
+<ul>
+<li>Submit documentation formatted in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> format.
+  -- Please add Markdown headings to the content sections.</li>
+<li>Use a GitHub Pull Request to submit documentation.</li>
+<li>Use the "bold/emphasis" style  in Markdown for UI elements that users will interact with. For example, a button label for a button that must be pressed should be made bold in Markdown.</li>
+<li>Use the "italics" style in Markdown for UI elements that have a label or title if you need to reference them in the documentation. For example, a title of a screen or page that will visit should be made italic in Markdown.</li>
+</ul>
+<h2 id="donts">Don'ts</h2>
+<ul>
+<li>Do not leave any "trailing spaces" at the end of lines of content.</li>
+<li>Do not use "curly" quotes and apostrophes, use only "straight" quotes and apostrophes.</li>
+</ul>
                 
                   
                 
@@ -761,7 +829,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../migrate-csv/" title="CSV" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../versioning/" title="Versioning Policy" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -770,19 +838,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CSV
+                Versioning Policy
               </span>
             </div>
           </a>
         
         
-          <a href="../../contributing/CONTRIBUTING/" title="How to contribute" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../docs-build/" title="How to Build Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How to contribute
+                How to Build Documentation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -372,6 +372,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -580,7 +604,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docs-build/" title="Documentation Style Guide" class="md-nav__link">
+    <a href="../docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
       Documentation Style Guide
     </a>
   </li>
@@ -594,6 +618,18 @@
   <li class="md-nav__item">
     <a href="../docs-build/" title="How to Build Documentation" class="md-nav__link">
       How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
     </a>
   </li>
 
@@ -745,7 +781,7 @@
                 
                 <h2 id="downloading-and-enabling-drupal-modules-and-themes">Downloading and Enabling Drupal Modules and Themes</h2>
 <p>Islandora 8 can make use of majority of the Drupal 8 <a href="https://www.drupal.org/project/project_module">modules</a> and <a href="https://www.drupal.org/project/project_theme">themes</a>. Common use cases have been documented in the <a href="https://github.com/manez/Islandora-Cookbook">Islandora 8 Cookbook</a>. There are several ways to download and install Drupal modules. Please refer to <a href="https://www.drupal.org/docs/8/extending-drupal-8">this guide</a> on Drupal.org.</p>
-<p><a href="https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies">Composer</a> is the recommended method to install and update drupal modules and themes in Islandora 8. In the <a href="https://github.com/Islandora-Devops/claw-playbook">Islandora 8 playbook</a>, you can add a Drupal module's or theme's machine name to the <code>drupal_composer_dependencies</code> variable <a href="https://github.com/Islandora-Devops/claw-playbook/blob/master/inventory/vagrant/group_vars/webserver/drupal.yml">here</a>. To enable the Drupal module or theme, add the module machine name to the <code>drupal_enable_modules</code> variable as well. For modules that require additional steps, additional tasks may need to be added to the ansible playbook. Re-provisioning your instance via ansible will install the module.  </p>
+<p><a href="https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies">Composer</a> is the recommended method to install and update drupal modules and themes in Islandora 8. In the <a href="https://github.com/Islandora-Devops/claw-playbook">Islandora 8 playbook</a>, you can add a Drupal module's or theme's machine name to the <code>drupal_composer_dependencies</code> variable <a href="https://github.com/Islandora-Devops/claw-playbook/blob/master/inventory/vagrant/group_vars/webserver/drupal.yml">here</a>. To enable the Drupal module or theme, add the module machine name to the <code>drupal_enable_modules</code> variable as well. For modules that require additional steps, additional tasks may need to be added to the Ansible playbook. Re-provisioning your instance via Ansible will install the module.  </p>
                 
                   
                 

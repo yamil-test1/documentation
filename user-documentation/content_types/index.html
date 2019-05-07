@@ -458,6 +458,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -632,7 +656,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/docs-build/" title="Documentation Style Guide" class="md-nav__link">
+    <a href="../../technical-documentation/docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
       Documentation Style Guide
     </a>
   </li>
@@ -646,6 +670,18 @@
   <li class="md-nav__item">
     <a href="../../technical-documentation/docs-build/" title="How to Build Documentation" class="md-nav__link">
       How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
     </a>
   </li>
 
@@ -844,19 +880,19 @@
                 
                 
                 <h1 id="create-update-a-content-type">Create / Update a Content Type</h1>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Islandora Demo</p>
 <p>The screenshots and pre-existing data in this documentation assume that you are using the <a href="https://github.com/Islandora-CLAW/islandora_demo">Islandora Demo</a> configuration.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Graphical User Interface</p>
 <p>This page will address how to create and modify ingest forms (or rather, content types) via the GUI. For help working with forms via the API, please check out the <a href="#further-reading">Further Reading</a> section for links to more advanced Drupal documentation.</p>
+</div>
 <p>Since objects in Islandora 8 are stored in Drupal as Nodes, we use the standard Drupal Content Types system to create and edit our ‘ingest forms’ <a href="https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/working-with-content-types-and-fields">Content Types in Drupal 8</a>. Islandora 8 forms are Drupal forms, and if you are already familiar with Drupal Field UI, you’re already well equipped to create and modify your own ingest forms in Islandora 8.</p>
 <p>This page will address how to create and modify ingest forms (or rather, content types) via the GUI. For help working with forms via the API, please check out the Further Reading section for links to more advanced Drupal documentation.</p>
 <h2 id="modify-a-content-type">Modify a Content Type</h2>
 <p>If you have deployed your Islandora 8 with the Islandora Demo configuration, you will already have a Repository Item content type available, with pre-configured fields. In the Admin menu, go to Structure &gt;&gt; Content Types and find the Repository Item content type. Select <em>Manage Fields</em>.</p>
-<p><img alt="a screenshot of the Add Content Type page" src="../../docs/assets/islandora8_managefields.png" /></p>
+<p><img alt="a screenshot of the Add Content Type page" src="../../assets/islandora8_managefields.png" /></p>
 <p>You will see a list of the fields that are already available in the <em>Repository Item</em> content type.</p>
 <h3 id="add-a-field">Add a Field</h3>
 <p>Let’s add a new field where a user can indicate if the repository item needs to be reviewed:</p>
@@ -869,23 +905,23 @@
 <li>Then configure how the field is described (including its display label and the help text for when it appears on a form) and constraints on its use. In this case, the field will be required for this Content Type, and will be set to “on” by default. In the "Default Value" section, click the checkbox next to "Needs Review" to indicate all new repository items need review by default.</li>
 <li>Click "Save settings."</li>
 </ol>
-<p><img alt="a screenshot of the field settings page" src="../../docs/assets/islandora8_fieldsettings.png" /></p>
+<p><img alt="a screenshot of the field settings page" src="../../assets/islandora8_fieldsettings.png" /></p>
 <p>The new field has been added:</p>
-<p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the Drupal field UI" src="../../docs/assets/islandora8_newfield.png" /></p>
+<p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the Drupal field UI" src="../../assets/islandora8_newfield.png" /></p>
 <p>And it appears in the ingest form when we try to create a new repository object. To test this, go to Content &gt;&gt; Add content &gt;&gt; Repository item:</p>
-<p><img alt="a screenshot of a &quot;Needs Review?&quot; field appearing at the bottom of a new node form" src="../../docs/assets/islandora8_newfieldinform.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p><img alt="a screenshot of a &quot;Needs Review?&quot; field appearing at the bottom of a new node form" src="../../assets/islandora8_newfieldinform.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">RDF Mappings</p>
+<p>New fields, with the exception of Typed Relation fields, are not automatically indexed in Fedora and the triple-store. Update the    Content Type's RDF Mapping to enable indexing the field (see below).</p>
 </div>
-<p>New fields, with the exception of Typed Relation fields, are not automatically indexed in Fedora and the triple-store. Update the Content Type's RDF Mapping to enable indexing the field (see below).</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Search</p>
 <p>New fields will not automatically be searchable. They need to be added to the SOLR index configuration. See the <a href="../searching/">'Setup and Configure Search'</a> page for more information.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Context</p>
 <p>To add new behavior based on the results of this new field, check out <a href="../searching/">link to Context docs</a></p>
+</div>
 <h3 id="change-the-form-display">Change the Form Display</h3>
 <p>Now let’s move our new field to a different part of the form. In the Admin menu, return to Structure &gt; Content Types and find the Repository Item content type again. Select Manage form display.</p>
 <ol>
@@ -895,7 +931,7 @@
 <p>When creating a new Repository Item, the new field appears at the top, as a set of radio buttons.</p>
 <h3 id="change-the-content-display">Change the Content Display</h3>
 <p>Finally, let’s change how the results of this field are displayed. Initially the new field shows up at the bottom of repository object pages:</p>
-<p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the node display" src="../../docs/assets/islandora8_fieldindisplay.png" /></p>
+<p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the node display" src="../../assets/islandora8_fieldindisplay.png" /></p>
 <p>In the Admin menu, return to Structure &gt; Content Types and find the Repository Item content type again. Select Manage display from the dropdown menu.</p>
 <ol>
 <li>Find the new field. You can change how the field title or Label is displayed. Click the dropdown menu to choose from inline/above/hidden/visually hidden. You can also replace the options displayed with variations on a binary choice. Click the gear to choose from the following: On/Off, Yes/No, Enabled/Disabled, 1/0. checkmark/X, or hide the field completely.</li>
@@ -953,37 +989,47 @@ fieldMappings:
 <p>The required mapping metadata fields when creating a brand-new mapping include the <code>id</code>, <code>status</code>, <code>targetEntityType</code>, and <code>bundle</code>. (<code>uuid</code> and <code>_core</code>, not seen in the example above but may be present in exported copies,  will be added by Drupal automatically.) <code>bundle</code> is the machine name for the Content Type or Taxonomy Vocabulary you are creating the mapping for. <code>targetEntityType</code> is <code>node</code> for Content Types or <code>taxonomy_term</code> for Taxonomy Vocabularies. The <code>id</code> configuration is a concatenation of target entity type and bundle ('node' and 'islandora_object' in the example above). The <code>id</code> is also used to name the configuration file: e.g. <code>rdf.mapping.node.islandora_object.yml</code> is <code>rdf.mapping.</code> plus the id (<code>node.islandora_object</code>) and then <code>.yml</code>.</p>
 <p>The mapping itself consists of the <code>types</code>' and <code>fieldMappings</code> configurations.</p>
 <p>All the mappings use RDF namespaces instead of fully-qualified URIs. For example, the type for islandora_object is <code>pcdm:Object</code> instead of <code>http://pcdm.org/models#Object</code>. Unfortunately, the available namespaces are defined in module hooks (hook_rdf_namespaces) rather than in a configuration file. Repository managers wanting to add additional namespaces need to create their own module and implement hook_rdf_namespaces. See the <a href="https://github.com/Islandora-CLAW/islandora_demo/blob/8.x-1.x/islandora_demo.module">islandora_demo</a> hook implementation for an example.</p>
-<p>Namespaces currently supported (ordered by the module that supplies them) include:
- * rdf
-      * content: http://purl.org/rss/1.0/modules/content/
-      * dc: http://purl.org/dc/terms/
-      * foaf: http://xmlns.com/foaf/0.1/
-      * og: http://ogp.me/ns#
-      * rdfs: http://www.w3.org/2000/01/rdf-schema#
-      * schema: http://schema.org/
-      * sioc: http://rdfs.org/sioc/ns#
-      * sioct: http://rdfs.org/sioc/types#
-      * skos: http://www.w3.org/2004/02/skos/core#
-      * xsd: http://www.w3.org/2001/XMLSchema#
- * islandora
-      * ldp: http://www.w3.org/ns/ldp#
-      * dc11: http://purl.org/dc/elements/1.1/
-      * nfo: http://www.semanticdesktop.org/ontologies/2007/03/22/nfo/v1.1/
-      * ebucore: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
-      * fedora: http://fedora.info/definitions/v4/repository#
-      * owl: http://www.w3.org/2002/07/owl#
-      * ore: http://www.openarchives.org/ore/terms/
-      * rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-      * islandora: http://islandora.ca/CLAW/
-      * pcdm: http://pcdm.org/models#
-      * use: http://pcdm.org/use#
-      * iana: http://www.iana.org/assignments/relation/
- * islandora_demo
-      * relators: http://id.loc.gov/vocabulary/relators/
- * controlled_access_terms
-      * wgs84_pos: http://www.w3.org/2003/01/geo/wgs84_pos#
-      * org: https://www.w3.org/TR/vocab-org/#org:
-      * xs: http://www.w3.org/2001/XMLSchema#</p>
+<p>Namespaces currently supported (ordered by the module that supplies them) include:</p>
+<ul>
+<li>rdf<ul>
+<li>content: http://purl.org/rss/1.0/modules/content/</li>
+<li>dc: http://purl.org/dc/terms/</li>
+<li>foaf: http://xmlns.com/foaf/0.1/</li>
+<li>og: http://ogp.me/ns#</li>
+<li>rdfs: http://www.w3.org/2000/01/rdf-schema#</li>
+<li>schema: http://schema.org/</li>
+<li>sioc: http://rdfs.org/sioc/ns#</li>
+<li>sioct: http://rdfs.org/sioc/types#</li>
+<li>skos: http://www.w3.org/2004/02/skos/core#</li>
+<li>xsd: http://www.w3.org/2001/XMLSchema#</li>
+</ul>
+</li>
+<li>islandora<ul>
+<li>ldp: http://www.w3.org/ns/ldp#</li>
+<li>dc11: http://purl.org/dc/elements/1.1/</li>
+<li>nfo: http://www.semanticdesktop.org/ontologies/2007/03/22/nfo/v1.1/</li>
+<li>ebucore: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#</li>
+<li>fedora: http://fedora.info/definitions/v4/repository#</li>
+<li>owl: http://www.w3.org/2002/07/owl#</li>
+<li>ore: http://www.openarchives.org/ore/terms/</li>
+<li>rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#</li>
+<li>islandora: http://islandora.ca/CLAW/</li>
+<li>pcdm: http://pcdm.org/models#</li>
+<li>use: http://pcdm.org/use#</li>
+<li>iana: http://www.iana.org/assignments/relation/</li>
+</ul>
+</li>
+<li>islandora_demo<ul>
+<li>relators: http://id.loc.gov/vocabulary/relators/</li>
+</ul>
+</li>
+<li>controlled_access_terms<ul>
+<li>wgs84_pos: http://www.w3.org/2003/01/geo/wgs84_pos#</li>
+<li>org: https://www.w3.org/TR/vocab-org/#org:</li>
+<li>xs: http://www.w3.org/2001/XMLSchema#</li>
+</ul>
+</li>
+</ul>
 <p>The <code>types</code> corresponds to the <code>rdf:type</code> predicate (which corresponds to JSON-LD's <code>@type</code>) and can have multiple values. This type value will be applied to every node or taxonomy term using the mapped content type or vocabulary.</p>
 <p>In some cases a repository may want a node or taxonomy term's <code>rdf:type</code> to be configurable. For example, the Corporate Body Vocabulary (provided by the Controlled Access Terms Default Configuration module) has <code>schema:Organization</code> set as the default type in the RDF mapping. However, more granular types may apply to one organization and not another, such as <code>schema:GovernmentOrganization</code> or <code>schema:Corporation</code>. The <code>alter_jsonld_type</code> Context reaction allows Content Types and Taxonomy Vocabularies to add a field's values as <code>rdf:types</code> to its JSON-LD serialization (the format used to index a node or taxonomy term in Fedora and the triple-store).</p>
 <p><code>fieldMappings</code> specifies the fields to be included, their RDF property mappings, and any necessary data converters (the <code>datatype_callback</code>). One field can be mapped to more than one RDF property by adding them to the field's properties list. The <code>datatype_callback</code> is defined by the 'callable' key and the fully qualified static method used to convert it to the desired data format. For example, fields of the Drupal datetime type need to be converted to ISO 8601 values, so we use the <code>Drupal\rdf\CommonDataConverter::dateIso8601Value</code> function to perform the conversion.</p>

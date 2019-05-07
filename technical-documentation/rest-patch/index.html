@@ -372,6 +372,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -598,7 +622,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docs-build/" title="Documentation Style Guide" class="md-nav__link">
+    <a href="../docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
       Documentation Style Guide
     </a>
   </li>
@@ -612,6 +636,18 @@
   <li class="md-nav__item">
     <a href="../docs-build/" title="How to Build Documentation" class="md-nav__link">
       How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
     </a>
   </li>
 
@@ -778,7 +814,7 @@
                 <h1 id="updating-resources-patch-request">Updating resources - PATCH request</h1>
 <p>PATCH requests allow you to update resources in place via a REST call. In this case you send a few required fields and then any changed fields. PATCH requests are available for nodes and media entities, but <em>not</em> for files. PATCH requests are very consistent between node and media entities so we will just show one set of examples here.</p>
 <p>Our example node is at <code>http://localhost:8000/node/3</code>.</p>
-<p>If you perform a <a href="../rest-get/">GET</a> against another node or media you can see all of the fields, some of these are calculated (change based on others, ie. "changed"), some are references to other entities (nodes, media, files in Drupal. ie. "field_model") and others are pure text fields (ie. "title").</p>
+<p>If you perform a <a href="../rest-get/">GET</a> against another node or media you can see all of the fields, some of these are calculated (change based on others, i.e. "changed"), some are references to other entities (nodes, media, files in Drupal. i.e. "field_model") and others are pure text fields (i.e. "title").</p>
 <p>The fields will be different between different node types and media types, but the syntax to update them is the same.</p>
 <ul>
 <li><a href="#authorization">Authorization</a></li>

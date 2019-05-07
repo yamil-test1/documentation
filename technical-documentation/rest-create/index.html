@@ -372,6 +372,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-documentation/multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -601,7 +625,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docs-build/" title="Documentation Style Guide" class="md-nav__link">
+    <a href="../docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
       Documentation Style Guide
     </a>
   </li>
@@ -615,6 +639,18 @@
   <li class="md-nav__item">
     <a href="../docs-build/" title="How to Build Documentation" class="md-nav__link">
       How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
     </a>
   </li>
 
@@ -802,7 +838,7 @@
 <ol>
 <li>A type - this tells Drupal what content type we are creating</li>
 <li>A title - this is a required field of all nodes.</li>
-<li>A model - this is a required by Islandora to tell the type of object (ie. Image, Audio, Collection)</li>
+<li>A model - this is a required by Islandora to tell the type of object (i.e. Image, Audio, Collection)</li>
 </ol>
 <p>A good way to make your first POST request is to perform a GET request against an existing node and erase all the extra content.</p>
 <p>You can find more information about <a href="../rest-get/">GET requests here</a></p>
@@ -866,7 +902,7 @@
 
 <p><strong>Note</strong>: You <strong>must</strong> include an <strong>appropriate</strong> Content-type header for the format you're requesting</p>
 <p><strong>Other Note</strong>: You <strong>must</strong> include some authentication credentials to say who you are and so Drupal can check if you are allowed to create this object. Otherwise you will receive a <code>401 Unauthorized</code> response. </p>
-<p>If you do provide credentials but don't have permission, you will recieve a <code>403 Forbidden</code> response.</p>
+<p>If you do provide credentials but don't have permission, you will receive a <code>403 Forbidden</code> response.</p>
 <p>You can find more information about <a href="../using-rest-endpoints/#authorization">Authorization here</a></p>
 <p>&#x1F34E; For example:</p>
 <pre><code>curl -i -X POST -u admin:islandora -H&quot;Content-type: application/json&quot; --data '{&quot;type&quot;:[{&quot;target_id&quot;:&quot;islandora_object&quot;,&quot;target_type&quot;:&quot;node_type&quot;}],&quot;title&quot;:[{&quot;value&quot;:&quot;Created a collection with POST&quot;}],&quot;field_model&quot;:[{&quot;target_id&quot;:23,&quot;target_type&quot;:&quot;taxonomy_term&quot;}]}' 'http://localhost:8000/node?_format=json'
@@ -908,7 +944,7 @@ Content-Type: application/json
 <p>The tokens to this URI are as follows:</p>
 <ol>
 <li>node id : The numeric ID of the node you wish to link this media/file to.</li>
-<li>media type : The media type name you wish to create (ie. image, file, audio)</li>
+<li>media type : The media type name you wish to create (i.e. image, file, audio)</li>
 <li>media use : The numeric ID of the media use taxonomy term to set for this media </li>
 </ol>
 <p>You can find the media use taxonomy terms at <code>http://localhost:8000/admin/structure/taxonomy/manage/islandora_media_use/overview</code></p>

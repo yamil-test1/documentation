@@ -285,13 +285,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#content-models" title="Content Models" class="md-nav__link">
-    Content Models
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#members" title="Members" class="md-nav__link">
     Members
   </a>
@@ -430,6 +423,30 @@
   <li class="md-nav__item">
     <a href="../placing-blocks/" title="Blocks" class="md-nav__link">
       Blocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
     </a>
   </li>
 
@@ -608,7 +625,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/docs-build/" title="Documentation Style Guide" class="md-nav__link">
+    <a href="../../technical-documentation/docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
       Documentation Style Guide
     </a>
   </li>
@@ -622,6 +639,18 @@
   <li class="md-nav__item">
     <a href="../../technical-documentation/docs-build/" title="How to Build Documentation" class="md-nav__link">
       How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
     </a>
   </li>
 
@@ -760,13 +789,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#content-models" title="Content Models" class="md-nav__link">
-    Content Models
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#members" title="Members" class="md-nav__link">
     Members
   </a>
@@ -861,7 +883,7 @@ status: 1
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Compared to Islandora 7</p>
 <p>These node properties directly correspond to following Islandora 7.x object properties:</p>
 <table>
 <thead>
@@ -897,7 +919,6 @@ fields is assigned to a node by giving it a content type, we can think of conten
 For example, you might have a content type for a set of repository objects that have very specialized metadata requirements but
 another content type for generic repository objects that share a more general set of metadata fields.
 The section on <a href="../metadata/">metadata</a> describes in more detail how fields on Islandora objects work.</p>
-<h2 id="content-models">Content Models</h2>
 <p>Islandora has a notion of a <em>content model</em>, which is used to identify what type of content is
 being represented by a node (e.g. an image, a video, a collection of other items, etc...). This is done
 using a special field, "Model", which accepts taxonomy terms from the "Islandora Models" vocabulary.
@@ -905,7 +926,7 @@ By applying a term from the Islandora Models vocabulary to a node, Islandora wil
 of how to handle the node in response to certain events, like choosing a viewer or generating derivatives.</p>
 <p><img alt="Model tags" src="../../assets/object_model_tags.png" /></p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Compared to Islandora 7</p>
 <p>Content models in Islandora 7 were immutable, and contained restrictions as to what
 types of datastreams could be associated with an object.  Islandora 8 imposes no such
 restrictions. Content models can be changed at any time, and they in no way dictate what
@@ -918,7 +939,7 @@ model of Collection. Membership (to a Collection or otherwise) is denoted using 
 field, "Member Of".  The "Member Of" field can hold multiple references, so it is possible for a
 single child to belong to multiple parents.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Compared to Islandora 7</p>
 <p>In Islandora 7, there was a distinction between belonging to a collection and belonging to
 a compound object.  In Islandora 8, this distinction is not present, essentially making every object
 a compound object.</p>
