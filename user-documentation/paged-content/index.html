@@ -38,7 +38,7 @@
     
     
       
-        <title>Nodes - Islandora 8</title>
+        <title>Paged Content - Islandora 8</title>
       
     
     
@@ -87,10 +87,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#properties" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -113,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Nodes
+                Paged Content
               
             </span>
           
@@ -279,73 +275,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Nodes
-      </label>
-    
-    <a href="./" title="Nodes" class="md-nav__link md-nav__link--active">
-      Nodes
+  <li class="md-nav__item">
+    <a href="../resource-nodes/" title="Resource Nodes" class="md-nav__link">
+      Resource Nodes
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#members" class="md-nav__link">
-    Members
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
-    Media
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#display-hints" class="md-nav__link">
-    Display Hints
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -394,6 +328,25 @@
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Paged Content" class="md-nav__link md-nav__link--active">
+      Paged Content
+    </a>
+    
   </li>
 
         
@@ -961,218 +914,80 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    Fields
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#members" class="md-nav__link">
-    Members
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
-    Media
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#display-hints" class="md-nav__link">
-    Display Hints
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora/documentation/edit/master/docs/user-documentation/objects.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Islandora/documentation/edit/master/docs/user-documentation/paged-content.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Nodes</h1>
+                  <h1>Paged Content</h1>
                 
-                <p>As we learned in Intro, objects in an Islandora repository are represented as nodes in Drupal.
-Because of this, their metadata profile, display, form (and much more) are configurable through
-the Drupal UI.  This gives repository administrators a huge degree of control over their repository
-without any need for coding. Much more so than ever before. And since we're using a core Drupal
-solution for modeling our objects, compatibility with third-party modules is virtually guaranteed.
-This opens up a plethora of solutions from the Drupal community that will save you untold time
-and effort when implementing your repository with Islandora.</p>
-<h2 id="properties">Properties</h2>
-<p>Nodes have some basic properties that are common to all nodes, regardless of content type.  These
-properties are not fields.  This means that
-they cannot changed or removed. Their name, what type of data they hold, etc... are all baked in.
-Here's an example of the basic properties you'll see on a node:</p>
-<pre><code>nid: 1
-uid: 1
-title: &quot;I am an Islandora 8 object&quot;
-created: 1550703004
-changed: 1550703512
-uuid: 02932f2c-e4c2-4b7e-95e1-4aceab78c638
-type: islandora_object
-status: 1
-</code></pre>
-
-<p>As you can see, it's all system data used at the Drupal level to track the basics.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nid</td>
-<td>The local ID for a node</td>
-</tr>
-<tr>
-<td>uuid</td>
-<td>The global ID for any entity</td>
-</tr>
-<tr>
-<td>title</td>
-<td>The title for a node</td>
-</tr>
-<tr>
-<td>created</td>
-<td>Timestamp of when node was created</td>
-</tr>
-<tr>
-<td>changed</td>
-<td>Timestamp of when a node was last updated</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Content type (e.g. which group of fields are present on the node)</td>
-</tr>
-<tr>
-<td>status</td>
-<td>Published, unpublished, etc...</td>
-</tr>
-</tbody>
-</table>
+                <p>Paged content, books, periodicals, photographs with the front and back, etcetera, can use the members structure.
+(See <a href="../resource-nodes/#members">the section describing resource node membership</a>.)
+This involves creating a resource node for the root record (e.g. the book or the photograph)
+and child resource nodes for each sub-component (e.g. "Page 1" and "Page 2" or "recto" and "verso")
+with their corresponding media. Each "child" resource node contains a reference to their "parent" resource node
+using the <code>field_member_of</code> property. </p>
 <div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>These node properties directly correspond to following Islandora 7.x object properties:</p>
-<table>
-<thead>
-<tr>
-<th>Islandora 7</th>
-<th>Islandora 8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owner</td>
-<td>uid</td>
-</tr>
-<tr>
-<td>dc.title</td>
-<td>title</td>
-</tr>
-<tr>
-<td>PID</td>
-<td>uuid</td>
-</tr>
-<tr>
-<td>status</td>
-<td>status</td>
-</tr>
-</tbody>
-</table>
+<p class="admonition-title">Child v. Member</p>
+<p>Islandora 8 uses the "child" and "member" descriptor for resource nodes that 
+store a reference to another resource node in the "Member Of" field interchangeably. 
+Administrators will more often see the "member" terminology more often while 
+front-end users will usually see "child" terminology.</p>
 </div>
-<h2 id="fields">Fields</h2>
-<p>In addition to the basic node properties identified above, Islandora objects (like all Drupal nodes) can have fields.
-Most of what we would think of as descriptive metadata is stored as fields. Since a specific set of required and optional
-fields is assigned to a node by giving it a content type, we can think of content types as metadata profiles for our objects.
-For example, you might have a content type for a set of repository objects that have very specialized metadata requirements but
-another content type for generic repository objects that share a more general set of metadata fields.
-The section on <a href="../metadata/">metadata</a> describes in more detail how fields on Islandora objects work.</p>
-<p>Islandora has a notion of a <em>content model</em>, which is used to identify what type of content is
-being represented by a node (e.g. an image, a video, a collection of other items, etc...). This is done
-using a special field, "Model", which accepts taxonomy terms from the "Islandora Models" vocabulary.
-By applying a term from the Islandora Models vocabulary to a node, Islandora will become aware
-of how to handle the node in response to certain events, like choosing a viewer or generating derivatives.</p>
-<p><img alt="Model tags" src="../../assets/object_model_tags.png" /></p>
+<p>Similar to the collection view showing members of a collection, Islandora provides
+an Islandora Model terms, <em>Paged Content</em> and <em>Page</em>, that can be used to trigger paged
+content behaviors. Islandora Defaults provides a Context for <em>Paged Content</em> 
+resource nodes to trigger displaying an OpenSeadragon viewer showing the child 
+resource nodes' service files.</p>
+<p>To enable this, use the <em>Paged Content</em> for the Islandora Model of the parent 
+resource node and <em>Page</em> for the Islandora Model of the child resource node. After the
+child resource nodes have services file Media (either generated via the built-in derivative
+creation or added manually), they will be included in the OpenSeadragon paginated 
+viewer displayed on the parent resource node's page.
+(See the <a href="../iiif/#using-iiif-in-islandora-8">IIIF Documentation</a>
+for more details on controlling the viewer's behavior.)</p>
+<p><img alt="Screenshot of a Paged Content resource node displaying the OpenSeadragon viewer with the first child resource node displayed." src="../../assets/paged_content_openseadragon.png" /></p>
+<p>However, repository managers can use any method they like, such as a view-based 
+list of teasers, a gallery, or a slide-show to display child resource nodes.</p>
+<p>By default child resource nodes are un-ordered. To order the sub-components of a
+paged content resource node, Islandora provides a <em>Weight</em> field to store a 
+integer value on  child resource nodes. 
+Children resource nodes with smaller weight values will come
+before child resource nodes with larger weight values. This follows the usual ordering
+pattern of <code>1</code> (smaller) coming before <code>2</code> (larger). </p>
+<p>Weight values do not need 
+to be sequential, just ordered from smallest to largest. For example, the first 
+child resource node can have a value of <code>10</code> and the next could have a value of 
+<code>20</code> and they will be ordered accordingly. Should a new child be added with the 
+weight value of <code>15</code> it will automatically be sorted after the child with the
+weight value <code>10</code> and before the child with the weight value <code>20</code>.</p>
+<p>Child resource nodes can be reordered using a drag-and-drop interface by clicking
+on the <em>Re-order Children</em> button on the <em>Children</em> tab of the parent resource node.</p>
+<p><img alt="Re-order Children button" src="../../assets/paged_content_reorder_children_button.png" /></p>
+<p>Re-ordering children resource nodes on this page and clicking <em>Save</em> will cause 
+each child resource node's weight value to be updated using sequential values.</p>
+<p><img alt="Re-order Children form" src="../../assets/paged_content_reorder_children_form.png" /></p>
 <div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>Content models in Islandora 7 were immutable, and contained restrictions as to what
-types of datastreams could be associated with an object.  Islandora 8 imposes no such
-restrictions. Content models can be changed at any time, and they in no way dictate what
-types of media can be associated with a node.</p>
+<p class="admonition-title">Why not Drupal's book or weight modules?</p>
+<p>Drupal provides the <a href="https://www.drupal.org/docs/8/core/modules/book">book module in core</a>
+for creating multi-level ordered content, such as books and manuals.
+However, this module stores structure and pagination separately from the nodes making serializing
+these relationships as RDF we can provide to Fedora more difficult than simply using <code>field_member_of</code>
+with an RDF mapping. Support for the book module may be added in the future.</p>
+<p>Drupal also has a <a href="https://www.drupal.org/project/weight">weight module</a> 
+that provides a weight field and a drag-and-drop
+reordering user-interface. However, this module requires users to set a 
+specified range of values which includes their negative corresponding value. 
+E.g. a range setting of '20' will require all children to have a value between 
+'-20' to '20'. This presumes a repository manager can predict how many pages
+the largest paged content item in their repository will be beforehand. Also,
+these weight values are serialized into RDF using the Collections Ontology 'index'
+predicate which assumes positive integer values which cannot be guaranteed
+using the weight module.</p>
 </div>
-<h2 id="members">Members</h2>
-<p>Islandora has a notion of <em>membership</em>, which is used to create a parent/child relationship between
-two nodes. Any two nodes can be related in this way, though typically, the parent node has a content
-model of Collection. Membership (to a Collection or otherwise) is denoted using another special
-field, "Member Of".  The "Member Of" field can hold multiple references, so it is possible for a
-single child to belong to multiple parents.</p>
-<div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>In Islandora 7, there was a distinction between belonging to a collection and belonging to
-a compound object.  In Islandora 8, this distinction is not present, essentially making every object
-a compound object.</p>
-</div>
-<p>For any node, its "Members" tab can be used to see all its members.  You can also perform Actions in
-bulk on members using the check boxes and the Actions drop down.</p>
-<p><img alt="Members tab" src="../../assets/members-tab.png" /></p>
-<h2 id="media">Media</h2>
-<p>All nodes can contain any number of media.  The media for any node can be managed using the "Media" tab when viewing a node.  Much like
-the "Members" tab, Actions can be performed in bulk using the check boxes and Actions drop down.</p>
-<p><img alt="Media tab" src="../../assets/islandora_8_derivatives_sample.png" /></p>
-<h2 id="display-hints">Display Hints</h2>
-<p>Media are displayed in Islandora 8 via "View modes". View modes are Drupal's name for alternative ways to present content to users. You may be familiar with the "full" and "teaser" versions of nodes, which are rendered using two corresponding kinds of View modes. In Islandora, media content is displayed within a node field, and the View mode applies to that field. Islandora provides two View modes, one which renders the OpenSeadragon viewer and the other which renders the PDFjs viewer. These two View modes can be set explicitly in the node edit form, or you can configure Islandora to use a specific View mode for all media with a specific Mime type.</p>
-<p>At the node level, in the "Display hints" field, simply check the View mode you want to use for that node:</p>
-<p><img alt="Display hints" src="../../assets/display_hints.png" /></p>
-<p>The selected View mode will then be used when the node is rendered.</p>
-<p>At a global level, there are a couple of ways to tell Drupal to use the PDFjs viewer to render the content of the media field whenever the media has a Mime type of <code>application/pdf</code>.</p>
-<p>The first way is to edit the "PDFjs" Context. By default, this Context tells Drupal to use the PDFjs viewer if the node has the term "PDFjs" (yes, that's a taxonomy term):</p>
-<p><img alt="Default PDFjs Context" src="../../assets/pdfjs_context_default.png" /></p>
-<p>If you add the Condition "Media has Mime type" and configure it to use <code>application/pdf</code> as the Mime type, like this:</p>
-<p><img alt="PDFjs Context with Mimetype Condition" src="../../assets/pdfjs_context_with_mimetype.png" /></p>
-<p>Context will use whichever Condition applies (as long as you don't check "Require all conditions"). That is, if the "PDFjs" display hint option in the node edit form is checked, <em>or</em> if the node's media has a Mime type of <code>application/pdf</code>, the media content will be rendered using the PDFjs viewer.</p>
-<p>The second way to use the media's Mime type to render its content with the PDFjs viewer is to create separate Context that will detect the media's Mime type and use the configured View mode automatically. To do this, create a new Context. Add a "Media has Mime type" condition and specify the Mime type, and then add a "Change View mode" Reaction that selects the desired view mode:</p>
-<p><img alt="Display hints" src="../../assets/view_mode_context.png" /></p>
-<p>Finally, save your Context. From that point on, whenever the media for a node has the configured Mime type, Drupal will render the media using the corresponding view mode.</p>
-<p>The node-level and global approaches are not exclusive to one another. One Context can override another depending the order of execution. Whichever Condition applies last between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Media has Mime type"), that one will override the other. An example of having the View mode specified in the node edit form intentionally override the View mode based on Mime type is to have media with the <code>image/jp2</code> mimetype configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon view mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
                 
                   
                 
@@ -1193,7 +1008,7 @@ the "Members" tab, Actions can be performed in bulk using the check boxes and Ac
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../user-intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1202,19 +1017,19 @@ the "Members" tab, Actions can be performed in bulk using the check boxes and Ac
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Collections
               </span>
             </div>
           </a>
         
         
-          <a href="../objects_to_resource_nodes/" title="From Objects to Resource Nodes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../metadata/" title="Metadata" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                From Objects to Resource Nodes
+                Metadata
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -281,8 +281,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../objects/" title="Nodes" class="md-nav__link">
-      Nodes
+    <a href="../resource-nodes/" title="Resource Nodes" class="md-nav__link">
+      Resource Nodes
     </a>
   </li>
 
@@ -331,6 +331,18 @@
   <li class="md-nav__item">
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paged-content/" title="Paged Content" class="md-nav__link">
+      Paged Content
     </a>
   </li>
 
@@ -1034,7 +1046,7 @@
 <p>The Context project page on drupal.org says "You can think of each context as representing a 'section' of your site", but that doesn't tell the whole story, since it gives the impression that Context is all about defining subsites. Context in Drupal 8 is much more powerful than in Drupal 7 due to how it interacts with the rest of Drupal (specifically, through Drupal 8's new plugin API). Because of this increased flexibility and power, and because Context provides a ready-made user interface for site administrators to combine conditions and reactions, Islandora 8 uses Context to drive the logic underlying many important aspects of Islandora, including which derivatives get generated and how objects are displayed. In Islandora 7, many of these things are managed (and often hard-coded) within solution packs and utility modules.</p>
 <h3 id="an-example">An Example</h3>
 <p>Let's look at the example of how Context can determine how an object is displayed. Drupal 8 has the idea of "view modes", which allow site builders to choose what happens when an object is viewed by the user (it has nothing to do with Drupal Views). In the node edit form for Islandora objects, there is a checkbox that, if checked, tells Drupal to render the image using the OpenSeadragon viewer:</p>
-<p><img alt="Display Hints field in node edit form" src="../../assets/context_display_hints.png" /></p>
+<p><img alt="Display Hints field in node edit form" src="../../assets/resource_nodes_display_hints.png" /></p>
 <p>This  functionality is accomplished via the "Open Seadragon" Context, which, as its configuration suggests, checks as its condition whether the node as the "Open Seadragon" tag and if so, reacts by using the view mode "Open Seadragon":</p>
 <p><img alt="Open Seadragon Context configuration" src="../../assets/context_openseadragon_configuration.png" /></p>
 <h3 id="context-and-actions">Context and Actions</h3>

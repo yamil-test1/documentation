@@ -281,8 +281,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../objects/" title="Nodes" class="md-nav__link">
-      Nodes
+    <a href="../resource-nodes/" title="Resource Nodes" class="md-nav__link">
+      Resource Nodes
     </a>
   </li>
 
@@ -331,6 +331,18 @@
   <li class="md-nav__item">
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paged-content/" title="Paged Content" class="md-nav__link">
+      Paged Content
     </a>
   </li>
 
@@ -1054,7 +1066,7 @@
 </div>
 <!-- Next revision: check status of changing 'bundles' to 'entity sub-types' (https://www.drupal.org/project/drupal/issues/1380720). -->
 
-<p>As described in the <a href="../objects/">Nodes section</a>, Islandora 8 digital objects are comprised of <em>Drupal nodes</em> for descriptive metadata, <em>Drupal media</em> for technical metadata, and <em>Drupal files</em> for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata.</p>
+<p>As described in the <a href="../resource-nodes/">resource nodes section</a>, Islandora 8 digital objects are comprised of <em>Drupal nodes</em> for descriptive metadata, <em>Drupal media</em> for technical metadata, and <em>Drupal files</em> for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata.</p>
 <h2 id="content-types">Content Types</h2>
 <p>In Drupal, <em>Nodes</em> come in different sub-types called <em>Content Types</em> (e.g. Article, Basic page, Repository item). Content types contain fields, and configurations for how those fields can be edited or displayed. Each content type is essentially a <em>metadata profile</em> that can be used for a piece of web content, or to describe a digital resource. For each field in a content type, an administrator can configure how data is entered, how it can be displayed, how many values can be stored, and how long the value can be. Some configurations, such as data entry and display, can be changed at any time. Others, such as how long a value can be or what options are available in a select list, cannot be changed once content has been created without first deleting all content of that type. However, fields can be added to existing content types with no consequence.</p>
 <p>For example, the 'islandora_defaults' module provides a <em>Repository Item</em> content type that defines many fields including "Alternative Title" and "Date Issued". Under the management menu for Repository Item you can see a list of the fields it includes ("Manage fields") as well as tabs for changing the input forms ("Manage form display") and display modes ("Manage display"). See the "<a href="../content_types/">Create / Update a Content Type</a>" section for more details on creating and configuring fields.</p>
@@ -1257,7 +1269,7 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../paged-content/" title="Paged Content" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1266,7 +1278,7 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Collections
+                Paged Content
               </span>
             </div>
           </a>
