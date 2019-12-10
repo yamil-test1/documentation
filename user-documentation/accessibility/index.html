@@ -38,7 +38,7 @@
     
     
       
-        <title>What's Different Between Islandora 1.x and Islandora 8.x - Islandora 8</title>
+        <title>Accessibility - Islandora 8</title>
       
     
     
@@ -87,10 +87,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#whats-different-between-islandora-1x-and-islandora-8x" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -113,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                What's Different Between Islandora 1.x and Islandora 8.x
+                Accessibility
               
             </span>
           
@@ -246,10 +242,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       User Documentation
@@ -457,11 +455,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../accessibility/" title="Accessibility" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Accessibility" class="md-nav__link md-nav__link--active">
       Accessibility
     </a>
+    
   </li>
 
         
@@ -945,114 +950,24 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#repository-structure" class="md-nav__link">
-    Repository Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#object-structure" class="md-nav__link">
-    Object Structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datastreams" class="md-nav__link">
-    Datastreams
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pids" class="md-nav__link">
-    PIDs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora/documentation/edit/master/docs/user-documentation/different_from_7x.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Islandora/documentation/edit/master/docs/user-documentation/accessibility.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="whats-different-between-islandora-1x-and-islandora-8x">What's Different Between Islandora 1.x and Islandora 8.x</h1>
-<p>In the most basic terms, Islandora 8 is the version of Islandora that works with <a href="https://wiki.duraspace.org/display/FF/Fedora+Repository+Home">Fedora 5</a>. Because Fedora 4 and 5 are vastly different than Fedora 3, so too is Islandora 8 a major departure from what came before. Switching to Islandora 8 represents not just a typical upgrade with improvements, features, and bug fixes, but rather a major shift in how objects are stored and managed.</p>
-<p>Moving from Islandora 7.x-1.x to 8.x-1.x requires a migration of objects, which you can learn about <a href="../../migration/migration/">here</a>. It also requires some adjustments in how you think about your objects and their relationships, and how to manage them in Islandora, which we will cover below.</p>
-<p>You can also check out some of the documentation provided by the Fedora project:
-* <a href="https://wiki.duraspace.org/display/FEDORA4x/Concept+Mapping+-+Fedora+3+to+4">Concept Mapping - Fedora 3 to 4</a>
-* <a href="https://wiki.duraspace.org/display/FEDORA5x/The+Fedora+object+model">The Fedora 5 object model</a>
-* <a href="https://wiki.duraspace.org/display/FF/Fedora+3+to+4+Upgration">Fedora 3 to 4 Upgration</a>
-* <a href="https://wiki.duraspace.org/display/FEDORA4x/LDP-PCDM-F4+In+Action">LDP-PCDM-F4 In Action</a></p>
-<h2 id="fedora">Fedora</h2>
-<h3 id="repository-structure">Repository Structure</h3>
-<p>Fedora 3 stored all objects at the top level of the repository, although presentation of the objects could mimic a directory structure by having objects 'in' collections and collections 'in' other collections. This image is a helpful oversimplification:</p>
-<p><img alt="image" src="https://cloud.githubusercontent.com/assets/2371345/10912108/525c2a0e-821e-11e5-9c5b-d853b62f1e5a.png" /></p>
-<p>Fedora 4/5 differs considerably in that there is an innate tree hierarchy to the repository rather than a flat structure. Put less simply, "<a href="https://wiki.duraspace.org/display/FEDORA5x/The+Fedora+object+model">a Fedora repository consists of a directed acyclic graph of resources where edges represent a parent-child relation</a>".</p>
-<h3 id="object-structure">Object Structure</h3>
-<p>Fedora 3 objects are FOXML (Fedora Object eXtensible Markup Language) documents, with three elements:</p>
+                  <h1>Accessibility</h1>
+                
+                <p>Islandora 8's accessibility features are currently provided by Drupal 8 and contributed Drupal 8 modules. These pages within the Accessibility section of the Drupal documentation can provide guidance:</p>
 <ul>
-<li><code>Digital Object Identifier</code>: A unique, persistent identifier for the digital object. Also known as the PID.</li>
-<li><code>System Properties</code>: A set of system-defined descriptive properties that is necessary to manage and track the object in the repository.</li>
-<li><code>Datastream(s)</code>: The element in a Fedora digital object that represents a content item.</li>
+<li><a href="https://www.drupal.org/docs/8/accessibility/drupal-8-accessibility-features">Drupal 8 Accessibility Features</a> (included in core Drupal)</li>
+<li><a href="https://www.drupal.org/docs/8/accessibility/contributed-modules-for-extending-accessibility-in-drupal-8">Contributed Modules for Extending Accessibility in Drupal 8</a></li>
+<li><a href="https://www.drupal.org/docs/8/accessibility/hide-content-properly">Hiding Content Properly (for all users including users with screen readers)</a></li>
+<li><a href="https://www.drupal.org/docs/8/accessibility/how-to-do-an-accessibility-review">How to do an accessibility review?</a></li>
+<li>List of <a href="https://www.drupal.org/docs/8/accessibility/external-accessibility-resources">External Accessibility Resources</a></li>
 </ul>
-<p>In Fedora 4/5 , what we would have called <code>objects</code> are now referred to as <a href="https://www.w3.org/TR/ld-glossary/#resource"><code>Resources</code></a> (and <em>everything</em> in Fedora 4/5 is a <code>Resource</code>). Instead of being composed of XML as they were in Fedora 3, they are stored in <a href="http://modeshape.jboss.org/">ModeShape</a> as nodes with RDF properties. <code>Resources</code> come in two flavors: <a href="https://www.w3.org/TR/ldp/#ldpr-resource"><code>RDF Sources</code></a>, which are <code>Resources</code> having only RDF data, and <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-non-rdf-source"><code>Non-RDF Sources</code></a>, which are <code>Resources</code> that are binary files (HTML, PDFs, images, audio, video, etc). The terms [<code>RDF Source</code>] and [<code>Non-RDF Source</code>] both come from the <a href="https://www.w3.org/">W3C's</a> <a href="https://www.w3.org/TR/ldp/">Linked Data Platform</a> specification, which also defines the idea of <a href="https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container">Linked Data Platform Containers</a>, or <code>LDPCs</code>. An <code>LDPC</code> is an <code>RDF Source</code> that functions as a collection of <code>Resources</code>, similar to the way Islandora 7.x-1.x compound objects exist only as a way to tie together its children. An <code>LDPC</code> may contain <code>Non-RDF Sources</code>, as well as other <code>RDF Sources</code> acting as <code>LDPCs</code>; you can have a container of containers just like how Islandora 7.x-1.x can have a collection of collections.</p>
-<p>Islandora 8.x-1.x makes use of the <a href="https://github.com/duraspace/pcdm/wiki">Portland Common Data Model (PCDM)</a> as a layer of abstraction over <code>LDPCs</code> to make containment simpler to understand for users; a <code>pcdm:Collection</code> may contain other <code>pcdm:Collections</code> or <code>pcdm:Objects</code> (similar to an Islandora 7.x-1.x collection content model), and a <code>pcdm:Object</code> may contain other <code>pcdm:Objects</code> (similar to the way an Islandora 7.x-1.x compound object has child objects) or <code>pcdm:Files</code> (similar to the way Islandora 7.x-1.x objects have datastreams).</p>
-<h3 id="datastreams">Datastreams</h3>
-<p>In Islandora 7.x-1.x, every object has a specific content model which defined what datastreams it could have and which were absolutely required. Some of these Islandora 7.x-1.x datastreams contained metadata about the object while others contained binary files (JPG, PDF, MP3, PNG, TIFF, etc). In Islandora 8.x-1.x, all metadata about a resource is stored as RDF attributes directly on the resource itself, whether that resource is a <code>pcdm:Collection</code>, <code>pcdm:Object</code> or a <code>pcdm:File</code>, so we no longer need to separate metadata by type (RELS-EXT, RELS-INT, MODS, DC, PREMIS, etc) and store it in binary files as we did in Islandora 7.x-1.x.</p>
-<p>Binary files, such as JPGs, PNGs, MP3s, and PDFs, are handled via <code>pcdm:Files</code> which are contained by a parent <code>pcdm:Object</code>, similar to how an Islandora 7.x-1.x cmodel may hold a PDF or JPG as a datastream. Unlike Islandora 7.x-1.x, these binary files can actually have their own technical metadata attached them. This is because <code>pcdm:Collections</code>, <code>pcdm:Objects</code> and even <code>pcdm:Files</code> are all <code>RDF Sources</code> containing only RDF data, with <code>pcdm:Files</code> having links to the URL of the <code>Non-RDF Source</code> (binary file) they represent as part of their RDF data in addition to whatever other metadata you may want about the file. Using this system, a <code>pcdm:Object</code> can contain as many <code>pcdm:Files</code> as necessary, and each <code>pcdm:File</code> can have separate metadata about itself and its relationship to other <code>pcdm:Files</code> attached to the parent <code>pcdm:Object</code>, serving the same purpose RELS-INT datastreams served in Islandora 7.x-1.x.</p>
-<p>Note that you <em>can</em> use a <code>pcdm:File</code> to represent a file of metadata, such as MODS, DC, or PBCore, in case you would like to preserve a copy of an object's legacy metadata when migrating into Fedora 4. These metadata files will be treated like any other binary file in Islandora 8.x-1.x, and will not be indexed or editable through the GUI.</p>
-<h4 id="pids">PIDs</h4>
-<p>Every object in a Fedora 3 repository had a Persistent Identifier following the pattern <code>namespace:pid</code>. Fedora 4/5 resources do not have PIDs. Instead, since Fedora 4 is an <a href="https://www.w3.org/ns/ldp">LDP server</a>, their identifiers are fundamentally their URIs. The PIDs of objects migrated from a Fedora 3 repository can still be stored in Fedora 4/5, as additional properties on the new Fedora 4 resource.</p>
-<p>Since resources are stored as <code>nodes</code> on the Drupal side of Islandora 8.x-1.x, they also have Drupal UUIDs.</p>
                 
                   
                 
@@ -1069,6 +984,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../multilingual/" title="Multilingual" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Multilingual
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../extending/" title="Extending Islandora" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Extending Islandora
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
