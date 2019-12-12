@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -58,7 +58,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -980,22 +980,27 @@
                 
                 
                 <h1 id="oai-pmh">OAI-PMH</h1>
-<p>The <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a>, commonly referred to as OAI-PMH is a specification for exposing repository metadata. Repositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">full specification</a> details the services:
-- Identify - <a href="http://localhost:8000/oai/request?verb=Identify">http://localhost:8000/oai/request?verb=Identify</a>
-- ListMetadataFormats - <a href="http://localhost:8000/oai/request?verb=ListMetadataFormats">http://localhost:8000/oai/request?verb=ListMetadataFormats</a>
-- ListSets - <a href="http://localhost:8000/oai/request?verb=ListSets">http://localhost:8000/oai/request?verb=ListSets</a>
-- GetRecord - <a href="http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1">http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1</a>
-- ListIdentifiers - <a href="http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a>
-- ListRecords - <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc</a></p>
+<p>The <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a>, commonly referred to as OAI-PMH is a specification for exposing repository metadata. Repositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">full specification</a> details the services:</p>
+<ul>
+<li>Identify: <a href="http://localhost:8000/oai/request?verb=Identify">http://localhost:8000/oai/request?verb=Identify</a></li>
+<li>ListMetadataFormats: <a href="http://localhost:8000/oai/request?verb=ListMetadataFormats">http://localhost:8000/oai/request?verb=ListMetadataFormats</a></li>
+<li>ListSets: <a href="http://localhost:8000/oai/request?verb=ListSets">http://localhost:8000/oai/request?verb=ListSets</a></li>
+<li>GetRecord: <a href="http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1">http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1</a></li>
+<li>ListIdentifiers: <a href="http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a></li>
+<li>ListRecords: <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc</a></li>
+</ul>
 <p>The Drupal module <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> includes the <a href="https://github.com/Islandora/islandora_defaults/tree/8.x-1.x/modules/islandora_oaipmh">islandora_oaipmh</a> module. It depends on the <a href="https://www.drupal.org/project/rest_oai_pmh">Drupal REST OAI-PMH module</a>. The combination of these modules will allow your repository content (which are not modelled as 'Collection') to be harvested.</p>
-<p>Enabling Islandora OAI-PMH provides:
-- an oai_dc <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">endpoint</a> of all objects available as one set ("oai_pmh:all_repository_items") which is built using a <a href="http://localhost:8000/admin/structure/views/view/oai_pmh">configurable View</a>.
-- <a href="http://localhost:8000/admin/config/services/rest/oai-pmh">default configuration</a> to connect this view with the REST OAI-PMH module.
-- the ability to define additional sets by building additional views. Additional sets can be created by making views with the Entity Reference view display mode and enabling them on the rest_oai_pmh configuration page: /admin/config/services/rest/oai-pmh.</p>
+<p>Enabling Islandora OAI-PMH provides:</p>
+<ul>
+<li>an oai_dc <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">endpoint</a> of all objects available as one set (<code>"oai_pmh:all_repository_items"</code>) which is built using a <a href="http://localhost:8000/admin/structure/views/view/oai_pmh">configurable View</a>.</li>
+<li><a href="http://localhost:8000/admin/config/services/rest/oai-pmh">default configuration</a> to connect this view with the REST OAI-PMH module.</li>
+<li>the ability to define additional sets by building additional views. Additional sets can be created by making views with the Entity Reference view display mode and enabling them on the rest_oai_pmh configuration page: /admin/config/services/rest/oai-pmh.</li>
+</ul>
 <p>The OAI-DC metadata format is aided by the Islandora OAI-PMH module to include the RDF Mapping for the linked agent field (from Islandora Defaults). Including agent links in the OAI-PMH metadata currently requires updating the RDF mapping to include a Dublin Core predicate for that field or any other additional fields. Alternatively, the rest_oai_pmh module also supports defining mappings with the metatag module or creating a custom metadata profile using the Twig templating system.</p>
-<p>The rest_oai_pmh module indexes set membership, so repository items may not appear immediately in their respective sets. Indexing will happen automatically during cron runs but can be triggered manually at /admin/config/services/rest/oai-pmh/queue.</p>
+<p>The rest_oai_pmh module indexes set membership, so repository items may not appear immediately in their respective sets. Indexing will happen automatically during cron runs but can be triggered manually at <code>/admin/config/services/rest/oai-pmh/queue</code>.</p>
                 
                   
+                
                 
               
               
@@ -1070,7 +1075,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
