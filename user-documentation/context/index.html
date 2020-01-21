@@ -434,6 +434,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tips-on-using-islandora-specific-contexts" class="md-nav__link">
+    Tips on Using Islandora-specific Contexts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#increased-flexibility" class="md-nav__link">
     Increased Flexibility
   </a>
@@ -1042,6 +1049,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tips-on-using-islandora-specific-contexts" class="md-nav__link">
+    Tips on Using Islandora-specific Contexts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#increased-flexibility" class="md-nav__link">
     Increased Flexibility
   </a>
@@ -1097,6 +1111,13 @@
 <p><img alt="Context - thank user for preservation file: context" src="../../assets/context_thank_user_context.png" /></p>
 <p>Now, when a user creates a Media and tags it as a "Preservation Master File", they will be shown the message you created in your Action:</p>
 <p><img alt="Context - thank user for preservation file: dsm" src="../../assets/context_thanks_dsm.png" /></p>
+<h3 id="tips-on-using-islandora-specific-contexts">Tips on Using Islandora-specific Contexts</h3>
+<p>Islandora provides some Conditions and Reactions that aren't available on other Drupal sites. When using them, you may find the following tips useful:</p>
+<ul>
+<li>When using the "Node has term with URI", "Media has term with URI", and "Parent node for media has term with URI" Islandora-specific Conditions, you may want to enter multiple terms to take advantage of the AND/OR logic they provide. To do so, add a comma (<code>,</code>) after the first term in the autocomplete field and continue typing.</li>
+<li>These three Conditions limit taxonomy terms that show up in their autocomplete Term field to terms that have URIs associated with them, for example from the Islandora Media Use or Islandora Models vocabularies (although any term that has a URI will appear). If you want to configure Conditions using terms that do not have a URI, you can use the contrib <a href="https://www.drupal.org/project/term_condition">Term Condition module</a>.</li>
+<li>Be as specific as possible in configuring your Conditions. If your Conditions seem to apply too broadly or in unexpected ways, try adding a "Content Entity Type" Condition to limit the Context to pages that render Islandora objects or media.</li>
+</ul>
 <h3 id="increased-flexibility">Increased Flexibility</h3>
 <p>Most Islandora 8 repository administrators will not need to alter or configure any Contexts. But since much of Islandora 8's underlying functionality is governed by this powerful Drupal contrib module, administrators should become comfortable using it, and Actions, to customize and refine their repositories. Also, since Islandora 8 objects are ordinary Drupal nodes, Islandora objects can take advantage of standard Drupal 8 Context functionality out of the box.</p>
                 
