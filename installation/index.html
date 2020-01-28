@@ -1205,13 +1205,35 @@
 <li><a href="https://www.virtualbox.org/">Virtual Box</a></li>
 <li><a href="https://www.vagrantup.com/">Vagrant</a> (version 2.0 or required)</li>
 </ol>
-<p>Use your package manager of choice to get <a href="https://git-scm.com/">Git</a> and <a href="https://www.ansible.com/community">Ansible</a> if
-you don't have them already.</p>
-<p>For example, if you're using Ubuntu and <code>apt</code></p>
-<pre><code>$ sudo apt-get install software-properties-common
-$ sudo apt-add-repository ppa:ansible/ansible
-$ sudo apt-get update
-$ sudo apt-get install git ansible
+<p>Then use your package manager of choice to get <a href="https://git-scm.com/">Git</a>.</p>
+<pre><code># Ubuntu
+$ sudo apt-get install git
+
+# Centos
+$ sudo yum install git
+
+# OSX
+$ brew install git
+</code></pre>
+
+<p>As well as <a href="https://www.openssl.org/">OpenSSL</a></p>
+<pre><code># Ubuntu
+$ sudo apt-get install openssl
+
+# Centos
+$ sudo yum install openssl
+
+# OSX
+$ brew install openssl
+</code></pre>
+
+<p>Finally, install <a href="https://www.ansible.com/community">Ansible</a> up to version 2.8.7.  This is done best with <code>pip</code>, the python package manager. If pip isn’t already available on your system of Python, run the following commands to install it:</p>
+<pre><code>$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python get-pip.py --user
+</code></pre>
+
+<p>Then pin down Ansible to 2.8.7</p>
+<pre><code>$ pip install --user -Iv ansible==2.8.7
 </code></pre>
 
 <p>If you want to provision a CENTOS 7 environment, you'll also need to install the <a href="https://github.com/dotless-de/vagrant-vbguest">vbguest</a>
