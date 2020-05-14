@@ -1732,7 +1732,7 @@
 <p>From your <code>islandora-playbook</code> directory, issue the following commands to enable this module:
 - <code>vagrant ssh</code> to open a shell in your Islandora instance.
 - <code>cd /var/www/html/drupal/web/modules/contrib</code> to get to your modules directory.
-- <code>git clone https://github.com/islandora/migrate_islandora_csv</code> to clone down the repository from GitHub.
+- <code>git clone https://github.com/Islandora/migrate_islandora_csv</code> to clone down the repository from GitHub.
 - <code>drush en -y migrate_islandora_csv</code> to enable the module, installing the migrations as configuration.</p>
 <p>Optionally, flush the cache (<code>drush cr</code>), so the migrations become visible in the GUI at Manage &gt; Structure &gt; Migrations &gt; migrate_islandora_csv (http://localhost:8000/admin/structure/migrate/manage/migrate_islandora_csv/migrations)</p>
 <p>Now lets go migrate some files.</p>
@@ -1742,8 +1742,8 @@
 <p>As you saw, you can <code>git clone</code> into the modules directory, but if you're installing a custom module that's intended to stay installed for the long term (unlike a migration feature, which you should probably uninstall and delete when you're done with it) then you may want to check with your devops folks and use Composer instead. However, using Git directly allows you to be more flexible when iterating and testing.</p>
 <h2 id="ingesting-files">Ingesting Files</h2>
 <p>To migrate files (i.e. just the raw binaries) from a CSV, you need:
-* a column in the CSV containing paths to the files you wish to ingest, and
-* the files need to be accessible from the server that's running Drupal so that the Migrate framework can find them.</p>
+- a column in the CSV containing paths to the files you wish to ingest, and
+- the files need to be accessible from the server that's running Drupal so that the Migrate framework can find them.</p>
 <p>This tutorial assumes you're working with the sample images provided in the module, which will be located at <code>/var/www/html/drupal/web/modules/contrib/migrate_islandora_csv/data/images</code>. When you're migrating for real, the files will have to be uploaded or otherwise made accessible to the server before this point.</p>
 <p>Open up the CSV file at <code>data/migration.csv</code> and you'll see a <code>file</code> column containing paths to the sample images. You can use your favorite shell-based utility to open it at <code>/var/www/html/drupal/web/modules/contrib/migrate_islandora_csv/data/migration.csv</code>, or browse to it on GitHub, or just look at it pasted below as this tutorial does not require you to edit the files.</p>
 <table>
