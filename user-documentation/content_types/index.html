@@ -1600,6 +1600,10 @@ fieldMappings:
 <p>The <code>types</code> corresponds to the <code>rdf:type</code> predicate (which corresponds to JSON-LD's <code>@type</code>) and can have multiple values. This type value will be applied to every node or taxonomy term using the mapped content type or vocabulary.</p>
 <p>In some cases a repository may want a node or taxonomy term's <code>rdf:type</code> to be configurable. For example, the Corporate Body Vocabulary (provided by the Controlled Access Terms Default Configuration module) has <code>schema:Organization</code> set as the default type in the RDF mapping. However, more granular types may apply to one organization and not another, such as <code>schema:GovernmentOrganization</code> or <code>schema:Corporation</code>. The <code>alter_jsonld_type</code> Context reaction allows Content Types and Taxonomy Vocabularies to add a field's values as <code>rdf:types</code> to its JSON-LD serialization (the format used to index a node or taxonomy term in Fedora and the triple-store).</p>
 <p><code>fieldMappings</code> specifies the fields to be included, their RDF property mappings, and any necessary data converters (the <code>datatype_callback</code>). One field can be mapped to more than one RDF property by adding them to the field's properties list. The <code>datatype_callback</code> is defined by the 'callable' key and the fully qualified static method used to convert it to the desired data format. For example, fields of the Drupal datetime type need to be converted to ISO 8601 values, so we use the <code>Drupal\rdf\CommonDataConverter::dateIso8601Value</code> function to perform the conversion.</p>
+<div class="admonition tip">
+<p class="admonition-title">Islandora Quick Lessons</p>
+<p>Learn more with this video on <a href="https://youtu.be/tOW27DZY9hs">Customizing a Form</a>.</p>
+</div>
 <h2 id="further-reading">Further Reading:</h2>
 <ul>
 <li><a href="https://www.drupal.org/docs/8/api/form-api/introduction-to-form-api">Drupal.org Introduction to Form API</a></li>
