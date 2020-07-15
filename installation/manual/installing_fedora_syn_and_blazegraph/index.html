@@ -1,0 +1,2429 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Islandora 8">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Installing Fedora, Syn, and Blazegraph - Islandora 8</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installing-fedora-syn-and-blazegraph" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Islandora 8" class="md-header-nav__button md-logo" aria-label="Islandora 8">
+      
+  <img src="../../../assets/claw.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Islandora 8
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Installing Fedora, Syn, and Blazegraph
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Islandora/documentation/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8">
+      
+  <img src="../../../assets/claw.png" alt="logo">
+
+    </a>
+    Islandora 8
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Islandora/documentation/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../component_overview/" title="Component Overview" class="md-nav__link">
+      Component Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../playbook/" title="Automatic Provisioning" class="md-nav__link">
+      Automatic Provisioning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Manual Installation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Manual Installation" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Manual Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../preparing_a_webserver/" title="Preparing a LAPP Webserver" class="md-nav__link">
+      Preparing a LAPP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installing_composer_drush_and_drupal/" title="Installing Composer, Drush, and Drupal" class="md-nav__link">
+      Installing Composer, Drush, and Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installing_tomcat_and_cantaloupe/" title="Installing Tomcat and Cantaloupe" class="md-nav__link">
+      Installing Tomcat and Cantaloupe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installing Fedora, Syn, and Blazegraph
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Installing Fedora, Syn, and Blazegraph" class="md-nav__link md-nav__link--active">
+      Installing Fedora, Syn, and Blazegraph
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-section-we-will-install" class="md-nav__link">
+    In this section, we will install:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fedora-5" class="md-nav__link">
+    Fedora 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Fedora 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-working-space-for-fedora" class="md-nav__link">
+    Creating a Working Space for Fedora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-database-for-fedora" class="md-nav__link">
+    Creating a Database for Fedora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-fedora-configuration" class="md-nav__link">
+    Adding a Fedora Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-fedora-variables-to-java_opts" class="md-nav__link">
+    Adding the Fedora Variables to JAVA_OPTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensuring-tomcat-users-are-in-place" class="md-nav__link">
+    Ensuring Tomcat Users Are In Place
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloading-and-placing-the-latest-release" class="md-nav__link">
+    Downloading and Placing the Latest Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-the-tomcat-service" class="md-nav__link">
+    Restarting the Tomcat Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syn" class="md-nav__link">
+    Syn
+  </a>
+  
+    <nav class="md-nav" aria-label="Syn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-syn-jar-file" class="md-nav__link">
+    Downloading the Syn JAR File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-ssl-key-for-syn" class="md-nav__link">
+    Generating an SSL Key for Syn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placing-the-syn-settings" class="md-nav__link">
+    Placing the Syn Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-syn-valve-to-tomcat" class="md-nav__link">
+    Adding the Syn Valve to Tomcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-tomcat" class="md-nav__link">
+    Restarting Tomcat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blazegraph-2" class="md-nav__link">
+    Blazegraph 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Blazegraph 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-working-space-for-blazegraph" class="md-nav__link">
+    Creating a Working Space for Blazegraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloading-and-placing-the-blazegraph-war" class="md-nav__link">
+    Downloading and Placing the Blazegraph WAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-logging" class="md-nav__link">
+    Configuring Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-blazegraph-configuration" class="md-nav__link">
+    Adding a Blazegraph Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-rwstoreproperties-in-java_opts" class="md-nav__link">
+    Specifying the RWStore.properties in JAVA_OPTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-tomcat_1" class="md-nav__link">
+    Restarting Tomcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-blazegraph-namespaces-and-inference" class="md-nav__link">
+    Installing Blazegraph Namespaces and Inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installing_solr/" title="Installing Solr" class="md-nav__link">
+      Installing Solr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installing_crayfish/" title="Installing Crayfish" class="md-nav__link">
+      Installing Crayfish
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installing_karaf_and_alpaca/" title="Installing Karaf and Alpaca" class="md-nav__link">
+      Installing Karaf and Alpaca
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuring_drupal/" title="Configuring Drupal" class="md-nav__link">
+      Configuring Drupal
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      User Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="User Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        User Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/user-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/video-docs/" title="Video Documentation" class="md-nav__link">
+      Video Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/intro-to-ld-for-islandora-8/" title="Intro to Linked Data" class="md-nav__link">
+      Intro to Linked Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Content in Islandora 8
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Content in Islandora 8
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/resource-nodes/" title="Resource Nodes" class="md-nav__link">
+      Resource Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/objects_to_resource_nodes/" title="From Objects to Resource Nodes" class="md-nav__link">
+      From Objects to Resource Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/media/" title="Media" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/paged-content/" title="Paged Content" class="md-nav__link">
+      Paged Content
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/metadata/" title="Metadata" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      How-To
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="How-To" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        How-To
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/creating-a-node/" title="Create a Resource Node" class="md-nav__link">
+      Create a Resource Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/content_types/" title="Modify or Create a Content Type" class="md-nav__link">
+      Modify or Create a Content Type
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/create_update_views/" title="Create or Update a View" class="md-nav__link">
+      Create or Update a View
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/users/" title="Add a New User" class="md-nav__link">
+      Add a New User
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/searching/" title="Searching" class="md-nav__link">
+      Searching
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/context/" title="Context" class="md-nav__link">
+      Context
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/blocks/" title="Blocks" class="md-nav__link">
+      Blocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/usage-stats/" title="Usage Stats" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/multilingual/" title="Multilingual" class="md-nav__link">
+      Multilingual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/accessibility/" title="Accessibility" class="md-nav__link">
+      Accessibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
+    
+    <label class="md-nav__link" for="nav-3-13">
+      Integrations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Integrations" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-13">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/extending/" title="Extending Islandora" class="md-nav__link">
+      Extending Islandora
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/iiif/" title="IIIF" class="md-nav__link">
+      IIIF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/oai/" title="OAI-PMH" class="md-nav__link">
+      OAI-PMH
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Repository Administrator Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Repository Administrator Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Repository Administrator Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../islandora/rdf-mapping/" title="RDF Generation" class="md-nav__link">
+      RDF Generation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../islandora/drupal-bundle-configurations/" title="Drupal Bundle Configurations" class="md-nav__link">
+      Drupal Bundle Configurations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      System Administrator Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="System Administrator Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        System Administrator Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/install-enable-drupal-modules/" title="Installing Modules" class="md-nav__link">
+      Installing Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/updating_drupal/" title="Updating Drupal" class="md-nav__link">
+      Updating Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/uploading-large-files/" title="Uploading large files" class="md-nav__link">
+      Uploading large files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Developer Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Developer Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Developer Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/diagram/" title="Architecture Diagram" class="md-nav__link">
+      Architecture Diagram
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      REST Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="REST Documentation" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        REST Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/using-rest-endpoints/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/rest-get/" title="GET" class="md-nav__link">
+      GET
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/rest-create/" title="POST/PUT" class="md-nav__link">
+      POST/PUT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/rest-patch/" title="PATCH" class="md-nav__link">
+      PATCH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/rest-delete/" title="DELETE" class="md-nav__link">
+      DELETE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/rest-signposting/" title="Signposting" class="md-nav__link">
+      Signposting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Tests
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tests" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/running-automated-tests/" title="Running Tests" class="md-nav__link">
+      Running Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/testing-notes/" title="Testing Notes" class="md-nav__link">
+      Testing Notes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/drupal-project/" title="Updating drupal-project" class="md-nav__link">
+      Updating drupal-project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/flysystem/" title="Flysystem" class="md-nav__link">
+      Flysystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/jwt/" title="JWT Authentication" class="md-nav__link">
+      JWT Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/versioning/" title="Versioning Policy" class="md-nav__link">
+      Versioning Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/docs-build/" title="How to Build Documentation" class="md-nav__link">
+      How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/adding_format_jsonld/" title="Adding back ?_format=jsonld" class="md-nav__link">
+      Adding back ?_format=jsonld
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/ppa-documentation/" title="Updating a `deb` and adding it to Lyrasis PPA" class="md-nav__link">
+      Updating a `deb` and adding it to Lyrasis PPA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-11" type="checkbox" id="nav-6-11">
+    
+    <label class="md-nav__link" for="nav-6-11">
+      Alpaca
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Alpaca" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Alpaca
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../alpaca/alpaca-technical-stack/" title="Alpaca Technical Stack" class="md-nav__link">
+      Alpaca Technical Stack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/alpaca_tips/" title="Alpaca Tips" class="md-nav__link">
+      Alpaca Tips
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Migration
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Migration" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Migration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/migrate-csv/" title="CSV" class="md-nav__link">
+      CSV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/migrate-7x/" title="Islandora 7" class="md-nav__link">
+      Islandora 7
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Contributing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/CONTRIBUTING/" title="How to contribute" class="md-nav__link">
+      How to contribute
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      Virtual Machines
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Virtual Machines" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Virtual Machines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/hacking-on-islandora/" title="Hacking on Islandora" class="md-nav__link">
+      Hacking on Islandora
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/resizing_vm/" title="Resizing a VM" class="md-nav__link">
+      Resizing a VM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../technical-documentation/checking-coding-standards/" title="Checking Coding Standards" class="md-nav__link">
+      Checking Coding Standards
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/contributing-workflow/" title="Contributing Workflow" class="md-nav__link">
+      Contributing Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/docs_style_guide/" title="Documentation Style Guide" class="md-nav__link">
+      Documentation Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/committers/" title="Committers" class="md-nav__link">
+      Committers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-documentation/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-section-we-will-install" class="md-nav__link">
+    In this section, we will install:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fedora-5" class="md-nav__link">
+    Fedora 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Fedora 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-working-space-for-fedora" class="md-nav__link">
+    Creating a Working Space for Fedora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-database-for-fedora" class="md-nav__link">
+    Creating a Database for Fedora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-fedora-configuration" class="md-nav__link">
+    Adding a Fedora Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-fedora-variables-to-java_opts" class="md-nav__link">
+    Adding the Fedora Variables to JAVA_OPTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensuring-tomcat-users-are-in-place" class="md-nav__link">
+    Ensuring Tomcat Users Are In Place
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloading-and-placing-the-latest-release" class="md-nav__link">
+    Downloading and Placing the Latest Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-the-tomcat-service" class="md-nav__link">
+    Restarting the Tomcat Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syn" class="md-nav__link">
+    Syn
+  </a>
+  
+    <nav class="md-nav" aria-label="Syn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-syn-jar-file" class="md-nav__link">
+    Downloading the Syn JAR File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-ssl-key-for-syn" class="md-nav__link">
+    Generating an SSL Key for Syn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placing-the-syn-settings" class="md-nav__link">
+    Placing the Syn Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-syn-valve-to-tomcat" class="md-nav__link">
+    Adding the Syn Valve to Tomcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-tomcat" class="md-nav__link">
+    Restarting Tomcat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blazegraph-2" class="md-nav__link">
+    Blazegraph 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Blazegraph 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-working-space-for-blazegraph" class="md-nav__link">
+    Creating a Working Space for Blazegraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloading-and-placing-the-blazegraph-war" class="md-nav__link">
+    Downloading and Placing the Blazegraph WAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-logging" class="md-nav__link">
+    Configuring Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-blazegraph-configuration" class="md-nav__link">
+    Adding a Blazegraph Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-rwstoreproperties-in-java_opts" class="md-nav__link">
+    Specifying the RWStore.properties in JAVA_OPTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-tomcat_1" class="md-nav__link">
+    Restarting Tomcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-blazegraph-namespaces-and-inference" class="md-nav__link">
+    Installing Blazegraph Namespaces and Inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Islandora/documentation/edit/master/docs/installation/manual/installing_fedora_syn_and_blazegraph.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="installing-fedora-syn-and-blazegraph">Installing Fedora, Syn, and Blazegraph</h1>
+<h2 id="in-this-section-we-will-install">In this section, we will install:</h2>
+<ul>
+<li><a href="https://duraspace.org/fedora/">Fedora 5</a>, the back-end repository that Islandora will use</li>
+<li><a href="https://github.com/Islandora/Syn">Syn</a>, the authentication broker that will manage communication with Fedora</li>
+<li><a href="https://blazegraph.com/">Blazegraph</a>, the resource index layer on top of Fedora for managing discoverability via RDF</li>
+</ul>
+<h2 id="fedora-5">Fedora 5</h2>
+<h3 id="creating-a-working-space-for-fedora">Creating a Working Space for Fedora</h3>
+<p>Fedora’s configuration and data won’t live with Tomcat itself; rather, we’re going to prepare a space for them to make them easier to manage.</p>
+<pre><code class="bash">sudo mkdir -p /opt/fcrepo/data/objects
+sudo mkdir /opt/fcrepo/config
+sudo chown -R tomcat:tomcat /opt/fcrepo
+</code></pre>
+
+<h3 id="creating-a-database-for-fedora">Creating a Database for Fedora</h3>
+<p>The method for creating the database here will closely mimic the method we used to create our database for Drupal.</p>
+<pre><code class="bash">sudo -u postgres psql
+create database FEDORA_DB;
+create user FEDORA_DB_USER with encrypted password 'FEDORA_DB_PASSWORD';
+grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
+\q
+</code></pre>
+
+<ul>
+<li><code>FEDORA_DB</code>: <code>fcrepo</code><ul>
+<li>This will be used as the database Fedora will store the repository in.</li>
+</ul>
+</li>
+<li><code>FEDORA_DB_USER</code>: <code>fedora</code></li>
+<li><code>FEDORA_DB_PASSWORD</code>: <code>fedora</code><ul>
+<li>Again, this should be a secure password of some kind; leaving it as <code>fedora</code> is not recommended.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-a-fedora-configuration">Adding a Fedora Configuration</h3>
+<p>The Fedora configuration is going to come in a few different chunks that need to be in place before Fedora will be functional. We’re going to place several files outright, with mildly modified parameters according to our configuration.</p>
+<p>The basics of these configuration files have been pulled largely from the templates in <a href="https://github.com/islandora-devops/ansible-role-fcrepo">Islandora-Devops/ansible-role-fcrepo</a>; you may consider referencing the playbook’s templates directory for more details.</p>
+<p><code>i8_namespaces.cnd</code> is a list of namespaces used by Islandora 8 that may not necessarily be present in Fedora; we add them here to ensure we can use them in queries.</p>
+<p><code>/opt/fcrepo/config/i8_namespaces.cnd | tomcat:tomcat/644</code></p>
+<pre><code>&lt;acl = 'http://www.w3.org/ns/auth/acl#'&gt;
+&lt;bf = 'http://id.loc.gov/ontologies/bibframe/'&gt;
+&lt;cc = 'http://creativecommons.org/ns#'&gt;
+&lt;dcterms = 'http://purl.org/dc/terms/'&gt;
+&lt;dwc = 'http://rs.tdwg.org/dwc/terms/'&gt;
+&lt;exif = 'http://www.w3.org/2003/12/exif/ns#'&gt;
+&lt;fedoramodel = 'info:fedora/fedora-system:def/model#'&gt;
+&lt;geo = 'http://www.w3.org/2003/01/geo/wgs84_pos#'&gt;
+&lt;gn = 'http://www.geonames.org/ontology#'&gt;
+&lt;iana = 'http://www.iana.org/assignments/relation/'&gt;
+&lt;islandorarelsext = 'http://islandora.ca/ontology/relsext#'&gt;
+&lt;islandorarelsint = 'http://islandora.ca/ontology/relsint#'&gt;
+&lt;ldp = 'http://www.w3.org/ns/ldp#'&gt;
+&lt;nfo = 'http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#'&gt;
+&lt;ore = 'http://www.openarchives.org/ore/terms/'&gt;
+&lt;owl = 'http://www.w3.org/2002/07/owl#'&gt;
+&lt;pcdm = 'http://pcdm.org/models#'&gt;
+&lt;pcdmfmt = 'http://pcdm.org/file-format-types#'&gt;
+&lt;pcdmrts = 'http://pcdm.org/rights#'&gt;
+&lt;pcdmuse = 'http://pcdm.org/use#'&gt;
+&lt;pcdmwrks = 'http://pcdm.org/works#'&gt;
+&lt;prov = 'http://www.w3.org/ns/prov#'&gt;
+&lt;rdf = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
+&lt;rdfs = 'http://www.w3.org/2000/01/rdf-schema#'&gt;
+&lt;rel = 'http://id.loc.gov/vocabulary/relators/'&gt;
+&lt;schema = 'http://schema.org/'&gt;
+&lt;skos = 'http://www.w3.org/2004/02/skos/core#'&gt;
+&lt;xml = 'http://www.w3.org/XML/1998/namespace'&gt;
+&lt;xmlns = 'http://www.w3.org/2000/xmlns/'&gt;
+&lt;xs = 'http://www.w3.org/2001/XMLSchema'&gt;
+&lt;xsi = 'http://www.w3.org/2001/XMLSchema-instance'&gt;
+</code></pre>
+
+<p>We intend to have Crayfish installed later. Since Fedora needs to be able to read data from Crayfish, we need to tell Fedora that the Crayfish endpoint is a valid data source.</p>
+<p><code>/opt/fcrepo/config/allowed_hosts.txt | tomcat:tomcat/644</code></p>
+<pre><code>http://localhost:CRAYFISH_PORT/
+</code></pre>
+
+<ul>
+<li><code>CRAYFISH_PORT</code>: 80<ul>
+<li>This guide will install Crayfish on the same port that Drupal is installed on. This may not be desirable, and if Crayfish is installed on a different port later, that change should be reflected here.</li>
+</ul>
+</li>
+</ul>
+<p>The next part of the configuration defines where the pieces of the actual repository will live. Note that this file contains some of the defined <code>FEDORA_DB</code> variables from earlier.</p>
+<p><code>/opt/fcrepo/config/repository.json | tomcat:tomcat/644</code></p>
+<pre><code class="json">{
+    &quot;name&quot; : &quot;repo&quot;,
+    &quot;jndiName&quot; : &quot;&quot;,
+    &quot;workspaces&quot; : {
+        &quot;predefined&quot; : [&quot;default&quot;],
+        &quot;default&quot; : &quot;default&quot;,
+        &quot;allowCreation&quot; : true,
+        &quot;cacheSize&quot; : 10000
+    },
+    &quot;storage&quot; : {
+        &quot;persistence&quot;: {
+            &quot;type&quot; : &quot;db&quot;,
+            &quot;connectionUrl&quot;: &quot;jdbc:postgresql://localhost:5432/FEDORA_DB&quot;,
+            &quot;driver&quot; : &quot;org.postgresql.Driver&quot;,
+            &quot;username&quot; : &quot;FEDORA_DB_USER&quot;,
+            &quot;password&quot; : &quot;FEDORA_DB_PASSWORD&quot;
+        },
+        &quot;binaryStorage&quot; : {
+            &quot;type&quot; : &quot;file&quot;,
+            &quot;directory&quot; : &quot;/opt/fcrepo/data/binaries&quot;,
+            &quot;minimumBinarySizeInBytes&quot; : 4096
+        }
+    },
+    &quot;security&quot; : {
+        &quot;anonymous&quot; : {
+            &quot;roles&quot; : [&quot;readonly&quot;,&quot;readwrite&quot;,&quot;admin&quot;],
+            &quot;useOnFailedLogin&quot; : false
+        },
+        &quot;providers&quot; : [
+            { &quot;classname&quot; : &quot;org.fcrepo.auth.common.BypassSecurityServletAuthenticationProvider&quot; }
+        ]
+    },
+    &quot;garbageCollection&quot; : {
+        &quot;threadPool&quot; : &quot;modeshape-gc&quot;,
+        &quot;initialTime&quot; : &quot;00:00&quot;,
+        &quot;intervalInHours&quot; : 24
+    },
+    &quot;node-types&quot; : [&quot;fedora-node-types.cnd&quot;, &quot;file:/opt/fcrepo/config/i8_namespaces.cnd&quot;]
+}
+</code></pre>
+
+<p>Finally, we need an actual <code>fcrepo-config.xml</code> to pull this configuration into place. There's nothing to edit in here by default, but pay attention to the <code>p:repositoryConfiguration</code> property of the <code>modeshapeRepofactory</code> bean, which contains the path to the <code>repository.json</code> file we made earlier. If you've placed this somewhere else, you'll need to change it here.</p>
+<p><code>/opt/fcrepo/config/fcrepo-config.xml | tomcat:tomcat/644</code></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:task=&quot;http://www.springframework.org/schema/task&quot;
+    xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+    xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
+    xsi:schemaLocation=&quot;
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
+
+    &lt;context:property-placeholder/&gt;
+    &lt;context:annotation-config/&gt;
+    &lt;context:component-scan base-package=&quot;org.fcrepo&quot;/&gt;
+
+    &lt;bean name=&quot;modeshapeRepofactory&quot;
+        class=&quot;org.fcrepo.kernel.modeshape.spring.ModeShapeRepositoryFactoryBean&quot;
+        p:repositoryConfiguration=&quot;file:///opt/fcrepo/config/repository.json&quot;
+        depends-on=&quot;authenticationProvider&quot;/&gt;
+    &lt;bean name=&quot;authenticationProvider&quot; class=&quot;org.fcrepo.auth.common.ShiroAuthenticationProvider&quot;/&gt;
+    &lt;bean name=&quot;headerProvider&quot; class=&quot;org.fcrepo.auth.common.HttpHeaderPrincipalProvider&quot;&gt;
+        &lt;property name=&quot;headerName&quot; value=&quot;X-Islandora&quot;/&gt;
+        &lt;property name=&quot;separator&quot; value=&quot;,&quot;/&gt;
+    &lt;/bean&gt;
+    &lt;bean name=&quot;delegatedPrincipalProvider&quot; class=&quot;org.fcrepo.auth.common.DelegateHeaderPrincipalProvider&quot;/&gt;
+    &lt;bean name=&quot;accessRolesProvider&quot; class=&quot;org.fcrepo.auth.webac.WebACRolesProvider&quot;/&gt;
+    &lt;bean id=&quot;webACAuthorizingRealm&quot; class=&quot;org.fcrepo.auth.webac.WebACAuthorizingRealm&quot; /&gt;
+    &lt;bean id=&quot;servletContainerAuthenticatingRealm&quot; class=&quot;org.fcrepo.auth.common.ServletContainerAuthenticatingRealm&quot; /&gt;
+    &lt;bean id=&quot;securityManager&quot; class=&quot;org.apache.shiro.web.mgt.DefaultWebSecurityManager&quot;&gt;
+      &lt;property name=&quot;realms&quot;&gt;
+        &lt;util:set set-class=&quot;java.util.HashSet&quot;&gt;
+          &lt;ref bean=&quot;webACAuthorizingRealm&quot;/&gt;
+          &lt;ref bean=&quot;servletContainerAuthenticatingRealm&quot;/&gt;
+        &lt;/util:set&gt;
+      &lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;bean id=&quot;lifecycleBeanPostProcessor&quot; class=&quot;org.apache.shiro.spring.LifecycleBeanPostProcessor&quot;/&gt;
+    &lt;bean id=&quot;servletContainerAuthFilter&quot; class=&quot;org.fcrepo.auth.common.ServletContainerAuthFilter&quot;/&gt;
+    &lt;bean id=&quot;webACFilter&quot; class=&quot;org.fcrepo.auth.webac.WebACFilter&quot;/&gt;
+    &lt;bean id=&quot;shiroFilter&quot; class=&quot;org.apache.shiro.spring.web.ShiroFilterFactoryBean&quot;&gt;
+      &lt;property name=&quot;securityManager&quot; ref=&quot;securityManager&quot;/&gt;
+      &lt;property name=&quot;filterChainDefinitions&quot;&gt;
+        &lt;value&gt;
+          /** = servletContainerAuthFilter,headerProvider,delegatedPrincipalProvider,webACFilter
+        &lt;/value&gt;
+      &lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;util:list id=&quot;translationChain&quot; value-type=&quot;org.fcrepo.kernel.api.identifiers.InternalIdentifierConverter&quot;&gt;
+        &lt;bean class=&quot;org.fcrepo.kernel.modeshape.identifiers.HashConverter&quot;/&gt;
+        &lt;bean class=&quot;org.fcrepo.kernel.modeshape.identifiers.NamespaceConverter&quot;/&gt;
+    &lt;/util:list&gt;
+
+    &lt;bean class=&quot;org.fcrepo.jms.JMSTopicPublisher&quot;&gt;
+      &lt;constructor-arg value=&quot;fedora&quot;/&gt;
+    &lt;/bean&gt;
+    &lt;bean id=&quot;connectionFactory&quot;
+        class=&quot;org.apache.activemq.ActiveMQConnectionFactory&quot; depends-on=&quot;jmsBroker&quot;
+        p:brokerURL=&quot;vm://${fcrepo.jms.host:localhost}:${fcrepo.dynamic.jms.port:61616}?create=false&quot;/&gt;
+    &lt;bean name=&quot;jmsBroker&quot; class=&quot;org.apache.activemq.xbean.BrokerFactoryBean&quot;
+      p:config=&quot;${fcrepo.activemq.configuration:classpath:/config/activemq.xml}&quot; p:start=&quot;true&quot;/&gt;
+    &lt;bean class=&quot;org.fcrepo.jms.DefaultMessageFactory&quot;/&gt;
+    &lt;bean class=&quot;org.fcrepo.kernel.modeshape.observer.SimpleObserver&quot;/&gt;
+    &lt;bean name=&quot;fedoraEventFilter&quot; class=&quot;org.fcrepo.kernel.modeshape.observer.DefaultFilter&quot;/&gt;
+    &lt;bean name=&quot;fedoraEventMapper&quot; class=&quot;org.fcrepo.kernel.modeshape.observer.eventmappings.AllNodeEventsOneEvent&quot;/&gt;
+    &lt;bean name=&quot;fedoraInternalEventBus&quot; class=&quot;com.google.common.eventbus.EventBus&quot;/&gt;
+    &lt;bean name=&quot;rdfNamespaceRegistry&quot; class=&quot;org.fcrepo.kernel.api.rdf.RdfNamespaceRegistry&quot;
+        init-method=&quot;init&quot; destroy-method=&quot;shutdown&quot;&gt;
+      &lt;property name=&quot;configPath&quot; value=&quot;${fcrepo.namespace.registry:classpath:/namespaces.yml}&quot; /&gt;
+      &lt;property name=&quot;monitorForChanges&quot; value=&quot;true&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;bean name=&quot;externalContentPathValidator&quot; class=&quot;org.fcrepo.http.api.ExternalContentPathValidator&quot;
+        init-method=&quot;init&quot; destroy-method=&quot;shutdown&quot;&gt;
+        &lt;property name=&quot;configPath&quot; value=&quot;${fcrepo.external.content.allowed:#{null}}&quot; /&gt;
+        &lt;property name=&quot;monitorForChanges&quot; value=&quot;true&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;bean name=&quot;externalContentHandlerFactory&quot; class=&quot;org.fcrepo.http.api.ExternalContentHandlerFactory&quot;&gt;
+        &lt;property name=&quot;validator&quot; ref=&quot;externalContentPathValidator&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;task:scheduler id=&quot;taskScheduler&quot; /&gt;
+    &lt;task:executor id=&quot;taskExecutor&quot; pool-size=&quot;1&quot; /&gt;
+    &lt;task:annotation-driven executor=&quot;taskExecutor&quot; scheduler=&quot;taskScheduler&quot; /&gt;
+    &lt;bean class=&quot;org.modeshape.jcr.ModeShapeEngine&quot; init-method=&quot;start&quot;/&gt;
+    &lt;bean id=&quot;connectionManager&quot; class=&quot;org.apache.http.impl.conn.PoolingHttpClientConnectionManager&quot; /&gt;
+    &lt;bean class=&quot;org.fcrepo.http.commons.session.SessionFactory&quot;/&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<h3 id="adding-the-fedora-variables-to-java_opts">Adding the Fedora Variables to <code>JAVA_OPTS</code></h3>
+<p>We need our Tomcat <code>JAVA_OPTS</code> to include references to our repository configuration.</p>
+<p><code>/opt/tomcat/bin/setenv.sh</code></p>
+<p><strong>Before</strong>:</p>
+<blockquote>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -server -Xmx1500m -Xms1000m"</p>
+</blockquote>
+<p><strong>After</strong>:</p>
+<blockquote>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"</p>
+</blockquote>
+<h3 id="ensuring-tomcat-users-are-in-place">Ensuring Tomcat Users Are In Place</h3>
+<p>While not strictly necessary, we can use the <code>tomcat-users.xml</code> file to give us direct access to the Fedora endpoint. Fedora defines, out of the box, a <code>fedoraAdmin</code> and <code>fedoraUser</code> role that can be reflected in the users list for access. The following file will also include the base <code>tomcat</code> user. As always, these default passwords should likely not stay as the defaults.</p>
+<p><code>/opt/tomcat/conf/tomcat-users.xml | tomcat:tomcat/600</code></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;tomcat-users xmlns=&quot;http://tomcat.apache.org/xml&quot;
+              xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+              xsi:schemaLocation=&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot;
+              version=&quot;1.0&quot;&gt;
+  &lt;role rolename=&quot;tomcat&quot;/&gt;
+  &lt;role rolename=&quot;fedoraAdmin&quot;/&gt;
+  &lt;role rolename=&quot;fedoraUser&quot;/&gt;
+  &lt;user username=&quot;tomcat&quot; password=&quot;TOMCAT_PASSWORD&quot; roles=&quot;tomcat&quot;/&gt;
+  &lt;user username=&quot;fedoraAdmin&quot; password=&quot;FEDORA_ADMIN_PASSWORD&quot; roles=&quot;fedoraAdmin&quot;/&gt;
+  &lt;user username=&quot;fedoraUser&quot; password=&quot;FEDORA_USER_PASSWORD&quot; roles=&quot;fedoraUser&quot;/&gt;
+&lt;/tomcat-users&gt;
+</code></pre>
+
+<ul>
+<li><code>TOMCAT_PASSWORD</code>: <code>tomcat</code></li>
+<li><code>FEDORA_ADMIN_PASSWORD</code>: <code>islandora</code></li>
+<li><code>FEDORA_USER_PASSWORD</code>: <code>islandora</code></li>
+</ul>
+<h3 id="downloading-and-placing-the-latest-release">Downloading and Placing the Latest Release</h3>
+<p>Fedora <code>.war</code> files are packaged up as releases on the official GitHub repository; you can find the latest version at the releases page; the official GitHub repository is labelled as fcrepo4 but does actually contain more recent versions than 4. You should download the most recent stable release.</p>
+<pre><code class="bash">sudo wget -O fcrepo.war FCREPO_WAR_URL
+sudo mv fcrepo.war /opt/tomcat/webapps
+sudo chown tomcat:tomcat /opt/tomcat/webapps/fcrepo.war
+</code></pre>
+
+<ul>
+<li><code>FCREPO_WAR_URL</code>: This can be found at the <a href="https://github.com/fcrepo4/fcrepo4/releases">fcrepo downloads page</a>; the file you're looking for is:<ul>
+<li>Tagged in green as the 'Latest release'</li>
+<li>The <code>.war</code> version of the file</li>
+</ul>
+</li>
+</ul>
+<h3 id="restarting-the-tomcat-service">Restarting the Tomcat Service</h3>
+<p>As before, restart the Tomcat service to get Fedora up and running.</p>
+<pre><code class="bash">sudo systemctl restart tomcat
+</code></pre>
+
+<h2 id="syn">Syn</h2>
+<h3 id="downloading-the-syn-jar-file">Downloading the Syn JAR File</h3>
+<p>A compiled JAR of Syn can be found on the <a href="https://github.com/Islandora/Syn/releases">Syn releases page</a>. We’re going to add this to the list libraries accessible to Tomcat.</p>
+<pre><code>sudo wget -P /opt/tomcat/lib SYN_JAR_URL
+# Ensure the library has the correct permissions.
+sudo chown -R tomcat:tomcat /opt/tomcat/lib
+sudo chmod -R 640 /opt/tomcat/lib
+</code></pre>
+
+<ul>
+<li><code>SYN_JAR_URL</code>: The latest stable release of the Syn JAR from the <a href="https://github.com/Islandora/Syn/releases">releases page</a>. Specifically, the JAR compiled as <code>-all.jar</code> is required.</li>
+</ul>
+<h3 id="generating-an-ssl-key-for-syn">Generating an SSL Key for Syn</h3>
+<p>For Islandora and Fedora to talk to each other, an SSL key needs to be generated for use with Syn. We’re going to make a spot where such keys can live, and generate one.</p>
+<pre><code class="bash">sudo mkdir /opt/keys
+sudo openssl genrsa -out &quot;/opt/keys/syn_private.key&quot; 2048
+sudo openssl rsa -pubout -in &quot;/opt/keys/syn_private.key&quot; -out &quot;/opt/keys/syn_public.key&quot;
+sudo chown www-data:www-data /opt/keys/syn*
+</code></pre>
+
+<h3 id="placing-the-syn-settings">Placing the Syn Settings</h3>
+<p>Syn sites and tokens belong in a settings file that we’re going to reference in Tomcat.</p>
+<p><code>/opt/fcrepo/config/syn-settings.xml | tomcat:tomcat/600</code></p>
+<pre><code class="xml">&lt;config version='1' header='X-Islandora'&gt;
+  &lt;site algorithm='RS256' encoding='PEM' anonymous='true' default='true' path='/opt/keys/syn_public.key'/&gt;
+  &lt;token user='islandora' roles='fedoraAdmin'&gt;ISLANDORA_SYN_TOKEN&lt;/token&gt;
+&lt;/config&gt;
+</code></pre>
+
+<ul>
+<li><code>ISLANDORA_SYN_TOKEN</code>: <code>islandora</code><ul>
+<li>This should be a secure generated token rather than this default; it will be configured on the Drupal side later.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-the-syn-valve-to-tomcat">Adding the Syn Valve to Tomcat</h3>
+<p>Referencing the valve we’ve created in our <code>syn-settings.xml</code> involves creating a <code>&lt;Valve&gt;</code> entry in Tomcat’s <code>context.xml</code>:</p>
+<p><code>/opt/tomcat/conf/context.xml</code></p>
+<p><strong>Before</strong>:</p>
+<blockquote>
+<p>29 |     <code>--&gt;</code></p>
+<p>30 | <code>&lt;/Context&gt;</code></p>
+</blockquote>
+<p><strong>After</strong>:</p>
+<blockquote>
+<p>29 |    <code>--&gt;</code></p>
+<p>30 |    <code>&lt;Valve className="ca.islandora.syn.valve.SynValve" pathname="/opt/fcrepo/config/syn-settings.xml"/&gt;</code></p>
+<p>31 | <code>&lt;/Context&gt;</code></p>
+</blockquote>
+<h3 id="restarting-tomcat">Restarting Tomcat</h3>
+<p>Finally, restart tomcat to apply the new configurations.</p>
+<pre><code class="bash">sudo systemctl restart tomcat
+</code></pre>
+
+<h2 id="blazegraph-2">Blazegraph 2</h2>
+<h3 id="creating-a-working-space-for-blazegraph">Creating a Working Space for Blazegraph</h3>
+<p>Blazegraph needs a space for configurations and data; we’re going to create this space in <code>/opt</code>.</p>
+<pre><code class="bash">sudo mkdir -p /opt/blazegraph/data
+sudo mkdir /opt/blazegraph/conf
+sudo chown -R tomcat:tomcat /opt/blazegraph
+</code></pre>
+
+<h3 id="downloading-and-placing-the-blazegraph-war">Downloading and Placing the Blazegraph WAR</h3>
+<p>The Blazegraph <code>.war</code> file can be found in a few different places, but to ensure we’re able to easily <code>wget</code> it, we’re going to use the <a href="https://maven.org/">maven.org</a> repository link to grab it.</p>
+<pre><code class="bash">cd /opt
+sudo wget -O blazegraph.war BLAZEGRAPH_WARFILE_LINK
+sudo mv blazegraph.war /opt/tomcat/webapps
+sudo chown tomcat:tomcat /opt/tomcat/webapps/blazegraph.war
+</code></pre>
+
+<ul>
+<li>BLAZEGRAPH_WAR_URL: You can find a link to this at the <a href="https://repo1.maven.org/maven2/com/blazegraph/bigdata-war/">Maven repository for Blazegraph</a>; you’ll want to click the link for the latest version of Blazegraph 2.1.x, then get the link to the <code>.war</code> file within that version folder.</li>
+</ul>
+<p>Once this is downloaded, give it a moment to expand before moving on to the next step.</p>
+<h3 id="configuring-logging">Configuring Logging</h3>
+<p>We would like to have an appropriate logging configuration for Blazegraph, which can be useful for looking at incoming traffic and determining if anything has gone wrong with Blazegraph. Our logger isn’t going to be much different than the default logger; it can be made more or less verbose by changing the default <code>WARN</code> levels. There are several other loggers that can be enabled, like a SPARQL query trace or summary query evaluation log; if these are desired they should be added in. Consult the Blazegraph documentation for more details.</p>
+<p><code>/opt/blazegraph/conf/log4j.properties | tomcat:tomcat/644</code></p>
+<pre><code>log4j.rootCategory=WARN, dest1
+
+# Loggers.
+log4j.logger.com.bigdata=WARN
+log4j.logger.com.bigdata.btree=WARN
+
+# Normal data loader (single threaded).
+#log4j.logger.com.bigdata.rdf.store.DataLoader=INFO
+
+# dest1
+log4j.appender.dest1=org.apache.log4j.ConsoleAppender
+log4j.appender.dest1.layout=org.apache.log4j.PatternLayout
+log4j.appender.dest1.layout.ConversionPattern=%-5p: %F:%L: %m%n
+#log4j.appender.dest1.layout.ConversionPattern=%-5p: %r %l: %m%n
+#log4j.appender.dest1.layout.ConversionPattern=%-5p: %m%n
+#log4j.appender.dest1.layout.ConversionPattern=%-4r [%t] %-5p %c %x - %m%n
+#log4j.appender.dest1.layout.ConversionPattern=%-4r(%d) [%t] %-5p %c(%l:%M) %x - %m%n
+
+# Rule execution log. This is a formatted log file (comma delimited).
+log4j.logger.com.bigdata.relation.rule.eval.RuleLog=INFO,ruleLog
+log4j.additivity.com.bigdata.relation.rule.eval.RuleLog=false
+log4j.appender.ruleLog=org.apache.log4j.FileAppender
+log4j.appender.ruleLog.Threshold=ALL
+log4j.appender.ruleLog.File=/var/log/blazegraph/rules.log
+log4j.appender.ruleLog.Append=true
+log4j.appender.ruleLog.BufferedIO=false
+log4j.appender.ruleLog.layout=org.apache.log4j.PatternLayout
+log4j.appender.ruleLog.layout.ConversionPattern=%m
+</code></pre>
+
+<h3 id="adding-a-blazegraph-configuration">Adding a Blazegraph Configuration</h3>
+<p>Our configuration will be built from a few different files that we will eventually reference in <code>JAVA_OPTS</code> and directly apply to Blazegraph; these include most of the functional pieces Blazegraph requires, as well as a generalized configuration for the <code>islandora</code> namespace it will use. As with most large configurations like this, these should likely be tuned to your preferences, and the following files only represent sensible defaults.</p>
+<p><code>/opt/blazegraph/conf/RWStore.properties | tomcat:tomcat/644</code></p>
+<pre><code>com.bigdata.journal.AbstractJournal.file=/opt/blazegraph/data/blazegraph.jnl
+com.bigdata.journal.AbstractJournal.bufferMode=DiskRW
+com.bigdata.service.AbstractTransactionService.minReleaseAge=1
+com.bigdata.journal.Journal.groupCommit=false
+com.bigdata.btree.writeRetentionQueue.capacity=4000
+com.bigdata.btree.BTree.branchingFactor=128
+com.bigdata.journal.AbstractJournal.initialExtent=209715200
+com.bigdata.journal.AbstractJournal.maximumExtent=209715200
+com.bigdata.rdf.sail.truthMaintenance=false
+com.bigdata.rdf.store.AbstractTripleStore.quads=true
+com.bigdata.rdf.store.AbstractTripleStore.statementIdentifiers=false
+com.bigdata.rdf.store.AbstractTripleStore.textIndex=false
+com.bigdata.rdf.store.AbstractTripleStore.axiomsClass=com.bigdata.rdf.axioms.NoAxioms
+com.bigdata.namespace.kb.lex.com.bigdata.btree.BTree.branchingFactor=400
+com.bigdata.namespace.kb.spo.com.bigdata.btree.BTree.branchingFactor=1024
+com.bigdata.journal.Journal.collectPlatformStatistics=false
+</code></pre>
+
+<p><code>/opt/blazegraph/conf/blazegraph.properties | tomcat:tomcat/644</code></p>
+<pre><code>com.bigdata.rdf.store.AbstractTripleStore.textIndex=false                                                                                         
+com.bigdata.rdf.store.AbstractTripleStore.axiomsClass=com.bigdata.rdf.axioms.OwlAxioms
+com.bigdata.rdf.sail.isolatableIndices=false
+com.bigdata.rdf.store.AbstractTripleStore.justify=true
+com.bigdata.rdf.sail.truthMaintenance=true
+com.bigdata.rdf.sail.namespace=islandora
+com.bigdata.rdf.store.AbstractTripleStore.quads=false
+com.bigdata.namespace.islandora.lex.com.bigdata.btree.BTree.branchingFactor=400
+com.bigdata.journal.Journal.groupCommit=false
+com.bigdata.namespace.islandora.spo.com.bigdata.btree.BTree.branchingFactor=1024
+com.bigdata.rdf.store.AbstractTripleStore.geoSpatial=false
+com.bigdata.rdf.store.AbstractTripleStore.statementIdentifiers=false
+</code></pre>
+
+<p><code>/opt/blazegraph/conf/inference.nt | tomcat:tomcat/644</code></p>
+<pre><code>&lt;http://pcdm.org/models#memberOf&gt; &lt;http://www.w3.org/2002/07/owl#inverseOf&gt; &lt;http://pcdm.org/models#hasMember&gt; .
+&lt;http://pcdm.org/models#fileOf&gt; &lt;http://www.w3.org/2002/07/owl#inverseOf&gt; &lt;http://pcdm.org/models#hasFile&gt; .
+</code></pre>
+
+<h3 id="specifying-the-rwstoreproperties-in-java_opts">Specifying the <code>RWStore.properties</code> in <code>JAVA_OPTS</code></h3>
+<p>In order to enable our configuration when Tomcat starts, we need to reference the location of <code>RWStore.properties</code> in the <code>JAVA_OPTS</code> environment variable that Tomcat uses.</p>
+<p><code>/opt/tomcat/bin/setenv.sh</code></p>
+<p><strong>Before</strong>:</p>
+<blockquote>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"</p>
+</blockquote>
+<p><strong>After</strong>:</p>
+<blockquote>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/blazegraph/conf/RWStore.properties -Dlog4j.configuration=file:/opt/blazegraph/conf/log4j.properties -server -Xmx1500m -Xms1000m"</p>
+</blockquote>
+<h3 id="restarting-tomcat_1">Restarting Tomcat</h3>
+<p>Finally, restart Tomcat to pick up the changes we’ve made.</p>
+<pre><code class="bash">sudo systemctl restart tomcat
+</code></pre>
+
+<h3 id="installing-blazegraph-namespaces-and-inference">Installing Blazegraph Namespaces and Inference</h3>
+<p>The two other files we created, <code>blazegraph.properties</code> and <code>inference.nt</code>, contain information that Blazegraph requires in order to establish and correctly use the datasets Islandora will send to it. First, we need to create a dataset - contained in <code>blazegraph.properties</code> - and then we need to inform that dataset of the inference set we have contained in <code>inference.nt</code>.</p>
+<pre><code class="bash">curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegraph/conf/blazegraph.properties http://localhost:8080/blazegraph/namespace
+# If this worked correctly, Blazegraph should respond with &quot;CREATED: islandora&quot;
+# to let us know it created the islandora namespace.
+curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegraph/conf/inference.nt http://localhost:8080/blazegraph/namespace/islandora/sparql
+# If this worked correctly, Blazegraph should respond with some XML letting us
+# know it added the 2 entries from inference.nt to the namespace.
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../installing_tomcat_and_cantaloupe/" title="Installing Tomcat and Cantaloupe" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installing Tomcat and Cantaloupe
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../installing_solr/" title="Installing Solr" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installing Solr
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/islandora" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
