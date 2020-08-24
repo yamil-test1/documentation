@@ -13,7 +13,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -21,14 +21,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.947af8d5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.01afc2df.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.83bccb1f.min.css">
       
       
         
         
-        <meta name="theme-color" content="#ef5350">
+        <meta name="theme-color" content="#ef5552">
       
     
     
@@ -1567,9 +1567,18 @@
 <li>Use <code>-</code> instead of <code>*</code> for bulleted lists.</li>
 <li>Upload images to the 'assets' folder and reference them from there. 
    -- For file name, use underscores between words and prefix all file names with the page name, e.g. context_display_hints.jpg for the image showing how to set display hints in the context menu.</li>
-<li>Use <code>!!! note  "Note title"</code> at the start of a paragraph to have it rendered as a note like this:</li>
+<li>Use the <a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/">Admonition syntax</a> to create notes like this (four-space indent required):</li>
 </ul>
-<p>!!! note "Helpful Tip" I am a helpful tip!</p>
+<p><em>Example:</em></p>
+<pre><code>!!! note &quot;Helpful Tip&quot; 
+    I am a helpful tip!
+</code></pre>
+
+<p><em>Result:</em></p>
+<div class="admonition note">
+<p class="admonition-title">Helpful Tip</p>
+<p>I am a helpful tip!</p>
+</div>
 <h2 id="donts">Don'ts</h2>
 <ul>
 <li>Do not leave any "trailing spaces" at the end of lines of content.</li>
@@ -1655,15 +1664,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.c3dc8c49.min.js"></script>
-      <script src="../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.8e2cddea.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
