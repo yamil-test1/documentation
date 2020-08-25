@@ -915,6 +915,26 @@
     Structure of an RDF Mapping
   </a>
   
+    <nav class="md-nav" aria-label="Structure of an RDF Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-types" class="md-nav__link">
+    Mapping Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatype-callbacks" class="md-nav__link">
+    Datatype Callbacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1665,6 +1685,26 @@
     Structure of an RDF Mapping
   </a>
   
+    <nav class="md-nav" aria-label="Structure of an RDF Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-types" class="md-nav__link">
+    Mapping Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatype-callbacks" class="md-nav__link">
+    Datatype Callbacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1757,9 +1797,26 @@
 <ul>
 <li>The top level key <code>types</code> specifies the <code>rdf:type</code> of the resource or content model. <code>field_model</code>, a required field of Islandora objects, also gets mapped to <code>rdf:type</code> through an arcane back-end process.</li>
 <li>The top level key <code>fieldMappings</code> specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list.</li>
-<li><code>datatype_callback</code> : [needs documentation]</li>
-<li><code>mapping_type: rel</code> : [needs documentation]</li>
 </ul>
+<h4 id="mapping-types">Mapping Types</h4>
+<p><code>mapping_type:</code>: There are several mapping types which are provided out of the box.
+- <code>rel</code> - standing for relationship, expresses a relationship between two resources
+- <code>property</code> - the default, or if a relationship is not provided, expresses the relationship between a resource and some literal text.</p>
+<h4 id="datatype-callbacks">Datatype Callbacks</h4>
+<p><code>datatype_callback</code>: This is a custom function that transforms the output of the field. There are some provided to us by Drupal and some added by Islandora, such as:
+- <code>Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value</code> which converts dates to Iso format
+- <code>Drupal\jsonld\EntityReferenceConverter::linkFieldPassthrough</code> which converts a referenced entity to the URI on the entity (which is configurable with the <code>link_field</code> argument
+An example usage of the <code>Drupal\jsonld\EntityReferenceConverter::linkFieldPassthrough</code> is as follows:</p>
+<pre><code class="yml">field_subject:
+    properties:
+      - 'dcterms:subject'
+    datatype_callback:
+      callable: 'Drupal\jsonld\EntityReferenceConverter::linkFieldPassthrough'
+      arguments:
+        link_field: 'field_authority_link'
+</code></pre>
+
+<p>Which would convert a reference to the subject's taxonomy term entity to a reference to the URI provided in <code>field_authority_link</code> of that subject's taxonomy term entity.</p>
 <h2 id="sample-rdf-mapping">Sample RDF Mapping</h2>
 <pre><code class="yml">langcode: en
 status: true
