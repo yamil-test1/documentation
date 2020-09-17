@@ -1505,14 +1505,30 @@
                 <h1 id="documentation-style-guide">Documentation Style Guide</h1>
 <h2 id="dos">Do's</h2>
 <ul>
-<li>Submit documentation formatted in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> format.
-  -- Please add Markdown headings to the content sections.</li>
 <li>Use a GitHub Pull Request to submit documentation.</li>
-<li>Use the "bold/emphasis" style in Markdown for UI elements that users will interact with. For example, a button label for a button that must be pressed should be made bold in Markdown.</li>
+<li>
+<p>Submit documentation formatted in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> format.</p>
+<ul>
+<li>Include a top-level heading for the whole page (using <code>#</code>)</li>
+<li>Please add Markdown headings (<code>#</code> and <code>##</code>) to the content sections.</li>
+</ul>
+</li>
+<li>
+<p>Use the "bold/emphasis" style in Markdown for UI elements that users will interact with. For example, a button label for a button that must be pressed should be made bold in Markdown.</p>
+</li>
 <li>Use the "italics" style in Markdown for UI elements that have a label or title if you need to reference them in the documentation. For example, a title of a screen or page that will visit should be made italic in Markdown.</li>
-<li>Use <code>-</code> instead of <code>*</code> for bulleted lists.</li>
-<li>Upload images to the 'assets' folder and reference them from there. 
-   -- For file name, use underscores between words and prefix all file names with the page name, e.g. context_display_hints.jpg for the image showing how to set display hints in the context menu.</li>
+<li>Use <code>-</code> instead of <code>*</code> for bulleted lists. Indent four (4) spaces for nested lists (Github renders nesting in markdown with 2 spaces, but mkdocs needs 4).
+<em>Example:</em></li>
+</ul>
+<pre><code>- I am a list item
+    - And I am a sub-item.
+</code></pre>
+
+<ul>
+<li>Upload images to the 'assets' folder and reference them from there. <ul>
+<li>For file naming, use underscores between words and prefix all file names with the page name, e.g. context_display_hints.jpg for the image showing how to set display hints in the context menu.</li>
+</ul>
+</li>
 <li>Use the <a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/">Admonition syntax</a> to create notes like this (four-space indent required):</li>
 </ul>
 <p><em>Example:</em></p>
