@@ -1,7 +1,4 @@
 
-
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -14,7 +11,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
     
     
       
@@ -22,19 +19,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d3202873.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ff0a5ce4.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
         
-        <meta name="theme-color" content="#ef5552">
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -52,9 +51,11 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
-  
     
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -143,8 +144,6 @@
 </header>
     
     <div class="md-container" data-md-component="container">
-      
-        
       
       
         
@@ -1620,14 +1619,11 @@
                   </a>
                 
                 
-                  
-                
-                
                   <h1>Testing Notes</h1>
                 
                 <h2 id="how-to-find-things-in-fedora">How to find things in Fedora?</h2>
 <p>The map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora "pseudo-field" can be enabled that will display the corresponding Fedora URI on the page of a node, taxonomy term, or media object.  You can also query Gemini directly. Instructions for doing that are provided below.</p>
-<p>For more information about the Gemini service, see the <a href="https://github.com/Islandora-CLAW/Crayfish/tree/master/Gemini">Gemini README</a>.</p>
+<p>For more information about the Gemini service, see the <a href="https://github.com/Islandora/Crayfish/tree/main/Gemini">Gemini README</a>.</p>
 <h2 id="fedora-uri-pseudo-field">Fedora URI Pseudo-field</h2>
 <p>To display the Fedora URI  pseudo-field on a Drupal node, media, or taxonomy term, go to Manage &gt; Configuration &gt; Islandora and select all the bundles for which you would like the Fedora URI displayed. A valid Gemini URL is required. On the <a href="https://github.com/Islandora-Devops/claw-playbook">playbook</a>, Gemini is at http://localhost:8080/gemini. Once you have selected the bundles, and cleared the cache, the new pseudo-field will appear at the bottom of all display modes. You can alter where in the display the Fedora URI field appears, by going to the "Manage Display" page for the bundle. For example, for a Repository Item, you'd go to http://localhost:8000/admin/structure/types/manage/islandora_object/display. In that list you should see <code>Fedora URI</code> which you can move around (or hide) as desired. Clearing cache may be necessary to refresh the node display.</p>
 <h2 id="how-to-look-up-a-fedora-uri-through-gemini-nodes-and-taxonomy-terms">How to look up a Fedora URI through Gemini (nodes and taxonomy terms)</h2>
@@ -1762,15 +1758,15 @@ select fedora_uri from Gemini where drupal_uri = 'http://localhost:8000/node/[ni
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
