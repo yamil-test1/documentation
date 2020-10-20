@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upload-an-original-file" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -605,9 +605,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-an-item-to-your-repository" class="md-nav__link">
+    How to add an item to your repository
+  </a>
+  
+    <nav class="md-nav" aria-label="How to add an item to your repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-node" class="md-nav__link">
+    Create the Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#upload-an-original-file" class="md-nav__link">
     Upload an Original File
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1474,9 +1508,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-an-item-to-your-repository" class="md-nav__link">
+    How to add an item to your repository
+  </a>
+  
+    <nav class="md-nav" aria-label="How to add an item to your repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-node" class="md-nav__link">
+    Create the Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#upload-an-original-file" class="md-nav__link">
     Upload an Original File
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1499,18 +1567,29 @@
                 
                   <h1>Create a Resource Node</h1>
                 
-                <p>To create a new item in your Islandora 8 digital repository, we start by creating a resource node.
-A resource node holds the descriptive metadata for content, as well as grouping together an original file and
-all of the derivatives files generated from it. To create a new resource node, go to Content &gt;&gt; Add content or click on <strong>Add content</strong> under <em>Tools</em>.</p>
+                <h2 id="overview">Overview</h2>
+<p>A resource node holds the descriptive metadata for content, as well as grouping together an original file and
+all of the derivatives files generated from it.   </p>
+<p>The model for exactly what constitutes an object in Islandora 8 is flexible and can be adapted to the needs of specific users. For example, the Islandora Defaults configuration considers an object as a resource node of the type "Repository Item"  which contains descriptive metadata about the object. Attached to that Node are one or more Media, each representing a file that is part of this object, such as "Original File", "Thumbnail", "Preservation Master", etc. With this model, every original file uploaded into Islandora has its own resource node.</p>
+<p>Multi-file Media configurations also attach Media to a parent node, but allow for that node to be represened by multiple "Original File"s. In this model, a Media contains the original file as well as any derivative files created from it (thumbnail, service file, etc.).</p>
+<p>For an example of where these two different approaches could apply, the basic configuration might make sense for a book that has rich page-level metadata, so that each page would be its own Node with its own metadata record; the multi-file media configuration might be a better fit for a book that does not have page-level metadata (except an ordering or page numbers), so that each Media would represent one page, and all pages (Media) would be attached to a single parent Node/metadata record for the entire book. </p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>The following How-To assumes that you are using the optional <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="https://islandora.github.io/documentation/installation/playbook/">Ansible Playbook</a>, ISLE (documentation pending), or are using the <a href="https://islandora.ca/try">sandbox or a Virtual Machine Image</a></li>
+<li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a> and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
+</ul>
+<h2 id="how-to-add-an-item-to-your-repository">How to add an item to your repository</h2>
+<h3 id="create-the-node">Create the Node</h3>
+<p>To create a new resource node, go to Content &gt;&gt; Add content or click on <strong>Add content</strong> under <em>Tools</em>.</p>
 <p><img alt="Click on add content" src="../../assets/add-content-loading-media.jpg" /></p>
 <p>Then click on <strong>Repository Item</strong>. This will assign the default metadata profile to your item.</p>
 <p><img alt="Click on repository item" src="../../assets/repository-item.jpg" /></p>
-<p>Fill out the form. We're going to create an image, so under <em>System</em>, select <strong>Image</strong> from the <em>Model</em>"
+<p>Fill out the form. We're going to create an image, so under <em>System</em>, select <strong>Image</strong> from the <em>Model</em>
 drop down box. Selecting different models will impact how Islandora handles content, dictating
 important behaviours such as display and derivative generation.</p>
 <p><img alt="Under system select appropriate model, or format" src="../../assets/under-system-select-format.jpg" /></p>
 <p>When done, click <strong>Save</strong>.</p>
-<h2 id="upload-an-original-file">Upload an Original File</h2>
+<h3 id="upload-an-original-file">Upload an Original File</h3>
 <p>Congratulations, you have created a resource node! But alas, it has no files. To upload a file, click on the
 node's <em>Media</em> tab.</p>
 <p><img alt="When done, click on Media" src="../../assets/click-media.jpg" /></p>
