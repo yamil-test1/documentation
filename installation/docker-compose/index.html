@@ -1791,7 +1791,17 @@
 <ul>
 <li>A computer that can run Docker (version 19.x+) and has at least 8GB of RAM (ideally 16GB)</li>
 <li>An administrator account</li>
-<li>(Mac OS) Apple Developer Tools, (Windows) the <code>make</code> command-line tool</li>
+<li>(Mac OS) Apple Developer Tools</li>
+<li>Windows (recommended setup)<ul>
+<li>Windows 10</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux v. 2 (WSL 2)</a></li>
+<li>Ubuntu 20.04 running on WSL 2</li>
+<li>GNU make
+  <code>sudo apt update
+  sudo apt install make</code></li>
+<li>Docker Desktop for Windows, using the WSL 2 based engine (Settings &gt; General) and with the WSL integration active for Ubuntu (Settings &gt; Resources &gt; WSL integration) </li>
+</ul>
+</li>
 <li>If using <code>make dev</code>, see the <a href="https://github.com/Islandora-Devops/isle-dc">README</a> for other requirements.</li>
 </ul>
 <div class="admonition note">
@@ -1805,7 +1815,7 @@
 <p><a href="https://www.docker.com/products/docker-desktop">Download Docker</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Memory, Processors, and Swap Requirements</p>
-<p>To run ISLE on Docker Desktop, you must increase the resources allocated to the software. See Docker docs on <a href="https://docs.docker.com/docker-for-windows/#resources">setting resources on Windows</a> or <a href="https://docs.docker.com/docker-for-mac/#resources">setting resources on Mac</a>.</p>
+<p>To run ISLE on Docker Desktop, you must increase the resources allocated to the software. See Docker docs on <a href="https://docs.docker.com/docker-for-windows/#resources">setting resources on Windows</a> (see note on how to allocate/restrict memory when using WSL 2) or <a href="https://docs.docker.com/docker-for-mac/#resources">setting resources on Mac</a>.</p>
 <p><strong>CPUs (processors)</strong>: The CPUs allowed to Docker Desktop are still shared with the host machine, so increasing this to the maximum value should allow both the Docker containers and your host machine to run simultaneously.</p>
 <p><strong>Memory (RAM)</strong>: This memory is completely dedicated to Docker while Docker Desktop is running, so do not allocate more than you can spare and still run your host machine. Windows users may not require as much memory for Docker as Mac users. Current suggestions for memory allocated to Docker Desktop are below, but please edit this document if you have new information.</p>
 <ul>
