@@ -1610,14 +1610,20 @@
 <p>Over time new versions of Drupal “core” are released, and Islandora users are encouraged to install official Drupal core updates and security patches. On the other hand “alpha” and “beta" versions of Drupal core should only be installed by advanced users for testing purposes.</p>
 <p>The Islandora community STRONGLY recommends that the "Composer" method of upgrading Drupal core be used with Islandora 8 as mentioned <a href="https://www.drupal.org/docs/8/update/update-core-via-composer">here</a>.</p>
 <h3 id="here-is-an-overview-of-the-steps-for-updating-drupal-core-using-composer">Here is an overview of the steps for updating Drupal core using Composer</h3>
-<p>!!! "Back Up" First make sure you have made database and file back ups.</p>
+<div class="admonition note">
+<p class="admonition-title">Back Up</p>
+<p>First make sure you have made database and file back ups.</p>
+</div>
 <p>1) First, verify that an update of Drupal core actually is available:</p>
 <p><code>composer outdated "drupal/*"</code></p>
 <p>If there is no line starting with drupal/core, Composer isn't aware of any update. If there is an update, continue with the commands below.</p>
 <p>2) Assuming you are used to updating Drupal and know all the precautions that you should take, the update is as simple as:</p>
 <p><code>composer update drupal/core webflo/drupal-core-require-dev "symfony/*" --with-dependencies</code></p>
 <p>If you want to know all packages that will be updated by the update command, use the --dry-run option first.</p>
-<p>!!! note "Alternate syntax needed": Islandora 8 is configured to use a fork of drupal-composer/drupal-project which requires a specific composer syntax used above compared to other Drupal 8 sites. In addition, if you are upgrading from 8.5 to 8.7, you need to replace "~8.5.x" with "^8.7.0" for drupal/core and webflo/drupal-core-require-dev in composer.json. [<a href="https://www.drupal.org/docs/8/update/update-core-via-composer#s-one-step-update-instruction">Source</a>]</p>
+<div class="admonition note">
+<p class="admonition-title">Alternate syntax needed</p>
+<p>Islandora 8 is configured to use a fork of drupal-composer/drupal-project which requires a specific composer syntax used above compared to other Drupal 8 sites. In addition, if you are upgrading from 8.5 to 8.7, you need to replace "~8.5.x" with "^8.7.0" for drupal/core and webflo/drupal-core-require-dev in composer.json. [<a href="https://www.drupal.org/docs/8/update/update-core-via-composer#s-one-step-update-instruction">Source</a>]</p>
+</div>
 <p>3) Apply any required database updates using <code>drush updatedb</code>, or use the web admin user interface.  </p>
 <p><code>drush updatedb</code></p>
 <p>4) Clear the cache using drush <code>cache:rebuild</code>, or use the web admin user interface.</p>
@@ -1628,7 +1634,10 @@ https://www.drupal.org/docs/8/update/update-core-via-composer#s-stepwise-update-
 <p>Islandora 8 uses several general Drupal modules and some specialized Islandora Drupal modules, and over time new versions of these modules are released. There are two approaches to updating Drupal modules in Islandora: using Composer or updating modules individually. Islandora 8 uses Composer to determine which Drupal module versions should be installed for each release of Islandora 8. Therefore if you update the Islandora specific Drupal modules using Composer you will also update any dependent general Drupal modules as well. The second method is to individually update Drupal modules.</p>
 <p>For more information about how to update Drupal modules visit:</p>
 <p>https://www.drupal.org/docs/8/extending-drupal-8/updating-modules</p>
-<p>!!! "Back Up" First make sure you have made database and file back ups.</p>
+<div class="admonition note">
+<p class="admonition-title">Back Up</p>
+<p>First make sure you have made database and file back ups.</p>
+</div>
                 
               
               
