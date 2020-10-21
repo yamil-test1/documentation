@@ -621,11 +621,25 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modify-a-content-type" class="md-nav__link">
-    Modify a Content Type
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
-    <nav class="md-nav" aria-label="Modify a Content Type">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-modify-a-content-type" class="md-nav__link">
+    How to Modify a Content Type
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Modify a Content Type">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -664,13 +678,6 @@
         <li class="md-nav__item">
   <a href="#update-create-an-rdf-mapping" class="md-nav__link">
     Update / Create an RDF Mapping
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
-    Further Reading:
   </a>
   
 </li>
@@ -1528,11 +1535,25 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modify-a-content-type" class="md-nav__link">
-    Modify a Content Type
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
-    <nav class="md-nav" aria-label="Modify a Content Type">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-modify-a-content-type" class="md-nav__link">
+    How to Modify a Content Type
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Modify a Content Type">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1575,13 +1596,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
-    Further Reading:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1600,35 +1614,51 @@
                 
                 
                 <h1 id="create-update-a-content-type">Create / Update a Content Type</h1>
-<div class="admonition note">
-<p class="admonition-title">Islandora Demo</p>
-<p>The screenshots and pre-existing data in this documentation assume that you are using the <a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a> configuration.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Graphical User Interface</p>
-<p>This page will address how to create and modify ingest forms (or rather, content types) via the GUI. For help working with forms via the API, please check out the <a href="#further-reading">Further Reading</a> section for links to more advanced Drupal documentation.</p>
-</div>
-<p>Since objects in Islandora 8 are stored in Drupal as Nodes, we use the standard Drupal Content Types system to create and edit our ‘ingest forms’ <a href="https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/working-with-content-types-and-fields">Content Types in Drupal 8</a>. Islandora 8 forms are Drupal forms, and if you are already familiar with Drupal Field UI, you’re already well equipped to create and modify your own ingest forms in Islandora 8.</p>
-<p>This page will address how to create and modify ingest forms (or rather, content types) via the GUI. For help working with forms via the API, please check out the Further Reading section for links to more advanced Drupal documentation.</p>
-<h2 id="modify-a-content-type">Modify a Content Type</h2>
-<p>If you have deployed your Islandora 8 with the Islandora Demo configuration, you will already have a Repository Item content type available, with pre-configured fields. In the Admin menu, go to Structure &gt;&gt; Content Types and find the Repository Item content type. Select <em>Manage Fields</em>.</p>
-<p><img alt="a screenshot of the Add Content Type page" src="../../assets/content_types_managefields.png" /></p>
-<p>You will see a list of the fields that are already available in the <em>Repository Item</em> content type.</p>
-<h3 id="add-a-field">Add a Field</h3>
-<p>Let’s add a new field where a user can indicate if the repository item needs to be reviewed:</p>
+<h2 id="overview">Overview</h2>
+<p>Since metadata in Islandora 8 is stored as fields in Nodes, the standard Drupal Content Types system provides our 'ingest forms'. For more information about Content Types in general, please see <a href="https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/working-with-content-types-and-fields">Content Types in Drupal 8</a>. If you are already familiar with Drupal Field UI, you’re already well equipped to create and modify your own ingest forms in Islandora 8.</p>
+<p>This page will address how to create and modify ingest forms by editing fields and form display settings on Content Types via the graphical user interface (GUI). This page will also cover editing the RDF mapping to accommodate changes to fields.</p>
+<p>Islandora 8 forms are Drupal forms, and for help working with forms via the API, please check out the <em>Further Reading</em> section for links to more advanced Drupal documentation.</p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>The following How-To assumes that you are using the (optional) <strong><a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="/installation/playbook">Ansible Playbook</a>, <a href="/installation/docker-compose">ISLE with Docker-Compose</a>, or are using the <a href="https://islandora.ca/try">sandbox or a Virtual Machine Image</a></li>
+<li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a>, <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/working-with-content-types-and-fields-drupal-7-and-later">Content Type</a>, and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
+</ul>
+<h2 id="how-to-modify-a-content-type">How to Modify a Content Type</h2>
+<p>If you have deployed your Islandora 8 with the Islandora Defaults configuration, you will already have a Repository Item content type available, with pre-configured fields and repository behaviours.</p>
 <ol>
-<li>Click “Add Field”</li>
-<li>In some cases an existing field may be available to use instead of creating a new one. The dropdown box labeled 'Re-use an existing field' has a list of available fields. For our example we will create a brand-new field. Since our example field is a “yes/no” decision (whether the item needs review or not), choose "Boolean" from the dropdown menu and give the Label field a name. <a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters">See the list of Drupal 8 FieldTypes, FieldWidgets, and FieldFormatters</a> for descriptions of the different types available by default. Additional modules, such as the controlled_access_terms module, can provide their own Field types to choose from as well.</li>
-<li>Click "Save and continue."</li>
+<li>In the Admin menu, go to <strong>Structure</strong> &gt;&gt; <strong>Content Types</strong> and find the <em>Repository Item</em> content type.</li>
+<li>Select <em>Manage Fields</em>.</li>
+</ol>
+<p><img alt="a screenshot of the Add Content Type page" src="../../assets/content_types_managefields.png" /></p>
+<p>There are multiple tabs with different options to configure your Content Type:</p>
+<p><img alt="a screenshot of the Add Content Type page" src="../../assets/content_types_managefields_tabs.png" /></p>
+<ul>
+<li><em>Manage Fields</em>: A list of the fields available in this form. This is where you can add new fields and make adjustments to existing fields, such as whether the field has access restrictions or is required.</li>
+<li><em>Manage form display</em>: Set the order in which fields appear in a form, including nesting; set how the user will enter data into a field (i.e., text field, drop-down list, radio buttons, etc); set fields to be hidden in the form.</li>
+<li><em>Manage display</em>: Set how the data stored in the fields will be displayed on the Node. Custom display settings can be set for different "view modes." For instance, a different view mode is applied for items using the Openseadragon viewer, which includes a field that displays the Media in Openseadragon instead of the standard Drupal image viewer.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Changes not displaying?</p>
+<p>If you make changes under <em>Manage display</em> and don't see them reflected in your Node, double check that you have edited the right <em>view mode</em></p>
+</div>
+<ul>
+<li><em>Devel</em>: This tab is generated by an optional module that is useful for development and troubleshooting; it can be ignored in this How-To. For more information, see <a href="https://www.drupal.org/project/devel">Devel</a>.</li>
+</ul>
+<h3 id="add-a-field">Add a Field</h3>
+<p>This example adds a new field where a user can indicate if the repository item needs to be reviewed:</p>
+<ol>
+<li>Click <strong>Add Field</strong></li>
+<li>In some cases an existing field may be available to use instead of creating a new one. The dropdown box labeled <em>Re-use an existing field</em> has a list of available fields. For this example we will create a brand-new field. Since the example field is a “yes/no” decision (whether the item needs review or not), choose "Boolean" from the dropdown menu and give the Label field a name. <a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters">See the list of Drupal 8 FieldTypes, FieldWidgets, and FieldFormatters</a> for descriptions of the different types available by default. Additional modules, such as the controlled_access_terms module, can provide their own Field types to choose from as well.</li>
+<li>Click <strong>Save and continue.</strong></li>
 <li>Next, configure how the field is stored in the Drupal database. For this field type you can select how many values will be allowed. The default settings, "Limited" in the dropdown box and "1" for the allowed number of values works for our example.</li>
-<li>Click "Save field settings."</li>
-<li>Then configure how the field is described (including its display label and the help text for when it appears on a form) and constraints on its use. In this case, the field will be required for this Content Type, and will be set to “on” by default. In the "Default Value" section, click the checkbox next to "Needs Review" to indicate all new repository items need review by default.</li>
-<li>Click "Save settings."</li>
+<li>Click <strong>Save field settings.</strong></li>
+<li>Configure how the field is described (including its display label and the help text for when it appears on a form) and constraints on its use. In this screenshot, the field will be required for this Content Type, and will be set to “on” by default. In the <em>Default Value</em> section, click the checkbox next to <em>Needs Review</em> to indicate all new repository items need review by default.</li>
+<li>Click <strong>Save settings.</strong></li>
 </ol>
 <p><img alt="a screenshot of the field settings page" src="../../assets/content_types_fieldsettings.png" /></p>
 <p>The new field has been added:</p>
 <p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the Drupal field UI" src="../../assets/content_types_newfield.png" /></p>
-<p>And it appears in the ingest form when we try to create a new repository object. To test this, go to Content &gt;&gt; Add content &gt;&gt; Repository item:</p>
+<p>It appears in the ingest form when creating a new repository object. To test this, go to <strong>Content</strong> &gt;&gt; <strong>Add content</strong> &gt;&gt; <strong>Repository item</strong>:</p>
 <p><img alt="a screenshot of a &quot;Needs Review?&quot; field appearing at the bottom of a new node form" src="../../assets/content_types_newfieldinform.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">RDF Mappings</p>
@@ -1636,44 +1666,48 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Search</p>
-<p>New fields will not automatically be searchable. They need to be added to the SOLR index configuration. See the <a href="../searching/">'Setup and Configure Search'</a> page for more information.</p>
+<p>New fields will not automatically be searchable. They need to be added to the Solr index configuration. See the <a href="../searching/">'Setup and Configure Search'</a> page for more information.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Context</p>
 <p>To add new behavior based on the results of this new field, check out <a href="../context/">Context</a>.</p>
 </div>
 <h3 id="change-the-form-display">Change the Form Display</h3>
-<p>Now let’s move our new field to a different part of the form. In the Admin menu, return to Structure &gt; Content Types and find the Repository Item content type again. Select Manage form display.</p>
+<p>To change where in the form a field is displayed, go to the Admin menu, return to <strong>Structure</strong> &gt;&gt; <strong>Content Types</strong>, and find the <em>Repository Item</em> content type again. Select <em>Manage form display</em> from the dropdown menu or select the <em>Manage form display</em> tab.</p>
 <ol>
-<li>All of the fields in this content type are available, in a list, with a simple drag-and-place UI. Drag the new field to the top of the form. We can also change the way the Boolean options are displayed, with radio buttons as opposed to a single checkbox. Different display options will be available from the dropdown menu depending on field type. For more information, please check out <a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters">List of Drupal 8 FieldTypes, FieldWidgets, and FieldFormatters</a></li>
-<li>Save.</li>
+<li>All of the fields in this content type are available, in a list, with a simple drag-and-place UI. Drag the new field to the top of the form. You can also change the way the Boolean options are displayed, with radio buttons as opposed to a single checkbox. Different display options will be available from the dropdown menu depending on field type. For more information, please check out <a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters">List of Drupal 8 FieldTypes, FieldWidgets, and FieldFormatters</a></li>
+<li>Click <strong>Save</strong>.</li>
 </ol>
 <p>When creating a new Repository Item, the new field appears at the top, as a set of radio buttons.</p>
 <h3 id="change-the-content-display">Change the Content Display</h3>
-<p>Finally, let’s change how the results of this field are displayed. Initially the new field shows up at the bottom of repository object pages:</p>
+<p>Finally, change how the results of this example field are displayed. Initially the new field shows up at the bottom of repository object pages:</p>
 <p><img alt="a screenshot of a &quot;Needs Review?&quot; field in the node display" src="../../assets/content_types_fieldindisplay.png" /></p>
-<p>In the Admin menu, return to Structure &gt; Content Types and find the Repository Item content type again. Select Manage display from the dropdown menu.</p>
+<p>In the Admin menu, return to <strong>Structure</strong> &gt;&gt; <strong>Content Types</strong> and find the <em>Repository Item</em> content type again. Select <em>Manage display</em> from the dropdown menu or select the <em>Manage display</em> tab.</p>
 <ol>
-<li>Find the new field. You can change how the field title or Label is displayed. Click the dropdown menu to choose from inline/above/hidden/visually hidden. You can also replace the options displayed with variations on a binary choice. Click the gear to choose from the following: On/Off, Yes/No, Enabled/Disabled, 1/0. checkmark/X, or hide the field completely.</li>
-<li>You can also drag the field into the Disabled section so that neither its label or its contents appear in the display, although the field is saved on the node.</li>
+<li>Find the new field. You can change how the field title or label is displayed.</li>
+<li>Click the dropdown menu to choose from inline/above/hidden/visually hidden.<ul>
+<li>You can also replace the options displayed with variations on a binary choice. Click the gear to choose from the following: <em>On/Off</em>, <em>Yes/No</em>, <em>Enabled/Disabled</em>, <em>1/0</em>, <em>checkmark/X</em>, or hide the field completely.</li>
+<li>You can also drag the field into the <em>Disabled</em> section so that neither its label or its contents appear in the display, although the field is saved on the Node.</li>
+</ul>
+</li>
 <li>Drag the field to "Disabled" and save.</li>
-<li>You no longer see the field on the display, but it is available when editing the node.</li>
+<li>The contents of the field are no longer displayed on the Node, but it is available when editing the node.</li>
 </ol>
 <h2 id="create-a-content-type">Create a Content Type</h2>
 <p>To create your own custom content type from scratch, please refer to <a href="https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/create-a-custom-content-type">this guide</a> on Drupal.org.</p>
-<p>Custom content types are not synced to Fedora or indexed by the triple-store by default. Repository managers must add them to the "Content" ('repository_content') context before their nodes are synced to Fedora and indexed by the triple-store.</p>
+<p>Custom content types are not synced to Fedora or indexed by the triple-store by default. Repository managers must add them to a context that instructs Drupal to perform these synchronizations. In Islandora Defaults, the "Content" ('repository_content') context does this. To add a new content type to that context:</p>
 <ol>
-<li>Navigate to the Contexts configuration page ('/admin/structure/context').</li>
-<li>Find the 'Content' context and click the corresponding 'Edit' button ('/admin/structure/context/repository_content').</li>
-<li>Find the 'Node Bundle' condition in the 'Conditions' section.</li>
+<li>Navigate to the <em>Contexts</em> configuration page ('/admin/structure/context').</li>
+<li>Find the <em>Content</em> context and click the corresponding <strong>Edit</strong> button ('/admin/structure/context/repository_content').</li>
+<li>Find the <em>Node Bundle</em> condition in the <em>Conditions</em> section.</li>
 <li>Click the checkbox for the new Content Type.</li>
-<li>Scroll down to the bottom of the page and click 'Save and continue'.</li>
+<li>Scroll down to the bottom of the page and click <strong>Save and continue</strong>.</li>
 </ol>
 <p>Updating contexts does not retroactively fire any actions. Any of the custom content type's nodes that were created before updating the context will need to have the indexing action manually triggered.</p>
 <h2 id="update-create-an-rdf-mapping">Update / Create an RDF Mapping</h2>
-<p>RDF mapping aligns Drupal fields with RDF ontology properties. For example, the title field of a content model can be mapped to dcterms:title and/or schema:title. In Islandora 8, triples expressed by these mappings get synced to Fedora and indexed in the Blazegraph triplestore. RDF mappings are defined/stored in Drupal as a <a href="https://yaml.org/">YAML</a> file (to learn more about YAML, there are <a href="https://duckduckgo.com/?q=yaml+tutorial">several tutorials on the web</a>. Currently, Drupal 8 does not have a UI to create/update RDF mappings to ontologies other than Schema.org. This requires repository managers to update the configuration files themselves. Consider using the RDF mappings included in islandora_demo as templates by copying and modifying one to meet your needs.</p>
-<p>The Drupal 8 Configuration Synchronization export (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/export</code>) and import (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/import</code>) can be used to get a copy of the mappings for editing in a text editor before being uploaded again. Alternatively, a repository manager can update the configuration on the server and use Features to import the edits.</p>
-<p>An RDF mapping configuration file has two main areas, the mapping's metadata and the mapping itself. Most of the mapping's metadata should be left alone unless you are creating a brand new mapping for a new Content Type or Taxonomy Vocabulary. A <em>partial</em> example from <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/rdf.mapping.node.islandora_object.yml">islandora_default's islandora_object (Repository Item)</a> is included below:</p>
+<p>RDF mapping aligns Drupal fields with RDF ontology properties. For example, the title field of a content model can be mapped to <code>dcterms:title</code> and/or <code>schema:title</code>. In Islandora 8, triples expressed by these mappings get synced to Fedora and indexed in the Blazegraph triplestore. RDF mappings are defined/stored in Drupal as a <a href="https://yaml.org/">YAML</a> file (to learn more about YAML, there are <a href="https://duckduckgo.com/?q=yaml+tutorial">several tutorials on the web</a>. Currently, Drupal 8 does not have a UI to create/update RDF mappings to ontologies other than Schema.org. This requires repository managers to update the configuration files themselves. Consider using the RDF mappings included in <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> as templates by copying and modifying one to meet your needs.</p>
+<p>The Drupal 8 Configuration Synchronization export (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/export</code>) and import (e.g. <code>http://localhost:8000/admin/config/development/configuration/single/import</code>) can be used to get a copy of the mappings for editing in a text editor before being uploaded again. Alternatively, a repository manager can update the configuration on the server and use <a href="https://www.drupal.org/project/features">Features</a> to import the edits.</p>
+<p>An RDF mapping configuration file has two main areas: the mapping's metadata and the mapping itself. Most of the mapping's metadata should be left alone unless you are creating a brand new mapping for a new Content Type or Taxonomy Vocabulary. A <em>partial</em> example from <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/rdf.mapping.node.islandora_object.yml">islandora_default's islandora_object (Repository Item)</a> is included below:</p>
 <pre><code>langcode: en
 status: true
 dependencies:
@@ -1756,11 +1790,6 @@ fieldMappings:
 <p class="admonition-title">Islandora Quick Lessons</p>
 <p>Learn more with this video on <a href="https://youtu.be/tOW27DZY9hs">Customizing a Form</a>.</p>
 </div>
-<h2 id="further-reading">Further Reading:</h2>
-<ul>
-<li><a href="https://www.drupal.org/docs/8/api/form-api/introduction-to-form-api">Drupal.org Introduction to Form API</a></li>
-<li><a href="https://www.valuebound.com/resources/blog/step-by-step-method-to-create-a-custom-form-in-drupal-8">Step by step method to create a custom form in Drupal 8</a></li>
-</ul>
                 
               
               
