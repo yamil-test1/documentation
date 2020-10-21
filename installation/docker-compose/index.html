@@ -1884,7 +1884,7 @@ Pulling watchtower ... done
 <pre><code class="language-bash">docker-compose up -d
 </code></pre>
 <h2 id="visiting-your-islandora-site">Visiting your Islandora site</h2>
-<p>Direct a browser to <a href="https://islandora-isle-dc.traefik.me/">https://islandora-isle-dc.traefik.me/</a> (yes, it's awkward and there's a <a href="https://github.com/Islandora-Devops/isle-dc/issues/120">ticket about it</a>). If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. When all containers are ready, you should see a basic Drupal login screen.</p>
+<p>Direct a browser to <a href="https://islandora-isle-dc.traefik.me/">https://islandora-isle-dc.traefik.me/</a> (yes, it's awkward and there's a <a href="https://github.com/Islandora-Devops/isle-dc/issues/120">ticket about it</a>). If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. If it takes more than a few minutes, check to make sure that none of your containers have failed to launch (see note above on "Troubleshooting - docker containers exit without warning"). When all containers are ready, you should see a basic Drupal login screen.</p>
 <p><img alt="&quot;Bad Gateway&quot; white screen while still loading" src="../../assets/docker_bad_gateway_still_loading.png" /></p>
 <p><img alt="Drupal login screen" src="../../assets/docker_drupal_login_screen.png" /></p>
 <p>To log in:</p>
