@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-update-a-view" class="md-skip">
+        <a href="#create-or-update-a-view" class="md-skip">
           Skip to content
         </a>
       
@@ -607,6 +607,8 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Create or Update a View
@@ -621,6 +623,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -629,29 +633,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-update-a-view" class="md-nav__link">
-    Create / Update a View
-  </a>
-  
-    <nav class="md-nav" aria-label="Create / Update a View">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-1-edit-the-frontpage-page-view-to-only-show-content-items-and-not-collections" class="md-nav__link">
-    Task 1: Edit the 'Frontpage' page view to only show content items and not collections
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#task2-add-a-new-view-to-only-show-collections" class="md-nav__link">
-    Task2: Add a new view to only show collections
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-modify-an-existing-view" class="md-nav__link">
+    How to modify an existing view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-new-view" class="md-nav__link">
+    How to create a new view
+  </a>
   
 </li>
       
@@ -1486,6 +1491,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1494,29 +1501,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-update-a-view" class="md-nav__link">
-    Create / Update a View
-  </a>
-  
-    <nav class="md-nav" aria-label="Create / Update a View">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-1-edit-the-frontpage-page-view-to-only-show-content-items-and-not-collections" class="md-nav__link">
-    Task 1: Edit the 'Frontpage' page view to only show content items and not collections
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#task2-add-a-new-view-to-only-show-collections" class="md-nav__link">
-    Task2: Add a new view to only show collections
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-modify-an-existing-view" class="md-nav__link">
+    How to modify an existing view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-new-view" class="md-nav__link">
+    How to create a new view
+  </a>
   
 </li>
       
@@ -1537,57 +1545,66 @@
                   </a>
                 
                 
-                  <h1>Create or Update a View</h1>
-                
-                <h2 id="create-update-a-view">Create / Update a View</h2>
-<p>Views allow you to get your content in Islandora to display on your site in pages or as posts, lists, blocks, etc. Views are powerful and filter content from Islandora to enable you to present content in interesting and exciting ways. </p>
-<p>Islandora 8 ships with views already created and turned on. The Islandora 8 home page displays content items that have been added to Islandora. This view is named 'Frontpage' and it lists items that meet the following <strong>filter criteria</strong>. The item is published and the checkbox 'Promoted to front page' is selected. This view will display all content items added to Islandora as the checkbox 'Promoted to front page' is on by default. </p>
-<p>As you develop your Islandora Web site it is likely that you will need to change this default behaviour of the 'Frontpage' view. The following two tasks demonstrate how to 1) Edit the 'FrontPage' view and 2) Create a new view.</p>
-<h3 id="task-1-edit-the-frontpage-page-view-to-only-show-content-items-and-not-collections">Task 1: Edit the 'Frontpage' page view to only show content items and not collections</h3>
-<p>For this example, we added six collection items to Islandora 8. Now, in total there are eight items in the repository. In addition to the six collection items there is one audio item and one image item.</p>
+                <h1 id="create-or-update-a-view">Create or Update a View</h1>
+<h2 id="overview">Overview</h2>
+<p>Drupal Views allow you to get your content in Islandora to display on your site in pages or as posts, lists, blocks, etc. Views are powerful and filter content from Islandora to enable you to present content in interesting and exciting ways. </p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>The following How-To assumes that you are using the (optional) <strong><a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="/installation/playbook">Ansible Playbook</a>, <a href="/installation/docker-compose">ISLE with Docker-Compose</a>, or are using the <a href="https://islandora.ca/try">sandbox or a Virtual Machine Image</a></li>
+<li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a>, <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/working-with-content-types-and-fields-drupal-7-and-later">Content Type</a>, and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
+</ul>
+<h2 id="how-to-modify-an-existing-view">How to modify an existing view</h2>
+<p>Islandora Defaults ships with some views already created and turned on. The Islandora 8 home page displays content items that have been added to Islandora. This view is named <em>Frontpage</em> and it lists items that meet the following <em>filter criteria</em>: </p>
+<ul>
+<li>The item is in the <em>published</em> state.</li>
+<li>The checkbox Promoted to front page is selected. </li>
+</ul>
+<p>This view will display all content items added to Islandora, as the checkbox <em>Promoted to front page</em> is on by default. </p>
+<p>As you develop your Islandora Web site it is likely that you will need to change the default behaviour of the <em>Frontpage</em> View. As an example, the following describes how to edit the <em>Frontpage</em> page view to only show content items and not collections.</p>
+<p>For this example, we added six collection items to Islandora. In total there are eight items in the repository. In addition to the six collection items, there is one audio item and one image item.</p>
 <ol>
-<li>Using your Web browser open the Islandora 8 Frontpage (localhost:8000 or your test Islandora)<ol>
-<li>For this example, on the frontpage we can see that Islandora displays a 'Collection' first as this is the most recently added item.</li>
+<li>Using your Web browser, open the Islandora front page <ol>
+<li>For this example, on the front page we can see that Islandora displays a 'Collection' first as this is the most recently added item.</li>
 </ol>
 </li>
-<li>To edit the frontpage view, hover over the view ('Frontpage' view) and select 'Edit view' when displayed.
+<li>To edit the front page view, hover over the view (<em>Frontpage</em> view) and select <strong>Edit view</strong> when displayed.
     <img alt="Frontpage view" src="../../assets/frontpage_view_all_eight.png" /></li>
-<li>Select 'Add' under the <strong>filter criteria</strong> section.
+<li>Select <strong>Add</strong> under the <em>filter criteria</em> section.
     <img alt="Frontpage view add filter" src="../../assets/frontpage_view_add_filter.png" /></li>
-<li>We do not want to display collections, so we need to add a <strong>filter criteria</strong> that does not filter for the Islandora model type 'collection'<ol>
-<li>Select 'Model' from the list and then 'Apply (all displays)'.
+<li>We do not want to display collections, so we need to add a <em>filter criteria</em> that does not filter for the Islandora model type 'Collection'<ol>
+<li>Select <em>Model</em> from the list and then <strong>Apply (all displays</strong>).
 <img alt="Frontpage view filter select model" src="../../assets/frontpage_view_add_filter_select_model.png" /></li>
-<li>Select 'Islandora Model' to select filters on Islandora model types and select 'Apply and continue'.
+<li>Select <em>Islandora Model</em> to select filters on Islandora model types and select <strong>Apply and continue</strong>.
 <img alt="Frontpage view filter islandora model" src="../../assets/frontpage_view_add_filter_select_model_islandora.png" /></li>
-<li>Select the <strong>operator</strong> 'Is none of' and the 'Collection' model (autocomplete should work here to help you). To finish select 'Apply (all displays)'.
+<li>Select the operator <em>Is none of</em> and the <em>Collection</em> model (autocomplete should work here to help you). To finish click <strong>Apply (all displays)</strong>.
 <img alt="Frontpage views filter collection" src="../../assets/frontpage_view_add_filter_collection.png" /></li>
-<li>'Save' the view. Now the 'Frontpage' view does not display collections.
+<li><strong>Save</strong> the view. Now the 'Frontpage' View does not display collections.
 <img alt="Frontpage views no collections" src="../../assets/frontpage_view_no_collections.png" /></li>
 </ol>
 </li>
 </ol>
-<h3 id="task2-add-a-new-view-to-only-show-collections">Task2: Add a new view to only show collections</h3>
-<p>For this example, we create a new view as a block and place the new block to only display on the frontpage. We will add the new collection list block below the existing frontpage view that list items.</p>
+<h2 id="how-to-create-a-new-view">How to create a new view</h2>
+<p>For this example, we create a new view that only shows collections. It will be created as a block that will only display on the front page. We will add the new collection list block below the existing frontpage view that lists items.</p>
 <ol>
-<li>Using your Web browser open the Islandora 8 Frontpage (localhost:8000 or your test Islandora)</li>
-<li>Navigate to Administration &gt; Structure &gt; Views (~/admin/structure/views)</li>
-<li>Create a new view by selecting 'Add view'</li>
-<li>Name the view and select 'Create a block'. Give the block a title, decide how you want it to display (Grid, Table, List, Paging). To progress, select 'Save and edit'.
+<li>Using your Web browser, open the Islandora 8 front page </li>
+<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Views</strong> (~/admin/structure/views)</li>
+<li>Create a new view by selecting <strong>Add view</strong></li>
+<li>Name the view and select <strong>Create a block</strong>. Give the block a title and decide how you want it to display (Grid, Table, List, Paging). To progress, select <strong>Save and edit</strong>.
 <img alt="Frontpage view collection list information" src="../../assets/frontpage_view_collection_list_info.png" /></li>
 <li>Customise the view format and sorting as required.</li>
-<li>Add a <strong>filter criteria</strong> to only show the Islandora model type of 'Collection' and 'Save' the view.
+<li>Add a <em>filter criteria</em> to only show the Islandora model type of 'Collection' and <strong>Save</strong> the view.
 <img alt="Frontpage view collection list details" src="../../assets/frontpage_view_collection_list_details.png" /></li>
-<li>Place view on frontpage. Now that we have a view as a block, we add it to the 'Main page content' area (using 'Block layout') and only display for the frontpage.<ol>
-<li>Navigate to Administration &gt; Structure &gt; Block (/admin/structure/block). Under 'Main content' select 'Place block'
+<li>To place the view on front page, the new block must be added to the 'Main page content' area (using 'Block layout') and set to display on the front page.<ol>
+<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Block layout</strong> (/admin/structure/block). Under <em>Main content</em> select <strong>Place block</strong>
 <img alt="Frontpage view collection list place block" src="../../assets/frontpage_view_collection_list_place_block.png" /></li>
-<li>Find the new block, 'Collection List' and select 'Place block'.</li>
-<li>Restrict the block to only display on the frontpage by adding the text '<front>' to the 'Page' vertical tab. Then select 'Save block'.
+<li>Find the new block, 'Collection List' and select <strong>Place block</strong>.</li>
+<li>Restrict the block to only display on the frontpage by adding the text '<front>' to the <em>Page</em> vertical tab. Then select <strong>Save block</strong>.
 <img alt="Frontpage view collection list place block configure" src="../../assets/frontpage_view_collection_list_place_block_configure.png" /></li>
 <li>Review the block placement and move if required.
 <img alt="Frontpage view collection list block placement" src="../../assets/frontpage_view_collection_list_block_placement.png" /></li>
 </ol>
 </li>
-<li>The 'Collection list' now only displays on the frontpage. It displays below the 'Main page content'.
+<li>The 'Collection list' now only displays on the front page. It displays below the <em>Main page content</em>.
 <img alt="Frontpage view collection list" src="../../assets/frontpage_view_collection_list.png" /></li>
 </ol>
 <div class="admonition tip">
