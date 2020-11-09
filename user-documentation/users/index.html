@@ -10,19 +10,20 @@
       
       
       
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
     
     
       
-        <title>Add a New User - Islandora 8</title>
+        <title>Create and Manage User Accounts - Islandora 8</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.19190aaf.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.24b84193.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
         
           
           
@@ -91,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Add a New User
+              Create and Manage User Accounts
             
           </span>
         </div>
@@ -623,12 +624,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Add a New User
+        Create and Manage User Accounts
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Add a New User
+      Create and Manage User Accounts
     </a>
     
       
@@ -643,6 +644,20 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#how-to-add-a-user" class="md-nav__link">
@@ -666,8 +681,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reading-on-managing-users-in-drupal" class="md-nav__link">
-    Further Reading on Managing Users in Drupal
+  <a href="#further-reading" class="md-nav__link">
+    Further Reading
   </a>
   
 </li>
@@ -1513,6 +1528,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-add-a-user" class="md-nav__link">
     How to Add a User
   </a>
@@ -1534,8 +1563,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reading-on-managing-users-in-drupal" class="md-nav__link">
-    Further Reading on Managing Users in Drupal
+  <a href="#further-reading" class="md-nav__link">
+    Further Reading
   </a>
   
 </li>
@@ -1558,9 +1587,26 @@
                 
                 
                 <h1 id="managing-users">Managing Users</h1>
+<h2 id="overview">Overview</h2>
+<p>Anyone who visits your Drupal site is a user. There are three different default users in Drupal:</p>
+<ul>
+<li><em>Anonymous user</em>. This is anyone who is not logged in.</li>
+<li><em>Authenticated user</em>. These are all users who have an account on your site and can log in.</li>
+<li><em>Administrator</em>. This is a special class of user that can access the administrative menus in your Drupal site and make changes. </li>
+</ul>
+<p>Islandora adds an additional default role:</p>
+<ul>
+<li><em>fedoraAdmin</em>. This is a specialized role needed for a user to write to Fedora from Islandora.</li>
+</ul>
+<p>Additional user roles can be created and assigned customized permissions, as described below.</p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>This How-To assumes a very basic familiarity with Drupal.</li>
+<li>This How-To is generally appliable for any Islandora site, but the examples given are taken from an Islandora demo using the (optional) <strong><a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="/installation/playbook">Ansible Playbook</a>, <a href="/installation/docker-compose">ISLE with Docker-Compose</a>, or are using the <a href="https://islandora.ca/try">sandbox or a Virtual Machine Image</a>.</li>
+</ul>
 <h2 id="how-to-add-a-user">How to Add a User</h2>
 <ol>
-<li>Log in to Drupal. You will need the Administrator role to Manage Users.</li>
+<li>Log in to Drupal. You will need the <em>Administrator</em> role to manage users.</li>
 <li>Click the <strong>Manage</strong> tab from the top toolbar.</li>
 <li>Select the <strong>People</strong> tab from the resulting menu to bring up the <em>People</em> page.
 <img alt="Alt text" src="../../assets/users_people.png" title="People page" /></li>
@@ -1583,7 +1629,7 @@
 <p>To review/edit the permission for each role, in the <em>People</em> page click the <strong>Permissions</strong> tab in the set of tabs above the <strong>Add user</strong> button.</p>
 <h2 id="how-to-create-a-new-user-role">How to Create a New User Role</h2>
 <ol>
-<li>Log in to Drupal. You will need the Administrator role to edit or add roles.</li>
+<li>Log in to Drupal. You will need the <em>Administrator</em> role to edit or add roles.</li>
 <li>Click the <strong>Manage</strong> tab from the top toolbar.</li>
 <li>Select the <strong>People</strong> tab from the resulting menu.</li>
 <li>Click the <strong>Roles</strong> tab in the set of tabs above the <strong>Add user</strong> button.</li>
@@ -1597,7 +1643,7 @@
 </ol>
 <h2 id="how-to-edit-role-permissions">How to Edit Role Permissions</h2>
 <ol>
-<li>Log in to Drupal. You will need the Administrator role to edit permissions.</li>
+<li>Log in to Drupal. You will need the <em>Administrator</em> role to edit permissions.</li>
 <li>Click the <strong>Manage</strong> tab from the top toolbar.</li>
 <li>Select the <strong>People</strong> tab from the resulting menu.</li>
 <li>Click the <strong>Roles</strong> tab in the set of tabs above the <strong>Add user</strong> button.
@@ -1610,7 +1656,7 @@
 <p class="admonition-title">Islandora Quick Lessons</p>
 <p>Learn more with this video on how to <a href="https://youtu.be/XSokAFRVBuE">Add a User</a>.</p>
 </div>
-<h2 id="further-reading-on-managing-users-in-drupal">Further Reading on Managing Users in Drupal</h2>
+<h2 id="further-reading">Further Reading</h2>
 <p>For more information on managing users in Drupal visit the section
 <a href="https://www.drupal.org/docs/user_guide/en/user-chapter.html">Managing User Accounts</a> of Drupal.org.</p>
                 
@@ -1693,7 +1739,7 @@
     </div>
     
       <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
