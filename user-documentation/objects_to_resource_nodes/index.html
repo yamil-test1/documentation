@@ -16,7 +16,7 @@
     
     
       
-        <title>From Objects to Resource Nodes - Islandora 8</title>
+        <title>Modelling content in Islandora 8 vs. 7 - Islandora 8</title>
       
     
     
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              From Objects to Resource Nodes
+              Modelling content in Islandora 8 vs. 7
             
           </span>
         </div>
@@ -191,11 +191,167 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      Overview
+      This is Islandora
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/component_overview/" class="md-nav__link">
+      Component Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Modelling content in Islandora 8 vs. 7
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Modelling content in Islandora 8 vs. 7
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-resources-in-islandora-8" class="md-nav__link">
+    Building resources in Islandora 8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-objects-become-resource-nodes" class="md-nav__link">
+    Traditional objects become resource nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#islandora-8-empowering-resource-nodes-through-drupal" class="md-nav__link">
+    Islandora 8: Empowering resource nodes through Drupal
+  </a>
+  
+    <nav class="md-nav" aria-label="Islandora 8: Empowering resource nodes through Drupal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-resource-node-discovery-attributes" class="md-nav__link">
+    Concept: Resource node discovery attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-resource-node-management-attributes" class="md-nav__link">
+    Concept: Resource node management attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information" class="md-nav__link">
+    More Information
+  </a>
+  
+    <nav class="md-nav" aria-label="More Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copyright-and-usage" class="md-nav__link">
+    Copyright and Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../placeholder/" class="md-nav__link">
+      What is Islandora Defaults
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -226,8 +382,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../installation/component_overview/" class="md-nav__link">
-      Component Overview
+    <a href="../../installation/docker-compose/" class="md-nav__link">
+      Docker Compose (ISLE-DC)
     </a>
   </li>
 
@@ -249,28 +405,16 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../installation/docker-compose/" class="md-nav__link">
-      Docker Compose (ISLE-DC)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
-    <label class="md-nav__link" for="nav-2-4">
+    <label class="md-nav__link" for="nav-2-3">
       Manual Installation
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Manual Installation" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
+      <label class="md-nav__title" for="nav-2-3">
         <span class="md-nav__icon md-icon"></span>
         Manual Installation
       </label>
@@ -390,6 +534,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/install-enable-drupal-modules/" class="md-nav__link">
+      Installing Modules
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -399,12 +555,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       User Documentation
@@ -414,6 +568,130 @@
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
         User Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Content in Islandora 8
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Content in Islandora 8
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource-nodes/" class="md-nav__link">
+      Resource Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../media/" class="md-nav__link">
+      Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collections/" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paged-content/" class="md-nav__link">
+      Paged Content
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../metadata/" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../creating-a-node/" class="md-nav__link">
+      Create a Resource Node
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Repository Administrator Documentation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Repository Administrator Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Repository Administrator Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -458,19 +736,29 @@
           
           
 
-  
+
+  <li class="md-nav__item">
+    <a href="../versioning/" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+          
+          
+          
 
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-4-5">
       Content in Islandora 8
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-4-5">
         <span class="md-nav__icon md-icon"></span>
         Content in Islandora 8
       </label>
@@ -486,110 +774,6 @@
     <a href="../resource-nodes/" class="md-nav__link">
       Resource Nodes
     </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        From Objects to Resource Nodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
-      From Objects to Resource Nodes
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-resources-in-islandora-8" class="md-nav__link">
-    Building resources in Islandora 8
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traditional-objects-become-resource-nodes" class="md-nav__link">
-    Traditional objects become resource nodes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#islandora-8-empowering-resource-nodes-through-drupal" class="md-nav__link">
-    Islandora 8: Empowering resource nodes through Drupal
-  </a>
-  
-    <nav class="md-nav" aria-label="Islandora 8: Empowering resource nodes through Drupal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-resource-node-discovery-attributes" class="md-nav__link">
-    Concept: Resource node discovery attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-resource-node-management-attributes" class="md-nav__link">
-    Concept: Resource node management attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    More Information
-  </a>
-  
-    <nav class="md-nav" aria-label="More Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copyright-and-usage" class="md-nav__link">
-    Copyright and Usage
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -653,31 +837,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
     
-    <label class="md-nav__link" for="nav-3-5">
-      How-To
+    <label class="md-nav__link" for="nav-4-6">
+      Configuring Islandora
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="How-To" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
+    <nav class="md-nav" aria-label="Configuring Islandora" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
         <span class="md-nav__icon md-icon"></span>
-        How-To
+        Configuring Islandora
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../creating-a-node/" class="md-nav__link">
-      Create a Resource Node
-    </a>
-  </li>
-
         
           
           
@@ -709,25 +881,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../users/" class="md-nav__link">
-      Create and Manage User Accounts
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../searching/" class="md-nav__link">
-      Searching
+      Configure Search
     </a>
   </li>
 
@@ -739,7 +894,7 @@
 
   <li class="md-nav__item">
     <a href="../context/" class="md-nav__link">
-      Context
+      Configure Context
     </a>
   </li>
 
@@ -751,31 +906,7 @@
 
   <li class="md-nav__item">
     <a href="../blocks/" class="md-nav__link">
-      Blocks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../usage-stats/" class="md-nav__link">
-      Usage Stats
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../versioning/" class="md-nav__link">
-      Versioning
+      Configure Blocks
     </a>
   </li>
 
@@ -803,27 +934,6 @@
     </a>
   </li>
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
-    
-    <label class="md-nav__link" for="nav-3-13">
-      Integrations
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Integrations" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-13">
-        <span class="md-nav__icon md-icon"></span>
-        Integrations
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -861,37 +971,6 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Repository Administrator Documentation
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Repository Administrator Documentation" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
-        Repository Administrator Documentation
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
@@ -913,6 +992,73 @@
     <a href="../../islandora/drupal-bundle-configurations/" class="md-nav__link">
       Drupal Bundle Configurations
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/flysystem/" class="md-nav__link">
+      Flysystem
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Operating an Islandora Repository
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Operating an Islandora Repository" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        <span class="md-nav__icon md-icon"></span>
+        Operating an Islandora Repository
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../users/" class="md-nav__link">
+      Create and Manage User Accounts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../usage-stats/" class="md-nav__link">
+      Usage Stats
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -948,18 +1094,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/install-enable-drupal-modules/" class="md-nav__link">
-      Installing Modules
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../technical-documentation/updating_drupal/" class="md-nav__link">
       Updating Drupal
     </a>
@@ -974,6 +1108,18 @@
   <li class="md-nav__item">
     <a href="../../technical-documentation/uploading-large-files/" class="md-nav__link">
       Uploading large files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-documentation/jwt/" class="md-nav__link">
+      JWT Authentication
     </a>
   </li>
 
@@ -1182,44 +1328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-documentation/flysystem/" class="md-nav__link">
-      Flysystem
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../technical-documentation/jwt/" class="md-nav__link">
-      JWT Authentication
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../technical-documentation/versioning/" class="md-nav__link">
       Versioning Policy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../technical-documentation/docs-build/" class="md-nav__link">
-      How to Build Documentation
     </a>
   </li>
 
@@ -1255,14 +1365,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-11" type="checkbox" id="nav-6-11">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
     
-    <label class="md-nav__link" for="nav-6-11">
+    <label class="md-nav__link" for="nav-6-8">
       Alpaca
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Alpaca" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-11">
+      <label class="md-nav__title" for="nav-6-8">
         <span class="md-nav__icon md-icon"></span>
         Alpaca
       </label>
@@ -1490,6 +1600,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../technical-documentation/docs-build/" class="md-nav__link">
+      How to Build Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../contributing/docs_style_guide/" class="md-nav__link">
       Documentation Style Guide
     </a>
@@ -1626,13 +1748,13 @@
                   </a>
                 
                 
-                <h1 id="from-objects-to-resource-nodes-shifting-concepts-from-islandora-7-to-8">From Objects to Resource Nodes: Shifting Concepts from Islandora 7 to 8</h1>
+                <h1 id="from-objects-to-resource-nodes-shifting-concepts-from-islandora-7-to-8">From Objects to Resource Nodes: Shifting Concepts from Islandora 7 to 8<a class="headerlink" href="#from-objects-to-resource-nodes-shifting-concepts-from-islandora-7-to-8" title="Permanent link">&para;</a></h1>
 <p>This document attempts to show the shift in how objects work from Islandora version 7 to version 8, from a non-developer perspective.</p>
-<h2 id="building-resources-in-islandora-8">Building resources in Islandora 8</h2>
+<h2 id="building-resources-in-islandora-8">Building resources in Islandora 8<a class="headerlink" href="#building-resources-in-islandora-8" title="Permanent link">&para;</a></h2>
 <p>Islandora 8 represents a fundamental shift forward from Islandora 7. Islandora 8 turns what are known as traditional Islandora objects into Drupal nodes. It is possible to manipulate all aspects of objects through the Drupal user interface. Non-developers can configure and set up a myriad of content and functions in Islandora that enhance the discovery of and support access to objects in the repository. Improving the discovery of and access to objects is a significant theme in Islandora. </p>
 <p>Another difference between Islandora 7 and 8 are Islandora objects. In Islandora 7, <em>objects</em> (video files, audio files, PDFs, etc.) are loaded through the user interface, and Datastreams are generated automatically. These consist of access and display copies, the metadata, OCH/HOCR, technical metadata, and more. All of these Datastreams are directly connected to the object and accessed through the admin interface. </p>
 <p>In Islandora 8, the traditional Islandora 7 objects (video files, audio files, etc.) are now <em>Drupal nodes</em>. Islandora object nodes are a special kind of Drupal node, distinct from nodes that exist for other content types such as a blog post, an article, a page (like the About page on a site), and others. These Islandora objects are still loaded through the interface and described with the data entry form and derivatives are still generated. However, the Datastreams are no longer connected to the original object in the same immutable way. Each of these Datastreams can be manipulated through Drupal by non-developers.  You can create a variety of ways to view this metadata and information related to the objects. Doing so requires knowledge of Drupal 8, but this essentially means that there are many ways to view the metadata and access the related objects in Islandora 8. </p>
-<h2 id="traditional-objects-become-resource-nodes">Traditional objects become resource nodes</h2>
+<h2 id="traditional-objects-become-resource-nodes">Traditional objects become resource nodes<a class="headerlink" href="#traditional-objects-become-resource-nodes" title="Permanent link">&para;</a></h2>
 <p>Until now we have thought of objects in Islandora 8 in the conventional Islandora 7 way: A file loaded in the repository with associated derivatives. It can be helpful to move away from this when learning about Islandora 8. </p>
 <p>One way to do this is to think of objects in Islandora 8 as <em>resource nodes</em>. While using the term “object” is traditional with Islandora it can get in the way of understanding the differences and possibilities in Islandora 8. Using the term “resource node” reflects the fact that files such as JPEGs, MP3s, .zip, etc. that get loaded through the data entry (formerly ingest) form are now fully integrated within Drupal and can take advantage of everything that represents. </p>
 <p>The term resource node does not just refer to the individual files, however. The term reflects the new nature of objects in Islandora 8. A resource node encompasses multiple elements that all relate to each other, even if they are no longer directly connected like objects in Islandora 7. </p>
@@ -1649,13 +1771,13 @@
 <li>Derivative files (thumbnails, web-friendly service files, technical metadata, and more)</li>
 </ul>
 <p>It is possible to configure all elements of a resource node in Islandora 8. This fact allows full control over how one accesses the node and how nodes are displayed and discovered online. It also allows a repository to take full advantage of all third-party Drupal modules, themes, and distributions available.  </p>
-<h2 id="islandora-8-empowering-resource-nodes-through-drupal">Islandora 8: Empowering resource nodes through Drupal</h2>
+<h2 id="islandora-8-empowering-resource-nodes-through-drupal">Islandora 8: Empowering resource nodes through Drupal<a class="headerlink" href="#islandora-8-empowering-resource-nodes-through-drupal" title="Permanent link">&para;</a></h2>
 <p>These resource nodes are what the librarian, student, archivist, technician, or general non-developer creates through the data entry form. It is a lot more than just the file (JPEG, .MP3, etc.). This user is creating the node and elements that make it possible to access, manage, and preserve the resource. Islandora 8 is all about empowering this access to repository resources. It makes it possible to touch and manipulate the file itself and the elements that make it a wholly preserved and shareable digital object. This shift is actually at the core of Digital Asset Management (DAM) and librarianship – making things accessible. Islandora 8 is about doing that through Drupal 8 and the web, making it that much more available, flexible, and viable for the future. It does this by making more elements of what was a traditional DAM object configurable and manageable by more users – <em>non-developers</em>. Work is ongoing by the community to increase the ease of use of the admin user interface to make this even more feasible. </p>
-<h3 id="concept-resource-node-discovery-attributes">Concept: Resource node discovery attributes</h3>
+<h3 id="concept-resource-node-discovery-attributes">Concept: Resource node discovery attributes<a class="headerlink" href="#concept-resource-node-discovery-attributes" title="Permanent link">&para;</a></h3>
 <p>Discovery attributes would include metadata fields, fields that define the collection hierarchy/structure, and any custom fields. They are any attributes of the resource node element that help manage how the resource node can be discovered through the interface and accessed by the public online. </p>
 <p>For example, the following are discovery attributes:</p>
 <p><img alt="screenshot of viewer and metadata" src="../../assets/objects_to_resouce_nodes_attributes.jpg" /></p>
-<h3 id="concept-resource-node-management-attributes">Concept: Resource node management attributes</h3>
+<h3 id="concept-resource-node-management-attributes">Concept: Resource node management attributes<a class="headerlink" href="#concept-resource-node-management-attributes" title="Permanent link">&para;</a></h3>
 <p>Management attributes of the resource node help to clarify and manage its relationship within the repository and to other content. Management attributes define if a node is a resource node, which collection it belongs to, the type of resource a node is (image, book, newspaper, etc.), and similar actions. When looking at Drupal functions, the following are examples of management attributes: </p>
 <ul>
 <li>Content types <ul>
@@ -1668,7 +1790,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="more-information">More Information</h2>
+<h2 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
 <p>The following pages expand on the concepts discussed above:</p>
 <ul>
 <li><a href="../resource-nodes/">Resource Nodes</a></li>
@@ -1676,7 +1798,7 @@
 <li><a href="../creating-a-node/">Make an Image</a></li>
 <li><a href="../content_types/">Content Types</a></li>
 </ul>
-<h3 id="copyright-and-usage">Copyright and Usage</h3>
+<h3 id="copyright-and-usage">Copyright and Usage<a class="headerlink" href="#copyright-and-usage" title="Permanent link">&para;</a></h3>
 <p>This document was originally developed by <a href="https://github.com/alexkent0">Alex Kent</a> and has been adapted for general use by the Islandora community. </p>
 <p><a href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="CC BY-NC 4.0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc.svg" /></a></p>
                 
@@ -1697,7 +1819,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../resource-nodes/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../installation/component_overview/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1706,19 +1828,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Resource Nodes
+                Component Overview
               </div>
             </div>
           </a>
         
         
-          <a href="../media/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../placeholder/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Media
+                What is Islandora Defaults
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
