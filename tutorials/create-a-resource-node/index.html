@@ -12,7 +12,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.21aed14c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
@@ -1604,7 +1604,8 @@
                 
                   <h1>Create a Resource Node</h1>
                 
-                <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+                <p><em>last updated on 24-11-2020</em></p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This tutorial will walk you through adding a piece of digital content (an image and some metadata) into an Islandora repository.
 At the end, you will have metadata in a Drupal node, a file stored in Fedora, and derivatives automatically created.</p>
 <div class="admonition tip">
@@ -1636,19 +1637,24 @@ At the end, you will have metadata in a Drupal node, a file stored in Fedora, an
 <p><img alt="New node created" src="../../assets/create_node_new_node.png" /></p>
 <p>The new node page displays, with the title, any metadata that we entered, and a <em>Fedora URI</em> which indicates that metadata about this new node has been synced into Fedora. Congratulations, you have created a resource node!</p>
 <h2 id="step-2-upload-an-original-file">Step 2: Upload an Original File<a class="headerlink" href="#step-2-upload-an-original-file" title="Permanent link">&para;</a></h2>
-<p>Alas, your node has no files. To upload a file, click on the node's <em>Media</em> tab.</p>
 <p><img alt="Node page showing Media tab" src="../../assets/create_node_click_media.png" /></p>
-<p>Then, click on <strong>Add Media</strong>.</p>
+<p>Alas, your node has no files. To upload a file, click on the node's <em>Media</em> tab.</p>
 <p><img alt="Click on Add Media" src="../../assets/create_node_add_media.png" /></p>
-<p>There are several types of Media to choose from. We want to add a jpg image, so click on <em>Image</em>.</p>
+<div class="admonition islandora">
+<p class="admonition-title">Concept: Media tab</p>
+<p>The "Media" tab shows Media that we say "belong to" or are "media of" that node. The idea of media "belonging to" nodes, and the "Media" tab, are part of Islandora but not part of standard Drupal.</p>
+</div>
+<p>The Media tab shows nothing listed, because this node has no files. So click on <strong>Add Media</strong>. You will be taken to a list of media types to choose from.</p>
+<p><img alt="Click on image option" src="../../assets/create_node_select_image.png" /></p>
+<p>We want to add a jpg image, so click on <em>Image</em>. You are now presented with a form to create a media.</p>
 <div class="admonition warning">
 <p class="admonition-title">Images vs .tiffs</p>
 <p>Drupal considers any type of image that can be viewed natively in the browser as an <em>Image</em>.
 For other image types that require special viewers, such as tiffs, you would have to choose
 <em>File</em>. <a href="../../user-documentation/media/">Learn more about Media in Islandora</a>.</p>
 </div>
-<p><img alt="Click on image option" src="../../assets/create_node_select_image.png" /></p>
-<p>You are now presented with the form for the technical metadata of the file. There are three required
+<p><img alt="Fill out the media form" src="../../assets/create_node_adding_image.png" /></p>
+<p>This form contains fields for metadata about the file, including "technical metadata". There are three required
 parts of the form:</p>
 <ol>
 <li><em>Name</em>, which identifies this media.</li>
@@ -1656,21 +1662,21 @@ parts of the form:</p>
 <li><em>Media Use</em>, describing what this file is in the context of its resource node. To trigger derivative
 generation, select the checkbox for <em>Original File</em>.</li>
 </ol>
-<p><img alt="Fill out the media form" src="../../assets/create_node_adding_image.png" /></p>
-<p>With the mandatory fields filled out (do not edit the "<em>Media of</em>" field), click <strong>Save</strong>, and a new Media will be created attached to your resource node. You will land on the administrator's list of Media, and the new media created is at the top of the list. Select it to see the Media.</p>
+<p>With the mandatory fields filled out (do not edit the "<em>Media of</em>" field), click <strong>Save</strong>, and a new Media will be created attached to your resource node. You will land on the administrator's list of Media (i.e. all media on your site, not just those attached to the resource node), and the new media object you created is at the top of the list.</p>
 <p><img alt="Media list" src="../../assets/create_node_list_media.png" /></p>
+<p>Select the Media you just created, and you will see a page containing that Media's information and a rendering of the image that you uploaded.</p>
 <!-- We should maybe mention that it is living in Fedora? but why doesn't the Fedora URI show up?  -->
 
 <p>Scroll down to see metadata below the uploaded image. The <em>MIME type</em>, <em>File size</em>, <em>Width</em>, and <em>Height</em> were automatically populated when the file was uploaded. The value under <em>Media of</em> is a link back to the resource node.</p>
 <p><img alt="Media page showing metadata" src="../../assets/create_node_media_metadata.png" /></p>
 <h2 id="step-3-verify-derivatives-were-created">Step 3: Verify derivatives were created<a class="headerlink" href="#step-3-verify-derivatives-were-created" title="Permanent link">&para;</a></h2>
-<p>Now return to the node you created, and you will see the image along with its (minimal) descriptive metadata. The image you are viewing is not the one you uploaded, but a lower-resolution service file that was created and stored in the Drupal public filesystem. </p>
+<p>Now return to the node you created, and you will see the image along with its (minimal) descriptive metadata. The image you are viewing is not the one you uploaded, but a lower-resolution service file that was created and stored in the Drupal public filesystem.</p>
 <p><img alt="The file is now loaded, return to the main site to view" src="../../assets/create_node_finished_node.png" /></p>
 <!-- should increase the amount of descriptive metadata to make this make more sense -->
 
 <p>If you open the node's <em>Media</em> tab, you should see new Media have been added - these are derivatives have been created automatically, including a service file, a thumbnail, and a FITS technical metadata file.</p>
 <p><img alt="Derivatives were created and are listed under the Media tab." src="../../assets/create_node_see_derivatives.png" /></p>
-<p>You now have an Islandora resource node, which is a special case of a Drupal node, and it has Media attached to it including an Original File, Thumbnail, Service File, and FITS Technical Metadata file. </p>
+<p>You now have an Islandora resource node, which is a special case of a Drupal node, and it has Media attached to it including an Original File, Thumbnail, Service File, and FITS Technical Metadata file.</p>
 <h2 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Drupal documentation on <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Nodes</a></li>
@@ -1756,8 +1762,8 @@ generation, select the checkbox for <em>Original File</em>.</li>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
