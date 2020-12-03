@@ -1918,8 +1918,14 @@ Pulling watchtower ... done
 <p>Once <code>make</code> has successfully completed, launch the ISLE containers using <code>docker-compose up</code>. The <code>-d</code> flag allows you to return to using the command line. Without it, your shell will be stuck in the <code>docker-compose</code> process as long as the containers are running.</p>
 <pre><code class="language-bash">docker-compose up -d
 </code></pre>
+<div class="admonition fail">
+<p class="admonition-title">Troubleshooting - connection timed out (Mac).</p>
+<p>If you are using Docker Desktop for Mac, and get timeout errors when spinning up the containers (during <code>docker-compose up -d</code> or during <code>make dev</code>) such as this:</p>
+<p><code>ERROR: for isle-dc_mariadb_1  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=480)</code></p>
+<p>you can try quitting Docker completely (make sure there is no whale icon in your top toolbar - may need to select "Quit" from the whale icon itself) and then restart Docker. </p>
+</div>
 <h2 id="visiting-your-islandora-site">Visiting your Islandora site<a class="headerlink" href="#visiting-your-islandora-site" title="Permanent link">&para;</a></h2>
-<p>Direct a browser to <a href="https://islandora-isle-dc.traefik.me/">https://islandora-isle-dc.traefik.me/</a> (yes, it's awkward and there's a <a href="https://github.com/Islandora-Devops/isle-dc/issues/120">ticket about it</a>). If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. If it takes more than a few minutes, check to make sure that none of your containers have failed to launch (see note above on "Troubleshooting - docker containers exit without warning"). When all containers are ready, you should see a basic Drupal login screen.</p>
+<p>Direct a browser to <a href="https://islandora.traefik.me/">https://islandora.traefik.me/</a>. If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. If it takes more than a few minutes, check to make sure that none of your containers have failed to launch (see note above on "Troubleshooting - docker containers exit without warning"). When all containers are ready, you should see a basic Drupal login screen.</p>
 <p><img alt="&quot;Bad Gateway&quot; white screen while still loading" src="../../assets/docker_bad_gateway_still_loading.png" /></p>
 <p><img alt="Drupal login screen" src="../../assets/docker_drupal_login_screen.png" /></p>
 <p>To log in:</p>
