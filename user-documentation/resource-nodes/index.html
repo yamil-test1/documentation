@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#properties" class="md-skip">
+        <a href="#resource-nodes" class="md-skip">
           Skip to content
         </a>
       
@@ -594,6 +594,8 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Resource Nodes
@@ -607,6 +609,8 @@
       
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -637,8 +641,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#display-hints" class="md-nav__link">
-    Display Hints
+  <a href="#display-modes" class="md-nav__link">
+    Display Modes
   </a>
   
 </li>
@@ -822,6 +826,18 @@
   <li class="md-nav__item">
     <a href="../extending/" class="md-nav__link">
       Extending Islandora
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file_viewers/" class="md-nav__link">
+      Viewers
     </a>
   </li>
 
@@ -1543,6 +1559,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1572,8 +1590,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#display-hints" class="md-nav__link">
-    Display Hints
+  <a href="#display-modes" class="md-nav__link">
+    Display Modes
   </a>
   
 </li>
@@ -1602,9 +1620,9 @@
                   </a>
                 
                 
-                  <h1>Resource Nodes</h1>
-                
-                <p>A resource node holds the descriptive metadata for content, as well as grouping together an original file and
+                <h1 id="resource-nodes">Resource Nodes<a class="headerlink" href="#resource-nodes" title="Permanent link">&para;</a></h1>
+<p><em>last updated 03-12-2020</em></p>
+<p>A resource node holds the descriptive metadata for content, as well as grouping together an original file and
 all of the derivatives files generated from it.   </p>
 <p>The model for exactly what constitutes an object in Islandora 8 is flexible and can be adapted to the needs of specific users. For example, the Islandora Defaults configuration considers an object as a resource node of the type "Repository Item"  which contains descriptive metadata about the object. Attached to that Node are one or more Media, each representing a file that is part of this object, such as "Original File", "Thumbnail", "Preservation Master", etc. With this model, every original file uploaded into Islandora has its own resource node.</p>
 <p>Multi-file Media configurations also attach Media to a parent node, but allow for that node to be represened by multiple "Original File"s. In this model, a Media contains the original file as well as any derivative files created from it (thumbnail, service file, etc.).</p>
@@ -1735,21 +1753,21 @@ types of media can be associated with a node.</p>
 the "Members" tab, Actions can be performed in bulk using the checkboxes and Actions dropdown.</p>
 <p><img alt="Media tab" src="../../assets/resource_nodes_media_tab.png" /></p>
 <p>See <a href="../media/">the media section</a> for more details.</p>
-<h2 id="display-hints">Display Hints<a class="headerlink" href="#display-hints" title="Permanent link">&para;</a></h2>
-<p>Drupal uses "View Modes" to provide alternative ways to present content to users. You may be familiar with the "full" and "teaser" versions of nodes, which are rendered using two corresponding kinds of View modes. Islandora also uses view modes to control how media content is displayed. Islandora provides two view modes for Media, one which renders the OpenSeadragon viewer and the other which renders the PDFjs viewer. These two View modes can be set explicitly in the node edit form or you can configure Islandora to use a specific View mode for all media with a specific Mime type using <a href="../context/">Contexts</a>.</p>
-<p>To set it explicitly on the resource node's edit form, simply check the View mode you want to use for that node in the <em>Display hints</em> field:</p>
+<h2 id="display-modes">Display Modes<a class="headerlink" href="#display-modes" title="Permanent link">&para;</a></h2>
+<p>Drupal uses "display modes" (also called "view modes") as alternative ways to present content to users. You may be familiar with the "full" and "teaser" versions of nodes, which are rendered using two corresponding display modes. Islandora makes use of display modes to control how media content is displayed. Islandora Defaults provides two display modes for Media, one which renders the OpenSeadragon viewer and the other which renders the pdf.js viewer. These two display modes can be enabled by using "Display hints" in the node edit form, or you can configure Islandora to use a specific display mode for all media based on the file's Mime type. Both methods make use of <a href="../context/">Contexts</a>.</p>
+<p>To set the display mode on the resource node's edit form, select the display mode you want to use for that node in the <em>Display hints</em> field:</p>
 <p><img alt="Display hints" src="../../assets/resource_nodes_display_hints.png" /></p>
-<p>The selected View mode will then be used when the resource node's page is rendered.</p>
+<p>Due to the associated Context configurations ("Open Seadragon" and "PDFjs Viewer") that are shipped with Islandora Defaults, the selected display mode will then be used when the resource node's page is rendered. </p>
 <p>At a global level, there are a couple of ways to tell Drupal to use the PDFjs viewer to render the content of the media field whenever the media has a Mime type of <code>application/pdf</code>.</p>
-<p>The first way is to edit the "PDFjs" Context. By default, this Context tells Drupal to use the PDFjs viewer if the node has the term "PDFjs" (yes, that's a taxonomy term):</p>
+<p>The first way is to edit the "PDFjs Viewer" Context. By default, this Context tells Drupal to use the PDFjs viewer if the node has the term "PDFjs" (yes, that's a taxonomy term):</p>
 <p><img alt="Default PDFjs Context" src="../../assets/resource_nodes_pdfjs_context_default.png" /></p>
 <p>If you add the Condition "Node has Media with Mime type" and configure it to use <code>application/pdf</code> as the Mime type, like this:</p>
 <p><img alt="PDFjs Context with Mimetype Condition" src="../../assets/resource_nodes_pdfjs_context_with_mimetype.png" /></p>
 <p>Context will use whichever Condition applies (as long as you don't check "Require all conditions"). That is, if the "PDFjs" display hint option in the node edit form is checked, <em>or</em> if the node's media has a Mime type of <code>application/pdf</code>, the media content will be rendered using the PDFjs viewer.</p>
-<p>The second way to use the media's Mime type to render its content with the PDFjs viewer is to create a separate Context that will detect the media's Mime type and use the configured View mode automatically. To do this, create a new Context. Add a "Node has Media with Mime type" condition and specify the Mime type, and then add a "Change View mode" Reaction that selects the desired view mode:</p>
+<p>The second way to use the media's Mime type to render its content with the PDFjs viewer is to create a separate Context that will detect the media's Mime type and use the configured display mode automatically. To do this, create a new Context. Add a "Node has Media with Mime type" condition and specify the Mime type, and then add a "Change View mode" Reaction that selects the desired display mode:</p>
 <p><img alt="Display hints" src="../../assets/resource_nodes_view_mode_context.png" /></p>
-<p>Finally, save your Context. From that point on, whenever the media for a node has the configured Mime type, Drupal will render the media using the corresponding view mode.</p>
-<p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Whichever Condition applies last between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the View mode specified in the node edit form intentionally override the View mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon view mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
+<p>Finally, save your Context. From that point on, whenever the media for a node has the configured Mime type, Drupal will render the media using the corresponding display mode.</p>
+<p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Whichever Condition applies last between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the display mode specified in the node edit form intentionally override the display mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon display mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
 <h2 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h2>
 <p>Islandora has a notion of <em>membership</em>, which is used to create a parent/child relationship between
 two resource nodes. Membership is denoted using another special field, "Member Of".<br />
