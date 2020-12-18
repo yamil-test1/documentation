@@ -1633,6 +1633,7 @@
                 
                 
                 <h1 id="metadata-in-islandora-8">Metadata in Islandora 8<a class="headerlink" href="#metadata-in-islandora-8" title="Permanent link">&para;</a></h1>
+<p><em>last updated on 12-18-2020</em></p>
 <blockquote>
 <p>TL;DR: In Islandora 8, metadata is stored in Drupal, in <em>fields</em> attached to <em>entities</em> (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine...) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle.</p>
 </blockquote>
@@ -1690,6 +1691,10 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
 <p>The 'Member Of' field is an entity reference field, defined by Islandora, which is the Islandora way of imposing a hierarchical order on resource nodes. This can be used to show membership in a collection, for pages that are members of a paged item, and for members of a complex object.</p>
 <h3 id="edtf">EDTF<a class="headerlink" href="#edtf" title="Permanent link">&para;</a></h3>
 <p>The EDTF field type is for recording dates in <a href="https://www.loc.gov/standards/datetime/edtf.html">Extended Date Time Format</a>, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty. The Default EDTF widget has a validator that only allows strings that conform to the EDTF standard. The Default EDTF formatter allows these date string to be displayed in a variety of human readable ways, including big- or little-endian, and presenting months as numbers, abbreviations, or spelling month names out in full.</p>
+<div class="admonition tip">
+<p class="admonition-title">Nerd note:</p>
+<p>Big-endian = year, month, day. Little-endian = day, month, year. Middle-endian = month, day, year.</p>
+</div>
 <p>When configuring the EDTF widget for a field in a content type, you can choose to allow date intervals, but doing this prevents the widget from accepting values that include times. (The EDTF standard states that date intervals cannot contain times, but the field should be able to accept either a valid EDTF range or a valid EDTF datetime, so this is a bug.)</p>
 <p>Example of valid inputs in a multi-valued EDTF Date field:
 <img alt="Screenshot of valid dates ('2019', '2019-11', '2019-22', and '2019-02-02T02:22:22Z') in an EDTF form widget." src="../../assets/metadata_edtf_valid.png" /></p>
@@ -1697,10 +1702,18 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
 <img alt="Screenshot of dates displayed as '2019', 'November 2019', 'Summer 2019', and '2 February 2019 02:22:22Z'." src="../../assets/metadata_edtf_display.png" /></p>
 <p>Example of a valid EDTF value ('1943-05') and an invalid value ('1943 May') with the corresponding error message:
 <img alt="Screenshot of both a valid (&quot;1943-05&quot;) and an invalid (&quot;1943 May&quot;) EDTF entry. Displays the error message &quot;Could not parse the date 'May 1943' Years must be at least 4 characters long.&quot;" src="../../assets/metadata_edtf_invalid.png" /></p>
-<p>The configuration for the Default EDTF Widget (including options for extra strict date validation, and allowing date intervals and date sets).
+<p>The configuration for the Default EDTF Widget (including options for extra strict date validation, and allowing date intervals and date sets). This configuration can be set per field by clicking the gear icon next to any Default EDTF Widget field at <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Content types</strong> &gt;&gt; <strong>Repository Item</strong> &gt;&gt; <strong>Manage form display</strong> (admin/structure/types/manage/islandora_object/form-display)
 <img alt="Screenshot of the configuration screen for the EDTF Widget" src="../../assets/metadata_edtf_widget_settings.png" /></p>
 <p>Example of how the EDTF formatter settings can change the display of an EDTF value:
 <img alt="Combined screenshots displaying the EDTF default formatter settings, default on top and modified settings below, with an example formatted EDTF value displayed for each." src="../../assets/metadata_edtf_formatters.png" /></p>
+<p>The EDTF formatter settings can be changed per field by clicking the gear icon next to any Default EDTF formatter field at <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Content types</strong> &gt;&gt; <strong>Repository Item</strong> &gt;&gt; <strong>Manage display</strong> (admin/structure/types/manage/islandora_object/display).</p>
+<p>By default, EDTF date values are indexed in Solr as string values. The entered value (not the displayed value) is indexed.</p>
+<div class="admonition note">
+<p class="admonition-title">Solr note:</p>
+<p>The Solr string data type requires the full field value to match the query in order to count as a match. This means that searching for <code>2014</code> will not retrieve a record where the recorded date value is <code>2014-11-02</code>.</p>
+</div>
+<p>EDTF date fields may be configured as sort fields in your search results Views. Currently by default, this results in a simple ordering by the literal EDTF date string. </p>
+<p>An EDTF date field with multiple or unlimited number of allowed values may be set as a sort field. In this case, the first occurrence of the field value is used as the sorting value. </p>
 <h3 id="typed-relation">Typed Relation<a class="headerlink" href="#typed-relation" title="Permanent link">&para;</a></h3>
 <p>A Typed Relation field is an extension of Drupal's Entity Reference field, which allows the user to qualify the relation. It was created for describing a resource's contributors (modelled as taxonomy terms or some other Drupal entities) as well as their roles in this resource node (such as 'author', 'illustrator', or 'architect'). With only Drupal's Entity Reference fields, we would need individual fields for 'author', 'illustrator', 'architect', and any other roles that may need to be made available. Using a Typed Relation field, we can have one field for "Contributors" and let the user pick the role from a dropdown list.</p>
 <div class="admonition tip">
