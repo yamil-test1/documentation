@@ -1682,10 +1682,12 @@
 <p>Some of the material in this tutorial is presented in our video, <a href="https://youtu.be/YgSXicNow5w">How to Build Documentation</a>.</p>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>You will need to have <code>mkdocs</code> installed locally, as well as the mkdocs theme.</p>
+<p>You will need to have <code>mkdocs</code> installed locally, as well as a required plugin and the MkDocs <em>Material</em> theme.</p>
 <p>Install <code>mkdocs</code>:</p>
 <p><code>sudo -H pip install mkdocs</code></p>
-<p>Install material theme:</p>
+<p>Install plugin to enable display of the last revision date:</p>
+<p><code>sudo -H pip install mkdocs-git-revision-date-localized-plugin</code></p>
+<p>Install Material theme:</p>
 <p><code>sudo -H pip install mkdocs-material</code></p>
 <h2 id="build-and-deploy-documentation">Build and Deploy documentation<a class="headerlink" href="#build-and-deploy-documentation" title="Permanent link">&para;</a></h2>
 <p>Make sure you have all the submodules:</p>
@@ -1698,6 +1700,19 @@
 <p>And then visiting http://localhost:8111 in your browser.</p>
 <p>To deploy documentation to GitHub Pages, issue the following command:</p>
 <p><code>mkdocs gh-deploy --clean</code></p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2021</span>
+    
+  </small>
+</div>
+                  
                 
               
               

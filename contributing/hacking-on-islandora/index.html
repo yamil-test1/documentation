@@ -1815,6 +1815,19 @@ vagrant@islandora:~$
 <p>The only caveat here is that this is best done on the virtual machine itself. While your virtual machine was being built, it's Karaf installation was set to monitor the vagrant user's Maven repository for changes, and autodeploy in response to <code>mvn install</code>. So while you can always run Maven from your own machine, it will get installed in your personal Maven repository on your machine. So to take advantage of the auto-redeploy capabilities of Karaf, you need to do this as the vagrant user.</p>
 <p>If for any reason, you have to shutdown or restart Karaf, it will cease to monitor the vagrant user's Maven repository. In order to turn this back on, you'll have to issue the appropriate commands to get monitoring working again. The easiest way to do this is to re-run the karaf script the install process uses to set up monitoring by executing <code>/opt/karaf/bin/client &lt; ~/islandora/install/karaf/monitor.script</code>.</p>
                 
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2020</span>
+    
+  </small>
+</div>
+                  
+                
               
               
                 
