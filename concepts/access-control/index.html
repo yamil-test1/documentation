@@ -12,11 +12,11 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
     
     
       
-        <title>Create or Update a View - Islandora 8</title>
+        <title>Access Control - Islandora 8</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-or-update-a-view" class="md-skip">
+        <a href="#access-control-in-islandora" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create or Update a View
+              Access Control
             
           </span>
         </div>
@@ -218,12 +218,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Concepts
@@ -241,8 +243,146 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/collection/" class="md-nav__link">
+      <a href="../collection/" class="md-nav__link">
         Collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Access Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Access Control
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-core-drupal" class="md-nav__link">
+    Access Control in Core Drupal
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Control in Core Drupal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#islandora-resources" class="md-nav__link">
+    Islandora Resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sidebar-access-to-files-in-drupal" class="md-nav__link">
+    Sidebar: Access to files in Drupal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-solr" class="md-nav__link">
+    Access control in Solr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-contributed-module" class="md-nav__link">
+    Group (contributed module)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-by-term-contributed-module" class="md-nav__link">
+    Permissions By Term (contributed module)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-permissions-contributed-module" class="md-nav__link">
+    Field Permissions (contributed module)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-contributed-modules" class="md-nav__link">
+    Other contributed modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-fedora" class="md-nav__link">
+    Access control in Fedora
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-the-triplestore" class="md-nav__link">
+    Access control in the Triplestore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessibility/" class="md-nav__link">
+        Accessibility
       </a>
     </li>
   
@@ -265,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../objects_to_resource_nodes/" class="md-nav__link">
+      <a href="../../user-documentation/objects_to_resource_nodes/" class="md-nav__link">
         Modelling content in Islandora 8 vs. 7
       </a>
     </li>
@@ -544,7 +684,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../video-docs/" class="md-nav__link">
+      <a href="../../tutorials/blocks/" class="md-nav__link">
+        Configure Blocks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create_update_views/" class="md-nav__link">
+        Create or Update a View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/video-docs/" class="md-nav__link">
         Video Documentation
       </a>
     </li>
@@ -563,14 +727,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Documentation
@@ -588,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-intro/" class="md-nav__link">
+      <a href="../../user-documentation/user-intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -600,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro-to-ld-for-islandora-8/" class="md-nav__link">
+      <a href="../../user-documentation/intro-to-ld-for-islandora-8/" class="md-nav__link">
         Intro to Linked Data
       </a>
     </li>
@@ -612,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versioning/" class="md-nav__link">
+      <a href="../../user-documentation/versioning/" class="md-nav__link">
         Versioning
       </a>
     </li>
@@ -645,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-nodes/" class="md-nav__link">
+      <a href="../../user-documentation/resource-nodes/" class="md-nav__link">
         Resource Nodes
       </a>
     </li>
@@ -657,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../media/" class="md-nav__link">
+      <a href="../../user-documentation/media/" class="md-nav__link">
         Media
       </a>
     </li>
@@ -669,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paged-content/" class="md-nav__link">
+      <a href="../../user-documentation/paged-content/" class="md-nav__link">
         Paged Content
       </a>
     </li>
@@ -681,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../metadata/" class="md-nav__link">
+      <a href="../../user-documentation/metadata/" class="md-nav__link">
         Metadata
       </a>
     </li>
@@ -697,14 +859,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
       
       <label class="md-nav__link" for="__nav_5_5">
         Configuring Islandora
@@ -722,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../content_types/" class="md-nav__link">
+      <a href="../../user-documentation/content_types/" class="md-nav__link">
         Modify or Create a Content Type
       </a>
     </li>
@@ -732,80 +892,9 @@
             
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Create or Update a View
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Create or Update a View
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
-    Before you start
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-modify-an-existing-view" class="md-nav__link">
-    How to modify an existing view
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-create-a-new-view" class="md-nav__link">
-    How to create a new view
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
   
     <li class="md-nav__item">
-      <a href="../searching/" class="md-nav__link">
+      <a href="../../user-documentation/searching/" class="md-nav__link">
         Configure Search
       </a>
     </li>
@@ -817,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../context/" class="md-nav__link">
+      <a href="../../user-documentation/context/" class="md-nav__link">
         Configure Context
       </a>
     </li>
@@ -829,31 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blocks/" class="md-nav__link">
-        Configure Blocks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../access-control/" class="md-nav__link">
-        Access Control
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../multilingual/" class="md-nav__link">
+      <a href="../../user-documentation/multilingual/" class="md-nav__link">
         Multilingual
       </a>
     </li>
@@ -865,19 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../accessibility/" class="md-nav__link">
-        Accessibility
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extending/" class="md-nav__link">
+      <a href="../../user-documentation/extending/" class="md-nav__link">
         Extending Islandora
       </a>
     </li>
@@ -889,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file_viewers/" class="md-nav__link">
+      <a href="../../user-documentation/file_viewers/" class="md-nav__link">
         Viewers
       </a>
     </li>
@@ -901,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iiif/" class="md-nav__link">
+      <a href="../../user-documentation/iiif/" class="md-nav__link">
         IIIF
       </a>
     </li>
@@ -913,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oai/" class="md-nav__link">
+      <a href="../../user-documentation/oai/" class="md-nav__link">
         OAI-PMH
       </a>
     </li>
@@ -988,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../users/" class="md-nav__link">
+      <a href="../../user-documentation/users/" class="md-nav__link">
         Create and Manage User Accounts
       </a>
     </li>
@@ -1000,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage-stats/" class="md-nav__link">
+      <a href="../../user-documentation/usage-stats/" class="md-nav__link">
         Usage Stats
       </a>
     </li>
@@ -1627,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../user-documentation/glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -1659,29 +1712,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#access-control-in-core-drupal" class="md-nav__link">
+    Access Control in Core Drupal
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Control in Core Drupal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#islandora-resources" class="md-nav__link">
+    Islandora Resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sidebar-access-to-files-in-drupal" class="md-nav__link">
+    Sidebar: Access to files in Drupal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-solr" class="md-nav__link">
+    Access control in Solr
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
-    Before you start
+  <a href="#group-contributed-module" class="md-nav__link">
+    Group (contributed module)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-modify-an-existing-view" class="md-nav__link">
-    How to modify an existing view
+  <a href="#permissions-by-term-contributed-module" class="md-nav__link">
+    Permissions By Term (contributed module)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-create-a-new-view" class="md-nav__link">
-    How to create a new view
+  <a href="#field-permissions-contributed-module" class="md-nav__link">
+    Field Permissions (contributed module)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-contributed-modules" class="md-nav__link">
+    Other contributed modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-fedora" class="md-nav__link">
+    Access control in Fedora
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-in-the-triplestore" class="md-nav__link">
+    Access control in the Triplestore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
   </a>
   
 </li>
@@ -1698,77 +1806,152 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora/documentation/edit/main/docs/user-documentation/create_update_views.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Islandora/documentation/edit/main/docs/concepts/access-control.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="create-or-update-a-view">Create or Update a View<a class="headerlink" href="#create-or-update-a-view" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Drupal Views allow you to get your content in Islandora to display on your site in pages or as posts, lists, blocks, etc. Views are powerful and filter content from Islandora to enable you to present content in interesting and exciting ways. </p>
-<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+                <h1 id="access-control-in-islandora">Access Control in Islandora<a class="headerlink" href="#access-control-in-islandora" title="Permanent link">&para;</a></h1>
+<p>This page is about controlling <strong>who can view or edit your Islandora content</strong> (metadata and binaries). </p>
+<p>Islandora recommends using Drupal's access control features. Contributed modules such as those described below, can provide additional flexibility and configurability. However, these only apply when content is accessed through Drupal, and are not applied to data in Fedora, the Triplestore, or Solr. </p>
+<div class="admonition danger">
+<p class="admonition-title">Exposed Endpoints</p>
+<p>If access control is a concern, you will want to lock down access to the following services that are part of the Islandora Suite:</p>
 <ul>
-<li>The following How-To assumes that you are using the (optional) <strong><a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults</a></strong> configuration. This configuration is deployed automatically if you build your Islandora site using the <a href="/installation/playbook">Ansible Playbook</a>, <a href="/installation/docker-compose">ISLE with Docker-Compose</a>, or are using the <a href="https://islandora.ca/try">sandbox or a Virtual Machine Image</a></li>
-<li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a>, <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/working-with-content-types-and-fields-drupal-7-and-later">Content Type</a>, and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
+<li>Fedora (REST API and admin client)</li>
+<li>Solr (API and admin client)</li>
+<li>Blazegraph (API and admin client)</li>
 </ul>
-<h2 id="how-to-modify-an-existing-view">How to modify an existing view<a class="headerlink" href="#how-to-modify-an-existing-view" title="Permanent link">&para;</a></h2>
-<p>Islandora Defaults ships with some views already created and turned on. The Islandora 8 home page displays content items that have been added to Islandora. This view is named <em>Frontpage</em> and it lists items that meet the following <em>filter criteria</em>: </p>
-<ul>
-<li>The item is in the <em>published</em> state.</li>
-<li>The checkbox Promoted to front page is selected. </li>
-</ul>
-<p>This view will display all content items added to Islandora, as the checkbox <em>Promoted to front page</em> is on by default. </p>
-<p>As you develop your Islandora Web site it is likely that you will need to change the default behaviour of the <em>Frontpage</em> View. As an example, the following describes how to edit the <em>Frontpage</em> page view to only show content items and not collections.</p>
-<p>For this example, we added six collection items to Islandora. In total there are eight items in the repository. In addition to the six collection items, there is one audio item and one image item.</p>
-<ol>
-<li>Using your Web browser, open the Islandora front page <ol>
-<li>For this example, on the front page we can see that Islandora displays a 'Collection' first as this is the most recently added item.</li>
-</ol>
-</li>
-<li>To edit the front page view, hover over the view (<em>Frontpage</em> view) and select <strong>Edit view</strong> when displayed.
-    <img alt="Frontpage view" src="../../assets/frontpage_view_all_eight.png" /></li>
-<li>Select <strong>Add</strong> under the <em>filter criteria</em> section.
-    <img alt="Frontpage view add filter" src="../../assets/frontpage_view_add_filter.png" /></li>
-<li>We do not want to display collections, so we need to add a <em>filter criteria</em> that does not filter for the Islandora model type 'Collection'<ol>
-<li>Select <em>Model</em> from the list and then <strong>Apply (all displays</strong>).
-<img alt="Frontpage view filter select model" src="../../assets/frontpage_view_add_filter_select_model.png" /></li>
-<li>Select <em>Islandora Model</em> to select filters on Islandora model types and select <strong>Apply and continue</strong>.
-<img alt="Frontpage view filter islandora model" src="../../assets/frontpage_view_add_filter_select_model_islandora.png" /></li>
-<li>Select the operator <em>Is none of</em> and the <em>Collection</em> model (autocomplete should work here to help you). To finish click <strong>Apply (all displays)</strong>.
-<img alt="Frontpage views filter collection" src="../../assets/frontpage_view_add_filter_collection.png" /></li>
-<li><strong>Save</strong> the view. Now the 'Frontpage' View does not display collections.
-<img alt="Frontpage views no collections" src="../../assets/frontpage_view_no_collections.png" /></li>
-</ol>
-</li>
-</ol>
-<h2 id="how-to-create-a-new-view">How to create a new view<a class="headerlink" href="#how-to-create-a-new-view" title="Permanent link">&para;</a></h2>
-<p>For this example, we create a new view that only shows collections. It will be created as a block that will only display on the front page. We will add the new collection list block below the existing frontpage view that lists items.</p>
-<ol>
-<li>Using your Web browser, open the Islandora 8 front page </li>
-<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Views</strong> (~/admin/structure/views)</li>
-<li>Create a new view by selecting <strong>Add view</strong></li>
-<li>Name the view and select <strong>Create a block</strong>. Give the block a title and decide how you want it to display (Grid, Table, List, Paging). To progress, select <strong>Save and edit</strong>.
-<img alt="Frontpage view collection list information" src="../../assets/frontpage_view_collection_list_info.png" /></li>
-<li>Customise the view format and sorting as required.</li>
-<li>Add a <em>filter criteria</em> to only show the Islandora model type of 'Collection' and <strong>Save</strong> the view.
-<img alt="Frontpage view collection list details" src="../../assets/frontpage_view_collection_list_details.png" /></li>
-<li>To place the view on front page, the new block must be added to the 'Main page content' area (using 'Block layout') and set to display on the front page.<ol>
-<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Block layout</strong> (/admin/structure/block). Under <em>Main content</em> select <strong>Place block</strong>
-<img alt="Frontpage view collection list place block" src="../../assets/frontpage_view_collection_list_place_block.png" /></li>
-<li>Find the new block, 'Collection List' and select <strong>Place block</strong>.</li>
-<li>Restrict the block to only display on the frontpage by adding the text '<front>' to the <em>Page</em> vertical tab. Then select <strong>Save block</strong>.
-<img alt="Frontpage view collection list place block configure" src="../../assets/frontpage_view_collection_list_place_block_configure.png" /></li>
-<li>Review the block placement and move if required.
-<img alt="Frontpage view collection list block placement" src="../../assets/frontpage_view_collection_list_block_placement.png" /></li>
-</ol>
-</li>
-<li>The 'Collection list' now only displays on the front page. It displays below the <em>Main page content</em>.
-<img alt="Frontpage view collection list" src="../../assets/frontpage_view_collection_list.png" /></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Islandora Quick Lessons</p>
-<p>Learn more with videos on <a href="https://youtu.be/Ge14g8nBUBQ">Basic Views</a> and <a href="https://youtu.be/inPRZeQGnKI">Advanced Views</a>.</p>
+<p>as anyone accessing data through those services are bypassing Drupal's access control. In all out-of-the-box sandboxes and demo instances, these services are wide open.</p>
 </div>
+<h2 id="access-control-in-core-drupal">Access Control in Core Drupal<a class="headerlink" href="#access-control-in-core-drupal" title="Permanent link">&para;</a></h2>
+<p><strong>Summary: Core Drupal's access control features include the "published"/"unpublished" states and some basic permissions that can be granted globally or at the bundle level.</strong></p>
+<p>Drupal's concepts of "published" and "unpublished" for nodes and media apply to Islandora just as they do in Drupal. <em>Usually</em>, published content is visible to the entire world (without any authentication), while unpublished content can only be accessed by selected users - usually administrators, other privileged roles, and the user who created the content. This is configurable through the Drupal Permissions interface. </p>
+<p>All Drupal permissions are granted to <em>roles</em>, not individual users. Read more <a href="/user-documentation/users">documentation on Users</a>. </p>
+<p>The extent of the configurability of Drupal Core's access control (excluding revisions) is provided by the following permissions:</p>
+<table>
+<thead>
+<tr>
+<th>View permissions (apply to <em>all</em> content or <em>all</em> media regardless of bundle)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- View all published content</td>
+</tr>
+<tr>
+<td>- View own unpublished content</td>
+</tr>
+<tr>
+<td>- View (published) media</td>
+</tr>
+<tr>
+<td>- View own unpublished media</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>"Editing" permissions (can be granted for a specific bundle, or for all nodes or media):</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- Create new content</td>
+</tr>
+<tr>
+<td>- Edit (your) own content</td>
+</tr>
+<tr>
+<td>- Edit any(one's) content</td>
+</tr>
+<tr>
+<td>- Delete (your) own content</td>
+</tr>
+<tr>
+<td>- Delete any(one's) content</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Administrative permission (includes all the above and more, give to trusted users only):</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- Administer content</td>
+</tr>
+</tbody>
+</table>
+<p>These are the basic access control options built into Drupal Core. There are many contributed modules that do access control, some are described below. Before using access control modules, please see <a href="https://www.drupal.org/node/270000">Comparison and Overview of Access Control modules</a> on drupal.org.</p>
+<p>Contributed modules are required for the following cases:
+- individual nodes or media having their own access policies (in Core Drupal, access can only be configured at the content type or media type level)
+- access policies that grant privileges to <em>users</em> (in Core Drupal, access can be granted only to roles, and/or to that content's author)
+- contents of specific "management" fields being reserved so that only privileged users can view or edit. </p>
+<h3 id="islandora-resources">Islandora Resources<a class="headerlink" href="#islandora-resources" title="Permanent link">&para;</a></h3>
+<p>Given the [Collection] → Node → Media → File structure of Islandora resources, it is reasonable to wonder if access to a Node, Media, or File is influenced by the permissions on its "parent" resource. </p>
+<p>There is not yet a mechanism for Drupal's access control to be "inherited" from parent resources to child resources. An exception is non-public files, as described below.</p>
+<h3 id="sidebar-access-to-files-in-drupal">Sidebar: Access to files in Drupal<a class="headerlink" href="#sidebar-access-to-files-in-drupal" title="Permanent link">&para;</a></h3>
+<p>Drupal's access control applies to files <strong>except those stored in Drupal's public filesystem</strong>. </p>
+<p>If you upload a file to Drupal, it's usually stored in a field on an entity. In Islandora, that entity is a Media. Drupal's access checks mean that a user must have permission to view the Media, and (if configured) the file field on that media, to see the file. However, file fields can be configured with various forms of file storage, and the file storage determines whether access control checks are applied at all. Files stored in Drupal's public filesystem are always public, viewable by anyone in the world. </p>
+<p>Drupal's access control applies to files <em>accessed through Drupal</em> where the file storage is:</p>
+<ul>
+<li>on Fedora using Flysystem  </li>
+<li>on a Drupal private filesystem</li>
+<li>on another location such as S3 or Dropbox, through flysystem.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Direct access to file storage</p>
+<p>Files stored using Flysystem are actually located on a separate service. It is the <strong>administrator's responsibility to implement appropriate access control on the target storage system</strong>, as there is a way to link directly to files in Fedora, S3, or Dropbox. These direct links bypass Drupal and therefore Drupal's access control. </p>
+</div>
+<p>The filesystem used by a field is usually configured through "Manage Fields" on the appropriate entity. However, it is possible for a field to be <em>configured</em> to use a certain filesystem, but for <em>actual files</em> created through back-end processes to use a different one. For example, derivatives generated by Islandora in Islandora Defaults are written to the public filesystem, despite the field configuration which points to Fedora.</p>
+<p>To determine the actual location of a file, right-click the existing file in the Media Edit page and select "copy location". A file that is saved in flysystem will include <code>/_flysystem/</code> in the URL. These links (you can test it!) only work if you have permission to view the media. A file with <code>/sites/default/files/</code> is probably publically accessible (this is the public filesystem on most Drupal instances). </p>
+<div class="admonition note">
+<p class="admonition-title">In Defaults, All Derivatives Are Public</p>
+<p>Out of the box using Islandora Defaults, derivatives are created for all Islandora media (as long as the conditions of the contexts aree met), and they are stored in the public Drupal filesystem. This happens even if the media and/or node are not published. </p>
+</div>
+<h2 id="access-control-in-solr">Access control in Solr<a class="headerlink" href="#access-control-in-solr" title="Permanent link">&para;</a></h2>
+<p>The Search API Module, which connects Drupal to Solr, provides configuration so that access considerations are respected by the Drupal solr results display. The "Processors" configuration (e.g. at admin/config/search/search-api/index/default_solr_index/processors) provides checkboxes for the following options:</p>
+<ul>
+<li>"Content access": Adds content access checks for nodes and comments</li>
+<li>"Entity status": Exclude inactive users and unpublished entities (which have a "Published" state) from being indexed. </li>
+</ul>
+<p>Both are enabled out of the box in Islandora Defaults. This will ensure that queries through Drupal never show content that the active user shouldn't see, as well as preventing information about unpublished entities from ever being entered into Solr.</p>
+<div class="admonition warning">
+<p class="admonition-title">Solr Admin Client</p>
+<p>Anyone with access to the Solr Admin Client may see the full contents of the index, regardless of permissions. In Islandora Defaults, the Solr client at http://127.0.0.1:8983/solr/#/ISLANDORA is open to the world, and all published content (and user information) is accessible.</p>
+</div>
+<h2 id="group-contributed-module">Group (contributed module)<a class="headerlink" href="#group-contributed-module" title="Permanent link">&para;</a></h2>
+<p>"The <a href="https://www.drupal.org/project/group">Group</a> module allows you to create arbitrary collections of your content and users on your site and grant access control permissions on those collections."</p>
+<div class="admonition note">
+<p class="admonition-title">Opinion</p>
+<p>Group is one of the more hefty modules, and is difficult to learn. It is good if you have static or semi-static groups of users who need access to a static or semi-static group of content, but sharing an item with an arbitrary group of users is cumbersome. </p>
+</div>
+<h2 id="permissions-by-term-contributed-module">Permissions By Term (contributed module)<a class="headerlink" href="#permissions-by-term-contributed-module" title="Permanent link">&para;</a></h2>
+<p>"The <a href="https://www.drupal.org/project/permissions_by_term">Permissions by Term</a> module extends Drupal by functionality for restricting view and edit access to single nodes [and media] via taxonomy terms. [...] Taxonomy term permissions can be coupled to specific user accounts and/or user roles."</p>
+<p>Islandora Defaults includes an empty vocabulary called "Islandora Access", which is intended to hold such taxonomy terms. However, permissions_by_term must be installed and configured on your own.</p>
+<p>The module is very popular and seems to be supported well.</p>
+<div class="admonition question">
+<p class="admonition-title">Examples Wanted</p>
+<p>Do you have experience setting up Permissions By Term? We'd love some illustrative examples here.</p>
+</div>
+<h2 id="field-permissions-contributed-module">Field Permissions (contributed module)<a class="headerlink" href="#field-permissions-contributed-module" title="Permanent link">&para;</a></h2>
+<p>"The <a href="https://www.drupal.org/project/field_permissions">Field Permissions</a> module allows site administrators to set field-level permissions to edit, view and create fields on any entity."</p>
+<h2 id="other-contributed-modules">Other contributed modules<a class="headerlink" href="#other-contributed-modules" title="Permanent link">&para;</a></h2>
+<p>Workflow Participants allows for granting permissions on individual nodes or media to individual users, as an extension to the Workflow suite of modules. However, it is not well supported and the "manage workflow participants" permission should not be given to untrusted users as it may grant users the ability to add participants even to content they are otherwise not able to see or edit. </p>
+<h2 id="access-control-in-fedora">Access control in Fedora<a class="headerlink" href="#access-control-in-fedora" title="Permanent link">&para;</a></h2>
+<p>In Fedora it is possible to control access to resources using Access Control Lists (ACLs) per the Fedora API Specification. ACLs are inherited through Fedora's LDP Containment relationships.</p>
+<p>Islandora does not create customized ACLs when syncing content into Fedora. </p>
+<p>Islandora does not create Fedora resources in hierarchies that use LDP containment relationships. </p>
+<p>At this time, access control in Fedora is NOT reflective of access control in Drupal. In the sandboxes and demo installations, all resources in Fedora are open for the world to view. This includes unpublished nodes and media, as well as the files uploaded into Fedora. Access controls configured in Drupal are not synced in any way to Fedora.</p>
+<p>Sites concerned with access control  wish to "lock down" their Fedora to only be accessible through Drupal. </p>
+<h2 id="access-control-in-the-triplestore">Access control in the Triplestore<a class="headerlink" href="#access-control-in-the-triplestore" title="Permanent link">&para;</a></h2>
+<p>In Islandora Defaults, there is no access control on the Blazegraph triplestore. Islandora defaults is configured so that all RDF triples sent to Fedora are also populated into the triplestore. If using the Ansible Playbook, it is available at http://localhost:8080/bigdata/. Like the solr index, it is open to the world by default.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/Islandora/documentation/issues/928">Meta-Issue: Access Restrictions and Embargoes</a></p>
                 
                   
                     
@@ -1777,7 +1960,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2021</span>
     
   </small>
 </div>
@@ -1799,7 +1982,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../content_types/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../collection/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1808,19 +1991,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Modify or Create a Content Type
+              Collections
             </div>
           </div>
         </a>
       
       
-        <a href="../searching/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../accessibility/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configure Search
+              Accessibility
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1842,6 +2025,7 @@
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
   <div class="md-footer-social">
@@ -1868,7 +2052,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.9b151c6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
       
     
   </body>
