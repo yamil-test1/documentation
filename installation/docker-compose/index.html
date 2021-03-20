@@ -1954,7 +1954,7 @@
 <li>Docker Desktop for Windows, using the WSL 2 based engine (Settings &gt; General) and with the WSL integration active for Ubuntu (Settings &gt; Resources &gt; WSL integration) </li>
 </ul>
 </li>
-<li>If using <code>make dev</code>, see the <a href="https://github.com/Islandora-Devops/isle-dc">README</a> for other requirements.</li>
+<li>If using <code>make local</code>, see the <a href="https://github.com/Islandora-Devops/isle-dc">README</a> for other requirements.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">What are we missing?</p>
@@ -1971,24 +1971,24 @@
 <p><strong>CPUs (processors)</strong>: The CPUs allowed to Docker Desktop are still shared with the host machine, so increasing this to the maximum value should allow both the Docker containers and your host machine to run simultaneously.</p>
 <p><strong>Memory (RAM)</strong>: This memory is completely dedicated to Docker while Docker Desktop is running, so do not allocate more than you can spare and still run your host machine. Windows users may not require as much memory for Docker as Mac users. Current suggestions for memory allocated to Docker Desktop are below, but please edit this document if you have new information.</p>
 <ul>
-<li>Sandbox (<code>make</code>): 4GB</li>
-<li>Development (<code>make dev</code>): 8GB</li>
+<li>Sandbox (<code>make demo</code>): 4GB</li>
+<li>Development (<code>make local</code>): 8GB</li>
 <li>Production or production-like development: 16GB</li>
 </ul>
 <p><strong>Swap</strong>: Swap space is space borrowed from your hard disk drive to serve as makeshift RAM as needed. If you cannot provide as much RAM as you would like, increase this as is reasonable given your free disk space.</p>
 </div>
 <h2 id="launching-islandora-with-docker">Launching Islandora with Docker<a class="headerlink" href="#launching-islandora-with-docker" title="Permanent link">&para;</a></h2>
-<p><strong>Summary:</strong> Using git, clone the isle-dc project. In that directory, enter the command <code>make</code> (or <code>make dev</code> - see note) to build the docker infrastructure. Then use the command <code>docker-compose up -d</code> to start the containers.</p>
+<p><strong>Summary:</strong> Using git, clone the isle-dc project. In that directory, enter the command <code>make demo</code> to build the docker infrastructure and a demo site.  Then use the command <code>docker-compose up -d</code> to start the containers.</p>
 <div class="admonition hint">
-<p class="admonition-title">ISLE-DC variants: <code>make</code> vs <code>make dev</code></p>
-<p>The <code>make</code> command alone will spin up a sandbox-like version of ISLE, but only with a front end. The code files will be inaccessible, and you will not be able to install additional modules or themes. The <code>make dev</code> command creates a full-fleged development environment. It will copy the active Drupal codebase locally in a way that is also live to the ISLE site. This method takes longer (and may require multiple retries if your internet connection is spotty) but is required if you will be testing pull requests or writing code.</p>
+<p class="admonition-title">ISLE-DC variants: <code>make demo</code> vs <code>make local</code></p>
+<p>The <code>make demo</code> command alone will spin up a sandbox-like version of ISLE, but only with a front end. The code files will be inaccessible, and you will not be able to install additional modules or themes. The <code>make local</code> command creates a full-fleged development environment. It will copy the active Drupal codebase locally in a way that is also live to the ISLE site. This method takes longer (and may require multiple retries if your internet connection is spotty) but is required if you will be testing pull requests or writing code. The <code>make</code> command alone will build the infrastructure but not install anything (including Drupal!).</p>
 </div>
 <pre><code class="language-bash">git clone https://github.com/islandora-devops/isle-dc
 cd isle-dc
-make
+make demo
 </code></pre>
-<p>Results of <code>make</code>:</p>
-<pre><code>isle-dc$ make
+<p>Results of <code>make demo</code>:</p>
+<pre><code>isle-dc$ make demo
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  3562  100  3562    0     0  12779      0 --:--:-- --:--:-- --:--:-- 12812
@@ -2018,10 +2018,10 @@ Pulling watchtower ... done
 </code></pre>
 <div class="admonition fail">
 <p class="admonition-title">Troubleshooting - Docker Versions</p>
-<p>If you get an error such as: <code>ERROR: Version in "./docker-compose.activemq.yml" is unsupported.</code>, then you need to upgrade Docker. Enter the command <code>make clean</code> before re-attempting to <code>make</code>.</p>
+<p>If you get an error such as: <code>ERROR: Version in "./docker-compose.activemq.yml" is unsupported.</code>, then you need to upgrade Docker. Enter the command <code>make clean</code> before re-attempting to <code>make demo</code>.</p>
 </div>
 <div class="admonition fail">
-<p class="admonition-title">Troubleshooting - re-attempting <code>make</code></p>
+<p class="admonition-title">Troubleshooting - re-attempting <code>make demo</code></p>
 <p>If <code>make</code> fails for any reason, enter <code>make clean</code> before attempting to <code>make</code> again. If not, you may see an error such as: <code>ERROR: Top level object in './docker-compose.yml' needs to be an object not '&lt;class 'NoneType'&gt;'.</code></p>
 </div>
 <div class="admonition fail">
@@ -2030,14 +2030,14 @@ Pulling watchtower ... done
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Development version - access the codebase</p>
-<p>If you used <code>make dev</code>, then you will have a new directory in the current (isle-dc) directory named <code>codebase</code>, containing the live Drupal root folder (containing your Drupal's composer files and the web/ subdirectory).</p>
+<p>If you used <code>make local</code>, then you will have a new directory in the current (isle-dc) directory named <code>codebase</code>, containing the live Drupal root folder (containing your Drupal's composer files and the web/ subdirectory).</p>
 </div>
-<p>Once <code>make</code> has successfully completed, launch the ISLE containers using <code>docker-compose up</code>. The <code>-d</code> flag allows you to return to using the command line. Without it, your shell will be stuck in the <code>docker-compose</code> process as long as the containers are running.</p>
+<p>Once <code>make demo</code> has successfully completed, launch the ISLE containers using <code>docker-compose up</code>. The <code>-d</code> flag allows you to return to using the command line. Without it, your shell will be stuck in the <code>docker-compose</code> process as long as the containers are running.</p>
 <pre><code class="language-bash">docker-compose up -d
 </code></pre>
 <div class="admonition fail">
 <p class="admonition-title">Troubleshooting - connection timed out (Mac).</p>
-<p>If you are using Docker Desktop for Mac, and get timeout errors when spinning up the containers (during <code>docker-compose up -d</code> or during <code>make dev</code>) such as this:</p>
+<p>If you are using Docker Desktop for Mac, and get timeout errors when spinning up the containers (during <code>docker-compose up -d</code> or during <code>make local</code>) such as this:</p>
 <p><code>ERROR: for isle-dc_mariadb_1  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=480)</code></p>
 <p>you can try quitting Docker completely (make sure there is no whale icon in your top toolbar - may need to select "Quit" from the whale icon itself) and then restart Docker. </p>
 </div>
@@ -2057,7 +2057,7 @@ Pulling watchtower ... done
 <h2 id="spinning-down-your-islandora-site">Spinning down your Islandora site<a class="headerlink" href="#spinning-down-your-islandora-site" title="Permanent link">&para;</a></h2>
 <p>To shut down the containers without destroying your site, use <code>docker-compose down</code>. To also destroy your "state" (i.e. your content, your database, your files), use <code>docker-compose down -v</code>.</p>
 <h2 id="editing-code-in-docker">Editing Code in Docker<a class="headerlink" href="#editing-code-in-docker" title="Permanent link">&para;</a></h2>
-<p>If you used <code>make dev</code> then the drupal root folder is in a new directory in the isle-dc folder named <code>codebase</code>. This is live and editable in whatever development environment you would like.  If you just did <code>make</code>, you will need to spin down your containers with <code>-v</code> to destroy your state before starting a new one with <code>make dev</code>.</p>
+<p>If you used <code>make local</code> then the drupal root folder is in a new directory in the isle-dc folder named <code>codebase</code>. This is live and editable in whatever development environment you would like.  If you just did <code>make demo</code>, you will need to spin down your containers with <code>-v</code> to destroy your state before starting a new one with <code>make local</code>.</p>
 <p>Editing code for the back-end processes (alpaca, milliner, etc) is more complicated. Please ask on the #isle Slack channel and help us improve this documentation!</p>
 <h3 id="testing-a-pull-request">Testing a Pull Request<a class="headerlink" href="#testing-a-pull-request" title="Permanent link">&para;</a></h3>
 <p>Islandora modules in the <code>codebase/web/contrib/modules</code> folder are already set up with <code>git</code> and the <code>origin</code> remote is the canonical Islandora repository. You can follow the command-line instructions for testing pull requests available on Github. When finished, don't forget to <code>git checkout main</code> (or the default branch if not named main) so you can pull new code.</p>
@@ -2081,7 +2081,7 @@ Pulling watchtower ... done
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2021</span>
     
   </small>
 </div>
