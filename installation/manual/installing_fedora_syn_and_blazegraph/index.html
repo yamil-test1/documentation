@@ -11,8 +11,11 @@
       
       
       
+      
+        
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1+insiders-2.5.0">
     
     
       
@@ -20,15 +23,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9299cb39.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5d6318de.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.77b964be.min.css">
         
           
           
           <meta name="theme-color" content="#ef5552">
         
+      
       
     
     
@@ -59,7 +63,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __scope(t,e="../../.."){return new URL(e,location).pathname+"."+t}function __get(t,e=localStorage,n){return JSON.parse(e.getItem(__scope(t,n)))}function __set(t,e,n=localStorage,o){try{n.setItem(__scope(t,o),JSON.stringify(e))}catch(t){}}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -76,7 +80,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
       
@@ -113,14 +120,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -150,11 +161,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -221,10 +235,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
-      <label class="md-nav__link" for="__nav_2">
-        Concepts
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Concepts" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -233,6 +251,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -243,8 +262,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -255,8 +276,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -267,8 +290,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -279,8 +304,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -291,8 +318,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -303,6 +332,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -325,10 +355,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        Installation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Installation" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -337,6 +371,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -347,8 +382,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -359,8 +396,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -372,10 +411,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
-      <label class="md-nav__link" for="__nav_3_3">
-        Manual Installation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Manual Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Manual Installation" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
@@ -384,6 +427,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -394,8 +438,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -406,8 +452,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -418,8 +466,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -430,8 +480,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -652,8 +704,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -664,8 +718,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -676,8 +732,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -688,8 +746,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -700,14 +760,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -718,6 +781,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -738,10 +802,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="__nav_4">
-        Tutorials
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -750,6 +818,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -760,8 +829,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -772,8 +843,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -784,8 +857,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -796,8 +871,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -808,6 +885,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -828,10 +906,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_5">
-        Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -840,6 +922,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -850,8 +933,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -862,8 +947,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -874,8 +961,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -885,10 +974,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
-      <label class="md-nav__link" for="__nav_5_4">
-        Content in Islandora 8
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          Content in Islandora 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
@@ -897,6 +990,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -907,8 +1001,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -919,8 +1015,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -931,8 +1029,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -943,14 +1043,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -960,10 +1063,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
       
-      <label class="md-nav__link" for="__nav_5_5">
-        Configuring Islandora
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Configuring Islandora
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configuring Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
@@ -972,6 +1079,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -982,8 +1090,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -994,8 +1104,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1006,8 +1118,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1018,8 +1132,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1030,8 +1146,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1042,8 +1160,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1054,8 +1174,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1066,8 +1188,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1078,8 +1202,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1090,8 +1216,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1102,14 +1230,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1119,10 +1250,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
       
-      <label class="md-nav__link" for="__nav_5_6">
-        Operating an Islandora Repository
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6">
+          Operating an Islandora Repository
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Operating an Islandora Repository" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_6">
           <span class="md-nav__icon md-icon"></span>
@@ -1131,6 +1266,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1141,8 +1277,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1153,12 +1291,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1179,10 +1319,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_6">
-        System Administrator Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          System Administrator Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="System Administrator Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -1191,6 +1335,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1201,8 +1346,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1213,8 +1360,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1225,6 +1374,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1245,10 +1395,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="__nav_7">
-        Documentation for Developers
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Documentation for Developers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Documentation for Developers" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -1257,6 +1411,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1267,8 +1422,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1278,10 +1435,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
-      <label class="md-nav__link" for="__nav_7_2">
-        REST Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          REST Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="REST Documentation" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1290,6 +1451,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1300,8 +1462,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1312,8 +1476,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1324,8 +1490,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1336,8 +1504,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1348,8 +1518,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1360,14 +1532,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1377,10 +1552,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
-      <label class="md-nav__link" for="__nav_7_3">
-        Tests
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Tests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tests" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1389,6 +1568,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1399,8 +1579,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1411,14 +1593,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1429,8 +1614,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1441,8 +1628,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1453,8 +1642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1465,8 +1656,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1476,10 +1669,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
       
-      <label class="md-nav__link" for="__nav_7_8">
-        Alpaca
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Alpaca
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Alpaca" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1488,6 +1685,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1498,8 +1696,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1510,12 +1710,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1536,10 +1738,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Migration
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Migration" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1548,6 +1754,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1558,8 +1765,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1570,8 +1779,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1582,6 +1793,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1602,10 +1814,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        Contributing
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Contributing" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1614,6 +1830,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1624,8 +1841,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1636,8 +1855,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1648,8 +1869,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1660,8 +1883,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1672,8 +1897,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1684,8 +1911,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1696,8 +1925,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1708,8 +1939,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1720,6 +1953,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2394,7 +2628,7 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2020</span>
     
   </small>
 </div>
@@ -2456,10 +2690,12 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
             <b>This documentation is user-sourced!</b> Suggestions and comments are welcome in our <u><a href="https://github.com/Islandora/documentation/issues" target="_blank">issue queue</a></u>.
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs Insiders
+          </a>
+        
         
       </div>
       
@@ -2484,10 +2720,10 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d10a1f1d.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.196050f9.min.js"></script>
       
     
   </body>
