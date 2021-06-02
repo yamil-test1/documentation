@@ -1913,9 +1913,10 @@
                 
                 
                 <h1 id="resource-nodes">Resource Nodes<a class="headerlink" href="#resource-nodes" title="Permanent link">&para;</a></h1>
-<p><em>last updated 03-12-2020</em></p>
-<p>A resource node holds the descriptive metadata for content, as well as grouping together an original file and
-all of the derivatives files generated from it.   </p>
+<p>This page describes the Islandora concept of a Resource Node. For a step-by-step demonstration, see the tutorial <a href="../../tutorials/create-a-resource-node/">Create a resource node</a>.</p>
+<p>A resource node holds the descriptive metadata for an Islandora object, as well as groups together
+the various files that are part of the object for preservation or display, such as the original file
+ and various derivative files generated from it.   </p>
 <p>The model for exactly what constitutes an object in Islandora 8 is flexible and can be adapted to the needs of specific users. For example, the Islandora Defaults configuration considers an object as a resource node of the type "Repository Item"  which contains descriptive metadata about the object. Attached to that Node are one or more Media, each representing a file that is part of this object, such as "Original File", "Thumbnail", "Preservation Master", etc. With this model, every original file uploaded into Islandora has its own resource node.</p>
 <p>Multi-file Media configurations also attach Media to a parent node, but allow for that node to be represened by multiple "Original File"s. In this model, a Media contains the original file as well as any derivative files created from it (thumbnail, service file, etc.).</p>
 <p>For an example of where these two different approaches could apply, the basic configuration might make sense for a book that has rich page-level metadata, so that each page would be its own Node with its own metadata record; the multi-file media configuration might be a better fit for a book that does not have page-level metadata (except an ordering or page numbers), so that each Media would represent one page, and all pages (Media) would be attached to a single parent Node/metadata record for the entire book. </p>
@@ -1928,8 +1929,8 @@ solution for modeling our resource nodes and media, compatibility with third-par
 This opens up a plethora of solutions from the Drupal community that will save you untold time
 and effort when implementing your repository with Islandora.</p>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
-<p>Resource nodes have some basic properties that are common to all nodes, regardless 
-of its content type.  These properties are not fields.  This means that they 
+<p>Resource nodes, as Drupal nodes, have some common basic properties regardless 
+of content type. These properties are not fields.  This means that they 
 cannot be removed and have limited configurability. Their name, what type of 
 data they hold, etc... are all baked in.
 Here's an example of the basic properties on nodes:</p>
@@ -1954,6 +1955,10 @@ status: 1
 <tr>
 <td>nid</td>
 <td>The local ID for the node</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>The ID of the Drupal user who created the node</td>
 </tr>
 <tr>
 <td>uuid</td>
@@ -1983,7 +1988,7 @@ status: 1
 </table>
 <div class="admonition note">
 <p class="admonition-title">Compared to Islandora 7</p>
-<p>These node properties directly correspond to following Islandora 7.x object properties:</p>
+<p>These node properties are analogous to following Islandora 7.x object properties:</p>
 <table>
 <thead>
 <tr>
@@ -2027,6 +2032,7 @@ For example, you might have a content type for a set of repository objects that 
 another content type for generic repository objects that share a more general set of metadata fields.
 A resource node's content type is set on its creation and is immutable.
 The section on <a href="../metadata/">metadata</a> describes in more detail how fields on Islandora objects work.</p>
+<p>Configuring fields (adding, editing, removing) is usually done through the Manage &gt; Content types interface, as is described in the tutorial, <a href="../content_types/">Create/Update a Content Type</a>.</p>
 <p>Islandora has a notion of a <em>content model</em>, which is used to identify what type of content is
 being represented by a node (e.g. an image, a video, a collection of other items, etc...). This is done
 using a special field, <em>Model</em>, which accepts taxonomy terms from the <em>Islandora Models</em> vocabulary.
@@ -2059,7 +2065,7 @@ the "Members" tab, Actions can be performed in bulk using the checkboxes and Act
 <p>The second way to use the media's Mime type to render its content with the PDFjs viewer is to create a separate Context that will detect the media's Mime type and use the configured display mode automatically. To do this, create a new Context. Add a "Node has Media with Mime type" condition and specify the Mime type, and then add a "Change View mode" Reaction that selects the desired display mode:</p>
 <p><img alt="Display hints" src="../../assets/resource_nodes_view_mode_context.png" /></p>
 <p>Finally, save your Context. From that point on, whenever the media for a node has the configured Mime type, Drupal will render the media using the corresponding display mode.</p>
-<p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Whichever Condition applies last between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the display mode specified in the node edit form intentionally override the display mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon display mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
+<p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Contexts are applied in the order they are displayed on the Contexts page, which is editable through a drag-and-drop interface. Whichever Condition appears last in the list of Contexts between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the display mode specified in the node edit form intentionally override the display mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon display mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
 <h2 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h2>
 <p>Islandora has a notion of <em>membership</em>, which is used to create a parent/child relationship between
 two resource nodes. Membership is denoted using another special field, "Member Of".<br />
@@ -2092,7 +2098,7 @@ on the <strong>Re-order Children</strong> tab to adjust the order in which they 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>

@@ -1884,7 +1884,11 @@
                 
                 <h1 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h1>
 <p>As a user of an Islandora repository, you may be wondering - Is this content being versioned? Could I restore from a previous version if I needed to? Can I see a list of versions for an object?
-The answer to these questions is two-fold, and largely yes. The architecture of Islandora provides users with a Drupal implementation and a Fedora implementation which are connected as of the 8.x-1.1 release of Islandora.</p>
+The answer to these questions is two-fold, and largely yes. The architecture of Islandora provides users with a Drupal implementation and a Fedora implementation which are connected in Islandora.</p>
+<div class="admonition note">
+<p class="admonition-title">Islandora Software Versioning</p>
+<p>Looking for information about versions of Islandora itself? The latest Islandora follows <a href="https://semver.org/">semantic versioning</a>. Previously, Islandora's versions were tied to the version of Drupal and numbered in order of release, such as <a href="https://wiki.lyrasis.org/display/ISLANDORA6131/Islandora">Islandora 6.x-13.1</a> or <a href="https://wiki.lyrasis.org/display/ISLANDORA/Start">Islandora 7.x-1.13</a>. <a href="../technical-documentation/versioning">More information</a>.</p>
+</div>
 <h2 id="drupal-revisioning">Drupal Revisioning<a class="headerlink" href="#drupal-revisioning" title="Permanent link">&para;</a></h2>
 <p>Drupal provides a concept of revisions which allows you to track the differences between multiple versions of your content and revert to older ones. The list of revisions for a node are available at <a href="http://localhost:8000/node/1/revisions">http://localhost:8000/node/1/revisions</a>. There are <a href="https://www.drupal.org/docs/8/administering-a-drupal-8-site/node-revisions">Drupal docs</a> on revisioning. Media objects are also versioned in Drupal but there is not a UI component for this - <a href="https://github.com/Islandora/documentation/issues/1035">see related issue</a>.</p>
 <h2 id="fedora-and-memento">Fedora and Memento<a class="headerlink" href="#fedora-and-memento" title="Permanent link">&para;</a></h2>
@@ -1904,7 +1908,7 @@ The answer to these questions is two-fold, and largely yes. The architecture of 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>
