@@ -1869,19 +1869,39 @@
                 
                 
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>This documentation is built using <a href="http://www.mkdocs.org/">mkdocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora/documentation/tree/main/docs"><code>docs</code></a> directory in the repository. The organization of the documentation is controlled by the <a href="https://github.com/Islandora/documentation/blob/main/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
+<p>This documentation is built using <a href="http://www.mkdocs.org/">MkDocs</a>, a static site generator that is geared towards building project documentation. The documentation is created in the <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> format, and it all resides in the <a href="https://github.com/Islandora/documentation/tree/main/docs"><code>docs</code></a> directory in the repository. The organization of the documentation is controlled by the <a href="https://github.com/Islandora/documentation/blob/main/mkdocs.yml"><code>mkdocs.yml</code></a> in the root of the repository.</p>
 <div class="admonition tip">
 <p class="admonition-title">Video version available</p>
 <p>Some of the material in this tutorial is presented in our video, <a href="https://youtu.be/YgSXicNow5w">How to Build Documentation</a>.</p>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>You will need to have <code>mkdocs</code> installed locally, as well as a required plugin and the MkDocs <em>Material</em> theme.</p>
+<p>You will need to have <code>mkdocs</code> software installed locally, as well as a required plugin and the MkDocs <em>Material</em> theme. Below we will show you how to install <code>mkdocs</code> using the Python language's <code>pip</code> tool. For more details on installing and using MkDocs visit the <a href="https://www.mkdocs.org/#installation">MkDocs installation guide</a>.</p>
+<ul>
+<li>
+<p>Open a terminal window.</p>
+</li>
+<li>
 <p>Install <code>mkdocs</code>:</p>
+<p>Windows / Linux:</p>
 <p><code>sudo -H pip install mkdocs</code></p>
+<p>macOS:</p>
+<p><code>pip3 install mkdocs</code></p>
+</li>
+<li>
 <p>Install plugin to enable display of the last revision date:</p>
+<p>Windows / Linux:</p>
 <p><code>sudo -H pip install mkdocs-git-revision-date-localized-plugin</code></p>
+<p>macOS:</p>
+<p><code>pip3 mkdocs-git-revision-date-localized-plugin</code></p>
+</li>
+<li>
 <p>Install Material theme:</p>
+<p>Windows / Linux:</p>
 <p><code>sudo -H pip install mkdocs-material</code></p>
+<p>macOS:</p>
+<p><code>pip3 install mkdocs-material</code></p>
+</li>
+</ul>
 <h2 id="build-and-deploy-documentation">Build and Deploy documentation<a class="headerlink" href="#build-and-deploy-documentation" title="Permanent link">&para;</a></h2>
 <p>Make sure you have all the submodules:</p>
 <p><code>git submodule update --init --recursive</code></p>
@@ -1893,6 +1913,7 @@
 <p>And then visiting http://localhost:8111 in your browser.</p>
 <p>To deploy documentation to GitHub Pages, issue the following command:</p>
 <p><code>mkdocs gh-deploy --clean</code></p>
+<p>To stop the <code>mkdocs serve</code> command just type the key combination "Control-c".</p>
                 
                   
                     
@@ -1901,7 +1922,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>
