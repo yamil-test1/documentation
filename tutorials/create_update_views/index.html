@@ -1917,49 +1917,56 @@
 <p>As you develop your Islandora Web site it is likely that you will need to change the default behaviour of the <em>Frontpage</em> View. As an example, the following describes how to edit the <em>Frontpage</em> page view to only show content items and not collections.</p>
 <p>For this example, we added six collection items to Islandora. In total there are eight items in the repository. In addition to the six collection items, there is one audio item and one image item.</p>
 <ol>
-<li>Using your Web browser, open the Islandora front page <ol>
-<li>For this example, on the front page we can see that Islandora displays a 'Collection' first as this is the most recently added item.</li>
-</ol>
+<li>Using your Web browser, open the Islandora front page </li>
+<li>
+<p>To edit the front page view, hover over the view (<em>Frontpage</em> view) and select <strong>Edit view</strong> when displayed.</p>
+<p><img alt="Frontpage view" src="../../assets/frontpage_view_all_eight.png" />
+3. Select <strong>Add</strong> under the <em>filter criteria</em> section.</p>
+<p><img alt="Frontpage view add filter" src="../../assets/frontpage_view_add_filter.png" />
+4. We do not want to display collections, so we need to add a <em>filter criteria</em> that does not filter for the Islandora model type 'Collection'
+1. Select <em>Model</em> from the list and then <strong>Apply (all displays</strong>).</p>
+<pre><code>![Frontpage view filter select model](../assets/frontpage_view_add_filter_select_model.png)
+</code></pre>
+<ol>
+<li>
+<p>Select <em>Islandora Model</em> to select filters on Islandora model types and select <strong>Apply and continue</strong>.</p>
+<p><img alt="Frontpage view filter islandora model" src="../../assets/frontpage_view_add_filter_select_model_islandora.png" />
+    3. Select the operator <em>Is none of</em> and the <em>Collection</em> model (autocomplete should work here to help you). To finish click <strong>Apply (all displays)</strong>.</p>
+<p><img alt="Frontpage views filter collection" src="../../assets/frontpage_view_add_filter_collection.png" />
+    4. <strong>Save</strong> the view. Now the 'Frontpage' View does not display collections.</p>
+<p><img alt="Frontpage views no collections" src="../../assets/frontpage_view_no_collections.png" /></p>
 </li>
-<li>To edit the front page view, hover over the view (<em>Frontpage</em> view) and select <strong>Edit view</strong> when displayed.
-    <img alt="Frontpage view" src="../../assets/frontpage_view_all_eight.png" /></li>
-<li>Select <strong>Add</strong> under the <em>filter criteria</em> section.
-    <img alt="Frontpage view add filter" src="../../assets/frontpage_view_add_filter.png" /></li>
-<li>We do not want to display collections, so we need to add a <em>filter criteria</em> that does not filter for the Islandora model type 'Collection'<ol>
-<li>Select <em>Model</em> from the list and then <strong>Apply (all displays</strong>).
-<img alt="Frontpage view filter select model" src="../../assets/frontpage_view_add_filter_select_model.png" /></li>
-<li>Select <em>Islandora Model</em> to select filters on Islandora model types and select <strong>Apply and continue</strong>.
-<img alt="Frontpage view filter islandora model" src="../../assets/frontpage_view_add_filter_select_model_islandora.png" /></li>
-<li>Select the operator <em>Is none of</em> and the <em>Collection</em> model (autocomplete should work here to help you). To finish click <strong>Apply (all displays)</strong>.
-<img alt="Frontpage views filter collection" src="../../assets/frontpage_view_add_filter_collection.png" /></li>
-<li><strong>Save</strong> the view. Now the 'Frontpage' View does not display collections.
-<img alt="Frontpage views no collections" src="../../assets/frontpage_view_no_collections.png" /></li>
 </ol>
 </li>
 </ol>
 <h2 id="how-to-create-a-new-view">How to create a new view<a class="headerlink" href="#how-to-create-a-new-view" title="Permanent link">&para;</a></h2>
-<p>For this example, we create a new view that only shows collections. It will be created as a block that will only display on the front page. We will add the new collection list block below the existing frontpage view that lists items.</p>
+<p>For this example, we create a new view that only shows collections. It will be created as a <a href="https://www.drupal.org/docs/core-modules-and-themes/core-modules/block-module/managing-blocks">Block</a> (also see the tutorial on <a href="../blocks/">Configuring Blocks</a>) that will only display on the front page. We will add the new collection list block below the existing frontpage view that lists items.</p>
 <ol>
 <li>Using your Web browser, open the Islandora 8 front page </li>
-<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Views</strong> (~/admin/structure/views)</li>
+<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Views</strong></li>
 <li>Create a new view by selecting <strong>Add view</strong></li>
-<li>Name the view and select <strong>Create a block</strong>. Give the block a title and decide how you want it to display (Grid, Table, List, Paging). To progress, select <strong>Save and edit</strong>.
-<img alt="Frontpage view collection list information" src="../../assets/frontpage_view_collection_list_info.png" /></li>
-<li>Customise the view format and sorting as required.</li>
-<li>Add a <em>filter criteria</em> to only show the Islandora model type of 'Collection' and <strong>Save</strong> the view.
-<img alt="Frontpage view collection list details" src="../../assets/frontpage_view_collection_list_details.png" /></li>
-<li>To place the view on front page, the new block must be added to the 'Main page content' area (using 'Block layout') and set to display on the front page.<ol>
-<li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Block layout</strong> (/admin/structure/block). Under <em>Main content</em> select <strong>Place block</strong>
-<img alt="Frontpage view collection list place block" src="../../assets/frontpage_view_collection_list_place_block.png" /></li>
+<li>
+<p>Name the view and select <strong>Create a block</strong>. Give the block a title and decide how you want it to display (Grid, Table, List, Paging). To progress, select <strong>Save and edit</strong>.</p>
+<p><img alt="Frontpage view collection list information" src="../../assets/frontpage_view_collection_list_info.png" />
+5.  Customise the view format and sorting as required.
+6.  Add a <em>filter criteria</em> to only show the Islandora model type of 'Collection' and <strong>Save</strong> the view.</p>
+<p><img alt="Frontpage view collection list details" src="../../assets/frontpage_view_collection_list_details.png" />
+7.  To place the view on front page, the new block must be added to the 'Main page content' area (using 'Block layout') and set to display on the front page.
+1. Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Block layout</strong> (/admin/structure/block). Under <em>Main content</em> select <strong>Place block</strong></p>
+<pre><code>![Frontpage view collection list place block](../assets/frontpage_view_collection_list_place_block.png)
+</code></pre>
+<ol>
 <li>Find the new block, 'Collection List' and select <strong>Place block</strong>.</li>
-<li>Restrict the block to only display on the frontpage by adding the text '<front>' to the <em>Page</em> vertical tab. Then select <strong>Save block</strong>.
-<img alt="Frontpage view collection list place block configure" src="../../assets/frontpage_view_collection_list_place_block_configure.png" /></li>
-<li>Review the block placement and move if required.
-<img alt="Frontpage view collection list block placement" src="../../assets/frontpage_view_collection_list_block_placement.png" /></li>
-</ol>
+<li>
+<p>Restrict the block to only display on the frontpage by adding the text '<front>' to the <em>Page</em> vertical tab. Then select <strong>Save block</strong>.</p>
+<p><img alt="Frontpage view collection list place block configure" src="../../assets/frontpage_view_collection_list_place_block_configure.png" />
+    4.  Review the block placement and move if required.</p>
+<p><img alt="Frontpage view collection list block placement" src="../../assets/frontpage_view_collection_list_block_placement.png" />
+8. The 'Collection list' now only displays on the front page. It displays below the <em>Main page content</em>.</p>
 </li>
-<li>The 'Collection list' now only displays on the front page. It displays below the <em>Main page content</em>.
-<img alt="Frontpage view collection list" src="../../assets/frontpage_view_collection_list.png" /></li>
+</ol>
+<p><img alt="Frontpage view collection list" src="../../assets/frontpage_view_collection_list.png" /></p>
+</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Islandora Quick Lessons</p>
@@ -1973,7 +1980,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>
