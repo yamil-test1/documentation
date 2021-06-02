@@ -291,22 +291,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#collection-configuration-provided-by-islandora-defaults" class="md-nav__link">
+    Collection configuration provided by Islandora Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bulk-management-of-members-of-a-collection" class="md-nav__link">
     Bulk management of members of a collection
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-provided-by-islandora-defaults" class="md-nav__link">
-    Configuration provided by Islandora Defaults
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tutorials" class="md-nav__link">
-    Tutorials
   </a>
   
 </li>
@@ -1844,22 +1837,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#collection-configuration-provided-by-islandora-defaults" class="md-nav__link">
+    Collection configuration provided by Islandora Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bulk-management-of-members-of-a-collection" class="md-nav__link">
     Bulk management of members of a collection
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-provided-by-islandora-defaults" class="md-nav__link">
-    Configuration provided by Islandora Defaults
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tutorials" class="md-nav__link">
-    Tutorials
   </a>
   
 </li>
@@ -1883,7 +1869,7 @@
                 
                 
                 <h1 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h1>
-<p>Collections are groups of related content that can be viewed or managed as a unit.  Islandora-specific use cases include:</p>
+<p>Collections are groups of related content that can be viewed or managed as a unit. Islandora-specific use cases include:</p>
 <ul>
 <li>an archival fonds that needs to be grouped together, with internal hierarchy</li>
 <li>various collections of artifacts, grouped for display</li>
@@ -1891,24 +1877,19 @@
 </ul>
 <p>Islandora provides:</p>
 <ul>
-<li>a field storage called "Member of" (field_member_of) that can be used to declare items to be members of other resources.</li>
-<li>a "Children" tab on resources, which provides a management interface to access, re-order, add, or delete the members of a resource. </li>
+<li>a generic "member of" relationship field (field_member_of) to group objects under a "parent" object. This mechanism is shared by <em>Collections</em> with similar use cases: <a href="../../user-documentation/paged-content/">Paged Content</a> and <em>Compound Objects</em>. Islandora on its own does not prescribe any particular <a href="../../user-documentation/content_types/">Content Type</a>, so this field can be configured for any <a href="https://www.drupal.org/docs/drupal-apis/entity-api/bundles">node bundle</a> intended to represent Islandora resources.</li>
+<li>a "Children" tab on resources, which provides a management interface to access, re-order, add, or delete the members of a resource.</li>
 </ul>
-<p>Islandora on its own does not prescribe any particular content types, so this field storage can be implemented on any node bundle inteneded to represent Islandora resources. Islandora provides a generic "member of" relationship field to group objects under a "parent" object. This mechanism is shared by similar use cases: Paged Content and Compound Objects.</p>
+<h2 id="collection-configuration-provided-by-islandora-defaults">Collection configuration provided by Islandora Defaults<a class="headerlink" href="#collection-configuration-provided-by-islandora-defaults" title="Permanent link">&para;</a></h2>
+<p><a href="../../reference/islandora_defaults_reference/">Islandora Defaults</a> is an optional collection of presets for Islandora, intended to provide a more user-friendly out-of-the-box experience and starting point for more specific customization. Islandora Defaults provides:</p>
+<ul>
+<li>a <a href="../../user-documentation/content_types/">Content Types</a> "Repository Item" that uses the "member_of" field, so that users may add nodes of this type to a collection (or paged content, or compound resource),</li>
+<li>logic (a <a href="../../user-documentation/context/">Context</a>) such that if a resource is tagged as a "collection", a view of its members will show on the collection's page. </li>
+</ul>
+<p>For more details, see the tutorial on <a href="../../tutorials/how-to-create-collection/">How to create and add to a collection</a></p>
 <h2 id="bulk-management-of-members-of-a-collection">Bulk management of members of a collection<a class="headerlink" href="#bulk-management-of-members-of-a-collection" title="Permanent link">&para;</a></h2>
-<p>Bulk management of items can be done using the Drupal contrib module <a href="https://www.drupal.org/project/views_bulk_edit">Views Bulk Edit Drupal module</a>. In short, build a view using this views field, and you will be able to perform Drupal Actions on objects. Neither Islandora nor Islandora Defaults provide out-of-the-box management tools, but the sandbox provides some sample content and views that use Views Bulk Edit. </p>
-<p>For more information see [forthcoming page] Concept: Bulk Edit</p>
-<h2 id="configuration-provided-by-islandora-defaults">Configuration provided by Islandora Defaults<a class="headerlink" href="#configuration-provided-by-islandora-defaults" title="Permanent link">&para;</a></h2>
-<p>Islandora (Defaults) provides:</p>
-<ul>
-<li>a content type ("Repository Item") that has the "member_of" field, so that users may add nodes of this type to a collection (or paged content, or compound resource),</li>
-<li>logic (a context) such that if a resource is tagged as a "collection", a view of its members will show on the collection's page. </li>
-</ul>
-<p>For more details, see the tutorial on  <a href="../../tutorials/how-to-create-collection/">How to create and add to a collection</a></p>
-<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../tutorials/how-to-create-collection/">How to create and add to a collection</a></li>
-</ul>
+<p>Bulk management of items can be done using the Drupal contrib module <a href="https://www.drupal.org/project/views_bulk_edit">Views Bulk Edit</a>. In short, build a view using this module, and you will be able to perform Drupal Actions on sets of objects. Neither Islandora nor Islandora Defaults provide out-of-the-box management tools, but the sandbox provides some sample content and views that use Views Bulk Edit. </p>
+<p>For more information see the video tutorial on <a href="https://youtu.be/ZMp0lPelOZw">Batch Editing</a>.</p>
                 
                   
                     
@@ -1917,7 +1898,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>
