@@ -1740,8 +1740,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-edit-this-documentation" class="md-nav__link">
-    How to edit this documentation
+  <a href="#how-to-edit-documentation-using-a-web-browser" class="md-nav__link">
+    How to edit documentation using a web browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-edit-documentation-using-git-on-your-computer" class="md-nav__link">
+    How to edit documentation using Git on your computer
   </a>
   
 </li>
@@ -1858,8 +1865,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-edit-this-documentation" class="md-nav__link">
-    How to edit this documentation
+  <a href="#how-to-edit-documentation-using-a-web-browser" class="md-nav__link">
+    How to edit documentation using a web browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-edit-documentation-using-git-on-your-computer" class="md-nav__link">
+    How to edit documentation using Git on your computer
   </a>
   
 </li>
@@ -1884,24 +1898,33 @@
                 
                 <h1 id="editing-documentation">Editing Documentation<a class="headerlink" href="#editing-documentation" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>These documentation pages are written and maintained by volunteers from the Islandora community, and new contributions are always welcomed. The documentation that you see here is built using <a href="https://www.mkdocs.org/">mkdocs</a> from files hosted in the Islandora <a href="https://github.com/Islandora/documentation">documentation</a> GitHub repo. This documentation is rebuilt automatically upon changes being committed to GitHub, so you will see changes reflected here within a few minutes of making an edit.</p>
-<p>The <a href="https://github.com/islandora-interest-groups/Islandora-Documentation-Interest-Group">Islandora Documentation Interest Group</a> holds regular meetings to discuss how to improve and expand Islandora's documentation. If you are interested in becoming involved, all are welcome to join. If you just want to make a contribution to the existing documentation, that process is outlined here. </p>
+<p>These documentation pages are written and maintained by volunteers from the Islandora community, and new contributions are always welcomed. The documentation that you see here is formatted in the easy to use <a href="http://en.wikipedia.org/wiki/Markdown">MarkDown</a> markup language, which can add formatting such as links, headings, and bolded text. Then the documentation HTML site is built using <a href="https://www.mkdocs.org/">mkdocs</a> from the MarkDown files hosted in the Islandora <a href="https://github.com/Islandora/documentation">documentation</a> GitHub repo. This documentation is rebuilt automatically upon changes being committed to GitHub, so you will see changes reflected here within a few minutes of making an edit.</p>
+<p>The <a href="https://github.com/islandora-interest-groups/Islandora-Documentation-Interest-Group">Islandora Documentation Interest Group</a> holds regular meetings to discuss how to improve and expand Islandora's documentation. If you are interested in becoming involved, all are welcome to join. If you just want to make a contribution to the existing documentation, that process is outlined here.</p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <p>To edit documentation in Islandora, you must:</p>
 <ul>
-<li>have a GitHub account.</li>
-<li>have a very basic familiarity with GitHub terms such as <a href="https://guides.github.com/activities/forking/">fork</a>, <a href="https://guides.github.com/activities/hello-world/#branch">branch</a>, and <a href="https://guides.github.com/activities/hello-world/#pr">pull request</a></li>
-<li>be a member of the Islandora <a href="https://github.com/orgs/Islandora/people">GitHub Organization</a>.<ul>
-<li>This is only needed if you want to commit changes directly to the documentation. Non-members may still make pull requests. To request an invite, email community@islandora.ca or ask on the Islandora Slack. </li>
+<li>have a <a href="https://github.com/">GitHub</a> account.<ul>
+<li>NOTE: Github accounts are free and only require a valid email address.</li>
 </ul>
 </li>
-<li>have a basic familiarity with <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, or a good <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheat sheet</a></li>
-<li>follow the <a href="../docs_style_guide/">Documentation Style Guide</a></li>
-<li>have either an individual <a href="https://github.com/Islandora/islandora/wiki/Contributor-License-Agreements">Contributor License Agreement</a> on file with the Islandora Foundation, or work for an organization that has a corporate Contributor License Agreement on file with the Islandora Foundation. </li>
+<li>have a very basic familiarity with GitHub terms such as <a href="https://guides.github.com/activities/forking/">fork</a>, <a href="https://guides.github.com/activities/hello-world/#branch">branch</a>, and <a href="https://guides.github.com/activities/hello-world/#pr">pull request</a>.</li>
+<li>be a member of the Islandora <a href="https://github.com/orgs/Islandora/people">GitHub Organization</a>.<ul>
+<li>This is only needed if you want to commit changes directly to the documentation. Non-members may still make pull requests. To request an invite, email community@islandora.ca or ask on the Islandora Slack.</li>
 </ul>
-<h2 id="how-to-edit-this-documentation">How to edit this documentation<a class="headerlink" href="#how-to-edit-this-documentation" title="Permanent link">&para;</a></h2>
+</li>
+<li>have a basic familiarity with <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, or a good <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">MarkDown cheat sheet</a>.<ul>
+<li>for example, you may use MarkDown syntax to create links and section headings.</li>
+</ul>
+</li>
+<li>follow the <a href="../docs_style_guide/">Islandora Documentation Style Guide</a>.</li>
+<li>have either an individual <a href="https://github.com/Islandora/islandora/wiki/Contributor-License-Agreements">Contributor License Agreement</a> (CLA) on file with the Islandora Foundation, or work for an organization that has a corporate Contributor License Agreement on file with the Islandora Foundation.<ul>
+<li>for information on how to fill out and submit a Contributor License Agreement (CLA) for yourself and/or your organization visit the <a href="https://islandora.github.io/documentation/contributing/CONTRIBUTING/#license-agreements">License Agreements</a> section of the "How to contribute" documentation page.</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-edit-documentation-using-a-web-browser">How to edit documentation using a web browser<a class="headerlink" href="#how-to-edit-documentation-using-a-web-browser" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Starting from the page you want to edit, look for the pencil icon in the top righthand corner of the page and click on it</li>
+<li>Starting from the page you want to edit on a web browser, look for the pencil icon in the top righthand corner of the page and click on it</li>
 </ul>
 <p><img alt="Edit page button" src="../../assets/editing-docs-button.png" /></p>
 <ul>
@@ -1911,12 +1934,12 @@
 <ul>
 <li>Make your changes directly in the browser editor, then scroll to the bottom to "commit" your changes. This is the equivalent of saving.</li>
 </ul>
-<p>If you are <em>not</em> a member of the Islandora GitHub organization, GitHub will create a new <em>fork</em> of the documentation repository in your GitHub account. From there you can make a pull request to have your changes sent back to the main Islandora documentation repo to be reviewed and accepted. </p>
-<p>If you <em>are</em> a member of the Islandora GitHub organization, you will be able to create a new temporary branch within the main Islandora documentation repo, and then issue a pull request by selecting <em>Create a new branch for this commit and start a pull request</em>. Give your branch a brief name starting with your username, with no spaces, indicating what it is for. Then click <strong>Commit changes</strong>.</p>
+<p>If you are <em>not</em> a member of the Islandora GitHub organization, GitHub will create a new <em>fork</em> of the documentation repository in your GitHub account. From there you can make a pull request to have your changes sent back to the main Islandora documentation repo to be reviewed and accepted.</p>
+<p>If you <em>are</em> a member of the Islandora GitHub organization, you will be able to create a new temporary branch within the main Islandora documentation repo, and then create a pull request by selecting <em>Create a new branch for this commit and start a pull request</em>. Give your branch a brief name starting with your username, with no spaces, indicating what it is for. Then click <strong>Commit changes</strong>.</p>
 <p><img alt="start a new branch and PR" src="../../assets/editing-docs-branch.png" /></p>
 <ul>
 <li>You will be taken to the <a href="https://github.com/Islandora/documentation/blob/main/.github/PULL_REQUEST_TEMPLATE.md">pull request template</a> which will prompt you to fill out some basic information about what you have changed, and why. Replace all relevant instances of <em>Replace this text</em> with your own text.<ul>
-<li>You will have the option to tag <em>Interested Parties</em>, or people you would like to review your work, by writing in their GitHub account name after the <code>@</code> symbol. If you don't have anyone specific in mind, you may tag <code>@Islandora/8-x-committers</code> to alert all Islandora 8 Committers that there is a new pull request for their review. </li>
+<li>You will have the option to tag <em>Interested Parties</em>, or people you would like to review your work, by writing in their GitHub account name after the <code>@</code> symbol. If you don't have anyone specific in mind, you may tag <code>@Islandora/8-x-committers</code> to alert all Islandora 8 Committers that there is a new pull request for their review.</li>
 </ul>
 </li>
 </ul>
@@ -1928,7 +1951,7 @@
 <li>
 <p>Once your pull request has been made, it will go into the <a href="https://github.com/Islandora/documentation/pulls">pull request queue</a> and anyone tagged in the request will receive a notification. Any member of the Islandora GitHub organization can review and merge your pull request, committing your changes to the documentation, with a few exceptions:</p>
 <ul>
-<li>Your pull request should not be mergd by you. </li>
+<li>Your pull request should not be merged by you.</li>
 <li>Your pull request should not be merged by anyone who contributed to it (i.e, if some one collaborated with you on writing the changes, that person cannot merge those changes).</li>
 <li>Your pull request should not be merged by anyone who works at the same organization as you.</li>
 </ul>
@@ -1937,8 +1960,16 @@
 <p>Once your changes are committed, these documentation pages will be rebuilt to reflect your changes within a few minutes.</p>
 <div class="admonition note">
 <p class="admonition-title">For very minor changes</p>
-<p>For members of the Islandora GitHub organization (i.e., those with <em>write</em> access to the documentation repo): If the change you made was very small, such as a formatting or spelling correction that does not change the semantics of the document, you may push your changes into the documentation immediately by selecting <em>commit directly to the <code>main</code> branch</em> and clicking <strong>Commit changes</strong>. </p>
+<p>For members of the Islandora GitHub organization (i.e., those with <em>write</em> access to the documentation repo): If the change you made was very small, such as a formatting or spelling correction that does not change the semantics of the document, you may push your changes into the documentation immediately by selecting <em>commit directly to the <code>main</code> branch</em> and clicking <strong>Commit changes</strong>.</p>
 </div>
+<h2 id="how-to-edit-documentation-using-git-on-your-computer">How to edit documentation using Git on your computer<a class="headerlink" href="#how-to-edit-documentation-using-git-on-your-computer" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These steps are for more advanced users that are familiar with using the Git source control software, which is different from just using the GitHub website with a web browser.</p>
+</div>
+<ul>
+<li>For information on how to submit your Git software based changes see the <a href="https://islandora.github.io/documentation/contributing/CONTRIBUTING/">Contribute code</a> and <a href="https://islandora.github.io/documentation/contributing/CONTRIBUTING/#create-a-pull-request">Create a pull request</a> sections of the "How to contribute" page of the Islandora documentation.</li>
+</ul>
                 
                   
                     
@@ -1947,7 +1978,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 23, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2021</span>
       
     
   </small>
