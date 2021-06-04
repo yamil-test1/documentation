@@ -2021,8 +2021,15 @@
                 
                 
                 <h1 id="access-control-in-islandora">Access Control in Islandora<a class="headerlink" href="#access-control-in-islandora" title="Permanent link">&para;</a></h1>
-<p>This page is about controlling <strong>who can view or edit your Islandora content</strong> (metadata and binaries). </p>
-<p>Islandora recommends using Drupal's access control features. Contributed modules such as those described below, can provide additional flexibility and configurability. However, these only apply when content is accessed through Drupal, and are not applied to data in Fedora, the Triplestore, or Solr. </p>
+<p>This page is about controlling <strong>who can view or edit your Islandora content</strong> (metadata and binaries).</p>
+<p>Islandora recommends using Drupal's access control features. Contributed modules such as those described below, can provide additional flexibility and configurability. However, these only apply when content is accessed through Drupal, and are not applied to data in Fedora, the Triplestore, or Solr.</p>
+<p>Known strategies for implementing access control in Drupal include:</p>
+<ul>
+<li>Core Drupal</li>
+<li>Group</li>
+<li>Permissions by Term</li>
+<li>Field Permissions</li>
+</ul>
 <div class="admonition danger">
 <p class="admonition-title">Exposed Endpoints</p>
 <p>If access control is a concern, you will want to lock down access to the following services that are part of the Islandora Suite:</p>
@@ -2096,10 +2103,12 @@
 </tbody>
 </table>
 <p>These are the basic access control options built into Drupal Core. There are many contributed modules that do access control, some are described below. Before using access control modules, please see <a href="https://www.drupal.org/node/270000">Comparison and Overview of Access Control modules</a> on drupal.org.</p>
-<p>Contributed modules are required for the following cases:
-- individual nodes or media having their own access policies (in Core Drupal, access can only be configured at the content type or media type level)
-- access policies that grant privileges to <em>users</em> (in Core Drupal, access can be granted only to roles, and/or to that content's author)
-- contents of specific "management" fields being reserved so that only privileged users can view or edit. </p>
+<p>Contributed modules are required for the following cases:</p>
+<ul>
+<li>individual nodes or media having their own access policies (in Core Drupal, access can only be configured at the content type or media type level)</li>
+<li>access policies that grant privileges to <em>users</em> (in Core Drupal, access can be granted only to roles, and/or to that content's author)</li>
+<li>contents of specific "management" fields being reserved so that only privileged users can view or edit. </li>
+</ul>
 <h3 id="islandora-resources">Islandora Resources<a class="headerlink" href="#islandora-resources" title="Permanent link">&para;</a></h3>
 <p>Given the [Collection] → Node → Media → File structure of Islandora resources, it is reasonable to wonder if access to a Node, Media, or File is influenced by the permissions on its "parent" resource. </p>
 <p>There is not yet a mechanism for Drupal's access control to be "inherited" from parent resources to child resources. An exception is non-public files, as described below.</p>
@@ -2140,9 +2149,13 @@
 <p>Group is one of the more hefty modules, and is difficult to learn. It is good if you have static or semi-static groups of users who need access to a static or semi-static group of content, but sharing an item with an arbitrary group of users is cumbersome. </p>
 </div>
 <h2 id="permissions-by-term-contributed-module">Permissions By Term (contributed module)<a class="headerlink" href="#permissions-by-term-contributed-module" title="Permanent link">&para;</a></h2>
-<p>"The <a href="https://www.drupal.org/project/permissions_by_term">Permissions by Term</a> module extends Drupal by functionality for restricting view and edit access to single nodes [and media] via taxonomy terms. [...] Taxonomy term permissions can be coupled to specific user accounts and/or user roles."</p>
+<p>"The <a href="https://www.drupal.org/project/permissions_by_term">Permissions by Term</a> module extends Drupal by functionality for restricting view and edit access to single nodes  via taxonomy terms. [...] Taxonomy term permissions can be coupled to specific user accounts and/or user roles." By default, this module only affects nodes. To enable Permissions by Term for Media and other entities, enable the "Permissions by Entity" submodule.</p>
 <p>Islandora Defaults includes an empty vocabulary called "Islandora Access", which is intended to hold such taxonomy terms. However, permissions_by_term must be installed and configured on your own.</p>
-<p>The module is very popular and seems to be supported well.</p>
+<p>This module is known to work, and appears to be supported well by the Drupal community.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This module is known in the Islandora community to cause performance degradation when large numbers of nodes are involved. Seth Shaw describes this in a blog post, <a href="https://seth-shaw-unlv.github.io/2021-02-19/content_access_control">Content Access Control Solutions Investigation</a>.</p>
+</div>
 <div class="admonition question">
 <p class="admonition-title">Examples Wanted</p>
 <p>Do you have experience setting up Permissions By Term? We'd love some illustrative examples here.</p>
@@ -2169,7 +2182,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2021</span>
       
     
   </small>
