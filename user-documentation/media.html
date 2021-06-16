@@ -15,7 +15,7 @@
         
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7+insiders-2.9.2">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8+insiders-2.9.2">
     
     
       
@@ -873,6 +873,13 @@
         <li class="md-nav__item">
   <a href="#derivatives" class="md-nav__link">
     Derivatives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-file-media" class="md-nav__link">
+    Multi-File Media
   </a>
   
 </li>
@@ -1944,6 +1951,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multi-file-media" class="md-nav__link">
+    Multi-File Media
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2031,6 +2045,16 @@ Naming conventions can be configured by editing each derivative action's <em>Fil
 Original File, a lower quality "Service File" and a smaller "Thumbnail Image" file were generated.</p>
 <p><img alt="Media tab" src="../assets/resource_nodes_media_tab.png" /></p>
 <p>For more information on how to configure derivatives, see the section on <a href="context.html">Context</a>.</p>
+<h2 id="multi-file-media">Multi-File Media<a class="headerlink" href="#multi-file-media" title="Permanent link">&para;</a></h2>
+<p>An alternate method of using Media to store files and derivatives is known as "multi-file" or multifile media. This method allows a single resource node to have multiple "Original Files" or "Preservation Masters". This method was implemented by <a href="https://islandora-rdm.researchspaces.ca/">UPEI's Research Data Management project</a>, to represent datasets that may include multiple important files that require equal preservation treatment and derivatives (such as a spreadsheet and accompanying data dictionary), while being described by a single set of descriptive metadata. </p>
+<p>There are no multi-file media bundles that currently ship with Islandora. The following recipe describes how to set up multi-file media:</p>
+<ol>
+<li>On an existing or new Media bundle that already has a main storage field (e.g. field_media_image or field_media_audio_file), add additional fields to hold derivatives. They need to be "File"-type fields. The field names should indicate the "Media use". Set up as many as you need, for example, Thumbnail, Service File, Extracted text, etc. Note that the "Media Use" field is no longer relevant for multi-file media bundles, as a single media instance of this type contains all "Media Uses" (e.g. derivatives) in different fields. </li>
+<li>Create a derivative Action that uses one of the two existing multi-file media base actions: "Generate a Derivative File For Media Attachment" or "Generate a Derivative Image For Media Attachment". This is where you configure which queue it goes to (which derivative-creating program runs), which field the resulting file ends up in, and potentially which additional arguments to pass to the microservice. </li>
+<li>Configure Contexts to trigger the Action to create derivatives. If using a combination of standard and multi-file media in your repository, ensure the Contexts include appropriate filtering Conditions. Add a Derivative reaction and select the Action you created in the previous step.</li>
+<li>Configure your resource node to display its (potentially multiple) files as desired. This may involve creating a view of media attached to the current node, and displaying the Service File (or Thumbnail, etc) field of the media, then setting the view block to appear on the node page. </li>
+</ol>
+<p>A video tutorial explaining how to configure multi-file Media is available under the following URL: <a href="https://www.youtube.com/watch?v=3U6tBvD8oJY">https://www.youtube.com/watch?v=3U6tBvD8oJY</a></p>
                 
                   
                     
@@ -2039,7 +2063,7 @@ Original File, a lower quality "Service File" and a smaller "Thumbnail Image" fi
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2021</span>
       
     
   </small>
