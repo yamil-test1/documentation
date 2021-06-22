@@ -1,0 +1,2633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Islandora 8">
+      
+      
+      
+      
+        <link rel="canonical" href="https://islandora.github.io/documentation/installation/playbook/">
+      
+      
+        
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8+insiders-2.9.2">
+    
+    
+      
+        <title>Ansible Playbook - Islandora 8</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2cfd06f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.73e53a79.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <script>function __scope(t,e="../.."){return new URL(e,location).pathname+"."+t}function __get(t,e=localStorage,n){return JSON.parse(e.getItem(__scope(t,n)))}function __set(t,e,n=localStorage,o){try{n.setItem(__scope(t,o),JSON.stringify(e))}catch(t){}}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#islandora-playbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+      
+  <img src="../../assets/claw.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Islandora 8
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ansible Playbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Islandora/documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+      
+  <img src="../../assets/claw.png" alt="logo">
+
+    </a>
+    Islandora 8
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Islandora/documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/collection/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/access-control/" class="md-nav__link">
+        Access Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/accessibility/" class="md-nav__link">
+        Accessibility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../component_overview/" class="md-nav__link">
+        Component Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/objects_to_resource_nodes/" class="md-nav__link">
+        Modelling content in Islandora 8 vs. 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/islandora_defaults_reference/" class="md-nav__link">
+        Islandora Defaults
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        Docker Compose (ISLE-DC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ansible Playbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ansible Playbook
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-mode" class="md-nav__link">
+    Quick-start mode:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-openssl-and-ansible-on-ubuntudebian" class="md-nav__link">
+    Installing Git, OpenSSL, and Ansible on Ubuntu/Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-openssl-and-ansible-on-centos" class="md-nav__link">
+    Installing Git, OpenSSL and Ansible on CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-and-ansible-on-macos" class="md-nav__link">
+    Installing Git and Ansible on MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-local-development-environment" class="md-nav__link">
+    Installing a local development environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a local development environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-playbook" class="md-nav__link">
+    Clone the playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-base-box" class="md-nav__link">
+    Set the base box
+  </a>
+  
+    <nav class="md-nav" aria-label="Set the base box">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#editing-the-vagrantfile" class="md-nav__link">
+    Editing the Vagrantfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-islandora_distro-as-a-shell-environment-variable" class="md-nav__link">
+    Setting ISLANDORA_DISTRO as a shell (environment) variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-up-with-vagrant" class="md-nav__link">
+    Spin up with Vagrant
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-remote-environment" class="md-nav__link">
+    Installing a remote environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a remote environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group_varsallpasswordsyml" class="md-nav__link">
+    group_vars/all/passwords.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varscrayfishyml" class="md-nav__link">
+    group_vars/crayfish.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varskarafyml" class="md-nav__link">
+    group_vars/karaf.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varstomcatyml" class="md-nav__link">
+    group_vars/tomcat.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebserverapacheyml" class="md-nav__link">
+    group_vars/webserver/apache.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebserverdrupalyml" class="md-nav__link">
+    group_vars/webserver/drupal.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebservergeneralyml" class="md-nav__link">
+    group_vars/webserver/general.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosts" class="md-nav__link">
+    hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-remote-installer" class="md-nav__link">
+    Running the remote installer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#out-of-date-playbooks" class="md-nav__link">
+    Out of date playbooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-clashes-for-local-environments" class="md-nav__link">
+    Port clashes for local environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Manual Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Manual Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Manual Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/preparing_a_webserver/" class="md-nav__link">
+        Preparing a LAPP Webserver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_composer_drush_and_drupal/" class="md-nav__link">
+        Installing Composer, Drush, and Drupal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_tomcat_and_cantaloupe/" class="md-nav__link">
+        Installing Tomcat and Cantaloupe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_fedora_syn_and_blazegraph/" class="md-nav__link">
+        Installing Fedora, Syn, and Blazegraph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_solr/" class="md-nav__link">
+        Installing Solr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_crayfish/" class="md-nav__link">
+        Installing Crayfish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/installing_karaf_and_alpaca/" class="md-nav__link">
+        Installing Karaf and Alpaca
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/configuring_drupal/" class="md-nav__link">
+        Configuring Drupal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/install-enable-drupal-modules/" class="md-nav__link">
+        Installing Modules
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create-a-resource-node/" class="md-nav__link">
+        Create a Resource Node
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/how-to-create-collection/" class="md-nav__link">
+        Create a Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/blocks/" class="md-nav__link">
+        Configure Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create_update_views/" class="md-nav__link">
+        Create or Update a View
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/video-docs/" class="md-nav__link">
+        Video Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/user-intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/intro-to-ld-for-islandora-8/" class="md-nav__link">
+        Intro to Linked Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/versioning/" class="md-nav__link">
+        Versioning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          Content in Islandora 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Content in Islandora 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/resource-nodes/" class="md-nav__link">
+        Resource Nodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/media/" class="md-nav__link">
+        Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/paged-content/" class="md-nav__link">
+        Paged Content
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Configuring Islandora
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuring Islandora" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configuring Islandora
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/content_types/" class="md-nav__link">
+        Modify or Create a Content Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/searching/" class="md-nav__link">
+        Configure Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/advanced-search/" class="md-nav__link">
+        Configure Advanced Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/context/" class="md-nav__link">
+        Configure Context
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/multilingual/" class="md-nav__link">
+        Multilingual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/extending/" class="md-nav__link">
+        Extending Islandora
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/file_viewers/" class="md-nav__link">
+        Viewers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/iiif/" class="md-nav__link">
+        IIIF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/oai/" class="md-nav__link">
+        OAI-PMH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../islandora/rdf-mapping/" class="md-nav__link">
+        RDF Generation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../islandora/drupal-bundle-configurations/" class="md-nav__link">
+        Drupal Bundle Configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/flysystem/" class="md-nav__link">
+        Flysystem
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6">
+          Operating an Islandora Repository
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Operating an Islandora Repository" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Operating an Islandora Repository
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/users/" class="md-nav__link">
+        Create and Manage User Accounts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/usage-stats/" class="md-nav__link">
+        Usage Stats
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          System Administrator Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="System Administrator Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          System Administrator Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/updating_drupal/" class="md-nav__link">
+        Updating Drupal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/uploading-large-files/" class="md-nav__link">
+        Uploading large files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/jwt/" class="md-nav__link">
+        JWT Authentication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Documentation for Developers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation for Developers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation for Developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/diagram/" class="md-nav__link">
+        Architecture Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          REST Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REST Documentation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          REST Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/using-rest-endpoints/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-authorization/" class="md-nav__link">
+        Authorization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-get/" class="md-nav__link">
+        GET
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-create/" class="md-nav__link">
+        POST/PUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-patch/" class="md-nav__link">
+        PATCH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-delete/" class="md-nav__link">
+        DELETE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/rest-signposting/" class="md-nav__link">
+        Signposting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Tests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tests" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/running-automated-tests/" class="md-nav__link">
+        Running Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/testing-notes/" class="md-nav__link">
+        Testing Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/drupal-project/" class="md-nav__link">
+        Updating drupal-project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/versioning/" class="md-nav__link">
+        Versioning Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/adding_format_jsonld/" class="md-nav__link">
+        Adding back ?_format=jsonld
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/ppa-documentation/" class="md-nav__link">
+        Updating a `deb` and adding it to Lyrasis PPA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Alpaca
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Alpaca" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Alpaca
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alpaca/alpaca-technical-stack/" class="md-nav__link">
+        Alpaca Technical Stack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/alpaca_tips/" class="md-nav__link">
+        Alpaca Tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Migration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Migration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/migration-overview/" class="md-nav__link">
+        Migration Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/migrate-csv/" class="md-nav__link">
+        CSV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/migrate-7x/" class="md-nav__link">
+        Islandora 7
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/CONTRIBUTING/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/resizing_vm/" class="md-nav__link">
+        Resizing a VM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/checking-coding-standards/" class="md-nav__link">
+        Checking Coding Standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/contributing-workflow/" class="md-nav__link">
+        Contributing Workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/create_issues/" class="md-nav__link">
+        Creating GitHub Issues
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/editing-docs/" class="md-nav__link">
+        Editing Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-documentation/docs-build/" class="md-nav__link">
+        How to Build Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/docs_style_guide/" class="md-nav__link">
+        Documentation Style Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/committers/" class="md-nav__link">
+        Committers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-documentation/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-mode" class="md-nav__link">
+    Quick-start mode:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-openssl-and-ansible-on-ubuntudebian" class="md-nav__link">
+    Installing Git, OpenSSL, and Ansible on Ubuntu/Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-openssl-and-ansible-on-centos" class="md-nav__link">
+    Installing Git, OpenSSL and Ansible on CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-git-and-ansible-on-macos" class="md-nav__link">
+    Installing Git and Ansible on MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-local-development-environment" class="md-nav__link">
+    Installing a local development environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a local development environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-playbook" class="md-nav__link">
+    Clone the playbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-base-box" class="md-nav__link">
+    Set the base box
+  </a>
+  
+    <nav class="md-nav" aria-label="Set the base box">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#editing-the-vagrantfile" class="md-nav__link">
+    Editing the Vagrantfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-islandora_distro-as-a-shell-environment-variable" class="md-nav__link">
+    Setting ISLANDORA_DISTRO as a shell (environment) variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-up-with-vagrant" class="md-nav__link">
+    Spin up with Vagrant
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-remote-environment" class="md-nav__link">
+    Installing a remote environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a remote environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group_varsallpasswordsyml" class="md-nav__link">
+    group_vars/all/passwords.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varscrayfishyml" class="md-nav__link">
+    group_vars/crayfish.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varskarafyml" class="md-nav__link">
+    group_vars/karaf.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varstomcatyml" class="md-nav__link">
+    group_vars/tomcat.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebserverapacheyml" class="md-nav__link">
+    group_vars/webserver/apache.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebserverdrupalyml" class="md-nav__link">
+    group_vars/webserver/drupal.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_varswebservergeneralyml" class="md-nav__link">
+    group_vars/webserver/general.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosts" class="md-nav__link">
+    hosts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-remote-installer" class="md-nav__link">
+    Running the remote installer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#out-of-date-playbooks" class="md-nav__link">
+    Out of date playbooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-clashes-for-local-environments" class="md-nav__link">
+    Port clashes for local environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Islandora/documentation/edit/main/docs/installation/playbook.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                
+                <h1 id="islandora-playbook">Islandora Playbook<a class="headerlink" href="#islandora-playbook" title="Permanent link">&para;</a></h1>
+<p>The Islandora Playbook (<a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora-Devops/islandora-playbook</a>) is a tool for installing Islandora Defaults on a single virtual machine. It can be used both as a <a href="https://www.vagrantup.com/">Vagrant</a> project to create a local development environment, and/or as an <a href="https://www.ansible.com/community">Ansible</a> playbook which can provision a remote server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This repository has two active branches. The <strong>main</strong> branch's playbook will install the latest release of Islandora and its components. The <strong>dev</strong> branch, when configured to use Ansible, will provision with the most recent code of Islandora and its components. </p>
+</div>
+<h2 id="quick-start-mode">Quick-start mode:<a class="headerlink" href="#quick-start-mode" title="Permanent link">&para;</a></h2>
+<p>The fastest way to spin up a local Vagrant version of Islandora Defaults is to use the Islandora Base Box, which is a packaged VM of the <strong>latest release</strong> of Islandora - including Islandora Defaults and all components. This is the default behaviour of the <strong>dev</strong> branch of the playbook. This method requires Vagrant and VirtualBox, but does not use Ansible.</p>
+<pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
+$ cd islandora-playbook
+$ vagrant up
+</code></pre>
+<p>This method results in an installation that does not contain the latest code changes. </p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>Download and install the following. VirtualBox and Vagrant are needed if creating local VMs. Ansible is only necessary if provisioning (not using quick-start mode described above):</p>
+<ol>
+<li><a href="https://www.virtualbox.org/">Virtual Box</a></li>
+<li><a href="https://www.vagrantup.com/">Vagrant</a> (version 2.0 or higher required)</li>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://www.openssl.org/">OpenSSL</a></li>
+<li><a href="https://www.ansible.com/community">Ansible</a> (up to, and not past, 2.8.7)</li>
+</ol>
+<h4 id="installing-git-openssl-and-ansible-on-ubuntudebian">Installing Git, OpenSSL, and Ansible on Ubuntu/Debian<a class="headerlink" href="#installing-git-openssl-and-ansible-on-ubuntudebian" title="Permanent link">&para;</a></h4>
+<p>Git and OpenSSL are available via <code>apt</code>. <a href="https://www.ansible.com/community">Ansible</a> up to version 2.8.7.  This is done best with <code>pip</code>, the python package manager:</p>
+<pre><code class="language-bash"># Install git and openssl
+$ sudo apt-get install git
+$ sudo apt-get install openssl
+# If pip isn’t already available, run the following commands to install it
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python get-pip.py --user
+# Install ansible
+$ pip install --user -Iv ansible==2.8.7
+</code></pre>
+<h4 id="installing-git-openssl-and-ansible-on-centos">Installing Git, OpenSSL and Ansible on CentOS<a class="headerlink" href="#installing-git-openssl-and-ansible-on-centos" title="Permanent link">&para;</a></h4>
+<p>Git and OpenSSL are available via <code>yum</code>. Most everything else can be installed in the same way.</p>
+<pre><code class="language-bash">$ sudo yum install git
+$ sudo yum install openssl
+# If pip isn’t already available, run the following commands to install it
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python get-pip.py --user
+# Install ansible
+$ pip install --user -Iv ansible==2.8.7
+</code></pre>
+<h4 id="installing-git-and-ansible-on-macos">Installing Git and Ansible on MacOS<a class="headerlink" href="#installing-git-and-ansible-on-macos" title="Permanent link">&para;</a></h4>
+<p>OpenSSL is already pre-installed on MacOS. Git can be installed using XCode's command line tools (see below). Python and Pip should be installed via the downloaded installer direct from the site (not shown below). For the installation of Ansible, consider using <a href="https://brew.sh/">homebrew</a> (see below).</p>
+<pre><code class="language-bash"># Use xcode-select to install command line components, including git
+$ xcode-select --install
+# Install homebrew
+$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+# Use homebrew to install ansible
+$ brew install ansible@2.8.7
+</code></pre>
+<h2 id="installing-a-local-development-environment">Installing a local development environment<a class="headerlink" href="#installing-a-local-development-environment" title="Permanent link">&para;</a></h2>
+<p>Clone the <code>islandora-playbook</code>, set the base box, and use <code>vagrant up</code> to automatically provision a local environment. This method uses Vagrant, VirtualBox, and Ansible. Before provisioning a local environment, you should likely double check that no <a href="#port-clashes-for-local-environments">required ports</a> are currently in use.</p>
+<h3 id="clone-the-playbook">Clone the playbook<a class="headerlink" href="#clone-the-playbook" title="Permanent link">&para;</a></h3>
+<p>For the most recent release:</p>
+<pre><code class="language-bash">$ git clone -b main https://github.com/Islandora-Devops/islandora-playbook
+$ cd islandora-playbook
+</code></pre>
+<p>For the bleeding edge:</p>
+<pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
+$ cd islandora-playbook
+</code></pre>
+<h3 id="set-the-base-box">Set the base box<a class="headerlink" href="#set-the-base-box" title="Permanent link">&para;</a></h3>
+<p>To tell Vagrant which base box to use, set ISLANDORA_DISTRO. This can be done by editing the Vagrantfile or by setting a shell variable.</p>
+<h4 id="editing-the-vagrantfile">Editing the Vagrantfile<a class="headerlink" href="#editing-the-vagrantfile" title="Permanent link">&para;</a></h4>
+<p>Open <code>Vagrantfile</code> (in the islandora-playbook directory) in a text editor, and find the following section.</p>
+<pre><code># Available boxes are 'islandora/8', ubuntu/bionic64' and 'centos/7'
+# Use 'ubuntu/bionic64' or 'centos/7' to build a dev environment from scratch.
+# Use 'islandora/8' if you just want to download a ready to run VM.
+$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;islandora/8&quot;)
+</code></pre>
+<p>To build a dev environment that is Ubuntu, change the last line of that section to:</p>
+<pre><code>$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;ubuntu/bionic64&quot;)
+</code></pre>
+<p>To build a dev environment that is CentOS, change the last line of that section to:</p>
+<pre><code>$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;centos/7&quot;)
+</code></pre>
+<p>Note that setting ISLANORA_DISTRO as a shell variable will override what is specified in the Vagrantfile.</p>
+<h4 id="setting-islandora_distro-as-a-shell-environment-variable">Setting ISLANDORA_DISTRO as a shell (environment) variable<a class="headerlink" href="#setting-islandora_distro-as-a-shell-environment-variable" title="Permanent link">&para;</a></h4>
+<p>Or, an alternative to altering the Vagrantfile, you can set <code>ISLANDORA_DISTRO</code> by adding the following 
+to <code>.bashrc</code> (on Ubuntu/Debian environments), or <code>.bash_profile</code> (on MacOS):</p>
+<pre><code class="language-bash">export ISLANDORA_DISTRO=&quot;ubuntu/bionic64&quot;
+</code></pre>
+<p>This will override what is written in the Vagrantfile.</p>
+<h3 id="spin-up-with-vagrant">Spin up with Vagrant<a class="headerlink" href="#spin-up-with-vagrant" title="Permanent link">&para;</a></h3>
+<p>Before using <code>vagrant up</code>:</p>
+<ul>
+<li>If building a CentOS box, you also need to install the vbguest additions with <code>vagrant plugin install vagrant-vbguest</code>.</li>
+<li>If this is not your first time spinning up Islandora from this directory, and you want to get the latest code, you may want to clear cached ansible roles in roles/external <code>rm -rf roles/external</code></li>
+</ul>
+<p>Then, to spin up the machine: </p>
+<pre><code class="language-bash">vagrant up
+</code></pre>
+<h2 id="installing-a-remote-environment">Installing a remote environment<a class="headerlink" href="#installing-a-remote-environment" title="Permanent link">&para;</a></h2>
+<p>A remote environment can be provisioned by providing SSH credentials to <code>claw-playbook</code> and using the <code>ansible-galaxy</code> installer instead of Vagrant. Some preparation of configuration entries in the <code>inventory</code> also need to be changed to be aware of the particulars of your remote environment; this includes:</p>
+<ul>
+<li>Changing usernames and passwords to something more sensible than the default</li>
+<li>Changing IP addresses to use the remote machine's actual IP</li>
+<li>Changing Apache to serve at port 80 (as opposed to 8000, which we use for development purposes)</li>
+</ul>
+<p>We're going to build up this new remote environment configuration from the default provided Vagrant configuration. To start, take the inventory for the vagrant development environment and make a copy of it. Be sure to give it an appropriate name. Here we're using <code>example</code>.</p>
+<pre><code class="language-bash">$ git clone https://github.com/Islandora-Devops/islandora-playbook
+$ cd islandora-playbook
+$ cp -r inventory/vagrant inventory/example
+</code></pre>
+<p>Then you can update the following entries in the following files using your own information. If an entry does not exist in a file,
+just add it.  Ansible will then use the value you provide instead of relying on its defaults.</p>
+<p>We're using <code>changeme</code> to represent passwords and assume the server will be available at <code>example.org</code>, but you'll want to provide
+your own values.</p>
+<h4 id="group_varsallpasswordsyml">group_vars/all/passwords.yml<a class="headerlink" href="#group_varsallpasswordsyml" title="Permanent link">&para;</a></h4>
+<pre><code class="language-yml">drupal_db_password: changeme
+drupal_account_pass: changeme
+islandora_db_root_password: changeme
+islandora_tomcat_password: changeme
+islandora_syn_token: changeme
+cantaloupe_admin_password: changeme
+</code></pre>
+<h4 id="group_varscrayfishyml">group_vars/crayfish.yml<a class="headerlink" href="#group_varscrayfishyml" title="Permanent link">&para;</a></h4>
+<pre><code class="language-yml">crayfish_gemini_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_houdini_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_hypercube_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_milliner_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_milliner_drupal_base_url: http://example.org
+crayfish_milliner_gemini_base_url: http://example.org/gemini
+crayfish_homarus_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_recast_fedora_base_url: http://example.org:8080/fcrepo/rest
+crayfish_recast_drupal_base_url: http://example.org
+crayfish_recast_gemini_base_url: http://example.org/gemini
+</code></pre>
+<h4 id="group_varskarafyml">group_vars/karaf.yml<a class="headerlink" href="#group_varskarafyml" title="Permanent link">&para;</a></h4>
+<p>For Alpaca, only the <code>token.value</code> and various URLs are of particular importance, but the entire configuration chunk is provided here for convenience.</p>
+<pre><code class="language-yml">alpaca_settings:
+  - pid: ca.islandora.alpaca.http.client
+    settings:
+      token.value: changeme
+  - pid: org.fcrepo.camel.indexing.triplestore
+    settings:
+      input.stream: activemq:topic:fedora
+      triplestore.reindex.stream: activemq:queue:triplestore.reindex
+      triplestore.baseUrl: http://example.org:8080/bigdata/namespace/islandora/sparql
+  - pid: ca.islandora.alpaca.indexing.triplestore
+    settings:
+      error.maxRedeliveries: 10
+      index.stream: activemq:queue:islandora-indexing-triplestore-index
+      delete.stream: activemq:queue:islandora-indexing-triplestore-delete
+      triplestore.baseUrl: http://example.org:8080/bigdata/namespace/islandora/sparql
+  - pid: ca.islandora.alpaca.indexing.fcrepo
+    settings:
+      error.maxRedeliveries: 5
+      node.stream: activemq:queue:islandora-indexing-fcrepo-content
+      node.delete.stream: activemq:queue:islandora-indexing-fcrepo-delete
+      media.stream: activemq:queue:islandora-indexing-fcrepo-media
+      file.stream: activemq:queue:islandora-indexing-fcrepo-file
+      file.delete.stream: activemq:queue:islandora-indexing-fcrepo-file-delete
+      milliner.baseUrl: http://example.org/milliner/
+      gemini.baseUrl: http://example.org/gemini/
+
+alpaca_blueprint_settings:
+  - pid: ca.islandora.alpaca.connector.houdini
+    in_stream: activemq:queue:islandora-connector-houdini
+    derivative_service_url: http://example.org/houdini/convert
+    error_max_redeliveries: 5
+    camel_context_id: IslandoraConnectorHoudini
+  - pid: ca.islandora.alpaca.connector.homarus
+    in_stream: activemq:queue:islandora-connector-homarus
+    derivative_service_url: http://example.org/homarus/convert
+    error_max_redeliveries: 5
+    camel_context_id: IslandoraConnectorHomarus
+</code></pre>
+<h4 id="group_varstomcatyml">group_vars/tomcat.yml<a class="headerlink" href="#group_varstomcatyml" title="Permanent link">&para;</a></h4>
+<pre><code class="language-yml">fcrepo_allowed_external_content:
+  - http://example.org/
+cantaloupe_HttpResolver_BasicLookupStrategy_url_prefix: http://example.org/
+</code></pre>
+<h4 id="group_varswebserverapacheyml">group_vars/webserver/apache.yml<a class="headerlink" href="#group_varswebserverapacheyml" title="Permanent link">&para;</a></h4>
+<p>This is where we specify that the webserver is listening on the default port 80, instead of the development machine port 8000.</p>
+<pre><code class="language-yml">apache_listen_port: 80
+</code></pre>
+<h4 id="group_varswebserverdrupalyml">group_vars/webserver/drupal.yml<a class="headerlink" href="#group_varswebserverdrupalyml" title="Permanent link">&para;</a></h4>
+<pre><code class="language-yml">drupal_trusted_hosts:
+  - ^localhost$
+  - example.org
+fedora_base_url: &quot;http://example.org:8080/fcrepo/rest/&quot;
+</code></pre>
+<h4 id="group_varswebservergeneralyml">group_vars/webserver/general.yml<a class="headerlink" href="#group_varswebservergeneralyml" title="Permanent link">&para;</a></h4>
+<pre><code class="language-yml">openseadragon_iiiv_server: http://example.org:8080/cantaloupe/iiif/2
+matomo_site_url: http://example.org
+</code></pre>
+<h4 id="hosts">hosts<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h4>
+<p>You'll need the SSH particulars for logging into your server in the hosts file.  This example is set up to login as <code>root</code> using
+an SSH key. You'll need to get the details for logging into your remote server from your hosting provider (AWS, Digital Ocean, etc...)
+or your systems administrator if you're running the server in-house. See
+<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters">this page</a>
+for more details about what you can put into a
+host file</p>
+<pre><code>default ansible_host=example.org ansible_port=22 ansible_user=root ansible_ssh_private_key_file='/home/username/.ssh/id_rsa'
+</code></pre>
+<h3 id="running-the-remote-installer">Running the remote installer<a class="headerlink" href="#running-the-remote-installer" title="Permanent link">&para;</a></h3>
+<p>First, you'll want to get the ansible roles that are needed for the version of Islandora you are trying to install.  This can be done
+with</p>
+<pre><code class="language-bash">$ ansible-galaxy install -r requirements.yml
+</code></pre>
+<p>Then, depending on the operating system installed on the remote environment, you can use the following command for Ubuntu 16.04</p>
+<pre><code class="language-bash">$ ansible-playbook -i inventory/production playbook.yml -e &quot;islandora_distro=ubuntu/xenial64&quot;
+</code></pre>
+<p>or for CentOS 7</p>
+<pre><code class="language-bash">$ ansible-playbook -i inventory/production playbook.yml -e &quot;islandora_distro=centos/7&quot;
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="out-of-date-playbooks">Out of date playbooks<a class="headerlink" href="#out-of-date-playbooks" title="Permanent link">&para;</a></h3>
+<p>Ansible caches the code used to provision the environment, so if you've already installed once you may not be getting the latest version
+of things even if you've <code>git pull</code>'d the latest playbook.  The code is stored in <code>roles/external</code>, so if you want to clear it out you can
+remove these before attempting to provision an environment</p>
+<pre><code class="language-bash">$ rm -rf roles/external
+</code></pre>
+<h3 id="port-clashes-for-local-environments">Port clashes for local environments<a class="headerlink" href="#port-clashes-for-local-environments" title="Permanent link">&para;</a></h3>
+<p>When provisioning using a local environment, you should be aware of any ports that are already in use by your computer that are also going to be
+used by Vagrant, as these may clash and cause problems during and after provisioning. These include:</p>
+<ul>
+<li>8000 (Apache)</li>
+<li>8080 (Tomcat)</li>
+<li>3306 (MySQL)</li>
+<li>5432 (PostgreSQL)</li>
+<li>8983 (Solr)</li>
+<li>8161 (ActiveMQ)</li>
+<li>8081 (API-X)</li>
+</ul>
+<p>If there are port clashes for any of these, you will need to either find and replace them in the configuration .yml files under
+<code>inventory/vagrant/group_vars</code>, or provide new values for the different playbooks that support changing the ports (for example, <code>postgresql_databases</code>
+supports adding a <code>port</code> property which is currently simply unused). You will also need to replace the port forwarding values in <code>Vagrantfile</code>.</p>
+<p>Additionally, Ansible attempts to use port 2200 for SSH. If this port is already in use, your local environment cannot be provisioned. To
+change this, set a new value for <code>ansible_port</code> in <code>inventory/vagrant/hosts</code>.</p>
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p>If you run into any issues installing the environment, do not hesitate to email the <a href="mailto:islandora@googlegroups.com">mailing list</a> to
+ask for help.  If you think you've stumbled across a bug in the installer, please create an issue in the
+<a href="http://github.com/Islandora/documentation/issues">Islandora 8 issue queue</a> and give it an <code>ansible</code> tag.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2020</span>
+      
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../docker-compose/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker Compose (ISLE-DC)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Docker Compose (ISLE-DC)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../manual/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Introduction
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <b>This documentation is user-sourced!</b> Suggestions and comments are welcome in our <u><a href="https://github.com/Islandora/documentation/issues" target="_blank">issue queue</a></u>.
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs Insiders
+          </a>
+        
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/islandora" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.df8cae7d.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.82217815.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -11,24 +11,24 @@
       
       
       
-        <link rel="canonical" href="https://islandora.github.io/documentation/">
+        <link rel="canonical" href="https://islandora.github.io/documentation/installation/docker-compose/">
       
       
         
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8+insiders-2.9.2">
     
     
       
-        <title>Islandora 8</title>
+        <title>Docker Compose (ISLE-DC) - Islandora 8</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2cfd06f1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2cfd06f1.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.73e53a79.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.73e53a79.min.css">
         
           
           
@@ -48,7 +48,7 @@
     
     
     
-      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
     
       
@@ -67,7 +67,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
   
     
-    <script>function __scope(t,e="."){return new URL(e,location).pathname+"."+t}function __get(t,e=localStorage,n){return JSON.parse(e.getItem(__scope(t,n)))}function __set(t,e,n=localStorage,o){try{n.setItem(__scope(t,o),JSON.stringify(e))}catch(t){}}</script>
+    <script>function __scope(t,e="../.."){return new URL(e,location).pathname+"."+t}function __get(t,e=localStorage,n){return JSON.parse(e.getItem(__scope(t,n)))}function __set(t,e,n=localStorage,o){try{n.setItem(__scope(t,o),JSON.stringify(e))}catch(t){}}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about" class="md-skip">
+        <a href="#install-islandora-on-docker-isle" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +89,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
       
-  <img src="assets/claw.png" alt="logo">
+  <img src="../../assets/claw.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              Docker Compose (ISLE-DC)
             
           </span>
         </div>
@@ -188,9 +188,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
       
-  <img src="assets/claw.png" alt="logo">
+  <img src="../../assets/claw.png" alt="logo">
 
     </a>
     Islandora 8
@@ -217,99 +217,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          About
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         About
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#this-is-islandora" class="md-nav__link">
-    This is Islandora
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#try-islandora" class="md-nav__link">
-    Try Islandora
-  </a>
-  
-    <nav class="md-nav" aria-label="Try Islandora">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#online-sandbox" class="md-nav__link">
-    Online Sandbox
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#virtual-machine-image-ova-file" class="md-nav__link">
-    Virtual Machine Image (.ova file)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vagrant-and-islandora-base-box" class="md-nav__link">
-    Vagrant and Islandora Base Box
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#islandora-playbook-via-ansible" class="md-nav__link">
-    Islandora Playbook via Ansible
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-the-community" class="md-nav__link">
-    Join the Community
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -348,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/collection/" class="md-nav__link">
+      <a href="../../concepts/collection/" class="md-nav__link">
         Collections
       </a>
     </li>
@@ -362,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/access-control/" class="md-nav__link">
+      <a href="../../concepts/access-control/" class="md-nav__link">
         Access Control
       </a>
     </li>
@@ -376,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/accessibility/" class="md-nav__link">
+      <a href="../../concepts/accessibility/" class="md-nav__link">
         Accessibility
       </a>
     </li>
@@ -390,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/component_overview/" class="md-nav__link">
+      <a href="../component_overview/" class="md-nav__link">
         Component Overview
       </a>
     </li>
@@ -404,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/objects_to_resource_nodes/" class="md-nav__link">
+      <a href="../../user-documentation/objects_to_resource_nodes/" class="md-nav__link">
         Modelling content in Islandora 8 vs. 7
       </a>
     </li>
@@ -418,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/islandora_defaults_reference/" class="md-nav__link">
+      <a href="../../reference/islandora_defaults_reference/" class="md-nav__link">
         Islandora Defaults
       </a>
     </li>
@@ -438,12 +350,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -464,11 +378,188 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="installation/docker-compose/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Docker Compose (ISLE-DC)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Docker Compose (ISLE-DC)
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-isle" class="md-nav__link">
+    What is ISLE?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-docker" class="md-nav__link">
+    Why use Docker?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-is-isle-8" class="md-nav__link">
+    Where is ISLE 8?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-install-isle" class="md-nav__link">
+    How do I install ISLE?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-docker" class="md-nav__link">
+    Installing Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launching-islandora-with-docker" class="md-nav__link">
+    Launching Islandora with Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visiting-your-islandora-site" class="md-nav__link">
+    Visiting your Islandora site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinning-down-your-islandora-site" class="md-nav__link">
+    Spinning down your Islandora site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-code-in-docker" class="md-nav__link">
+    Editing Code in Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Code in Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-a-pull-request" class="md-nav__link">
+    Testing a Pull Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-isle" class="md-nav__link">
+    Updating ISLE
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating ISLE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drupal-updates" class="md-nav__link">
+    Drupal Updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-updates-non-islandora" class="md-nav__link">
+    Module Updates (non-Islandora)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-updates-islandora" class="md-nav__link">
+    Module Updates (Islandora)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-providers-solr-mariadb-etc" class="md-nav__link">
+    Backend Providers (solr, mariadb, etc)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-the-whole-isle-dc-repo" class="md-nav__link">
+    Updating the whole isle-dc repo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -480,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/playbook/" class="md-nav__link">
+      <a href="../playbook/" class="md-nav__link">
         Ansible Playbook
       </a>
     </li>
@@ -520,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/introduction/" class="md-nav__link">
+      <a href="../manual/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -534,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/preparing_a_webserver/" class="md-nav__link">
+      <a href="../manual/preparing_a_webserver/" class="md-nav__link">
         Preparing a LAPP Webserver
       </a>
     </li>
@@ -548,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_composer_drush_and_drupal/" class="md-nav__link">
+      <a href="../manual/installing_composer_drush_and_drupal/" class="md-nav__link">
         Installing Composer, Drush, and Drupal
       </a>
     </li>
@@ -562,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_tomcat_and_cantaloupe/" class="md-nav__link">
+      <a href="../manual/installing_tomcat_and_cantaloupe/" class="md-nav__link">
         Installing Tomcat and Cantaloupe
       </a>
     </li>
@@ -576,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_fedora_syn_and_blazegraph/" class="md-nav__link">
+      <a href="../manual/installing_fedora_syn_and_blazegraph/" class="md-nav__link">
         Installing Fedora, Syn, and Blazegraph
       </a>
     </li>
@@ -590,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_solr/" class="md-nav__link">
+      <a href="../manual/installing_solr/" class="md-nav__link">
         Installing Solr
       </a>
     </li>
@@ -604,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_crayfish/" class="md-nav__link">
+      <a href="../manual/installing_crayfish/" class="md-nav__link">
         Installing Crayfish
       </a>
     </li>
@@ -618,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/installing_karaf_and_alpaca/" class="md-nav__link">
+      <a href="../manual/installing_karaf_and_alpaca/" class="md-nav__link">
         Installing Karaf and Alpaca
       </a>
     </li>
@@ -632,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/manual/configuring_drupal/" class="md-nav__link">
+      <a href="../manual/configuring_drupal/" class="md-nav__link">
         Configuring Drupal
       </a>
     </li>
@@ -653,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/install-enable-drupal-modules/" class="md-nav__link">
+      <a href="../../technical-documentation/install-enable-drupal-modules/" class="md-nav__link">
         Installing Modules
       </a>
     </li>
@@ -701,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/create-a-resource-node/" class="md-nav__link">
+      <a href="../../tutorials/create-a-resource-node/" class="md-nav__link">
         Create a Resource Node
       </a>
     </li>
@@ -715,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/how-to-create-collection/" class="md-nav__link">
+      <a href="../../tutorials/how-to-create-collection/" class="md-nav__link">
         Create a Collection
       </a>
     </li>
@@ -729,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/blocks/" class="md-nav__link">
+      <a href="../../tutorials/blocks/" class="md-nav__link">
         Configure Blocks
       </a>
     </li>
@@ -743,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/create_update_views/" class="md-nav__link">
+      <a href="../../tutorials/create_update_views/" class="md-nav__link">
         Create or Update a View
       </a>
     </li>
@@ -757,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/video-docs/" class="md-nav__link">
+      <a href="../../user-documentation/video-docs/" class="md-nav__link">
         Video Documentation
       </a>
     </li>
@@ -805,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/user-intro/" class="md-nav__link">
+      <a href="../../user-documentation/user-intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -819,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/intro-to-ld-for-islandora-8/" class="md-nav__link">
+      <a href="../../user-documentation/intro-to-ld-for-islandora-8/" class="md-nav__link">
         Intro to Linked Data
       </a>
     </li>
@@ -833,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/versioning/" class="md-nav__link">
+      <a href="../../user-documentation/versioning/" class="md-nav__link">
         Versioning
       </a>
     </li>
@@ -873,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/resource-nodes/" class="md-nav__link">
+      <a href="../../user-documentation/resource-nodes/" class="md-nav__link">
         Resource Nodes
       </a>
     </li>
@@ -887,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/media/" class="md-nav__link">
+      <a href="../../user-documentation/media/" class="md-nav__link">
         Media
       </a>
     </li>
@@ -901,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/paged-content/" class="md-nav__link">
+      <a href="../../user-documentation/paged-content/" class="md-nav__link">
         Paged Content
       </a>
     </li>
@@ -915,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/metadata/" class="md-nav__link">
+      <a href="../../user-documentation/metadata/" class="md-nav__link">
         Metadata
       </a>
     </li>
@@ -962,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/content_types/" class="md-nav__link">
+      <a href="../../user-documentation/content_types/" class="md-nav__link">
         Modify or Create a Content Type
       </a>
     </li>
@@ -976,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/searching/" class="md-nav__link">
+      <a href="../../user-documentation/searching/" class="md-nav__link">
         Configure Search
       </a>
     </li>
@@ -990,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/advanced-search/" class="md-nav__link">
+      <a href="../../user-documentation/advanced-search/" class="md-nav__link">
         Configure Advanced Search
       </a>
     </li>
@@ -1004,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/context/" class="md-nav__link">
+      <a href="../../user-documentation/context/" class="md-nav__link">
         Configure Context
       </a>
     </li>
@@ -1018,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/multilingual/" class="md-nav__link">
+      <a href="../../user-documentation/multilingual/" class="md-nav__link">
         Multilingual
       </a>
     </li>
@@ -1032,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/extending/" class="md-nav__link">
+      <a href="../../user-documentation/extending/" class="md-nav__link">
         Extending Islandora
       </a>
     </li>
@@ -1046,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/file_viewers/" class="md-nav__link">
+      <a href="../../user-documentation/file_viewers/" class="md-nav__link">
         Viewers
       </a>
     </li>
@@ -1060,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/iiif/" class="md-nav__link">
+      <a href="../../user-documentation/iiif/" class="md-nav__link">
         IIIF
       </a>
     </li>
@@ -1074,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/oai/" class="md-nav__link">
+      <a href="../../user-documentation/oai/" class="md-nav__link">
         OAI-PMH
       </a>
     </li>
@@ -1088,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="islandora/rdf-mapping/" class="md-nav__link">
+      <a href="../../islandora/rdf-mapping/" class="md-nav__link">
         RDF Generation
       </a>
     </li>
@@ -1102,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="islandora/drupal-bundle-configurations/" class="md-nav__link">
+      <a href="../../islandora/drupal-bundle-configurations/" class="md-nav__link">
         Drupal Bundle Configurations
       </a>
     </li>
@@ -1116,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/flysystem/" class="md-nav__link">
+      <a href="../../technical-documentation/flysystem/" class="md-nav__link">
         Flysystem
       </a>
     </li>
@@ -1163,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/users/" class="md-nav__link">
+      <a href="../../user-documentation/users/" class="md-nav__link">
         Create and Manage User Accounts
       </a>
     </li>
@@ -1177,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/usage-stats/" class="md-nav__link">
+      <a href="../../user-documentation/usage-stats/" class="md-nav__link">
         Usage Stats
       </a>
     </li>
@@ -1232,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/updating_drupal/" class="md-nav__link">
+      <a href="../../technical-documentation/updating_drupal/" class="md-nav__link">
         Updating Drupal
       </a>
     </li>
@@ -1246,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/uploading-large-files/" class="md-nav__link">
+      <a href="../../technical-documentation/uploading-large-files/" class="md-nav__link">
         Uploading large files
       </a>
     </li>
@@ -1260,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/jwt/" class="md-nav__link">
+      <a href="../../technical-documentation/jwt/" class="md-nav__link">
         JWT Authentication
       </a>
     </li>
@@ -1308,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/diagram/" class="md-nav__link">
+      <a href="../../technical-documentation/diagram/" class="md-nav__link">
         Architecture Diagram
       </a>
     </li>
@@ -1348,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/using-rest-endpoints/" class="md-nav__link">
+      <a href="../../technical-documentation/using-rest-endpoints/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1362,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-authorization/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-authorization/" class="md-nav__link">
         Authorization
       </a>
     </li>
@@ -1376,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-get/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-get/" class="md-nav__link">
         GET
       </a>
     </li>
@@ -1390,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-create/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-create/" class="md-nav__link">
         POST/PUT
       </a>
     </li>
@@ -1404,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-patch/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-patch/" class="md-nav__link">
         PATCH
       </a>
     </li>
@@ -1418,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-delete/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-delete/" class="md-nav__link">
         DELETE
       </a>
     </li>
@@ -1432,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/rest-signposting/" class="md-nav__link">
+      <a href="../../technical-documentation/rest-signposting/" class="md-nav__link">
         Signposting
       </a>
     </li>
@@ -1479,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/running-automated-tests/" class="md-nav__link">
+      <a href="../../technical-documentation/running-automated-tests/" class="md-nav__link">
         Running Tests
       </a>
     </li>
@@ -1493,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/testing-notes/" class="md-nav__link">
+      <a href="../../technical-documentation/testing-notes/" class="md-nav__link">
         Testing Notes
       </a>
     </li>
@@ -1514,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/drupal-project/" class="md-nav__link">
+      <a href="../../technical-documentation/drupal-project/" class="md-nav__link">
         Updating drupal-project
       </a>
     </li>
@@ -1528,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/versioning/" class="md-nav__link">
+      <a href="../../technical-documentation/versioning/" class="md-nav__link">
         Versioning Policy
       </a>
     </li>
@@ -1542,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/adding_format_jsonld/" class="md-nav__link">
+      <a href="../../technical-documentation/adding_format_jsonld/" class="md-nav__link">
         Adding back ?_format=jsonld
       </a>
     </li>
@@ -1556,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/ppa-documentation/" class="md-nav__link">
+      <a href="../../technical-documentation/ppa-documentation/" class="md-nav__link">
         Updating a `deb` and adding it to Lyrasis PPA
       </a>
     </li>
@@ -1596,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="alpaca/alpaca-technical-stack/" class="md-nav__link">
+      <a href="../../alpaca/alpaca-technical-stack/" class="md-nav__link">
         Alpaca Technical Stack
       </a>
     </li>
@@ -1610,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/alpaca_tips/" class="md-nav__link">
+      <a href="../../technical-documentation/alpaca_tips/" class="md-nav__link">
         Alpaca Tips
       </a>
     </li>
@@ -1665,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/migration-overview/" class="md-nav__link">
+      <a href="../../technical-documentation/migration-overview/" class="md-nav__link">
         Migration Overview
       </a>
     </li>
@@ -1679,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/migrate-csv/" class="md-nav__link">
+      <a href="../../technical-documentation/migrate-csv/" class="md-nav__link">
         CSV
       </a>
     </li>
@@ -1693,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/migrate-7x/" class="md-nav__link">
+      <a href="../../technical-documentation/migrate-7x/" class="md-nav__link">
         Islandora 7
       </a>
     </li>
@@ -1741,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/CONTRIBUTING/" class="md-nav__link">
+      <a href="../../contributing/CONTRIBUTING/" class="md-nav__link">
         How to contribute
       </a>
     </li>
@@ -1755,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/resizing_vm/" class="md-nav__link">
+      <a href="../../technical-documentation/resizing_vm/" class="md-nav__link">
         Resizing a VM
       </a>
     </li>
@@ -1769,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/checking-coding-standards/" class="md-nav__link">
+      <a href="../../technical-documentation/checking-coding-standards/" class="md-nav__link">
         Checking Coding Standards
       </a>
     </li>
@@ -1783,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/contributing-workflow/" class="md-nav__link">
+      <a href="../../contributing/contributing-workflow/" class="md-nav__link">
         Contributing Workflow
       </a>
     </li>
@@ -1797,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/create_issues/" class="md-nav__link">
+      <a href="../../contributing/create_issues/" class="md-nav__link">
         Creating GitHub Issues
       </a>
     </li>
@@ -1811,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/editing-docs/" class="md-nav__link">
+      <a href="../../contributing/editing-docs/" class="md-nav__link">
         Editing Documentation
       </a>
     </li>
@@ -1825,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical-documentation/docs-build/" class="md-nav__link">
+      <a href="../../technical-documentation/docs-build/" class="md-nav__link">
         How to Build Documentation
       </a>
     </li>
@@ -1839,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/docs_style_guide/" class="md-nav__link">
+      <a href="../../contributing/docs_style_guide/" class="md-nav__link">
         Documentation Style Guide
       </a>
     </li>
@@ -1853,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/committers/" class="md-nav__link">
+      <a href="../../contributing/committers/" class="md-nav__link">
         Committers
       </a>
     </li>
@@ -1875,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-documentation/glossary/" class="md-nav__link">
+      <a href="../../user-documentation/glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -1908,44 +1999,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#this-is-islandora" class="md-nav__link">
-    This is Islandora
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#try-islandora" class="md-nav__link">
-    Try Islandora
-  </a>
-  
-    <nav class="md-nav" aria-label="Try Islandora">
+    <nav class="md-nav" aria-label="Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#online-sandbox" class="md-nav__link">
-    Online Sandbox
+  <a href="#what-is-isle" class="md-nav__link">
+    What is ISLE?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#virtual-machine-image-ova-file" class="md-nav__link">
-    Virtual Machine Image (.ova file)
+  <a href="#why-use-docker" class="md-nav__link">
+    Why use Docker?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vagrant-and-islandora-base-box" class="md-nav__link">
-    Vagrant and Islandora Base Box
+  <a href="#where-is-isle-8" class="md-nav__link">
+    Where is ISLE 8?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#islandora-playbook-via-ansible" class="md-nav__link">
-    Islandora Playbook via Ansible
+  <a href="#how-do-i-install-isle" class="md-nav__link">
+    How do I install ISLE?
   </a>
   
 </li>
@@ -1956,9 +2040,105 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#join-the-community" class="md-nav__link">
-    Join the Community
+  <a href="#requirements" class="md-nav__link">
+    Requirements
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-docker" class="md-nav__link">
+    Installing Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launching-islandora-with-docker" class="md-nav__link">
+    Launching Islandora with Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visiting-your-islandora-site" class="md-nav__link">
+    Visiting your Islandora site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinning-down-your-islandora-site" class="md-nav__link">
+    Spinning down your Islandora site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-code-in-docker" class="md-nav__link">
+    Editing Code in Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Code in Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-a-pull-request" class="md-nav__link">
+    Testing a Pull Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-isle" class="md-nav__link">
+    Updating ISLE
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating ISLE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drupal-updates" class="md-nav__link">
+    Drupal Updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-updates-non-islandora" class="md-nav__link">
+    Module Updates (non-Islandora)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-updates-islandora" class="md-nav__link">
+    Module Updates (Islandora)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-providers-solr-mariadb-etc" class="md-nav__link">
+    Backend Providers (solr, mariadb, etc)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-the-whole-isle-dc-repo" class="md-nav__link">
+    Updating the whole isle-dc repo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1974,59 +2154,156 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora/documentation/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Islandora/documentation/edit/main/docs/installation/docker-compose.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
                 
-                <h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h1>
-<h2 id="this-is-islandora">This is Islandora<a class="headerlink" href="#this-is-islandora" title="Permanent link">&para;</a></h2>
-<p><a href="https://islandora.ca">Islandora</a> is an open-source framework that provides the necessary tools to use a <a href="https://www.drupal.org">Drupal</a> website as a fully-functional Digital Assets Management System.</p>
-<p>Islandora:</p>
+                <h1 id="install-islandora-on-docker-isle">Install Islandora on Docker (ISLE)<a class="headerlink" href="#install-islandora-on-docker-isle" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This page describes using ISLE-DC to launch Islandora as a suite of Docker Containers (ISLE). This is an alternative to the <a href="../playbook/">Islandora Ansible Playbook</a>, which creates the Islandora stack on a single virtual machine. At the end of this tutorial, you will have a local development environment, and be able to use Docker to launch, shut down, and edit your environment.</p>
+<h3 id="what-is-isle">What is ISLE?<a class="headerlink" href="#what-is-isle" title="Permanent link">&para;</a></h3>
+<p>ISLE, or ISLandora Enterprise, is a community initiative to ease the installation and maintenance of Islandora by using Docker. It was an initiative of the Islandora Collaboration Group, first using Islandora 7.x, and later with Islandora 8.x. The code for the Islandora Enterprise 8 Prototype (ISLE 8, sometimes just ISLE) is now under the purview of the Islandora Foundation. ISLE may also refer to the <a href="https://islandora-collaboration-group.github.io/ISLE/">ISLE system for Islandora 7</a>.</p>
+<h3 id="why-use-docker">Why use Docker?<a class="headerlink" href="#why-use-docker" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.docker.com/">Docker</a> is a way to separate out the "state" of your site (i.e. all the content, files, and configurations that you've entered) from the underlying software that runs it (e.g. webserver, database engine, etc). This allows for easier upgrades, faster development, and more flexible deployment.</p>
+<h3 id="where-is-isle-8">Where is ISLE 8?<a class="headerlink" href="#where-is-isle-8" title="Permanent link">&para;</a></h3>
+<p>ISLE 8 is a suite of Docker containers that run the various components of Islandora required by Islandora Defaults: drupal, fedora, solr, alpaca, crayfish, matomo, etc.  The individual containers are created (and automatically pushed to Docker Hub) by <a href="https://github.com/Islandora-Devops/isle-buildkit">ISLE BuildKit</a>.</p>
+<h3 id="how-do-i-install-isle">How do I install ISLE?<a class="headerlink" href="#how-do-i-install-isle" title="Permanent link">&para;</a></h3>
+<p>Install ISLE locally or remotely using the Docker Compose scripts (ISLE-DC) at (<a href="https://github.com/Islandora-Devops/isle-dc">Islandora-Devops/isle-dc</a>). These are instructions to pull down and configure the necessary containers from Docker Hub. Unlike the <a href="../playbook/">Islandora Playbook</a>, this method does not require Ansible, or (for local installations) VirtualBox. Like the Playbook, it has been optimized for development environments but in theory could be used in production.</p>
+<p>These instructions describe using ISLE-DC locally to create a development Islandora sandbox. More detailed configuration options are described in the project's <a href="https://github.com/Islandora-Devops/isle-dc">README</a>.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Is native Drupal</strong> - With Islandora, you can create preservation-ready digital resources using Drupal nodes, media, files, and taxonomy terms. A suite of customized Drupal resource types and configurations that illustrate Islandora's capabilities are packaged as the <a href="https://github.com/Islandora/islandora_defaults">Islandora Defaults module</a>.</li>
-<li><strong>Integrates with Fedora</strong> - Drupal resources can be stored in Duraspace's <a href="https://wiki.duraspace.org/display/FF/Fedora+Repository+Home">Fedora 5.x Repository</a> as binary assets and RDF metadata.</li>
-<li><strong>Uses microservices</strong> - Islandora provides an architecture for messaging and integration with any number of microservices, that provide services outside of the Drupal framework. Islandora's <a href="https://github.com/Islandora/crayfish">Crayfish</a> suite of microservices provides functionality for synchronizing resources into Fedora and automatically generating derivative files.</li>
-<li>
-<p><strong>Can handle messages at scale</strong> - Islandora uses <a href="https://github.com/Islandora/Alpaca">Alpaca</a>, an integration middleware based on Apache Camel, to scalably handle messaging and queueing for microservices such as Crayfish.</p>
+<li>A computer that can run Docker (version 19.x+) and has at least 8GB of RAM (ideally 16GB)</li>
+<li>An administrator account</li>
+<li>(Mac OS) Apple Developer Tools</li>
+<li>(Windows) The following setup has been tested:<ul>
+<li>Windows 10</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux v. 2 (WSL 2)</a></li>
+<li>Ubuntu 20.04 running on WSL 2</li>
+<li>GNU make, run <code>sudo apt update</code> and <code>sudo apt install make</code> to install</li>
+<li>Docker Desktop for Windows, using the WSL 2 based engine (Settings &gt; General) and with the WSL integration active for Ubuntu (Settings &gt; Resources &gt; WSL integration) </li>
+</ul>
 </li>
-<li>
-<p><strong>Offers digital preservation features</strong> - Using a robust storage layer for preservation (Fedora), and generating technical metadata with FITS, are digital preservation tools provided out of the box in the default implementation. Community members have created additional features for doing <a href="https://github.com/mjordan/digital_preservation_using_islandora">digital preservation using Islandora</a>, which have not yet been contributed to "Core Islandora". </p>
-</li>
-<li><strong>Exposes data to harvesters</strong> - Metadata about resources is available as linked data through the <a href="https://github.com/Islandora/jsonld">JSON-LD serialization module</a>, and can be made available through Drupal, Fedora, or a triplestore. Islandora also offers a <a href="https://github.com/Islandora/islandora_defaults/tree/8.x-1.x/modules/islandora_oaipmh">full configuration for exposing OAI-PMH</a> to metadata harvesters, and <a href="https://github.com/Islandora/islandora/tree/8.x-1.x/modules/islandora_iiif">IIIF support</a> for images.</li>
-<li><strong>Offers flexibility</strong> - As Islandora content is Drupal content, migrations and batch editing can be done through Drupal's built-in migrate framework and controlled vocabularies created using Drupal taxonomies. Contributed Drupal modules such as <a href="https://www.drupal.org/project/search_api_solr">Solr Search API</a> enable in-site search, and <a href="https://www.drupal.org/project/matomo">Matomo Analytics</a> provides usage metrics for site analytics.</li>
-<li><strong>Is a community</strong> - A <a href="https://groups.google.com/forum/#!forum/islandora">dedicated, active community of users and developers</a> is working to push new features, collaborate on improvements, design custom solutions, and create extended functionality. Some of these for Islandora 8 take the form of <a href="https://github.com/Islandora-Labs/Islandora-Cookbook">Recipes</a>.</li>
+<li>If using <code>make local</code>, see the <a href="https://github.com/Islandora-Devops/isle-dc">README</a> for other requirements.</li>
 </ul>
-<h2 id="try-islandora">Try Islandora<a class="headerlink" href="#try-islandora" title="Permanent link">&para;</a></h2>
-<h3 id="online-sandbox">Online Sandbox<a class="headerlink" href="#online-sandbox" title="Permanent link">&para;</a></h3>
-<p>Try Islandora without installing anything at <a href="http://future.islandora.ca/">http://future.islandora.ca/</a>. </p>
-<ul>
-<li>username: Test</li>
-<li>password: islandora</li>
-</ul>
-<p>Anyone can log in to this sandbox as an administrator (credentials are below and on the front page) and explore the interface! However, this site is refreshed periodically so your changes will not be permanent. This site uses Islandora Defaults, a way of setting up Islandora for demonstration purposes. This is not the only way that Islandora can be made to work! This sandbox includes, on top of Islandora Defaults, some sample content and configuration (such as views and blocks, and other Drupal modules like Views Bulk Edit) to increase its usefulness as a sandbox. </p>
-<h3 id="virtual-machine-image-ova-file">Virtual Machine Image (.ova file)<a class="headerlink" href="#virtual-machine-image-ova-file" title="Permanent link">&para;</a></h3>
-<p>To try Islandora locally, you can download and run the latest <a href="https://islandora.ca/try">community sandbox Virtual Machine image</a>. This requires installing VirtualBox or another virtualization provider. This also uses Islandora Defaults, and similarly to the online sandbox includes sample content and other configured Views, Blocks, and Drupal modules.</p>
-<ul>
-<li>username: admin</li>
-<li>password: islandora</li>
-</ul>
-<h3 id="vagrant-and-islandora-base-box">Vagrant and Islandora Base Box<a class="headerlink" href="#vagrant-and-islandora-base-box" title="Permanent link">&para;</a></h3>
-<p>The latest release of Islandora Defaults is uploaded as the <a href="https://app.vagrantup.com/islandora/boxes/8">Islandora 8 Base Box</a> on Vagrant Cloud. If you have Vagrant and Git installed as well as VirtualBox, you can spin up the latest release of Islandora Defaults quickly by using the <a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora Playbook</a>. On the <code>dev</code> branch, the Vagrantfile has the ISLANDORA_DISTRO variable default to 'islandora/8'. Like this, <code>vagrant up</code> will download the latest Islandora Base Box and will skip ansible provisioning. Same credentials as above, with further access to services documented in its README file.</p>
-<pre><code class="language-bash">git clone https://github.com/Islandora-Devops/islandora-playbook
-cd islandora-playbook
-git checkout dev
-vagrant up
-</code></pre>
-<h3 id="islandora-playbook-via-ansible">Islandora Playbook via Ansible<a class="headerlink" href="#islandora-playbook-via-ansible" title="Permanent link">&para;</a></h3>
-<p>To use the Islandora Playbook as an Ansible Playbook, either set ISLANDORA_DISTRO to <code>ubuntu/bionic64</code> or <code>centos/7</code> (by editing the Vagrantfile or setting a shell variable), or, use Ansible to run it against an external linux server. Either way, be prepared to wait a while as Ansible installs Drupal via drupal-project and Composer. See <a href="installation/playbook">Installation</a> and <a href="contributing/hacking-on-islandora">Hacking on Islandora</a> for more details. </p>
-<h2 id="join-the-community">Join the Community<a class="headerlink" href="#join-the-community" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://islandora.ca/index.php/community">Islandora community</a> is an active group of users, managers, librarians, documenters, and developers from GLAM (and beyond!) institutions worldwide. We welcome discussion and contribution through various mailing lists, channels, interest groups, and calls. The Islandora community operates under the <a href="https://islandora.ca/codeofconduct">Islandora Code Of Conduct</a>. See our Contributing Guidelines for more information.</p>
 <div class="admonition note">
-<p class="admonition-title">Documentation for previous versions</p>
-<p>Documentation for Islandora 6 and 7 is on the <a href="https://wiki.lyrasis.org/display/ISLANDORA/Start">Lyrasis documentation wiki</a>.</p>
+<p class="admonition-title">What are we missing?</p>
+<p>Are you, or your computer, new to spinning up development sandboxes? Do you have wisdom about installing make on Windows? We suspect these requirements may be incomplete and your experience would be appreciated at <a href="https://github.com/Islandora/documentation/issues/1640">Issue #1640</a>.</p>
 </div>
+<h2 id="installing-docker">Installing Docker<a class="headerlink" href="#installing-docker" title="Permanent link">&para;</a></h2>
+<p>To see if you have Docker installed, type <code>docker --version</code> in a terminal.</p>
+<p>If you need to install Docker, we recommend using the application <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>. It provides a GUI for managing Docker container in Windows and MacOS, along with the Docker engine and suite of command-line tools. Linux users don't get a desktop client, but can download the Engine and command-line tools from that same link.</p>
+<p>There is also a legacy project called <a href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a> which may be of interest if your machine cannot run Docker Desktop, or if you already have it installed.</p>
+<p><a href="https://www.docker.com/products/docker-desktop">Download Docker</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Memory, Processors, and Swap Requirements</p>
+<p>To run ISLE on Docker Desktop, you must increase the resources allocated to the software. See Docker docs on <a href="https://docs.docker.com/docker-for-windows/#resources">setting resources on Windows</a> (see note on how to allocate/restrict memory when using WSL 2) or <a href="https://docs.docker.com/docker-for-mac/#resources">setting resources on Mac</a>.</p>
+<p><strong>CPUs (processors)</strong>: The CPUs allowed to Docker Desktop are still shared with the host machine, so increasing this to the maximum value should allow both the Docker containers and your host machine to run simultaneously.</p>
+<p><strong>Memory (RAM)</strong>: This memory is completely dedicated to Docker while Docker Desktop is running, so do not allocate more than you can spare and still run your host machine. Windows users may not require as much memory for Docker as Mac users. Current suggestions for memory allocated to Docker Desktop are below, but please edit this document if you have new information.</p>
+<ul>
+<li>Sandbox (<code>make demo</code>): 4GB</li>
+<li>Development (<code>make local</code>): 8GB</li>
+<li>Production or production-like development: 16GB</li>
+</ul>
+<p><strong>Swap</strong>: Swap space is space borrowed from your hard disk drive to serve as makeshift RAM as needed. If you cannot provide as much RAM as you would like, increase this as is reasonable given your free disk space.</p>
+</div>
+<h2 id="launching-islandora-with-docker">Launching Islandora with Docker<a class="headerlink" href="#launching-islandora-with-docker" title="Permanent link">&para;</a></h2>
+<p><strong>Summary:</strong> Using git, clone the isle-dc project. In that directory, enter the command <code>make demo</code> to build the docker infrastructure and a demo site.  Then use the command <code>docker-compose up -d</code> to start the containers.</p>
+<div class="admonition hint">
+<p class="admonition-title">ISLE-DC variants: <code>make demo</code> vs <code>make local</code></p>
+<p>The <code>make demo</code> command alone will spin up a sandbox-like version of ISLE, but only with a front end. The code files will be inaccessible, and you will not be able to install additional modules or themes. The <code>make local</code> command creates a full-fleged development environment. It will copy the active Drupal codebase locally in a way that is also live to the ISLE site. This method takes longer (and may require multiple retries if your internet connection is spotty) but is required if you will be testing pull requests or writing code. The <code>make</code> command alone will build the infrastructure but not install anything (including Drupal!).</p>
+</div>
+<pre><code class="language-bash">git clone https://github.com/islandora-devops/isle-dc
+cd isle-dc
+make demo
+</code></pre>
+<p>Results of <code>make demo</code>:</p>
+<pre><code>isle-dc$ make demo
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  3562  100  3562    0     0  12779      0 --:--:-- --:--:-- --:--:-- 12812
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1708  100  1708    0     0   6809      0 --:--:-- --:--:-- --:--:--  6832
+docker-compose pull
+Pulling activemq   ... done
+Pulling alpaca     ... done
+Pulling blazegraph ... done
+Pulling cantaloupe ... done
+Pulling fcrepo     ... done
+Pulling fits       ... done
+Pulling crayfits   ... done
+Pulling gemini     ... done
+Pulling homarus    ... done
+Pulling houdini    ... done
+Pulling hypercube  ... done
+Pulling mariadb    ... done
+Pulling matomo     ... done
+Pulling milliner   ... done
+Pulling recast     ... done
+Pulling solr       ... done
+Pulling drupal     ... done
+Pulling traefik    ... done
+Pulling watchtower ... done
+</code></pre>
+<div class="admonition fail">
+<p class="admonition-title">Troubleshooting - Docker Versions</p>
+<p>If you get an error such as: <code>ERROR: Version in "./docker-compose.activemq.yml" is unsupported.</code>, then you need to upgrade Docker. Enter the command <code>make clean</code> before re-attempting to <code>make demo</code>.</p>
+</div>
+<div class="admonition fail">
+<p class="admonition-title">Troubleshooting - re-attempting <code>make demo</code></p>
+<p>If <code>make</code> fails for any reason, enter <code>make clean</code> before attempting to <code>make</code> again. If not, you may see an error such as: <code>ERROR: Top level object in './docker-compose.yml' needs to be an object not '&lt;class 'NoneType'&gt;'.</code></p>
+</div>
+<div class="admonition fail">
+<p class="admonition-title">Troubleshooting - docker containers exit without warning</p>
+<p>If you notice some Docker containers drop (exited(0)), and (in Docker Desktop) the isle-dc app icon is yellow instead of green, try increasing the resources allocated to Docker (see note above).</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Development version - access the codebase</p>
+<p>If you used <code>make local</code>, then you will have a new directory in the current (isle-dc) directory named <code>codebase</code>, containing the live Drupal root folder (containing your Drupal's composer files and the web/ subdirectory).</p>
+</div>
+<p>Once <code>make demo</code> has successfully completed, launch the ISLE containers using <code>docker-compose up</code>. The <code>-d</code> flag allows you to return to using the command line. Without it, your shell will be stuck in the <code>docker-compose</code> process as long as the containers are running.</p>
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
+<div class="admonition fail">
+<p class="admonition-title">Troubleshooting - connection timed out (Mac).</p>
+<p>If you are using Docker Desktop for Mac, and get timeout errors when spinning up the containers (during <code>docker-compose up -d</code> or during <code>make local</code>) such as this:</p>
+<p><code>ERROR: for isle-dc_mariadb_1  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=480)</code></p>
+<p>you can try quitting Docker completely (make sure there is no whale icon in your top toolbar - may need to select "Quit" from the whale icon itself) and then restart Docker. </p>
+</div>
+<h2 id="visiting-your-islandora-site">Visiting your Islandora site<a class="headerlink" href="#visiting-your-islandora-site" title="Permanent link">&para;</a></h2>
+<p>Direct a browser to <a href="https://islandora.traefik.me/">https://islandora.traefik.me/</a>. If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. If it takes more than a few minutes, check to make sure that none of your containers have failed to launch (see note above on "Troubleshooting - docker containers exit without warning"). When all containers are ready, you should see a basic Drupal login screen.</p>
+<p><img alt="&quot;Bad Gateway&quot; white screen while still loading" src="../../assets/docker_bad_gateway_still_loading.png" /></p>
+<p><img alt="Drupal login screen" src="../../assets/docker_drupal_login_screen.png" /></p>
+<p>To log in:</p>
+<ul>
+<li>username: <strong>admin</strong></li>
+<li>password: <strong>password</strong></li>
+</ul>
+<div class="admonition note docker logs and docker compose logs">
+<p class="admonition-title">Note</p>
+<p><code>docker logs -tf isle-dc_drupal_1</code> shows Docker logs for the "drupal" container, which will continue to have new log entries as long as the drupal box is still starting up. When it gets to <code>confd using 'env' backend</code>, you're done. <code>docker-compose logs</code> is like a firehose, showing the log messages from all containers.</p>
+</div>
+<h2 id="spinning-down-your-islandora-site">Spinning down your Islandora site<a class="headerlink" href="#spinning-down-your-islandora-site" title="Permanent link">&para;</a></h2>
+<p>To shut down the containers without destroying your site, use <code>docker-compose down</code>. To also destroy your "state" (i.e. your content, your database, your files), use <code>docker-compose down -v</code>.</p>
+<h2 id="editing-code-in-docker">Editing Code in Docker<a class="headerlink" href="#editing-code-in-docker" title="Permanent link">&para;</a></h2>
+<p>If you used <code>make local</code> then the drupal root folder is in a new directory in the isle-dc folder named <code>codebase</code>. This is live and editable in whatever development environment you would like.  If you just did <code>make demo</code>, you will need to spin down your containers with <code>-v</code> to destroy your state before starting a new one with <code>make local</code>.</p>
+<p>Editing code for the back-end processes (alpaca, milliner, etc) is more complicated. Please ask on the #isle Slack channel and help us improve this documentation!</p>
+<h3 id="testing-a-pull-request">Testing a Pull Request<a class="headerlink" href="#testing-a-pull-request" title="Permanent link">&para;</a></h3>
+<p>Islandora modules in the <code>codebase/web/contrib/modules</code> folder are already set up with <code>git</code> and the <code>origin</code> remote is the canonical Islandora repository. You can follow the command-line instructions for testing pull requests available on Github. When finished, don't forget to <code>git checkout main</code> (or the default branch if not named main) so you can pull new code.</p>
+<h2 id="updating-isle">Updating ISLE<a class="headerlink" href="#updating-isle" title="Permanent link">&para;</a></h2>
+<p>Documentation to come - see <a href="https://github.com/Islandora-Devops/isle-dc/issues/121">Issue #121</a></p>
+<h3 id="drupal-updates">Drupal Updates<a class="headerlink" href="#drupal-updates" title="Permanent link">&para;</a></h3>
+<p>to come</p>
+<h3 id="module-updates-non-islandora">Module Updates (non-Islandora)<a class="headerlink" href="#module-updates-non-islandora" title="Permanent link">&para;</a></h3>
+<p>to come</p>
+<h3 id="module-updates-islandora">Module Updates (Islandora)<a class="headerlink" href="#module-updates-islandora" title="Permanent link">&para;</a></h3>
+<p>to come</p>
+<h3 id="backend-providers-solr-mariadb-etc">Backend Providers (solr, mariadb, etc)<a class="headerlink" href="#backend-providers-solr-mariadb-etc" title="Permanent link">&para;</a></h3>
+<p>to come</p>
+<h3 id="updating-the-whole-isle-dc-repo">Updating the whole isle-dc repo<a class="headerlink" href="#updating-the-whole-isle-dc-repo" title="Permanent link">&para;</a></h3>
+<p>to come</p>
                 
                   
                     
@@ -2035,7 +2312,7 @@ vagrant up
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2021</span>
       
     
   </small>
@@ -2060,15 +2337,30 @@ vagrant up
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../../reference/islandora_defaults_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Islandora Defaults" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Islandora Defaults
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="concepts/collection/" class="md-footer__link md-footer__link--next" aria-label="Next: Collections" rel="next">
+        <a href="../playbook/" class="md-footer__link md-footer__link--next" aria-label="Next: Ansible Playbook" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Collections
+              Ansible Playbook
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2116,10 +2408,10 @@ vagrant up
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.df8cae7d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.df8cae7d.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.82217815.min.js"></script>
+      <script src="../../assets/javascripts/bundle.82217815.min.js"></script>
       
     
   </body>
