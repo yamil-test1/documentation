@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9+insiders-2.9.2">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10+insiders-2.10.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.086df014.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.204e8399.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.73e53a79.min.css">
@@ -50,6 +50,7 @@
     
       <link rel="stylesheet" href="../../css/custom.css">
     
+    <script>function __md_scope(t,e="../.."){return new URL(e,location).pathname+"."+t}function __md_get(t,e=localStorage,_){return JSON.parse(e.getItem(__md_scope(t,_)))}function __md_set(t,e,_=localStorage,n){try{_.setItem(__md_scope(t,n),JSON.stringify(e))}catch(t){}}</script>
     
       
 
@@ -67,7 +68,6 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
   
     
-    <script>function __scope(t,e="../.."){return new URL(e,location).pathname+"."+t}function __get(t,e=localStorage,n){return JSON.parse(e.getItem(__scope(t,n)))}function __set(t,e,n=localStorage,o){try{n.setItem(__scope(t,o),JSON.stringify(e))}catch(t){}}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -2156,14 +2156,14 @@ Drupal Search API setup.</p>
 <p>To support collection based searches you need to index the <code>field_member_of</code> for
 every repository item as well define a new field that captures the full
 hierarchy of <code>field_member_of</code> for each repository item.</p>
-<p>Add a new <code>Content</code> solr field <code>field_decedent_of</code> to the solr index at
+<p>Add a new <code>Content</code> solr field <code>field_descendant_of</code> to the solr index at
 <code>admin/config/search/search-api/index/default_solr_index/fields</code>.</p>
-<p><img alt="screenshot of field_decent_of" src="../../assets/advanced_search_field_decedent_of.png" /></p>
+<p><img alt="screenshot of field_decent_of" src="../assets/advanced_search_field_descendant_of.png" /></p>
 <p>Then under <code>admin/config/search/search-api/index/default_solr_index/processors</code>
 enable <code>Index hierarchy</code> and setup the new field to index the hierarchy.</p>
 <p><img alt="screenshot of checked checkbox" src="../../assets/advanced_search_enable_index_hierarchy.png" /></p>
 <p><img alt="screenshot of processor setting options" src="../../assets/advanced_search_enable_index_hierarchy_processor.png" /></p>
-<p>The field can now be used limit a search to all the decedents of a given object.</p>
+<p>The field can now be used limit a search to all the descendants of a given object.</p>
 <div class="admonition note">
 <p class="admonition-title">Re-Indexing</p>
 <p>You may have to re-index to make sure the field is populated.</p>
@@ -2181,13 +2181,13 @@ well as the
 <p>Here a relationship is setup with <code>Member Of</code> field and we have <strong>two</strong>
 contextual filters:</p>
 <ol>
-<li><code>field_member_of</code> (Direct decedents of the Entity)</li>
-<li><code>field_decedent_of</code> (All decedents of the Entity)</li>
+<li><code>field_member_of</code> (Direct descendants of the Entity)</li>
+<li><code>field_descendant_of</code> (All descendants of the Entity)</li>
 </ol>
 <p>Both of these filters are configured the exact same way.</p>
 <p><img alt="screenshot of configuration settings" src="../../assets/advanced_search_contextual_filter_settings.png" /></p>
 <p>These filters are toggled by the Advanced Search block to allow the search to
-include all decedents or just direct decedents (<em>documented below</em>).</p>
+include all descendants or just direct descendants (<em>documented below</em>).</p>
 <h3 id="paging">Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h3>
 <p>The paging options specified here can have an affect on the pager block
 (<em>documented below</em>).</p>
@@ -2247,7 +2247,7 @@ checkbox.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2021</span>
       
     
   </small>
@@ -2343,10 +2343,11 @@ checkbox.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ae6eae72.min.js", "version": null}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.74af7bc3.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.bc2488c3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b748f191.min.js"></script>
       
     
   </body>
