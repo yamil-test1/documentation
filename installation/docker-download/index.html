@@ -11,21 +11,21 @@
       
       
       
-        <link rel="canonical" href="https://islandora.github.io/documentation/installation/docker-compose/">
+        <link rel="canonical" href="https://islandora.github.io/documentation/installation/docker-download/">
       
       
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10+insiders-2.10.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0+insiders-2.11.1">
     
     
       
-        <title>Docker Compose (ISLE-DC) - Islandora 8</title>
+        <title>Docker download - Islandora 8</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.204e8399.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84bd30f0.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.73e53a79.min.css">
@@ -35,6 +35,7 @@
           <meta name="theme-color" content="#ef5552">
         
       
+      <link rel="preload" as="style" href="../../assets/stylesheets/vendor/mermaid.733f213f.min.css">
       
     
     
@@ -50,7 +51,7 @@
     
       <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>function __md_scope(t,e="../.."){return new URL(e,location).pathname+"."+t}function __md_get(t,e=localStorage,_){return JSON.parse(e.getItem(__md_scope(t,_)))}function __md_set(t,e,_=localStorage,n){try{_.setItem(__md_scope(t,n),JSON.stringify(e))}catch(t){}}</script>
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
     
       
 
@@ -73,11 +74,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#install-islandora-on-docker-isle" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -107,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker Compose (ISLE-DC)
+              Docker download
             
           </span>
         </div>
@@ -350,14 +346,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -378,188 +372,250 @@
               
   
   
+  
     
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Docker Compose (ISLE-DC)
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Docker (ISLE)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Docker Compose (ISLE-DC)
+      <nav class="md-nav" aria-label="Docker (ISLE)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Docker (ISLE)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-introduction/" class="md-nav__link">
+        Introduction to ISLE
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-prereq/" class="md-nav__link">
+        Prerequisites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-isle" class="md-nav__link">
-    What is ISLE?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-use-docker" class="md-nav__link">
-    Why use Docker?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#where-is-isle-8" class="md-nav__link">
-    Where is ISLE 8?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-install-isle" class="md-nav__link">
-    How do I install ISLE?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_3" type="checkbox" id="__nav_3_1_3" >
       
-        <li class="md-nav__item">
-  <a href="#installing-docker" class="md-nav__link">
-    Installing Docker
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#launching-islandora-with-docker" class="md-nav__link">
-    Launching Islandora with Docker
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#visiting-your-islandora-site" class="md-nav__link">
-    Visiting your Islandora site
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#spinning-down-your-islandora-site" class="md-nav__link">
-    Spinning down your Islandora site
-  </a>
-  
-</li>
+        <label class="md-nav__link" for="__nav_3_1_3">
+          Install Islandora
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-        <li class="md-nav__item">
-  <a href="#editing-code-in-docker" class="md-nav__link">
-    Editing Code in Docker
-  </a>
+      <nav class="md-nav" aria-label="Install Islandora" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Install Islandora
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
   
-    <nav class="md-nav" aria-label="Editing Code in Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#testing-a-pull-request" class="md-nav__link">
-    Testing a Pull Request
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
   
-</li>
+    <li class="md-nav__item">
+      <a href="../docker-demo/" class="md-nav__link">
+        Installing a Demo Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-local/" class="md-nav__link">
+        Installing a Development Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-custom/" class="md-nav__link">
+        Installing a Staging/Production Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#updating-isle" class="md-nav__link">
-    Updating ISLE
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating ISLE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#drupal-updates" class="md-nav__link">
-    Drupal Updates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-updates-non-islandora" class="md-nav__link">
-    Module Updates (non-Islandora)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-updates-islandora" class="md-nav__link">
-    Module Updates (Islandora)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-providers-solr-mariadb-etc" class="md-nav__link">
-    Backend Providers (solr, mariadb, etc)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating-the-whole-isle-dc-repo" class="md-nav__link">
-    Updating the whole isle-dc repo
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-    </ul>
-  
-</nav>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_4" type="checkbox" id="__nav_3_1_4" >
       
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_4">
+          Maintaining Islandora
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Maintaining Islandora" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Maintaining Islandora
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-basic-usage/" class="md-nav__link">
+        Basic Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-maintain-drupal/" class="md-nav__link">
+        Maintaining Drupal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-maintain-isle/" class="md-nav__link">
+        Maintaining ISLE
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-available-commands/" class="md-nav__link">
+        Available Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-available-configuration/" class="md-nav__link">
+        Available Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1980,330 +2036,20 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-isle" class="md-nav__link">
-    What is ISLE?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-use-docker" class="md-nav__link">
-    Why use Docker?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#where-is-isle-8" class="md-nav__link">
-    Where is ISLE 8?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-install-isle" class="md-nav__link">
-    How do I install ISLE?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-docker" class="md-nav__link">
-    Installing Docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launching-islandora-with-docker" class="md-nav__link">
-    Launching Islandora with Docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visiting-your-islandora-site" class="md-nav__link">
-    Visiting your Islandora site
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spinning-down-your-islandora-site" class="md-nav__link">
-    Spinning down your Islandora site
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editing-code-in-docker" class="md-nav__link">
-    Editing Code in Docker
-  </a>
-  
-    <nav class="md-nav" aria-label="Editing Code in Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#testing-a-pull-request" class="md-nav__link">
-    Testing a Pull Request
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-isle" class="md-nav__link">
-    Updating ISLE
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating ISLE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#drupal-updates" class="md-nav__link">
-    Drupal Updates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-updates-non-islandora" class="md-nav__link">
-    Module Updates (non-Islandora)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module-updates-islandora" class="md-nav__link">
-    Module Updates (Islandora)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-providers-solr-mariadb-etc" class="md-nav__link">
-    Backend Providers (solr, mariadb, etc)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating-the-whole-isle-dc-repo" class="md-nav__link">
-    Updating the whole isle-dc repo
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Islandora/documentation/edit/main/docs/installation/docker-compose.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Islandora/documentation/edit/main/docs/installation/docker-download.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
                 
-                <h1 id="install-islandora-on-docker-isle">Install Islandora on Docker (ISLE)<a class="headerlink" href="#install-islandora-on-docker-isle" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This page describes using ISLE-DC to launch Islandora as a suite of Docker Containers (ISLE). This is an alternative to the <a href="../playbook/">Islandora Ansible Playbook</a>, which creates the Islandora stack on a single virtual machine. At the end of this tutorial, you will have a local development environment, and be able to use Docker to launch, shut down, and edit your environment.</p>
-<h3 id="what-is-isle">What is ISLE?<a class="headerlink" href="#what-is-isle" title="Permanent link">&para;</a></h3>
-<p>ISLE, or ISLandora Enterprise, is a community initiative to ease the installation and maintenance of Islandora by using Docker. It was an initiative of the Islandora Collaboration Group, first using Islandora 7.x, and later with Islandora 8.x. The code for the Islandora Enterprise 8 Prototype (ISLE 8, sometimes just ISLE) is now under the purview of the Islandora Foundation. ISLE may also refer to the <a href="https://islandora-collaboration-group.github.io/ISLE/">ISLE system for Islandora 7</a>.</p>
-<h3 id="why-use-docker">Why use Docker?<a class="headerlink" href="#why-use-docker" title="Permanent link">&para;</a></h3>
-<p><a href="https://www.docker.com/">Docker</a> is a way to separate out the "state" of your site (i.e. all the content, files, and configurations that you've entered) from the underlying software that runs it (e.g. webserver, database engine, etc). This allows for easier upgrades, faster development, and more flexible deployment.</p>
-<h3 id="where-is-isle-8">Where is ISLE 8?<a class="headerlink" href="#where-is-isle-8" title="Permanent link">&para;</a></h3>
-<p>ISLE 8 is a suite of Docker containers that run the various components of Islandora required by Islandora Defaults: drupal, fedora, solr, alpaca, crayfish, matomo, etc.  The individual containers are created (and automatically pushed to Docker Hub) by <a href="https://github.com/Islandora-Devops/isle-buildkit">ISLE BuildKit</a>.</p>
-<h3 id="how-do-i-install-isle">How do I install ISLE?<a class="headerlink" href="#how-do-i-install-isle" title="Permanent link">&para;</a></h3>
-<p>Install ISLE locally or remotely using the Docker Compose scripts (ISLE-DC) at (<a href="https://github.com/Islandora-Devops/isle-dc">Islandora-Devops/isle-dc</a>). These are instructions to pull down and configure the necessary containers from Docker Hub. Unlike the <a href="../playbook/">Islandora Playbook</a>, this method does not require Ansible, or (for local installations) VirtualBox. Like the Playbook, it has been optimized for development environments but in theory could be used in production.</p>
-<p>These instructions describe using ISLE-DC locally to create a development Islandora sandbox. More detailed configuration options are described in the project's <a href="https://github.com/Islandora-Devops/isle-dc">README</a>.</p>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>A computer that can run Docker (version 19.x+) and has at least 8GB of RAM (ideally 16GB)</li>
-<li>An administrator account</li>
-<li>(Mac OS) Apple Developer Tools</li>
-<li>(Windows) The following setup has been tested:<ul>
-<li>Windows 10</li>
-<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux v. 2 (WSL 2)</a></li>
-<li>Ubuntu 20.04 running on WSL 2</li>
-<li>GNU make, run <code>sudo apt update</code> and <code>sudo apt install make</code> to install</li>
-<li>Docker Desktop for Windows, using the WSL 2 based engine (Settings &gt; General) and with the WSL integration active for Ubuntu (Settings &gt; Resources &gt; WSL integration) </li>
-</ul>
-</li>
-<li>If using <code>make local</code>, see the <a href="https://github.com/Islandora-Devops/isle-dc">README</a> for other requirements.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">What are we missing?</p>
-<p>Are you, or your computer, new to spinning up development sandboxes? Do you have wisdom about installing make on Windows? We suspect these requirements may be incomplete and your experience would be appreciated at <a href="https://github.com/Islandora/documentation/issues/1640">Issue #1640</a>.</p>
-</div>
-<h2 id="installing-docker">Installing Docker<a class="headerlink" href="#installing-docker" title="Permanent link">&para;</a></h2>
-<p>To see if you have Docker installed, type <code>docker --version</code> in a terminal.</p>
-<p>If you need to install Docker, we recommend using the application <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>. It provides a GUI for managing Docker container in Windows and MacOS, along with the Docker engine and suite of command-line tools. Linux users don't get a desktop client, but can download the Engine and command-line tools from that same link.</p>
-<p>There is also a legacy project called <a href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a> which may be of interest if your machine cannot run Docker Desktop, or if you already have it installed.</p>
-<p><a href="https://www.docker.com/products/docker-desktop">Download Docker</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Memory, Processors, and Swap Requirements</p>
-<p>To run ISLE on Docker Desktop, you must increase the resources allocated to the software. See Docker docs on <a href="https://docs.docker.com/docker-for-windows/#resources">setting resources on Windows</a> (see note on how to allocate/restrict memory when using WSL 2) or <a href="https://docs.docker.com/docker-for-mac/#resources">setting resources on Mac</a>.</p>
-<p><strong>CPUs (processors)</strong>: The CPUs allowed to Docker Desktop are still shared with the host machine, so increasing this to the maximum value should allow both the Docker containers and your host machine to run simultaneously.</p>
-<p><strong>Memory (RAM)</strong>: This memory is completely dedicated to Docker while Docker Desktop is running, so do not allocate more than you can spare and still run your host machine. Windows users may not require as much memory for Docker as Mac users. Current suggestions for memory allocated to Docker Desktop are below, but please edit this document if you have new information.</p>
-<ul>
-<li>Sandbox (<code>make demo</code>): 4GB</li>
-<li>Development (<code>make local</code>): 8GB</li>
-<li>Production or production-like development: 16GB</li>
-</ul>
-<p><strong>Swap</strong>: Swap space is space borrowed from your hard disk drive to serve as makeshift RAM as needed. If you cannot provide as much RAM as you would like, increase this as is reasonable given your free disk space.</p>
-</div>
-<h2 id="launching-islandora-with-docker">Launching Islandora with Docker<a class="headerlink" href="#launching-islandora-with-docker" title="Permanent link">&para;</a></h2>
-<p><strong>Summary:</strong> Using git, clone the isle-dc project. In that directory, enter the command <code>make demo</code> to build the docker infrastructure and a demo site.  Then use the command <code>docker-compose up -d</code> to start the containers.</p>
-<div class="admonition hint">
-<p class="admonition-title">ISLE-DC variants: <code>make demo</code> vs <code>make local</code></p>
-<p>The <code>make demo</code> command alone will spin up a sandbox-like version of ISLE, but only with a front end. The code files will be inaccessible, and you will not be able to install additional modules or themes. The <code>make local</code> command creates a full-fleged development environment. It will copy the active Drupal codebase locally in a way that is also live to the ISLE site. This method takes longer (and may require multiple retries if your internet connection is spotty) but is required if you will be testing pull requests or writing code. The <code>make</code> command alone will build the infrastructure but not install anything (including Drupal!).</p>
-</div>
-<pre><code class="language-bash">git clone https://github.com/islandora-devops/isle-dc
-cd isle-dc
-make demo
-</code></pre>
-<p>Results of <code>make demo</code>:</p>
-<pre><code>isle-dc$ make demo
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  3562  100  3562    0     0  12779      0 --:--:-- --:--:-- --:--:-- 12812
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  1708  100  1708    0     0   6809      0 --:--:-- --:--:-- --:--:--  6832
-docker-compose pull
-Pulling activemq   ... done
-Pulling alpaca     ... done
-Pulling blazegraph ... done
-Pulling cantaloupe ... done
-Pulling fcrepo     ... done
-Pulling fits       ... done
-Pulling crayfits   ... done
-Pulling gemini     ... done
-Pulling homarus    ... done
-Pulling houdini    ... done
-Pulling hypercube  ... done
-Pulling mariadb    ... done
-Pulling matomo     ... done
-Pulling milliner   ... done
-Pulling recast     ... done
-Pulling solr       ... done
-Pulling drupal     ... done
-Pulling traefik    ... done
-Pulling watchtower ... done
-</code></pre>
-<div class="admonition fail">
-<p class="admonition-title">Troubleshooting - Docker Versions</p>
-<p>If you get an error such as: <code>ERROR: Version in "./docker-compose.activemq.yml" is unsupported.</code>, then you need to upgrade Docker. Enter the command <code>make clean</code> before re-attempting to <code>make demo</code>.</p>
-</div>
-<div class="admonition fail">
-<p class="admonition-title">Troubleshooting - re-attempting <code>make demo</code></p>
-<p>If <code>make</code> fails for any reason, enter <code>make clean</code> before attempting to <code>make</code> again. If not, you may see an error such as: <code>ERROR: Top level object in './docker-compose.yml' needs to be an object not '&lt;class 'NoneType'&gt;'.</code></p>
-</div>
-<div class="admonition fail">
-<p class="admonition-title">Troubleshooting - docker containers exit without warning</p>
-<p>If you notice some Docker containers drop (exited(0)), and (in Docker Desktop) the isle-dc app icon is yellow instead of green, try increasing the resources allocated to Docker (see note above).</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Development version - access the codebase</p>
-<p>If you used <code>make local</code>, then you will have a new directory in the current (isle-dc) directory named <code>codebase</code>, containing the live Drupal root folder (containing your Drupal's composer files and the web/ subdirectory).</p>
-</div>
-<p>Once <code>make demo</code> has successfully completed, launch the ISLE containers using <code>docker-compose up</code>. The <code>-d</code> flag allows you to return to using the command line. Without it, your shell will be stuck in the <code>docker-compose</code> process as long as the containers are running.</p>
-<pre><code class="language-bash">docker-compose up -d
-</code></pre>
-<div class="admonition fail">
-<p class="admonition-title">Troubleshooting - connection timed out (Mac).</p>
-<p>If you are using Docker Desktop for Mac, and get timeout errors when spinning up the containers (during <code>docker-compose up -d</code> or during <code>make local</code>) such as this:</p>
-<p><code>ERROR: for isle-dc_mariadb_1  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=480)</code></p>
-<p>you can try quitting Docker completely (make sure there is no whale icon in your top toolbar - may need to select "Quit" from the whale icon itself) and then restart Docker. </p>
-</div>
-<h2 id="visiting-your-islandora-site">Visiting your Islandora site<a class="headerlink" href="#visiting-your-islandora-site" title="Permanent link">&para;</a></h2>
-<p>Direct a browser to <a href="https://islandora.traefik.me/">https://islandora.traefik.me/</a>. If your containers are still "spinning up", you will see a white screen with the words "Bad Gateway". This often lasts 2-5 minutes, and should be shorter for subsequent launches. If it takes more than a few minutes, check to make sure that none of your containers have failed to launch (see note above on "Troubleshooting - docker containers exit without warning"). When all containers are ready, you should see a basic Drupal login screen.</p>
-<p><img alt="&quot;Bad Gateway&quot; white screen while still loading" src="../../assets/docker_bad_gateway_still_loading.png" /></p>
-<p><img alt="Drupal login screen" src="../../assets/docker_drupal_login_screen.png" /></p>
-<p>To log in:</p>
-<ul>
-<li>username: <strong>admin</strong></li>
-<li>password: <strong>password</strong></li>
-</ul>
-<div class="admonition note docker logs and docker compose logs">
-<p class="admonition-title">Note</p>
-<p><code>docker logs -tf isle-dc_drupal_1</code> shows Docker logs for the "drupal" container, which will continue to have new log entries as long as the drupal box is still starting up. When it gets to <code>confd using 'env' backend</code>, you're done. <code>docker-compose logs</code> is like a firehose, showing the log messages from all containers.</p>
-</div>
-<h2 id="spinning-down-your-islandora-site">Spinning down your Islandora site<a class="headerlink" href="#spinning-down-your-islandora-site" title="Permanent link">&para;</a></h2>
-<p>To shut down the containers without destroying your site, use <code>docker-compose down</code>. To also destroy your "state" (i.e. your content, your database, your files), use <code>docker-compose down -v</code>.</p>
-<h2 id="editing-code-in-docker">Editing Code in Docker<a class="headerlink" href="#editing-code-in-docker" title="Permanent link">&para;</a></h2>
-<p>If you used <code>make local</code> then the drupal root folder is in a new directory in the isle-dc folder named <code>codebase</code>. This is live and editable in whatever development environment you would like.  If you just did <code>make demo</code>, you will need to spin down your containers with <code>-v</code> to destroy your state before starting a new one with <code>make local</code>.</p>
-<p>Editing code for the back-end processes (alpaca, milliner, etc) is more complicated. Please ask on the #isle Slack channel and help us improve this documentation!</p>
-<h3 id="testing-a-pull-request">Testing a Pull Request<a class="headerlink" href="#testing-a-pull-request" title="Permanent link">&para;</a></h3>
-<p>Islandora modules in the <code>codebase/web/contrib/modules</code> folder are already set up with <code>git</code> and the <code>origin</code> remote is the canonical Islandora repository. You can follow the command-line instructions for testing pull requests available on Github. When finished, don't forget to <code>git checkout main</code> (or the default branch if not named main) so you can pull new code.</p>
-<h2 id="updating-isle">Updating ISLE<a class="headerlink" href="#updating-isle" title="Permanent link">&para;</a></h2>
-<p>Documentation to come - see <a href="https://github.com/Islandora-Devops/isle-dc/issues/121">Issue #121</a></p>
-<h3 id="drupal-updates">Drupal Updates<a class="headerlink" href="#drupal-updates" title="Permanent link">&para;</a></h3>
-<p>to come</p>
-<h3 id="module-updates-non-islandora">Module Updates (non-Islandora)<a class="headerlink" href="#module-updates-non-islandora" title="Permanent link">&para;</a></h3>
-<p>to come</p>
-<h3 id="module-updates-islandora">Module Updates (Islandora)<a class="headerlink" href="#module-updates-islandora" title="Permanent link">&para;</a></h3>
-<p>to come</p>
-<h3 id="backend-providers-solr-mariadb-etc">Backend Providers (solr, mariadb, etc)<a class="headerlink" href="#backend-providers-solr-mariadb-etc" title="Permanent link">&para;</a></h3>
-<p>to come</p>
-<h3 id="updating-the-whole-isle-dc-repo">Updating the whole isle-dc repo<a class="headerlink" href="#updating-the-whole-isle-dc-repo" title="Permanent link">&para;</a></h3>
-<p>to come</p>
+                  <h1>Docker download</h1>
+                
+                
                 
                   
                     
@@ -2312,7 +2058,7 @@ Pulling watchtower ... done
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2021</span>
       
     
   </small>
@@ -2334,41 +2080,6 @@ Pulling watchtower ... done
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../reference/islandora_defaults_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Islandora Defaults" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Islandora Defaults
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../playbook/" class="md-footer__link md-footer__link--next" aria-label="Next: Ansible Playbook" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Ansible Playbook
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2412,7 +2123,7 @@ Pulling watchtower ... done
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.74af7bc3.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b748f191.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1afabad3.min.js"></script>
       
     
   </body>
