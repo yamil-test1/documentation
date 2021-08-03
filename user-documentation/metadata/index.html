@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0+insiders-2.11.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1+insiders-2.12.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84bd30f0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f55811a5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.73e53a79.min.css">
@@ -56,6 +56,7 @@
       
 
 
+    
     
     
   </head>
@@ -2228,6 +2229,7 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
 <p>When you create a node (i.e. an instantiation of a content type, such as by using Drupal's "Add Content" workflow), the fields defined by its content type become available. Once a node is created, its content type cannot be changed. To "switch" a node to a different content type, a repository manager would need to create a new node of the target content type, map the field values (programmatically or by copy-paste), and update any Media or children that refer to the old node to refer to the new one.</p>
 <p>Not all content types in your Drupal site need be Islandora "resource nodes". A "resource node" content type will likely have behaviours (such as syncing to Fedora or causing derivatives to be generated) associated with it. This configuration, and the communication to the user of which content types are and are not considered to be Islandora resource nodes is left to the discretion of the site manager. In Islandora, a "resource node" is usually considered a descriptive record for "a thing", and is conceptually similar to an "Islandora Object" in 7.x, i.e. a "Fedora Object" in Fedora 3.x and below.</p>
 <h2 id="vocabularies">Vocabularies<a class="headerlink" href="#vocabularies" title="Permanent link">&para;</a></h2>
+<p>See also: <a href="https://docs.google.com/presentation/d/1LfpU6H4qxXtnYQPFntwMNtsgtU30yzp2MxwKKAllUOc/edit?usp=sharing">MIG Presentation on Taxonomies</a> by Kristina Spurgin, 2021-07-19</p>
 <p>In Drupal, <em>Taxonomy Vocabularies</em> (or simply <em>Vocabularies</em>) are also entity sub-types that define a set of fields and their configurations. Whereas instances of content types are called <em>nodes</em>, items in a vocabulary are called <em>taxonomy terms</em> (or simply <em>terms</em>). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article content type includes a field <code>field_tags</code> that can refer to terms in the Tags vocabulary.</p>
 <p>There are two ways that users can interact with taxonomies: they can be "closed," e.g. a fixed list to pick from in a dropdown, or "open," e.g. <code>field_tags</code> where users can enter new terms, which are created on the fly. This is not set on the <em>vocabulary</em> itself, but in the configuration of the field (typically on a node). Terms within vocabularies have an ordering, and can have hierarchical structure, but do not need to.</p>
 <p>Islandora (through the Islandora Core Feature) creates the 'Islandora Models' vocabulary which includes the terms 'Audio', 'Binary', 'Collection', 'Digital Document', 'Image', 'Page', 'Paged Content', 'Publication Issue', and 'Video'. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
@@ -2410,7 +2412,7 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2021</span>
       
     
   </small>
@@ -2507,7 +2509,7 @@ However, there is no mechanism in Islandora 8 for editing XML in a user-friendly
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.74af7bc3.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.db604ae8.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.1afabad3.min.js"></script>
