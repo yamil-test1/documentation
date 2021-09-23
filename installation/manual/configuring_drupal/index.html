@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -2352,21 +2352,22 @@
 <p>790 | );</p>
 </blockquote>
 <p><strong>After</strong>:</p>
-<blockquote>
-<p>789 |   'driver' =&gt; 'pgsql',</p>
-<p>790 | );</p>
-<p>791 | $settings['trusted_host_patterns'] = [</p>
-<p>792 |   'localhost',</p>
-<p>793 | ];</p>
-<p>794 | $settings['flysystem'] = [</p>
-<p>795 |   'fedora' =&gt; [</p>
-<p>796 |     'driver' =&gt; 'fedora',</p>
-<p>797 |     'config' =&gt; [</p>
-<p>798 |       'root' =&gt; 'http://localhost:8080/fcrepo/rest/',</p>
-<p>799 |     ],</p>
-<p>800 |   ],</p>
-<p>801 | ];</p>
-</blockquote>
+<pre><code>'driver' =&gt; 'pgsql',
+);
+
+$settings['trusted_host_patterns'] = [
+  'localhost',
+];
+
+$settings['flysystem'] = [
+ 'fedora' =&gt; [
+ 'driver' =&gt; 'fedora',
+ 'config' =&gt; [
+  'root' =&gt; 'http://localhost:8080/fcrepo/rest/',
+ ],
+],
+];
+</code></pre>
 <p>Once this is done, refresh the cache to take hold of the new settings.</p>
 <pre><code class="language-bash">cd /opt/drupal
 drush -y cr
@@ -2458,7 +2459,7 @@ sudo -u www-data drush -y -l localhost --userid=1 mim --group=islandora
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -2555,10 +2556,10 @@ sudo -u www-data drush -y -l localhost --userid=1 mim --group=islandora
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>

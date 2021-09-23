@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -765,16 +765,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-72" class="md-nav__link">
-    PHP 7.2
+  <a href="#php-74" class="md-nav__link">
+    PHP 7.4
   </a>
   
-    <nav class="md-nav" aria-label="PHP 7.2">
+    <nav class="md-nav" aria-label="PHP 7.4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-php-72" class="md-nav__link">
-    Install PHP 7.2
+  <a href="#install-php-74" class="md-nav__link">
+    Install PHP 7.4
   </a>
   
 </li>
@@ -785,23 +785,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#postgresql-10" class="md-nav__link">
-    PostgreSQL 10
+  <a href="#postgresql-11" class="md-nav__link">
+    PostgreSQL 11
   </a>
   
-    <nav class="md-nav" aria-label="PostgreSQL 10">
+    <nav class="md-nav" aria-label="PostgreSQL 11">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-postgresql-10" class="md-nav__link">
-    Install PostgreSQL 10
+  <a href="#install-postgresql-11" class="md-nav__link">
+    Install PostgreSQL 11
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-postgresql-10-for-use-with-drupal" class="md-nav__link">
-    Configure Postgresql 10 For Use With Drupal
+  <a href="#configure-postgresql-11-for-use-with-drupal" class="md-nav__link">
+    Configure Postgresql 11 For Use With Drupal
   </a>
   
 </li>
@@ -2269,16 +2269,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-72" class="md-nav__link">
-    PHP 7.2
+  <a href="#php-74" class="md-nav__link">
+    PHP 7.4
   </a>
   
-    <nav class="md-nav" aria-label="PHP 7.2">
+    <nav class="md-nav" aria-label="PHP 7.4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-php-72" class="md-nav__link">
-    Install PHP 7.2
+  <a href="#install-php-74" class="md-nav__link">
+    Install PHP 7.4
   </a>
   
 </li>
@@ -2289,23 +2289,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#postgresql-10" class="md-nav__link">
-    PostgreSQL 10
+  <a href="#postgresql-11" class="md-nav__link">
+    PostgreSQL 11
   </a>
   
-    <nav class="md-nav" aria-label="PostgreSQL 10">
+    <nav class="md-nav" aria-label="PostgreSQL 11">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-postgresql-10" class="md-nav__link">
-    Install PostgreSQL 10
+  <a href="#install-postgresql-11" class="md-nav__link">
+    Install PostgreSQL 11
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-postgresql-10-for-use-with-drupal" class="md-nav__link">
-    Configure Postgresql 10 For Use With Drupal
+  <a href="#configure-postgresql-11-for-use-with-drupal" class="md-nav__link">
+    Configure Postgresql 11 For Use With Drupal
   </a>
   
 </li>
@@ -2362,36 +2362,44 @@ sudo systemctl restart apache2
 <h3 id="add-the-current-user-to-the-www-data-group">Add the Current User to the <code>www-data</code> Group<a class="headerlink" href="#add-the-current-user-to-the-www-data-group" title="Permanent link">&para;</a></h3>
 <p>Since the user we are currently logged in as is going to work quite a bit inside the Drupal directory, we want to give it group permissions to anything the <code>www-data</code> group has access to. When we run <code>composer</code>, <code>www-data</code> will also be caching data in our own home directory, so we want this group modification to go in both directions.</p>
 <p><strong>N.B.</strong> This code block uses <strong>backticks</strong>, not single quotes; this is an important distinction as backticks have special meaning in <code>bash</code>.</p>
+<p><strong>Note</strong> If doing this in the terminal, replace "whoami" with your username and remove the backticks</p>
 <pre><code class="language-bash">sudo usermod -a -G www-data `whoami`
 sudo usermod -a -G `whoami` www-data
 # Immediately log back in to apply the new group.
 sudo su `whoami`
 </code></pre>
-<h2 id="php-72">PHP 7.2<a class="headerlink" href="#php-72" title="Permanent link">&para;</a></h2>
-<h3 id="install-php-72">Install PHP 7.2<a class="headerlink" href="#install-php-72" title="Permanent link">&para;</a></h3>
-<p>PHP can generally be easily installed using your operating system’s package manager, though whether or not the version you’ll be given is up to date depends entirely on whether or not that package manager is kept up-to-date. We’re going to enable both PHP 7.2, as well as the myriad modules we require, simultaneously:</p>
-<pre><code class="language-bash">sudo apt-get -y install php7.2 php7.2-cli php7.2-common php7.2-curl php7.2-dev php7.2-gd php7.2-imap php7.2-json php7.2-mbstring php7.2-opcache php7.2-xml php7.2-yaml php7.2-zip libapache2-mod-php7.2 php-pgsql php-redis php-xdebug unzip
+<h2 id="php-74">PHP 7.4<a class="headerlink" href="#php-74" title="Permanent link">&para;</a></h2>
+<h3 id="install-php-74">Install PHP 7.4<a class="headerlink" href="#install-php-74" title="Permanent link">&para;</a></h3>
+<p>Islandora defaults, a module which will install Islandora at the end, requires PHP 7.4. If you're running Debian 11 you should be able to install PHP 7.4 from the apt packages directly:</p>
+<pre><code class="language-bash">sudo apt-get -y install php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-dev php7.4-gd php7.4-imap php7.4-json php7.4-mbstring php7.4-opcache php7.4-xml php7.4-yaml php7.4-zip libapache2-mod-php7.4 php-pgsql php-redis php-xdebug unzip
 </code></pre>
-<p>This will install a series of PHP configurations and mods in <code>/etc/php/7.2</code>, including:</p>
+<p>If you're running Debian 10, the repository for the PHP 7.4 packages needs to be installed first:</p>
+<pre><code class="language-bash">sudo apt-get -y install lsb-release apt-transport-https ca-certificates
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo &quot;deb https://packages.sury.org/php/ $(lsb_release -sc) main&quot; | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt-get update
+sudo apt-get -y install php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-dev php7.4-gd php7.4-imap php7.4-json php7.4-mbstring php7.4-opcache php7.4-xml php7.4-yaml php7.4-zip libapache2-mod-php7.4 php-pgsql php-redis php-xdebug unzip
+</code></pre>
+<p>This will install a series of PHP configurations and mods in <code>/etc/php/7.4</code>, including:</p>
 <ul>
 <li>A <code>mods-available</code> folder (from which everything is typically enabled by default)</li>
 <li>A configuration for PHP when run from Apache in the <code>apache2</code> folder</li>
 <li>A configuration for PHP when run from the command line - including when run via Drush - in the <code>cli</code> folder</li>
 <li><code>unzip</code>, which is important for PHP’s zip module to function correctly despite it not being a direct dependency of the module. We will also need to unzip some things later, so this is convenient to have in place early in the installation process.</li>
 </ul>
-<h2 id="postgresql-10">PostgreSQL 10<a class="headerlink" href="#postgresql-10" title="Permanent link">&para;</a></h2>
-<h3 id="install-postgresql-10">Install PostgreSQL 10<a class="headerlink" href="#install-postgresql-10" title="Permanent link">&para;</a></h3>
-<p>PostgreSQL can generally be easily installed using your operating system’s package manager. It is typically sensible to install the version the system recognizes as up-to-date; Ubuntu 18.04 sees this as version 10. We’re simply going to install the database software:</p>
+<h2 id="postgresql-11">PostgreSQL 11<a class="headerlink" href="#postgresql-11" title="Permanent link">&para;</a></h2>
+<h3 id="install-postgresql-11">Install PostgreSQL 11<a class="headerlink" href="#install-postgresql-11" title="Permanent link">&para;</a></h3>
+<p>PostgreSQL can generally be easily installed using your operating system’s package manager. It is typically sensible to install the version the system recognizes as up-to-date. We’re simply going to install the database software:</p>
 <pre><code class="language-bash">sudo apt-get -y install postgresql
 </code></pre>
 <p>This will install:</p>
 <ul>
 <li>A user at the system level named <code>postgres</code>; this will be the only user, by default, that has permission to run the <code>psql</code> binary and have access to Postgres configurations</li>
 <li>A binary executable at <code>/usr/bin/psql</code>, which anyone - even <code>root</code> - will get kicked out of the moment they run it, since only the <code>postgres</code> user has permission to run any Postgres commands</li>
-<li>A series of configurations that live in <code>/etc/postgresql/10/main</code> which can be used to modify how PostgreSQL works.</li>
+<li>A series of configurations that live in <code>/etc/postgresql/11/main</code> which can be used to modify how PostgreSQL works.</li>
 </ul>
-<h3 id="configure-postgresql-10-for-use-with-drupal">Configure Postgresql 10 For Use With Drupal<a class="headerlink" href="#configure-postgresql-10-for-use-with-drupal" title="Permanent link">&para;</a></h3>
-<p>A modification needs to be made to the PostgreSQL configuration in order for Drupal to properly install and function. This change can be made to the main configuration file at <code>/etc/postgresql/10/main/postgresql.conf</code>:</p>
+<h3 id="configure-postgresql-11-for-use-with-drupal">Configure Postgresql 11 For Use With Drupal<a class="headerlink" href="#configure-postgresql-11-for-use-with-drupal" title="Permanent link">&para;</a></h3>
+<p>A modification needs to be made to the PostgreSQL configuration in order for Drupal to properly install and function. This change can be made to the main configuration file at <code>/etc/postgresql/11/main/postgresql.conf</code>:</p>
 <p><strong>Before</strong>:</p>
 <blockquote>
 <p>558 | #bytea_output = ‘hex’                      # hex, escape </p>
@@ -2400,6 +2408,7 @@ sudo su `whoami`
 <blockquote>
 <p>558 | bytea_output = ‘escape’</p>
 </blockquote>
+<p>(Remove the "# hex, escape" comment and change the value from "hex" to "escape")</p>
 <p>The <code>postgresql</code> service should be restarted to accept the new configuration:</p>
 <pre><code class="language-bash">sudo systemctl restart postgresql
 </code></pre>
@@ -2411,7 +2420,7 @@ sudo su `whoami`
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -2508,10 +2517,10 @@ sudo su `whoami`
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>

@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -745,11 +745,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#composer-1x" class="md-nav__link">
-    Composer 1.x
+  <a href="#composer-2x" class="md-nav__link">
+    Composer 2.x
   </a>
   
-    <nav class="md-nav" aria-label="Composer 1.x">
+    <nav class="md-nav" aria-label="Composer 2.x">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -765,16 +765,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drush-9-and-drupal-8" class="md-nav__link">
-    Drush 9 and Drupal 8
+  <a href="#drush-10-and-drupal-9" class="md-nav__link">
+    Drush 10 and Drupal 9
   </a>
   
-    <nav class="md-nav" aria-label="Drush 9 and Drupal 8">
+    <nav class="md-nav" aria-label="Drush 10 and Drupal 9">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clone-drupal-project-and-run-composer-install" class="md-nav__link">
-    Clone drupal-project and run composer install
+  <a href="#clone-drupal-project-and-install-it-via-composer" class="md-nav__link">
+    Clone drupal-project and install it via Composer
   </a>
   
 </li>
@@ -2222,11 +2222,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#composer-1x" class="md-nav__link">
-    Composer 1.x
+  <a href="#composer-2x" class="md-nav__link">
+    Composer 2.x
   </a>
   
-    <nav class="md-nav" aria-label="Composer 1.x">
+    <nav class="md-nav" aria-label="Composer 2.x">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2242,16 +2242,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drush-9-and-drupal-8" class="md-nav__link">
-    Drush 9 and Drupal 8
+  <a href="#drush-10-and-drupal-9" class="md-nav__link">
+    Drush 10 and Drupal 9
   </a>
   
-    <nav class="md-nav" aria-label="Drush 9 and Drupal 8">
+    <nav class="md-nav" aria-label="Drush 10 and Drupal 9">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clone-drupal-project-and-run-composer-install" class="md-nav__link">
-    Clone drupal-project and run composer install
+  <a href="#clone-drupal-project-and-install-it-via-composer" class="md-nav__link">
+    Clone drupal-project and install it via Composer
   </a>
   
 </li>
@@ -2312,12 +2312,12 @@
 <ul>
 <li><a href="https://getcomposer.org/">Composer</a> at its current latest version, the package manager that will allow us to install PHP applications</li>
 <li>The Islandora fork of the composer installer from <a href="https://github.com/Islandora/drupal-project">drupal-composer/drupal-project</a>, which will install, among other things:<ul>
-<li><a href="https://www.drush.org/">Drush 9</a> at its latest version, the command-line PHP application for running tasks in Drupal</li>
-<li><a href="https://www.drupal.org/">Drupal 8</a> at its latest version, the content management system Islandora uses for content modelling and front-end display</li>
+<li><a href="https://www.drush.org/">Drush 10</a> at its latest version, the command-line PHP application for running tasks in Drupal</li>
+<li><a href="https://www.drupal.org/">Drupal 9</a> at its latest version, the content management system Islandora uses for content modelling and front-end display</li>
 </ul>
 </li>
 </ul>
-<h2 id="composer-1x">Composer 1.x<a class="headerlink" href="#composer-1x" title="Permanent link">&para;</a></h2>
+<h2 id="composer-2x">Composer 2.x<a class="headerlink" href="#composer-2x" title="Permanent link">&para;</a></h2>
 <h3 id="download-and-install-composer">Download and install Composer<a class="headerlink" href="#download-and-install-composer" title="Permanent link">&para;</a></h3>
 <p>Composer provides PHP code that we can use to install it. After downloading and running the installer, we’re going to move the generated executable to a place in <code>$PATH</code>, removing its extension:</p>
 <pre><code class="language-bash">curl &quot;https://getcomposer.org/installer&quot; &gt; composer-install.php
@@ -2325,20 +2325,22 @@ chmod +x composer-install.php
 php composer-install.php
 sudo mv composer.phar /usr/local/bin/composer
 </code></pre>
-<h2 id="drush-9-and-drupal-8">Drush 9 and Drupal 8<a class="headerlink" href="#drush-9-and-drupal-8" title="Permanent link">&para;</a></h2>
-<h3 id="clone-drupal-project-and-run-composer-install">Clone <code>drupal-project</code> and run <code>composer install</code><a class="headerlink" href="#clone-drupal-project-and-run-composer-install" title="Permanent link">&para;</a></h3>
+<h2 id="drush-10-and-drupal-9">Drush 10 and Drupal 9<a class="headerlink" href="#drush-10-and-drupal-9" title="Permanent link">&para;</a></h2>
+<h3 id="clone-drupal-project-and-install-it-via-composer">Clone <code>drupal-project</code> and install it via Composer<a class="headerlink" href="#clone-drupal-project-and-install-it-via-composer" title="Permanent link">&para;</a></h3>
 <p>Before we can fully install Drupal, we’re going to need to clone <code>drupal-project</code> and provision it using Composer. We’re going to install it into the <code>/opt</code> directory:</p>
 <pre><code class="language-bash"># Start by giving Drupal somewhere to live. The Drupal project is installed to
 # an existing, empty folder.
 sudo mkdir /opt/drupal
 sudo chown www-data:www-data /opt/drupal
 sudo chmod 775 /opt/drupal
+# Change the ownership of default Apache directory so Composer can access it
+sudo chown -R www-data:www-data /var/www/
 # Clone drupal-project and build it in our newly-created folder.
-git clone https://github.com/Islandora/drupal-project.git
+git clone https://github.com/drupal-composer/drupal-project.git
 cd drupal-project
 # Expect this to take a little while, as this is grabbing the entire
 # requirements set for Drupal.
-sudo -u www-data composer create-project drupal-composer/drupal-project:8.x-dev /opt/drupal --no-interaction
+sudo -u www-data composer create-project drupal-composer/drupal-project:9.x-dev /opt/drupal --no-interaction
 </code></pre>
 <h3 id="make-drush-accessible-in-path">Make Drush accessible in <code>$PATH</code><a class="headerlink" href="#make-drush-accessible-in-path" title="Permanent link">&para;</a></h3>
 <p>While it’s not required for Drush to be accessible in <code>$PATH</code>, not needing to type out the full path to it every time we need to use it is going to be incredibly convenient for our purposes. The rest of this guide will assume that we can simply run Drush from the command line when necessary without having to reference the full path.</p>
@@ -2353,6 +2355,7 @@ sudo -u www-data composer create-project drupal-composer/drupal-project:8.x-dev 
 <p><code>/etc/apache2/ports.conf | root:root/644</code></p>
 <pre><code>Listen 80
 </code></pre>
+<p>Remove everything but the "Listen 80" line. You can leave the comments in if you want.</p>
 <p><code>/etc/apache2/sites-enabled/000-default.conf | root:root/777</code></p>
 <pre><code class="language-xml">&lt;VirtualHost *:80&gt;
   ServerName SERVER_NAME
@@ -2369,7 +2372,7 @@ sudo -u www-data composer create-project drupal-composer/drupal-project:8.x-dev 
 </code></pre>
 <ul>
 <li><code>SERVER_NAME</code>: <code>localhost</code><ul>
-<li>For a development environment hosted on your own machine or a VM, <code>localhost</code> should suffice. Realistically, this should be the domain the server will be accessed at.</li>
+<li>For a development environment hosted on your own machine or a VM, <code>localhost</code> should suffice. Realistically, this should be the domain or IP address the server will be accessed at.</li>
 </ul>
 </li>
 </ul>
@@ -2382,14 +2385,14 @@ sudo -u www-data composer create-project drupal-composer/drupal-project:8.x-dev 
 # access.
 sudo -u postgres psql
 # Then, run these commands within psql itself:
-create database DRUPAL_DB;
+create database DRUPAL_DB encoding 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' TEMPLATE template0;
 create user DRUPAL_DB_USER with encrypted password 'DRUPAL_DB_PASSWORD';
 grant all privileges on database DRUPAL_DB to DRUPAL_DB_USER;
 # Then, quit psql.
 \q
 </code></pre>
 <ul>
-<li><code>DRUPAL_DB</code>: <code>drupal8</code><ul>
+<li><code>DRUPAL_DB</code>: <code>drupal9</code><ul>
 <li>This will be used as the core database that Drupal is installed into</li>
 </ul>
 </li>
@@ -2411,7 +2414,7 @@ drush -y site-install standard --db-url=&quot;pgsql://DRUPAL_DB_USER:DRUPAL_DB_P
 </code></pre>
 <p>This uses the same parameters from the above step, as well as:</p>
 <ul>
-<li><code>SITE_NAME</code>: Islandora 8<ul>
+<li><code>SITE_NAME</code>: Islandora 2.0<ul>
 <li>This is arbitrary, and is simply used to title the site on the home page</li>
 </ul>
 </li>
@@ -2433,7 +2436,7 @@ drush -y site-install standard --db-url=&quot;pgsql://DRUPAL_DB_USER:DRUPAL_DB_P
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -2530,10 +2533,10 @@ drush -y site-install standard --db-url=&quot;pgsql://DRUPAL_DB_USER:DRUPAL_DB_P
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>

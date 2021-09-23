@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -801,23 +801,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crayfish-11" class="md-nav__link">
-    Crayfish 1.1
+  <a href="#crayfish-20" class="md-nav__link">
+    Crayfish 2.0
   </a>
   
-    <nav class="md-nav" aria-label="Crayfish 1.1">
+    <nav class="md-nav" aria-label="Crayfish 2.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#installing-prerequisites" class="md-nav__link">
     Installing Prerequisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preparing-a-gemini-database" class="md-nav__link">
-    Preparing a Gemini Database
   </a>
   
 </li>
@@ -843,13 +836,6 @@
   
     <nav class="md-nav" aria-label="Configuring Crayfish Components">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gemini" class="md-nav__link">
-    Gemini
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#homarus-audiovideo-derivatives" class="md-nav__link">
@@ -888,13 +874,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing-the-gemini-database" class="md-nav__link">
-    Installing the Gemini Database
-  </a>
   
 </li>
         
@@ -2278,23 +2257,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crayfish-11" class="md-nav__link">
-    Crayfish 1.1
+  <a href="#crayfish-20" class="md-nav__link">
+    Crayfish 2.0
   </a>
   
-    <nav class="md-nav" aria-label="Crayfish 1.1">
+    <nav class="md-nav" aria-label="Crayfish 2.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#installing-prerequisites" class="md-nav__link">
     Installing Prerequisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preparing-a-gemini-database" class="md-nav__link">
-    Preparing a Gemini Database
   </a>
   
 </li>
@@ -2320,13 +2292,6 @@
   
     <nav class="md-nav" aria-label="Configuring Crayfish Components">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gemini" class="md-nav__link">
-    Gemini
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#homarus-audiovideo-derivatives" class="md-nav__link">
@@ -2365,13 +2330,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing-the-gemini-database" class="md-nav__link">
-    Installing the Gemini Database
-  </a>
   
 </li>
         
@@ -2422,10 +2380,10 @@
                 <h1 id="installing-crayfish">Installing Crayfish<a class="headerlink" href="#installing-crayfish" title="Permanent link">&para;</a></h1>
 <h2 id="in-this-section-we-will-install">In this section, we will install:<a class="headerlink" href="#in-this-section-we-will-install" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/islandora/crayfish">Islandora/Crayfish</a>, the suite of microservices that power the backend of Islandora 8</li>
+<li><a href="https://github.com/islandora/crayfish">Islandora/Crayfish</a>, the suite of microservices that power the backend of Islandora 2.0</li>
 <li>Indvidual microservices underneath Crayfish</li>
 </ul>
-<h2 id="crayfish-11">Crayfish 1.1<a class="headerlink" href="#crayfish-11" title="Permanent link">&para;</a></h2>
+<h2 id="crayfish-20">Crayfish 2.0<a class="headerlink" href="#crayfish-20" title="Permanent link">&para;</a></h2>
 <h3 id="installing-prerequisites">Installing Prerequisites<a class="headerlink" href="#installing-prerequisites" title="Permanent link">&para;</a></h3>
 <p>Some packages need to be installed before we can proceed with installing Crayfish; these packages are used by the microservices within Crayfish. These include:</p>
 <ul>
@@ -2438,28 +2396,12 @@
 sudo apt-get update
 sudo apt-get -y install imagemagick tesseract-ocr ffmpeg poppler-utils
 </code></pre>
-<h3 id="preparing-a-gemini-database">Preparing a Gemini Database<a class="headerlink" href="#preparing-a-gemini-database" title="Permanent link">&para;</a></h3>
-<p>This database will be set up (and function) mostly the same as the other databases we’ve previously installed.</p>
-<pre><code class="language-bash">sudo -u postgres psql
-create database CRAYFISH_DB;
-create user CRAYFISH_DB_USER with encrypted password 'CRAYFISH_DB_PASSWORD';
-grant all privileges on database CRAYFISH_DB to CRAYFISH_DB_USER;
-\q
-</code></pre>
-<ul>
-<li><code>CRAYFISH_DB</code>: <code>gemini</code></li>
-<li><code>CRAYFISH_DB_USER</code>: <code>gemini</code></li>
-<li><code>CRAYFISH_DB_PASSWORD</code>: <code>gemini</code><ul>
-<li>As always, this should be a secure password of some kind, and not this default.</li>
-</ul>
-</li>
-</ul>
+<p><strong>NOTICE:</strong> If you get the <code>sudo: apt-add-repository: command not found</code>, run <code>sudo apt-get install software-properties-common</code> in order to make the command available.</p>
 <h3 id="cloning-and-installing-crayfish">Cloning and Installing Crayfish<a class="headerlink" href="#cloning-and-installing-crayfish" title="Permanent link">&para;</a></h3>
 <p>We’re going to clone Crayfish to <code>/opt</code>, and individually run <code>composer install</code> against each of the microservice subdirectories.</p>
 <pre><code class="language-bash">cd /opt
 sudo git clone https://github.com/Islandora/Crayfish.git crayfish
 sudo chown -R www-data:www-data crayfish
-sudo -u www-data composer install -d crayfish/Gemini
 sudo -u www-data composer install -d crayfish/Homarus
 sudo -u www-data composer install -d crayfish/Houdini
 sudo -u www-data composer install -d crayfish/Hypercube
@@ -2473,29 +2415,8 @@ sudo chown www-data:www-data /var/log/islandora
 </code></pre>
 <h3 id="configuring-crayfish-components">Configuring Crayfish Components<a class="headerlink" href="#configuring-crayfish-components" title="Permanent link">&para;</a></h3>
 <p>Each Crayfish component requires one or more <code>.yaml</code> file(s) to ensure everything is wired up correctly.</p>
-<div class="admonition notice">
-<p class="admonition-title">Notice</p>
+<p><strong>NOTICE</strong></p>
 <p>The following configuration files represent somewhat sensible defaults; you should take consideration of the logging levels in use, as this can vary in desirability from installation to installation. Also note that in all cases, <code>http</code> URLs are being used, as this guide does not deal with setting up https support. In a production installation, this should not be the case. These files also assume a connection to a PostgreSQL database; use a <code>pdo_mysql</code> driver and the appropriate <code>3306</code> port if using MySQL.</p>
-</div>
-<h4 id="gemini">Gemini<a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h4>
-<p><code>/opt/crayfish/Gemini/cfg/config.yaml | www-data:www-data/644</code></p>
-<pre><code class="language-yaml">---
-debug: false
-fedora_base_url: http://localhost:8080/fcrepo/rest
-db.options:
-  driver: pdo_pgsql
-  host: 127.0.0.1
-  port: 5432
-  dbname: CRAYFISH_DB
-  user: CRAYFISH_DB_USER
-  password: CRAYFISH_DB_PASSWORD
-log:
-  level: NOTICE
-  file: /var/log/islandora/gemini.log
-syn:
-  enable: true
-  config: /opt/fcrepo/config/syn-settings.xml
-</code></pre>
 <h4 id="homarus-audiovideo-derivatives">Homarus (Audio/Video derivatives)<a class="headerlink" href="#homarus-audiovideo-derivatives" title="Permanent link">&para;</a></h4>
 <p><code>/opt/crayfish/Homarus/cfg/config.yaml | www-data:www-data/644</code></p>
 <pre><code class="language-yaml">---
@@ -2576,7 +2497,6 @@ services:
 <p><code>/opt/crayfish/Houdini/config/packages/crayfish_commons.yml | www-data:www-data/644</code></p>
 <pre><code class="language-yaml">crayfish_commons:
   fedora_base_uri: 'http://localhost:8080/fcrepo/rest'
-  gemini_base_uri: 'http://localhost:9000/gemini'
   syn_config: '/opt/fcrepo/config/syn-settings.xml'
 </code></pre>
 <p><code>/opt/crayfish/Houdini/config/packages/monolog.yml | www-data:www-data/644</code></p>
@@ -2664,7 +2584,6 @@ syn:
 <pre><code class="language-yaml">---
 fedora_base_url: http://localhost:8080/fcrepo/rest
 drupal_base_url: http://localhost
-gemini_base_url: http://localhost/gemini
 modified_date_predicate: http://schema.org/dateModified
 strip_format_jsonld: true
 debug: false
@@ -2687,7 +2606,6 @@ syn:
 <pre><code class="language-yaml">---
 fedora_resource:
   base_url: http://localhost:8080/fcrepo/rest
-gemini_base_url: http://localhost/gemini
 drupal_base_url: http://localhost
 debug: false
 log:
@@ -2707,27 +2625,11 @@ namespaces:
   webac: &quot;http://fedora.info/definitions/v4/webac#&quot;
   vcard: &quot;http://www.w3.org/2006/vcard/ns#&quot;
 </code></pre>
-<h3 id="installing-the-gemini-database">Installing the Gemini Database<a class="headerlink" href="#installing-the-gemini-database" title="Permanent link">&para;</a></h3>
-<p>Our Gemini database is unusable until it's installed.</p>
-<pre><code class="language-bash">cd /opt/crayfish/Gemini
-php bin/console --no-interaction migrations:migrate
-</code></pre>
 <h3 id="creating-apache-configurations-for-crayfish-components">Creating Apache Configurations for Crayfish Components<a class="headerlink" href="#creating-apache-configurations-for-crayfish-components" title="Permanent link">&para;</a></h3>
 <p>Finally, we need appropriate Apache configurations for Crayfish; these will allow other services to connect to Crayfish components via their HTTP endpoints.</p>
 <p>Each endpoint we need to be able to connect to will get its own <code>.conf</code> file, which we will then enable.</p>
-<div class="admonition notice">
-<p class="admonition-title">Notice</p>
+<p><strong>NOTICE</strong></p>
 <p>These configurations would potentially have collisions with Drupal routes, if any are created in Drupal with the same name. If this is a concern, it would likely be better to reserve a subdomain or another port specifically for Crayfish. For the purposes of this installation guide, these endpoints will suffice.</p>
-</div>
-<p><code>/etc/apache2/conf-available/Gemini.conf | root:root/644</code></p>
-<pre><code>Alias &quot;/gemini&quot; &quot;/opt/crayfish/Gemini/src&quot;
-&lt;Directory &quot;/opt/crayfish/Gemini/src&quot;&gt;
-  FallbackResource /gemini/index.php
-  Require all granted
-  DirectoryIndex index.php
-  SetEnvIf Authorization &quot;(.*)&quot; HTTP_AUTHORIZATION=$1
-&lt;/Directory&gt;
-</code></pre>
 <p><code>/etc/apache2/conf-available/Homarus.conf | root:root/644</code></p>
 <pre><code>Alias &quot;/homarus&quot; &quot;/opt/crayfish/Homarus/src&quot;
 &lt;Directory &quot;/opt/crayfish/Homarus/src&quot;&gt;
@@ -2775,7 +2677,7 @@ php bin/console --no-interaction migrations:migrate
 </code></pre>
 <h3 id="enabling-each-crayfish-component-apache-configuration">Enabling Each Crayfish Component Apache Configuration<a class="headerlink" href="#enabling-each-crayfish-component-apache-configuration" title="Permanent link">&para;</a></h3>
 <p>Enabling each of these configurations involves creating a symlink to them in the <code>conf-enabled</code> directory; the standardized method of doing this in Apache is with <code>a2enconf</code>.</p>
-<pre><code class="language-bash">sudo a2enconf Gemini Homarus Houdini Hypercube Milliner Recast
+<pre><code class="language-bash">sudo a2enconf Homarus Houdini Hypercube Milliner Recast
 </code></pre>
 <h3 id="restarting-the-apache-service">Restarting the Apache Service<a class="headerlink" href="#restarting-the-apache-service" title="Permanent link">&para;</a></h3>
 <p>Finally, to get these new endpoints up and running, we need to restart the Apache service.</p>
@@ -2789,7 +2691,7 @@ php bin/console --no-interaction migrations:migrate
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 21, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -2886,10 +2788,10 @@ php bin/console --no-interaction migrations:migrate
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>

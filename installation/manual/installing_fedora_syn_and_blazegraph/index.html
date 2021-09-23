@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -773,12 +773,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fedora-5" class="md-nav__link">
-    Fedora 5
+  <a href="#fedora-6" class="md-nav__link">
+    Fedora 6
   </a>
   
-    <nav class="md-nav" aria-label="Fedora 5">
+    <nav class="md-nav" aria-label="Fedora 6">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-the-tomcat-service" class="md-nav__link">
+    Stop the Tomcat Service
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#creating-a-working-space-for-fedora" class="md-nav__link">
@@ -823,8 +830,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#restarting-the-tomcat-service" class="md-nav__link">
-    Restarting the Tomcat Service
+  <a href="#start-the-tomcat-service" class="md-nav__link">
+    Start the Tomcat Service
   </a>
   
 </li>
@@ -2326,12 +2333,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fedora-5" class="md-nav__link">
-    Fedora 5
+  <a href="#fedora-6" class="md-nav__link">
+    Fedora 6
   </a>
   
-    <nav class="md-nav" aria-label="Fedora 5">
+    <nav class="md-nav" aria-label="Fedora 6">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-the-tomcat-service" class="md-nav__link">
+    Stop the Tomcat Service
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#creating-a-working-space-for-fedora" class="md-nav__link">
@@ -2376,8 +2390,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#restarting-the-tomcat-service" class="md-nav__link">
-    Restarting the Tomcat Service
+  <a href="#start-the-tomcat-service" class="md-nav__link">
+    Start the Tomcat Service
   </a>
   
 </li>
@@ -2518,11 +2532,15 @@
                 <h1 id="installing-fedora-syn-and-blazegraph">Installing Fedora, Syn, and Blazegraph<a class="headerlink" href="#installing-fedora-syn-and-blazegraph" title="Permanent link">&para;</a></h1>
 <h2 id="in-this-section-we-will-install">In this section, we will install:<a class="headerlink" href="#in-this-section-we-will-install" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://duraspace.org/fedora/">Fedora 5</a>, the back-end repository that Islandora will use</li>
+<li><a href="https://duraspace.org/fedora/">Fedora 6</a>, the back-end repository that Islandora will use</li>
 <li><a href="https://github.com/Islandora/Syn">Syn</a>, the authentication broker that will manage communication with Fedora</li>
 <li><a href="https://blazegraph.com/">Blazegraph</a>, the resource index layer on top of Fedora for managing discoverability via RDF</li>
 </ul>
-<h2 id="fedora-5">Fedora 5<a class="headerlink" href="#fedora-5" title="Permanent link">&para;</a></h2>
+<h2 id="fedora-6">Fedora 6<a class="headerlink" href="#fedora-6" title="Permanent link">&para;</a></h2>
+<h3 id="stop-the-tomcat-service">Stop the Tomcat Service<a class="headerlink" href="#stop-the-tomcat-service" title="Permanent link">&para;</a></h3>
+<p>We're going to stop the Tomcat service while working on setting up Fedora to prevent any autodeploy misconfigurations.</p>
+<pre><code class="language-bash">sudo systemctl stop tomcat
+</code></pre>
 <h3 id="creating-a-working-space-for-fedora">Creating a Working Space for Fedora<a class="headerlink" href="#creating-a-working-space-for-fedora" title="Permanent link">&para;</a></h3>
 <p>Fedora’s configuration and data won’t live with Tomcat itself; rather, we’re going to prepare a space for them to make them easier to manage.</p>
 <pre><code class="language-bash">sudo mkdir -p /opt/fcrepo/data/objects
@@ -2532,7 +2550,7 @@ sudo chown -R tomcat:tomcat /opt/fcrepo
 <h3 id="creating-a-database-for-fedora">Creating a Database for Fedora<a class="headerlink" href="#creating-a-database-for-fedora" title="Permanent link">&para;</a></h3>
 <p>The method for creating the database here will closely mimic the method we used to create our database for Drupal.</p>
 <pre><code class="language-bash">sudo -u postgres psql
-create database FEDORA_DB;
+create database FEDORA_DB encoding 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' TEMPLATE template0;
 create user FEDORA_DB_USER with encrypted password 'FEDORA_DB_PASSWORD';
 grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 \q
@@ -2587,11 +2605,12 @@ grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 </code></pre>
 <p>We intend to have Crayfish installed later. Since Fedora needs to be able to read data from Crayfish, we need to tell Fedora that the Crayfish endpoint is a valid data source.</p>
 <p><code>/opt/fcrepo/config/allowed_hosts.txt | tomcat:tomcat/644</code></p>
-<pre><code>http://localhost:CRAYFISH_PORT/
+<pre><code>http://CRAYFISH_HOST:CRAYFISH_PORT/
 </code></pre>
 <ul>
+<li><code>CRAYFISH_HOST</code>: localhost</li>
 <li><code>CRAYFISH_PORT</code>: 80<ul>
-<li>This guide will install Crayfish on the same port that Drupal is installed on. This may not be desirable, and if Crayfish is installed on a different port later, that change should be reflected here.</li>
+<li>This guide will install Crayfish on the same host and port that Drupal is installed on. This may not be desirable, and if Crayfish is installed on a different host or port later, that change should be reflected here.</li>
 </ul>
 </li>
 </ul>
@@ -2733,11 +2752,11 @@ grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 <p><code>/opt/tomcat/bin/setenv.sh</code></p>
 <p><strong>Before</strong>:</p>
 <blockquote>
-<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -server -Xmx1500m -Xms1000m"</p>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -server -Xmx1500m -Xms1000m"</p>
 </blockquote>
 <p><strong>After</strong>:</p>
 <blockquote>
-<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"</p>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -server -Xmx1500m -Xms1000m"</p>
 </blockquote>
 <h3 id="ensuring-tomcat-users-are-in-place">Ensuring Tomcat Users Are In Place<a class="headerlink" href="#ensuring-tomcat-users-are-in-place" title="Permanent link">&para;</a></h3>
 <p>While not strictly necessary, we can use the <code>tomcat-users.xml</code> file to give us direct access to the Fedora endpoint. Fedora defines, out of the box, a <code>fedoraAdmin</code> and <code>fedoraUser</code> role that can be reflected in the users list for access. The following file will also include the base <code>tomcat</code> user. As always, these default passwords should likely not stay as the defaults.</p>
@@ -2761,22 +2780,24 @@ grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 <li><code>FEDORA_USER_PASSWORD</code>: <code>islandora</code></li>
 </ul>
 <h3 id="downloading-and-placing-the-latest-release">Downloading and Placing the Latest Release<a class="headerlink" href="#downloading-and-placing-the-latest-release" title="Permanent link">&para;</a></h3>
-<p>Fedora <code>.war</code> files are packaged up as releases on the official GitHub repository; you can find the latest version at the releases page; the official GitHub repository is labelled as fcrepo4 but does actually contain more recent versions than 4. You should download the most recent stable release.</p>
+<p>Fedora <code>.war</code> files are packaged up as releases on the official GitHub repository. You should download the most recent stable release.</p>
 <pre><code class="language-bash">sudo wget -O fcrepo.war FCREPO_WAR_URL
 sudo mv fcrepo.war /opt/tomcat/webapps
 sudo chown tomcat:tomcat /opt/tomcat/webapps/fcrepo.war
 </code></pre>
 <ul>
-<li><code>FCREPO_WAR_URL</code>: This can be found at the <a href="https://github.com/fcrepo4/fcrepo4/releases">fcrepo downloads page</a>; the file you're looking for is:<ul>
+<li><code>FCREPO_WAR_URL</code>: This can be found at the <a href="https://github.com/fcrepo/fcrepo/releases">fcrepo downloads page</a>; the file you're looking for is:<ul>
 <li>Tagged in green as the 'Latest release'</li>
-<li>The <code>.war</code> version of the file</li>
+<li>Named "fcrepo-webapp-VERSION.war"</li>
 </ul>
 </li>
 </ul>
-<h3 id="restarting-the-tomcat-service">Restarting the Tomcat Service<a class="headerlink" href="#restarting-the-tomcat-service" title="Permanent link">&para;</a></h3>
-<p>As before, restart the Tomcat service to get Fedora up and running.</p>
-<pre><code class="language-bash">sudo systemctl restart tomcat
+<h3 id="start-the-tomcat-service">Start the Tomcat Service<a class="headerlink" href="#start-the-tomcat-service" title="Permanent link">&para;</a></h3>
+<p>As before, start the Tomcat service to get Fedora up and running.</p>
+<pre><code class="language-bash">sudo systemctl start tomcat
 </code></pre>
+<p><strong>Note:</strong> sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.</p>
+<p>Once it starts up, Fedora REST API should be available at http://localhost:8080/fcrepo/rest. The username is fedoraAdmin and we defined the password before as <code>FEDORA_ADMIN_PASSWORD</code> (default: "islandora").</p>
 <h2 id="syn">Syn<a class="headerlink" href="#syn" title="Permanent link">&para;</a></h2>
 <h3 id="downloading-the-syn-jar-file">Downloading the Syn JAR File<a class="headerlink" href="#downloading-the-syn-jar-file" title="Permanent link">&para;</a></h3>
 <p>A compiled JAR of Syn can be found on the <a href="https://github.com/Islandora/Syn/releases">Syn releases page</a>. We’re going to add this to the list libraries accessible to Tomcat.</p>
@@ -2827,6 +2848,8 @@ sudo chown www-data:www-data /opt/keys/syn*
 <p>Finally, restart tomcat to apply the new configurations.</p>
 <pre><code class="language-bash">sudo systemctl restart tomcat
 </code></pre>
+<p><strong>Note:</strong> sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.</p>
+<p><strong>Note:</strong> after installing the Syn valve, you'll no longer be able to manually manage objects via Fedora Web UI or access the Fedora home page (http://localhost:8080/fcrepo). All communication with Fedora will now be handled from the Islandora module in Drupal.</p>
 <h2 id="blazegraph-2">Blazegraph 2<a class="headerlink" href="#blazegraph-2" title="Permanent link">&para;</a></h2>
 <h3 id="creating-a-working-space-for-blazegraph">Creating a Working Space for Blazegraph<a class="headerlink" href="#creating-a-working-space-for-blazegraph" title="Permanent link">&para;</a></h3>
 <p>Blazegraph needs a space for configurations and data; we’re going to create this space in <code>/opt</code>.</p>
@@ -2898,7 +2921,7 @@ com.bigdata.namespace.kb.spo.com.bigdata.btree.BTree.branchingFactor=1024
 com.bigdata.journal.Journal.collectPlatformStatistics=false
 </code></pre>
 <p><code>/opt/blazegraph/conf/blazegraph.properties | tomcat:tomcat/644</code></p>
-<pre><code>com.bigdata.rdf.store.AbstractTripleStore.textIndex=false                                                                                         
+<pre><code>com.bigdata.rdf.store.AbstractTripleStore.textIndex=false
 com.bigdata.rdf.store.AbstractTripleStore.axiomsClass=com.bigdata.rdf.axioms.OwlAxioms
 com.bigdata.rdf.sail.isolatableIndices=false
 com.bigdata.rdf.store.AbstractTripleStore.justify=true
@@ -2920,11 +2943,11 @@ com.bigdata.rdf.store.AbstractTripleStore.statementIdentifiers=false
 <p><code>/opt/tomcat/bin/setenv.sh</code></p>
 <p><strong>Before</strong>:</p>
 <blockquote>
-<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"</p>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -server -Xmx1500m -Xms1000m"</p>
 </blockquote>
 <p><strong>After</strong>:</p>
 <blockquote>
-<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/blazegraph/conf/RWStore.properties -Dlog4j.configuration=file:/opt/blazegraph/conf/log4j.properties -server -Xmx1500m -Xms1000m"</p>
+<p>3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/blazegraph/conf/RWStore.properties -Dlog4j.configuration=file:/opt/blazegraph/conf/log4j.properties -server -Xmx1500m -Xms1000m"</p>
 </blockquote>
 <h3 id="restarting-tomcat_1">Restarting Tomcat<a class="headerlink" href="#restarting-tomcat_1" title="Permanent link">&para;</a></h3>
 <p>Finally, restart Tomcat to pick up the changes we’ve made.</p>
@@ -2947,7 +2970,7 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -3044,10 +3067,10 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>

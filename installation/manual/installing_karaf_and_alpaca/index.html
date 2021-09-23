@@ -17,7 +17,7 @@
         
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6+insiders-2.13.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8+insiders-3.0.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c94377ce.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcf81f63.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.1d832a92.min.css">
@@ -2437,6 +2437,10 @@
 <li>An <code>activemq</code> service that will be run on boot</li>
 <li>A user, <code>activemq</code>, who will be in charge of the ActiveMQ service</li>
 </ul>
+<p>Take note of the version of ActiveMQ we're going to be installing. It needs to match a Karaf blueprint we'll create later. Check the version with</p>
+<pre><code class="language-bash">sudo apt-cache policy activemq
+</code></pre>
+<p>Write down the version listed under <code>Installed:</code>.</p>
 <h2 id="karaf-4">Karaf 4<a class="headerlink" href="#karaf-4" title="Permanent link">&para;</a></h2>
 <h2 id="creating-a-karaf-user">Creating a Karaf User<a class="headerlink" href="#creating-a-karaf-user" title="Permanent link">&para;</a></h2>
 <p>Karaf, as well as its processes and service, will be owned by a user in charge of ensuring this portion of the stack is segregated and that the service is running.</p>
@@ -2504,10 +2508,22 @@ log4j.logger.ca.islandora.camel=INFO, islandora
 export JAVA_HOME=&quot;PATH_TO_JAVA_HOME&quot;
 </code></pre>
 <ul>
-<li><code>PATH_TO_JAVA_HOME</code>: This will be the same <code>JAVA_HOME</code> we used when installing Tomcat , and can be found using the same method (i.e., still <code>/usr/lib/jvm/java-8-openjdk-amd64</code> if that's what it was before).</li>
+<li><code>PATH_TO_JAVA_HOME</code>: This will be the same <code>JAVA_HOME</code> we used when installing Tomcat , and can be found using the same method (i.e., still <code>/usr/lib/jvm/java-11-openjdk-amd64</code> if that's what it was before).</li>
 </ul>
 <h3 id="initializing-karaf">Initializing Karaf<a class="headerlink" href="#initializing-karaf" title="Permanent link">&para;</a></h3>
 <p>We’re going to start Karaf, then run the installer to put our configurations in place and generate a Karaf service. Once these are installed, we’re going to stop Karaf, as from there on out its start/stop management should be handled via that service.</p>
+<p>First we need to enable the default Karaf user in <code>/opt/karaf/etc/users.properties</code>:</p>
+<p><strong>Before</strong>:</p>
+<blockquote>
+<p>32 | # karaf = karaf,_g_:admingroup</p>
+<p>33 | # _g_\:admingroup = group,admin,manager,viewer,systembundles,ssh</p>
+</blockquote>
+<p><strong>After</strong>:</p>
+<blockquote>
+<p>32 | karaf = karaf,_g_:admingroup</p>
+<p>33 | _g_\:admingroup = group,admin,manager,viewer,systembundles,ssh</p>
+</blockquote>
+<p>Save the file and close it, then:</p>
 <pre><code class="language-bash">sudo -u karaf /opt/karaf/bin/start
 # You may want to wait a bit for Karaf to start.
 # If you're not sure whether or not it's running, you can always run:
@@ -2518,10 +2534,14 @@ export JAVA_HOME=&quot;PATH_TO_JAVA_HOME&quot;
 /opt/karaf/bin/stop
 </code></pre>
 <h3 id="creating-and-starting-the-karaf-service">Creating and Starting the Karaf Service<a class="headerlink" href="#creating-and-starting-the-karaf-service" title="Permanent link">&para;</a></h3>
-<p>Installing the Karaf wrapper generates several service files that can be used on different types of systems. For this example installation on an Ubuntu 18.04 machine, we want to enable the <code>karaf.service</code> service so that Karaf is properly started on boot.</p>
+<p>Installing the Karaf wrapper generates several service files that can be used on different types of systems. For Debian and Ubuntu installation we want to enable the <code>karaf.service</code> service so that Karaf is properly started on boot.</p>
 <pre><code class="language-bash">sudo systemctl enable /opt/karaf/bin/karaf.service
 sudo systemctl start karaf
 </code></pre>
+<p>We can check if the service started correctly with:</p>
+<pre><code class="language-bash">sudo systemctl status karaf
+</code></pre>
+<p>Press Q to close the status.</p>
 <h2 id="alpaca-10x">Alpaca 1.0.x<a class="headerlink" href="#alpaca-10x" title="Permanent link">&para;</a></h2>
 <h3 id="adding-the-required-karaf-repositories">Adding the Required Karaf Repositories<a class="headerlink" href="#adding-the-required-karaf-repositories" title="Permanent link">&para;</a></h3>
 <p>Karaf features can be installed from several different types of sources, but the fastest and easiest way to do so is from existing repository URLs that we can just plug into Karaf to provide us feature lists prepared and ready for installation. Like most interactions with Karaf, we can add these repositories using its built-in <code>client</code>.</p>
@@ -2532,15 +2552,16 @@ sudo systemctl start karaf
 <p>For the Karaf features we’re going to install, we need a few different repositories to be added to the list:</p>
 <pre><code class="language-bash">/opt/karaf/bin/client repo-add mvn:org.apache.activemq/activemq-karaf/ACTIVEMQ_KARAF_VERSION/xml/features
 /opt/karaf/bin/client repo-add mvn:org.apache.camel.karaf/apache-camel/APACHE_CAMEL_VERSION/xml/features
-/opt/karaf/bin/client repo-add mvn:ca.islandora.alpaca/islandora-karaf/LATEST/xml/features
+/opt/karaf/bin/client repo-add mvn:ca.islandora.alpaca/islandora-karaf/ISLANDORA_KARAF_VERSION/xml/features
 # XXX: This shouldn't be strictly necessary, but appears to be a missing
 # upstream dependency for some fcrepo features.
 /opt/karaf/bin/client repo-add mvn:org.apache.jena/jena-osgi-features/JENA_OSGI_VERSION/xml/features
 </code></pre>
 <ul>
-<li><code>ACTIVEMQ_KARAF_VERSION</code>: The latest version of ActiveMQ Karaf 5.x.x; you can find this listed at the <a href="https://mvnrepository.com/artifact/org.apache.activemq/activemq-karaf">activemq-karaf repository page</a> (e.g., 5.15.11 at the time of writing)</li>
-<li><code>APACHE_CAMEL_VERSION</code>: The latest version of Apache Camel 2.x.x; you can find this listed at the <a href="https://mvnrepository.com/artifact/org.apache.camel.karaf/apache-camel">apache-camel repository page</a> (e.g., 2.25.0 at the time of writing)</li>
-<li><code>JENA_OSGI_VERSION</code>: The latest version of the Apache Jena OSGi features; you can find this listed at the <a href="https://mvnrepository.com/artifact/org.apache.jena/jena-osgi-features">jena-osgi-features repository page</a> (e.g., 3.14.0 at the time of writing)</li>
+<li><code>ACTIVEMQ_KARAF_VERSION</code>: The version of ActiveMQ we wrote down at the beginning of this chapter when installing ActiveMQ via <code>apt-get</code></li>
+<li><code>APACHE_CAMEL_VERSION</code>: The latest version of Apache Camel 2.x.x; you can find this listed at the <a href="https://mvnrepository.com/artifact/org.apache.camel.karaf/apache-camel">apache-camel repository page</a> (e.g., 2.25.4 at the time of writing)</li>
+<li><code>ISLANDORA_KARAF_VERSION</code>: The latest version of Islandora Karaf 1.x; you can find this listed at the <a href="https://mvnrepository.com/artifact/ca.islandora.alpaca/islandora-karaf">islandora-karaf repository page</a> (e.g., 1.0.5 at the time of writing)</li>
+<li><code>JENA_OSGI_VERSION</code>: The latest version of the Apache Jena 3.x OSGi features; you can find this listed at the <a href="https://mvnrepository.com/artifact/org.apache.jena/jena-osgi-features">jena-osgi-features repository page</a> (e.g., 3.17.0 at the time of writing)</li>
 </ul>
 <h3 id="configuring-karaf-features">Configuring Karaf Features<a class="headerlink" href="#configuring-karaf-features" title="Permanent link">&para;</a></h3>
 <p>Our installed Karaf features require configuration files to know exactly where to route things coming and going from them.</p>
@@ -2569,7 +2590,6 @@ media.stream=activemq:queue:islandora-indexing-fcrepo-media
 file.stream=activemq:queue:islandora-indexing-fcrepo-file
 file.delete.stream=activemq:queue:islandora-indexing-fcrepo-file-delete
 milliner.baseUrl=http://localhost/milliner
-gemini.baseUrl=http://localhost/gemini
 </code></pre>
 <h3 id="blueprinting-karaf-derivative-connectors">Blueprinting Karaf Derivative Connectors<a class="headerlink" href="#blueprinting-karaf-derivative-connectors" title="Permanent link">&para;</a></h3>
 <p>For those services in Crayfish we have set up to provide derivatives to Islandora resources, we need connector blueprints to tell the derivative connector how to route incoming requests, run conversions, and return outgoing derivatives.</p>
@@ -2727,7 +2747,7 @@ logout
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
       
     
   </small>
@@ -2824,10 +2844,10 @@ logout
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b473f883.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d9c629a2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e7b111c5.min.js"></script>
       
     
   </body>
