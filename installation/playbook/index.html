@@ -668,8 +668,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start-mode" class="md-nav__link">
-    Quick-start mode:
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage:
   </a>
   
 </li>
@@ -720,33 +720,6 @@
   <a href="#clone-the-playbook" class="md-nav__link">
     Clone the playbook
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-base-box" class="md-nav__link">
-    Set the base box
-  </a>
-  
-    <nav class="md-nav" aria-label="Set the base box">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#editing-the-vagrantfile" class="md-nav__link">
-    Editing the Vagrantfile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-islandora_distro-as-a-shell-environment-variable" class="md-nav__link">
-    Setting ISLANDORA_DISTRO as a shell (environment) variable
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2357,8 +2330,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start-mode" class="md-nav__link">
-    Quick-start mode:
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage:
   </a>
   
 </li>
@@ -2409,33 +2382,6 @@
   <a href="#clone-the-playbook" class="md-nav__link">
     Clone the playbook
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-base-box" class="md-nav__link">
-    Set the base box
-  </a>
-  
-    <nav class="md-nav" aria-label="Set the base box">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#editing-the-vagrantfile" class="md-nav__link">
-    Editing the Vagrantfile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-islandora_distro-as-a-shell-environment-variable" class="md-nav__link">
-    Setting ISLANDORA_DISTRO as a shell (environment) variable
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2580,20 +2526,14 @@
                 
                 
                 <h1 id="islandora-playbook">Islandora Playbook<a class="headerlink" href="#islandora-playbook" title="Permanent link">&para;</a></h1>
-<p>The Islandora Playbook (<a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora-Devops/islandora-playbook</a>) is a tool for installing Islandora Defaults on a single virtual machine. It can be used both as a <a href="https://www.vagrantup.com/">Vagrant</a> project to create a local development environment, and/or as an <a href="https://www.ansible.com/community">Ansible</a> playbook which can provision a remote server.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This repository has two active branches. The <strong>main</strong> branch's playbook will install the latest release of Islandora and its components. The <strong>dev</strong> branch, when configured to use Ansible, will provision with the most recent code of Islandora and its components. </p>
-</div>
-<h2 id="quick-start-mode">Quick-start mode:<a class="headerlink" href="#quick-start-mode" title="Permanent link">&para;</a></h2>
-<p>The fastest way to spin up a local Vagrant version of Islandora Defaults is to use the Islandora Base Box, which is a packaged VM of the <strong>latest release</strong> of Islandora - including Islandora Defaults and all components. This is the default behaviour of the <strong>dev</strong> branch of the playbook. This method requires Vagrant and VirtualBox, but does not use Ansible.</p>
+<p>The Islandora Playbook (<a href="https://github.com/Islandora-Devops/islandora-playbook">Islandora-Devops/islandora-playbook</a>) is a tool for installing Islandora Defaults on a single virtual machine. It can be used both as a <a href="https://www.vagrantup.com/">Vagrant</a> project to create a local development environment, and/or the <a href="https://www.ansible.com/community">Ansible</a> playbook can be used directly to provision a local or remote server.</p>
+<h2 id="basic-usage">Basic Usage:<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
 $ cd islandora-playbook
 $ vagrant up
 </code></pre>
-<p>This method results in an installation that does not contain the latest code changes. </p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>Download and install the following. VirtualBox and Vagrant are needed if creating local VMs. Ansible is only necessary if provisioning (not using quick-start mode described above):</p>
+<p>To create a local VM, download and install the following.  </p>
 <ol>
 <li><a href="https://www.virtualbox.org/">Virtual Box</a></li>
 <li><a href="https://www.vagrantup.com/">Vagrant</a> (version 2.0 or higher required)</li>
@@ -2632,38 +2572,11 @@ $ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew
 $ brew install ansible@2.8.7
 </code></pre>
 <h2 id="installing-a-local-development-environment">Installing a local development environment<a class="headerlink" href="#installing-a-local-development-environment" title="Permanent link">&para;</a></h2>
-<p>Clone the <code>islandora-playbook</code>, set the base box, and use <code>vagrant up</code> to automatically provision a local environment. This method uses Vagrant, VirtualBox, and Ansible. Before provisioning a local environment, you should likely double check that no <a href="#port-clashes-for-local-environments">required ports</a> are currently in use.</p>
+<p>Clone the <code>islandora-playbook</code> and use <code>vagrant up</code> to automatically provision a local environment. This method uses Vagrant, VirtualBox, and Ansible. Before provisioning a local environment, you should likely double check that no <a href="#port-clashes-for-local-environments">required ports</a> are currently in use. </p>
 <h3 id="clone-the-playbook">Clone the playbook<a class="headerlink" href="#clone-the-playbook" title="Permanent link">&para;</a></h3>
-<p>For the most recent release:</p>
-<pre><code class="language-bash">$ git clone -b main https://github.com/Islandora-Devops/islandora-playbook
-$ cd islandora-playbook
-</code></pre>
-<p>For the bleeding edge:</p>
 <pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
 $ cd islandora-playbook
 </code></pre>
-<h3 id="set-the-base-box">Set the base box<a class="headerlink" href="#set-the-base-box" title="Permanent link">&para;</a></h3>
-<p>To tell Vagrant which base box to use, set ISLANDORA_DISTRO. This can be done by editing the Vagrantfile or by setting a shell variable.</p>
-<h4 id="editing-the-vagrantfile">Editing the Vagrantfile<a class="headerlink" href="#editing-the-vagrantfile" title="Permanent link">&para;</a></h4>
-<p>Open <code>Vagrantfile</code> (in the islandora-playbook directory) in a text editor, and find the following section.</p>
-<pre><code># Available boxes are 'islandora/8', ubuntu/bionic64' and 'centos/7'
-# Use 'ubuntu/bionic64' or 'centos/7' to build a dev environment from scratch.
-# Use 'islandora/8' if you just want to download a ready to run VM.
-$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;islandora/8&quot;)
-</code></pre>
-<p>To build a dev environment that is Ubuntu, change the last line of that section to:</p>
-<pre><code>$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;ubuntu/bionic64&quot;)
-</code></pre>
-<p>To build a dev environment that is CentOS, change the last line of that section to:</p>
-<pre><code>$vagrantBox = ENV.fetch(&quot;ISLANDORA_DISTRO&quot;, &quot;centos/7&quot;)
-</code></pre>
-<p>Note that setting ISLANORA_DISTRO as a shell variable will override what is specified in the Vagrantfile.</p>
-<h4 id="setting-islandora_distro-as-a-shell-environment-variable">Setting ISLANDORA_DISTRO as a shell (environment) variable<a class="headerlink" href="#setting-islandora_distro-as-a-shell-environment-variable" title="Permanent link">&para;</a></h4>
-<p>Or, an alternative to altering the Vagrantfile, you can set <code>ISLANDORA_DISTRO</code> by adding the following 
-to <code>.bashrc</code> (on Ubuntu/Debian environments), or <code>.bash_profile</code> (on MacOS):</p>
-<pre><code class="language-bash">export ISLANDORA_DISTRO=&quot;ubuntu/bionic64&quot;
-</code></pre>
-<p>This will override what is written in the Vagrantfile.</p>
 <h3 id="spin-up-with-vagrant">Spin up with Vagrant<a class="headerlink" href="#spin-up-with-vagrant" title="Permanent link">&para;</a></h3>
 <p>Before using <code>vagrant up</code>:</p>
 <ul>
@@ -2824,7 +2737,7 @@ ask for help.  If you think you've stumbled across a bug in the installer, pleas
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
       
     
   </small>
