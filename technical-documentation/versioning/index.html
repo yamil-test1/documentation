@@ -1720,11 +1720,38 @@
     Semantic Versioning
   </a>
   
+    <nav class="md-nav" aria-label="Semantic Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories-under-semantic-versioning" class="md-nav__link">
+    Repositories under semantic versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#drupal-contrib-versioning" class="md-nav__link">
-    Drupal Contrib Versioning
+  <a href="#implications-for-release-process" class="md-nav__link">
+    Implications for Release Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-interdependencies" class="md-nav__link">
+    Module Interdependencies
   </a>
   
 </li>
@@ -2170,11 +2197,38 @@
     Semantic Versioning
   </a>
   
+    <nav class="md-nav" aria-label="Semantic Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories-under-semantic-versioning" class="md-nav__link">
+    Repositories under semantic versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#drupal-contrib-versioning" class="md-nav__link">
-    Drupal Contrib Versioning
+  <a href="#implications-for-release-process" class="md-nav__link">
+    Implications for Release Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-interdependencies" class="md-nav__link">
+    Module Interdependencies
   </a>
   
 </li>
@@ -2198,49 +2252,43 @@
                 
                 
                 <h1 id="versioning-policy">Versioning Policy<a class="headerlink" href="#versioning-policy" title="Permanent link">&para;</a></h1>
-<p>Islandora 8 uses semantic versioning, except for Drupal modules/themes, which use Drupal Contrib versioning.</p>
-<h2 id="semantic-versioning"><a href="http://semver.org/">Semantic Versioning</a><a class="headerlink" href="#semantic-versioning" title="Permanent link">&para;</a></h2>
-<p><strong>Major version</strong> . <strong>Minor version</strong> . <strong>Patch</strong></p>
+<p>Islandora uses semantic versioning for all non-Legacy code in the <a href="https://github.com/Islandora">github.com/Islandora</a> organization. This allows us to be compatible with Composer and with Drupal's <a href="https://www.drupal.org/node/1015226">release naming conventions</a> for contributed modules.</p>
+<h2 id="semantic-versioning">Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">&para;</a></h2>
+<p><a href="https://semver.org/">Semantic Versioning</a> is a common versioning standard. Versions have the form <strong>Major version</strong> . <strong>Minor version</strong> . <strong>Patch</strong></p>
 <ul>
 <li><strong>Major version</strong>; Major changes, and breaks the API</li>
 <li><strong>Minor version</strong>; New features, and does not break the API</li>
 <li><strong>Patch</strong>; Bug fixes, and never breaks backward compatibility</li>
 </ul>
-<p>Examples:</p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>1.2.3 =&gt; 1.2.4</code> - Just a bug fix, should be a drop-in replacement.</li>
 <li><code>1.2.3 =&gt; 1.3.0</code> - Adds in new features, should be a drop-in replacement to get new functionality.</li>
 <li><code>1.2.3 =&gt; 2.0.0</code> - Major changes, may require a migration or changes to your set-up.</li>
 </ul>
-<p>The following Islandora 8 components use semantic versioning:</p>
+<h3 id="repositories-under-semantic-versioning">Repositories under semantic versioning<a class="headerlink" href="#repositories-under-semantic-versioning" title="Permanent link">&para;</a></h3>
+<p>The following Islandora components use semantic versioning:</p>
 <ul>
 <li><a href="https://github.com/Islandora/Alpaca">Alpaca</a></li>
 <li><a href="https://github.com/Islandora/Chullo">Chullo</a></li>
 <li><a href="https://github.com/Islandora/Crayfish">Crayfish</a></li>
 <li><a href="https://github.com/Islandora/Crayfish-Commons">Crayfish Commons</a></li>
 <li><a href="https://github.com/Islandora/Syn">Syn</a></li>
+<li><a href="https://github.com/Islandora/controlled_access_terms">controlled_access_terms</a> (Drupal module)</li>
+<li><a href="https://github.com/Islandora/islandora/tree/8.x-1.x">islandora</a> (Drupal module)</li>
+<li><a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> (Drupal module)</li>
+<li><a href="https://github.com/Islandora/jsonld">jsonld</a> (Drupal module)</li>
+<li><a href="https://github.com/Islandora/openseadragon">openseadragon</a> (Drupal module)</li>
 </ul>
-<h2 id="drupal-contrib-versioning"><a href="https://www.drupal.org/docs/8/choosing-a-drupal-version/what-do-version-numbers-mean-on-contributed-modules-and-themes">Drupal Contrib Versioning</a><a class="headerlink" href="#drupal-contrib-versioning" title="Permanent link">&para;</a></h2>
-<p><strong>Core Compatibility</strong> - <strong>Major</strong> . <strong>PatchLevel[-Extra]</strong></p>
-<p>Examples: </p>
-<ul>
-<li><code>8.x-1.0 =&gt; 8.x-1.1</code> - Just a bug fix, should be a drop-in replacement.</li>
-<li><code>8.x-1.0 =&gt; 8.x-2.0</code> - Major changes, could require a migration or changes to your set-up.</li>
-</ul>
-<p>The <code>8.x-</code> part will not change to <code>9.x-</code> until Drupal 9.</p>
-<p>The following Islandora 8 components use Drupal Contrib versioning:</p>
-<ul>
-<li><a href="https://github.com/Islandora/carapace">carapace</a></li>
-<li><a href="https://github.com/Islandora/controlled_access_terms">controlled_access_terms</a></li>
-<li><a href="https://github.com/Islandora/drupal-project">drupal-project</a></li>
-<li><a href="https://github.com/Islandora/islandora/tree/8.x-1.x">islandora</a></li>
-<li><a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a></li>
-<li><a href="https://github.com/Islandora/jsonld">jsonld</a></li>
-<li><a href="https://github.com/Islandora/openseadragon">openseadragon</a></li>
-</ul>
-<p>This list does <em>not</em> include sub-modules which share versions with their parents.</p>
-<p>ie. 
-<a href="https://github.com/Islandora/islandora/tree/8.x-1.x/modules/islandora_audio">Islandora Audio</a>, <a href="https://github.com/Islandora/islandora/tree/8.x-1.x/modules/islandora_iiif">Islandora IIIF</a> and <a href="https://github.com/Islandora/islandora/tree/8.x-1.x/modules/islandora_breadcrumbs">Islandora Breadcrumbs</a> are all sub-modules of Islandora and shares its version.</p>
+<p>Drupal submodules, which are included in several of the above modules, share versions with their parents. </p>
+<div class="admonition note">
+<p class="admonition-title">Drupal module versions switched from 8.x-1.x to 2.x</p>
+<p>In October 2021, Islandora switched from the "<a href="https://www.drupal.org/docs/8/understanding-drupal-version-numbers/what-do-version-numbers-mean-on-contributed-modules-and">core compatibility</a>" based numbering scheme (8.x-1.x) to a pure semantic versioning scheme for its Drupal modules. In accordance with <a href="https://www.drupal.org/node/1015226#semver-transition">Drupal's requirements</a>, this transition required us to bump the major version, from 1.x to 2.x, despite there not being any major API-breaking changes to the code itself.</p>
+</div>
+<h2 id="implications-for-release-process">Implications for Release Process<a class="headerlink" href="#implications-for-release-process" title="Permanent link">&para;</a></h2>
+<p>Committers should now create (i.e. "tag") new versions of components when new bug fixes, features, or API changes are successfully added. This means that "releases" (new versions) will be happening individually, continually, and far more frequently than before. See <a href="../../contributing/releasing-islandora/">Releasing Islandora</a>.</p>
+<h2 id="module-interdependencies">Module Interdependencies<a class="headerlink" href="#module-interdependencies" title="Permanent link">&para;</a></h2>
+<p>When Islandora components require other Islandora components in their <code>composer.json</code> files, we prefer the version specification syntax <code>^2</code> to point to the latest-released compatible version within the specified major version.</p>
                 
                   
                     
@@ -2249,7 +2297,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
       
     
   </small>
