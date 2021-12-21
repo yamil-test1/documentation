@@ -2953,6 +2953,12 @@ your <code>.env</code> file. If you don't have one, copy over <code>sample.env</
 set</p>
 <pre><code>ENVIRONMENT=local
 </code></pre>
+<p>You should also change the <code>COMPOSE_PROJECT_NAME</code> variable. This determines the name of the 
+Docker containers that are created when you run <code>make local</code>. If you leave this as the default
+you will need to be careful not to overwrite the containers with another install of <code>isle-dc</code>
+later.</p>
+<pre><code>COMPOSE_PROJECT_NAME=isle-dc
+</code></pre>
 <p>If your site includes exported configuration from <code>drush config:export</code>, then you'll also
 need to set </p>
 <pre><code>INSTALL_EXISTING_CONFIG=true
@@ -2973,7 +2979,7 @@ all the endpoints that are available and how to do things like start and stop Is
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
       
     
   </small>
