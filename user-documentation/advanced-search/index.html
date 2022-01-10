@@ -16,7 +16,7 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4+insiders-4.5.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5+insiders-4.5.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f8ad3a65.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b16101be.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -3193,7 +3193,7 @@ drush en islandora_advanced_search
 </code></pre>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>You can set the following configuration at <strong>Administration</strong> &gt;&gt; <strong>Configuration</strong> &gt;&gt; <strong>Advanced Search Settings</strong>
-(admin/config/islandora/advanced_search):</p>
+(admin/config/search/advanced):</p>
 <p><img alt="screenshot of the advanced search setting page" src="../../assets/islandora_advanced_search_settings.png" /></p>
 <h2 id="configuring-solr">Configuring Solr<a class="headerlink" href="#configuring-solr" title="Permanent link">&para;</a></h2>
 <p>Please review
@@ -3205,7 +3205,7 @@ every repository item as well define a new field that captures the full
 hierarchy of <code>field_member_of</code> for each repository item.</p>
 <p>Add a new <code>Content</code> solr field <code>field_descendant_of</code> to the solr index at
 <code>admin/config/search/search-api/index/default_solr_index/fields</code>.</p>
-<p><img alt="screenshot of field_decent_of" src="../assets/advanced_search_field_descendant_of.png" /></p>
+<p><img alt="screenshot of field_decent_of" src="../../assets/advanced_search_field_decedent_of.png" /></p>
 <p>Then under <code>admin/config/search/search-api/index/default_solr_index/processors</code>
 enable <code>Index hierarchy</code> and setup the new field to index the hierarchy.</p>
 <p><img alt="screenshot of checked checkbox" src="../../assets/advanced_search_enable_index_hierarchy.png" /></p>
@@ -3295,7 +3295,7 @@ checkbox.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2022</span>
       
     
   </small>
@@ -3384,10 +3384,10 @@ checkbox.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e72f9a50.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f7fe2898.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.568b24b3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.3f0124df.min.js"></script>
       
     
   </body>
