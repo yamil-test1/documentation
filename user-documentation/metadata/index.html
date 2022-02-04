@@ -1685,6 +1685,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getting-metadata-into-fedora-and-a-triple-store" class="md-nav__link">
+    Getting Metadata into Fedora and a Triple-store
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Metadata into Fedora and a Triple-store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typed-relation-fields-in-rdf" class="md-nav__link">
+    Typed Relation fields in RDF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-editing-metadata-in-fields" class="md-nav__link">
+    Batch editing metadata in fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch editing metadata in fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-data" class="md-nav__link">
+    Exporting Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3182,6 +3222,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getting-metadata-into-fedora-and-a-triple-store" class="md-nav__link">
+    Getting Metadata into Fedora and a Triple-store
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Metadata into Fedora and a Triple-store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typed-relation-fields-in-rdf" class="md-nav__link">
+    Typed Relation fields in RDF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-editing-metadata-in-fields" class="md-nav__link">
+    Batch editing metadata in fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch editing metadata in fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-data" class="md-nav__link">
+    Exporting Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3343,7 +3423,7 @@ seasonal value 2019-22 as defined in the EDTF specification):
 <p>Relations are defined in the format <em>key|value</em>, and the key is used in the RDF mapping (see below).</p>
 <p><img alt="Screenshot of the 'Available Relations' configuration text box for the 'Linked Agent' field." src="../../assets/metadata_available_relations_config.png" /></p>
 <p>By default, facets can be created for typed relation fields that will facet based on the linked entity alone, not separating references based on the relationship type.</p>
-<h1 id="getting-metadata-into-fedora-and-a-triple-store">Getting Metadata into Fedora and a Triple-store<a class="headerlink" href="#getting-metadata-into-fedora-and-a-triple-store" title="Permanent link">&para;</a></h1>
+<h2 id="getting-metadata-into-fedora-and-a-triple-store">Getting Metadata into Fedora and a Triple-store<a class="headerlink" href="#getting-metadata-into-fedora-and-a-triple-store" title="Permanent link">&para;</a></h2>
 <p>Depending on the needs at your institution, you may or may not be using Fedora with your Islandora installation. You also may or may not be hoping to publish your metadata as RDF triples that can be queried in a triplestore. Both of these functionalities are driven by the JSON-LD module (written for Islandora), which provides a JSON-LD serialization of your content nodes, media nodes, as well as your taxonomy terms. This JSON-LD is what gets ingested by Fedora, and is also what is used to add RDF triples to the <a href="https://islandora.github.io/documentation/installation/manual/installing_fedora_syn_and_blazegraph/">blazegraph triplestore</a> if you choose to use that service.</p>
 <p>The JSON-LD serialization for an entity is available by appending <code>_format=jsonld</code> to the entity's URL. Below is an example JSON-LD document representing the RDF serialization of a Repository item node created in a standard islandora-playbook based vagrant VM:</p>
 <pre><code>{
@@ -3465,10 +3545,10 @@ seasonal value 2019-22 as defined in the EDTF specification):
 <p class="admonition-title">Bug</p>
 <p>The Drupal RDF module is currently limited in the complexity of graph you can generate. All fields must be mapped directly to either a literal value, or a reference to another content type instance, media type instance, or taxonomy term instance. It is not currently possible to create <a href="https://en.wikipedia.org/wiki/Blank_node">blank nodes</a> or <a href="https://www.w3.org/2011/rdf-wg/wiki/Skolemisation">skolemized nodes</a> for nesting fields under more complex structures.</p>
 </div>
-<h1 id="batch-editing-metadata-in-fields">Batch editing metadata in fields<a class="headerlink" href="#batch-editing-metadata-in-fields" title="Permanent link">&para;</a></h1>
+<h2 id="batch-editing-metadata-in-fields">Batch editing metadata in fields<a class="headerlink" href="#batch-editing-metadata-in-fields" title="Permanent link">&para;</a></h2>
 <p>If you are editing multiple resources in order for them to have the same metadata value, the Views Bulk Edit module can help. Here is a video of <a href="https://www.youtube.com/watch?v=ZMp0lPelOZw">creating a view using Views Bulk Operations</a> to apply a subject term to multiple resources simultaneously.</p>
 <p>For more complex changes, or when the values need to differ for each value, an export-modify-reimport method may be needed. Use a view to export CSV or other structured data (including an identifier such as a node id), modify the values as necessary, then use <a href="../../technical-documentation/migrate-csv/">migrate csv</a> or <a href="../../technical-documentation/migration-overview/">Workbench</a> to re-import and update the values.</p>
-<h2 id="exporting-data">Exporting Data<a class="headerlink" href="#exporting-data" title="Permanent link">&para;</a></h2>
+<h3 id="exporting-data">Exporting Data<a class="headerlink" href="#exporting-data" title="Permanent link">&para;</a></h3>
 <p>One common approach for exporting your content and/or taxonomy data out of Islandora is to use Drupal's <a href="https://www.drupal.org/project/views_data_export">Views Data Export</a> module. The module has extensions that can allow you to configure exports as CSV, XML, text files, and other formats based on your local needs.</p>
 
 
