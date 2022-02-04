@@ -3245,7 +3245,7 @@ hidden.</p>
 <p>See also: <a href="https://docs.google.com/presentation/d/1LfpU6H4qxXtnYQPFntwMNtsgtU30yzp2MxwKKAllUOc/edit?usp=sharing">MIG Presentation on Taxonomies</a> by Kristina Spurgin, 2021-07-19</p>
 <p>In Drupal, <em>Taxonomy Vocabularies</em> (or simply <em>Vocabularies</em>) are also entity sub-types that define a set of fields and their configurations. Whereas instances of content types are called <em>nodes</em>, items in a vocabulary are called <em>taxonomy terms</em> (or simply <em>terms</em>). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article content type includes a field <code>field_tags</code> that can refer to terms in the Tags vocabulary.</p>
 <p>There are two ways that users can interact with taxonomies: they can be "closed," e.g. a fixed list to pick from in a dropdown, or "open," e.g. <code>field_tags</code> where users can enter new terms, which are created on the fly. This is not set on the <em>vocabulary</em> itself, but in the configuration of the field (typically on a node). Terms within vocabularies have an ordering, and can have hierarchical structure, but do not need to.</p>
-<p>Islandora (through the Islandora Core Feature) creates the 'Islandora Models' vocabulary which includes the terms 'Audio', 'Binary', 'Collection', 'Digital Document', 'Image', 'Page', 'Paged Content', 'Publication Issue', and 'Video'. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
+<p>Islandora (through the Islandora Core Feature) creates the 'Islandora Models' vocabulary which includes the terms 'Audio', 'Binary', 'Collection', 'Compound Object', 'Digital Document', 'Image', 'Newspaper', 'Page', 'Paged Content', 'Publication Issue', and 'Video'. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
 <!-- Is it possible to add your own terms to this vocabulary? Is it recommended? -->
 
 <!-- field_model is a "special field" in terms of the RDF mapping, because the drupal URI gets replaced by the 'external URI' but I'm not sure if this is where to mention this.-->
@@ -3479,7 +3479,7 @@ seasonal value 2019-22 as defined in the EDTF specification):
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2022</span>
       
     
   </small>
