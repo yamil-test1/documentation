@@ -3046,7 +3046,7 @@
 <li>Click on the <strong>+</strong> next to "Taxonomy term". A bunch of subfields will appear.     </li>
 <li>Look for the field that contains "YOUR_FIELD:entity:name" and click on the "Add" button at the end of the bulleted point.</li>
 <li>Click “Done.”</li>
-<li>Find your newly added fields In the list, change the "Type" of the new field to "string" if needed</li>
+<li>Find your newly added fields In the list, and ensure the "Type" of the new field is "string" so it can be compatible with Facets.  </li>
 <li>If the "Machine name" of the new field is generic, like "name_1", change it to be the same as the part of the "Property path" up to the first : (this will be the same as the field's machine name).</li>
 <li>Click on the <strong>Save changes</strong> button.</li>
 </ol>
@@ -3080,6 +3080,11 @@
 <li>Click <strong>Save</strong>.</li>
 </ol>
 <p>At this point, searching for content that has facet values should cause the block to appear. For more in-depth overview of search, see <a href="../advanced-search/">Configure Advanced Search</a></p>
+<div class="admonition note">
+<p class="admonition-title">Facets aren't necessarily searchable</p>
+<p>While this will create facets, the values that appear won't work (won't necessarily bring back any content) if you type them in the search box. This is because the fulltext search box uses only fulltext fields, and facets, as mentioned above, requires string fields. </p>
+<p>If you want to be able to search for taxonomy term values and bring up the related nodes, you could either include the full rendered item for your content type, or you may wish to repeat step 2 for each entity reference field, and set the new fields to fulltext so that searching for term values brings back node results. </p>
+</div>
 
 
 
@@ -3089,7 +3094,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
