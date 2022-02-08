@@ -3130,9 +3130,8 @@ to the container using an encrypted channel.</p>
 <p>To use secrets, set the following in your .env file</p>
 <pre><code>USE_SECRETS=true
 </code></pre>
-<p>The secrets themselves are stored in the <code>secrets</code> folder of <code>isle-dc</code>.  If you navigate to that directory, you'll see several small
-files, where each file represents a different password.  By default, they are all set to <code>password</code> and you can change them to set your
-passwords for the system.</p>
+<p>The secrets themselves are stored in the <code>secrets/live</code> folder of <code>isle-dc</code>.  If you navigate to that directory, you'll see several small
+files, where each file represents a different password. They are each randomly generated when you run <code>make local</code>.</p>
 <h2 id="tls">TLS<a class="headerlink" href="#tls" title="Permanent link">&para;</a></h2>
 <p>All public facing sites need to use HTTPS, and it's definitely a stumbling block for the uninitiated.  Fortunately, <code>isle-dc</code> is
 set up to  use HTTPS by default.  Even when running <code>make demo</code>, your site runs over HTTPS at <code>https://islandora.traefik.me</code>. The
@@ -3213,7 +3212,7 @@ DOMAIN=your-domain.org
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
