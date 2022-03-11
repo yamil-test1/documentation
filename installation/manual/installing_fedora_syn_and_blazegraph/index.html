@@ -3645,7 +3645,7 @@ sudo mkdir /opt/blazegraph/conf
 sudo chown -R tomcat:tomcat /opt/blazegraph
 </code></pre>
 <h3 id="downloading-and-placing-the-blazegraph-war">Downloading and Placing the Blazegraph WAR<a class="headerlink" href="#downloading-and-placing-the-blazegraph-war" title="Permanent link">&para;</a></h3>
-<p>The Blazegraph <code>.war</code> file can be found in a few different places, but to ensure we’re able to easily <code>wget</code> it, we’re going to use the <a href="https://maven.org/">maven.org</a> repository link to grab it.</p>
+<p>The Blazegraph <code>.war</code> file can be found in a few different places, but to ensure we’re able to easily <code>wget</code> it, we’re going to use the <a href="https://search.maven.org/">maven.org</a> repository link to grab it.</p>
 <pre><code class="language-bash">cd /opt
 sudo wget -O blazegraph.war BLAZEGRAPH_WARFILE_LINK
 sudo mv blazegraph.war /opt/tomcat/webapps
@@ -3758,7 +3758,7 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
       
     
   </small>
