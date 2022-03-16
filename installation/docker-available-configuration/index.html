@@ -3251,11 +3251,13 @@ file that contains the changes you've made.</p>
 <h3 id="use_secrets">USE_SECRETS<a class="headerlink" href="#use_secrets" title="Permanent link">&para;</a></h3>
 <p>Whether or not you want to use secrets.  For demo and development environments, secrets are
 not required.  They are essential if you are running a production environment, though.</p>
-<p>Secrets are contained in the <code>secrets</code> folder withiin your <code>isle-dc</code> installation.  Each file represents
+<p>Secrets are contained in the <code>secrets</code> folder within your <code>isle-dc</code> installation.  Each file represents
 an individual secret, and its contents are the value you're trying to protect.</p>
-<p>Available values for this setting are
-- <code>true</code>
-- <code>false</code></p>
+<p>Available values for this setting are:</p>
+<ul>
+<li><code>true</code></li>
+<li><code>false</code></li>
+</ul>
 <p>If you change this setting, you need to <code>make -B docker-compose.yml</code> to generate a new <code>docker-compose.yml</code>
 file that contains the changes you've made.</p>
 <h3 id="drupal_install_profile">DRUPAL_INSTALL_PROFILE<a class="headerlink" href="#drupal_install_profile" title="Permanent link">&para;</a></h3>
@@ -3365,7 +3367,7 @@ file that contains the changes you've made.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2022</span>
       
     
   </small>
