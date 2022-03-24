@@ -16,11 +16,11 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5+insiders-4.11.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.6+insiders-4.11.0">
     
     
       
-        <title>Islandora 2.0.0 Release Notes / Upgrade Instructions - Islandora 8</title>
+        <title>8.x-2.0 Release Notes - Islandora 8</title>
       
     
     
@@ -304,7 +304,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Islandora 2.0.0 Release Notes / Upgrade Instructions
+              8.x-2.0 Release Notes
             
           </span>
         </div>
@@ -587,12 +587,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -618,17 +620,182 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_3_1">
+          
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.x-2.0 Release Notes
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    8.x-2.0 Release Notes
+  </span>
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#update-to-php-74" class="md-nav__link">
+    Update to PHP 7.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-alpaca" class="md-nav__link">
+    Updating Alpaca
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating Alpaca">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-alpaca-timeouts" class="md-nav__link">
+    Configuring Alpaca Timeouts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-drupal-core-and-modules" class="md-nav__link">
+    Update Drupal core and modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-crayfish-and-remove-gemini" class="md-nav__link">
+    Update Crayfish and Remove Gemini
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-captions" class="md-nav__link">
+    Adding Captions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/Islandora/documentation/tree/main/docs/release_notes" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Older Release Notes
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
           
   
   <span class="md-ellipsis">
@@ -639,7 +806,7 @@
         </label>
       
       <nav class="md-nav" aria-label="Docker (ISLE)" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_1">
+        <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Docker (ISLE)
         </label>
@@ -692,12 +859,12 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_3" type="checkbox" id="__nav_3_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_1_3">
+        <label class="md-nav__link" for="__nav_3_2_3">
           
   
   <span class="md-ellipsis">
@@ -708,7 +875,7 @@
         </label>
       
       <nav class="md-nav" aria-label="Install Islandora" data-md-level="3">
-        <label class="md-nav__title" for="__nav_3_1_3">
+        <label class="md-nav__title" for="__nav_3_2_3">
           <span class="md-nav__icon md-icon"></span>
           Install Islandora
         </label>
@@ -787,12 +954,12 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_4" type="checkbox" id="__nav_3_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_4" type="checkbox" id="__nav_3_2_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_1_4">
+        <label class="md-nav__link" for="__nav_3_2_4">
           
   
   <span class="md-ellipsis">
@@ -803,7 +970,7 @@
         </label>
       
       <nav class="md-nav" aria-label="Maintaining Islandora" data-md-level="3">
-        <label class="md-nav__title" for="__nav_3_1_4">
+        <label class="md-nav__title" for="__nav_3_2_4">
           <span class="md-nav__icon md-icon"></span>
           Maintaining Islandora
         </label>
@@ -965,12 +1132,12 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_3">
+        <label class="md-nav__link" for="__nav_3_4">
           
   
   <span class="md-ellipsis">
@@ -981,7 +1148,7 @@
         </label>
       
       <nav class="md-nav" aria-label="Manual Installation" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_3">
+        <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           Manual Installation
         </label>
@@ -3088,6 +3255,41 @@ ii. It can also be done through the UI at <code>/admin/config/development/config
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../reference/islandora_defaults_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Islandora Defaults" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Islandora Defaults
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../installation/docker-introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction to ISLE" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Introduction to ISLE
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
