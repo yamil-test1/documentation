@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Ansible Playbook - Islandora 8</title>
+        <title>Ansible Playbook - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1773,16 +1773,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3470,7 +3470,7 @@ $ cd islandora-playbook
 $ vagrant up
 </code></pre>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>To create a local VM, download and install the following.  </p>
+<p>To create a local VM, download and install the following.</p>
 <ol>
 <li><a href="https://www.virtualbox.org/">Virtual Box</a></li>
 <li><a href="https://www.vagrantup.com/">Vagrant</a> (version 2.0 or higher required)</li>
@@ -3509,7 +3509,7 @@ $ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew
 $ brew install ansible
 </code></pre>
 <h2 id="installing-a-local-development-environment">Installing a local development environment<a class="headerlink" href="#installing-a-local-development-environment" title="Permanent link">&para;</a></h2>
-<p>Clone the <code>islandora-playbook</code> and use <code>vagrant up</code> to automatically provision a local environment. This method uses Vagrant, VirtualBox, and Ansible. Before provisioning a local environment, you should likely double check that no <a href="#port-clashes-for-local-environments">required ports</a> are currently in use. </p>
+<p>Clone the <code>islandora-playbook</code> and use <code>vagrant up</code> to automatically provision a local environment. This method uses Vagrant, VirtualBox, and Ansible. Before provisioning a local environment, you should likely double check that no <a href="#port-clashes-for-local-environments">required ports</a> are currently in use.</p>
 <h3 id="clone-the-playbook">Clone the playbook<a class="headerlink" href="#clone-the-playbook" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash">$ git clone -b dev https://github.com/Islandora-Devops/islandora-playbook
 $ cd islandora-playbook
@@ -3520,7 +3520,7 @@ $ cd islandora-playbook
 <li>If building a CentOS box, you also need to install the vbguest additions with <code>vagrant plugin install vagrant-vbguest</code>.</li>
 <li>If this is not your first time spinning up Islandora from this directory, and you want to get the latest code, you may want to clear cached ansible roles in roles/external <code>rm -rf roles/external</code></li>
 </ul>
-<p>Then, to spin up the machine: </p>
+<p>Then, to spin up the machine:</p>
 <pre><code class="language-bash">vagrant up
 </code></pre>
 <h2 id="installing-a-remote-environment">Installing a remote environment<a class="headerlink" href="#installing-a-remote-environment" title="Permanent link">&para;</a></h2>
@@ -3665,7 +3665,7 @@ change this, set a new value for <code>ansible_port</code> in <code>inventory/va
 <h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
 <p>If you run into any issues installing the environment, do not hesitate to email the <a href="mailto:islandora@googlegroups.com">mailing list</a> to
 ask for help.  If you think you've stumbled across a bug in the installer, please create an issue in the
-<a href="http://github.com/Islandora/documentation/issues">Islandora 8 issue queue</a> and give it an <code>ansible</code> tag.</p>
+<a href="http://github.com/Islandora/documentation/issues">Islandora issue queue</a> and give it an <code>ansible</code> tag.</p>
 
 
 
@@ -3675,7 +3675,7 @@ ask for help.  If you think you've stumbled across a bug in the installer, pleas
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Introduction - Islandora 8</title>
+        <title>Introduction - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1589,16 +1589,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3107,12 +3107,12 @@ full suite of Drupal configuration options. This out-of-the-box configuration is
 The <a href="https://www.drupal.org/docs">Official Drupal User Guide</a> and the
 <a href="https://www.drupal.org/docs/user_guide/en/index.html">Community Guide to Drupal</a> are a good place to start.</p>
 <h2 id="object-modeling">Object Modeling<a class="headerlink" href="#object-modeling" title="Permanent link">&para;</a></h2>
-<p>In Islandora, we often want to store (and manage, and preserve) sets of metadata with binaries (digital files). 
-We used to call this an "<em>object</em>" but in Islandora 2.0, are represented as multiple interconnected entities. </p>
+<p>In Islandora, we often want to store (and manage, and preserve) sets of metadata with binaries (digital files).
+We used to call this an "<em>object</em>" but in Islandora, are represented as multiple interconnected entities.</p>
 <ul>
 <li>Metadata is stored in <em>nodes</em> (a.k.a. <em>content</em>).</li>
 <li>Specifically, metadata values are stored in <em>fields</em> which are configurable properties attached to <em>nodes</em>.</li>
-<li>Different types of nodes can have different configurations of fields; these are called <em>content types</em>. </li>
+<li>Different types of nodes can have different configurations of fields; these are called <em>content types</em>.</li>
 <li>Binary files are stored in are <em>media</em>, which are wrapper entities to help manage files.</li>
 <li>Media can have fields too, and come in different <em>media types</em>.</li>
 <li>Metadata values can be stored as <em>taxonomy terms</em>, which let you reuse the same value in multiple places.</li>
@@ -3121,8 +3121,8 @@ They can represent everything from simple labels to more complex concepts such a
 </ul>
 <h2 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">&para;</a></h2>
 <p>Islandora 7.x basically inherits its object model from Fedora 3.x. In 7.x, Fedora stores all properties and content associated with an object - not only its owner, dc.title, status, PID, and status, but also any content files such as OBJ, DC, MODS, and RELS-EXT. In Islandora 7.x, Fedora is the authoritative, primary source for all aspects of an object. Fedora 3.x is not an optional component of an Islandora 7.x repository, it is the primary datastore.</p>
-<p>In Islandora 2.0, using Fedora is optional. That's right, optional. Drupal, and not Fedora, is the primary source of all aspects of an Islandora 2.0 object, and, with some variations, Drupal, not Fedora, is the primary datastore in an Islandora repository. If Fedora is present in an Islandora 2.0 repository, content in it is a tightly synchronized copy of object properties and files managed by Drupal.</p>
-<p>Even though Fedora is optional in Islandora 2.0, most repositories will use it since it provides its own set of services that are worth taking advantage of, such as:</p>
+<p>In Islandora, using Fedora is optional. That's right, optional. Drupal, and not Fedora, is the primary source of all aspects of an Islandora object, and, with some variations, Drupal, not Fedora, is the primary datastore in an Islandora repository. If Fedora is present in an Islandora repository, content in it is a tightly synchronized copy of object properties and files managed by Drupal.</p>
+<p>Even though Fedora is optional in Islandora, most repositories will use it since it provides its own set of services that are worth taking advantage of, such as:</p>
 <ul>
 <li>flexible, and configurable, disk storage architecture</li>
 <li>fixity digest generation</li>
@@ -3131,14 +3131,14 @@ They can represent everything from simple labels to more complex concepts such a
 <li>Integration with Microservices via API-X</li>
 <li>WebAC Policies for access control (not currently leveraged by default)</li>
 </ul>
-<p>In Islandora repositories that use Fedora, all properties about Drupal nodes are mirrored in Fedora as RDF properties. But, even if an Islandora instance does not use Fedora, Drupal can provide an object's properties as RDF (again, Drupal is the primary source of data in Islandora 8). In addition, the Drupal media associated with Islandora 8 objects are persisted to Fedora, although exactly which media is configurable within the Islandora 8 admin interface. Just as Drupal out of the box has a public and private filesystem, Islandora adds a third filesystem to Drupal called, not surprisingly, "fedora", and it is to this filesystem that media are persisted. We will provide more information about Fedora's role in an Islandora 2.0 repository in the <a href="../metadata/">metadata</a> and <a href="../media/">media</a> sections.</p>
+<p>In Islandora repositories that use Fedora, all properties about Drupal nodes are mirrored in Fedora as RDF properties. But, even if an Islandora instance does not use Fedora, Drupal can provide an object's properties as RDF (again, Drupal is the primary source of data in Islandora). In addition, the Drupal media associated with Islandora objects are persisted to Fedora, although exactly which media is configurable within the Islandora admin interface. Just as Drupal out of the box has a public and private filesystem, Islandora adds a third filesystem to Drupal called, not surprisingly, "fedora", and it is to this filesystem that media are persisted. We will provide more information about Fedora's role in an Islandora repository in the <a href="../metadata/">metadata</a> and <a href="../media/">media</a> sections.</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <h3 id="conceptual-diagram">Conceptual Diagram<a class="headerlink" href="#conceptual-diagram" title="Permanent link">&para;</a></h3>
-<p>Many users of Islandora may be familiar with the metaphorical diagram of Islandora 7 as a cheeseburger, which provides a memorable approximation of how the different parts of the software stack interact in a vertically-integrated, relatively customizable fashion (ie, Drupal, Solr, Islandora, and Fedora are stable layers, and the "toppings" stand in for Solution Packs and other utilities that can be added or removed to customize Islandora):</p>
-<p><img alt="Islandora 7 as a cheeseburger" src="../../assets/user-intro-islandoraburger.png" /></p>
-<p>For a similar conceptual approach to Islandora 2.0, we present it as a bento box: a very modular platform, in which each piece may be removed and replaced with something different, without disrupting other parts of the stack:</p>
-<p><img alt="Islandora 8 as a bento box" src="../../assets/user-intro-bento.png" /></p>
-<p>For a true diagram of how the various parts of Islandora 2.0 interact, please see the full <a href="../../technical-documentation/diagram/">Architecture Diagram</a></p>
+<p>Many users of Islandora may be familiar with the metaphorical diagram of Islandora Legacy as a cheeseburger, which provides a memorable approximation of how the different parts of the software stack interact in a vertically-integrated, relatively customizable fashion (ie, Drupal, Solr, Islandora, and Fedora are stable layers, and the "toppings" stand in for Solution Packs and other utilities that can be added or removed to customize Islandora):</p>
+<p><img alt="Islandora Leagcy as a cheeseburger" src="../../assets/user-intro-islandoraburger.png" /></p>
+<p>For a similar conceptual approach to Islandora, we present it as a bento box: a very modular platform, in which each piece may be removed and replaced with something different, without disrupting other parts of the stack:</p>
+<p><img alt="Islandora as a bento box" src="../../assets/user-intro-bento.png" /></p>
+<p>For a true diagram of how the various parts of Islandora interact, please see the full <a href="../../technical-documentation/diagram/">Architecture Diagram</a></p>
 
 
 
@@ -3148,7 +3148,7 @@ They can represent everything from simple labels to more complex concepts such a
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

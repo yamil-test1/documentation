@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Paged Content - Islandora 8</title>
+        <title>Paged Content - Islandora</title>
       
     
     
@@ -281,7 +281,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -293,7 +293,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -378,12 +378,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -541,7 +541,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1509,16 +1509,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2981,45 +2981,45 @@
 This involves creating a resource node for the root record (e.g. the book or the photograph)
 and child resource nodes for each sub-component (e.g. "Page 1" and "Page 2" or "recto" and "verso")
 with their corresponding media. Each "child" resource node contains a reference to their "parent" resource node
-using the <code>field_member_of</code> property. </p>
+using the <code>field_member_of</code> property.</p>
 <div class="admonition note">
 <p class="admonition-title">Child v. Member</p>
-<p>Islandora 8 uses the "child" and "member" descriptor for resource nodes that 
-store a reference to another resource node in the "Member Of" field interchangeably. 
-Administrators will more often see the "member" terminology more often while 
+<p>Islandora uses the "child" and "member" descriptor for resource nodes that
+store a reference to another resource node in the "Member Of" field interchangeably.
+Administrators will more often see the "member" terminology more often while
 front-end users will usually see "child" terminology.</p>
 </div>
 <p>Similar to the collection view showing members of a collection, Islandora provides
 an Islandora Model terms, <em>Paged Content</em> and <em>Page</em>, that can be used to trigger paged
-content behaviors. Islandora Defaults provides a Context for <em>Paged Content</em> 
-resource nodes to trigger displaying an OpenSeadragon viewer showing the child 
+content behaviors. Islandora Defaults provides a Context for <em>Paged Content</em>
+resource nodes to trigger displaying an OpenSeadragon viewer showing the child
 resource nodes' service files.</p>
-<p>To enable this, use the <em>Paged Content</em> for the Islandora Model of the parent 
+<p>To enable this, use the <em>Paged Content</em> for the Islandora Model of the parent
 resource node and <em>Page</em> for the Islandora Model of the child resource node. After the
 child resource nodes have services file Media (either generated via the built-in derivative
-creation or added manually), they will be included in the OpenSeadragon paginated 
+creation or added manually), they will be included in the OpenSeadragon paginated
 viewer displayed on the parent resource node's page.
 (See the <a href="../iiif/#using-iiif-in-islandora-8">IIIF Documentation</a>
 for more details on controlling the viewer's behavior.)</p>
 <p><img alt="Screenshot of a Paged Content resource node displaying the OpenSeadragon viewer with the first child resource node displayed." src="../../assets/paged_content_openseadragon.png" /></p>
-<p>However, repository managers can use any method they like, such as a view-based 
+<p>However, repository managers can use any method they like, such as a view-based
 list of teasers, a gallery, or a slide-show to display child resource nodes.</p>
 <p>By default child resource nodes are un-ordered. To order the sub-components of a
-paged content resource node, Islandora provides a <em>Weight</em> field to store a 
-integer value on  child resource nodes. 
+paged content resource node, Islandora provides a <em>Weight</em> field to store a
+integer value on  child resource nodes.
 Children resource nodes with smaller weight values will come
 before child resource nodes with larger weight values. This follows the usual ordering
-pattern of <code>1</code> (smaller) coming before <code>2</code> (larger). </p>
-<p>Weight values do not need 
-to be sequential, just ordered from smallest to largest. For example, the first 
-child resource node can have a value of <code>10</code> and the next could have a value of 
-<code>20</code> and they will be ordered accordingly. Should a new child be added with the 
+pattern of <code>1</code> (smaller) coming before <code>2</code> (larger).</p>
+<p>Weight values do not need
+to be sequential, just ordered from smallest to largest. For example, the first
+child resource node can have a value of <code>10</code> and the next could have a value of
+<code>20</code> and they will be ordered accordingly. Should a new child be added with the
 weight value of <code>15</code> it will automatically be sorted after the child with the
 weight value <code>10</code> and before the child with the weight value <code>20</code>.</p>
 <p>Child resource nodes can be reordered using a drag-and-drop interface by clicking
 on the <em>Re-order Children</em> button on the <em>Children</em> tab of the parent resource node.</p>
 <p><img alt="Re-order Children button" src="../../assets/paged_content_reorder_children_button.png" /></p>
-<p>Re-ordering children resource nodes on this page and clicking <em>Save</em> will cause 
+<p>Re-ordering children resource nodes on this page and clicking <em>Save</em> will cause
 each child resource node's weight value to be updated using sequential values.</p>
 <p><img alt="Re-order Children form" src="../../assets/paged_content_reorder_children_form.png" /></p>
 <div class="admonition note">
@@ -3029,11 +3029,11 @@ for creating multi-level ordered content, such as books and manuals.
 However, this module stores structure and pagination separately from the nodes making serializing
 these relationships as RDF we can provide to Fedora more difficult than simply using <code>field_member_of</code>
 with an RDF mapping. Support for the book module may be added in the future.</p>
-<p>Drupal also has a <a href="https://www.drupal.org/project/weight">weight module</a> 
+<p>Drupal also has a <a href="https://www.drupal.org/project/weight">weight module</a>
 that provides a weight field and a drag-and-drop
-reordering user-interface. However, this module requires users to set a 
-specified range of values which includes their negative corresponding value. 
-E.g. a range setting of '20' will require all children to have a value between 
+reordering user-interface. However, this module requires users to set a
+specified range of values which includes their negative corresponding value.
+E.g. a range setting of '20' will require all children to have a value between
 '-20' to '20'. This presumes a repository manager can predict how many pages
 the largest paged content item in their repository will be beforehand. Also,
 these weight values are serialized into RDF using the Collections Ontology 'index'
@@ -3049,7 +3049,7 @@ using the weight module.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

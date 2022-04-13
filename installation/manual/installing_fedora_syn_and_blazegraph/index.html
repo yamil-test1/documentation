@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Installing Fedora, Syn, and Blazegraph - Islandora 8</title>
+        <title>Installing Fedora, Syn, and Blazegraph - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1787,16 +1787,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3528,7 +3528,7 @@ grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 <h3 id="adding-a-fedora-configuration">Adding a Fedora Configuration<a class="headerlink" href="#adding-a-fedora-configuration" title="Permanent link">&para;</a></h3>
 <p>The Fedora configuration is going to come in a few different chunks that need to be in place before Fedora will be functional. We’re going to place several files outright, with mildly modified parameters according to our configuration.</p>
 <p>The basics of these configuration files have been pulled largely from the templates in <a href="https://github.com/islandora-devops/ansible-role-fcrepo">Islandora-Devops/ansible-role-fcrepo</a>; you may consider referencing the playbook’s templates directory for more details.</p>
-<p><code>i8_namespaces.cnd</code> is a list of namespaces used by Islandora 8 that may not necessarily be present in Fedora; we add them here to ensure we can use them in queries.</p>
+<p><code>i8_namespaces.cnd</code> is a list of namespaces used by Islandora that may not necessarily be present in Fedora; we add them here to ensure we can use them in queries.</p>
 <p><code>/opt/fcrepo/config/i8_namespaces.cnd | tomcat:tomcat/644</code></p>
 <pre><code>&lt;acl = 'http://www.w3.org/ns/auth/acl#'&gt;
 &lt;bf = 'http://id.loc.gov/ontologies/bibframe/'&gt;
@@ -3930,7 +3930,7 @@ curl -X POST -H &quot;Content-Type: text/plain&quot; --data-binary @/opt/blazegr
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

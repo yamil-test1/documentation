@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Access Control - Islandora 8</title>
+        <title>Access Control - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -692,7 +692,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1656,16 +1656,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3250,8 +3250,8 @@
 </div>
 <h2 id="access-control-in-core-drupal">Access Control in Core Drupal<a class="headerlink" href="#access-control-in-core-drupal" title="Permanent link">&para;</a></h2>
 <p><strong>Summary: Core Drupal's access control features include the "published"/"unpublished" states and some basic permissions that can be granted globally or at the bundle level.</strong></p>
-<p>Drupal's concepts of "published" and "unpublished" for nodes and media apply to Islandora just as they do in Drupal. <em>Usually</em>, published content is visible to the entire world (without any authentication), while unpublished content can only be accessed by selected users - usually administrators, other privileged roles, and the user who created the content. This is configurable through the Drupal Permissions interface. </p>
-<p>All Drupal permissions are granted to <em>roles</em>, not individual users. Read more <a href="/https://www.drupal.org/node/120614">documentation on Users, roles, and permissions</a>. </p>
+<p>Drupal's concepts of "published" and "unpublished" for nodes and media apply to Islandora just as they do in Drupal. <em>Usually</em>, published content is visible to the entire world (without any authentication), while unpublished content can only be accessed by selected users - usually administrators, other privileged roles, and the user who created the content. This is configurable through the Drupal Permissions interface.</p>
+<p>All Drupal permissions are granted to <em>roles</em>, not individual users. Read more <a href="/https://www.drupal.org/node/120614">documentation on Users, roles, and permissions</a>.</p>
 <p>The extent of the configurability of Drupal Core's access control (excluding revisions) is provided by the following permissions:</p>
 <table>
 <thead>
@@ -3315,35 +3315,35 @@
 <ul>
 <li>individual nodes or media having their own access policies (in Core Drupal, access can only be configured at the content type or media type level)</li>
 <li>access policies that grant privileges to <em>users</em> (in Core Drupal, access can be granted only to roles, and/or to that content's author)</li>
-<li>contents of specific "management" fields being reserved so that only privileged users can view or edit. </li>
+<li>contents of specific "management" fields being reserved so that only privileged users can view or edit.</li>
 </ul>
 <h3 id="islandora-resources">Islandora Resources<a class="headerlink" href="#islandora-resources" title="Permanent link">&para;</a></h3>
-<p>Given the [Collection] → Node → Media → File structure of Islandora resources, it is reasonable to wonder if access to a Node, Media, or File is influenced by the permissions on its "parent" resource. </p>
+<p>Given the [Collection] → Node → Media → File structure of Islandora resources, it is reasonable to wonder if access to a Node, Media, or File is influenced by the permissions on its "parent" resource.</p>
 <p>There is not yet a mechanism for Drupal's access control to be "inherited" from parent resources to child resources. An exception is non-public files, as described below.</p>
 <h3 id="sidebar-access-to-files-in-drupal">Sidebar: Access to files in Drupal<a class="headerlink" href="#sidebar-access-to-files-in-drupal" title="Permanent link">&para;</a></h3>
-<p>Drupal's access control applies to files <strong>except those stored in Drupal's public filesystem</strong>. </p>
-<p>If you upload a file to Drupal, it's usually stored in a field on an entity. In Islandora, that entity is a Media. Drupal's access checks mean that a user must have permission to view the Media, and (if configured) the file field on that media, to see the file. However, file fields can be configured with various forms of file storage, and the file storage determines whether access control checks are applied at all. Files stored in Drupal's public filesystem are always public, viewable by anyone in the world. </p>
+<p>Drupal's access control applies to files <strong>except those stored in Drupal's public filesystem</strong>.</p>
+<p>If you upload a file to Drupal, it's usually stored in a field on an entity. In Islandora, that entity is a Media. Drupal's access checks mean that a user must have permission to view the Media, and (if configured) the file field on that media, to see the file. However, file fields can be configured with various forms of file storage, and the file storage determines whether access control checks are applied at all. Files stored in Drupal's public filesystem are always public, viewable by anyone in the world.</p>
 <p>Drupal's access control applies to files <em>accessed through Drupal</em> where the file storage is:</p>
 <ul>
-<li>on Fedora using Flysystem  </li>
+<li>on Fedora using Flysystem</li>
 <li>on a Drupal private filesystem</li>
 <li>on another location such as S3 or Dropbox, through flysystem.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Direct access to file storage</p>
-<p>Files stored using Flysystem are actually located on a separate service. It is the <strong>administrator's responsibility to implement appropriate access control on the target storage system</strong>, as there is a way to link directly to files in Fedora, S3, or Dropbox. These direct links bypass Drupal and therefore Drupal's access control. </p>
+<p>Files stored using Flysystem are actually located on a separate service. It is the <strong>administrator's responsibility to implement appropriate access control on the target storage system</strong>, as there is a way to link directly to files in Fedora, S3, or Dropbox. These direct links bypass Drupal and therefore Drupal's access control.</p>
 </div>
 <p>The filesystem used by a field is usually configured through "Manage Fields" on the appropriate entity. However, it is possible for a field to be <em>configured</em> to use a certain filesystem, but for <em>actual files</em> created through back-end processes to use a different one. For example, derivatives generated by Islandora in Islandora Defaults are written to the public filesystem, despite the field configuration which points to Fedora.</p>
-<p>To determine the actual location of a file, right-click the existing file in the Media Edit page and select "copy location". A file that is saved in flysystem will include <code>/_flysystem/</code> in the URL. These links (you can test it!) only work if you have permission to view the media. A file with <code>/sites/default/files/</code> is probably publically accessible (this is the public filesystem on most Drupal instances). </p>
+<p>To determine the actual location of a file, right-click the existing file in the Media Edit page and select "copy location". A file that is saved in flysystem will include <code>/_flysystem/</code> in the URL. These links (you can test it!) only work if you have permission to view the media. A file with <code>/sites/default/files/</code> is probably publically accessible (this is the public filesystem on most Drupal instances).</p>
 <div class="admonition note">
 <p class="admonition-title">In Defaults, All Derivatives Are Public</p>
-<p>Out of the box using Islandora Defaults, derivatives are created for all Islandora media (as long as the conditions of the contexts aree met), and they are stored in the public Drupal filesystem. This happens even if the media and/or node are not published. </p>
+<p>Out of the box using Islandora Defaults, derivatives are created for all Islandora media (as long as the conditions of the contexts aree met), and they are stored in the public Drupal filesystem. This happens even if the media and/or node are not published.</p>
 </div>
 <h2 id="access-control-in-solr">Access control in Solr<a class="headerlink" href="#access-control-in-solr" title="Permanent link">&para;</a></h2>
 <p>The Search API Module, which connects Drupal to Solr, provides configuration so that access considerations are respected by the Drupal solr results display. The "Processors" configuration (e.g. at admin/config/search/search-api/index/default_solr_index/processors) provides checkboxes for the following options:</p>
 <ul>
 <li>"Content access": Adds content access checks for nodes and comments</li>
-<li>"Entity status": Exclude inactive users and unpublished entities (which have a "Published" state) from being indexed. </li>
+<li>"Entity status": Exclude inactive users and unpublished entities (which have a "Published" state) from being indexed.</li>
 </ul>
 <p>Both are enabled out of the box in Islandora Defaults. This will ensure that queries through Drupal never show content that the active user shouldn't see, as well as preventing information about unpublished entities from ever being entered into Solr.</p>
 <div class="admonition warning">
@@ -3354,7 +3354,7 @@
 <p>"The <a href="https://www.drupal.org/project/group">Group</a> module allows you to create arbitrary collections of your content and users on your site and grant access control permissions on those collections."</p>
 <div class="admonition note">
 <p class="admonition-title">Opinion</p>
-<p>Group is one of the more hefty modules, and is difficult to learn. It is good if you have static or semi-static groups of users who need access to a static or semi-static group of content, but sharing an item with an arbitrary group of users is cumbersome. </p>
+<p>Group is one of the more hefty modules, and is difficult to learn. It is good if you have static or semi-static groups of users who need access to a static or semi-static group of content, but sharing an item with an arbitrary group of users is cumbersome.</p>
 </div>
 <h2 id="permissions-by-term-contributed-module">Permissions By Term (contributed module)<a class="headerlink" href="#permissions-by-term-contributed-module" title="Permanent link">&para;</a></h2>
 <p>"The <a href="https://www.drupal.org/project/permissions_by_term">Permissions by Term</a> module extends Drupal by functionality for restricting view and edit access to single nodes  via taxonomy terms. [...] Taxonomy term permissions can be coupled to specific user accounts and/or user roles." By default, this module only affects nodes. To enable Permissions by Term for Media and other entities, enable the "Permissions by Entity" submodule.</p>
@@ -3371,13 +3371,13 @@
 <h2 id="field-permissions-contributed-module">Field Permissions (contributed module)<a class="headerlink" href="#field-permissions-contributed-module" title="Permanent link">&para;</a></h2>
 <p>"The <a href="https://www.drupal.org/project/field_permissions">Field Permissions</a> module allows site administrators to set field-level permissions to edit, view and create fields on any entity."</p>
 <h2 id="other-contributed-modules">Other contributed modules<a class="headerlink" href="#other-contributed-modules" title="Permanent link">&para;</a></h2>
-<p>Workflow Participants allows for granting permissions on individual nodes or media to individual users, as an extension to the Workflow suite of modules. However, it is not well supported and the "manage workflow participants" permission should not be given to untrusted users as it may grant users the ability to add participants even to content they are otherwise not able to see or edit. </p>
+<p>Workflow Participants allows for granting permissions on individual nodes or media to individual users, as an extension to the Workflow suite of modules. However, it is not well supported and the "manage workflow participants" permission should not be given to untrusted users as it may grant users the ability to add participants even to content they are otherwise not able to see or edit.</p>
 <h2 id="access-control-in-fedora">Access control in Fedora<a class="headerlink" href="#access-control-in-fedora" title="Permanent link">&para;</a></h2>
 <p>In Fedora it is possible to control access to resources using Access Control Lists (ACLs) per the Fedora API Specification. ACLs are inherited through Fedora's LDP Containment relationships.</p>
-<p>Islandora does not create customized ACLs when syncing content into Fedora. </p>
-<p>Islandora does not create Fedora resources in hierarchies that use LDP containment relationships. </p>
+<p>Islandora does not create customized ACLs when syncing content into Fedora.</p>
+<p>Islandora does not create Fedora resources in hierarchies that use LDP containment relationships.</p>
 <p>At this time, access control in Fedora is NOT reflective of access control in Drupal. In the sandboxes and demo installations, all resources in Fedora are open for the world to view. This includes unpublished nodes and media, as well as the files uploaded into Fedora. Access controls configured in Drupal are not synced in any way to Fedora.</p>
-<p>Sites concerned with access control  wish to "lock down" their Fedora to only be accessible through Drupal. </p>
+<p>Sites concerned with access control  wish to "lock down" their Fedora to only be accessible through Drupal.</p>
 <h2 id="access-control-in-the-triplestore">Access control in the Triplestore<a class="headerlink" href="#access-control-in-the-triplestore" title="Permanent link">&para;</a></h2>
 <p>In Islandora Defaults, there is no access control on the Blazegraph triplestore. Islandora defaults is configured so that all RDF triples sent to Fedora are also populated into the triplestore. If using the Ansible Playbook, it is available at http://localhost:8080/bigdata/. Like the solr index, it is open to the world by default.</p>
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
@@ -3391,7 +3391,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

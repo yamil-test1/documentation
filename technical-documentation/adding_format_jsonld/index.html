@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Adding back ?_format=jsonld - Islandora 8</title>
+        <title>Adding back ?_format=jsonld - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1510,16 +1510,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3055,7 +3055,7 @@
 <p>This means that when your content is indexed in Fedora, the triplestore, etc... it's URI will
 be something like <code>http://localhost:8000/node/1</code> and not <code>http://localhost:8000/node/1?_format=jsonld</code>.</p>
 <h2 id="pre-10-installations">Pre-1.0 installations.<a class="headerlink" href="#pre-10-installations" title="Permanent link">&para;</a></h2>
-<p>If you are using a <strong>very</strong> early version of Islandora 8 (pre-release), then you may have URIs with <code>_format=jsonld</code> at the end of them.</p>
+<p>If you are using a <strong>very</strong> early version of Islandora "8" (pre-release), then you may have URIs with <code>_format=jsonld</code> at the end of them.</p>
 <p>If you update to newer code, you will need to ensure that your site is configured to add <code>?_format=jsonld</code>
 back to the URLs if you want to maintain consistency.</p>
 <p>If you <strong>don't</strong> do this, you can end up with two copies of your objects in your Fedora repository (one with and one without <code>?_format=jsonld</code>). You will also have two sets of triples in your triplestore.</p>
@@ -3065,7 +3065,7 @@ back to the URLs if you want to maintain consistency.</p>
 <li>Go to <code>admin/config/search/jsonld</code> and confirm the <em>"Remove jsonld parameter from @ids"</em> checkbox is <strong>unchecked</strong>.</li>
 <li>Add <code>strip_format_jsonld: false</code> to your Milliner config. If you deployed using the default Islandora-playbook this file would be located at <code>/var/www/html/Crayfish/Milliner/cfg/config.yaml</code>.</li>
 </ul>
-<p>If you are using <a href="https://github.com/Islandora-Devops/Islandora-playbook">Islandora-playbook</a> and are provisioning new environments for your older Islandora 8, you'll want to lock down the variables in your inventory that control this config.</p>
+<p>If you are using <a href="https://github.com/Islandora-Devops/Islandora-playbook">Islandora-playbook</a> and are provisioning new environments for your older Islandora, you'll want to lock down the variables in your inventory that control this config.</p>
 <ul>
 <li><code>crayfish_milliner_strip_format_jsonld: true</code></li>
 <li><code>webserver_app_jsonld_remove_format: 1</code></li>
@@ -3079,7 +3079,7 @@ back to the URLs if you want to maintain consistency.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

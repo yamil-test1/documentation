@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Configure Search - Islandora 8</title>
+        <title>Configure Search - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1710,13 +1710,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexing-islandora-8-with-solr" class="md-nav__link">
+  <a href="#indexing-islandora-with-solr" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing Islandora 8 with SOLR
+      Indexing Islandora with SOLR
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Indexing Islandora 8 with SOLR">
+    <nav class="md-nav" aria-label="Indexing Islandora with SOLR">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1785,9 +1785,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching-islandora-8" class="md-nav__link">
+  <a href="#searching-islandora" class="md-nav__link">
     <span class="md-ellipsis">
-      Searching Islandora 8
+      Searching Islandora
     </span>
   </a>
   
@@ -3087,13 +3087,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexing-islandora-8-with-solr" class="md-nav__link">
+  <a href="#indexing-islandora-with-solr" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing Islandora 8 with SOLR
+      Indexing Islandora with SOLR
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Indexing Islandora 8 with SOLR">
+    <nav class="md-nav" aria-label="Indexing Islandora with SOLR">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3162,9 +3162,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching-islandora-8" class="md-nav__link">
+  <a href="#searching-islandora" class="md-nav__link">
     <span class="md-ellipsis">
-      Searching Islandora 8
+      Searching Islandora
     </span>
   </a>
   
@@ -3189,8 +3189,8 @@
 
 
 <h1 id="setup-and-configure-search">Setup and Configure Search<a class="headerlink" href="#setup-and-configure-search" title="Permanent link">&para;</a></h1>
-<p>Islandora 8 comes with the Drupal 8 <a href="https://www.drupal.org/project/search_api">Search API</a> and <a href="https://www.drupal.org/project/search_api_solr">SOLR</a> modules enabled with a corresponding SOLR instance. This guide gives an overview to the setup provided by the islandora-playbook. Much more detail is available in the <a href="https://www.drupal.org/docs/8/modules/search-api">Search API documentation</a>. Another helpful resource is <a href="https://www.electriccitizen.com/blog/drupal-8-custom-site-search-search-api">Adam Fuch's "Drupal 8 Custom Site Search with Search API"</a> (https://www.electriccitizen.com, 2018-01-10; last accessed 2019-03-08).</p>
-<h2 id="indexing-islandora-8-with-solr">Indexing Islandora 8 with SOLR<a class="headerlink" href="#indexing-islandora-8-with-solr" title="Permanent link">&para;</a></h2>
+<p>Islandora comes with the Drupal 8 <a href="https://www.drupal.org/project/search_api">Search API</a> and <a href="https://www.drupal.org/project/search_api_solr">SOLR</a> modules enabled with a corresponding SOLR instance. This guide gives an overview to the setup provided by the islandora-playbook. Much more detail is available in the <a href="https://www.drupal.org/docs/8/modules/search-api">Search API documentation</a>. Another helpful resource is <a href="https://www.electriccitizen.com/blog/drupal-8-custom-site-search-search-api">Adam Fuch's "Drupal 8 Custom Site Search with Search API"</a> (https://www.electriccitizen.com, 2018-01-10; last accessed 2019-03-08).</p>
+<h2 id="indexing-islandora-with-solr">Indexing Islandora with SOLR<a class="headerlink" href="#indexing-islandora-with-solr" title="Permanent link">&para;</a></h2>
 <p>To access the search indexing settings, log in as an administrator and navigate to  '/admin/config/search/search-api' or click <strong>Configuration</strong> and then <strong>Search API</strong>.</p>
 <p><img alt="Screenshot of the search-api configuration page." src="../../assets/search-settings-page.png" /></p>
 <h3 id="solr-server-configuration">SOLR Server Configuration<a class="headerlink" href="#solr-server-configuration" title="Permanent link">&para;</a></h3>
@@ -3223,10 +3223,10 @@
 <p>Once the fields are added they can be configured further on the <em>Fields</em> tab, although the label, machine name, and type usually don't need to be changed. The 'Type' dropdown has several different Full-text processing options available, which may be of interest. Each is described in the expandable <em>Data Types</em> box at the bottom of the page. The <em>Boost</em> setting allows repository managers to increase the weight of particular fields when calculating search relevancy.</p>
 <h4 id="processors-tab">Processors Tab<a class="headerlink" href="#processors-tab" title="Permanent link">&para;</a></h4>
 <p>The <em>Processors</em> tab allows repository managers to adjust how data and search queries are processed to adjust results. The defaults are acceptable in most cases.</p>
-<h2 id="searching-islandora-8">Searching Islandora 8<a class="headerlink" href="#searching-islandora-8" title="Permanent link">&para;</a></h2>
+<h2 id="searching-islandora">Searching Islandora<a class="headerlink" href="#searching-islandora" title="Permanent link">&para;</a></h2>
 <p>The Search API SOLR module comes with a search page pre-configured (accessible at '/solr-search/content'). To edit the search page, navigate to '/admin/structure/views/view/solr_search_content'.</p>
 <p>Repository managers may want to change the URL used to access the page, add it to the site navigation, or add a search box. In the 'Page Settings' box in the middle of the page, click on the existing path to open a shadow-box with an edit field. Change the URL as desired, for example, to 'search' and click <strong>Apply</strong>. Then, click the <strong>No menu</strong> link just below it to open the menu settings shadow-box. Selecting 'Normal menu entry' will allow a repository manager to add a menu link text, description, and place it within the site menu tree (the default, <code>&lt;Main navigation&gt;</code> works for most sites). A search box can be added by expanding the <em>Advanced</em> options and changing the <em>Exposed form in block</em> setting and then use the <em>Block Layout</em> interface (found at '/admin/structure/block') to place the block where desired. After making changes to the View's settings, click the <strong>Save</strong> button to ensure the changes are not lost.</p>
-<p>Islandora's Repository Items are displayed in the search results as a fully rendered entity by default. Repository managers can choose which view mode should be used for each search datasource by clicking the <strong>Settings</strong> link next to the <em>Show:</em> setting under the <em>Format</em> section of the search view configuration page (shown in a red box in the screenshot below). The <em>Teaser</em> and <em>Search result highlighting input</em> are the two most likely options. Alternatively, repository managers can select specific fields to display instead by clicking the <strong>Rendered Entity</strong> link and changing it to <em>Fields</em> and then choosing which fields will be displayed in the <em>Fields</em> section underneath. </p>
+<p>Islandora's Repository Items are displayed in the search results as a fully rendered entity by default. Repository managers can choose which view mode should be used for each search datasource by clicking the <strong>Settings</strong> link next to the <em>Show:</em> setting under the <em>Format</em> section of the search view configuration page (shown in a red box in the screenshot below). The <em>Teaser</em> and <em>Search result highlighting input</em> are the two most likely options. Alternatively, repository managers can select specific fields to display instead by clicking the <strong>Rendered Entity</strong> link and changing it to <em>Fields</em> and then choosing which fields will be displayed in the <em>Fields</em> section underneath.</p>
 <div class="admonition note">
 <p class="admonition-title">Thumbnails</p>
 <p>thumbnails will not immediately be available using the <em>Fields</em> display option without more advanced configurations.</p>
@@ -3241,7 +3241,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Configure Blocks - Islandora 8</title>
+        <title>Configure Blocks - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1569,16 +1569,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3057,18 +3057,18 @@
 <h1 id="using-blocks">Using Blocks<a class="headerlink" href="#using-blocks" title="Permanent link">&para;</a></h1>
 <p>In Drupal, blocks are snippets of content that can be placed on pages within your website's layout. Some examples of blocks
 are your site's menu, breadcrumbs, search block, etc...  You have a lot of control over when and where you see blocks using
-Drupal's administrative interface.   You can create and delete blocks, as well as move them around in different locations 
+Drupal's administrative interface.   You can create and delete blocks, as well as move them around in different locations
 on the page (called 'regions' in Drupal theme terminology).  You can also control on which pages the blocks are visible,
 allowing you to conditionally show/hide them as appropriate.  Blocks are made available to place by enabling the Drupal
 modules that provide them, and there's lots out there to choose from.  Placing blocks is an essential skill for any site
-administrator, so let's jump right in and get our hands dirty. There are two methods discussed here: the "Block Layout" 
-interface, and using "Contexts". There is a third option, "<a href="https://www.drupal.org/project/ds">Display Suite</a>," that is 
-not discussed here. </p>
+administrator, so let's jump right in and get our hands dirty. There are two methods discussed here: the "Block Layout"
+interface, and using "Contexts". There is a third option, "<a href="https://www.drupal.org/project/ds">Display Suite</a>," that is
+not discussed here.</p>
 <h2 id="using-block-layout">Using Block Layout<a class="headerlink" href="#using-block-layout" title="Permanent link">&para;</a></h2>
 <p><img alt="Block placement page" src="../../assets/blocks_placement_page.png" /></p>
 <p>Using the admin toolbar, navigate to Admin &gt; Structure &gt; Block layout (admin/structure/block).  You will see a table listing
 all of the available regions provided by the current theme for block placement.  You can switch between available themes
-using the tabs above the table.  For each region, enabled blocks are listed and can be re-arranged.  Take a look at the 
+using the tabs above the table.  For each region, enabled blocks are listed and can be re-arranged.  Take a look at the
 "Main Content" region for example.</p>
 <p><img alt="Main content region" src="../../assets/blocks_main_content_region.png" /></p>
 <p>If you wanted to move the content above its tabs, you could drag the "Main page content" block above the "Tabs" block.
@@ -3100,7 +3100,7 @@ the development menu.</p>
 <p><img alt="Still got that ugly devel menu" src="../../assets/blocks_still_got_that_ugly_devel_menu.png" /></p>
 <h2 id="using-context">Using Context<a class="headerlink" href="#using-context" title="Permanent link">&para;</a></h2>
 <p>The visibility conditions in the block placement user interface are simple and effective.  They cover the majority of use cases,
-however, there are times when you need even more control.  This is where the Context module really shines. 
+however, there are times when you need even more control.  This is where the Context module really shines.
 Any condition available to the Context module can be used to control block visibility.  And you can even combine conditions
 using Boolean (AND/OR) logic.</p>
 <p>For example, in the <code>islandora_defaults</code> feature, we provide a context specifically for showing a list of members of a collection.
@@ -3113,7 +3113,7 @@ you should see a list of all contexts available to the site.</p>
 <p>You can see in its "Condition" section, we have the "Node has term" condition, which checks for content tagged with the
 term provided by the user.  In this case, it's set to look for the "Collection" tag.  Underneath, in the "Reaction" section,
 you can see that the "Block" reaction has been selected, and its configuration looks a lot like the core block placement
-UI.<br />
+UI.
 The only difference here is that when the "Include blocks from block layout" box is checked, you are only placing the blocks
 you want to add in addition to an already existing block layout.  If you uncheck the box, you are creating an entirely new
 block layout from scratch, and will have to replace basic things like breadcrumbs and menus.</p>
@@ -3138,7 +3138,7 @@ Between using core block placement and the context module, there's no block you 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

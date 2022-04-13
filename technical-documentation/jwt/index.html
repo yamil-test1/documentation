@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>JWT Authentication - Islandora 8</title>
+        <title>JWT Authentication - Islandora</title>
       
     
     
@@ -281,7 +281,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -293,7 +293,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -378,12 +378,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -541,7 +541,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1505,16 +1505,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2975,8 +2975,8 @@
   <h1>JWT Authentication</h1>
 
 <p>Islandora uses <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT tokens</a> to authenticate communication between its components. RSA private public key pair is used to sign and verify JWT tokens. The process of issuing JWT tokens using RSA private key is handled by the Drupal <a href="https://www.drupal.org/project/jwt">jwt</a> module.</p>
-<p>The private public RSA pair needed by JWT authentication mechanism is generated in the web server. By default, claw playbook places 
-the keys in <code>/opt/islandora/auth</code>.  Crayfish and Tomcat/Karaf need the public key to verify the JWT token. By default, they are put in the following locations: <code>/var/www/html/Crayfish/public.key</code>, <code>/etc/tomcat8/public.key</code>. If you are deploying Crayfish and Karaf/Tomcat components to different servers, ensure that web server public.key files are in the expected locations. </p>
+<p>The private public RSA pair needed by JWT authentication mechanism is generated in the web server. By default, claw playbook places
+the keys in <code>/opt/islandora/auth</code>.  Crayfish and Tomcat/Karaf need the public key to verify the JWT token. By default, they are put in the following locations: <code>/var/www/html/Crayfish/public.key</code>, <code>/etc/tomcat8/public.key</code>. If you are deploying Crayfish and Karaf/Tomcat components to different servers, ensure that web server public.key files are in the expected locations.</p>
 <p>Note that the connection need to be over SSL or an encrypted channel for this communication to be secure. Otherwise, a third party can capture your token and get access to your servers.</p>
 <p>The JWT tokens expiration time is configurable via Islandora core settings: <code>http://localhost:8000/admin/config/islandora/core</code>. Currently it is recommend to set the <code>JWT Expiry</code> to the maximum expected time for a job, including batch jobs.</p>
 
@@ -2988,7 +2988,7 @@ the keys in <code>/opt/islandora/auth</code>.  Crayfish and Tomcat/Karaf need th
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

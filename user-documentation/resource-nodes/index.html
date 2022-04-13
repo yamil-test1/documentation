@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Resource Nodes - Islandora 8</title>
+        <title>Resource Nodes - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1514,16 +1514,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3114,11 +3114,11 @@
 <p>This page describes the Islandora concept of a Resource Node. For a step-by-step demonstration, see the tutorial <a href="../../tutorials/create-a-resource-node/">Create a resource node</a>.</p>
 <p>A resource node holds the descriptive metadata for an Islandora object, as well as groups together
 the various files that are part of the object for preservation or display, such as the original file
- and various derivative files generated from it.   </p>
-<p>The model for exactly what constitutes an object in Islandora 8 is flexible and can be adapted to the needs of specific users. For example, the Islandora Defaults configuration considers an object as a resource node of the type "Repository Item"  which contains descriptive metadata about the object. Attached to that Node are one or more Media, each representing a file that is part of this object, such as "Original File", "Thumbnail", "Preservation Master", etc. With this model, every original file uploaded into Islandora has its own resource node.</p>
+ and various derivative files generated from it.</p>
+<p>The model for exactly what constitutes an object in Islandora is flexible and can be adapted to the needs of specific users. For example, the Islandora Defaults configuration considers an object as a resource node of the type "Repository Item"  which contains descriptive metadata about the object. Attached to that Node are one or more Media, each representing a file that is part of this object, such as "Original File", "Thumbnail", "Preservation Master", etc. With this model, every original file uploaded into Islandora has its own resource node.</p>
 <p>Multi-file Media configurations also attach Media to a parent node, but allow for that node to be represened by multiple "Original File"s. In this model, a Media contains the original file as well as any derivative files created from it (thumbnail, service file, etc.).</p>
-<p>For an example of where these two different approaches could apply, the basic configuration might make sense for a book that has rich page-level metadata, so that each page would be its own Node with its own metadata record; the multi-file media configuration might be a better fit for a book that does not have page-level metadata (except an ordering or page numbers), so that each Media would represent one page, and all pages (Media) would be attached to a single parent Node/metadata record for the entire book. </p>
-<p>As we learned in the <a href="../user-intro/">introduction</a>, objects in an Islandora repository are 
+<p>For an example of where these two different approaches could apply, the basic configuration might make sense for a book that has rich page-level metadata, so that each page would be its own Node with its own metadata record; the multi-file media configuration might be a better fit for a book that does not have page-level metadata (except an ordering or page numbers), so that each Media would represent one page, and all pages (Media) would be attached to a single parent Node/metadata record for the entire book.</p>
+<p>As we learned in the <a href="../user-intro/">introduction</a>, objects in an Islandora repository are
 represented as a combination of resource nodes, media, and files in Drupal.
 Because of this, their metadata profile, display, form (and much more) are configurable through
 the Drupal UI.  This gives repository administrators a huge degree of control over their repository
@@ -3127,14 +3127,14 @@ solution for modeling our resource nodes and media, compatibility with third-par
 This opens up a plethora of solutions from the Drupal community that will save you untold time
 and effort when implementing your repository with Islandora.</p>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
-<p>Resource nodes, as Drupal nodes, have some common basic properties regardless 
-of content type. These properties are not fields.  This means that they 
-cannot be removed and have limited configurability. Their name, what type of 
+<p>Resource nodes, as Drupal nodes, have some common basic properties regardless
+of content type. These properties are not fields.  This means that they
+cannot be removed and have limited configurability. Their name, what type of
 data they hold, etc... are all baked in.
 Here's an example of the basic properties on nodes:</p>
 <pre><code>nid: 1
 uid: 1
-title: &quot;I am an Islandora 8 object&quot;
+title: &quot;I am an Islandora object&quot;
 created: 1550703004
 changed: 1550703512
 uuid: 02932f2c-e4c2-4b7e-95e1-4aceab78c638
@@ -3185,13 +3185,13 @@ status: 1
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>These node properties are analogous to following Islandora 7.x object properties:</p>
+<p class="admonition-title">Compared to Islandora Legacy</p>
+<p>These node properties are analogous to following Islandora Legacy object properties:</p>
 <table>
 <thead>
 <tr>
-<th>Islandora 7</th>
-<th>Islandora 8</th>
+<th>Islandora Legacy</th>
+<th>Islandora</th>
 </tr>
 </thead>
 <tbody>
@@ -3214,7 +3214,7 @@ status: 1
 </tbody>
 </table>
 </div>
-<p>The small amount of configurability available for these properties is found on the 
+<p>The small amount of configurability available for these properties is found on the
 content type editing form where a user can choose to change the label of the
 title field, whether or not to display author information on the node's page,
 etcetera. These settings will only apply to nodes of that particular content type.</p>
@@ -3238,9 +3238,9 @@ By applying a term from the Islandora Models vocabulary to a node, Islandora wil
 of how to handle the node in response to certain events, like choosing a viewer or generating derivatives.</p>
 <p><img alt="Model tags" src="../../assets/resource_nodes_model_tags.png" /></p>
 <div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>Content models in Islandora 7 were immutable and contained restrictions as to what
-types of datastreams could be associated with an object.  Islandora 8 imposes no such
+<p class="admonition-title">Compared to Islandora Legacy</p>
+<p>Content models in Islandora Legacy were immutable and contained restrictions as to what
+types of datastreams could be associated with an object.  Islandora imposes no such
 restrictions. Content models can be changed at any time, and they in no way dictate what
 types of media can be associated with a node.</p>
 </div>
@@ -3253,7 +3253,7 @@ the "Members" tab, Actions can be performed in bulk using the checkboxes and Act
 <p>Drupal uses "display modes" (also called "view modes") as alternative ways to present content to users. You may be familiar with the "full" and "teaser" versions of nodes, which are rendered using two corresponding display modes. Islandora makes use of display modes to control how media content is displayed. Islandora Defaults provides two display modes for Media, one which renders the OpenSeadragon viewer and the other which renders the pdf.js viewer. These two display modes can be enabled by using "Display hints" in the node edit form, or you can configure Islandora to use a specific display mode for all media based on the file's Mime type. Both methods make use of <a href="../context/">Contexts</a>.</p>
 <p>To set the display mode on the resource node's edit form, select the display mode you want to use for that node in the <em>Display hints</em> field:</p>
 <p><img alt="Display hints" src="../../assets/resource_nodes_display_hints.png" /></p>
-<p>Due to the associated Context configurations ("Open Seadragon" and "PDFjs Viewer") that are shipped with Islandora Defaults, the selected display mode will then be used when the resource node's page is rendered. </p>
+<p>Due to the associated Context configurations ("OpenSeadragon" and "PDFjs Viewer") that are shipped with Islandora Defaults, the selected display mode will then be used when the resource node's page is rendered.</p>
 <p>At a global level, there are a couple of ways to tell Drupal to use the PDFjs viewer to render the content of the media field whenever the media has a Mime type of <code>application/pdf</code>.</p>
 <p>The first way is to edit the "PDFjs Viewer" Context. By default, this Context tells Drupal to use the PDFjs viewer if the node has the term "PDFjs" (yes, that's a taxonomy term):</p>
 <p><img alt="Default PDFjs Context" src="../../assets/resource_nodes_pdfjs_context_default.png" /></p>
@@ -3266,22 +3266,22 @@ the "Members" tab, Actions can be performed in bulk using the checkboxes and Act
 <p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Contexts are applied in the order they are displayed on the Contexts page, which is editable through a drag-and-drop interface. Whichever Condition appears last in the list of Contexts between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the display mode specified in the node edit form intentionally override the display mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon display mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
 <h2 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h2>
 <p>Islandora has a notion of <em>membership</em>, which is used to create a parent/child relationship between
-two resource nodes. Membership is denoted using another special field, "Member Of".<br />
+two resource nodes. Membership is denoted using another special field, "Member Of".
 The "Member Of" field <em>can</em> hold multiple references, so it is possible for a
 single child to belong to multiple parents, but may also complicate the creation of breadcrumbs.
 Any two nodes can be related in this way, though typically, the parent node has a content
 model of <a href="../../concepts/collection/"><em>Collection</em></a> or <a href="../paged-content/"><em>Paged Content</em></a> (see their respective pages for more details).</p>
 <div class="admonition note">
-<p class="admonition-title">Compared to Islandora 7</p>
-<p>In Islandora 7, there was a distinction between belonging to a collection and belonging to
-a compound object.  In Islandora 8, this distinction is not present, essentially allowing every 
+<p class="admonition-title">Compared to Islandora Legacy</p>
+<p>In Islandora Legacy, there was a distinction between belonging to a collection and belonging to
+a compound object.  In Islandora, this distinction is not present, essentially allowing every
 resource node to be part of a compound object.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Child v. Member</p>
-<p>Islandora 8 uses the "child" and "member" descriptor for resource nodes that 
-store a reference to another resource node in the "Member Of" field interchangeably. 
-Administrators will more often see the "member" terminology more often while 
+<p>Islandora uses the "child" and "member" descriptor for resource nodes that
+store a reference to another resource node in the "Member Of" field interchangeably.
+Administrators will more often see the "member" terminology more often while
 front-end users will usually see "child" terminology.</p>
 </div>
 <p>For any node, its <strong>Children</strong> tab can be used to see all its members.  You can also perform Actions in
@@ -3297,7 +3297,7 @@ on the <strong>Re-order Children</strong> tab to adjust the order in which they 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

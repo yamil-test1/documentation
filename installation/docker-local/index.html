@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Installing a Development Server - Islandora 8</title>
+        <title>Installing a Development Server - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1564,16 +1564,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3043,7 +3043,7 @@
 <h1 id="installing-a-development-server">Installing a Development Server<a class="headerlink" href="#installing-a-development-server" title="Permanent link">&para;</a></h1>
 <p>When developing locally, your Drupal site resides in your <code>isle-dc/codebase</code> folder and is bind-mounted into your
 Drupal container.  This lets you update code using the IDE of your choice on your host machine, and the
-changes are automatically reflected on the Drupal container. </p>
+changes are automatically reflected on the Drupal container.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>If you don't already have a Drupal site, you'll be given a basic setup using Drupal 9 and the
 <a href="https://github.com/islandora-devops/islandora_profile">Islandora install profile</a>.</p>
@@ -3056,14 +3056,14 @@ your <code>.env</code> file. If you don't have one, copy over <code>sample.env</
 set</p>
 <pre><code>ENVIRONMENT=local
 </code></pre>
-<p>You should also change the <code>COMPOSE_PROJECT_NAME</code> variable. This determines the name of the 
+<p>You should also change the <code>COMPOSE_PROJECT_NAME</code> variable. This determines the name of the
 Docker containers that are created when you run <code>make local</code>. If you leave this as the default
 you will need to be careful not to overwrite the containers with another install of <code>isle-dc</code>
 later.</p>
 <pre><code>COMPOSE_PROJECT_NAME=isle-dc
 </code></pre>
 <p>If your site includes exported configuration from <code>drush config:export</code>, then you'll also
-need to set </p>
+need to set</p>
 <pre><code>INSTALL_EXISTING_CONFIG=true
 DRUPAL_INSTALL_PROFILE=minimal
 </code></pre>
@@ -3072,7 +3072,7 @@ DRUPAL_INSTALL_PROFILE=minimal
 </code></pre>
 <p>to install the Drupal site in your <code>codebase</code> folder and spin up all the other containers with it.</p>
 <p>Enjoy your Islandora instance!  Check out the <a href="../docker-basic-usage">basic usage documentation</a> to see
-all the endpoints that are available and how to do things like start and stop Islandora. Your passwords, 
+all the endpoints that are available and how to do things like start and stop Islandora. Your passwords,
 including the Drupal admin password, can be found in the <code>secrets/live</code> directory after you run <code>make local</code>.</p>
 
 

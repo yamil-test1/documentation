@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Flysystem - Islandora 8</title>
+        <title>Flysystem - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3130,7 +3130,7 @@
 <p>The Drupal Flysystem module uses <a href="https://github.com/twistor/flysystem-stream-wrapper">flysystem stream wrappers</a> to define filesystem descriptors which are configured in the site's <code>settings.php</code> file. The configurations including the filesystem prefix, adapter (driver), and any adapter-specific configurations such as API endpoints and authorization information.</p>
 <h2 id="islandoras-implementation">Islandora's Implementation<a class="headerlink" href="#islandoras-implementation" title="Permanent link">&para;</a></h2>
 <h3 id="the-plugin-and-adapter">The Plugin and Adapter<a class="headerlink" href="#the-plugin-and-adapter" title="Permanent link">&para;</a></h3>
-<p>Islandora 8 implements a <a href="https://github.com/Islandora/islandora/blob/8.x-1.x/src/Flysystem/Adapter/FedoraAdapter.php">Flysystem adapter</a> and a <a href="https://github.com/Islandora/islandora/blob/8.x-1.x/src/Flysystem/Fedora.php">Drupal Flysystem plugin</a>. The Flysystem adapter acts as an intermediary between the Flysystem filesystem API and Fedora, translating requests and responses between them. The adapter interacts with Fedora using an instance of the <a href="https://github.com/Islandora/chullo/blob/main/src/IFedoraApi.php">Chullo Fedora API</a> it receives from the Drupal Flysystem plugin. The Drupal Flysystem plugin's main responsibility is to instantiate the Chullo Fedora API object with the proper authentication and pass it to the Flysystem adapter. To authenticate with Fedora the plugin adds a <a href="http://docs.guzzlephp.org/en/stable/handlers-and-middleware.html">handler</a> to the Chullo's <a href="http://docs.guzzlephp.org">Guzzle</a> client which adds a <a href="https://jwt.io/">JWT</a> authentication header to each request. <!-- After https://github.com/Islandora/islandora/pull/119 is merged:  To authenticate with Fedora the plugin adds a handler to the Chullo's Guzzle client with a copy of the site's JWT authentication object so that each Fedora request can generate its own Bearer token. --></p>
+<p>Islandora implements a <a href="https://github.com/Islandora/islandora/blob/8.x-1.x/src/Flysystem/Adapter/FedoraAdapter.php">Flysystem adapter</a> and a <a href="https://github.com/Islandora/islandora/blob/8.x-1.x/src/Flysystem/Fedora.php">Drupal Flysystem plugin</a>. The Flysystem adapter acts as an intermediary between the Flysystem filesystem API and Fedora, translating requests and responses between them. The adapter interacts with Fedora using an instance of the <a href="https://github.com/Islandora/chullo/blob/main/src/IFedoraApi.php">Chullo Fedora API</a> it receives from the Drupal Flysystem plugin. The Drupal Flysystem plugin's main responsibility is to instantiate the Chullo Fedora API object with the proper authentication and pass it to the Flysystem adapter. To authenticate with Fedora the plugin adds a <a href="http://docs.guzzlephp.org/en/stable/handlers-and-middleware.html">handler</a> to the Chullo's <a href="http://docs.guzzlephp.org">Guzzle</a> client which adds a <a href="https://jwt.io/">JWT</a> authentication header to each request. <!-- After https://github.com/Islandora/islandora/pull/119 is merged:  To authenticate with Fedora the plugin adds a handler to the Chullo's Guzzle client with a copy of the site's JWT authentication object so that each Fedora request can generate its own Bearer token. --></p>
 <p>The Fedora Flysystem adapter does not use Gemini to map the relationship between Drupal URIs and Fedora URIs, so they are indexed separately using the "files_in_fedora" Context which triggers the "Index Fedora File in Gemini" and "Delete Fedora File in Gemini" actions as appropriate.</p>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p>The fedora file system is configured in the site's <code>settings.php</code> file. An example configuration can be seen in the claw-playbook web server role's <a href="https://github.com/Islandora-Devops/claw-playbook/blob/main/roles/internal/webserver-app/tasks/drupal.yml#L12-L19">drupal tasks</a>:</p>
@@ -3149,7 +3149,7 @@
 <p>However, there are methods for saving files that can explicitly set a different filesystem than the default. Migrations can explicitly set which file system a file is saved to and Islandora can emit events that also specify which file system a derivative should be saved to.</p>
 <h3 id="derivatives">Derivatives<a class="headerlink" href="#derivatives" title="Permanent link">&para;</a></h3>
 <p>As hinted in the previous section, Islandora, by default saves derivatives to the Drupal public file system.</p>
-<p>For example, if I upload a Tiff to a repository item as a File Media with the term "Original File", the "Image Original File" (<a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/context.context.image_original_file.yml">image_original_file</a>) Context is triggered. This fires the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml">'image_generate_a_service_file_from_an_original_file' action</a> which emits an event using the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml#L17">'public' scheme (file system)</a>.</p>
+<p>For example, if I upload a TIFF to a repository item as a File Media with the term "Original File", the "Image Original File" (<a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/context.context.image_original_file.yml">image_original_file</a>) Context is triggered. This fires the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml">'image_generate_a_service_file_from_an_original_file' action</a> which emits an event using the <a href="https://github.com/Islandora/islandora_defaults/blob/8.x-1.x/config/install/system.action.image_generate_a_service_file_from_an_original_file.yml#L17">'public' scheme (file system)</a>.</p>
 <p>To make Islandora save future derivatives to Fedora instead of to Drupal, change the corresponding action's "File system" setting ('scheme' in the corresponding config file) to 'fedora' instead of 'public'.</p>
 <p><img alt="Screenshot showing the setting to change for the derivative generation action." src="../../assets/flysystem_derivative_filesystem_setting.png" /></p>
 
@@ -3161,7 +3161,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

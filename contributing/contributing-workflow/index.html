@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Contributing Workflow - Islandora 8</title>
+        <title>Contributing Workflow - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1510,16 +1510,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2875,15 +2875,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3118,15 +3109,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3199,7 +3181,7 @@
 <li>Continuous integration checks need to be satisfied before the code can be merged</li>
 <li>Coding standards checks and copy/paste mess detection must be passing before code can be merged.</li>
 <li>Automated tests are also expected to pass before code can be merged, however at times there can be extenuating circumstances preventing this. For example, sometimes there is a disconnect between running tests locally versus on the continuous integration server. If tests run locally and everyone involved in the pull request is in agreement, the check for automated tests can be ignored. But this isn’t a common occurrence.</li>
-<li>Code coverage checks are more of a guideline than a strict requirement. A reasonable effort to provide tests for contributed code is expected.  However, demanding 100% code coverage for all contributed code is unreasonable.  If tests have been provided or updated and everyone involved in the pull request is in agreement, code coverage checks can be ignored.  </li>
+<li>Code coverage checks are more of a guideline than a strict requirement. A reasonable effort to provide tests for contributed code is expected.  However, demanding 100% code coverage for all contributed code is unreasonable.  If tests have been provided or updated and everyone involved in the pull request is in agreement, code coverage checks can be ignored.</li>
 <li>The code is reviewed and tested by the community, with all feedback and further development performed within the pull request.</li>
 <li>Once all feedback has been addressed, all applicable status checks have passed, and all interested parties are satisfied, the code can be merged by a committer</li>
 <li>Pull requests should not be merged by committers who have provided code in the pull request.  Pull requests should also not be merged by committers who are peers in the same organization as those who provided code.</li>
@@ -3208,8 +3190,6 @@
 <li>If you add the keyword “fixes” or “resolves” on the same line when referencing the Github Issue in the PR description, it will auto-close the issue when the PR is merged.</li>
 <li>Otherwise, make a comment referencing the new commit and close the issue manually.</li>
 </ul>
-<h4 id="release-workflow">Release Workflow<a class="headerlink" href="#release-workflow" title="Permanent link">&para;</a></h4>
-<p>During release, the same workflow holds, it is just performed against the ‘release’ branch of a repository instead of ‘dev’ or ‘8.x-1.x’.  After pull requests are merged into the release branch, the changes can be merged back into dev from release.</p>
 
 
 

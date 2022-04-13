@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>POST/PUT - Islandora 8</title>
+        <title>POST/PUT - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1510,16 +1510,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3099,8 +3099,8 @@
 <p>These are defined under <a href="../using-rest-endpoints/#authorization">Authorization</a> on the overview.</p>
 <h2 id="content-nodes">Content (Nodes)<a class="headerlink" href="#content-nodes" title="Permanent link">&para;</a></h2>
 <p><img alt="REST configuration" src="../../assets/rest-node-configuration.png" /></p>
-<p>The above setup shows that you can perform a POST request against a node at the <code>/node</code> endpoint with a body in the JSON format.</p>
-<p>To create a node you need to provide two elements in your message body. The node type and any <em>required</em> field values.</p>
+<p>The above setup shows a configuration where the JSON format is enabled for GET, PATCH, DELETE, and POST, with auththentication types "basic_auth" and "jwt_auth" enabled for each method. Thus, with this configuration, you can perform a POST request against a node at the <code>/node</code> endpoint with a body in the JSON format.</p>
+<p>To create a node, you need to provide two elements in your message body: the node type and any required field values.</p>
 <p>For the islandora_defaults included Repository Item these are:</p>
 <ol>
 <li>A type - this tells Drupal what content type we are creating</li>
@@ -3108,7 +3108,7 @@
 <li>A model - this is a required by Islandora to tell the type of object (i.e. Image, Audio, Collection)</li>
 </ol>
 <p>A good way to make your first POST request is to perform a GET request against an existing node and erase all the extra content.</p>
-<p>You can find more information about <a href="../rest-get/">GET requests here</a></p>
+<p>You can find more information about <a href="../rest-get/">GET requests here</a>.</p>
 <p>Again we are using the json format.</p>
 <p>&#x1F34E; For example <code>curl -X GET 'http://localhost:8000/node/3?_format=json</code></p>
 <p>Look for the <strong>type</strong> element</p>
@@ -3120,7 +3120,7 @@
   }
 ]
 </code></pre>
-<p>In our example "islandora_object" is the type of the default "Repository Item", if you have created a new type you will have a different target_id.</p>
+<p>In our example "islandora_object" is the machine name of the content type "Repository Item". If you have created a new type you will have a different target_id.</p>
 <p>You will not need the <code>target_uuid</code>.</p>
 <p>Next look for the <strong>title</strong> element</p>
 <pre><code>&quot;title&quot; : [
@@ -3140,7 +3140,7 @@
 ]
 </code></pre>
 <p>You can find the models by browsing the taxonomy terms available at <code>http://localhost:8000/admin/structure/taxonomy/manage/islandora_models/overview</code></p>
-<p>In my example installation 24 is an "Image", but let's create a collection which is 23.</p>
+<p>In my example installation, term 24 is an "Image", but let's create a collection which is term 23.</p>
 <p><strong>Note</strong>: Taxonomy terms may vary between instances and you should verify the correct number for your installation.</p>
 <p>So the body of the request will be:</p>
 <pre><code>{
@@ -3198,11 +3198,11 @@ Content-Type: application/json
 <li><code>'http://localhost:8000/node?_format=json'</code> - the endpoint of the request</li>
 </ol>
 <h2 id="files-and-media">Files and Media<a class="headerlink" href="#files-and-media" title="Permanent link">&para;</a></h2>
-<p>Drupal is supposed to have a way to upload files, but this seems to require the use of an X-CSRF-Token, which can only be retrieved using Cookie authentication and even then does not allow you to upload.</p>
-<p>Consequently there is a REST endpoint not listed in the REST UI, because it is not configurable and is part of the Islandora 8 system.</p>
+<p>The Drupal REST UI is supposed to have a way to upload files, but this seems to require the use of an X-CSRF-Token, which can only be retrieved using Cookie authentication and even then does not allow you to upload.</p>
+<p>However there is a special REST endpoint created by Islandora, which is less configurable and is not part of the above-mentioned REST UI.</p>
 <p>This endpoint is available at <code>http://localhost:8000/node/{node id}/media/{media type}/{media use}</code></p>
 <p>It only accepts PUT requests. If the media and file don't exist they are created, if they exist the file is updated with the new body.</p>
-<p>The node and taxonomy term are used to search (via an <a href="https://api.drupal.org/api/drupal/core!lib!Drupal.php/function/Drupal%3A%3AentityQuery/8.6.x">entity query</a>) for a media. If this media exists the body of the file is replaced with the new content, otherwise a new file is created to hold the contents.</p>
+<p>The node id and taxonomy term id are used to search (via an <a href="https://api.drupal.org/api/drupal/core!lib!Drupal.php/function/Drupal%3A%3AentityQuery/8.6.x">entity query</a>) for a matching media. If this media exists the body of the file is replaced with the new content, otherwise a new file and media are created to hold the content.</p>
 <p>The tokens to this URI are as follows:</p>
 <ol>
 <li>node id : The numeric ID of the node you wish to link this media/file to.</li>
@@ -3210,7 +3210,7 @@ Content-Type: application/json
 <li>media use : The numeric ID of the media use taxonomy term to set for this media</li>
 </ol>
 <p>You can find the media use taxonomy terms at <code>http://localhost:8000/admin/structure/taxonomy/manage/islandora_media_use/overview</code></p>
-<p>So the body of the request is the actual binary file to upload.</p>
+<p>The body of the request is the actual binary file to upload.</p>
 <p>&#x1F34E; For example:</p>
 <p>With a local file called <code>my-image.png</code> that I wanted to link to a node with ID <code>3</code>.</p>
 <p>I am using the taxonomy term "Original file", which on my machine is <code>16</code></p>
@@ -3253,7 +3253,7 @@ Content-Type: text/html; charset=UTF-8
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

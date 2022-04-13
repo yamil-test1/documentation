@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Create or Update a View - Islandora 8</title>
+        <title>Create or Update a View - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1587,16 +1587,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3102,16 +3102,16 @@
 <li>This How-To assumes familiarity with Drupal terms such as <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/about-nodes">Node</a>, <a href="https://www.drupal.org/docs/7/nodes-content-types-and-fields/working-with-content-types-and-fields-drupal-7-and-later">Content Type</a>, and <a href="https://www.drupal.org/docs/8/core/modules/media">Media</a>.</li>
 </ul>
 <h2 id="how-to-modify-an-existing-view">How to modify an existing view<a class="headerlink" href="#how-to-modify-an-existing-view" title="Permanent link">&para;</a></h2>
-<p>Islandora Defaults ships with some views already created and turned on. The Islandora 8 home page displays content items that have been added to Islandora. This view is named <em>Frontpage</em> and it lists items that meet the following <em>filter criteria</em>: </p>
+<p>Islandora Defaults ships with some views already created and turned on. The Islandora home page displays content items that have been added to Islandora. This view is named <em>Frontpage</em> and it lists items that meet the following <em>filter criteria</em>:</p>
 <ul>
 <li>The item is in the <em>published</em> state.</li>
-<li>The checkbox Promoted to front page is selected. </li>
+<li>The checkbox Promoted to front page is selected.</li>
 </ul>
-<p>This view will display all content items added to Islandora, as the checkbox <em>Promoted to front page</em> is on by default. </p>
+<p>This view will display all content items added to Islandora, as the checkbox <em>Promoted to front page</em> is on by default.</p>
 <p>As you develop your Islandora Web site it is likely that you will need to change the default behaviour of the <em>Frontpage</em> View. As an example, the following describes how to edit the <em>Frontpage</em> page view to only show content items and not collections.</p>
 <p>For this example, we added six collection items to Islandora. In total there are eight items in the repository. In addition to the six collection items, there is one audio item and one image item.</p>
 <ol>
-<li>Using your Web browser, open the Islandora front page </li>
+<li>Using your Web browser, open the Islandora front page</li>
 <li>
 <p>To edit the front page view, hover over the view (<em>Frontpage</em> view) and select <strong>Edit view</strong> when displayed.</p>
 <p><img alt="Frontpage view" src="../../assets/frontpage_view_all_eight.png" />
@@ -3136,7 +3136,7 @@
 <h2 id="how-to-create-a-new-view">How to create a new view<a class="headerlink" href="#how-to-create-a-new-view" title="Permanent link">&para;</a></h2>
 <p>For this example, we create a new view that only shows collections. It will be created as a <a href="https://www.drupal.org/docs/core-modules-and-themes/core-modules/block-module/managing-blocks">Block</a> (also see the tutorial on <a href="../blocks/">Configuring Blocks</a>) that will only display on the front page. We will add the new collection list block below the existing frontpage view that lists items.</p>
 <ol>
-<li>Using your Web browser, open the Islandora 8 front page </li>
+<li>Using your Web browser, open the Islandora front page</li>
 <li>Navigate to <strong>Administration</strong> &gt;&gt; <strong>Structure</strong> &gt;&gt; <strong>Views</strong></li>
 <li>Create a new view by selecting <strong>Add view</strong></li>
 <li>
@@ -3175,7 +3175,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

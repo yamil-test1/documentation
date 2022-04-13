@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Testing Notes - Islandora 8</title>
+        <title>Testing Notes - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1510,16 +1510,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3167,7 +3167,7 @@
   <h1>Testing Notes</h1>
 
 <h2 id="how-to-find-things-in-fedora">How to find things in Fedora?<a class="headerlink" href="#how-to-find-things-in-fedora" title="Permanent link">&para;</a></h2>
-<p>For any Drupal URI, the corresponding Fedora URIs is computed by the <a href="https://github.com/Islandora/Crayfish-Commons/blob/2.x/src/EntityMapper/EntityMapper.php">Crayfish Commons</a> library using the Drupal-assigned UUID. In Drupal, a "pseudo-field" is available that will display the corresponding Fedora URI on the page of a node, taxonomy term, or media object. The presence of this URI does NOT guarantee the existence of the corresponding entity in Fedora. </p>
+<p>For any Drupal URI, the corresponding Fedora URIs is computed by the <a href="https://github.com/Islandora/Crayfish-Commons/blob/2.x/src/EntityMapper/EntityMapper.php">Crayfish Commons</a> library using the Drupal-assigned UUID. In Drupal, a "pseudo-field" is available that will display the corresponding Fedora URI on the page of a node, taxonomy term, or media object. The presence of this URI does NOT guarantee the existence of the corresponding entity in Fedora.</p>
 <h3 id="enabling-the-fedora-uri-pseudo-field">Enabling the Fedora URI Pseudo-field<a class="headerlink" href="#enabling-the-fedora-uri-pseudo-field" title="Permanent link">&para;</a></h3>
 <p>To display the Fedora URI pseudo-field on a Drupal node, media, or taxonomy term, go to Manage &gt; Configuration &gt; Islandora and select all the bundles for which you would like the Fedora URI displayed. Once you have selected the bundles, and cleared the cache, the new pseudo-field will appear at the bottom of <em>all display modes</em>. You can alter where in the display the Fedora URI field appears, by going to the "Manage Display" page for the bundle. For example, for a Repository Item, you'd go to Manage &gt; Structure &gt; Content Types, and under the dropdown for "Repository Item, select "Manage Display". In that list you should see <code>Fedora URI</code> which you can move around (or hide) as desired. This will need to be repeated in each Display mode (tab). Clearing cache may be necessary to refresh the node display.</p>
 <p>Note: This information used to be stored in a service called Gemini, which kept track of corresponding minted Fedora URIs and their minted equivalents. Gemini was removed for Islandora 2.0.0.</p>
@@ -3182,7 +3182,7 @@
 <h2 id="sample-triplestore-queries">Sample Triplestore queries<a class="headerlink" href="#sample-triplestore-queries" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Go to <code>http://localhost:8080/bigdata/#query</code></li>
-<li>Under namespaces (<code>http://localhost:8080/bigdata/#namespaces</code>), make sure <code>islandora</code> is selected.  </li>
+<li>Under namespaces (<code>http://localhost:8080/bigdata/#namespaces</code>), make sure <code>islandora</code> is selected.</li>
 </ul>
 <h3 id="find-all-triples-with-given-object-as-the-subject">Find all triples with given object as the subject<a class="headerlink" href="#find-all-triples-with-given-object-as-the-subject" title="Permanent link">&para;</a></h3>
 <pre><code>select ?p ?o  where { &lt;drupal_url&gt; ?p ?o }
@@ -3211,7 +3211,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

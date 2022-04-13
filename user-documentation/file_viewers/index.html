@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Viewers - Islandora 8</title>
+        <title>Viewers - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1842,13 +1842,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-open-seadragon-in-islandora-defaults" class="md-nav__link">
+  <a href="#example-openseadragon-in-islandora-defaults" class="md-nav__link">
     <span class="md-ellipsis">
-      Example - Open Seadragon (in Islandora Defaults)
+      Example - OpenSeadragon (in Islandora Defaults)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example - Open Seadragon (in Islandora Defaults)">
+    <nav class="md-nav" aria-label="Example - OpenSeadragon (in Islandora Defaults)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3099,13 +3099,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-open-seadragon-in-islandora-defaults" class="md-nav__link">
+  <a href="#example-openseadragon-in-islandora-defaults" class="md-nav__link">
     <span class="md-ellipsis">
-      Example - Open Seadragon (in Islandora Defaults)
+      Example - OpenSeadragon (in Islandora Defaults)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example - Open Seadragon (in Islandora Defaults)">
+    <nav class="md-nav" aria-label="Example - OpenSeadragon (in Islandora Defaults)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3178,25 +3178,25 @@
 
 <h1 id="file-viewers">File Viewers<a class="headerlink" href="#file-viewers" title="Permanent link">&para;</a></h1>
 <h2 id="what-are-viewers">What are viewers?<a class="headerlink" href="#what-are-viewers" title="Permanent link">&para;</a></h2>
-<p><a href="../glossary#viewer">Viewers</a> allow site builders to display files in interactive javascript-based widgets, that provide functionality like zooming in/out, turning pages, playing/pausing, viewing in full screen, etc. </p>
+<p><a href="../glossary#viewer">Viewers</a> allow site builders to display files in interactive javascript-based widgets, that provide functionality like zooming in/out, turning pages, playing/pausing, viewing in full screen, etc.</p>
 <p>In Drupal, a common way to implement a viewer is through a <a href="./glossary/#module">module</a> that provides the javascript library, and a field formatter that uses that library. The field formatter will work with specific types of Drupal fields (e.g. file fields or image fields, some may even provide their own fields).</p>
-<p>Viewers that are known to work with Islandora 8 include:</p>
+<p>Viewers that are known to work with Islandora include:</p>
 <ul>
 <li><a href="https://openseadragon.github.io/">OpenSeadragon</a>, via the Drupal module <a href="https://github.com/Islandora/openseadragon">OpenSeadragon</a> (maintained by the Islandora Foundation).</li>
 <li><a href="https://github.com/mozilla/pdf.js">pdf.js</a>, via the Drupal contrib module <a href="https://www.drupal.org/project/pdf">PDF</a></li>
 </ul>
 <p>Both are included with Islandora Defaults.</p>
 <h2 id="how-are-viewers-configured">How are viewers configured?<a class="headerlink" href="#how-are-viewers-configured" title="Permanent link">&para;</a></h2>
-<p>In the generic Islandora 8 content modelling scenario, we often want the viewer to appear on a <em>"resource node"</em> when the file itself is in a field on a Media that references that node. These layers of indirection make displaying viewers on nodes rather complex. </p>
-<h2 id="example-open-seadragon-in-islandora-defaults">Example - Open Seadragon (in Islandora Defaults)<a class="headerlink" href="#example-open-seadragon-in-islandora-defaults" title="Permanent link">&para;</a></h2>
+<p>In the generic Islandora content modelling scenario, we often want the viewer to appear on a <em>"resource node"</em> when the file itself is in a field on a Media that references that node. These layers of indirection make displaying viewers on nodes rather complex.</p>
+<h2 id="example-openseadragon-in-islandora-defaults">Example - OpenSeadragon (in Islandora Defaults)<a class="headerlink" href="#example-openseadragon-in-islandora-defaults" title="Permanent link">&para;</a></h2>
 <p>Here is how viewers are implemented in Islandora Defaults. This example uses OpenSeadragon, but pdf.js is configured with the same method. This method was chosen because it uses pure configuration and no extra code. It relies on users tagging nodes with appropriate "display hint" terms to trigger Contexts to switch the node's display mode to one that includes an EVA field, which renders the appropriate Media in a way that shows the desired file in the viewer.</p>
 <!-- Display modes vs view modes - Here we prefer the term 'display mode' to refer to the modes listed under Structure > Display Modes > View modes. The reasoning is that for the audience of this page, this concept is likely most frequently encountered under "Manage Display" of an entity, and to distinguish it from concepts relating to Views, such as Views displays. -->
 
 <h3 id="expected-behaviour-for-this-scenario">Expected behaviour for this scenario:<a class="headerlink" href="#expected-behaviour-for-this-scenario" title="Permanent link">&para;</a></h3>
-<p>Create a Repository Item, and tag it with "Open Seadragon" (under Display Hints). Add a Media of type "File" to that node, upload a file such as a tiff or jpeg-2000, and tag it with "Original File" (under Media Use). Save and publish the Media. Go to the Repository Item's page, and you should see your file displayed in the viewer.</p>
+<p>Create a Repository Item, and tag it with "Open Seadragon" (under Display Hints). Add a Media of type "File" to that node, upload a file such as a TIFF or JPEG 2000, and tag it with "Original File" (under Media Use). Save and publish the Media. Go to the Repository Item's page, and you should see your file displayed in the viewer.</p>
 <!-- There should be a link here, on the word "File", that points to a page explaining why large images need to be Files and not Images. That is out of scope here. -->
 
-<!-- "a file such as tiff or jpeg-2000" = "a file that works with Cantaloupe". OpenSeadragon relies on an IIIF image server, in our case, Cantaloupe, and that is what determines the kinds of files that this works with. This is also out of scope for this page. -->
+<!-- "a file such as TIFF or JPEG 2000" = "a file that works with Cantaloupe". OpenSeadragon relies on an IIIF image server, in our case, Cantaloupe, and that is what determines the kinds of files that this works with. This is also out of scope for this page. -->
 
 <h3 id="components-of-this-scenario">Components of this scenario:<a class="headerlink" href="#components-of-this-scenario" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3226,7 +3226,7 @@
 <li>to display nothing but the file in a viewer.</li>
 </ul>
 <h3 id="relevant-files">Relevant files:<a class="headerlink" href="#relevant-files" title="Permanent link">&para;</a></h3>
-<p>Islandora Defaults is a Feature, and the following YAML files in <code>islandora_defaults/config/install</code> contain configuration items that are loaded when the feature is enabled. Changes to these files will not affect the live site configuration, and changes to the live site configuration will not be reflected in these files. </p>
+<p>Islandora Defaults is a Feature, and the following YAML files in <code>islandora_defaults/config/install</code> contain configuration items that are loaded when the feature is enabled. Changes to these files will not affect the live site configuration, and changes to the live site configuration will not be reflected in these files.</p>
 <table>
 <thead>
 <tr>
@@ -3253,7 +3253,7 @@
 </tr>
 <tr>
 <td><code>core.entity_view_display.media.file.open_seadragon.yml</code></td>
-<td>(view mode configuration) configures the Open Seadragon display mode for File media, so it shows only the field_media_file using the Open Seadragon field formatter.</td>
+<td>(view mode configuration) configures the Open Seadragon display mode for File media, so it shows only the field_media_file using the OpenSeadragon field formatter.</td>
 </tr>
 <tr>
 <td><code>views.view.openseadragon_media_evas.yml</code></td>
@@ -3304,7 +3304,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

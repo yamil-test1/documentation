@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Updating Drupal - Islandora 8</title>
+        <title>Updating Drupal - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1510,16 +1510,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3154,7 +3154,7 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>This section describes how to update Drupal and its modules using Composer. If you installed Islandora using the Islandora Playbook, then your Drupal was installed by Composer, so it is considered best practice to continue using Composer for updates. The method on this section is not specific to Islandora, and does not (yet) include how to update Islandora Features.</p>
 <h3 id="what-is-composer">What is Composer<a class="headerlink" href="#what-is-composer" title="Permanent link">&para;</a></h3>
-<p>It is recommended by Drupal.org and the Islandora 8 community to use Composer with Drupal 8 for various tasks.</p>
+<p>It is recommended by Drupal.org and the Islandora community to use Composer with Drupal for various tasks.</p>
 <p>"<a href="https://getcomposer.org/">Composer</a> is a <a href="https://en.wikipedia.org/wiki/Package_manager">dependency manager</a> for PHP. Drupal core uses Composer to manage core dependencies like Symfony components and Guzzle." [<a href="https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal">Source</a>]</p>
 <h2 id="always-create-backs-ups-db-and-files-before-updating">Always create backs ups (DB and files) before updating<a class="headerlink" href="#always-create-backs-ups-db-and-files-before-updating" title="Permanent link">&para;</a></h2>
 <p><strong>Before updating either Drupal core or Drupal modules:</strong>
@@ -3163,7 +3163,7 @@
 <p><strong>Warning:</strong> Always revert to a backup if you get a fatal error in the update process.</p>
 <h2 id="updating-drupal-core">Updating Drupal Core<a class="headerlink" href="#updating-drupal-core" title="Permanent link">&para;</a></h2>
 <p>Over time new versions of Drupal “core” are released, and Islandora users are encouraged to install official Drupal core updates and security patches. On the other hand “alpha” and “beta" versions of Drupal core should only be installed by advanced users for testing purposes.</p>
-<p>The Islandora community STRONGLY recommends that the "Composer" method of upgrading Drupal core be used with Islandora 8 as mentioned <a href="https://www.drupal.org/docs/8/update/update-core-via-composer">here</a>.</p>
+<p>The Islandora community STRONGLY recommends that the "Composer" method of upgrading Drupal core be used with Islandora as mentioned <a href="https://www.drupal.org/docs/8/update/update-core-via-composer">here</a>.</p>
 <h3 id="here-is-an-overview-of-the-steps-for-updating-drupal-core-using-composer">Here is an overview of the steps for updating Drupal core using Composer<a class="headerlink" href="#here-is-an-overview-of-the-steps-for-updating-drupal-core-using-composer" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Back Up</p>
@@ -3177,16 +3177,16 @@
 <p>If you want to know all packages that will be updated by the update command, use the --dry-run option first.</p>
 <div class="admonition note">
 <p class="admonition-title">Alternate syntax needed</p>
-<p>Islandora 8 is configured to use a fork of drupal-composer/drupal-project which requires a specific composer syntax used above compared to other Drupal 8 sites. In addition, if you are upgrading from 8.5 to 8.7, you need to replace "~8.5.x" with "^8.7.0" for drupal/core and webflo/drupal-core-require-dev in composer.json. [<a href="https://www.drupal.org/docs/8/update/update-core-via-composer#s-one-step-update-instruction">Source</a>]</p>
+<p>Islandora is configured to use a fork of drupal-composer/drupal-project which requires a specific composer syntax used above compared to other Drupal 8 sites. In addition, if you are upgrading from 8.5 to 8.7, you need to replace "~8.5.x" with "^8.7.0" for drupal/core and webflo/drupal-core-require-dev in composer.json. [<a href="https://www.drupal.org/docs/8/update/update-core-via-composer#s-one-step-update-instruction">Source</a>]</p>
 </div>
-<p>3) Apply any required database updates using <code>drush updatedb</code>, or use the web admin user interface.  </p>
+<p>3) Apply any required database updates using <code>drush updatedb</code>, or use the web admin user interface.</p>
 <p><code>drush updatedb</code></p>
 <p>4) Clear the cache using drush <code>cache:rebuild</code>, or use the web admin user interface.</p>
 <p><code>drush cache:rebuild</code></p>
 <p>For stepwise update instructions visit this page:
 https://www.drupal.org/docs/8/update/update-core-via-composer#s-stepwise-update-instructions</p>
 <h2 id="updating-drupal-modules">Updating Drupal Modules<a class="headerlink" href="#updating-drupal-modules" title="Permanent link">&para;</a></h2>
-<p>Islandora 8 uses several general Drupal modules and some specialized Islandora Drupal modules, and over time new versions of these modules are released. There are two approaches to updating Drupal modules in Islandora: using Composer or updating modules individually. Islandora 8 uses Composer to determine which Drupal module versions should be installed for each release of Islandora 8. Therefore if you update the Islandora specific Drupal modules using Composer you will also update any dependent general Drupal modules as well. The second method is to individually update Drupal modules.</p>
+<p>Islandora uses several general Drupal modules and some specialized Islandora Drupal modules, and over time new versions of these modules are released. There are two approaches to updating Drupal modules in Islandora: using Composer or updating modules individually. Islandora uses Composer to determine which Drupal module versions should be installed for each release of Islandora. Therefore if you update the Islandora specific Drupal modules using Composer you will also update any dependent general Drupal modules as well. The second method is to individually update Drupal modules.</p>
 <p>For more information about how to update Drupal modules visit:</p>
 <p>https://www.drupal.org/docs/8/extending-drupal-8/updating-modules</p>
 <div class="admonition note">
@@ -3202,7 +3202,7 @@ https://www.drupal.org/docs/8/update/update-core-via-composer#s-stepwise-update-
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

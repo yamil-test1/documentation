@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Multilingual - Islandora 8</title>
+        <title>Multilingual - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3208,11 +3208,11 @@
 
   <h1>Multilingual</h1>
 
-<p>Islandora 8 enables you to build full fledged multilingual repositories leveraging the multilingual support provided by Drupal core modules. The multilingual content gets indexed into Fedora repository as well as the Triplestore (Blazegraph), and can be queried using the SPARQL endpoint. In this guide, we will describe the steps needed to setup a basic multilingual Islandora 8 site.  </p>
+<p>Islandora enables you to build full fledged multilingual repositories leveraging the multilingual support provided by Drupal core modules. The multilingual content gets indexed into Fedora repository as well as the Triplestore (Blazegraph), and can be queried using the SPARQL endpoint. In this guide, we will describe the steps needed to setup a basic multilingual Islandora site.</p>
 <h2 id="drupal-concepts">Drupal Concepts<a class="headerlink" href="#drupal-concepts" title="Permanent link">&para;</a></h2>
 <p>Drupal allows you to translate user interface text, configuration text, and content. See <a href="https://www.drupal.org/docs/user_guide/en/language-concept.html">section 2.7 of the Drupal documentation for details</a>.</p>
 <h2 id="islandora-configuration">Islandora Configuration<a class="headerlink" href="#islandora-configuration" title="Permanent link">&para;</a></h2>
-<p>Islandora 8 enables Drupal's <em>Language</em> and <em>Content Translation</em> modules by default. Drupal provides additional modules for <a href="https://www.drupal.org/docs/8/multilingual/choosing-and-installing-multilingual-modules">multilingual support</a>, for instance for translating the built-in user interface or editable interface text. </p>
+<p>Islandora enables Drupal's <em>Language</em> and <em>Content Translation</em> modules by default. Drupal provides additional modules for <a href="https://www.drupal.org/docs/8/multilingual/choosing-and-installing-multilingual-modules">multilingual support</a>, for instance for translating the built-in user interface or editable interface text.</p>
 <h3 id="adding-languages">Adding Languages<a class="headerlink" href="#adding-languages" title="Permanent link">&para;</a></h3>
 <p>From the top menu, go to Configuration &gt;&gt; Regional and language &gt;&gt; Languages. Add a language.</p>
 <p><img alt="Add language" src="../../assets/multilingual-add-lang.jpg" /></p>
@@ -3222,27 +3222,27 @@
 <p>You can place the language switcher block in different regions of the user interface. You might have to customize the theme to style the language switcher block.</p>
 <p><img alt="Place language switcher block" src="../../assets/multilingual-lang-switcher-location.jpg" /></p>
 <h3 id="adding-multilingual-menus">Adding Multilingual Menus<a class="headerlink" href="#adding-multilingual-menus" title="Permanent link">&para;</a></h3>
-<p>From the top menu, go to Configuration &gt;&gt; Regional and language &gt;&gt; Content language and translation. Check <code>Custom menu link</code> under <code>Custom language settings</code>. Scroll down to <code>Custom menu link</code> section and check all the relevant fields and Save the configurations. Clear the cache (Configuration &gt;&gt; Development &gt;&gt; Performance).  </p>
+<p>From the top menu, go to Configuration &gt;&gt; Regional and language &gt;&gt; Content language and translation. Check <code>Custom menu link</code> under <code>Custom language settings</code>. Scroll down to <code>Custom menu link</code> section and check all the relevant fields and Save the configurations. Clear the cache (Configuration &gt;&gt; Development &gt;&gt; Performance).</p>
 <p>From the top menu, go to Structure &gt;&gt; Menu. Edit "Main navigation" menu. Default home menu item cannot be translated due to <a href="https://www.drupal.org/project/drupal/issues/2838106">this issue</a>. Disable that menu item. Click <code>Add link</code> to create a new menu item. Provide a menu title (i.e Home) and input <code>&lt;front&gt;</code> for the link field. Save. Right click on the Operations beside the new menu link and click the Translate button. Translate the menu link title for the language added above and save.</p>
 <p>Go back to home. The language switcher will enable you to switch the language/content of the menu and content.</p>
 <h3 id="adding-a-multilingual-repository-item">Adding a Multilingual Repository Item<a class="headerlink" href="#adding-a-multilingual-repository-item" title="Permanent link">&para;</a></h3>
 <p>From the top menu, go to Content &gt;&gt; Add content &gt;&gt; Repository item. Provide the required fields and save the object. Click the <em>Translate</em> tab of the object, provide a title in the second language and fill any translatable fields (i.e description). Add the media for the object. Media objects can be translated similar to the repository item node.</p>
-<p>Go back to home, you should be able to view content in the language selected in the language switcher.  </p>
+<p>Go back to home, you should be able to view content in the language selected in the language switcher.</p>
 <h3 id="field-label-translations">Field Label Translations<a class="headerlink" href="#field-label-translations" title="Permanent link">&para;</a></h3>
-<p>If you need the field labels of the repository Item displayed in a different language, additional configuration is needed. The Drupal module <code>Configuration translation</code> module in the core needs to be enabled. Note that this will enable the module <code>User Interface translation</code> as well. </p>
-<p>Each field label needs to be translated through the Drupal GUI (Configuration &gt;&gt; Regional and Language: User interface translation). Alternatively, you can import existing translations, for instance from those provided at <code>https://github.com/Islandora/islandora_defaults/tree/8.x-1.x/translations</code>, or translations generated with an external translation editor (for example <a href="https://en.wikipedia.org/wiki/Gtranslator">Gtranslator</a>). Go to <code>Interface translation import</code> (Configuration &gt;&gt; Regional and Language: User interface translation &gt;&gt; Import tab). Set the <code>Treat imported strings as custom translations</code> option, select the import file, the target language, and click import. Clear the cache to see the changes. An example second language display is shown below. </p>
+<p>If you need the field labels of the repository Item displayed in a different language, additional configuration is needed. The Drupal module <code>Configuration translation</code> module in the core needs to be enabled. Note that this will enable the module <code>User Interface translation</code> as well.</p>
+<p>Each field label needs to be translated through the Drupal GUI (Configuration &gt;&gt; Regional and Language: User interface translation). Alternatively, you can import existing translations, for instance from those provided at <code>https://github.com/Islandora/islandora_defaults/tree/8.x-1.x/translations</code>, or translations generated with an external translation editor (for example <a href="https://en.wikipedia.org/wiki/Gtranslator">Gtranslator</a>). Go to <code>Interface translation import</code> (Configuration &gt;&gt; Regional and Language: User interface translation &gt;&gt; Import tab). Set the <code>Treat imported strings as custom translations</code> option, select the import file, the target language, and click import. Clear the cache to see the changes. An example second language display is shown below.</p>
 <p><img alt="Multilingual Content Representation in Drupal" src="../../assets/multilingual_repository_item_in_drupal.png" /></p>
 <h2 id="fedora-representation">Fedora Representation<a class="headerlink" href="#fedora-representation" title="Permanent link">&para;</a></h2>
-<p>Islandora 8 indexes the multilingual metadata values in Fedora as RDF literals using language tags. An example representation is shown below.</p>
+<p>Islandora indexes the multilingual metadata values in Fedora as RDF literals using language tags. An example representation is shown below.</p>
 <p><img alt="Multilingual Content Representation in Fedora" src="../../assets/multilingual_repository_item_in_fedora.png" /></p>
 <h2 id="triplestore-representation">Triplestore Representation<a class="headerlink" href="#triplestore-representation" title="Permanent link">&para;</a></h2>
-<p>Islandora 8 indexes the multilingual metadata values in Blazegraph as RDF literals using language tags. An example representation is shown below. </p>
+<p>Islandora indexes the multilingual metadata values in Blazegraph as RDF literals using language tags. An example representation is shown below.</p>
 <p><img alt="Multilingual Content Representation in Triplestore" src="../../assets/multilingual_repository_item_in_triplestore.png" /></p>
 <p>You can query the result and filter the results by a specific language. For example, to get all titles and filter by language, the following query can be used:</p>
 <pre><code>PREFIX dcterm: &lt;http://purl.org/dc/terms/&gt;
 select ?s ?o {
   ?s dcterm:title ?o
-FILTER (lang(?o) = 'ta')     
+FILTER (lang(?o) = 'ta')
 }
 </code></pre>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
@@ -3258,7 +3258,7 @@ FILTER (lang(?o) = 'ta')
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

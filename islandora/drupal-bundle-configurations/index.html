@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Drupal Bundle Configurations - Islandora 8</title>
+        <title>Drupal Bundle Configurations - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3035,21 +3035,21 @@
   <h1>Drupal Bundle Configurations</h1>
 
 <h2 id="drupal-bundle-configurations">Drupal Bundle Configurations<a class="headerlink" href="#drupal-bundle-configurations" title="Permanent link">&para;</a></h2>
-<p>In Islandora 8, <a href="https://github.com/Islandora/islandora/wiki/Content-Models">content models</a> are primarily created using content types (also known as node bundles) and media bundles. <a href="https://www.drupal.org/docs/8/api/entity-api/bundles">Bundles</a> are defined by <a href="http://befused.com/drupal/yaml">YAML</a> configuration files. <a href="https://www.drupal.org/docs/8/api/entity-api/creating-a-custom-content-type-in-drupal-8">To create new content models</a>, one would create the needed content types and media bundles via UI, then export the yml files related for those bundles using Configuration Synchronization (<code>http://localhost:8000/admin/config/development/configuration</code>) or <a href="https://www.drupal.org/project/features">Features</a>. An understanding about the structure of a bundle and various configuration files used to define it helps in creating and updating it.</p>
+<p>In Islandora, <a href="https://github.com/Islandora/islandora/wiki/Content-Models">content models</a> are primarily created using content types (also known as node bundles) and media bundles. <a href="https://www.drupal.org/docs/8/api/entity-api/bundles">Bundles</a> are defined by <a href="http://befused.com/drupal/yaml">YAML</a> configuration files. <a href="https://www.drupal.org/docs/8/api/entity-api/creating-a-custom-content-type-in-drupal-8">To create new content models</a>, one would create the needed content types and media bundles via UI, then export the yml files related for those bundles using Configuration Synchronization (<code>http://localhost:8000/admin/config/development/configuration</code>) or <a href="https://www.drupal.org/project/features">Features</a>. An understanding about the structure of a bundle and various configuration files used to define it helps in creating and updating it.</p>
 <p>Content types and media bundles can be thought of as web <a href="https://www.drupal.org/docs/user_guide/en/structure-widgets.html">forms</a> consisting of fields. Drupal provides <a href="https://www.drupal.org/docs/8/creating-custom-modules/create-a-custom-field-widget">widgets</a> to define the behavior of a field and field storage to define how the data is stored in the database. Drupal provides various <a href="https://www.drupal.org/docs/8/api/entity-api/display-modes-view-modes-and-form-modes">display modes</a> to show the forms to user when they are editing (Manage form display) or viewing (Manage display).</p>
-<p>A content model is packaged as a module for installation. All yml files are put in <code>config/install</code> folder of the module. Note that not all content models would contain media bundles.  </p>
-<p>The following files define the bundles themselves. It contains some metadata about the bundle and lists its dependencies.  </p>
+<p>A content model is packaged as a module for installation. All yml files are put in <code>config/install</code> folder of the module. Note that not all content models would contain media bundles.</p>
+<p>The following files define the bundles themselves. It contains some metadata about the bundle and lists its dependencies.</p>
 <pre><code>node.type.your_content_type.yml
 media_entity.bundle.your_media_bundle.yml
 </code></pre>
-<p>The following files define the fields attached to the bundle forms. There must be one config file for each field in your bundle, except for the default drupal fields.  </p>
+<p>The following files define the fields attached to the bundle forms. There must be one config file for each field in your bundle, except for the default drupal fields.</p>
 <pre><code>field.field.node.your_content_type.field_name1.yml
 field.field.node.your_content_type.field_name2.yml
 ...
 field.field.media.your_media_bundle.field_name1.yml
 field.field.media.your_media_bundle.field_name2.yml
 </code></pre>
-<p>If the new bundle contains new fields, then field storage configurations for the newly created fields would be needed as well. Note that if you reused existing fields, storage definitions should not be defined again. Storage config contains information about the number of values allowed for that field (cardinality).  </p>
+<p>If the new bundle contains new fields, then field storage configurations for the newly created fields would be needed as well. Note that if you reused existing fields, storage definitions should not be defined again. Storage config contains information about the number of values allowed for that field (cardinality).</p>
 <pre><code>field.storage.node.field_new_name3.yml
 field.storage.media.field__new_name3.yml
 </code></pre>
@@ -3080,7 +3080,7 @@ rdf.mapping.node.your_content_type.yml
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

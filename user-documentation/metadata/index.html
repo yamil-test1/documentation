@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Metadata - Islandora 8</title>
+        <title>Metadata - Islandora</title>
       
     
     
@@ -272,7 +272,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metadata-in-islandora-8" class="md-skip">
+        <a href="#metadata-in-islandora" class="md-skip">
           Skip to content
         </a>
       
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1514,16 +1514,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3428,9 +3428,9 @@
 
 
 
-<h1 id="metadata-in-islandora-8">Metadata in Islandora 8<a class="headerlink" href="#metadata-in-islandora-8" title="Permanent link">&para;</a></h1>
+<h1 id="metadata-in-islandora">Metadata in Islandora<a class="headerlink" href="#metadata-in-islandora" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>TL;DR: In Islandora 8, metadata is stored in Drupal, in <em>fields</em> attached to <em>entities</em> (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine...) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle.</p>
+<p>TL;DR: In Islandora, metadata is stored in Drupal, in <em>fields</em> attached to <em>entities</em> (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine...) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle.</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">Drupal 8 Terminology</p>
@@ -3438,7 +3438,7 @@
 </div>
 <!-- Next revision: check status of changing 'bundles' to 'entity sub-types' (https://www.drupal.org/project/drupal/issues/1380720). -->
 
-<p>As described in the <a href="../resource-nodes/">resource nodes section</a>, Islandora 8 digital objects are comprised of <em>Drupal nodes</em> for descriptive metadata, <em>Drupal media</em> for technical metadata, and <em>Drupal files</em> for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata.</p>
+<p>As described in the <a href="../resource-nodes/">resource nodes section</a>, Islandora digital objects are comprised of <em>Drupal nodes</em> for descriptive metadata, <em>Drupal media</em> for technical metadata, and <em>Drupal files</em> for the binary objects. This section describes how Islandora uses and extends Drupal fields to manage descriptive metadata.</p>
 <h2 id="content-types">Content Types<a class="headerlink" href="#content-types" title="Permanent link">&para;</a></h2>
 <p>In Drupal, <em>Nodes</em> come in different sub-types called <em>Content Types</em>. These let you define a type of content ("Article" and "Basic Page" are Drupal defaults and "Repository Item" is an Islandora specific example), the set of metadata fields that are attached to that content, and how those fields can be edited and displayed. Each content type is essentially a <em>metadata profile</em> that can be used for a piece of web content, or to describe a digital resource. You can create your own Content Types for your Islandora project or use a pre-defined one like <em>Repository Item</em> from the Islandora_defaults module. We will go over the metadata specific aspects of Content Types below, but for a fuller walkthrough of creating a Content Type <a href="../content_types/#create-a-content-type">see here</a>.</p>
 <p>Not all Content Types in your Drupal site need be <a href="../resource-nodes/"><em>Islandora Resource Nodes</em></a>. Making a Content Type a Resource Node will associate Islandora specific behaviours (such as syncing to Fedora or causing derivatives to be generated) with it. The decision to make a content an Islandora resource node is left to the discretion of the site manager. In Islandora, a "resource node" is usually considered a descriptive record for "a thing", and is conceptually similar to an "Islandora Object" in 7.x, i.e. a "Fedora Object" in Fedora 3.x and below. <a href="../content_types/#create-a-content-type">Read more on configuring a content type to be treated as a Resource Node</a>.</p>
@@ -3707,7 +3707,7 @@ seasonal value 2019-22 as defined in the EDTF specification):
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

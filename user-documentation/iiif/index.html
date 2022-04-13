@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>IIIF - Islandora 8</title>
+        <title>IIIF - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1512,16 +1512,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1843,9 +1843,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-iiif-in-islandora-8" class="md-nav__link">
+  <a href="#using-iiif-in-islandora" class="md-nav__link">
     <span class="md-ellipsis">
-      Using IIIF in Islandora 8
+      Using IIIF in Islandora
     </span>
   </a>
   
@@ -3021,9 +3021,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-iiif-in-islandora-8" class="md-nav__link">
+  <a href="#using-iiif-in-islandora" class="md-nav__link">
     <span class="md-ellipsis">
-      Using IIIF in Islandora 8
+      Using IIIF in Islandora
     </span>
   </a>
   
@@ -3066,15 +3066,15 @@
 <li>IIIF-compliant image viewers such as OpenSeadragon or Mirador can display a "collection" of images such as all the pages of a book or newspaper issue using the <a href="https://iiif.io/api/presentation/2.1/">IIIF Presentation API</a>. For example, here is a screenshot of OpenSeadragon rendering all the pages of a book:</li>
 </ul>
 <p><img alt="OpenSeadragon rendering book pages" src="../../assets/osd_collection_mode.png" /></p>
-<h2 id="using-iiif-in-islandora-8">Using IIIF in Islandora 8<a class="headerlink" href="#using-iiif-in-islandora-8" title="Permanent link">&para;</a></h2>
-<p>Implementation of the IIIF Presentation API is new in Islandora 8, and using it is as simple as configuring a Context (in fact, you don't even need to configure it; the Context, Openseadragon Block, already exists by default).</p>
+<h2 id="using-iiif-in-islandora">Using IIIF in Islandora<a class="headerlink" href="#using-iiif-in-islandora" title="Permanent link">&para;</a></h2>
+<p>Implementation of the IIIF Presentation API is new in Islandora, and using it is as simple as configuring a Context (in fact, you don't even need to configure it; the Context, OpenSeadragon Block, already exists by default).</p>
 <!-- todo: Put a link to paged-content.md below when it exists. -->
-<p>To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of "Paged Content" or "Publication Issue". Then, in the Openseadragon Block Context, make sure the term used in the "Node has term" condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above. </p>
+<p>To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of "Paged Content" or "Publication Issue". Then, in the Open Seadragon Block Context, make sure the term used in the "Node has term" condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>
 <p>You can change how the paged content thumbnails are arranged in the OpenSeadragon viewport by doing the following:</p>
 <ol>
 <li>Visit <code>admin/config/media/openseadragon</code></li>
 <li>Scroll to the bottom, where you will see the "Collection Mode" options.</li>
-<li>The "Enable Collection Mode" checkbox will be unchecked. This is normal (unless you have already checked it). The Openseadragon Context automatically, and temporarily, puts OpenSeadragon in Collection mode when rendering a Paged Content object and then puts it back to Sequence mode (which is what mode it's in when the "Enable Collection Mode" checkbox is unchecked). <em>This means that in order for you to change options that apply to Collection Mode, you will need to check the "Enable Collection Mode" checkbox, change its options, save the form, then uncheck the "Enable Collection Mode" checkbox again.</em> Just follow these steps, and it will work!</li>
+<li>The "Enable Collection Mode" checkbox will be unchecked. This is normal (unless you have already checked it). The Open Seadragon Context automatically, and temporarily, puts OpenSeadragon in Collection mode when rendering a Paged Content object and then puts it back to Sequence mode (which is what mode it's in when the "Enable Collection Mode" checkbox is unchecked). <em>This means that in order for you to change options that apply to Collection Mode, you will need to check the "Enable Collection Mode" checkbox, change its options, save the form, then uncheck the "Enable Collection Mode" checkbox again.</em> Just follow these steps, and it will work!</li>
 <li>Check the "Enable Collection Mode" checkbox. The Collection Mode options will appear.</li>
 <li>Adjust the options to what you want.</li>
 <li>Click the "Save Configuration" button.</li>
@@ -3082,7 +3082,7 @@
 <li>Click the "Save Configuration" button.</li>
 </ol>
 <h2 id="looking-under-the-hood-and-beyond">Looking under the hood (and beyond)<a class="headerlink" href="#looking-under-the-hood-and-beyond" title="Permanent link">&para;</a></h2>
-<p>If you want to see the raw output of the IIIF API implementations in Islandora 8, visit a node that is displaying the OpenSeadragon viewer (doesn't matter if its a single image or a paged content node like a book), and tack "manifest" onto the end of the URL, like <code>http://myrepo.org/node/23/manifest</code> and hit enter. You will see the raw JSON that IIIF-compliant viewers use to render the content.</p>
+<p>If you want to see the raw output of the IIIF API implementations in Islandora, visit a node that is displaying the OpenSeadragon viewer (doesn't matter if its a single image or a paged content node like a book), and tack "manifest" onto the end of the URL, like <code>http://myrepo.org/node/23/manifest</code> and hit enter. You will see the raw JSON that IIIF-compliant viewers use to render the content.</p>
 <p>The really neat thing is, IIIF-compliant viewers don't need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest. Some implementations of IIIF viewers that show off the potential to combine content from multiple IIIF servers include:</p>
 <ul>
 <li><a href="http://demos.biblissima-condorcet.fr/mirador/">The Biblissima Project</a> - brings together related content from different repositories.</li>
@@ -3098,7 +3098,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

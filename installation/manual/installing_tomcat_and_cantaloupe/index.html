@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Islandora 8">
+        <meta name="description" content="Documentation for Islandora">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Installing Tomcat and Cantaloupe - Islandora 8</title>
+        <title>Installing Tomcat and Cantaloupe - Islandora</title>
       
     
     
@@ -286,7 +286,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Islandora 8" class="md-header__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../../.." title="Islandora" class="md-header__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../../assets/claw.png" alt="logo">
 
@@ -298,7 +298,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Islandora 8
+            Islandora
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -383,12 +383,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Islandora 8" class="md-nav__button md-logo" aria-label="Islandora 8" data-md-component="logo">
+    <a href="../../.." title="Islandora" class="md-nav__button md-logo" aria-label="Islandora" data-md-component="logo">
       
   <img src="../../../assets/claw.png" alt="logo">
 
     </a>
-    Islandora 8
+    Islandora
   </label>
   
     <div class="md-nav__source">
@@ -546,7 +546,7 @@
         
   
   <span class="md-ellipsis">
-    Modelling content in Islandora 8 vs. 7
+    Modelling content in Islandora  vs. Legacy
   </span>
 
       </a>
@@ -1673,16 +1673,16 @@
           
   
   <span class="md-ellipsis">
-    Content in Islandora 8
+    Content in Islandora
   </span>
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Content in Islandora 8" data-md-level="2">
+      <nav class="md-nav" aria-label="Content in Islandora" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Content in Islandora 8
+          Content in Islandora
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3305,7 +3305,7 @@ export JAVA_OPTS=&quot;-Djava.awt.headless=true -server -Xmx1500m -Xms1000m&quot
 <ul>
 <li><code>PATH_TO_JAVA_HOME</code>: This will vary a bit depending on the environment, but will likely live in <code>/usr/lib/jvm</code> somewhere (e.g., <code>/usr/lib/jvm/java-11-openjdk-amd64</code>); again, in an Ubunutu environment you can check a part of this using <code>update-alternatives --list java</code>, which will give you the path to the JRE binary within the Java home. Note that <code>update-alternatives --list java</code> will give you the path to the binary, so for <code>PATH_TO_JAVA_HOME</code> delete the <code>/bin/java</code> at the end to get the Java home directory, so it should look something like this:</li>
 </ul>
-<pre><code>export JAVA_HOME=&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot; 
+<pre><code>export JAVA_HOME=&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;
 </code></pre>
 <h3 id="creating-the-tomcat-service">Creating the Tomcat Service<a class="headerlink" href="#creating-the-tomcat-service" title="Permanent link">&para;</a></h3>
 <p>Tomcat includes two shell scripts we’re going to make use of - <code>startup.sh</code> and <code>shutdown.sh</code> - which are light wrappers on top of a third script, <code>catalina.sh</code>, which manages spinning up and shutting down the Tomcat server.</p>
@@ -3380,7 +3380,7 @@ sudo systemctl start cantaloupe
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>
