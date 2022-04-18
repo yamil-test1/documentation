@@ -3386,7 +3386,7 @@ your personal machine, you'll probably want to change this.</p>
 file that contains the changes you've made.</p>
 <div class="admonition warning">
 <p class="admonition-title">Changing this after installation has consequences</p>
-<p>If you are indexing RDF metadata in Fedora and/or a triplestore, please be aware of the implications of changing this once you have installed.  By changing your domain, all of the subjects of your triples will be incorrect and you will have to reindex.  There are <code>make</code> commands to streamline this proccess, but if you have lots of data it can potentially be costly in terms of time and effort.</p>
+<p>If you are indexing RDF metadata in Fedora and/or a triplestore, please be aware of the implications of changing this once you have installed.  By changing your domain, all of the subjects of your triples will be incorrect and you will have to reindex.  There are <code>make</code> commands to streamline this process, but if you have lots of data it can potentially be costly in terms of time and effort.</p>
 </div>
 <h3 id="repository">REPOSITORY<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h3>
 <p>Repository to use for pulling isle-buildkit images.</p>
@@ -3426,7 +3426,7 @@ names of any Drupal profile.</p>
 <p>If you set this to <code>true</code>, be sure to set <code>DRUPAL_INSTALL_PROFILE</code> to <code>minimal</code>.</p>
 <h3 id="include_watchtower_service">INCLUDE_WATCHTOWER_SERVICE<a class="headerlink" href="#include_watchtower_service" title="Permanent link">&para;</a></h3>
 <p>Whether or not to include Watchtower as a service.  When developing <code>isle-buildkit</code>, this is extremely useful and
-will auto-deploy new containers as you make changes.  You should <em>not</em> use watchtower on prodution environments, though.</p>
+will auto-deploy new containers as you make changes.  You should <em>not</em> use watchtower on production environments, though.</p>
 <p>Available values for this setting are
 - <code>true</code>
 - <code>false</code></p>
@@ -3460,7 +3460,7 @@ file that contains the changes you've made.</p>
 file that contains the changes you've made.</p>
 <div class="admonition warning">
 <p class="admonition-title">Changing this after installation has consequences</p>
-<p>If you are changing from mariadb to potsrgres or vice versa, you <em>MUST</em> migrate your data yourself.  ISLE will not convert your database from one to the other, and it's generally not advised to change this once you've installed.</p>
+<p>If you are changing from mariadb to postgres or vice versa, you <em>MUST</em> migrate your data yourself.  ISLE will not convert your database from one to the other, and it's generally not advised to change this once you've installed.</p>
 </div>
 <h3 id="fcrepo_database_service">FCREPO_DATABASE_SERVICE<a class="headerlink" href="#fcrepo_database_service" title="Permanent link">&para;</a></h3>
 <p>Which database engine to use for Fedora.</p>
@@ -3472,7 +3472,7 @@ file that contains the changes you've made.</p>
 file that contains the changes you've made.</p>
 <div class="admonition warning">
 <p class="admonition-title">Changing this after installation has consequences</p>
-<p>If you are changing from mariadb to potsrgres or vice versa, you <em>MUST</em> migrate your data yourself.  ISLE will not convert your database from one to the other, and it's generally not advised to change this once you've installed.</p>
+<p>If you are changing from mariadb to postgres or vice versa, you <em>MUST</em> migrate your data yourself.  ISLE will not convert your database from one to the other, and it's generally not advised to change this once you've installed.</p>
 </div>
 <h3 id="compose_http_timeout">COMPOSE_HTTP_TIMEOUT<a class="headerlink" href="#compose_http_timeout" title="Permanent link">&para;</a></h3>
 <p>Sometimes when bringing up containers, you can encounter timeouts with an error like this:</p>
@@ -3482,7 +3482,7 @@ If you encounter this issue regularly because of slow network conditions, consid
 <p>By default, this value is set to 480, but if you have slow network conditions and encounter this error, consider bumping it higher.</p>
 <h3 id="compose_project_name">COMPOSE_PROJECT_NAME<a class="headerlink" href="#compose_project_name" title="Permanent link">&para;</a></h3>
 <p>Used for naming services in traefik as well as defining network alias and urls. For example the <code>drupal</code> service will be found at
-<code>${COMPOSE_PROJECT_NAME}_drupal_1</code>. This is useful to change if you are running mulitple ISLE instances on one machine.</p>
+<code>${COMPOSE_PROJECT_NAME}_drupal_1</code>. This is useful to change if you are running multiple ISLE instances on one machine.</p>
 <p>By default, this value is set to <code>isle-dc</code>.</p>
 <p>If you change this setting, you need to <code>make -B docker-compose.yml</code> to generate a new <code>docker-compose.yml</code>
 file that contains the changes you've made.</p>
@@ -3501,7 +3501,7 @@ file that contains the changes you've made.</p>
 <p>If you change this setting, you need to <code>make -B docker-compose.yml</code> to generate a new <code>docker-compose.yml</code>
 file that contains the changes you've made.</p>
 <h3 id="disable_syn">DISABLE_SYN<a class="headerlink" href="#disable_syn" title="Permanent link">&para;</a></h3>
-<p>Set this to <code>true</code> to disable JWT authentication for Fedora.  This is neccessary
+<p>Set this to <code>true</code> to disable JWT authentication for Fedora.  This is necessary
 when performing a Fedora import using their import/export tools.</p>
 <p>By default, this is set to <code>false</code>.</p>
 <h3 id="fedora_6">FEDORA_6<a class="headerlink" href="#fedora_6" title="Permanent link">&para;</a></h3>
@@ -3519,7 +3519,7 @@ file that contains the changes you've made.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2022</span>
       
     
   </small>

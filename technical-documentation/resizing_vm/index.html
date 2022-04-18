@@ -3063,7 +3063,7 @@
   <h1>Resizing a VM</h1>
 
 <h2 id="resize-vagrant-machine">Resize vagrant machine<a class="headerlink" href="#resize-vagrant-machine" title="Permanent link">&para;</a></h2>
-<p>To expand virtual machine's harddrive for testing of larger files. Once the VM has started, you'll need to <code>halt</code> the VM, download and run the script, tell it what size (in MB) and then start the VM.
+<p>To expand virtual machine's hard drive for testing of larger files. Once the VM has started, you'll need to <code>halt</code> the VM, download and run the script, tell it what size (in MB) and then start the VM.
 The last step <code>vagrant ssh --command "sudo resize2fs /dev/sda1"</code> is a check. It should return there was nothing to do. If you already provisioned you VM you can skip the 2 steps with provisioning in them.</p>
 <pre><code class="language-shell"># Skip this if you VM is already provisioned.
 $ vagrant up --no-provision  &lt;-- Exclude if already running and provisioned.
@@ -3097,7 +3097,7 @@ $ vagrant provision           &lt;-- Exclude if already provisioned.
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2022</span>
       
     
   </small>
