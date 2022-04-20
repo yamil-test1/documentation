@@ -271,6 +271,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#paged-content" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1572,6 +1577,18 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Paged Content
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1581,6 +1598,58 @@
   </span>
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordering (weight)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Children
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Children">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-upload-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Upload Children
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2957,6 +3026,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-weight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordering (weight)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Children
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Children">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-upload-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Upload Children
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2974,12 +3086,11 @@
 
 
 
-  <h1>Paged Content</h1>
-
-<p>Paged content, books, periodicals, photographs with the front and back, etcetera, can use the members structure.
-(See <a href="../resource-nodes/#members">the section describing resource node membership</a>.)
-This involves creating a resource node for the root record (e.g. the book or the photograph)
-and child resource nodes for each sub-component (e.g. "Page 1" and "Page 2" or "recto" and "verso")
+<h1 id="paged-content">Paged Content<a class="headerlink" href="#paged-content" title="Permanent link">&para;</a></h1>
+<p>Paged content, such as books, periodicals, photographs with the front and back, etcetera,
+ can use the <a href="../resource-nodes/#members">membership</a> structure provided by Islandora, namely, <code>field_member_of</code>.
+This involves creating a resource node for the root record (i.e. the entire book or the photograph)
+and child resource nodes for each sub-component (e.g. "Page 1", "Page 2", etc., or "recto" and "verso")
 with their corresponding media. Each "child" resource node contains a reference to their "parent" resource node
 using the <code>field_member_of</code> property.</p>
 <div class="admonition note">
@@ -2990,26 +3101,27 @@ Administrators will more often see the "member" terminology more often while
 front-end users will usually see "child" terminology.</p>
 </div>
 <p>Similar to the collection view showing members of a collection, Islandora provides
-an Islandora Model terms, <em>Paged Content</em> and <em>Page</em>, that can be used to trigger paged
+ taxonomy terms <em>Paged Content</em> and <em>Page</em> in the <em>Islandora Model</em> vocabulary,
+that can be used to trigger paged
 content behaviors. Islandora Defaults provides a Context for <em>Paged Content</em>
 resource nodes to trigger displaying an OpenSeadragon viewer showing the child
 resource nodes' service files.</p>
-<p>To enable this, use the <em>Paged Content</em> for the Islandora Model of the parent
+<p>To enable this, use <em>Paged Content</em> for the Islandora Model of the parent
 resource node and <em>Page</em> for the Islandora Model of the child resource node. After the
-child resource nodes have services file Media (either generated via the built-in derivative
+child resource nodes have "service file" media (either generated via the built-in derivative
 creation or added manually), they will be included in the OpenSeadragon paginated
 viewer displayed on the parent resource node's page.
 (See the <a href="../iiif/#using-iiif-in-islandora-8">IIIF Documentation</a>
 for more details on controlling the viewer's behavior.)</p>
 <p><img alt="Screenshot of a Paged Content resource node displaying the OpenSeadragon viewer with the first child resource node displayed." src="../../assets/paged_content_openseadragon.png" /></p>
-<p>However, repository managers can use any method they like, such as a view-based
+<p>However, repository managers can use any method they like, such as a Views-based
 list of teasers, a gallery, or a slide-show to display child resource nodes.</p>
+<h2 id="ordering-weight">Ordering (weight)<a class="headerlink" href="#ordering-weight" title="Permanent link">&para;</a></h2>
 <p>By default child resource nodes are un-ordered. To order the sub-components of a
 paged content resource node, Islandora provides a <em>Weight</em> field to store a
 integer value on  child resource nodes.
-Children resource nodes with smaller weight values will come
-before child resource nodes with larger weight values. This follows the usual ordering
-pattern of <code>1</code> (smaller) coming before <code>2</code> (larger).</p>
+Children resource nodes with smaller weight values will float to the top and come
+before child resource nodes with heavier weight values.</p>
 <p>Weight values do not need
 to be sequential, just ordered from smallest to largest. For example, the first
 child resource node can have a value of <code>10</code> and the next could have a value of
@@ -3040,6 +3152,20 @@ these weight values are serialized into RDF using the Collections Ontology 'inde
 predicate which assumes positive integer values which cannot be guaranteed
 using the weight module.</p>
 </div>
+<h2 id="adding-children">Adding Children<a class="headerlink" href="#adding-children" title="Permanent link">&para;</a></h2>
+<p>Islandora provides an interface on the <strong>Children</strong> tab to either <strong>Batch upload children</strong> or <strong>Add Child</strong>.
+Both methods will result in new resource nodes that are <em>member of</em> the current node. It is also possible
+to create child nodes separately, then edit their <em>Member Of</em> field to point to the desired parent.</p>
+<h3 id="batch-upload-children">Batch Upload Children<a class="headerlink" href="#batch-upload-children" title="Permanent link">&para;</a></h3>
+<p>If you want to add a number of pages to this node, for example, the <strong>Batch Upload Children</strong> button may
+suit your needs. It allows you to select a number of individual files, and from them, will create one resource node
+per file with that file attached as a Media. It is possible to select the node type and media type
+(and if selecting "Repository Item" as node type, you can select the required Model field as well.)</p>
+<p><img alt="Batch Upload Children form" src="../../assets/paged_content_batch_upload.png" /></p>
+<p>This method does not create full metadata for the child nodes. It uses the filename as the node title.
+ It also does not accept zip files; individual files must be uploaded. For more methods of bulk uploading content,
+see <a href="../../technical-documentation/migration-islandora-workbench/">Islandora Workbench</a>
+ and <a href="../extending/#batch-upload-with-a-csv">Migrate Islandora CSV</a></p>
 
 
 
@@ -3049,7 +3175,7 @@ using the weight module.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
       
     
   </small>

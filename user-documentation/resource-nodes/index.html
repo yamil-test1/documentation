@@ -3266,16 +3266,18 @@ the "Members" tab, Actions can be performed in bulk using the checkboxes and Act
 <p>The node-level and global approaches are not exclusive to one another. One Context can override another depending on the order of execution. Contexts are applied in the order they are displayed on the Contexts page, which is editable through a drag-and-drop interface. Whichever Condition appears last in the list of Contexts between the node-level Condition (which in this case is the "Node has term" condition) the global Condition (which is "Node has Media with Mime type"), that one will override the other. An example of having the display mode specified in the node edit form intentionally override the display mode based on Mime type is to have media with the <code>image/jp2</code> mime-type configured to use to use the OpenSeadragon viewer, but to manually select the OpenSeadragon display mode for nodes with JPEG media (for example, a very large JPEG image of a map, where the OpenSeadragon's pan and zoom features would be useful).</p>
 <h2 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h2>
 <p>Islandora has a notion of <em>membership</em>, which is used to create a parent/child relationship between
-two resource nodes. Membership is denoted using another special field, "Member Of".
+nodes. Membership is denoted using another special field, "Member Of". This is used to create the link
+between members and their parent collection, pages and their book ("paged content"), or members of a
+compound object and the compound object itself.</p>
+<p>Any two nodes can be related in this way, though typically, the parent node has a content
+model of <a href="../../concepts/collection/"><em>Collection</em></a> or <a href="../paged-content/"><em>Paged Content</em></a> (see their respective pages for more details).
 The "Member Of" field <em>can</em> hold multiple references, so it is possible for a
-single child to belong to multiple parents, but may also complicate the creation of breadcrumbs.
-Any two nodes can be related in this way, though typically, the parent node has a content
-model of <a href="../../concepts/collection/"><em>Collection</em></a> or <a href="../paged-content/"><em>Paged Content</em></a> (see their respective pages for more details).</p>
+single child to belong to multiple parents, but may also complicate the creation of breadcrumbs.</p>
 <div class="admonition note">
 <p class="admonition-title">Compared to Islandora Legacy</p>
 <p>In Islandora Legacy, there was a distinction between belonging to a collection and belonging to
-a compound object.  In Islandora, this distinction is not present, essentially allowing every
-resource node to be part of a compound object.</p>
+a compound object.  In Islandora, this distinction is not present. Since all nodes can have members
+, essentially every node has the potential to be a compound object or collection.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Child v. Member</p>
@@ -3286,8 +3288,8 @@ front-end users will usually see "child" terminology.</p>
 </div>
 <p>For any node, its <strong>Children</strong> tab can be used to see all its members.  You can also perform Actions in
 bulk on members using the checkboxes and the Actions dropdown as well as clicking
-on the <strong>Re-order Children</strong> tab to adjust the order in which they display.</p>
-<p><img alt="Members tab" src="../../assets/resource_nodes_children_tab.png" /></p>
+on the <strong>Reorder Children</strong> tab to adjust the order in which they display.</p>
+<p><img alt="Members tab" src="../../assets/paged_content_reorder_children_button.png" /></p>
 
 
 
@@ -3297,7 +3299,7 @@ on the <strong>Re-order Children</strong> tab to adjust the order in which they 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
       
     
   </small>
