@@ -270,6 +270,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#accessibility" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -509,6 +514,18 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Accessibility
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -518,6 +535,52 @@
   </span>
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#drupal-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drupal Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessible-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessible Themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-alt-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic alt-text
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2983,6 +3046,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#drupal-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drupal Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessible-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessible Themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-alt-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic alt-text
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3000,8 +3100,9 @@
 
 
 
-  <h1>Accessibility</h1>
-
+<h1 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h1>
+<p>Accessibility is the ablity of a site to be used fully by all users, including those using screen reader technologies or keyboard navigation. </p>
+<h2 id="drupal-documentation">Drupal Documentation<a class="headerlink" href="#drupal-documentation" title="Permanent link">&para;</a></h2>
 <p>Islandora's accessibility features are currently provided by Drupal and contributed Drupal modules. These pages within the Accessibility section of the Drupal documentation can provide guidance:</p>
 <ul>
 <li><a href="https://www.drupal.org/docs/accessibility/drupal-accessibility-features">Drupal Accessibility Features</a> (included in core Drupal)</li>
@@ -3010,6 +3111,20 @@
 <li><a href="https://www.drupal.org/docs/accessibility/how-to-do-an-accessibility-review">How to do an accessibility review?</a></li>
 <li>List of <a href="https://www.drupal.org/docs/accessibility/external-accessibility-resources">External Accessibility Resources</a></li>
 </ul>
+<h2 id="accessible-themes">Accessible Themes<a class="headerlink" href="#accessible-themes" title="Permanent link">&para;</a></h2>
+<p>Much of the accessibility of a website is dependent on how specific HTML tags and 
+attributes are used, thus falls largely into the realm of Drupal Themes. The 
+<a href="https://www.drupal.org/docs/core-modules-and-themes/core-themes/olivero">Olivero</a> theme
+and the <a href="https://www.drupal.org/docs/core-modules-and-themes/core-themes/claro-theme">Claro</a>
+ admin theme were designed by the Drupal community with accessibility 
+as a guiding principle. </p>
+<h2 id="automatic-alt-text">Automatic alt-text<a class="headerlink" href="#automatic-alt-text" title="Permanent link">&para;</a></h2>
+<p>When creating image media, alt-text is a required attribute. An Islandora function 
+currently automatically populates the alt-text, if that media is the "media of" a node,
+with the respective node's title.</p>
+<p>This is not considered good accessibility as the node's title will likely be already
+on the page, and it doesn't add anything to describing the image itself. Please fill 
+out the alt text with something meaningful when adding image content to Islandora.</p>
 
 
 
@@ -3019,7 +3134,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
       
     
   </small>
