@@ -16,7 +16,7 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15+insiders-4.16.0">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16+insiders-4.16.2">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bec4e691.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca782038.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.96b5c56e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
@@ -3270,16 +3270,18 @@ ii. It can also be done through the UI at <code>/admin/config/development/config
 <p>You can now add captions to A/V content! If you are starting with a new installation, there's nothing to do, but if you have an existing install, here's how to configure Drupal to display captions/</p>
 <ol>
 <li>Make sure you have the <code>2.0.0</code> version of islandora and islandora_defaults. If you followed the steps above to update Drupal core and its modules, you'll have this.</li>
-<li>Selectively import the following configurations from <code>islandora_defaults</code> using the Features UI (recommended) or by copying them into a temporary directory and using <code>drush</code> to do a partial config import.
-    i. core.entity_form_display.media.audio.default
-    ii. core.entity_form_display.media.video.default
-    iii. core.entity_view_display.media.audio.default
-    iv. core.entity_view_display.media.audio.source
-    v. core.entity_view_display.media.video.default
-    vi. core.entity_view_display.media.video.source
-    vii. field.field.media.audio.field_track
-    viii. field.field.media.video.field_track
-    ix. field.storage.media.field_track</li>
+<li>Selectively import the following configurations from <code>islandora_defaults</code> using the Features UI (recommended) or by copying them into a temporary directory and using <code>drush</code> to do a partial config import.<ol>
+<li>core.entity_form_display.media.audio.default</li>
+<li>core.entity_form_display.media.video.default</li>
+<li>core.entity_view_display.media.audio.default</li>
+<li>core.entity_view_display.media.audio.source</li>
+<li>core.entity_view_display.media.video.default</li>
+<li>core.entity_view_display.media.video.source</li>
+<li>field.field.media.audio.field_track</li>
+<li>field.field.media.video.field_track</li>
+<li>field.storage.media.field_track</li>
+</ol>
+</li>
 <li>Clear your drupal cache <code>drush cr</code></li>
 <li>You should now see a "track" field on audio and video media objects</li>
 </ol>
@@ -3292,7 +3294,7 @@ ii. It can also be done through the UI at <code>/admin/config/development/config
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2022</span>
       
     
   </small>
@@ -3384,7 +3386,7 @@ ii. It can also be done through the UI at <code>/admin/config/development/config
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.4bc08946.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.560c3827.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1a3bf749.min.js"></script>
       
     
   </body>
