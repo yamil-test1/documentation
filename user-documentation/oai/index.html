@@ -16,7 +16,7 @@
         
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16+insiders-4.16.2">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2+insiders-4.17.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ca782038.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9b33a7c2.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -3085,32 +3085,63 @@
 
 
 <h1 id="oai-pmh">OAI-PMH<a class="headerlink" href="#oai-pmh" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a>, commonly referred to as OAI-PMH is a specification for exposing repository metadata. Repositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">full specification</a> details the services:</p>
-<ul>
-<li>Identify: <a href="http://localhost:8000/oai/request?verb=Identify">http://localhost:8000/oai/request?verb=Identify</a></li>
-<li>ListMetadataFormats: <a href="http://localhost:8000/oai/request?verb=ListMetadataFormats">http://localhost:8000/oai/request?verb=ListMetadataFormats</a></li>
-<li>ListSets: <a href="http://localhost:8000/oai/request?verb=ListSets">http://localhost:8000/oai/request?verb=ListSets</a></li>
-<li>GetRecord: <a href="http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1">http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1</a></li>
-<li>ListIdentifiers: <a href="http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a></li>
-<li>ListRecords: <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc</a></li>
-</ul>
-<p>The Drupal module <a href="https://github.com/Islandora/islandora_defaults">islandora_defaults</a> includes the <a href="https://github.com/Islandora/islandora_defaults/tree/8.x-1.x/modules/islandora_oaipmh">islandora_oaipmh</a> module. It depends on the <a href="https://www.drupal.org/project/rest_oai_pmh">Drupal REST OAI-PMH module</a>. The combination of these modules will allow your repository content (which are not modelled as 'Collection') to be harvested.</p>
+<p>The <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a>, commonly referred to as OAI-PMH, is a specification for exposing repository metadata for harvesting. OAI-PMH specifies six services which can be invoked over HTTP(s). The <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">full specification</a> details the services:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL on localhost:8000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identify</td>
+<td><a href="http://localhost:8000/oai/request?verb=Identify">http://localhost:8000/oai/request?verb=Identify</a></td>
+</tr>
+<tr>
+<td>ListMetadataFormats</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListMetadataFormats">http://localhost:8000/oai/request?verb=ListMetadataFormats</a></td>
+</tr>
+<tr>
+<td>ListSets</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListSets">http://localhost:8000/oai/request?verb=ListSets</a></td>
+</tr>
+<tr>
+<td>GetRecord</td>
+<td><a href="http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1">http://localhost:8000/oai/request?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:localhost:node-1</a></td>
+</tr>
+<tr>
+<td>ListIdentifiers</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a></td>
+</tr>
+<tr>
+<td>ListRecords</td>
+<td><a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc</a></td>
+</tr>
+</tbody>
+</table>
+<p>The module <a href="https://github.com/Islandora/islandora_defaults/tree/2.x/modules/islandora_oaipmh">Islandora OAI-PMH (<code>islandora_oaipmh</code>)</a> is a submodule of Islandora Defaults. It provides default configuration for the <a href="https://www.drupal.org/project/rest_oai_pmh">Drupal REST OAI-PMH module</a> so that repository content can be harvested.</p>
 <p>Enabling Islandora OAI-PMH provides:</p>
 <ul>
-<li>an oai_dc <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">endpoint</a> of all objects available as one set (<code>"oai_pmh:all_repository_items"</code>) which is built using a <a href="http://localhost:8000/admin/structure/views/view/oai_pmh">configurable View</a>.</li>
-<li><a href="http://localhost:8000/admin/config/services/rest/oai-pmh">default configuration</a> to connect this view with the REST OAI-PMH module.</li>
-<li>the ability to define additional sets by building additional views. Additional sets can be created by making views with the Entity Reference view display mode and enabling them on the rest_oai_pmh configuration page: /admin/config/services/rest/oai-pmh.</li>
+<li>a View ("OAI-PMH") that defines sets of objects for exposure at the oai_dc <a href="http://localhost:8000/oai/request?verb=ListRecords&amp;metadataPrefix=oai_dc">endpoint</a>. By default:</li>
+<li>there is one set per "Collection" object containing that object's children</li>
+<li>there is one set of all Repository Item objects that are not members of any Collection, and are not themselves Collections. </li>
+<li>disabled by default, there is a set of all Repository Item objects that are not Collections.</li>
+<li>Default configuration (at <code>/admin/config/services/rest/oai-pmh</code>) to connect this view with the REST OAI-PMH module.</li>
+<li>the ability to define additional sets by building additional views. Additional sets can be created by making views with the Entity Reference view display mode and enabling them on the REST OAI-PMH configuration page: /admin/config/services/rest/oai-pmh.</li>
 </ul>
-<p>The rest_oai_pmh module indexes set membership, so repository items may not appear immediately in their respective sets. Indexing will happen automatically during cron runs but can be triggered manually at <code>/admin/config/services/rest/oai-pmh/queue</code>.</p>
+<p>The REST OAI-PMH module indexes (caches) set membership, so new Items may not appear immediately in their respective sets. Indexing will happen automatically during cron runs but can be triggered manually at <code>/admin/config/services/rest/oai-pmh/queue</code>.</p>
 <h2 id="oai-dc-metadata-formatmetadata-mappings">OAI-DC Metadata Format/Metadata Mappings<a class="headerlink" href="#oai-dc-metadata-formatmetadata-mappings" title="Permanent link">&para;</a></h2>
-<p>By default, the mappings to OAI-DC are provided via the RDF mapping for the content type(s) output to OAI-PMH (e.g. rdf.mapping.node.islandora_object.yml). Any fields where the RDF predicate is not in the Dublin Core namespace are filtered out.</p>
-<p>When you look at the <a href="http://localhost:8000/admin/config/services/rest/oai-pmh">default OAI-PMH configuration</a>, you will see that the "OAI Dublin Core (RDF Mapping)" is used to produce the oai_dc metadata format. This is not a separate RDF mapping, but refers to the RDF mapping(s) for content types output to OAI-PMH.</p>
+<p>The OAI-PMH module makes use of one of two modules to provide metadata mappings: the RDF module or the Metatag module. By configuring OAI-PMH to use the RDF module (appears as "OAI Dublin Core (RDF Mapping)" and is enabled by default with Islandora OAI-PMH), the OAI-PMH module will use the RDF mapping as configured for your content type (the same mapping that is used for Fedora and Blazegraph, e.g. rdf.mapping.node.islandora_object.yml). </p>
+<p>However,
+- any field mappings that are not part of the Dublin Core namespace will be filtered out.
+- any field mappings using Dublin Core Terms (e.g. http://purl.org/dc/terms/extent) will be mapped to their Dublin Core Elements equivalents (e.g. http://purl.org/dc/elements/1.1/format)
+- the ability to vary the mappings in Linked Agent fields by relationship, used in JSON-LD mappings to Blazegraph and Fedora, is not available. If you want to expose data in a Linked Agent field to OAI-PMH, you must provide a DC mapping for that field in the RDF mapping. By default, the Repository Item RDF mapping does not include a mapping for the Linked Agent field.  </p>
 <div class="admonition tip">
 <p class="admonition-title">Field values not showing up in OAI-DC record?</p>
 <p>If you want the value of a field to be emitted in the OAI-DC record, you must assign a Dublin Core predicate for that field in your content type's RDF mapping. If you are wondering why a field is not showing up in the OAI-DC record, the content type's RDF mapping is the first thing to check.</p>
 </div>
-<p>The OAI-DC metadata format is aided by the Islandora OAI-PMH module to include the RDF Mapping for the linked agent field (from Islandora Defaults). Including agent links in the OAI-PMH metadata currently requires updating the RDF mapping to include a Dublin Core predicate for that field or any other additional fields.</p>
-<p>The rest_oai_pmh module supports some alternate methods of defining mappings to OAI-DC. Consult <a href="https://www.drupal.org/project/rest_oai_pmh">that module's documentation</a> for more information.</p>
+<p>The REST OAI-PMH module does not support metadata formats other than OAI-DC, but it supports some alternate methods of defining mappings to OAI-DC. Consult <a href="https://www.drupal.org/project/rest_oai_pmh">that module's documentation</a> for more information.</p>
 <h2 id="creating-additional-metadata-formats">Creating additional metadata formats<a class="headerlink" href="#creating-additional-metadata-formats" title="Permanent link">&para;</a></h2>
 <p>This involves creating a new plugin.</p>
 <p>The <a href="https://git.drupalcode.org/project/rest_oai_pmh/-/blob/2.0.x/src/Plugin/OaiMetadataMap/DefaultMap.php">Drupal rest_oai_pmh module's DefaultMap plugin</a> provides a basic model to follow for creating a plugin.</p>
@@ -3124,7 +3155,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
       
     
   </small>
@@ -3133,6 +3164,7 @@
               
             </article>
             
+<script>var input,hash=location.hash.slice(1);hash.startsWith("__tabbed_")&&((input=document.getElementById(hash)).checked=!0)</script>
           </div>
         </div>
         
@@ -3140,7 +3172,8 @@
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../iiif/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IIIF" rel="prev">
@@ -3213,10 +3246,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.4bc08946.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16af1b4e.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1a3bf749.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fdb661c6.min.js"></script>
       
     
   </body>
