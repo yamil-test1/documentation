@@ -562,9 +562,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#derivative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivative Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#derivatives-are-actions-in-drupal" class="md-nav__link">
     <span class="md-ellipsis">
       Derivatives are Actions in Drupal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivatives-can-run-automatically-with-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivatives can run automatically with Contexts
     </span>
   </a>
   
@@ -3097,9 +3115,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#derivative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivative Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#derivatives-are-actions-in-drupal" class="md-nav__link">
     <span class="md-ellipsis">
       Derivatives are Actions in Drupal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivatives-can-run-automatically-with-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivatives can run automatically with Contexts
     </span>
   </a>
   
@@ -3168,6 +3204,13 @@ Examples of derivatives include:</p>
 <li><strong>preservation files</strong> in open file formats</li>
 <li>files containing <strong>technical metadata</strong> about a file.</li>
 </ul>
+<h2 id="derivative-models">Derivative Models<a class="headerlink" href="#derivative-models" title="Permanent link">&para;</a></h2>
+<p>There are two schemes you can use for derivatives: </p>
+<ul>
+<li>In the <strong>standard model</strong>, each derivative is a new Media entity linked to the original's parent node. The "Media Use" field is used to distinguish the roles that the various files and media have (Thumbnail, Service File, etc.).</li>
+<li>In the <strong>multi-file media model</strong>, derivatives are added to additional file fields
+on the original file's Media entity (see <a href="../../user-documentation/media/#multi-file-media">Multi-File Media</a>).</li>
+</ul>
 <h2 id="derivatives-are-actions-in-drupal">Derivatives are Actions in Drupal<a class="headerlink" href="#derivatives-are-actions-in-drupal" title="Permanent link">&para;</a></h2>
 <p>Derivative configuration is stored using Drupal's Actions.<br />
 This means that all derivative configuration, such as
@@ -3180,6 +3223,25 @@ Drupal [Contexts] module.</p>
 <div class="admonition warning">
 <p class="admonition-title">Derivative actions will replace existing files</p>
 <p>If a derivative action runs but the target derivative (as identified by its taxonomy term) already exists, the new file will replace the old file (leaving the rest of the Media intact).</p>
+</div>
+<h2 id="derivatives-can-run-automatically-with-contexts">Derivatives can run automatically with Contexts<a class="headerlink" href="#derivatives-can-run-automatically-with-contexts" title="Permanent link">&para;</a></h2>
+<p>With the Contexts module, you can configure derivatives to run under specific conditions. 
+These are set in the "Conditions" section. Islandora provides a number of context conditions including:</p>
+<ul>
+<li>entity bundle</li>
+<li>media mimetype</li>
+<li>term (attached to a media or node, or a node's parent node)</li>
+<li>whether a node or media "is islandora"</li>
+</ul>
+<p>You can set up as many of these as you like, with "and" or "or" logic between them.</p>
+<p>In the "Reactions" section is where you can set up derivatives. For standard model derivatives,
+choose the "Derivatives" reaction. This lists all actions, including derivative actions. Note that 
+multifile derivatives won't work here.</p>
+<div class="admonition note">
+<p class="admonition-title">Multi-file media</p>
+<p>The multi-file media derivatives can NOT be selected from within the "Derivatives" reactions.
+From the "Reactions" pop-up window, you must choose "Derive file for Existing Media". This panel
+lists only Multi-file media-type derivatives.</p>
 </div>
 <h2 id="derivatives-have-types">Derivatives have Types<a class="headerlink" href="#derivatives-have-types" title="Permanent link">&para;</a></h2>
 <p>When creating a new Derivative Action, there are a number of flavours of
@@ -3229,8 +3291,7 @@ these types. </p>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Multi-file media</p>
-<p>The Multi-file media architecture stores derivatives as extra files on a media, rather
-than as entire media attached to a node. The derivatives types available for multi-file media are the 
+<p>The derivatives types available for multi-file media are the 
 ones marked as "for Media Attachment" e.g. "Generate an Image Derivative for Media Attachment". </p>
 </div>
 <h2 id="derivatives-are-created-by-microservices-crayfish">Derivatives are created by microservices ("Crayfish")<a class="headerlink" href="#derivatives-are-created-by-microservices-crayfish" title="Permanent link">&para;</a></h2>
